@@ -1,5 +1,11 @@
 # LLM-generated UML class models of the A-CDM milestone document
 
+### ▶ [Explore a generated class model in your browser](https://darrylteo.github.io/acdm-uml-agents/src/runs/single/run_01/model.html)
+
+[![Interactive viewer of one generated A-CDM class model: packages for stakeholders, timings and milestones, with classes, attributes and relationships](docs/preview.png)](https://darrylteo.github.io/acdm-uml-agents/src/runs/single/run_01/model.html)
+
+One single-agent run: 67 classes and enumerations, 77 relationships and 6 packages, generated in about 5 minutes. Click any class for its definition and the manual sentence it came from.
+
 This repository holds the code, prompts, generated models, and evaluation materials of a study in which language model agents (`claude-sonnet-5`, called through the Claude Code CLI) derive UML class models from the sixteen milestone tables of the EUROCONTROL Airport CDM Implementation Manual. The models are graded against the document itself, by two researchers (graders A and B) and two language models (`claude-opus-5`, `claude-sonnet-5`), on a 200-item recall sample and a 200-item precision sample.
 
 ## Results in brief
