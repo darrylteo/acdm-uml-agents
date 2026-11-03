@@ -1,0 +1,403 @@
+{
+  "meta": {
+    "ok": true,
+    "output": null,
+    "error": null,
+    "model": "claude-opus-5",
+    "input_tokens": 3937,
+    "output_tokens": 4543,
+    "thinking_tokens": 1508,
+    "cache_creation_tokens": 3935,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.15293500000000002,
+    "duration_ms": 47015,
+    "attempts": 1,
+    "num_turns": 2
+  },
+  "output": {
+    "sentences": [
+      {
+        "id": "M2.definition.1",
+        "decision": "keep",
+        "reason": "Names the platform, the EOBT time quantity, and the regulated property of a flight.",
+        "claims": [
+          {
+            "text": "most flights will be known in the Airport CDM Platform",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "At EOBT-2 hr",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "including if they are regulated or not",
+            "kind": "attribute",
+            "owner": "Flight",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M2.definition.2",
+        "decision": "keep",
+        "reason": "Names CTOT, Network Operations, and who originates/receives the CTOT.",
+        "claims": [
+          {
+            "text": "a CTOT",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "Network Operations",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "All regulated flights receive a CTOT from Network Operations.",
+            "kind": "relationship",
+            "owner": "",
+            "rel_type": "other",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M2.origin_and_priority.1",
+        "decision": "keep",
+        "reason": "States origin of CTOT and its recipients.",
+        "claims": [
+          {
+            "text": "The CTOT",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": "M2.definition.2.c1"
+          },
+          {
+            "text": "The CTOT is issued by the Network Operations",
+            "kind": "relationship",
+            "owner": "",
+            "rel_type": "other",
+            "duplicate_of": "M2.definition.2.c3"
+          },
+          {
+            "text": "The CTOT is issued by the Network Operations",
+            "kind": "attribute",
+            "owner": "CTOT",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "is sent to relevant ATS units",
+            "kind": "relationship",
+            "owner": "",
+            "rel_type": "other",
+            "duplicate_of": ""
+          },
+          {
+            "text": "as well as the departure aerodrome",
+            "kind": "relationship",
+            "owner": "",
+            "rel_type": "other",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M2.origin_and_priority.2",
+        "decision": "keep",
+        "reason": "States the priority property of CTOT (regulated) flights.",
+        "claims": [
+          {
+            "text": "CTOT flights usually have a priority over unregulated flights.",
+            "kind": "attribute",
+            "owner": "CTOT",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M2.timing.1",
+        "decision": "keep",
+        "reason": "States the timing rule for CTOT issue.",
+        "claims": [
+          {
+            "text": "If the flight is regulated, a CTOT is issued at EOBT-2h.",
+            "kind": "operation",
+            "owner": "Network Operations",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M2.data_quality.1",
+        "decision": "drop",
+        "reason": "Not applicable; carries nothing to model.",
+        "claims": []
+      },
+      {
+        "id": "M2.effect.1",
+        "decision": "keep",
+        "reason": "Names ELDT and FUM messages and describes an update rule.",
+        "claims": [
+          {
+            "text": "ELDT",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "the FUM messages",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "For inbound flights, ELDT is updated based on information provided by the FUM messages, taking into account the actual progress of the flight.",
+            "kind": "operation",
+            "owner": "Milestone 2",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "ELDT is updated based on information provided by the FUM messages",
+            "kind": "relationship",
+            "owner": "",
+            "rel_type": "other",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M2.procedures.1",
+        "decision": "keep",
+        "reason": "States the consistency check, the notification to Network Operations, and the T-DPI Message.",
+        "claims": [
+          {
+            "text": "To check (before or after take off from outstation) whether AO/GH flight estimates are consistent with the ATC Flight Plan",
+            "kind": "operation",
+            "owner": "Milestone 2",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "to inform Network Operations about the updated take off time estimate, using a T-DPI Message",
+            "kind": "operation",
+            "owner": "Milestone 2",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "a T-DPI Message",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "the ATC Flight Plan",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "AO/GH",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "to inform Network Operations about the updated take off time estimate, using a T-DPI Message",
+            "kind": "relationship",
+            "owner": "",
+            "rel_type": "other",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M2.procedures.2",
+        "decision": "keep",
+        "reason": "Restates the check as a feasibility verification of the ATC FPL EOBT at EOBT-2 hrs.",
+        "claims": [
+          {
+            "text": "This check shall be performed to verify feasibility of the ATC Flight Plan estimated off block time at EOBT-2 hrs.",
+            "kind": "operation",
+            "owner": "Milestone 2",
+            "rel_type": "",
+            "duplicate_of": "M2.procedures.1.c1"
+          }
+        ]
+      },
+      {
+        "id": "M2.procedures.3",
+        "decision": "keep",
+        "reason": "Restates the T-DPI notification to Network Operations with its timing.",
+        "claims": [
+          {
+            "text": "At EOBT-2 hrs Network Operations is informed through the first T-DPI message.",
+            "kind": "operation",
+            "owner": "Milestone 2",
+            "rel_type": "",
+            "duplicate_of": "M2.procedures.1.c2"
+          },
+          {
+            "text": "Network Operations is informed through the first T-DPI message",
+            "kind": "relationship",
+            "owner": "",
+            "rel_type": "other",
+            "duplicate_of": "M2.procedures.1.c6"
+          }
+        ]
+      },
+      {
+        "id": "M2.procedures.4",
+        "decision": "keep",
+        "reason": "Gives the TTOT calculation formula and names its time quantities.",
+        "claims": [
+          {
+            "text": "Calculation basis for the TTOT shall take into account EIBT+MTTT+EXOT, if later than EOBT+EXOT.",
+            "kind": "operation",
+            "owner": "Milestone 2",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "the TTOT",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "EIBT",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "MTTT",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "EXOT",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M2.procedures.5",
+        "decision": "keep",
+        "reason": "Gives the override rule and TTOT formula when TOBT is manually input.",
+        "claims": [
+          {
+            "text": "In the case of manual input of TOBT, this estimate will override the EIBT+MTTT estimate, hence TTOT equals TOBT+EXOT.",
+            "kind": "operation",
+            "owner": "Milestone 2",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "TOBT",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M2.procedures.6",
+        "decision": "drop",
+        "reason": "Sentence fragment; the trigger itself is stated in M2.procedures.7.",
+        "claims": []
+      },
+      {
+        "id": "M2.procedures.7",
+        "decision": "keep",
+        "reason": "States the trigger of the procedure (completes M2.procedures.6).",
+        "claims": [
+          {
+            "text": "- a time stamp, at EOBT - 2h.",
+            "kind": "operation",
+            "owner": "Milestone 2",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M2.operational_status.1",
+        "decision": "drop",
+        "reason": "Not applicable; carries nothing to model.",
+        "claims": []
+      },
+      {
+        "id": "M2.action_on_cdm.1",
+        "decision": "keep",
+        "reason": "Platform action marking fields REGULATED; names ETOT.",
+        "claims": [
+          {
+            "text": "ETOT/TTOT/CTOT Mark appropriate fields as REGULATED",
+            "kind": "operation",
+            "owner": "Airport CDM Platform",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "REGULATED",
+            "kind": "enumeration",
+            "owner": "Flight",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "ETOT",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "TTOT",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": "M2.procedures.4.c2"
+          },
+          {
+            "text": "CTOT",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": "M2.definition.2.c1"
+          }
+        ]
+      }
+    ]
+  }
+}

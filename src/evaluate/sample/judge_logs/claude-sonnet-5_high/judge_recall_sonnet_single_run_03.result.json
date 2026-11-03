@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "ok": true,
+    "output": null,
+    "error": null,
+    "model": "claude-sonnet-5",
+    "input_tokens": 25500,
+    "output_tokens": 2517,
+    "thinking_tokens": 1936,
+    "cache_creation_tokens": 23175,
+    "cache_read_tokens": 2323,
+    "cost_usd": 0.1183386,
+    "duration_ms": 21734,
+    "attempts": 1,
+    "num_turns": 2
+  },
+  "output": {
+    "items": [
+      {
+        "id": "c014",
+        "grade": 1,
+        "elements": [
+          "FlightOperationalStatus.SEQUENCED",
+          "Milestone.operationalStatusChange"
+        ],
+        "note": "pre-departure sequence entry captured via SEQUENCED status literal"
+      },
+      {
+        "id": "c018",
+        "grade": 1,
+        "elements": [
+          "TakeOff.informPartnersOfAtot()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c025",
+        "grade": 1,
+        "elements": [
+          "GroundHandlingStarted.updateTobtTtot()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c085",
+        "grade": 1,
+        "elements": [
+          "StartUpRequested",
+          "Flight.asrt"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c089",
+        "grade": 1,
+        "elements": [
+          "TakeOffFromOutstation",
+          "Flight.atot"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c153",
+        "grade": 1,
+        "elements": [
+          "TakeOff->AtcSystem"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c156",
+        "grade": 1,
+        "elements": [
+          "FlightOperationalStatus.FIR",
+          "LocalRadarUpdate"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c161",
+        "grade": 0,
+        "elements": [],
+        "note": "GroundHandlingStarted lacks an inform-Network-Operations-on-TTOT operation, unlike sibling milestone classes"
+      },
+      {
+        "id": "c173",
+        "grade": 1,
+        "elements": [
+          "TakeOffFromOutstation.calculateTtot()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c193",
+        "grade": 0,
+        "elements": [],
+        "note": "no attribute/operation captures the 15-minute-after-EOBT readiness deadline for M1"
+      }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+# Milestone 2: EOBT - 2 hr
+
+The section, split into sentences. The field name precedes each field; the id precedes each sentence.
+
+
+## Definition
+
+[M2.definition.1] At EOBT-2 hr most flights will be known in the Airport CDM Platform including if they are regulated or not.
+[M2.definition.2] All regulated flights receive a CTOT from Network Operations.
+
+## Origin and priority
+
+[M2.origin_and_priority.1] The CTOT is issued by the Network Operations and is sent to relevant ATS units as well as the departure aerodrome.
+[M2.origin_and_priority.2] CTOT flights usually have a priority over unregulated flights.
+
+## Timing
+
+[M2.timing.1] If the flight is regulated, a CTOT is issued at EOBT-2h.
+
+## Data Quality
+
+[M2.data_quality.1] Not applicable.
+
+## Effect
+
+[M2.effect.1] For inbound flights, ELDT is updated based on information provided by the FUM messages, taking into account the actual progress of the flight.
+
+## Procedures
+
+[M2.procedures.1] To check (before or after take off from outstation) whether AO/GH flight estimates are consistent with the ATC Flight Plan and to inform Network Operations about the updated take off time estimate, using a T-DPI Message.
+[M2.procedures.2] This check shall be performed to verify feasibility of the ATC Flight Plan estimated off block time at EOBT-2 hrs.
+[M2.procedures.3] At EOBT-2 hrs Network Operations is informed through the first T-DPI message.
+[M2.procedures.4] Calculation basis for the TTOT shall take into account EIBT+MTTT+EXOT, if later than EOBT+EXOT.
+[M2.procedures.5] In the case of manual input of TOBT, this estimate will override the EIBT+MTTT estimate, hence TTOT equals TOBT+EXOT.
+[M2.procedures.6] This procedure is triggered by
+[M2.procedures.7] - a time stamp, at EOBT - 2h.
+
+## Operational Status
+
+[M2.operational_status.1] N. A.
+
+## Action on CDM Operation
+
+[M2.action_on_cdm.1] ETOT/TTOT/CTOT Mark appropriate fields as REGULATED
+
+# Task
+
+Return every sentence with keep or drop, a reason, and the claims of each kept sentence, as JSON conforming to the schema.

@@ -1,0 +1,1428 @@
+{
+ "task": "precision",
+ "seed": 0,
+ "n": 200,
+ "population": 18814,
+ "models": {
+  "m00": "single/run_04",
+  "m01": "single/run_02",
+  "m02": "multi/run_01",
+  "m03": "single_high/run_04",
+  "m04": "multi/run_03",
+  "m05": "single_high/run_03",
+  "m06": "single/run_03",
+  "m07": "multi/run_04",
+  "m08": "noscaffold/run_01",
+  "m09": "single_high/run_05",
+  "m10": "single_high/run_02",
+  "m11": "noscaffold/run_02",
+  "m12": "noscaffold/run_03",
+  "m13": "single/run_01",
+  "m14": "multi/run_05",
+  "m15": "multi/run_02",
+  "m16": "single_high/run_01",
+  "m17": "single/run_05"
+ },
+ "items": {
+  "g001": {
+   "run": "noscaffold/run_03",
+   "path": "ATCFlightPlan.submissionTime",
+   "kind": "attribute",
+   "milestone": 1,
+   "drawn_milestone": 1
+  },
+  "g002": {
+   "run": "noscaffold/run_01",
+   "path": "DPIMessage.messageType",
+   "kind": "attribute",
+   "milestone": 1,
+   "drawn_milestone": 10
+  },
+  "g003": {
+   "run": "single/run_04",
+   "path": "MilestoneEvent->Flight [dependency]",
+   "kind": "relationship",
+   "milestone": 4,
+   "drawn_milestone": 15
+  },
+  "g004": {
+   "run": "single_high/run_01",
+   "path": "InBlock.notifyNetworkOperationsIfTTOTChanges()",
+   "kind": "operation",
+   "milestone": 7,
+   "drawn_milestone": 7
+  },
+  "g005": {
+   "run": "single_high/run_02",
+   "path": "M3TakeOffFromOutstation->Milestone [generalization]",
+   "kind": "relationship",
+   "milestone": 3,
+   "drawn_milestone": 3
+  },
+  "g006": {
+   "run": "single_high/run_05",
+   "path": "ETFMS",
+   "kind": "class",
+   "milestone": 3,
+   "drawn_milestone": 3
+  },
+  "g007": {
+   "run": "single/run_05",
+   "path": "Milestone->Flight [association]",
+   "kind": "relationship",
+   "milestone": 14,
+   "drawn_milestone": 14
+  },
+  "g008": {
+   "run": "noscaffold/run_03",
+   "path": "Flight.eobt",
+   "kind": "attribute",
+   "milestone": 9,
+   "drawn_milestone": 9
+  },
+  "g009": {
+   "run": "single_high/run_04",
+   "path": "Stakeholder.role",
+   "kind": "attribute",
+   "milestone": 13,
+   "drawn_milestone": 13
+  },
+  "g010": {
+   "run": "single/run_03",
+   "path": "NetworkOperations->CdmPartner [generalization]",
+   "kind": "relationship",
+   "milestone": 15,
+   "drawn_milestone": 2
+  },
+  "g011": {
+   "run": "single_high/run_01",
+   "path": "TimeQuantity.updateTime",
+   "kind": "attribute",
+   "milestone": 7,
+   "drawn_milestone": 7
+  },
+  "g012": {
+   "run": "single_high/run_01",
+   "path": "DPIProcess->NetworkOperations [dependency]",
+   "kind": "relationship",
+   "milestone": 1,
+   "drawn_milestone": 1
+  },
+  "g013": {
+   "run": "noscaffold/run_01",
+   "path": "Flight.asat",
+   "kind": "attribute",
+   "milestone": 14,
+   "drawn_milestone": 5
+  },
+  "g014": {
+   "run": "single/run_03",
+   "path": "Flight.exit",
+   "kind": "attribute",
+   "milestone": 9,
+   "drawn_milestone": 9
+  },
+  "g015": {
+   "run": "single/run_03",
+   "path": "EventType",
+   "kind": "enumeration",
+   "milestone": 11,
+   "drawn_milestone": 9
+  },
+  "g016": {
+   "run": "multi/run_03",
+   "path": "FlightOperationalStatus",
+   "kind": "enumeration",
+   "milestone": 9,
+   "drawn_milestone": 16
+  },
+  "g017": {
+   "run": "multi/run_05",
+   "path": "Flight.tobt",
+   "kind": "attribute",
+   "milestone": 10,
+   "drawn_milestone": 10
+  },
+  "g018": {
+   "run": "noscaffold/run_02",
+   "path": "AirportCDMPlatform",
+   "kind": "class",
+   "milestone": 13,
+   "drawn_milestone": 13
+  },
+  "g019": {
+   "run": "multi/run_03",
+   "path": "AirTrafficControl->AirportCdmPartner [generalization]",
+   "kind": "relationship",
+   "milestone": 16,
+   "drawn_milestone": 10
+  },
+  "g020": {
+   "run": "single/run_05",
+   "path": "TimeQuantity.value",
+   "kind": "attribute",
+   "milestone": 11,
+   "drawn_milestone": 16
+  },
+  "g021": {
+   "run": "single_high/run_02",
+   "path": "Flight.isReadyWithin15MinOfEOBT()",
+   "kind": "operation",
+   "milestone": 1,
+   "drawn_milestone": 16
+  },
+  "g022": {
+   "run": "multi/run_05",
+   "path": "Exit->TimeQuantity [generalization]",
+   "kind": "relationship",
+   "milestone": 6,
+   "drawn_milestone": 6
+  },
+  "g023": {
+   "run": "multi/run_04",
+   "path": "TakeOffTime.prefix",
+   "kind": "attribute",
+   "milestone": 3,
+   "drawn_milestone": 3
+  },
+  "g024": {
+   "run": "single_high/run_04",
+   "path": "TSAT->TimeQuantity [generalization]",
+   "kind": "relationship",
+   "milestone": 10,
+   "drawn_milestone": 10
+  },
+  "g025": {
+   "run": "single/run_03",
+   "path": "Flight.direction",
+   "kind": "attribute",
+   "milestone": 1,
+   "drawn_milestone": 1
+  },
+  "g026": {
+   "run": "multi/run_05",
+   "path": "Ttot.calculateAtEobtMinus2Hr()",
+   "kind": "operation",
+   "milestone": 2,
+   "drawn_milestone": 5
+  },
+  "g027": {
+   "run": "single/run_03",
+   "path": "AircraftOperator.submitFlightPlan()",
+   "kind": "operation",
+   "milestone": 9,
+   "drawn_milestone": 9
+  },
+  "g028": {
+   "run": "noscaffold/run_01",
+   "path": "Flight.ardt",
+   "kind": "attribute",
+   "milestone": 12,
+   "drawn_milestone": 7
+  },
+  "g029": {
+   "run": "multi/run_03",
+   "path": "AircraftOperator",
+   "kind": "class",
+   "milestone": 4,
+   "drawn_milestone": 4
+  },
+  "g030": {
+   "run": "single_high/run_04",
+   "path": "TSATIssued.informPartnersOfTSAT()",
+   "kind": "operation",
+   "milestone": 10,
+   "drawn_milestone": 10
+  },
+  "g031": {
+   "run": "multi/run_02",
+   "path": "Flight->OffBlockTime [composition]",
+   "kind": "relationship",
+   "milestone": 7,
+   "drawn_milestone": 7
+  },
+  "g032": {
+   "run": "single/run_01",
+   "path": "AirportCDMPlatform.recordATOT()",
+   "kind": "operation",
+   "milestone": 7,
+   "drawn_milestone": 7
+  },
+  "g033": {
+   "run": "single/run_01",
+   "path": "DPIMessage->Message [generalization]",
+   "kind": "relationship",
+   "milestone": 1,
+   "drawn_milestone": 1
+  },
+  "g034": {
+   "run": "single/run_02",
+   "path": "Milestone.dataQuality",
+   "kind": "attribute",
+   "milestone": 15,
+   "drawn_milestone": 15
+  },
+  "g035": {
+   "run": "single_high/run_01",
+   "path": "Flight->TakeOffTime [association]",
+   "kind": "relationship",
+   "milestone": 4,
+   "drawn_milestone": 4
+  },
+  "g036": {
+   "run": "multi/run_05",
+   "path": "FinalApproachCheck->RadarSystem [dependency]",
+   "kind": "relationship",
+   "milestone": 5,
+   "drawn_milestone": 5
+  },
+  "g037": {
+   "run": "single_high/run_01",
+   "path": "Flight->LandingTime [association]",
+   "kind": "relationship",
+   "milestone": 3,
+   "drawn_milestone": 3
+  },
+  "g038": {
+   "run": "noscaffold/run_03",
+   "path": "AirportCDMPlatform.platformId",
+   "kind": "attribute",
+   "milestone": 1,
+   "drawn_milestone": 1
+  },
+  "g039": {
+   "run": "noscaffold/run_03",
+   "path": "Flight.ttot",
+   "kind": "attribute",
+   "milestone": 9,
+   "drawn_milestone": 9
+  },
+  "g040": {
+   "run": "single/run_03",
+   "path": "Flight.flightId",
+   "kind": "attribute",
+   "milestone": 6,
+   "drawn_milestone": 6
+  },
+  "g041": {
+   "run": "multi/run_01",
+   "path": "Milestone.ttotTolerance",
+   "kind": "attribute",
+   "milestone": 7,
+   "drawn_milestone": 11
+  },
+  "g042": {
+   "run": "single/run_02",
+   "path": "GroundHandler",
+   "kind": "class",
+   "milestone": 7,
+   "drawn_milestone": 7
+  },
+  "g043": {
+   "run": "noscaffold/run_03",
+   "path": "Flight.aibt",
+   "kind": "attribute",
+   "milestone": 13,
+   "drawn_milestone": 13
+  },
+  "g044": {
+   "run": "single/run_01",
+   "path": "AirportCDMPlatform",
+   "kind": "class",
+   "milestone": 14,
+   "drawn_milestone": 3
+  },
+  "g045": {
+   "run": "single_high/run_04",
+   "path": "Milestone.triggerDescription",
+   "kind": "attribute",
+   "milestone": 8,
+   "drawn_milestone": 5
+  },
+  "g046": {
+   "run": "single_high/run_05",
+   "path": "InBlockTime->TimeQuantity [generalization]",
+   "kind": "relationship",
+   "milestone": 2,
+   "drawn_milestone": 2
+  },
+  "g047": {
+   "run": "single_high/run_01",
+   "path": "TakeOff",
+   "kind": "class",
+   "milestone": 16,
+   "drawn_milestone": 16
+  },
+  "g048": {
+   "run": "single_high/run_03",
+   "path": "TimeQuantity",
+   "kind": "class",
+   "milestone": 9,
+   "drawn_milestone": 9
+  },
+  "g049": {
+   "run": "multi/run_02",
+   "path": "DpiMessage->NetworkOperations [association]",
+   "kind": "relationship",
+   "milestone": 3,
+   "drawn_milestone": 3
+  },
+  "g050": {
+   "run": "single_high/run_01",
+   "path": "AircraftOperator",
+   "kind": "class",
+   "milestone": 13,
+   "drawn_milestone": 13
+  },
+  "g051": {
+   "run": "multi/run_05",
+   "path": "Flight.asrt",
+   "kind": "attribute",
+   "milestone": 13,
+   "drawn_milestone": 9
+  },
+  "g052": {
+   "run": "single_high/run_05",
+   "path": "TurnRoundOperator.confirmFinalTOBT()",
+   "kind": "operation",
+   "milestone": 9,
+   "drawn_milestone": 6
+  },
+  "g053": {
+   "run": "single/run_01",
+   "path": "Flight.flightId",
+   "kind": "attribute",
+   "milestone": 10,
+   "drawn_milestone": 10
+  },
+  "g054": {
+   "run": "multi/run_02",
+   "path": "TimeQuantity.recordedAt",
+   "kind": "attribute",
+   "milestone": 15,
+   "drawn_milestone": 1
+  },
+  "g055": {
+   "run": "multi/run_05",
+   "path": "Flight.etot",
+   "kind": "attribute",
+   "milestone": 2,
+   "drawn_milestone": 16
+  },
+  "g056": {
+   "run": "multi/run_05",
+   "path": "Exot.value",
+   "kind": "attribute",
+   "milestone": 15,
+   "drawn_milestone": 15
+  },
+  "g057": {
+   "run": "single_high/run_02",
+   "path": "NetworkOperations.issueCTOT()",
+   "kind": "operation",
+   "milestone": 3,
+   "drawn_milestone": 3
+  },
+  "g058": {
+   "run": "single/run_02",
+   "path": "NetworkOperations",
+   "kind": "class",
+   "milestone": 15,
+   "drawn_milestone": 15
+  },
+  "g059": {
+   "run": "single_high/run_04",
+   "path": "Milestone->AirportCDMPlatform [dependency]",
+   "kind": "relationship",
+   "milestone": 14,
+   "drawn_milestone": 3
+  },
+  "g060": {
+   "run": "single_high/run_02",
+   "path": "InBlockTime",
+   "kind": "class",
+   "milestone": 4,
+   "drawn_milestone": 4
+  },
+  "g061": {
+   "run": "single_high/run_03",
+   "path": "Flight->TakeOffTime [composition]",
+   "kind": "relationship",
+   "milestone": 16,
+   "drawn_milestone": 15
+  },
+  "g062": {
+   "run": "single_high/run_02",
+   "path": "TakeOffTime.calculateTTOT()",
+   "kind": "operation",
+   "milestone": 3,
+   "drawn_milestone": 6
+  },
+  "g063": {
+   "run": "multi/run_04",
+   "path": "OffBlockTime.timeOfUpdate",
+   "kind": "attribute",
+   "milestone": 6,
+   "drawn_milestone": 6
+  },
+  "g064": {
+   "run": "noscaffold/run_02",
+   "path": "DPIMessage->NetworkOperations [association]",
+   "kind": "relationship",
+   "milestone": 10,
+   "drawn_milestone": 10
+  },
+  "g065": {
+   "run": "multi/run_04",
+   "path": "InBlockTime",
+   "kind": "class",
+   "milestone": 6,
+   "drawn_milestone": 6
+  },
+  "g066": {
+   "run": "noscaffold/run_02",
+   "path": "FlightPlan.eobt",
+   "kind": "attribute",
+   "milestone": 1,
+   "drawn_milestone": 1
+  },
+  "g067": {
+   "run": "noscaffold/run_03",
+   "path": "NetworkOperations.sendFum()",
+   "kind": "operation",
+   "milestone": 3,
+   "drawn_milestone": 1
+  },
+  "g068": {
+   "run": "multi/run_03",
+   "path": "TurnRound->DurationEstimate [aggregation]",
+   "kind": "relationship",
+   "milestone": 7,
+   "drawn_milestone": 7
+  },
+  "g069": {
+   "run": "multi/run_04",
+   "path": "OffBlockTime.accuracy",
+   "kind": "attribute",
+   "milestone": 6,
+   "drawn_milestone": 6
+  },
+  "g070": {
+   "run": "single_high/run_03",
+   "path": "AirportCDMPlatform.evaluateTobtConfirmationNeeded()",
+   "kind": "operation",
+   "milestone": 9,
+   "drawn_milestone": 6
+  },
+  "g071": {
+   "run": "single/run_03",
+   "path": "Flight.sobt",
+   "kind": "attribute",
+   "milestone": 9,
+   "drawn_milestone": 5
+  },
+  "g072": {
+   "run": "single/run_05",
+   "path": "Milestone.effect",
+   "kind": "attribute",
+   "milestone": 10,
+   "drawn_milestone": 10
+  },
+  "g073": {
+   "run": "multi/run_05",
+   "path": "AirportCDMPlatform.commenceDpiProcess()",
+   "kind": "operation",
+   "milestone": 1,
+   "drawn_milestone": 3
+  },
+  "g074": {
+   "run": "multi/run_01",
+   "path": "Flight->TimeQuantity [composition]",
+   "kind": "relationship",
+   "milestone": 8,
+   "drawn_milestone": 8
+  },
+  "g075": {
+   "run": "noscaffold/run_01",
+   "path": "MovementMessage.messageType",
+   "kind": "attribute",
+   "milestone": 16,
+   "drawn_milestone": 16
+  },
+  "g076": {
+   "run": "multi/run_05",
+   "path": "Flight.asbt",
+   "kind": "attribute",
+   "milestone": 11,
+   "drawn_milestone": 11
+  },
+  "g077": {
+   "run": "multi/run_01",
+   "path": "Flight.minimumTurnRoundTime",
+   "kind": "attribute",
+   "milestone": 3,
+   "drawn_milestone": 7
+  },
+  "g078": {
+   "run": "multi/run_05",
+   "path": "Eldt->TimeQuantity [generalization]",
+   "kind": "relationship",
+   "milestone": 3,
+   "drawn_milestone": 3
+  },
+  "g079": {
+   "run": "single/run_01",
+   "path": "EXOT",
+   "kind": "class",
+   "milestone": 9,
+   "drawn_milestone": 9
+  },
+  "g080": {
+   "run": "single/run_05",
+   "path": "TakeOff.removeFromDepartureSequence()",
+   "kind": "operation",
+   "milestone": 16,
+   "drawn_milestone": 16
+  },
+  "g081": {
+   "run": "single/run_03",
+   "path": "Milestone.milestoneName",
+   "kind": "attribute",
+   "milestone": 14,
+   "drawn_milestone": 14
+  },
+  "g082": {
+   "run": "single/run_02",
+   "path": "FinalConfirmationOfTobt->Milestone [generalization]",
+   "kind": "relationship",
+   "milestone": 9,
+   "drawn_milestone": 9
+  },
+  "g083": {
+   "run": "multi/run_02",
+   "path": "NetworkOperations",
+   "kind": "class",
+   "milestone": 3,
+   "drawn_milestone": 3
+  },
+  "g084": {
+   "run": "single_high/run_04",
+   "path": "Flight.direction",
+   "kind": "attribute",
+   "milestone": 16,
+   "drawn_milestone": 16
+  },
+  "g085": {
+   "run": "noscaffold/run_01",
+   "path": "ATCUnit",
+   "kind": "class",
+   "milestone": 4,
+   "drawn_milestone": 5
+  },
+  "g086": {
+   "run": "single_high/run_05",
+   "path": "TurnRoundOperator->OffBlockTime [dependency]",
+   "kind": "relationship",
+   "milestone": 4,
+   "drawn_milestone": 4
+  },
+  "g087": {
+   "run": "single_high/run_02",
+   "path": "Flight->TakeOffTime [association]",
+   "kind": "relationship",
+   "milestone": 9,
+   "drawn_milestone": 9
+  },
+  "g088": {
+   "run": "single_high/run_01",
+   "path": "Flight.regulated",
+   "kind": "attribute",
+   "milestone": 2,
+   "drawn_milestone": 3
+  },
+  "g089": {
+   "run": "multi/run_02",
+   "path": "DpiMessage->NetworkOperations [association]",
+   "kind": "relationship",
+   "milestone": 10,
+   "drawn_milestone": 10
+  },
+  "g090": {
+   "run": "single/run_03",
+   "path": "ActualTime->TimeQuantity [generalization]",
+   "kind": "relationship",
+   "milestone": 12,
+   "drawn_milestone": 12
+  },
+  "g091": {
+   "run": "single_high/run_02",
+   "path": "OffBlockTime",
+   "kind": "class",
+   "milestone": 9,
+   "drawn_milestone": 9
+  },
+  "g092": {
+   "run": "multi/run_01",
+   "path": "AircraftOperator->Flight [association]",
+   "kind": "relationship",
+   "milestone": 1,
+   "drawn_milestone": 1
+  },
+  "g093": {
+   "run": "single_high/run_01",
+   "path": "Flight.operationalStatus",
+   "kind": "attribute",
+   "milestone": 9,
+   "drawn_milestone": 14
+  },
+  "g094": {
+   "run": "noscaffold/run_02",
+   "path": "Milestone.timestamp",
+   "kind": "attribute",
+   "milestone": 13,
+   "drawn_milestone": 8
+  },
+  "g095": {
+   "run": "single_high/run_04",
+   "path": "GroundHandler",
+   "kind": "class",
+   "milestone": 4,
+   "drawn_milestone": 4
+  },
+  "g096": {
+   "run": "multi/run_01",
+   "path": "Flight.updateOperationalStatus()",
+   "kind": "operation",
+   "milestone": 9,
+   "drawn_milestone": 12
+  },
+  "g097": {
+   "run": "single/run_01",
+   "path": "Aircrew->AirportCDMPartner [generalization]",
+   "kind": "relationship",
+   "milestone": 12,
+   "drawn_milestone": 12
+  },
+  "g098": {
+   "run": "single/run_05",
+   "path": "Aerodrome.coordinated",
+   "kind": "attribute",
+   "milestone": 1,
+   "drawn_milestone": 1
+  },
+  "g099": {
+   "run": "multi/run_01",
+   "path": "MilestoneTakeOffFromOutstation.calculateTTOT()",
+   "kind": "operation",
+   "milestone": 3,
+   "drawn_milestone": 3
+  },
+  "g100": {
+   "run": "single_high/run_01",
+   "path": "TimePrefix",
+   "kind": "enumeration",
+   "milestone": 3,
+   "drawn_milestone": 3
+  },
+  "g101": {
+   "run": "single/run_05",
+   "path": "Milestone.effect",
+   "kind": "attribute",
+   "milestone": 2,
+   "drawn_milestone": 2
+  },
+  "g102": {
+   "run": "noscaffold/run_03",
+   "path": "AtcUnit.issueTsat()",
+   "kind": "operation",
+   "milestone": 10,
+   "drawn_milestone": 5
+  },
+  "g103": {
+   "run": "single_high/run_01",
+   "path": "Milestone",
+   "kind": "class",
+   "milestone": 14,
+   "drawn_milestone": 14
+  },
+  "g104": {
+   "run": "multi/run_03",
+   "path": "TimeQuantity.recordedAt",
+   "kind": "attribute",
+   "milestone": 1,
+   "drawn_milestone": 1
+  },
+  "g105": {
+   "run": "multi/run_04",
+   "path": "FinalApproachMilestone->RadarSystem [dependency]",
+   "kind": "relationship",
+   "milestone": 5,
+   "drawn_milestone": 5
+  },
+  "g106": {
+   "run": "multi/run_04",
+   "path": "OffBlockTime",
+   "kind": "class",
+   "milestone": 5,
+   "drawn_milestone": 5
+  },
+  "g107": {
+   "run": "noscaffold/run_02",
+   "path": "Flight.etot",
+   "kind": "attribute",
+   "milestone": 8,
+   "drawn_milestone": 8
+  },
+  "g108": {
+   "run": "noscaffold/run_03",
+   "path": "Flight.eobt",
+   "kind": "attribute",
+   "milestone": 10,
+   "drawn_milestone": 16
+  },
+  "g109": {
+   "run": "single/run_01",
+   "path": "Flight.asat",
+   "kind": "attribute",
+   "milestone": 14,
+   "drawn_milestone": 1
+  },
+  "g110": {
+   "run": "single/run_04",
+   "path": "MilestoneEvent",
+   "kind": "class",
+   "milestone": 4,
+   "drawn_milestone": 3
+  },
+  "g111": {
+   "run": "noscaffold/run_02",
+   "path": "Flight.aldt",
+   "kind": "attribute",
+   "milestone": 3,
+   "drawn_milestone": 3
+  },
+  "g112": {
+   "run": "single/run_04",
+   "path": "MilestoneEvent->Flight [dependency]",
+   "kind": "relationship",
+   "milestone": 4,
+   "drawn_milestone": 2
+  },
+  "g113": {
+   "run": "noscaffold/run_03",
+   "path": "AirportSlot.slotId",
+   "kind": "attribute",
+   "milestone": 1,
+   "drawn_milestone": 1
+  },
+  "g114": {
+   "run": "multi/run_01",
+   "path": "AirportCDMPlatform.recordAOBT()",
+   "kind": "operation",
+   "milestone": 15,
+   "drawn_milestone": 4
+  },
+  "g115": {
+   "run": "multi/run_05",
+   "path": "Flight.aibt",
+   "kind": "attribute",
+   "milestone": 2,
+   "drawn_milestone": 2
+  },
+  "g116": {
+   "run": "single_high/run_01",
+   "path": "OffBlockTime",
+   "kind": "class",
+   "milestone": 2,
+   "drawn_milestone": 2
+  },
+  "g117": {
+   "run": "single_high/run_05",
+   "path": "AirportCDMPlatform.recordTOBTConfirmation()",
+   "kind": "operation",
+   "milestone": 15,
+   "drawn_milestone": 15
+  },
+  "g118": {
+   "run": "single_high/run_03",
+   "path": "FlightStatus",
+   "kind": "enumeration",
+   "milestone": 12,
+   "drawn_milestone": 15
+  },
+  "g119": {
+   "run": "multi/run_04",
+   "path": "BoardingStartsMilestone.checkBoardingStatus()",
+   "kind": "operation",
+   "milestone": 11,
+   "drawn_milestone": 11
+  },
+  "g120": {
+   "run": "single/run_04",
+   "path": "MilestoneEvent",
+   "kind": "class",
+   "milestone": 4,
+   "drawn_milestone": 10
+  },
+  "g121": {
+   "run": "noscaffold/run_02",
+   "path": "ATCUnit->FlightPlan [association]",
+   "kind": "relationship",
+   "milestone": 1,
+   "drawn_milestone": 1
+  },
+  "g122": {
+   "run": "single_high/run_02",
+   "path": "TimeQuantity.prefix",
+   "kind": "attribute",
+   "milestone": 11,
+   "drawn_milestone": 11
+  },
+  "g123": {
+   "run": "multi/run_05",
+   "path": "Flight.ardt",
+   "kind": "attribute",
+   "milestone": 13,
+   "drawn_milestone": 13
+  },
+  "g124": {
+   "run": "single_high/run_02",
+   "path": "Flight.boardingTime",
+   "kind": "attribute",
+   "milestone": 11,
+   "drawn_milestone": 1
+  },
+  "g125": {
+   "run": "multi/run_02",
+   "path": "StandGateManagement",
+   "kind": "class",
+   "milestone": 9,
+   "drawn_milestone": 9
+  },
+  "g126": {
+   "run": "multi/run_05",
+   "path": "Flight.etot",
+   "kind": "attribute",
+   "milestone": 2,
+   "drawn_milestone": 14
+  },
+  "g127": {
+   "run": "multi/run_02",
+   "path": "AircraftOperator->Landed [association]",
+   "kind": "relationship",
+   "milestone": 6,
+   "drawn_milestone": 6
+  },
+  "g128": {
+   "run": "single_high/run_03",
+   "path": "FlightPlanActivated.confirmFlightToNetworkOperations()",
+   "kind": "operation",
+   "milestone": 1,
+   "drawn_milestone": 1
+  },
+  "g129": {
+   "run": "single/run_02",
+   "path": "AirportSlot",
+   "kind": "class",
+   "milestone": 1,
+   "drawn_milestone": 1
+  },
+  "g130": {
+   "run": "single_high/run_03",
+   "path": "TimeValue.accuracy",
+   "kind": "attribute",
+   "milestone": 4,
+   "drawn_milestone": 4
+  },
+  "g131": {
+   "run": "single/run_04",
+   "path": "MilestoneEvent.milestoneNumber",
+   "kind": "attribute",
+   "milestone": 4,
+   "drawn_milestone": 5
+  },
+  "g132": {
+   "run": "noscaffold/run_02",
+   "path": "OperationalStatus",
+   "kind": "enumeration",
+   "milestone": 9,
+   "drawn_milestone": 14
+  },
+  "g133": {
+   "run": "single/run_02",
+   "path": "AtcFlightPlanActivated.checkConsistency()",
+   "kind": "operation",
+   "milestone": 1,
+   "drawn_milestone": 1
+  },
+  "g134": {
+   "run": "multi/run_04",
+   "path": "TobtCheckMilestone.checkTobtConsistency()",
+   "kind": "operation",
+   "milestone": 9,
+   "drawn_milestone": 9
+  },
+  "g135": {
+   "run": "multi/run_04",
+   "path": "OffBlockTime.accuracy",
+   "kind": "attribute",
+   "milestone": 9,
+   "drawn_milestone": 9
+  },
+  "g136": {
+   "run": "noscaffold/run_01",
+   "path": "Flight.destinationAerodrome",
+   "kind": "attribute",
+   "milestone": 1,
+   "drawn_milestone": 10
+  },
+  "g137": {
+   "run": "multi/run_04",
+   "path": "GroundHandlingTime.timeOfUpdate",
+   "kind": "attribute",
+   "milestone": 8,
+   "drawn_milestone": 8
+  },
+  "g138": {
+   "run": "multi/run_05",
+   "path": "Flight.eobt",
+   "kind": "attribute",
+   "milestone": 3,
+   "drawn_milestone": 3
+  },
+  "g139": {
+   "run": "multi/run_03",
+   "path": "AtcFlightPlanActivation",
+   "kind": "class",
+   "milestone": 1,
+   "drawn_milestone": 1
+  },
+  "g140": {
+   "run": "single/run_05",
+   "path": "Milestone->Flight [association]",
+   "kind": "relationship",
+   "milestone": 16,
+   "drawn_milestone": 2
+  },
+  "g141": {
+   "run": "single/run_02",
+   "path": "Flight",
+   "kind": "class",
+   "milestone": 10,
+   "drawn_milestone": 10
+  },
+  "g142": {
+   "run": "single_high/run_03",
+   "path": "Flight.groundHandlingTime",
+   "kind": "attribute",
+   "milestone": 8,
+   "drawn_milestone": 8
+  },
+  "g143": {
+   "run": "single/run_01",
+   "path": "AirportCDMPlatform->Milestone [association]",
+   "kind": "relationship",
+   "milestone": 14,
+   "drawn_milestone": 9
+  },
+  "g144": {
+   "run": "multi/run_05",
+   "path": "EtfmsSystem",
+   "kind": "class",
+   "milestone": 3,
+   "drawn_milestone": 3
+  },
+  "g145": {
+   "run": "noscaffold/run_03",
+   "path": "Flight.ardt",
+   "kind": "attribute",
+   "milestone": 12,
+   "drawn_milestone": 7
+  },
+  "g146": {
+   "run": "noscaffold/run_03",
+   "path": "DpiMessage.timestamp",
+   "kind": "attribute",
+   "milestone": 3,
+   "drawn_milestone": 3
+  },
+  "g147": {
+   "run": "multi/run_04",
+   "path": "TobtCheckMilestone.informNetworkOperationsOfTtotChange()",
+   "kind": "operation",
+   "milestone": 6,
+   "drawn_milestone": 6
+  },
+  "g148": {
+   "run": "multi/run_01",
+   "path": "Flight.estimatedTurnRoundTime",
+   "kind": "attribute",
+   "milestone": 8,
+   "drawn_milestone": 16
+  },
+  "g149": {
+   "run": "noscaffold/run_01",
+   "path": "AirportCDMPlatform.notifyPartners()",
+   "kind": "operation",
+   "milestone": 12,
+   "drawn_milestone": 9
+  },
+  "g150": {
+   "run": "single/run_02",
+   "path": "TimeQuantity.calculateEldtFromAtot()",
+   "kind": "operation",
+   "milestone": 3,
+   "drawn_milestone": 10
+  },
+  "g151": {
+   "run": "multi/run_03",
+   "path": "NetworkOperations->AirportCdmPartner [generalization]",
+   "kind": "relationship",
+   "milestone": 15,
+   "drawn_milestone": 10
+  },
+  "g152": {
+   "run": "single/run_04",
+   "path": "Flight.direction",
+   "kind": "attribute",
+   "milestone": 1,
+   "drawn_milestone": 1
+  },
+  "g153": {
+   "run": "single_high/run_05",
+   "path": "AircraftReadyMilestone->Milestone [generalization]",
+   "kind": "relationship",
+   "milestone": 12,
+   "drawn_milestone": 12
+  },
+  "g154": {
+   "run": "single/run_01",
+   "path": "ELDT",
+   "kind": "class",
+   "milestone": 2,
+   "drawn_milestone": 2
+  },
+  "g155": {
+   "run": "single_high/run_05",
+   "path": "TimeQuantity.recordedAt",
+   "kind": "attribute",
+   "milestone": 15,
+   "drawn_milestone": 12
+  },
+  "g156": {
+   "run": "single/run_04",
+   "path": "TimeQuantity.calculateEIBT()",
+   "kind": "operation",
+   "milestone": 9,
+   "drawn_milestone": 2
+  },
+  "g157": {
+   "run": "noscaffold/run_02",
+   "path": "Flight.ctot",
+   "kind": "attribute",
+   "milestone": 2,
+   "drawn_milestone": 9
+  },
+  "g158": {
+   "run": "multi/run_03",
+   "path": "Milestone.resultingStatus",
+   "kind": "attribute",
+   "milestone": 9,
+   "drawn_milestone": 9
+  },
+  "g159": {
+   "run": "single_high/run_04",
+   "path": "Flight.destinationAerodrome",
+   "kind": "attribute",
+   "milestone": 1,
+   "drawn_milestone": 15
+  },
+  "g160": {
+   "run": "single/run_03",
+   "path": "Flight.tobt",
+   "kind": "attribute",
+   "milestone": 8,
+   "drawn_milestone": 1
+  },
+  "g161": {
+   "run": "single_high/run_01",
+   "path": "ACARS->Flight [dependency]",
+   "kind": "relationship",
+   "milestone": 16,
+   "drawn_milestone": 15
+  },
+  "g162": {
+   "run": "multi/run_05",
+   "path": "AirportCDMPlatform.initiateForFlight()",
+   "kind": "operation",
+   "milestone": 1,
+   "drawn_milestone": 3
+  },
+  "g163": {
+   "run": "noscaffold/run_03",
+   "path": "Flight->OperationalStatus [association]",
+   "kind": "relationship",
+   "milestone": 9,
+   "drawn_milestone": 10
+  },
+  "g164": {
+   "run": "single/run_04",
+   "path": "MilestoneEvent",
+   "kind": "class",
+   "milestone": 4,
+   "drawn_milestone": 7
+  },
+  "g165": {
+   "run": "multi/run_05",
+   "path": "Eobt",
+   "kind": "class",
+   "milestone": 1,
+   "drawn_milestone": 1
+  },
+  "g166": {
+   "run": "single_high/run_03",
+   "path": "TimeValue.accuracy",
+   "kind": "attribute",
+   "milestone": 11,
+   "drawn_milestone": 2
+  },
+  "g167": {
+   "run": "single_high/run_02",
+   "path": "TakeOffTime",
+   "kind": "class",
+   "milestone": 1,
+   "drawn_milestone": 1
+  },
+  "g168": {
+   "run": "multi/run_03",
+   "path": "TakeOffFromOutstation->Milestone [generalization]",
+   "kind": "relationship",
+   "milestone": 3,
+   "drawn_milestone": 3
+  },
+  "g169": {
+   "run": "multi/run_04",
+   "path": "FinalApproachMilestone",
+   "kind": "class",
+   "milestone": 5,
+   "drawn_milestone": 5
+  },
+  "g170": {
+   "run": "multi/run_03",
+   "path": "InBlockTime",
+   "kind": "class",
+   "milestone": 7,
+   "drawn_milestone": 7
+  },
+  "g171": {
+   "run": "single/run_02",
+   "path": "AircraftOperator",
+   "kind": "class",
+   "milestone": 5,
+   "drawn_milestone": 5
+  },
+  "g172": {
+   "run": "single_high/run_05",
+   "path": "AirportCDMPlatform->Milestone [dependency]",
+   "kind": "relationship",
+   "milestone": 14,
+   "drawn_milestone": 9
+  },
+  "g173": {
+   "run": "single_high/run_01",
+   "path": "Flight.updateOperationalStatus()",
+   "kind": "operation",
+   "milestone": 9,
+   "drawn_milestone": 9
+  },
+  "g174": {
+   "run": "single_high/run_02",
+   "path": "StartUpApprovalTime",
+   "kind": "class",
+   "milestone": 13,
+   "drawn_milestone": 13
+  },
+  "g175": {
+   "run": "single/run_02",
+   "path": "Milestone.dataQuality",
+   "kind": "attribute",
+   "milestone": 8,
+   "drawn_milestone": 8
+  },
+  "g176": {
+   "run": "single/run_04",
+   "path": "Flight.flightId",
+   "kind": "attribute",
+   "milestone": 11,
+   "drawn_milestone": 11
+  },
+  "g177": {
+   "run": "single/run_03",
+   "path": "AtcSystem.systemType",
+   "kind": "attribute",
+   "milestone": 16,
+   "drawn_milestone": 16
+  },
+  "g178": {
+   "run": "single_high/run_01",
+   "path": "Flight->BoardingTime [association]",
+   "kind": "relationship",
+   "milestone": 11,
+   "drawn_milestone": 11
+  },
+  "g179": {
+   "run": "noscaffold/run_01",
+   "path": "MilestoneProcess.milestoneNumber",
+   "kind": "attribute",
+   "milestone": 4,
+   "drawn_milestone": 11
+  },
+  "g180": {
+   "run": "single_high/run_04",
+   "path": "ELDT->TimeQuantity [generalization]",
+   "kind": "relationship",
+   "milestone": 1,
+   "drawn_milestone": 1
+  },
+  "g181": {
+   "run": "single/run_04",
+   "path": "RadarSystem",
+   "kind": "class",
+   "milestone": 5,
+   "drawn_milestone": 5
+  },
+  "g182": {
+   "run": "multi/run_02",
+   "path": "TimeQuantity.recordedAt",
+   "kind": "attribute",
+   "milestone": 16,
+   "drawn_milestone": 16
+  },
+  "g183": {
+   "run": "single/run_04",
+   "path": "Flight.direction",
+   "kind": "attribute",
+   "milestone": 9,
+   "drawn_milestone": 9
+  },
+  "g184": {
+   "run": "noscaffold/run_01",
+   "path": "Flight.eobt",
+   "kind": "attribute",
+   "milestone": 10,
+   "drawn_milestone": 11
+  },
+  "g185": {
+   "run": "single_high/run_05",
+   "path": "OffBlockMilestone->Milestone [generalization]",
+   "kind": "relationship",
+   "milestone": 15,
+   "drawn_milestone": 15
+  },
+  "g186": {
+   "run": "multi/run_01",
+   "path": "TimeQuantity",
+   "kind": "class",
+   "milestone": 12,
+   "drawn_milestone": 12
+  },
+  "g187": {
+   "run": "multi/run_03",
+   "path": "DurationEstimate",
+   "kind": "class",
+   "milestone": 2,
+   "drawn_milestone": 2
+  },
+  "g188": {
+   "run": "single_high/run_05",
+   "path": "ATCSystem.detectFlight()",
+   "kind": "operation",
+   "milestone": 4,
+   "drawn_milestone": 4
+  },
+  "g189": {
+   "run": "noscaffold/run_03",
+   "path": "AirportCDMPlatform.initiateFlight()",
+   "kind": "operation",
+   "milestone": 1,
+   "drawn_milestone": 11
+  },
+  "g190": {
+   "run": "single_high/run_05",
+   "path": "AirTrafficControl.confirmTSATToPilot()",
+   "kind": "operation",
+   "milestone": 13,
+   "drawn_milestone": 14
+  },
+  "g191": {
+   "run": "multi/run_02",
+   "path": "AirTrafficControlUnit->TakeOff [association]",
+   "kind": "relationship",
+   "milestone": 16,
+   "drawn_milestone": 16
+  },
+  "g192": {
+   "run": "single/run_01",
+   "path": "Flight.aibt",
+   "kind": "attribute",
+   "milestone": 7,
+   "drawn_milestone": 7
+  },
+  "g193": {
+   "run": "noscaffold/run_01",
+   "path": "Flight.ttot",
+   "kind": "attribute",
+   "milestone": 8,
+   "drawn_milestone": 8
+  },
+  "g194": {
+   "run": "single/run_05",
+   "path": "AirportCDMPlatform.updateELDTAndEIBTForArrival()",
+   "kind": "operation",
+   "milestone": 1,
+   "drawn_milestone": 1
+  },
+  "g195": {
+   "run": "multi/run_01",
+   "path": "AircraftOperator.submitFlightPlan()",
+   "kind": "operation",
+   "milestone": 1,
+   "drawn_milestone": 15
+  },
+  "g196": {
+   "run": "multi/run_02",
+   "path": "AircraftOperator.provideFlightData()",
+   "kind": "operation",
+   "milestone": 1,
+   "drawn_milestone": 10
+  },
+  "g197": {
+   "run": "single_high/run_03",
+   "path": "TimeQuantity.values",
+   "kind": "attribute",
+   "milestone": 11,
+   "drawn_milestone": 14
+  },
+  "g198": {
+   "run": "single/run_03",
+   "path": "TsatIssued.tobtUpdateThreshold",
+   "kind": "attribute",
+   "milestone": 10,
+   "drawn_milestone": 10
+  },
+  "g199": {
+   "run": "single_high/run_05",
+   "path": "AirportCDMPlatform.updateDepartureEstimates()",
+   "kind": "operation",
+   "milestone": 1,
+   "drawn_milestone": 5
+  },
+  "g200": {
+   "run": "single_high/run_03",
+   "path": "Flight.boardingTime",
+   "kind": "attribute",
+   "milestone": 11,
+   "drawn_milestone": 3
+  }
+ }
+}

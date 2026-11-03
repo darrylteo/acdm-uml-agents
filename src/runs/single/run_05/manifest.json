@@ -1,0 +1,36 @@
+{
+  "condition": "single",
+  "steps": [
+    {
+      "ok": true,
+      "output": null,
+      "error": null,
+      "model": "claude-sonnet-5",
+      "input_tokens": 13509,
+      "output_tokens": 35354,
+      "thinking_tokens": 16849,
+      "cache_creation_tokens": 13507,
+      "cache_read_tokens": 0,
+      "cost_usd": 0.407572,
+      "duration_ms": 264777,
+      "attempts": 1,
+      "num_turns": 2
+    }
+  ],
+  "ok": true,
+  "model_alias": "claude-sonnet-5",
+  "effort": "medium",
+  "validation_errors": [],
+  "structural_problems": [],
+  "unmodelled": [
+    "The DPI process, if implemented, commences correct messaging with Network Operations as detailed in attachment 2, which is not further specified in this text (m1).",
+    "The section 3.7.3 referenced for further DPI process detail is not available in this text (m1).",
+    "Passengers may be pre-called to the gate via flight information display systems (FIDS) or public address systems, distinct from and prior to the actual boarding start milestone (m11).",
+    "The roles of Dispatcher, Supervisor or Redcap coordinating with the pilot before start-up request are named without further defined responsibilities (m12).",
+    "Start-up request by flight crew may occur via voice or DCL (Data link Clearance), a distinction the document does not further elaborate (m14)."
+  ],
+  "total_input_tokens": 13509,
+  "total_output_tokens": 35354,
+  "total_cost_usd": 0.407572,
+  "total_duration_ms": 264777
+}

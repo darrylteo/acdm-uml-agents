@@ -1,0 +1,47 @@
+# Milestone 8: Ground Handling Started
+
+The section, split into sentences. The field name precedes each field; the id precedes each sentence.
+
+
+## Definition
+
+[M8.definition.1] Commence of Ground Handling Operations (ACGT).
+[M8.definition.2] Note: this milestone is specific to flights that are the first operation of the day or that have been long term parked.
+[M8.definition.3] For flights that are on a normal turn-round ACGT is considered to commence at AIBT.
+
+## Origin and priority
+
+[M8.origin_and_priority.1] Aircraft Operator / Ground Handler will provide the information.
+
+## Timing
+
+[M8.timing.1] The information is directly available after occurrence of the milestone.
+
+## Data Quality
+
+[M8.data_quality.1] Data is available with an accuracy of +/- 1 minute.
+
+## Effect
+
+[M8.effect.1] The occurrence of ACGT triggers an update of downstream estimates: TOBT is updated automatically or inserted manually by the Aircraft Operator / Ground Handler, calculated on the basis of the estimated turn-round period for the departing flight.
+
+## Procedures
+
+[M8.procedures.1] To check whether the AO/GH TOBT is consistent with the ATC Flight Plan.
+[M8.procedures.2] Network Operations is informed when the TTOT changes by more than the agreed TTOT tolerance.
+[M8.procedures.3] This check shall be performed to verify feasibility of the ATC Flight Plan given the updated TOBT or ATC Flight Plan.
+[M8.procedures.4] A TTOT tolerance is respected before Network Operations is informed on updated TTOT.
+[M8.procedures.5] This process is triggered by
+[M8.procedures.6] - Actual Commence of Ground Handling: ACGT
+
+## Operational Status
+
+[M8.operational_status.1] IN-BLOCK
+
+## Action on CDM Operation
+
+[M8.action_on_cdm.1] ETTT/TOBT, TTOT updated
+
+# Task
+
+Return every sentence with keep or drop, a reason, and the claims of each kept sentence, as JSON conforming to the schema.

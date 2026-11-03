@@ -1,0 +1,110 @@
+{
+  "meta": {
+    "ok": true,
+    "output": null,
+    "error": null,
+    "model": "claude-sonnet-5",
+    "input_tokens": 28787,
+    "output_tokens": 3219,
+    "thinking_tokens": 2514,
+    "cache_creation_tokens": 26462,
+    "cache_read_tokens": 2323,
+    "cost_usd": 0.1385066,
+    "duration_ms": 25853,
+    "attempts": 1,
+    "num_turns": 2
+  },
+  "output": {
+    "items": [
+      {
+        "id": "c004",
+        "grade": 1,
+        "elements": [
+          "StartUpApproved->DepartureClearanceMessage",
+          "StartUpApproved.checkAsatAgainstTsat()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c015",
+        "grade": 1,
+        "elements": [
+          "GroundHandlingStarted.updateTobt()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c026",
+        "grade": 1,
+        "elements": [
+          "FlightPlanActivation.updateTimingsOnActivation()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c046",
+        "grade": 1,
+        "elements": [
+          "BoardingStarts.boardingCheckOffset"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c064",
+        "grade": 1,
+        "elements": [
+          "AirTrafficControlUnit->AircraftReady"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c078",
+        "grade": 1,
+        "elements": [
+          "TobtFeasibilityCheckMilestone.checkTobtConsistency()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c079",
+        "grade": 0.5,
+        "elements": [
+          "FlightPlanActivation.checkConsistency()",
+          "FlightPlanActivation->AirportCdmPlatform"
+        ],
+        "note": "near: checks specific data, not stated as processing all available info generally"
+      },
+      {
+        "id": "c088",
+        "grade": 1,
+        "elements": [
+          "StartUpApproved.tsatTolerance"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c135",
+        "grade": 1,
+        "elements": [
+          "GroundHandlingStarted.updateTobt()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c143",
+        "grade": 1,
+        "elements": [
+          "TobtFeasibilityCheckMilestone.informNetworkOperationsIfTtotChanged()",
+          "TobtFeasibilityCheckMilestone->NetworkOperations"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c170",
+        "grade": 0,
+        "elements": [],
+        "note": "looked for ATC operation assuring CTOT respected; only NetworkOperations.issueCtot and TSAT-related ops found, none tie ATC to assuring CTOT compliance"
+      }
+    ]
+  }
+}

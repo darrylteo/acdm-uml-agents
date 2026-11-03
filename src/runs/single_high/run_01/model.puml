@@ -1,0 +1,369 @@
+@startuml
+top to bottom direction
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam nodesep 30
+skinparam ranksep 40
+skinparam class {
+  BackgroundColor<<entity>> #F1F8E9
+  BackgroundColor<<boundary>> #E3F2FD
+  BackgroundColor<<control>> #FFF3E0
+  BorderColor #555555
+}
+skinparam packageStyle rectangle
+hide empty members
+
+package "Stakeholders" {
+  class Stakeholder << (E,#C8E6C9) entity >> [[{A party that takes part in the CDM process and originates or receives flight information. [M1, M2, M3, M4, M5, M6, M7, M8, M9, M10, M11, M12, M13, M14, M15, M16]}]] {
+    +name : String [[{The identifying name of the stakeholder.}]]
+  }
+  class AircraftOperator << (E,#C8E6C9) entity >> [[{The airline (AO) responsible for operating the flight, submitting the ATC Flight Plan, and providing TOBT and other turn-round estimates. [M1, M3, M4, M5, M6, M7, M8, M9, M11, M12, M13, M14]}]] {
+    +provideTOBT(flight : Flight, value : DateTime) : void [[{The AO/GH provides the TOBT, calculated on the basis of the estimated/defined turn-round period, updated automatically or inserted manually (milestones 6,7,8).}]]
+    +computeTOBTStrategy(flight : Flight) : DateTime [[{The Aircraft Operator integrates his own strategy to compute a TOBT related to the flight, providing the most accurate TOBT taking into account the operational situation (milestone 9).}]]
+  }
+  class GroundHandler << (E,#C8E6C9) entity >> [[{The party (GH), possibly including dispatcher/supervisor roles, that manages the turn-round process in coordination with the aircrew and provides TOBT and ready status. [M6, M7, M8, M9, M10, M11, M12, M13]}]] {
+    +manageTurnRoundProcess(flight : Flight) : void [[{The Ground Handler, in coordination with the aircrew, manages the turn-round process following TOBT confirmation and TSAT issue (milestones 9,10).}]]
+  }
+  class AirTrafficControl << (E,#C8E6C9) entity >> [[{The air traffic control units (ATS units, Area Control Centre, Approach Control Unit, Tower) that provide radar detection, issue TSAT/start-up approval, and manage the pre-departure sequence. [M1, M4, M5, M9, M10, M12, M13, M14, M15, M16]}]] {
+    +issueTSAT(flight : Flight, t : Duration) : DateTime [[{ATC issues the Target Start Up Approval Time t minutes before EOBT, a locally agreed parameter (milestone 10).}]]
+    +approveStartUp(flight : Flight) : void [[{ATC gives the aircraft its start up approval / push-back clearance (milestone 14).}]]
+    +establishPushBackSequence(flight : Flight) : void [[{An accurate TOBT at EOBT-t minutes is a pre-requisite for ATC to establish a push back / pre-departure sequence (milestone 9).}]]
+    +calculateEXOT(flight : Flight) : Duration [[{Following receipt of TOBT, the ATC system calculates and provides the Estimated Taxi-Out Time based on the predicted traffic load, gate/stand location, runway in use, and waiting period at the Holding Position (milestone 9).}]]
+    +refineSequence(flight : Flight) : void [[{ATC refines the pre-departure sequence once the aircraft is ready (milestone 12).}]]
+    +confirmTSATToPilot(flight : Flight) : void [[{ATC confirms TSAT to the pilot in order to maintain the aircraft in the pre-departure sequence (milestone 13).}]]
+    +reSequenceFlight(flight : Flight) : void [[{If start-up approval is not granted at TSAT+tolerance, the flight is re-sequenced (milestone 14).}]]
+  }
+  class NetworkOperations << (E,#C8E6C9) entity >> [[{The network operations function that issues CTOT for regulated flights, monitors flight progress, and receives DPI/FUM messages. [M1, M2, M3, M4, M5, M6, M7, M8, M9, M10, M15]}]] {
+    +issueCTOT(flight : Flight) : DateTime [[{If the flight is regulated, Network Operations issues a CTOT at EOBT-2h, sent to relevant ATS units and the departure aerodrome; CTOT flights usually have priority over unregulated flights (milestone 2).}]]
+    +monitorFlightProgress(flight : Flight) : void [[{Within 3 hours flying time of the destination, Network Operations monitors progress of the flight using ETFMS and sends a Flight Update Message (milestone 3).}]]
+  }
+  class AirportOperator << (E,#C8E6C9) entity >> [[{The airport authority / stand-gate management function responsible for the airport slot programme and airport flight data. [M1, M4]}]] {
+  }
+  class Aircrew << (E,#C8E6C9) entity >> [[{The flight crew (pilot) that requests start-up and coordinates with the Ground Handler. [M12, M13, M14]}]] {
+    +requestStartUp(flight : Flight) : void [[{The pilot requests start up just before TSAT, following coordination with the Ground Handler, by voice or DCL (milestones 12,13,14).}]]
+  }
+}
+
+package "Flights" {
+  class Flight << (E,#C8E6C9) entity >> [[{A single flight movement, arriving or departing, tracked through the sixteen milestones of the CDM turn-round process. [M1, M2, M3, M4, M5, M6, M7, M8, M9, M10, M11, M12, M13, M14, M15, M16]}]] {
+    +aircraftRegistration : String [[{The registration of the aircraft operating the flight, confirmed via the ATC Flight Plan (milestone 1).}]]
+    +direction : FlightDirection [[{Whether the flight is the arriving or departing flight of a turn-round (milestone 1).}]]
+    +operationalStatus : FlightOperationalStatus [[{The current operational status of the flight, changed at each milestone (e.g. INITIATED, AIRBORNE, FIR, FINAL, LANDED, IN-BLOCK, SEQUENCED, BOARDING, READY, OFF-BLOCK, DEPARTED / TAKE OFF).}]]
+    +regulated : Boolean [[{Whether the flight is regulated and has received a CTOT; regulated flights usually have priority over unregulated flights (milestone 2).}]]
+    +flightReadyTime : Duration [[{The flight is ready not later than 15 minutes after the planned EOBT (milestone 1).}]]
+    +updateOperationalStatus(newStatus : FlightOperationalStatus) : void [[{Changes the flight's operational status as each milestone occurs.}]]
+  }
+  class TurnRound << (E,#C8E6C9) entity >> [[{The turn-round of an aircraft, which normally includes an arriving and a departing flight. [M1, M4, M6, M7, M8]}]] {
+    +minimumTurnRoundTime : Duration [[{MTTT, the minimum/estimated turn-round period used as the basis for TOBT/TTOT calculation, e.g. EIBT+MTTT+EXOT (milestones 2,3,6,7,8).}]]
+  }
+  class ATCFlightPlan << (E,#C8E6C9) entity >> [[{The ICAO flight plan submitted to ATC and distributed by IFPS, describing the flight's aerodromes and estimates, corresponding to the airport slot programme. [M1, M2, M3, M4, M5, M6, M7, M8, M9]}]] {
+    +type : FlightPlanType [[{Whether this is a standard flight plan or a repetitive flight plan (RFPL) covering daily or weekly flights (milestone 1).}]]
+    +departureAerodrome : String [[{The departure aerodrome (ADEP) of the flight (milestone 1).}]]
+    +destinationAerodrome : String [[{The destination aerodrome of the flight (milestone 1).}]]
+    +sobt : OffBlockTime [[{The Scheduled Off-Block Time that must be consistent before the first E-DPI is sent (milestone 1).}]]
+  }
+  class AirportSlot << (E,#C8E6C9) entity >> [[{The airport slot programme entry that the ATC Flight Plan must correspond to. [M1]}]] {
+    +coordinationStatus : SlotCoordinationStatus [[{Whether the airport is coordinated (outbound flight already known) or non-coordinated (flight plan used to initiate the outbound flight) (milestone 1).}]]
+  }
+  class Aircraft << (E,#C8E6C9) entity >> [[{The aircraft assigned to operate the flight, whose type may be updated from the flight plan. [M1]}]] {
+    +registration : String [[{The aircraft registration (milestone 1).}]]
+    +aircraftType : String [[{The type of aircraft, which the flight plan may be used to update (milestone 1).}]]
+  }
+  class AirportFlightData << (E,#C8E6C9) entity >> [[{The airport's own flight data record checked for consistency against the ATC Flight Plan and Airport Slot. [M1]}]] {
+    +gateStandAllocation : String [[{The airport's recorded gate/stand information for the flight, checked for consistency (milestone 1).}]]
+  }
+  enum FlightOperationalStatus [[{[M1, M3, M4, M5, M6, M7, M8, M9, M10, M11, M12, M15, M16]}]] {
+    INITIATED
+    AIRBORNE
+    FIR
+    FINAL
+    LANDED
+    IN_BLOCK
+    SEQUENCED
+    BOARDING
+    READY
+    OFF_BLOCK
+    DEPARTED_TAKE_OFF
+  }
+  enum FlightPlanType [[{[M1]}]] {
+    STANDARD
+    RFPL
+  }
+  enum SlotCoordinationStatus [[{[M1]}]] {
+    COORDINATED
+    NON_COORDINATED
+  }
+  enum FlightDirection [[{[M1]}]] {
+    ARRIVAL
+    DEPARTURE
+  }
+}
+
+package "Timings" {
+  class TimeQuantity << (E,#C8E6C9) entity >> [[{A time value describing a flight's progress, carrying its prefix, origin, accuracy, and update time; every successive value is kept rather than overwritten so a turn-round can be analysed afterwards. [M1, M2, M3, M4, M5, M6, M7, M8, M9, M10, M11, M12, M13, M14, M15, M16]}]] {
+    +value : DateTime [[{The time value itself.}]]
+    +prefix : TimePrefix [[{Whether this is the scheduled, estimated, target, actual, or calculated value of the event.}]]
+    +originator : String [[{Who or what system provided this value, e.g. ATC, AO/GH, ACARS, ATC system.}]]
+    +accuracy : String [[{The stated accuracy of the value, e.g. actual times are available with an accuracy of +/- 1 minute.}]]
+    +updateTime : DateTime [[{The time this value was recorded.}]]
+    +recordValue(value : DateTime, originator : String, timestamp : DateTime) : void [[{Appends a new time value with its originator and time of update, rather than overwriting the previous value, so the turn-round can be analysed afterwards.}]]
+  }
+  class OffBlockTime << (E,#C8E6C9) entity >> [[{The scheduled (SOBT), estimated (EOBT), target (TOBT), or actual (AOBT) off-block time of a flight. [M1, M2, M3, M4, M6, M7, M8, M9, M10, M15]}]] {
+    +toleranceWindow : Duration [[{The locally agreed tolerance window applied to TOBT, e.g. checked t minutes before EOBT, or TSAT/TOBT update tolerance windows (milestones 9,10).}]]
+  }
+  class InBlockTime << (E,#C8E6C9) entity >> [[{The estimated (EIBT) or actual (AIBT) in-block time of an arriving flight. [M1, M2, M3, M4, M5, M6, M7]}]] {
+    +calculateEIBT(eldt : LandingTime, exit : TaxiInTime) : DateTime [[{EIBT is computed using the ELDT and the estimated taxi-in time EXIT (milestone 4); EIBT can also be updated according to ALDT+EXIT (milestone 6).}]]
+  }
+  class LandingTime << (E,#C8E6C9) entity >> [[{The estimated (ELDT) or actual (ALDT) landing time of an arriving flight. [M1, M2, M3, M4, M5, M6]}]] {
+    +calculateELDT(atot : TakeOffTime, estimatedElapsedTime : Duration) : DateTime [[{Using the ATOT, an ELDT can be calculated by using the Estimated Elapsed Time on the FPL (milestone 3).}]]
+  }
+  class TakeOffTime << (E,#C8E6C9) entity >> [[{The estimated (ETOT), target (TTOT), calculated (CTOT), or actual (ATOT) take-off time of a departing flight. [M1, M2, M3, M4, M5, M6, M7, M8, M9, M10, M15, M16]}]] {
+    +calculateTTOT(eibt : InBlockTime, mttt : Duration, exot : TaxiOutTime, eobt : OffBlockTime, tobt : OffBlockTime) : DateTime [[{Calculation basis for TTOT takes into account EIBT+MTTT+EXOT, if later than EOBT+EXOT (milestone 2); in case EOBT is later than EIBT+MTTT, TTOT equals EOBT+EXOT (milestone 3); in the case of manual input of TOBT, this estimate overrides the EIBT+MTTT estimate, hence TTOT equals TOBT+EXOT (milestones 2,3).}]]
+  }
+  class StartUpApprovalTime << (E,#C8E6C9) entity >> [[{The target (TSAT) or actual (ASAT) start-up approval time. [M10, M14]}]] {
+  }
+  class StartUpRequestTime << (E,#C8E6C9) entity >> [[{The actual start-up request time (ASRT). [M13]}]] {
+  }
+  class ReadyTime << (E,#C8E6C9) entity >> [[{The actual ready time (ARDT), when all doors are closed and the aircraft is ready to taxi upon reception of TWR instructions. [M12]}]] {
+  }
+  class BoardingTime << (E,#C8E6C9) entity >> [[{The actual start boarding time (ASBT), when the gate opens for passengers to physically start boarding. [M11]}]] {
+  }
+  class GroundHandlingTime << (E,#C8E6C9) entity >> [[{The actual commence ground handling time (ACGT); for a normal turn-round ACGT is considered to commence at AIBT, but this milestone applies specifically to first-operation-of-day or long-term parked flights. [M7, M8]}]] {
+  }
+  class TaxiOutTime << (E,#C8E6C9) entity >> [[{The estimated taxi-out time (EXOT), calculated by ATC based on predicted traffic load, gate/stand location, runway in use, and waiting period at the Holding Position. [M2, M3, M9]}]] {
+    +duration : Duration [[{The estimated taxi-out duration used in TTOT calculation (EOBT+EXOT, TOBT+EXOT).}]]
+  }
+  class TaxiInTime << (E,#C8E6C9) entity >> [[{The estimated taxi-in time (EXIT) used to compute the estimated in-block time. [M4, M6]}]] {
+    +duration : Duration [[{The estimated taxi-in duration used in EIBT calculation (ELDT+EXIT, ALDT+EXIT).}]]
+  }
+  enum TimePrefix [[{[M1, M2, M3, M4, M5, M6, M7, M8, M9, M10, M11, M12, M13, M14, M15, M16]}]] {
+    SCHEDULED
+    ESTIMATED
+    TARGET
+    ACTUAL
+    CALCULATED
+  }
+}
+
+package "Milestones" {
+  class Milestone << (C,#FFE0B2) control >> [[{One of the sixteen defined events of the CDM turn-round process, each with a trigger, timing rule, effect, and procedure. [M1, M2, M3, M4, M5, M6, M7, M8, M9, M10, M11, M12, M13, M14, M15, M16]}]] {
+    +definition : String [[{The document's definition of the milestone.}]]
+    +trigger : String [[{What triggers this milestone's procedure, as stated under Procedures.}]]
+    +timingRule : String [[{When the milestone normally occurs, as stated under Timing.}]]
+    +effect : String [[{The effect described for the milestone.}]]
+    +resultingStatus : FlightOperationalStatus [[{The operational status the flight changes to at this milestone.}]]
+    +occur(flight : Flight, timestamp : DateTime) : void [[{Records the occurrence of the milestone for the flight and changes its operational status.}]]
+    +informPartners(flight : Flight) : void [[{Informs all relevant Airport CDM Partners, a step stated under most milestones' procedures.}]]
+  }
+  class FlightPlanActivated << (C,#FFE0B2) control >> [[{Milestone 1: the ICAO flight plan is submitted to ATC and the Airport CDM Platform is initiated for the flight. [M1]}]] {
+    +checkConsistency(flightPlan : ATCFlightPlan, slot : AirportSlot, flightData : AirportFlightData) : Boolean [[{Checks consistency between the ATC Flight Plan, Airport Slot, and Airport flight data before the first E-DPI is sent.}]]
+    +confirmFlightToNetworkOperations(flight : Flight) : void [[{Confirms the flight to Network Operations and allows further local processing of the flight.}]]
+    +sendFirstEDPI(flight : Flight) : void [[{Feeds Network Operations with consistent SOBT, aircraft registration, and first destination data; the E-DPI message should not be sent if no or inconsistent information is provided.}]]
+  }
+  class EOBTMinus2Hours << (C,#FFE0B2) control >> [[{Milestone 2: at EOBT-2hr most flights are known and all regulated flights receive a CTOT from Network Operations. [M2]}]] {
+    +checkFlightEstimatesConsistency(flight : Flight) : Boolean [[{Checks whether AO/GH flight estimates are consistent with the ATC Flight Plan, before or after take-off from outstation, to verify feasibility of the estimated off-block time at EOBT-2hrs.}]]
+    +sendFirstTDPI(flight : Flight) : void [[{Informs Network Operations about the updated take-off time estimate using a T-DPI message at EOBT-2hrs.}]]
+    +markAsRegulated(flight : Flight) : void [[{Marks appropriate fields as REGULATED for a flight that has received a CTOT.}]]
+  }
+  class TakeOffFromOutstation << (C,#FFE0B2) control >> [[{Milestone 3: the ATOT from the outstation (ADEP). [M3]}]] {
+    +checkLandingEstimateConsistency(flight : Flight) : Boolean [[{Checks whether the AO/GH estimated landing time after take-off from outstation is consistent with the outbound ATC Flight Plan.}]]
+    +sendTDPIt(flight : Flight) : void [[{When needed, informs Network Operations about updated take-off time estimates using a T-DPI-t message; a TTOT tolerance of 5 minutes is respected before informing.}]]
+  }
+  class LocalRadarUpdate << (C,#FFE0B2) control >> [[{Milestone 4: the flight enters the FIR or local airspace of the destination airport. [M4]}]] {
+    +commenceTOBTProcess(flight : Flight) : void [[{Commences the TOBT process and checks whether the AO/GH TOBT is consistent with the ATC Flight Plan given the updated ELDT.}]]
+    +notifyNetworkOperationsIfTTOTChanges(flight : Flight, tolerance : Duration) : void [[{Network Operations is informed when the TTOT changes by more than the agreed TTOT tolerance.}]]
+    +restrictStandGateChange(flight : Flight) : Boolean [[{Taking into account EXIT, any change to a stand or gate is not preferred after ELDT-30'.}]]
+  }
+  class FinalApproach << (C,#FFE0B2) control >> [[{Milestone 5: the flight enters the Final Approach phase at the destination airport, usually 2 to 5 minutes from landing. [M5]}]] {
+    +commenceTOBTProcess(flight : Flight) : void [[{Commences the TOBT process and checks whether the AO/GH TOBT is consistent with the ATC Flight Plan given the updated ELDT.}]]
+    +notifyNetworkOperationsIfTTOTChanges(flight : Flight, tolerance : Duration) : void [[{Network Operations is informed when the TTOT changes by more than the agreed TTOT tolerance.}]]
+  }
+  class Landed << (C,#FFE0B2) control >> [[{Milestone 6: ALDT, the time an aircraft touches down on a runway. [M6]}]] {
+    +recordALDT(flight : Flight, timestamp : DateTime) : void [[{ALDT triggers an update of downstream estimates: TOBT and TTOT updated automatically or inserted manually by AO/GH, calculated on the basis of the defined turn-round period; EIBT updated according to ALDT+EXIT.}]]
+    +checkTOBTConsistency(flight : Flight) : Boolean [[{Checks whether the AO/GH TOBT is consistent with the ATC Flight Plan given the updated TOBT or ATC Flight Plan.}]]
+    +notifyNetworkOperationsIfTTOTChanges(flight : Flight, tolerance : Duration) : void [[{Network Operations is informed when the TTOT changes by more than the agreed TTOT tolerance.}]]
+  }
+  class InBlock << (C,#FFE0B2) control >> [[{Milestone 7: AIBT, the time an aircraft arrives in-blocks. [M7]}]] {
+    +recordAIBT(flight : Flight, timestamp : DateTime) : void [[{AIBT triggers an update of downstream estimates: TOBT and TTOT updated automatically or inserted manually by AO/GH, calculated on the basis of the estimated turn-round period.}]]
+    +checkTOBTConsistency(flight : Flight) : Boolean [[{Checks whether the AO/GH TOBT is consistent with the ATC Flight Plan given the updated TOBT or ATC Flight Plan.}]]
+    +notifyNetworkOperationsIfTTOTChanges(flight : Flight, tolerance : Duration) : void [[{Network Operations is informed when the TTOT changes by more than the agreed TTOT tolerance.}]]
+  }
+  class GroundHandlingStarted << (C,#FFE0B2) control >> [[{Milestone 8: commencement of ground handling operations (ACGT), specific to first-operation-of-day or long-term parked flights. [M8]}]] {
+    +recordACGT(flight : Flight, timestamp : DateTime) : void [[{ACGT triggers an update of downstream estimates: TOBT updated automatically or inserted manually by AO/GH, calculated on the basis of the estimated turn-round period.}]]
+    +checkTOBTConsistency(flight : Flight) : Boolean [[{Checks whether the AO/GH TOBT is consistent with the ATC Flight Plan given the updated TOBT or ATC Flight Plan.}]]
+    +notifyNetworkOperationsIfTTOTChanges(flight : Flight, tolerance : Duration) : void [[{Network Operations is informed when the TTOT changes by more than the agreed TTOT tolerance.}]]
+  }
+  class FinalConfirmationOfTOBT << (C,#FFE0B2) control >> [[{Milestone 9: the time at which the Aircraft Operator or Ground Handler provide their most accurate TOBT, taking into account the operational situation. [M9]}]] {
+    +confirmTOBT(flight : Flight, t : Duration) : void [[{The AO/GH provide their most accurate TOBT t minutes before EOBT (t a locally agreed parameter), a pre-requisite for ATC to establish the pre-departure sequence prior to TSAT issue.}]]
+    +checkTOBTConsistency(flight : Flight) : Boolean [[{Checks whether the AO/GH TOBT is consistent with the ATC Flight Plan; performed at a predefined local time to confirm TOBT prior to TSAT issue.}]]
+    +notifyNetworkOperationsIfTTOTChanges(flight : Flight, tolerance : Duration) : void [[{Network Operations is informed when the TTOT changes by more than the agreed TTOT tolerance.}]]
+  }
+  class TSATIssued << (C,#FFE0B2) control >> [[{Milestone 10: the time ATC issues the Target Start Up Approval Time. [M10]}]] {
+    +issueTSAT(flight : Flight, t : Duration) : void [[{Informs all relevant partners of the TSAT allocated to the flight, t minutes before EOBT (a locally agreed parameter); stabilises the flight into the pre-departure sequence.}]]
+    +sendTDPIs(flight : Flight) : void [[{Network Operations is informed by a T-DPI-s for non-regulated flights.}]]
+    +checkTOBTUpdateCount(flight : Flight, threshold : Integer) : Boolean [[{Checks whether the number of TOBT updates after TSAT has been issued exceeds a locally defined threshold; if exceeded, the TOBT input is processed according to local procedure.}]]
+  }
+  class BoardingStarts << (C,#FFE0B2) control >> [[{Milestone 11: the gate is open for passengers to physically start boarding. [M11]}]] {
+    +recordASBT(flight : Flight, timestamp : DateTime) : void [[{Informs all relevant Airport CDM Partners of the Actual Start Boarding Time when it occurs.}]]
+    +checkBoardingStatus(flight : Flight, minutesBeforeTOBT : Duration) : Boolean [[{At a certain local time before TOBT (e.g. by aircraft type), checks whether boarding starts in time to respect TOBT and informs the AO/GH if TOBT needs to be updated.}]]
+  }
+  class AircraftReady << (C,#FFE0B2) control >> [[{Milestone 12: the time when all doors are closed, boarding bridge removed, push back vehicle connected, ready to taxi upon reception of TWR instructions (ARDT). [M12]}]] {
+    +recordARDT(flight : Flight, timestamp : DateTime) : void [[{Informs all relevant Airport CDM Partners of Actual Ready Time and that the aircraft is ready for start up / push-back.}]]
+    +checkReadyStatusReceived(flight : Flight, tolerance : Duration) : Boolean [[{At TOBT + tolerance, informs the AO/GH that TOBT has passed and the Airport CDM Platform has not yet received ARDT or Ready Status (RDY).}]]
+  }
+  class StartUpRequested << (C,#FFE0B2) control >> [[{Milestone 13: the time that start up is requested (ASRT), based on pilot request. [M13]}]] {
+    +recordASRT(flight : Flight, timestamp : DateTime) : void [[{Informs all relevant Airport CDM Partners of Actual Start-up Request Time when it occurs.}]]
+    +alertIfNoStartUpRequested(flight : Flight, tsatTolerance : Duration) : Boolean [[{If the start-up request is not made by TSAT + tolerance, informs the AO/GH that no start-up has been requested, and that TOBT should be updated.}]]
+  }
+  class StartUpApproved << (C,#FFE0B2) control >> [[{Milestone 14: ASAT, the time an aircraft receives its start up approval. [M14]}]] {
+    +recordASAT(flight : Flight, timestamp : DateTime) : void [[{Informs all relevant Airport CDM Partners of Actual start up approval Time and that the aircraft has received start up / push-back clearance.}]]
+    +checkASATAgainstTSAT(flight : Flight, tolerance : Duration) : Boolean [[{Checks if ASAT is in accordance with TSAT; if start-up approval is not granted at TSAT + tolerance, all relevant partners are informed and the flight is re-sequenced.}]]
+  }
+  class OffBlock << (C,#FFE0B2) control >> [[{Milestone 15: AOBT, the time the aircraft pushes back / vacates the parking position. [M15]}]] {
+    +recordAOBT(flight : Flight, timestamp : DateTime) : void [[{Informs all relevant Airport CDM Partners of Actual Off-Block Time and that the aircraft has commenced push-back / taxi from parking position.}]]
+    +sendADPI(flight : Flight) : void [[{AOBT always triggers an A-DPI message to Network Operations, or in the case of remote holding at a defined time prior to TTOT.}]]
+    +checkTTOTChangeAndNotify(flight : Flight, tolerance : Duration) : void [[{After the first A-DPI is sent, checks TTOT updates against the TTOT tolerance before informing Network Operations, with a new A-DPI, of the updated TTOT.}]]
+  }
+  class TakeOff << (C,#FFE0B2) control >> [[{Milestone 16: ATOT, the time an aircraft takes off from the runway. [M16]}]] {
+    +recordATOT(flight : Flight, timestamp : DateTime) : void [[{Informs all relevant Airport CDM Partners about the actual take off, triggered by Tower FDPS, A-SMGCS / Radar detection or ACARS.}]]
+    +generateAirborneMessage(flight : Flight) : void [[{An airborne message is generated and the flight is removed from the departure sequence.}]]
+    +sendFSAAndMVT(flight : Flight) : void [[{FSA and MVT messages are sent.}]]
+  }
+}
+
+package "Systems" {
+  class AirportCDMPlatform << (C,#FFE0B2) control >> [[{The central platform that is initiated for each flight, processes all available information, and holds the CDM operation actions performed at each milestone. [M1, M2, M3, M4, M5, M6, M7, M8, M9, M10, M11, M12, M13, M14, M15, M16]}]] {
+    +initiated : Boolean [[{Whether the platform has been initiated for the flight (milestone 1).}]]
+    +initiateForFlight(flight : Flight) : void [[{The Airport CDM Platform is initiated for this flight, and all available information is processed (milestone 1).}]]
+    +updateField(flight : Flight, fieldName : String, value : DateTime) : void [[{Updates fields such as ELDT, EIBT, ETOT, TOBT, TTOT, AOBT, ATOT as listed under each milestone's Action on CDM Operation.}]]
+    +markFieldAsRegulated(flight : Flight) : void [[{Marks appropriate fields as REGULATED (milestone 2).}]]
+  }
+  class ATCSystem << (B,#BBDEFB) boundary >> [[{The ATC/radar system, including A-SMGCS and Tower FDPS, that detects a flight crossing FIR/TMA boundaries or levels using its assigned SSR code, and provides ALDT, AIBT, AOBT, and ATOT. [M3, M4, M5, M6, M7, M15, M16]}]] {
+    +detectFlight(flight : Flight) : DateTime [[{Detects a flight based upon the assigned SSR code when it crosses a defined FIR/ATC boundary (milestone 4) or a defined range/position or level on Final Approach (milestone 5).}]]
+  }
+  class ACARS << (B,#BBDEFB) boundary >> [[{The aircraft's ACARS system that reports ON/OFF/OUT/IN events, providing ATOT, ALDT, AIBT, and AOBT. [M6, M7, M15, M16]}]] {
+  }
+  class ETFMS << (B,#BBDEFB) boundary >> [[{Network Operations' system used to monitor the progress of a flight within 3 hours flying time of the destination and to generate Flight Update Messages. [M3]}]] {
+  }
+  class IFPS << (B,#BBDEFB) boundary >> [[{The system that distributes the ATC Flight Plan to all involved ATC units, including departure and destination aerodromes. [M1]}]] {
+  }
+  class DPIProcess << (C,#FFE0B2) control >> [[{The messaging process that commences correct DPI messaging with Network Operations following flight plan activation. [M1]}]] {
+    +commenceMessaging(flight : Flight) : void [[{The DPI process commences the correct messaging with Network Operations, if implemented (milestone 1).}]]
+  }
+}
+
+package "Messages" {
+  class Message << (B,#BBDEFB) boundary >> [[{A message exchanged between stakeholders and systems in the CDM process. [M1, M2, M3, M10, M15, M16]}]] {
+    +sender : String [[{The party or system that sent the message.}]]
+    +timestamp : DateTime [[{When the message was sent.}]]
+    +content : String [[{The content carried by the message.}]]
+  }
+  class DPIMessage << (B,#BBDEFB) boundary >> [[{A Departure Planning Information message sent to Network Operations at defined points of the process. [M1, M2, M3, M10, M15]}]] {
+    +dpiType : DPIType [[{Which kind of DPI message this is: E-DPI, T-DPI, T-DPI-t, T-DPI-s, or A-DPI.}]]
+  }
+  class FUM << (B,#BBDEFB) boundary >> [[{The Flight Update Message sent by Network Operations providing updates of the flight's progress. [M2, M3]}]] {
+  }
+  class MVTMessage << (B,#BBDEFB) boundary >> [[{The movement message sent when a flight takes off. [M16]}]] {
+  }
+  class FSAMessage << (B,#BBDEFB) boundary >> [[{The FSA message sent when a flight takes off. [M16]}]] {
+  }
+  class AirborneMessage << (B,#BBDEFB) boundary >> [[{The airborne message generated when the flight departs, after which the flight is removed from the departure sequence. [M16]}]] {
+  }
+  enum DPIType [[{[M1, M2, M3, M10, M15]}]] {
+    E_DPI
+    T_DPI
+    T_DPI_T
+    T_DPI_S
+    A_DPI
+  }
+}
+
+Message <|-- AirborneMessage [[{[M16]}]]
+Message <|-- DPIMessage [[{[M1]}]]
+Message <|-- FSAMessage [[{[M16]}]]
+Message <|-- FUM [[{[M2]}]]
+Message <|-- MVTMessage [[{[M16]}]]
+Milestone <|-- AircraftReady [[{[M12]}]]
+Milestone <|-- BoardingStarts [[{[M11]}]]
+Milestone <|-- EOBTMinus2Hours [[{[M2]}]]
+Milestone <|-- FinalApproach [[{[M5]}]]
+Milestone <|-- FinalConfirmationOfTOBT [[{[M9]}]]
+Milestone <|-- FlightPlanActivated [[{[M1]}]]
+Milestone <|-- GroundHandlingStarted [[{[M8]}]]
+Milestone <|-- InBlock [[{[M7]}]]
+Milestone <|-- Landed [[{[M6]}]]
+Milestone <|-- LocalRadarUpdate [[{[M4]}]]
+Milestone <|-- OffBlock [[{[M15]}]]
+Milestone <|-- StartUpApproved [[{[M14]}]]
+Milestone <|-- StartUpRequested [[{[M13]}]]
+Milestone <|-- TSATIssued [[{[M10]}]]
+Milestone <|-- TakeOff [[{[M16]}]]
+Milestone <|-- TakeOffFromOutstation [[{[M3]}]]
+Stakeholder <|-- AirTrafficControl [[{[M1]}]]
+Stakeholder <|-- AircraftOperator [[{[M1]}]]
+Stakeholder <|-- Aircrew [[{[M12]}]]
+Stakeholder <|-- AirportOperator [[{[M1]}]]
+Stakeholder <|-- GroundHandler [[{[M6]}]]
+Stakeholder <|-- NetworkOperations [[{[M1]}]]
+TimeQuantity <|-- BoardingTime [[{[M11]}]]
+TimeQuantity <|-- GroundHandlingTime [[{[M8]}]]
+TimeQuantity <|-- InBlockTime [[{[M1]}]]
+TimeQuantity <|-- LandingTime [[{[M1]}]]
+TimeQuantity <|-- OffBlockTime [[{[M1]}]]
+TimeQuantity <|-- ReadyTime [[{[M12]}]]
+TimeQuantity <|-- StartUpApprovalTime [[{[M10]}]]
+TimeQuantity <|-- StartUpRequestTime [[{[M13]}]]
+TimeQuantity <|-- TakeOffTime [[{[M1]}]]
+
+Flight "1" -- "1" ATCFlightPlan : described by [[{[M1]}]]
+Flight "1" -- "0..1" AirportSlot : corresponds to [[{[M1]}]]
+Flight "1" -- "1" Aircraft : operated by [[{[M1]}]]
+Flight "1" -- "1" AirportFlightData : has [[{[M1]}]]
+TurnRound "1" o-- "1..2" Flight : includes [[{[M1]}]]
+Flight "1" -- "0..*" OffBlockTime : has [[{[M1, M2, M3, M6, M7, M8, M9, M10, M15]}]]
+Flight "1" -- "0..*" InBlockTime : has [[{[M1, M2, M3, M4, M6, M7]}]]
+Flight "1" -- "0..*" LandingTime : has [[{[M1, M2, M3, M4, M5, M6]}]]
+Flight "1" -- "0..*" TakeOffTime : has [[{[M1, M2, M3, M4, M5, M6, M7, M8, M9, M10, M15, M16]}]]
+Flight "1" -- "0..*" StartUpApprovalTime : has [[{[M10, M14]}]]
+Flight "1" -- "0..1" StartUpRequestTime : has [[{[M13]}]]
+Flight "1" -- "0..1" ReadyTime : has [[{[M12]}]]
+Flight "1" -- "0..1" BoardingTime : has [[{[M11]}]]
+Flight "1" -- "0..1" GroundHandlingTime : has [[{[M8]}]]
+Flight "1" -- "0..1" TaxiOutTime : has [[{[M2, M3, M9]}]]
+Flight "1" -- "0..1" TaxiInTime : has [[{[M4, M6]}]]
+ATCFlightPlan "0..*" -- "1" AircraftOperator : submitted by [[{[M1]}]]
+ATCFlightPlan ..> IFPS : distributed by [[{[M1]}]]
+NetworkOperations "1" -- "0..*" Flight : issues CTOT to [[{[M2]}]]
+AirTrafficControl ..> StartUpApprovalTime : issues TSAT / approves ASAT [[{[M10, M14]}]]
+AirTrafficControl ..> TaxiOutTime : calculates EXOT for [[{[M9]}]]
+Aircrew ..> StartUpRequestTime : requests [[{[M13]}]]
+AircraftOperator ..> OffBlockTime : provides TOBT [[{[M6, M7, M8, M9]}]]
+GroundHandler ..> OffBlockTime : provides TOBT [[{[M6, M7, M8, M9]}]]
+AirportCDMPlatform "1" -- "0..*" Flight : initiated for / holds data of [[{[M1, M2, M3, M4, M5, M6, M7, M8, M9, M10, M11, M12, M13, M14, M15, M16]}]]
+Milestone ..> Flight : acts on [[{[M1, M2, M3, M4, M5, M6, M7, M8, M9, M10, M11, M12, M13, M14, M15, M16]}]]
+Milestone ..> AirportCDMPlatform : updates fields on [[{[M1, M2, M3, M4, M5, M6, M7, M8, M9, M10, M11, M12, M13, M14, M15, M16]}]]
+DPIProcess ..> NetworkOperations : sends messages to [[{[M1]}]]
+FlightPlanActivated ..> DPIMessage : sends E-DPI [[{[M1]}]]
+EOBTMinus2Hours ..> DPIMessage : sends T-DPI [[{[M2]}]]
+TakeOffFromOutstation ..> DPIMessage : sends T-DPI-t [[{[M3]}]]
+TSATIssued ..> DPIMessage : sends T-DPI-s [[{[M10]}]]
+OffBlock ..> DPIMessage : sends A-DPI [[{[M15]}]]
+NetworkOperations ..> FUM : sends [[{[M2, M3]}]]
+ETFMS ..> FUM : generates [[{[M3]}]]
+TakeOff ..> MVTMessage : sends [[{[M16]}]]
+TakeOff ..> FSAMessage : sends [[{[M16]}]]
+TakeOff ..> AirborneMessage : generates [[{[M16]}]]
+ATCSystem ..> Flight : detects / reports times for [[{[M3, M4, M5, M6, M7, M15, M16]}]]
+ACARS ..> Flight : reports times for [[{[M6, M7, M15, M16]}]]
+Message "1" -- "1..*" Stakeholder : exchanged with [[{[M1, M2, M3, M4, M5, M6, M7, M8, M9, M10, M11, M12, M13, M14, M15, M16]}]]
+
+legend right
+  |= Notation |= Meaning |
+  | A --|> B | A is a subclass of B (generalization); B drawn above A |
+  | A -- B | association; end labels are multiplicities (1, 0..1, *, 1..*) |
+  | A *-- B | composition: B is a part of A |
+  | A o-- B | aggregation: B is grouped by A |
+  | A ..> B | dependency: A uses B |
+  | (E) (B) (C) | entity, boundary, control (Jacobson) |
+endlegend
+@enduml

@@ -1,0 +1,37 @@
+{
+  "condition": "single",
+  "steps": [
+    {
+      "ok": true,
+      "output": null,
+      "error": null,
+      "model": "claude-sonnet-5",
+      "input_tokens": 13511,
+      "output_tokens": 54475,
+      "thinking_tokens": 33540,
+      "cache_creation_tokens": 13509,
+      "cache_read_tokens": 0,
+      "cost_usd": 0.59879,
+      "duration_ms": 412544,
+      "attempts": 1,
+      "num_turns": 2
+    }
+  ],
+  "ok": true,
+  "model_alias": "claude-sonnet-5",
+  "effort": "high",
+  "validation_errors": [],
+  "structural_problems": [],
+  "unmodelled": [
+    "Milestone 8's Action on CDM Operation mentions 'ETTT' among the fields updated, without further definition elsewhere in the document (milestone 8).",
+    "Milestone 12's Effect parenthetically notes coordination with a Dispatcher / Supervisor / Redcap role, without further description of this role (milestone 12).",
+    "Milestone 11 distinguishes actual boarding start from passengers being pre-called to the gate via flight information display systems (FIDS) or public address systems, which is not otherwise described (milestone 11).",
+    "Milestone 14 notes that a start-up request may be made by the flight crew via voice or DCL (datalink clearance), without further definition of a DCL message (milestone 14).",
+    "Milestone 4's Effect notes that decisions such as the turn-round period and connecting passengers need to be 'stable' at this event, without stating a further rule to model (milestone 4).",
+    "Milestone 9's Effect notes that the main benefits of sharing TOBT are expected in case of disruptions (internal or external), without stating a further rule to model (milestone 9)."
+  ],
+  "total_input_tokens": 13511,
+  "total_output_tokens": 54475,
+  "total_cost_usd": 0.59879,
+  "total_duration_ms": 412544
+}

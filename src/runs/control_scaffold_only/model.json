@@ -1,0 +1,654 @@
+{
+  "packages": [
+    {
+      "name": "Stakeholders",
+      "description": "the parties that take part in the process and originate or receive its information."
+    },
+    {
+      "name": "Flights",
+      "description": "the flight, turn-round, aircraft, and the flight plan and slot that describe them, including the flight's operational status."
+    },
+    {
+      "name": "Timings",
+      "description": "the time quantities that describe a flight's progress, each with its origin, accuracy, and tolerance."
+    },
+    {
+      "name": "Milestones",
+      "description": "the sixteen events, each with its trigger, timing rule, effect, and procedure."
+    },
+    {
+      "name": "Systems",
+      "description": "the technical systems that hold, compute, and display the process information, including the CDM platform and its actions."
+    },
+    {
+      "name": "Messages",
+      "description": "the messages exchanged between stakeholders and systems."
+    }
+  ],
+  "classes": [
+    {
+      "name": "AtcDeparturePlanningInformationMessage",
+      "package": "Messages",
+      "stereotype": "boundary",
+      "definition": "ATC Departure Planning Information message",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "AdvancedSurfaceMovementGuidanceAndControlSystem",
+      "package": "Systems",
+      "stereotype": "boundary",
+      "definition": "Advanced Surface Movement Guidance and Control System",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "AircraftCommunicationsAddressingAndReportingSystem",
+      "package": "Systems",
+      "stereotype": "boundary",
+      "definition": "Aircraft Communications Addressing and Reporting System",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "AreaControlCentre",
+      "package": "Systems",
+      "stereotype": "boundary",
+      "definition": "Area Control Centre",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "ActualCommenceOfGroundHandlingTime",
+      "package": "Timings",
+      "stereotype": "entity",
+      "definition": "Actual Commence of Ground Handling Time",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "AirportCdmInformationSharingPlatform",
+      "package": "Systems",
+      "stereotype": "boundary",
+      "definition": "Airport CDM Information Sharing Platform",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "ActualEndOfGroundHandlingTime",
+      "package": "Timings",
+      "stereotype": "entity",
+      "definition": "Actual End of Ground handling Time",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "ActualGroundHandlingTime",
+      "package": "Timings",
+      "stereotype": "entity",
+      "definition": "Actual Ground Handling Time",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "ActualInBlockTime",
+      "package": "Timings",
+      "stereotype": "entity",
+      "definition": "Actual In-Block Time",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "ActualLandingTime",
+      "package": "Timings",
+      "stereotype": "entity",
+      "definition": "Actual Landing Time",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "ArrivalManager",
+      "package": "Flights",
+      "stereotype": "entity",
+      "definition": "Arrival Manager",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "AirNavigationServiceProvider",
+      "package": "Stakeholders",
+      "stereotype": "entity",
+      "definition": "Air Navigation Service Provider",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "AircraftOperator",
+      "package": "Stakeholders",
+      "stereotype": "entity",
+      "definition": "Aircraft Operator",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "ActualOffBlockTime",
+      "package": "Timings",
+      "stereotype": "entity",
+      "definition": "Actual Off-Block Time",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "ApproachControlUnit",
+      "package": "Stakeholders",
+      "stereotype": "entity",
+      "definition": "Approach Control Unit",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "ActualReadyTime",
+      "package": "Timings",
+      "stereotype": "entity",
+      "definition": "Actual Ready Time",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "ActualStartUpApprovalTime",
+      "package": "Timings",
+      "stereotype": "entity",
+      "definition": "Actual Start Up Approval Time",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "ActualStartBoardingTime",
+      "package": "Timings",
+      "stereotype": "entity",
+      "definition": "Actual Start Boarding Time",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "ActualStartUpRequestTime",
+      "package": "Timings",
+      "stereotype": "entity",
+      "definition": "Actual Start Up Request Time",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "ActualTimeOfArrival",
+      "package": "Timings",
+      "stereotype": "entity",
+      "definition": "Actual Time of Arrival",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "AirTrafficControl",
+      "package": "Stakeholders",
+      "stereotype": "entity",
+      "definition": "Air Traffic Control",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "ActualTimeOfDeparture",
+      "package": "Timings",
+      "stereotype": "entity",
+      "definition": "Actual Time of Departure",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "ActualTakeOffTime",
+      "package": "Timings",
+      "stereotype": "entity",
+      "definition": "Actual Take Off Time",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "ActualTurnRoundTime",
+      "package": "Timings",
+      "stereotype": "entity",
+      "definition": "Actual Turn-round Time",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "ActualTaxiInTime",
+      "package": "Timings",
+      "stereotype": "entity",
+      "definition": "Actual Taxi-In Time",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "ActualTaxiOutTime",
+      "package": "Timings",
+      "stereotype": "entity",
+      "definition": "Actual Taxi-Out Time",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "CancelDeparturePlanningInformationMessage",
+      "package": "Messages",
+      "stereotype": "boundary",
+      "definition": "Cancel Departure Planning Information message",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "CollaborativeDecisionMaking",
+      "package": "Flights",
+      "stereotype": "entity",
+      "definition": "Collaborative Decision Making",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "CalculatedTakeOffTime",
+      "package": "Timings",
+      "stereotype": "entity",
+      "definition": "Calculated Take Off Time",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "DepartureManager",
+      "package": "Flights",
+      "stereotype": "entity",
+      "definition": "Departure Manager",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "DeparturePlanningInformationMessage",
+      "package": "Messages",
+      "stereotype": "boundary",
+      "definition": "Departure Planning Information message",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "EarlyDeparturePlanningInformationMessage",
+      "package": "Messages",
+      "stereotype": "boundary",
+      "definition": "Early Departure Planning Information message",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "EstimatedInBlockTime",
+      "package": "Timings",
+      "stereotype": "entity",
+      "definition": "Estimated In-Block Time",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "EstimatedLandingTime",
+      "package": "Timings",
+      "stereotype": "entity",
+      "definition": "Estimated Landing Time",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "EstimatedOffBlockTime",
+      "package": "Timings",
+      "stereotype": "entity",
+      "definition": "Estimated Off-Block Time",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "EnhancedTacticalFlowManagementSystem",
+      "package": "Systems",
+      "stereotype": "boundary",
+      "definition": "Enhanced Tactical Flow Management System",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "EstimatedTakeOffTime",
+      "package": "Timings",
+      "stereotype": "entity",
+      "definition": "Estimated Take Off Time",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "EstimatedTurnRoundTime",
+      "package": "Timings",
+      "stereotype": "entity",
+      "definition": "Estimated Turn-round Time",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "EstimatedTaxiInTime",
+      "package": "Timings",
+      "stereotype": "entity",
+      "definition": "Estimated Taxi-In Time",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "EstimatedTaxiOutTime",
+      "package": "Timings",
+      "stereotype": "entity",
+      "definition": "Estimated Taxi-Out Time",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "FlightInformationRegion",
+      "package": "Flights",
+      "stereotype": "entity",
+      "definition": "Flight Information Region",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "FiledFlightPlan",
+      "package": "Flights",
+      "stereotype": "entity",
+      "definition": "Filed Flight Plan",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "FlightUpdateMessage",
+      "package": "Messages",
+      "stereotype": "boundary",
+      "definition": "Flight Update Message",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "GroundHandler",
+      "package": "Stakeholders",
+      "stereotype": "entity",
+      "definition": "Ground Handler",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "IntegratedInitialFlightPlanProcessingSystem",
+      "package": "Systems",
+      "stereotype": "boundary",
+      "definition": "Integrated Initial Flight Plan Processing System",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "MinimumTurnRoundTime",
+      "package": "Timings",
+      "stereotype": "entity",
+      "definition": "Minimum Turn-round Time",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "MovementMessage",
+      "package": "Messages",
+      "stereotype": "boundary",
+      "definition": "Movement message",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "NetworkManagementOperationsCentre",
+      "package": "Systems",
+      "stereotype": "boundary",
+      "definition": "Network Management Operations Centre",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "Passengers",
+      "package": "Flights",
+      "stereotype": "entity",
+      "definition": "Passengers",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "ReadyStatus",
+      "package": "Flights",
+      "stereotype": "entity",
+      "definition": "Ready status",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "ReadyMessage",
+      "package": "Messages",
+      "stereotype": "boundary",
+      "definition": "Ready message",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "ReplacementFlightPlan",
+      "package": "Flights",
+      "stereotype": "entity",
+      "definition": "Replacement Flight Plan",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "RepetitiveFlightPlan",
+      "package": "Flights",
+      "stereotype": "entity",
+      "definition": "Repetitive Flight Plan",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "Runway",
+      "package": "Flights",
+      "stereotype": "entity",
+      "definition": "Runway",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "SlotAllocationMessage",
+      "package": "Messages",
+      "stereotype": "boundary",
+      "definition": "Slot Allocation Message",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "ScheduledInBlockTime",
+      "package": "Timings",
+      "stereotype": "entity",
+      "definition": "Scheduled In-Block Time",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "SlotCancellationMessage",
+      "package": "Messages",
+      "stereotype": "boundary",
+      "definition": "Slot Cancellation message",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "ScheduledOffBlockTime",
+      "package": "Timings",
+      "stereotype": "entity",
+      "definition": "Scheduled Off-Block Time",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "SlotRevisionMessage",
+      "package": "Messages",
+      "stereotype": "boundary",
+      "definition": "Slot Revision Message",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "SecondarySurveillanceRadar",
+      "package": "Systems",
+      "stereotype": "boundary",
+      "definition": "Secondary Surveillance Radar",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "ScheduledTurnRoundTime",
+      "package": "Timings",
+      "stereotype": "entity",
+      "definition": "Scheduled Turn-round Time",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "TargetDeparturePlanningInformationMessage",
+      "package": "Messages",
+      "stereotype": "boundary",
+      "definition": "Target Departure Planning Information message",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "TargetLandingTime",
+      "package": "Timings",
+      "stereotype": "entity",
+      "definition": "Target Landing Time",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "TerminalManoeuvringArea",
+      "package": "Flights",
+      "stereotype": "entity",
+      "definition": "Terminal Manoeuvring Area",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "TargetOffBlockTime",
+      "package": "Timings",
+      "stereotype": "entity",
+      "definition": "Target Off-Block Time",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "TargetStartUpApprovalTime",
+      "package": "Timings",
+      "stereotype": "entity",
+      "definition": "Target Start Up Approval Time",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "TargetTakeOffTime",
+      "package": "Timings",
+      "stereotype": "entity",
+      "definition": "Target Take Off Time",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "AerodromeControlTower",
+      "package": "Stakeholders",
+      "stereotype": "entity",
+      "definition": "Aerodrome Control Tower",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    },
+    {
+      "name": "VariableTaxiTime",
+      "package": "Timings",
+      "stereotype": "entity",
+      "definition": "Variable Taxi Time",
+      "source_milestones": [],
+      "attributes": [],
+      "operations": []
+    }
+  ],
+  "enumerations": [],
+  "relationships": [],
+  "unmodelled": []
+}

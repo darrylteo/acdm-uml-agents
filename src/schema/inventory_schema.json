@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Claim inventory draft for one milestone",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["sentences"],
+  "properties": {
+    "sentences": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "decision", "reason", "claims"],
+        "properties": {
+          "id": {"type": "string", "description": "The sentence id as given."},
+          "decision": {"type": "string", "enum": ["keep", "drop"]},
+          "reason": {"type": "string", "description": "One line."},
+          "claims": {
+            "type": "array",
+            "description": "Empty for a dropped sentence.",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["text", "kind", "owner", "rel_type", "duplicate_of"],
+              "properties": {
+                "text": {"type": "string", "description": "The sentence or clause, verbatim."},
+                "kind": {"type": "string", "enum": ["operation", "class", "attribute", "relationship", "enumeration"]},
+                "owner": {"type": "string", "description": "Performer of an operation, holder of an attribute or enumeration; empty otherwise."},
+                "rel_type": {"type": "string", "enum": ["", "generalization", "other"], "description": "For a relationship only; empty otherwise."},
+                "duplicate_of": {"type": "string", "description": "Id of the earlier claim this restates, or empty."}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

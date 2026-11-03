@@ -1,0 +1,135 @@
+{
+  "meta": {
+    "ok": true,
+    "output": null,
+    "error": null,
+    "model": "claude-sonnet-5",
+    "input_tokens": 26047,
+    "output_tokens": 2985,
+    "thinking_tokens": 2263,
+    "cache_creation_tokens": 23722,
+    "cache_read_tokens": 2323,
+    "cost_usd": 0.1252066,
+    "duration_ms": 26253,
+    "attempts": 1,
+    "num_turns": 2
+  },
+  "output": {
+    "items": [
+      {
+        "id": "c029",
+        "grade": 1,
+        "elements": [
+          "Milestone.informNetworkOperationsOnTTOTChange()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c040",
+        "grade": 1,
+        "elements": [
+          "AOBT",
+          "TimeQuantity.value"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c045",
+        "grade": 1,
+        "elements": [
+          "DPIMessageType.T-DPI-s"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c056",
+        "grade": 1,
+        "elements": [
+          "ARDT",
+          "TimeQuantity.accuracy"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c066",
+        "grade": 1,
+        "elements": [
+          "StartUpApproved.checkASATAgainstTSAT()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c070",
+        "grade": 1,
+        "elements": [
+          "OperationalStatus.FINAL",
+          "Flight.operationalStatus"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c084",
+        "grade": 1,
+        "elements": [
+          "AirportCDMPlatform.updateTimeQuantity()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c094",
+        "grade": 1,
+        "elements": [
+          "TimeQuantity.accuracy"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c112",
+        "grade": 0.5,
+        "elements": [
+          "ARDT"
+        ],
+        "note": "definition prose only, no attribute for doors/bridge/push-back status"
+      },
+      {
+        "id": "c117",
+        "grade": 1,
+        "elements": [
+          "FUMMessage->Flight"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c125",
+        "grade": 0,
+        "elements": [],
+        "note": "searched for 'constantly applicable'/always-running process; nothing structural"
+      },
+      {
+        "id": "c142",
+        "grade": 1,
+        "elements": [
+          "Flight.aircraftRegistration"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c191",
+        "grade": 0.5,
+        "elements": [
+          "FlightPlanActivation.checkConsistency()"
+        ],
+        "note": "'Airport flight data' only in operation description, not a modeled element"
+      },
+      {
+        "id": "c197",
+        "grade": 1,
+        "elements": [
+          "Milestone.triggerDescription",
+          "AircraftReady.informPartnersOfARDT()"
+        ],
+        "note": ""
+      }
+    ]
+  }
+}

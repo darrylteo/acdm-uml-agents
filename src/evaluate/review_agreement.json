@@ -1,0 +1,26 @@
+{
+ "reviewers": [
+  "grader_A",
+  "grader_B"
+ ],
+ "claims_both_decided": 69,
+ "keep_agreement": 0.9130434782608695,
+ "keep_ac1": 0.8995389468575589,
+ "keep_ac1_se": 0.04253081090255956,
+ "keep_kappa": 0.3708206686930091,
+ "kind_agreement": [
+  59,
+  61
+ ],
+ "owner_agreement": [
+  38,
+  40
+ ],
+ "added": {
+  "grader_A": 7,
+  "grader_B": 29
+ },
+ "added_one_sided_on_shared": 14,
+ "disagreements": 13,
+ "near_miss_pairs": 58
+}

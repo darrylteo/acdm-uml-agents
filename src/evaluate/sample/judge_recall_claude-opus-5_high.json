@@ -1,0 +1,1948 @@
+{
+ "grader": "claude-opus-5/high",
+ "task": "recall",
+ "seed": 0,
+ "prompt": "judge_recall.md",
+ "calls": {
+  "multi/run_03": {
+   "ok": true,
+   "error": null,
+   "meta": {
+    "model": "claude-opus-5",
+    "input_tokens": 27853,
+    "output_tokens": 2235,
+    "thinking_tokens": 1094,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.33439500000000005,
+    "duration_ms": 22468,
+    "attempts": 1
+   },
+   "judged": "2026-09-23T17:09:32",
+   "missing": []
+  },
+  "multi/run_01": {
+   "ok": true,
+   "error": null,
+   "meta": {
+    "model": "claude-opus-5",
+    "input_tokens": 28972,
+    "output_tokens": 1262,
+    "thinking_tokens": 552,
+    "cache_read_tokens": 1806,
+    "cost_usd": 0.304103,
+    "duration_ms": 13073,
+    "attempts": 1
+   },
+   "judged": "2026-09-23T17:10:11",
+   "missing": []
+  },
+  "multi/run_02": {
+   "ok": true,
+   "error": null,
+   "meta": {
+    "model": "claude-opus-5",
+    "input_tokens": 28198,
+    "output_tokens": 2197,
+    "thinking_tokens": 1364,
+    "cache_read_tokens": 1806,
+    "cost_usd": 0.319738,
+    "duration_ms": 22167,
+    "attempts": 1
+   },
+   "judged": "2026-09-23T17:10:37",
+   "missing": []
+  },
+  "multi/run_04": {
+   "ok": true,
+   "error": null,
+   "meta": {
+    "model": "claude-opus-5",
+    "input_tokens": 29646,
+    "output_tokens": 1926,
+    "thinking_tokens": 1147,
+    "cache_read_tokens": 1806,
+    "cost_usd": 0.32744300000000004,
+    "duration_ms": 19168,
+    "attempts": 1
+   },
+   "judged": "2026-09-23T17:10:58",
+   "missing": []
+  },
+  "multi/run_05": {
+   "ok": true,
+   "error": null,
+   "meta": {
+    "model": "claude-opus-5",
+    "input_tokens": 29185,
+    "output_tokens": 1749,
+    "thinking_tokens": 1069,
+    "cache_read_tokens": 1806,
+    "cost_usd": 0.31840799999999997,
+    "duration_ms": 17378,
+    "attempts": 1
+   },
+   "judged": "2026-09-23T17:11:18",
+   "missing": []
+  },
+  "noscaffold/run_01": {
+   "ok": true,
+   "error": null,
+   "meta": {
+    "model": "claude-opus-5",
+    "input_tokens": 20221,
+    "output_tokens": 4163,
+    "thinking_tokens": 3234,
+    "cache_read_tokens": 1806,
+    "cost_usd": 0.289118,
+    "duration_ms": 45610,
+    "attempts": 1
+   },
+   "judged": "2026-09-23T17:12:06",
+   "missing": []
+  },
+  "noscaffold/run_02": {
+   "ok": true,
+   "error": null,
+   "meta": {
+    "model": "claude-opus-5",
+    "input_tokens": 17975,
+    "output_tokens": 1156,
+    "thinking_tokens": 741,
+    "cache_read_tokens": 1806,
+    "cost_usd": 0.19148300000000001,
+    "duration_ms": 14082,
+    "attempts": 1
+   },
+   "judged": "2026-09-23T17:12:23",
+   "missing": []
+  },
+  "noscaffold/run_03": {
+   "ok": true,
+   "error": null,
+   "meta": {
+    "model": "claude-opus-5",
+    "input_tokens": 19552,
+    "output_tokens": 2472,
+    "thinking_tokens": 1485,
+    "cache_read_tokens": 1806,
+    "cost_usd": 0.24015299999999998,
+    "duration_ms": 23949,
+    "attempts": 1
+   },
+   "judged": "2026-09-23T17:12:49",
+   "missing": []
+  },
+  "single/run_01": {
+   "ok": true,
+   "error": null,
+   "meta": {
+    "model": "claude-opus-5",
+    "input_tokens": 25539,
+    "output_tokens": 2169,
+    "thinking_tokens": 1476,
+    "cache_read_tokens": 1806,
+    "cost_usd": 0.292448,
+    "duration_ms": 23180,
+    "attempts": 1
+   },
+   "judged": "2026-09-23T17:13:15",
+   "missing": []
+  },
+  "single/run_02": {
+   "ok": true,
+   "error": null,
+   "meta": {
+    "model": "claude-opus-5",
+    "input_tokens": 23491,
+    "output_tokens": 1320,
+    "thinking_tokens": 512,
+    "cache_read_tokens": 1806,
+    "cost_usd": 0.25074300000000005,
+    "duration_ms": 12674,
+    "attempts": 1
+   },
+   "judged": "2026-09-23T17:13:30",
+   "missing": []
+  },
+  "single/run_03": {
+   "ok": true,
+   "error": null,
+   "meta": {
+    "model": "claude-opus-5",
+    "input_tokens": 24915,
+    "output_tokens": 2236,
+    "thinking_tokens": 1454,
+    "cache_read_tokens": 1806,
+    "cost_usd": 0.287883,
+    "duration_ms": 24946,
+    "attempts": 1
+   },
+   "judged": "2026-09-23T17:13:57",
+   "missing": []
+  },
+  "single/run_04": {
+   "ok": true,
+   "error": null,
+   "meta": {
+    "model": "claude-opus-5",
+    "input_tokens": 23786,
+    "output_tokens": 1859,
+    "thinking_tokens": 994,
+    "cache_read_tokens": 1806,
+    "cost_usd": 0.267168,
+    "duration_ms": 17634,
+    "attempts": 1
+   },
+   "judged": "2026-09-23T17:14:17",
+   "missing": []
+  },
+  "single/run_05": {
+   "ok": true,
+   "error": null,
+   "meta": {
+    "model": "claude-opus-5",
+    "input_tokens": 24286,
+    "output_tokens": 846,
+    "thinking_tokens": 411,
+    "cache_read_tokens": 1806,
+    "cost_usd": 0.246843,
+    "duration_ms": 8694,
+    "attempts": 1
+   },
+   "judged": "2026-09-23T17:14:29",
+   "missing": []
+  },
+  "single_high/run_01": {
+   "ok": true,
+   "error": null,
+   "meta": {
+    "model": "claude-opus-5",
+    "input_tokens": 26177,
+    "output_tokens": 742,
+    "thinking_tokens": 299,
+    "cache_read_tokens": 1806,
+    "cost_usd": 0.26315299999999997,
+    "duration_ms": 7370,
+    "attempts": 1
+   },
+   "judged": "2026-09-23T17:14:38",
+   "missing": []
+  },
+  "single_high/run_02": {
+   "ok": true,
+   "error": null,
+   "meta": {
+    "model": "claude-opus-5",
+    "input_tokens": 28175,
+    "output_tokens": 1979,
+    "thinking_tokens": 1254,
+    "cache_read_tokens": 1806,
+    "cost_usd": 0.314058,
+    "duration_ms": 22422,
+    "attempts": 1
+   },
+   "judged": "2026-09-23T17:15:04",
+   "missing": []
+  },
+  "single_high/run_03": {
+   "ok": true,
+   "error": null,
+   "meta": {
+    "model": "claude-opus-5",
+    "input_tokens": 27083,
+    "output_tokens": 1212,
+    "thinking_tokens": 551,
+    "cache_read_tokens": 1806,
+    "cost_usd": 0.28396299999999997,
+    "duration_ms": 11654,
+    "attempts": 1
+   },
+   "judged": "2026-09-23T17:15:18",
+   "missing": []
+  },
+  "single_high/run_04": {
+   "ok": true,
+   "error": null,
+   "meta": {
+    "model": "claude-opus-5",
+    "input_tokens": 25464,
+    "output_tokens": 2416,
+    "thinking_tokens": 1495,
+    "cache_read_tokens": 1806,
+    "cost_usd": 0.297873,
+    "duration_ms": 26922,
+    "attempts": 1
+   },
+   "judged": "2026-09-23T17:15:48",
+   "missing": []
+  },
+  "single_high/run_05": {
+   "ok": true,
+   "error": null,
+   "meta": {
+    "model": "claude-opus-5",
+    "input_tokens": 29081,
+    "output_tokens": 1870,
+    "thinking_tokens": 1044,
+    "cache_read_tokens": 1806,
+    "cost_usd": 0.320393,
+    "duration_ms": 18577,
+    "attempts": 1
+   },
+   "judged": "2026-09-23T17:16:09",
+   "missing": []
+  }
+ },
+ "grades": {
+  "c006": {
+   "credit": 1,
+   "elements": [
+    "InBlock.checkFeasibility()",
+    "Landed.checkFeasibility()",
+    "GroundHandlingStarted.checkFeasibility()"
+   ],
+   "note": ""
+  },
+  "c013": {
+   "credit": 1,
+   "elements": [
+    "OffBlock.sendADpi()",
+    "DpiMessageType.A-DPI",
+    "OffBlock.notifyActualOffBlockTime()"
+   ],
+   "note": ""
+  },
+  "c023": {
+   "credit": 1,
+   "elements": [
+    "TakeOffTime.tolerance",
+    "TakeOffFromOutstation.notifyNetworkOperationsIfToleranceExceeded()"
+   ],
+   "note": ""
+  },
+  "c033": {
+   "credit": 1,
+   "elements": [
+    "LandingTime",
+    "LandingTime.prefix",
+    "TimePrefix.Estimated"
+   ],
+   "note": ""
+  },
+  "c049": {
+   "credit": 1,
+   "elements": [
+    "TakeOffFromOutstation.calculateTtot()"
+   ],
+   "note": ""
+  },
+  "c050": {
+   "credit": 1,
+   "elements": [
+    "AircraftOperator.provideFinalTobt()",
+    "GroundHandler.provideFinalTobt()",
+    "LocalRadarUpdate.triggerTobtUpdate()"
+   ],
+   "note": ""
+  },
+  "c097": {
+   "credit": 0.5,
+   "elements": [
+    "Outstation->NetworkOperations",
+    "Outstation.provideAtot()",
+    "NetworkOperations->FlightUpdateMessage"
+   ],
+   "note": "FUM and ATOT both modelled but no link of ATOT being carried/received via FUM"
+  },
+  "c113": {
+   "credit": 1,
+   "elements": [
+    "FlightOperationalStatus.BOARDING",
+    "Flight.operationalStatus"
+   ],
+   "note": ""
+  },
+  "c114": {
+   "credit": 1,
+   "elements": [
+    "Landed.notifyNetworkOperationsIfToleranceExceeded()",
+    "NetworkOperations->DpiMessage",
+    "TakeOffTime.tolerance"
+   ],
+   "note": ""
+  },
+  "c123": {
+   "credit": 0.5,
+   "elements": [
+    "GroundHandlingStarted"
+   ],
+   "note": "first-of-day/long-parked scope only stated in class description, no structural element"
+  },
+  "c132": {
+   "credit": 1,
+   "elements": [
+    "AircraftOperator->AtcFlightPlan",
+    "AtcFlightPlan"
+   ],
+   "note": ""
+  },
+  "c133": {
+   "credit": 1,
+   "elements": [
+    "FinalApproach",
+    "SurveillanceRadarSystem.detectFlightOnFinalApproach()",
+    "FlightOperationalStatus.FINAL"
+   ],
+   "note": ""
+  },
+  "c150": {
+   "credit": 0.5,
+   "elements": [
+    "AirportCdmPlatform",
+    "AirportCdmPlatform->Flight"
+   ],
+   "note": "processing of all available information only in the class description"
+  },
+  "c162": {
+   "credit": 0,
+   "elements": [],
+   "note": "looked for an ACARS event/report code attribute (ON/IN/OUT/OFF); Acars class has none"
+  },
+  "c164": {
+   "credit": 1,
+   "elements": [
+    "TakeOffFromOutstation.calculateTtot()"
+   ],
+   "note": ""
+  },
+  "c176": {
+   "credit": 1,
+   "elements": [
+    "OffBlockTime.accuracy"
+   ],
+   "note": ""
+  },
+  "c186": {
+   "credit": 1,
+   "elements": [
+    "InBlock.updateTobtAndTtot()",
+    "TurnRound.estimatedTurnRoundTime",
+    "DurationKind.ETTT"
+   ],
+   "note": ""
+  },
+  "c047": {
+   "credit": 1,
+   "elements": [
+    "TimeQuantity.accuracy",
+    "ATCSystem.detectMilestoneEvent()"
+   ],
+   "note": ""
+  },
+  "c052": {
+   "credit": 1,
+   "elements": [
+    "MilestoneTSATIssued.informPartnersOfTSAT()",
+    "MilestoneTSATIssued->CDMPartnerNotification",
+    "NotificationType.TSAT"
+   ],
+   "note": ""
+  },
+  "c053": {
+   "credit": 1,
+   "elements": [
+    "Flight.startUpApprovalTime",
+    "TimeEvent.StartUpApproval",
+    "TimePrefix.Actual",
+    "AirTrafficControlUnit.recordASAT()"
+   ],
+   "note": ""
+  },
+  "c082": {
+   "credit": 1,
+   "elements": [
+    "IFPS->AirTrafficControlUnit",
+    "IFPS.distributeFlightPlan()",
+    "IFPS->FlightPlan"
+   ],
+   "note": ""
+  },
+  "c118": {
+   "credit": 1,
+   "elements": [
+    "MilestoneTakeOff.generateAirborneMessage()",
+    "NotificationType.AIRBORNE"
+   ],
+   "note": ""
+  },
+  "c155": {
+   "credit": 1,
+   "elements": [
+    "ATCSystem.detectMilestoneEvent()",
+    "ATCSystem->TimeQuantity"
+   ],
+   "note": ""
+  },
+  "c171": {
+   "credit": 1,
+   "elements": [
+    "MilestoneOffBlock.sendADPI()",
+    "MilestoneOffBlock->DPIMessage",
+    "DPIType.A-DPI"
+   ],
+   "note": ""
+  },
+  "c182": {
+   "credit": 1,
+   "elements": [
+    "Flight.taxiInTime",
+    "DurationType.TaxiInTime",
+    "DurationEstimate"
+   ],
+   "note": ""
+  },
+  "c183": {
+   "credit": 1,
+   "elements": [
+    "FlightOperationalStatus.IN_BLOCK",
+    "Flight.operationalStatus"
+   ],
+   "note": ""
+  },
+  "c196": {
+   "credit": 1,
+   "elements": [
+    "TOBTConsistencyMilestone.checkTOBTConsistency()",
+    "MilestoneGroundHandlingStarted"
+   ],
+   "note": ""
+  },
+  "c004": {
+   "credit": 1,
+   "elements": [
+    "StartUpApproved->DepartureClearanceMessage",
+    "DepartureClearanceMessage",
+    "FlightCrew->DepartureClearanceMessage",
+    "StartUpApproved.tsatTolerance"
+   ],
+   "note": "Voice/DCL start-up request trigger carried as message class plus 'triggered by' dependency."
+  },
+  "c015": {
+   "credit": 1,
+   "elements": [
+    "GroundHandlingStarted.updateTobt()",
+    "GroundHandlingTime"
+   ],
+   "note": ""
+  },
+  "c026": {
+   "credit": 1,
+   "elements": [
+    "FlightPlanActivation.updateTimingsOnActivation()",
+    "OffBlockTime",
+    "TakeOffTime"
+   ],
+   "note": ""
+  },
+  "c046": {
+   "credit": 1,
+   "elements": [
+    "BoardingStarts.boardingCheckOffset",
+    "BoardingStarts.checkBoardingStatus()"
+   ],
+   "note": ""
+  },
+  "c064": {
+   "credit": 1,
+   "elements": [
+    "AirTrafficControlUnit->AircraftReady",
+    "FinalConfirmationOfTobt.introduceToPreDepartureSequence()"
+   ],
+   "note": "Named association 'refines pre-departure sequence'."
+  },
+  "c078": {
+   "credit": 1,
+   "elements": [
+    "TobtFeasibilityCheckMilestone.checkTobtConsistency()",
+    "InBlock"
+   ],
+   "note": ""
+  },
+  "c079": {
+   "credit": 0.5,
+   "elements": [
+    "AirportCdmPlatform",
+    "FlightPlanActivation->AirportCdmPlatform"
+   ],
+   "note": "Platform initiation stated in relationship/definition; no element for processing all available flight information."
+  },
+  "c088": {
+   "credit": 1,
+   "elements": [
+    "StartUpApproved.tsatTolerance",
+    "StartUpRequested.tsatTolerance"
+   ],
+   "note": ""
+  },
+  "c135": {
+   "credit": 1,
+   "elements": [
+    "GroundHandlingStarted.updateTobt()",
+    "TurnRoundTime.duration",
+    "OffBlockTime"
+   ],
+   "note": ""
+  },
+  "c143": {
+   "credit": 1,
+   "elements": [
+    "TobtFeasibilityCheckMilestone->NetworkOperations",
+    "TobtFeasibilityCheckMilestone.informNetworkOperationsIfTtotChanged()"
+   ],
+   "note": ""
+  },
+  "c170": {
+   "credit": 0,
+   "elements": [],
+   "note": "No element for ATC assuring a regulated flight respects its CTOT."
+  },
+  "c020": {
+   "credit": 1,
+   "elements": [
+    "GroundHandlingStartedMilestone->NetworkOperations",
+    "TobtCheckMilestone.informNetworkOperationsOfTtotChange()"
+   ],
+   "note": ""
+  },
+  "c031": {
+   "credit": 1,
+   "elements": [
+    "TsatIssuedMilestone.checkTobtUpdateCountAfterTsat()",
+    "TsatIssuedMilestone.localParameterT"
+   ],
+   "note": "threshold is a typed parameter"
+  },
+  "c042": {
+   "credit": 0.5,
+   "elements": [
+    "InBlockTime.originator",
+    "AcarsSystem->InBlockTime",
+    "InBlockTime.prefix"
+   ],
+   "note": "AIBT and its ACARS source present; the ATA/ACARS=IN equivalence only in description"
+  },
+  "c071": {
+   "credit": 1,
+   "elements": [
+    "FlightPlanActivationMilestone.updateArrivalOrDepartureTimings()",
+    "OffBlockTime.prefix",
+    "TakeOffTime.prefix"
+   ],
+   "note": ""
+  },
+  "c091": {
+   "credit": 1,
+   "elements": [
+    "AutomatedDockingSystem",
+    "AutomatedDockingSystem->InBlockTime"
+   ],
+   "note": ""
+  },
+  "c119": {
+   "credit": 1,
+   "elements": [
+    "EtfmsSystem"
+   ],
+   "note": ""
+  },
+  "c128": {
+   "credit": 1,
+   "elements": [
+    "DpiMessageType.T_DPI_S",
+    "DpiMessage.type",
+    "TsatIssuedMilestone.informNetworkOperationsViaTDpiS()"
+   ],
+   "note": ""
+  },
+  "c144": {
+   "credit": 1,
+   "elements": [
+    "FlightOperationalStatus.INITIATED",
+    "Flight.operationalStatus"
+   ],
+   "note": ""
+  },
+  "c146": {
+   "credit": 1,
+   "elements": [
+    "AirTrafficControlUnit",
+    "AtcSystem"
+   ],
+   "note": ""
+  },
+  "c178": {
+   "credit": 1,
+   "elements": [
+    "StartUpApprovedMilestone.resequenceFlight()",
+    "TakeOffMilestone.generateAirborneMessageAndRemoveFromSequence()"
+   ],
+   "note": ""
+  },
+  "c192": {
+   "credit": 1,
+   "elements": [
+    "Aircraft.registration",
+    "AircraftOperator.provideFlightPlanData()"
+   ],
+   "note": ""
+  },
+  "c012": {
+   "credit": 1,
+   "elements": [
+    "Flight.ettt",
+    "Ettt",
+    "TurnRound.calculateDepartingFlightTimings()"
+   ],
+   "note": ""
+  },
+  "c024": {
+   "credit": 1,
+   "elements": [
+    "TsatIssuance.informPartnersOfTsat()",
+    "Flight.tsat",
+    "DepartureSequence"
+   ],
+   "note": "Informing/confirming the allocated TSAT to partners incl. aircrew."
+  },
+  "c054": {
+   "credit": 1,
+   "elements": [
+    "BoardingStartCheck.triggerOffset"
+   ],
+   "note": ""
+  },
+  "c057": {
+   "credit": 1,
+   "elements": [
+    "TsatIssuance.updateCountThreshold",
+    "Tobt.updateCount"
+   ],
+   "note": ""
+  },
+  "c068": {
+   "credit": 1,
+   "elements": [
+    "DepartureSequence.resequenceFlight()",
+    "AircraftReadyCheck"
+   ],
+   "note": ""
+  },
+  "c109": {
+   "credit": 1,
+   "elements": [
+    "DepartureSequence.addFlight()",
+    "TobtFinalConfirmation->DepartureSequence"
+   ],
+   "note": ""
+  },
+  "c151": {
+   "credit": 1,
+   "elements": [
+    "AcarsSystem->Aobt",
+    "AutomatedDockingSystem->Aobt",
+    "AtcSystem->Aobt",
+    "AtcSystem.provideActualOffBlockTime()"
+   ],
+   "note": ""
+  },
+  "c168": {
+   "credit": 1,
+   "elements": [
+    "DpiType.T-DPI-t",
+    "DpiMessage",
+    "TakeOffFromOutstationCheck.informNetworkOperationsWithTDpiT()"
+   ],
+   "note": ""
+  },
+  "c188": {
+   "credit": 1,
+   "elements": [
+    "AircraftReadyCheck.toleranceOffset",
+    "AircraftReadyCheck.checkReadyStatusReceived()"
+   ],
+   "note": ""
+  },
+  "c195": {
+   "credit": 1,
+   "elements": [
+    "TobtFinalConfirmation.confirmTobtPriorToTsat()"
+   ],
+   "note": ""
+  },
+  "c016": {
+   "credit": 1,
+   "elements": [
+    "Flight.computeTTOT()",
+    "Flight.tobt",
+    "Flight.exot"
+   ],
+   "note": ""
+  },
+  "c034": {
+   "credit": 1,
+   "elements": [
+    "ATCFlightPlan.submissionTime",
+    "AircraftOperator.submitFlightPlan()"
+   ],
+   "note": ""
+  },
+  "c044": {
+   "credit": 1,
+   "elements": [
+    "Flight.atot",
+    "ACARSSystem.reportActualTime()"
+   ],
+   "note": "ATOT carried as attribute; +/-1 min accuracy stated in operation description"
+  },
+  "c072": {
+   "credit": 1,
+   "elements": [
+    "AircraftOperator.provideTOBT()",
+    "GroundHandler.provideTOBT()",
+    "MilestoneProcess.trigger"
+   ],
+   "note": ""
+  },
+  "c074": {
+   "credit": 1,
+   "elements": [
+    "Flight.exceedsTTOTTolerance()",
+    "ConsistencyCheck.toleranceValue",
+    "NetworkOperations.receiveDPI()"
+   ],
+   "note": ""
+  },
+  "c081": {
+   "credit": 1,
+   "elements": [
+    "Flight.ctot",
+    "NetworkOperations.issueCTOT()",
+    "NetworkOperations->Flight"
+   ],
+   "note": ""
+  },
+  "c099": {
+   "credit": 1,
+   "elements": [
+    "Flight.computeEIBT()",
+    "Flight.eldt",
+    "Flight.eibt"
+   ],
+   "note": ""
+  },
+  "c100": {
+   "credit": 1,
+   "elements": [
+    "Flight.departureAerodrome"
+   ],
+   "note": "Outstation (ADEP) carried as a Flight attribute, not a separate class"
+  },
+  "c106": {
+   "credit": 1,
+   "elements": [
+    "NetworkOperations.receiveDPI()",
+    "Flight.exceedsTTOTTolerance()",
+    "DPIMessage->NetworkOperations"
+   ],
+   "note": ""
+  },
+  "c130": {
+   "credit": 1,
+   "elements": [
+    "Flight.asat",
+    "ATCUnit.approveStartUp()"
+   ],
+   "note": ""
+  },
+  "c141": {
+   "credit": 0,
+   "elements": [],
+   "note": "No range/position or level parameter on RadarSystem for Final Approach detection"
+  },
+  "c147": {
+   "credit": 0.5,
+   "elements": [
+    "AirportCDMPlatform.notifyPartners()",
+    "GroundHandler",
+    "AircraftOperator"
+   ],
+   "note": "ASBT only named in an operation description; no attribute for boarding time or its automatic/manual source"
+  },
+  "c160": {
+   "credit": 0.5,
+   "elements": [
+    "Flight.exit",
+    "Flight.eldt"
+   ],
+   "note": "EXIT and ELDT modelled, but no stand/gate change rule at ELDT-30'"
+  },
+  "c185": {
+   "credit": 1,
+   "elements": [
+    "Flight.atot",
+    "MovementMessage->Flight"
+   ],
+   "note": ""
+  },
+  "c003": {
+   "credit": 1,
+   "elements": [
+    "OperationalStatus.READY",
+    "Flight.operationalStatus",
+    "Milestone.resultingStatus"
+   ],
+   "note": ""
+  },
+  "c022": {
+   "credit": 1,
+   "elements": [
+    "Flight.aircraftRegistration"
+   ],
+   "note": ""
+  },
+  "c038": {
+   "credit": 1,
+   "elements": [
+    "Flight.acgt"
+   ],
+   "note": ""
+  },
+  "c086": {
+   "credit": 1,
+   "elements": [
+    "AirportCDMPlatform.triggerDPI()",
+    "AirportCDMPlatform.checkConsistency()",
+    "DPIMessage->NetworkOperations"
+   ],
+   "note": "E-DPI to Network Operations confirms the flight"
+  },
+  "c129": {
+   "credit": 1,
+   "elements": [
+    "GroundHandler->Flight",
+    "AircraftOperator->Flight",
+    "Flight.tobt"
+   ],
+   "note": ""
+  },
+  "c200": {
+   "credit": 1,
+   "elements": [
+    "FlightUpdateMessage->Flight",
+    "NetworkOperations->FlightUpdateMessage",
+    "Flight.atot"
+   ],
+   "note": "FUM-to-flight link present, described as updating ELDT"
+  },
+  "c007": {
+   "credit": 1,
+   "elements": [
+    "AirportCDMPlatform.notifyPartners()",
+    "Flight.asbt"
+   ],
+   "note": ""
+  },
+  "c010": {
+   "credit": 1,
+   "elements": [
+    "NetworkOperations.issueCtot()",
+    "Flight.ctot",
+    "Flight.isRegulated"
+   ],
+   "note": ""
+  },
+  "c017": {
+   "credit": 0,
+   "elements": [],
+   "note": "No accuracy/tolerance attribute for ARDT; only Flight.ardt time exists."
+  },
+  "c030": {
+   "credit": 1,
+   "elements": [
+    "DpiMessageType.T-DPI-s",
+    "DpiMessage.messageType",
+    "NetworkOperations.receiveDpi()"
+   ],
+   "note": ""
+  },
+  "c035": {
+   "credit": 1,
+   "elements": [
+    "DpiMessageType.E-DPI",
+    "MilestoneProcess->DpiMessage",
+    "DpiMessage->NetworkOperations"
+   ],
+   "note": ""
+  },
+  "c055": {
+   "credit": 0.5,
+   "elements": [
+    "AtcUnit.approveStartUp()",
+    "Flight.asat",
+    "Flight.tsat"
+   ],
+   "note": "ASAT-vs-TSAT check appears only in approveStartUp() description, not as a check operation."
+  },
+  "c062": {
+   "credit": 1,
+   "elements": [
+    "TurnRound.estimatedTurnRoundPeriod"
+   ],
+   "note": ""
+  },
+  "c065": {
+   "credit": 1,
+   "elements": [
+    "ATCFlightPlan.checkConsistency()",
+    "MilestoneProcess.execute()"
+   ],
+   "note": ""
+  },
+  "c092": {
+   "credit": 0.5,
+   "elements": [
+    "MilestoneProcess.tolerance",
+    "MilestoneProcess.triggerCondition"
+   ],
+   "note": "Locally agreed tolerance/trigger held generically; no locally agreed time parameter t before EOBT."
+  },
+  "c096": {
+   "credit": 0.5,
+   "elements": [
+    "Flight.eldt",
+    "AirportSlot.scheduledTime",
+    "ATCFlightPlan.checkConsistency()"
+   ],
+   "note": "ELDT and slot time both exist, but no comparison/deviation of ELDT from the airport slot."
+  },
+  "c098": {
+   "credit": 1,
+   "elements": [
+    "Flight.asbt"
+   ],
+   "note": ""
+  },
+  "c137": {
+   "credit": 1,
+   "elements": [
+    "ATCFlightPlan.checkConsistency()",
+    "MilestoneProcess.execute()",
+    "Flight.tobt"
+   ],
+   "note": ""
+  },
+  "c138": {
+   "credit": 1,
+   "elements": [
+    "AirportSlot.isCoordinatedAirport",
+    "TurnRound.linkFlights()"
+   ],
+   "note": ""
+  },
+  "c165": {
+   "credit": 0,
+   "elements": [],
+   "note": "No data accuracy attribute anywhere for milestone actual times."
+  },
+  "c166": {
+   "credit": 1,
+   "elements": [
+    "AirportCDMPlatform.initiateFlight()",
+    "AirportSlot.isCoordinatedAirport"
+   ],
+   "note": ""
+  },
+  "c001": {
+   "credit": 0.5,
+   "elements": [
+    "GroundHandlingStartedMilestone"
+   ],
+   "note": "First-of-day / long-term-parked scope only in the class definition text, no structural element."
+  },
+  "c008": {
+   "credit": 1,
+   "elements": [
+    "Milestone.accuracy",
+    "TimeQuantity.accuracy"
+   ],
+   "note": ""
+  },
+  "c032": {
+   "credit": 1,
+   "elements": [
+    "ADPIMessage",
+    "DPIProcess.sendADPI()"
+   ],
+   "note": ""
+  },
+  "c059": {
+   "credit": 1,
+   "elements": [
+    "ETOT",
+    "Flight.etot"
+   ],
+   "note": ""
+  },
+  "c083": {
+   "credit": 1,
+   "elements": [
+    "GroundHandlingStartedMilestone.checkTOBTConsistency()"
+   ],
+   "note": ""
+  },
+  "c103": {
+   "credit": 1,
+   "elements": [
+    "TakeOffFromOutstationMilestone.checkTTOTTolerance()"
+   ],
+   "note": ""
+  },
+  "c134": {
+   "credit": 1,
+   "elements": [
+    "InBlockMilestone.informNetworkOperationsIfTolerated()",
+    "TakeOffFromOutstationMilestone.checkTTOTTolerance()"
+   ],
+   "note": ""
+  },
+  "c140": {
+   "credit": 1,
+   "elements": [
+    "Flight.aibt",
+    "AIBT",
+    "ACARS->InBlockMilestone"
+   ],
+   "note": ""
+  },
+  "c159": {
+   "credit": 1,
+   "elements": [
+    "FlightOperationalStatus.DEPARTED / TAKE OFF"
+   ],
+   "note": ""
+  },
+  "c163": {
+   "credit": 1,
+   "elements": [
+    "AirportCDMPlatform.updateAfterLanding()"
+   ],
+   "note": ""
+  },
+  "c175": {
+   "credit": 1,
+   "elements": [
+    "DPIProcess.sendEDPI()",
+    "ATCFlightPlan.sobt",
+    "Aircraft.registration",
+    "ATCFlightPlan.destinationAerodrome"
+   ],
+   "note": ""
+  },
+  "c177": {
+   "credit": 1,
+   "elements": [
+    "AirportCDMPlatform"
+   ],
+   "note": ""
+  },
+  "c037": {
+   "credit": 1,
+   "elements": [
+    "StartUpRequested.recordAsrt()",
+    "EventType.Start-Up Request",
+    "AirportCdmPlatform.informPartners()"
+   ],
+   "note": ""
+  },
+  "c039": {
+   "credit": 1,
+   "elements": [
+    "TimeQuantity.calculateTtot()",
+    "TurnRound.mttt"
+   ],
+   "note": ""
+  },
+  "c041": {
+   "credit": 1,
+   "elements": [
+    "InBlockMilestone.checkTobtConsistency()"
+   ],
+   "note": ""
+  },
+  "c058": {
+   "credit": 1,
+   "elements": [
+    "AtcFlightPlanActivated.updateEldtEibtEtot()"
+   ],
+   "note": ""
+  },
+  "c110": {
+   "credit": 1,
+   "elements": [
+    "OffBlockMilestone.sendADpi()",
+    "DpiType.A-DPI"
+   ],
+   "note": ""
+  },
+  "c122": {
+   "credit": 1,
+   "elements": [
+    "AtcFlightPlanActivated.sendFirstEdpi()",
+    "AirportSlot.sobt",
+    "Aircraft.registration",
+    "AtcFlightPlan.destinationAerodrome"
+   ],
+   "note": ""
+  },
+  "c127": {
+   "credit": 1,
+   "elements": [
+    "TurnRound.mttt",
+    "TurnRound",
+    "InBlockMilestone.updateTobtTtotFromTurnround()"
+   ],
+   "note": ""
+  },
+  "c157": {
+   "credit": 1,
+   "elements": [
+    "AtcFlightPlanActivated.sendFirstEdpi()",
+    "DpiMessage",
+    "AirportCdmPlatform->DpiMessage",
+    "NetworkOperations->DpiMessage"
+   ],
+   "note": ""
+  },
+  "c180": {
+   "credit": 1,
+   "elements": [
+    "TimeQuantity.checkTtotToleranceExceeded()",
+    "Landed.informNetworkOperationsIfTtotExceedsTolerance()",
+    "TimeQuantity.tolerance"
+   ],
+   "note": ""
+  },
+  "c181": {
+   "credit": 1,
+   "elements": [
+    "TimeQuantity.originator",
+    "Acars",
+    "AtcSystem"
+   ],
+   "note": ""
+  },
+  "c184": {
+   "credit": 0.5,
+   "elements": [
+    "OffBlockMilestone.sendADpi()"
+   ],
+   "note": "Remote-holding case only mentioned in operation description, no structure."
+  },
+  "c190": {
+   "credit": 1,
+   "elements": [
+    "OperationalStatus.IN-BLOCK",
+    "Flight.operationalStatus"
+   ],
+   "note": ""
+  },
+  "c014": {
+   "credit": 1,
+   "elements": [
+    "FlightOperationalStatus.SEQUENCED",
+    "AtcUnit.confirmTsatToPilot()",
+    "TakeOff.removeFromDepartureSequence()"
+   ],
+   "note": "Pre-departure sequencing carried by SEQUENCED status literal and sequence operations."
+  },
+  "c018": {
+   "credit": 1,
+   "elements": [
+    "TakeOff.informPartnersOfAtot()",
+    "CdmPartner.receiveNotification()"
+   ],
+   "note": ""
+  },
+  "c025": {
+   "credit": 1,
+   "elements": [
+    "GroundHandlingStarted.updateTobtTtot()",
+    "AirportCdmPlatform.computeTobtAutomatically()",
+    "AircraftOperator.provideTobt()",
+    "TurnRound.mttt"
+   ],
+   "note": ""
+  },
+  "c085": {
+   "credit": 1,
+   "elements": [
+    "Flight.asrt",
+    "ActualTime",
+    "StartUpRequested"
+   ],
+   "note": ""
+  },
+  "c089": {
+   "credit": 1,
+   "elements": [
+    "Flight.atot",
+    "Outstation.provideAtot()",
+    "TakeOffFromOutstation"
+   ],
+   "note": ""
+  },
+  "c153": {
+   "credit": 1,
+   "elements": [
+    "TakeOff->AtcSystem",
+    "AtcSystem",
+    "AtcSystem.systemType"
+   ],
+   "note": ""
+  },
+  "c156": {
+   "credit": 1,
+   "elements": [
+    "FlightOperationalStatus.FIR",
+    "LocalRadarUpdate",
+    "AtcSystem.detectFlight()"
+   ],
+   "note": ""
+  },
+  "c161": {
+   "credit": 1,
+   "elements": [
+    "Landed.informNetworkOperationsIfTtotChanges()",
+    "LocalRadarUpdate.informNetworkOperationsIfTtotChanges()",
+    "GroundHandlingStarted"
+   ],
+   "note": "Same operation carried on sibling milestone classes."
+  },
+  "c173": {
+   "credit": 1,
+   "elements": [
+    "TakeOffFromOutstation.calculateTtot()",
+    "TurnRound.mttt",
+    "Flight.exot"
+   ],
+   "note": ""
+  },
+  "c193": {
+   "credit": 1,
+   "elements": [
+    "Flight.ardt",
+    "FlightOperationalStatus.READY",
+    "Flight.eobt"
+   ],
+   "note": "Readiness relative to EOBT held; the 15-minute limit itself is not modelled."
+  },
+  "c009": {
+   "credit": 1,
+   "elements": [
+    "Flight.regulated"
+   ],
+   "note": ""
+  },
+  "c019": {
+   "credit": 1,
+   "elements": [
+    "FinalApproachMilestone.informNetworkOperationsIfTTOTExceedsTolerance()",
+    "TimeQuantity.exceedsTolerance()",
+    "TimeQuantity.tolerance"
+   ],
+   "note": ""
+  },
+  "c036": {
+   "credit": 1,
+   "elements": [
+    "AirportCDMPlatform.recordATOT()",
+    "MovementMessage.actualTakeOffTime"
+   ],
+   "note": ""
+  },
+  "c051": {
+   "credit": 1,
+   "elements": [
+    "ACARS->TimeQuantity",
+    "ACARS.reportActualTime()",
+    "TimeQuantity.originator",
+    "ATCSystem"
+   ],
+   "note": ""
+  },
+  "c090": {
+   "credit": 1,
+   "elements": [
+    "TimeQuantity.calculateEIBT()",
+    "TimeQuantityType.EIBT",
+    "TimeQuantityType.EXIT"
+   ],
+   "note": ""
+  },
+  "c095": {
+   "credit": 1,
+   "elements": [
+    "RepetitiveFlightPlan",
+    "RepetitiveFlightPlan.frequency",
+    "RepetitiveFlightPlan->ATCFlightPlan"
+   ],
+   "note": ""
+  },
+  "c101": {
+   "credit": 1,
+   "elements": [
+    "TimeQuantity.calculateTTOT()",
+    "TakeOffFromOutstationMilestone.sendTDPIt()"
+   ],
+   "note": ""
+  },
+  "c102": {
+   "credit": 1,
+   "elements": [
+    "MilestoneEvent.trigger",
+    "RadarSystem.detectFlight()",
+    "ACARS.reportActualTime()",
+    "ATCSystem"
+   ],
+   "note": ""
+  },
+  "c104": {
+   "credit": 1,
+   "elements": [
+    "Flight.regulated",
+    "EOBTMinus2HourMilestone",
+    "AirportCDMPlatform.markRegulated()"
+   ],
+   "note": ""
+  },
+  "c115": {
+   "credit": 1,
+   "elements": [
+    "TimeQuantity.tolerance",
+    "TimeQuantity.exceedsTolerance()"
+   ],
+   "note": ""
+  },
+  "c124": {
+   "credit": 1,
+   "elements": [
+    "TSATIssuedMilestone.informPartnersOfTSAT()",
+    "TimeQuantityType.TSAT",
+    "Pilot"
+   ],
+   "note": ""
+  },
+  "c131": {
+   "credit": 1,
+   "elements": [
+    "AirportCDMPlatform.updateTimingsAfterRadarOrApproach()",
+    "LocalRadarUpdateMilestone.commenceTOBTProcess()",
+    "TurnRound->Flight"
+   ],
+   "note": ""
+  },
+  "c043": {
+   "credit": 1,
+   "elements": [
+    "AirportCDMPlatform"
+   ],
+   "note": ""
+  },
+  "c077": {
+   "credit": 1,
+   "elements": [
+    "AirportCDMPlatform.updateTimingsOnProgress()",
+    "LocalRadarUpdate.commenceTOBTProcess()"
+   ],
+   "note": ""
+  },
+  "c080": {
+   "credit": 1,
+   "elements": [
+    "ASAT",
+    "StartUpApproved",
+    "ATCUnit->ASAT"
+   ],
+   "note": ""
+  },
+  "c148": {
+   "credit": 1,
+   "elements": [
+    "DPIMessageType.T-DPI-s",
+    "NetworkOperations->DPIMessage",
+    "TSATIssued.informPartnersOfTSAT()"
+   ],
+   "note": ""
+  },
+  "c149": {
+   "credit": 1,
+   "elements": [
+    "ASAT",
+    "ASAT->TimeQuantity"
+   ],
+   "note": ""
+  },
+  "c174": {
+   "credit": 1,
+   "elements": [
+    "TakeOffFromOutstation.calculateTTOT()"
+   ],
+   "note": ""
+  },
+  "c189": {
+   "credit": 1,
+   "elements": [
+    "Flight->TSAT",
+    "ATCUnit->TSAT",
+    "TSATIssued.informPartnersOfTSAT()"
+   ],
+   "note": ""
+  },
+  "c005": {
+   "credit": 1,
+   "elements": [
+    "InBlock.notifyNetworkOperationsIfTTOTChanges()"
+   ],
+   "note": ""
+  },
+  "c028": {
+   "credit": 1,
+   "elements": [
+    "ATCFlightPlan->AircraftOperator"
+   ],
+   "note": ""
+  },
+  "c075": {
+   "credit": 1,
+   "elements": [
+    "OffBlock.checkTTOTChangeAndNotify()",
+    "OffBlock.sendADPI()"
+   ],
+   "note": ""
+  },
+  "c107": {
+   "credit": 1,
+   "elements": [
+    "TurnRound.minimumTurnRoundTime",
+    "TurnRound"
+   ],
+   "note": ""
+  },
+  "c120": {
+   "credit": 1,
+   "elements": [
+    "NetworkOperations.issueCTOT()",
+    "Flight.regulated"
+   ],
+   "note": ""
+  },
+  "c145": {
+   "credit": 1,
+   "elements": [
+    "FSAMessage",
+    "TakeOff.sendFSAAndMVT()"
+   ],
+   "note": ""
+  },
+  "c167": {
+   "credit": 1,
+   "elements": [
+    "TSATIssued.checkTOBTUpdateCount()"
+   ],
+   "note": ""
+  },
+  "c198": {
+   "credit": 1,
+   "elements": [
+    "AirportCDMPlatform.updateField()",
+    "TakeOffTime"
+   ],
+   "note": ""
+  },
+  "c002": {
+   "credit": 1,
+   "elements": [
+    "StartUpRequestTime",
+    "Aircrew.requestStartUp()",
+    "M13StartUpRequested"
+   ],
+   "note": ""
+  },
+  "c011": {
+   "credit": 0.5,
+   "elements": [
+    "ATCUnit.unitRole",
+    "ATCUnit.detectFlight()",
+    "M4LocalRadarUpdate->AirportSurveillanceSystem"
+   ],
+   "note": "ACC/Approach named only in unitRole description; no structural link from M4 to ATCUnit as origin"
+  },
+  "c021": {
+   "credit": 1,
+   "elements": [
+    "M11BoardingStarts.checkBoardingStatus()",
+    "Milestone.trigger"
+   ],
+   "note": ""
+  },
+  "c060": {
+   "credit": 1,
+   "elements": [
+    "M2EOBTMinus2h.updateInboundELDT()",
+    "FlightUpdateMessage",
+    "M3TakeOffFromOutstation->FlightUpdateMessage"
+   ],
+   "note": ""
+  },
+  "c087": {
+   "credit": 1,
+   "elements": [
+    "M16TakeOff->AirportSurveillanceSystem",
+    "AirportSurveillanceSystem.detectTakeOff()",
+    "M16TakeOff.generateAirborneMessageAndRemoveFromSequence()"
+   ],
+   "note": ""
+  },
+  "c139": {
+   "credit": 1,
+   "elements": [
+    "M16TakeOff.generateAirborneMessageAndRemoveFromSequence()"
+   ],
+   "note": ""
+  },
+  "c169": {
+   "credit": 1,
+   "elements": [
+    "AtcFlightPlan.submissionTime",
+    "M1FlightPlanActivated.sendFirstEDPI()",
+    "Milestone.trigger"
+   ],
+   "note": ""
+  },
+  "c172": {
+   "credit": 1,
+   "elements": [
+    "AirborneMessage",
+    "M16TakeOff->AirborneMessage"
+   ],
+   "note": ""
+  },
+  "c187": {
+   "credit": 1,
+   "elements": [
+    "M3TakeOffFromOutstation->FlightUpdateMessage",
+    "M3TakeOffFromOutstation.receiveOutstationATOT()",
+    "NetworkOperations->FlightUpdateMessage"
+   ],
+   "note": ""
+  },
+  "c027": {
+   "credit": 1,
+   "elements": [
+    "TakeOffFromOutstation.calculateTtot()",
+    "TurnroundTime.minimumTurnRoundTime",
+    "TaxiOutTime"
+   ],
+   "note": ""
+  },
+  "c063": {
+   "credit": 0.5,
+   "elements": [
+    "FlightCrew.requestStartUp()",
+    "GroundOperationsPartner.manageTurnRound()"
+   ],
+   "note": "Coordination with Ground Handler only in operation descriptions; no FlightCrew-GroundHandler link"
+  },
+  "c067": {
+   "credit": 1,
+   "elements": [
+    "TurnroundTime",
+    "TurnroundTime.minimumTurnRoundTime"
+   ],
+   "note": ""
+  },
+  "c073": {
+   "credit": 1,
+   "elements": [
+    "AirportCDMPlatform.updateEtotTtotCtot()",
+    "AirportCDMPlatform.markRegulated()",
+    "Flight.regulated"
+   ],
+   "note": ""
+  },
+  "c076": {
+   "credit": 1,
+   "elements": [
+    "AirportCDMPlatform.evaluateTobtConfirmationNeeded()"
+   ],
+   "note": ""
+  },
+  "c093": {
+   "credit": 1,
+   "elements": [
+    "TsatIssued.informPartnersOfTsat()",
+    "DpiType.T-DPI-s",
+    "TsatIssued->DpiMessage"
+   ],
+   "note": ""
+  },
+  "c126": {
+   "credit": 1,
+   "elements": [
+    "StartUpApproved.checkAsatAgainstTsat()"
+   ],
+   "note": ""
+  },
+  "c158": {
+   "credit": 1,
+   "elements": [
+    "AirportCDMPlatform.updateEldtEibtTobtTtot()"
+   ],
+   "note": ""
+  },
+  "c179": {
+   "credit": 1,
+   "elements": [
+    "AtcFlightPlan.isRepetitive",
+    "AtcFlightPlan"
+   ],
+   "note": ""
+  },
+  "c194": {
+   "credit": 1,
+   "elements": [
+    "Milestone.timingRule",
+    "FinalApproach"
+   ],
+   "note": ""
+  },
+  "c029": {
+   "credit": 1,
+   "elements": [
+    "Milestone.informNetworkOperationsOnTTOTChange()",
+    "FinalApproach"
+   ],
+   "note": ""
+  },
+  "c040": {
+   "credit": 1,
+   "elements": [
+    "AOBT",
+    "TimeQuantity.value",
+    "AOBT->TimeQuantity"
+   ],
+   "note": ""
+  },
+  "c045": {
+   "credit": 1,
+   "elements": [
+    "DPIMessageType.T-DPI-s",
+    "DPIMessage",
+    "TSATIssued.sendTDPIs()"
+   ],
+   "note": ""
+  },
+  "c056": {
+   "credit": 1,
+   "elements": [
+    "TimeQuantity.accuracy",
+    "ARDT",
+    "ARDT->TimeQuantity"
+   ],
+   "note": ""
+  },
+  "c066": {
+   "credit": 1,
+   "elements": [
+    "StartUpApproved.checkASATAgainstTSAT()"
+   ],
+   "note": ""
+  },
+  "c070": {
+   "credit": 1,
+   "elements": [
+    "FinalApproach",
+    "OperationalStatus.FINAL",
+    "ATCSystem.detectFlight()"
+   ],
+   "note": ""
+  },
+  "c084": {
+   "credit": 1,
+   "elements": [
+    "AirportCDMPlatform.updateTimeQuantity()",
+    "GroundHandlingStarted.calculateTOBT()",
+    "TOBT",
+    "TTOT"
+   ],
+   "note": ""
+  },
+  "c094": {
+   "credit": 1,
+   "elements": [
+    "TimeQuantity.accuracy",
+    "TTOT",
+    "Milestone.informNetworkOperationsOnTTOTChange()"
+   ],
+   "note": ""
+  },
+  "c112": {
+   "credit": 1,
+   "elements": [
+    "ARDT",
+    "AircraftReady.informPartnersOfARDT()",
+    "AircraftReady"
+   ],
+   "note": ""
+  },
+  "c117": {
+   "credit": 1,
+   "elements": [
+    "FUMMessage->Flight",
+    "FUMMessage",
+    "ELDT",
+    "AirportCDMPlatform.updateTimeQuantity()"
+   ],
+   "note": ""
+  },
+  "c125": {
+   "credit": 0.5,
+   "elements": [
+    "FinalConfirmationOfTOBT.confirmTOBT()",
+    "Milestone.triggerDescription"
+   ],
+   "note": "Only the trigger 'a new TOBT' in description; constant applicability as soon as TOBT exists not structured."
+  },
+  "c142": {
+   "credit": 1,
+   "elements": [
+    "Flight.aircraftRegistration"
+   ],
+   "note": ""
+  },
+  "c191": {
+   "credit": 0.5,
+   "elements": [
+    "FlightPlanActivation.checkConsistency()"
+   ],
+   "note": "Airport flight data only named in the operation description; no Airport class/attribute holds it."
+  },
+  "c197": {
+   "credit": 1,
+   "elements": [
+    "Milestone.triggerDescription",
+    "AircraftReady.informPartnersOfARDT()",
+    "AirportCDMPlatform"
+   ],
+   "note": ""
+  },
+  "c048": {
+   "credit": 1,
+   "elements": [
+    "Aircraft.type",
+    "Flight.aircraftType"
+   ],
+   "note": ""
+  },
+  "c061": {
+   "credit": 0.5,
+   "elements": [
+    "Pilot.requestStartUp()",
+    "TurnRoundOperator.manageTurnRoundProcess()",
+    "Pilot->AirTrafficControl"
+   ],
+   "note": "Coordination with Ground Handler appears only in operation descriptions; no Pilot-GroundHandler link."
+  },
+  "c069": {
+   "credit": 1,
+   "elements": [
+    "MinimumTurnRoundTime",
+    "TurnRound->MinimumTurnRoundTime",
+    "Flight->MinimumTurnRoundTime"
+   ],
+   "note": ""
+  },
+  "c105": {
+   "credit": 0.5,
+   "elements": [
+    "TakeOffMilestone.generateAirborneMessage()",
+    "ATCSystem"
+   ],
+   "note": "Tower FDPS named only in an operation description, no class or attribute."
+  },
+  "c108": {
+   "credit": 1,
+   "elements": [
+    "TurnRoundOperator.recordAircraftReady()",
+    "ReadyTime",
+    "AircraftReadyMilestone->ReadyTime"
+   ],
+   "note": ""
+  },
+  "c111": {
+   "credit": 1,
+   "elements": [
+    "TSATIssuedMilestone.issueOffsetMinutes",
+    "AirTrafficControl.issueTSAT()"
+   ],
+   "note": ""
+  },
+  "c116": {
+   "credit": 1,
+   "elements": [
+    "StartUpRequestedMilestone.alertIfNoStartUpRequested()"
+   ],
+   "note": ""
+  },
+  "c121": {
+   "credit": 1,
+   "elements": [
+    "TakeOffFromOutstationMilestone.calculateELDT()",
+    "ElapsedTime"
+   ],
+   "note": ""
+  },
+  "c136": {
+   "credit": 1,
+   "elements": [
+    "LandedMilestone.checkTOBTConsistency()"
+   ],
+   "note": ""
+  },
+  "c152": {
+   "credit": 1,
+   "elements": [
+    "ATCSystem.detectFlight()",
+    "ATCSystem->Flight"
+   ],
+   "note": ""
+  },
+  "c154": {
+   "credit": 1,
+   "elements": [
+    "FinalApproachMilestone.checkTOBTConsistency()",
+    "FinalApproachMilestone.commenceTOBTProcess()"
+   ],
+   "note": ""
+  },
+  "c199": {
+   "credit": 1,
+   "elements": [
+    "GroundHandlingStartedMilestone.updateTOBT()",
+    "TurnRoundOperator.updateTOBT()"
+   ],
+   "note": ""
+  }
+ },
+ "exported": "2026-09-23T17:16:09"
+}

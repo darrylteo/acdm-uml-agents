@@ -1,0 +1,118 @@
+{
+  "meta": {
+    "ok": true,
+    "output": null,
+    "error": null,
+    "model": "claude-sonnet-5",
+    "input_tokens": 24076,
+    "output_tokens": 2594,
+    "thinking_tokens": 2011,
+    "cache_creation_tokens": 21751,
+    "cache_read_tokens": 2323,
+    "cost_usd": 0.1134126,
+    "duration_ms": 19353,
+    "attempts": 1,
+    "num_turns": 2
+  },
+  "output": {
+    "items": [
+      {
+        "id": "c037",
+        "grade": 1,
+        "elements": [
+          "StartUpRequested.recordAsrt()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c039",
+        "grade": 1,
+        "elements": [
+          "TimeQuantity.calculateTtot()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c041",
+        "grade": 1,
+        "elements": [
+          "InBlockMilestone.checkTobtConsistency()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c058",
+        "grade": 1,
+        "elements": [
+          "AtcFlightPlanActivated.updateEldtEibtEtot()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c110",
+        "grade": 1,
+        "elements": [
+          "OffBlockMilestone.sendADpi()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c122",
+        "grade": 1,
+        "elements": [
+          "AtcFlightPlanActivated.sendFirstEdpi()",
+          "AircraftOperator"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c127",
+        "grade": 1,
+        "elements": [
+          "TurnRound.mttt"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c157",
+        "grade": 1,
+        "elements": [
+          "AtcFlightPlanActivated.sendFirstEdpi()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c180",
+        "grade": 1,
+        "elements": [
+          "TimeQuantity.checkTtotToleranceExceeded()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c181",
+        "grade": 1,
+        "elements": [
+          "TimeQuantity.originator"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c184",
+        "grade": 1,
+        "elements": [
+          "OffBlockMilestone.sendADpi()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c190",
+        "grade": 1,
+        "elements": [
+          "OperationalStatus.IN-BLOCK"
+        ],
+        "note": ""
+      }
+    ]
+  }
+}

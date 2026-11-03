@@ -1,0 +1,44 @@
+# Milestone 16: Take Off
+
+The section, split into sentences. The field name precedes each field; the id precedes each sentence.
+
+
+## Definition
+
+[M16.definition.1] ATOT - Actual Take Off Time.
+[M16.definition.2] This is the time that an aircraft takes off from the runway.
+[M16.definition.3] (Equivalent to ATC ATD-Actual Time of Departure, ACARS = OFF).
+
+## Origin and priority
+
+[M16.origin_and_priority.1] Provided by ATC system or from ACARS equipped aircraft.
+
+## Timing
+
+[M16.timing.1] The information is directly available as soon as possible after occurrence of the milestone.
+
+## Data Quality
+
+[M16.data_quality.1] Data is available with an accuracy of +/- 1 minute.
+
+## Effect
+
+[M16.effect.1] FSA and MVT messages are sent.
+
+## Procedures
+
+[M16.procedures.1] To inform all relevant Airport CDM Partners about the actual take off.
+[M16.procedures.2] An airborne message is generated and the flight is removed from the departure sequence.
+[M16.procedures.3] This process is triggered by Tower FDPS, A-SMGCS / Radar detection or ACARS.
+
+## Operational Status
+
+[M16.operational_status.1] DEPARTED / TAKE OFF
+
+## Action on CDM Operation
+
+[M16.action_on_cdm.1] ATOT recorded
+
+# Task
+
+Return every sentence with keep or drop, a reason, and the claims of each kept sentence, as JSON conforming to the schema.

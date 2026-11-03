@@ -1,0 +1,3998 @@
+{
+ "task": "recall",
+ "seed": 0,
+ "n": 200,
+ "population": 5868,
+ "models": {
+  "m00": "single/run_04",
+  "m01": "single/run_02",
+  "m02": "multi/run_01",
+  "m03": "single_high/run_04",
+  "m04": "multi/run_03",
+  "m05": "single_high/run_03",
+  "m06": "single/run_03",
+  "m07": "multi/run_04",
+  "m08": "noscaffold/run_01",
+  "m09": "single_high/run_05",
+  "m10": "single_high/run_02",
+  "m11": "noscaffold/run_02",
+  "m12": "noscaffold/run_03",
+  "m13": "single/run_01",
+  "m14": "multi/run_05",
+  "m15": "multi/run_02",
+  "m16": "single_high/run_01",
+  "m17": "single/run_05"
+ },
+ "items": {
+  "c001": {
+   "run": "single/run_01",
+   "claim": "M8.definition.2.c1",
+   "kind": "operation",
+   "pool": [
+    "GroundHandlingStartedMilestone",
+    "GroundHandlingStartedMilestone.informNetworkOperationsIfTolerated()",
+    "GroundHandlingStartedMilestone->Milestone [generalization]",
+    "FlightPlanActivatedMilestone.confirmFlightToNetworkOperations()",
+    "OffBlockMilestone.checkTTOTToleranceAndInform()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "GroundHandlingStartedMilestone",
+    "GroundHandlingStartedMilestone.informNetworkOperationsIfTolerated()",
+    "GroundHandlingStartedMilestone->Milestone [generalization]",
+    "FlightPlanActivatedMilestone.confirmFlightToNetworkOperations()",
+    "OffBlockMilestone.checkTTOTToleranceAndInform()"
+   ]
+  },
+  "c002": {
+   "run": "single_high/run_02",
+   "claim": "M14.procedures.6.c2",
+   "kind": "class",
+   "pool": [
+    "StartUpRequestTime",
+    "M13StartUpRequested",
+    "M13StartUpRequested->Milestone [generalization]",
+    "StartUpRequestTime->TimeQuantity [generalization]",
+    "Flight.startUpRequestTime"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "StartUpRequestTime",
+    "M13StartUpRequested",
+    "M13StartUpRequested->Milestone [generalization]",
+    "StartUpRequestTime->TimeQuantity [generalization]",
+    "Flight.startUpRequestTime"
+   ]
+  },
+  "c003": {
+   "run": "noscaffold/run_02",
+   "claim": "M12.operational_status.1.c1",
+   "kind": "enumeration",
+   "pool": [
+    "OperationalStatus",
+    "Flight.ardt",
+    "AircraftOperator",
+    "GroundHandler"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "OperationalStatus",
+    "Flight.ardt",
+    "AircraftOperator",
+    "GroundHandler"
+   ]
+  },
+  "c004": {
+   "run": "multi/run_02",
+   "claim": "M14.procedures.6.c1",
+   "kind": "operation",
+   "pool": [
+    "StartUpApproved.tsatTolerance",
+    "DepartureClearanceMessage",
+    "StartUpApproved",
+    "TsatIssued.tobtUpdateThreshold",
+    "StartUpApproved->Flight [association]"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "StartUpApproved.tsatTolerance",
+    "DepartureClearanceMessage",
+    "StartUpApproved",
+    "TsatIssued.tobtUpdateThreshold",
+    "StartUpApproved->Flight [association]"
+   ]
+  },
+  "c005": {
+   "run": "single_high/run_01",
+   "claim": "M7.procedures.2.c1",
+   "kind": "operation",
+   "pool": [
+    "InBlock.notifyNetworkOperationsIfTTOTChanges()",
+    "OffBlock.checkTTOTChangeAndNotify()",
+    "TakeOffFromOutstation.sendTDPIt()",
+    "InBlock.recordAIBT()",
+    "OffBlock.sendADPI()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "InBlock.notifyNetworkOperationsIfTTOTChanges()",
+    "OffBlock.checkTTOTChangeAndNotify()",
+    "TakeOffFromOutstation.sendTDPIt()",
+    "InBlock.recordAIBT()",
+    "OffBlock.sendADPI()"
+   ]
+  },
+  "c006": {
+   "run": "multi/run_03",
+   "claim": "M7.procedures.1.c1",
+   "kind": "operation",
+   "pool": [
+    "InBlock.checkFeasibility()",
+    "TakeOffFromOutstation.checkFeasibility()",
+    "EobtMinusTwoHourCheck.checkFeasibility()",
+    "AtcFlightPlan->AirportFlightData [association]",
+    "AtcFlightPlan->AirportSlot [association]"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "InBlock.checkFeasibility()",
+    "TakeOffFromOutstation.checkFeasibility()",
+    "EobtMinusTwoHourCheck.checkFeasibility()",
+    "AtcFlightPlan->AirportFlightData [association]",
+    "AtcFlightPlan->AirportSlot [association]"
+   ]
+  },
+  "c007": {
+   "run": "noscaffold/run_03",
+   "claim": "M11.procedures.1.c1",
+   "kind": "operation",
+   "pool": [
+    "AirportCDMPlatform.notifyPartners()",
+    "Flight.asbt",
+    "DpiMessage",
+    "AirportCDMPlatform",
+    "NetworkOperations.receiveDpi()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "AirportCDMPlatform.notifyPartners()",
+    "Flight.asbt",
+    "DpiMessage",
+    "AirportCDMPlatform",
+    "NetworkOperations.receiveDpi()"
+   ]
+  },
+  "c008": {
+   "run": "single/run_01",
+   "claim": "M5.data_quality.1.c1",
+   "kind": "attribute",
+   "pool": [
+    "TimeQuantity.accuracy",
+    "AIBT",
+    "ATOT",
+    "ALDT",
+    "TimeQuantity"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "TimeQuantity.accuracy",
+    "AIBT",
+    "ATOT",
+    "ALDT",
+    "TimeQuantity"
+   ]
+  },
+  "c009": {
+   "run": "single/run_04",
+   "claim": "M2.origin_and_priority.2.a2",
+   "kind": "attribute",
+   "pool": [
+    "Flight.regulated",
+    "AirportCDMPlatform.markRegulated()",
+    "EOBTMinus2HourMilestone",
+    "TSATIssuedMilestone.informPartnersOfTSAT()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "Flight.regulated",
+    "AirportCDMPlatform.markRegulated()",
+    "EOBTMinus2HourMilestone",
+    "TSATIssuedMilestone.informPartnersOfTSAT()"
+   ]
+  },
+  "c010": {
+   "run": "noscaffold/run_03",
+   "claim": "M2.timing.1.c1",
+   "kind": "operation",
+   "pool": [
+    "NetworkOperations.issueCtot()",
+    "NetworkOperations",
+    "NetworkOperations->Flight [association]",
+    "Flight.ctot",
+    "Flight.isRegulated"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "NetworkOperations.issueCtot()",
+    "NetworkOperations",
+    "NetworkOperations->Flight [association]",
+    "Flight.ctot",
+    "Flight.isRegulated"
+   ]
+  },
+  "c011": {
+   "run": "single_high/run_02",
+   "claim": "M4.origin_and_priority.1.c4",
+   "kind": "relationship",
+   "pool": [
+    "ATCUnit",
+    "ATCUnit.unitRole",
+    "M5FinalApproach->NetworkOperations [dependency]",
+    "AirportSurveillanceSystem",
+    "ATCUnit->AirportCDMPartner [generalization]"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "ATCUnit",
+    "ATCUnit.unitRole",
+    "M5FinalApproach->NetworkOperations [dependency]",
+    "AirportSurveillanceSystem",
+    "ATCUnit->AirportCDMPartner [generalization]"
+   ]
+  },
+  "c012": {
+   "run": "multi/run_05",
+   "claim": "M7.effect.1.c7",
+   "kind": "attribute",
+   "pool": [
+    "InBlockCheck",
+    "LandedCheck",
+    "TurnRound.calculateDepartingFlightTimings()",
+    "Flight.ettt",
+    "Ettt->TimeQuantity [generalization]"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "InBlockCheck",
+    "LandedCheck",
+    "TurnRound.calculateDepartingFlightTimings()",
+    "Flight.ettt",
+    "Ettt->TimeQuantity [generalization]"
+   ]
+  },
+  "c013": {
+   "run": "multi/run_03",
+   "claim": "M15.procedures.4.c1",
+   "kind": "operation",
+   "pool": [
+    "OffBlock.sendADpi()",
+    "OffBlock",
+    "TsatIssued.informNetworkOperationsViaTdpiS()",
+    "EobtMinusTwoHourCheck.informNetworkOperationsViaFirstTdpi()",
+    "NetworkOperations->DpiMessage [association]"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "OffBlock.sendADpi()",
+    "OffBlock",
+    "TsatIssued.informNetworkOperationsViaTdpiS()",
+    "EobtMinusTwoHourCheck.informNetworkOperationsViaFirstTdpi()",
+    "NetworkOperations->DpiMessage [association]"
+   ]
+  },
+  "c014": {
+   "run": "single/run_03",
+   "claim": "M9.effect.6.c5",
+   "kind": "operation",
+   "pool": [
+    "AtcUnit.confirmTsatToPilot()",
+    "FlightOperationalStatus",
+    "TakeOff.removeFromDepartureSequence()",
+    "AtcSystem.detectFlight()",
+    "AtcUnit->Flight [association]"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "AtcUnit.confirmTsatToPilot()",
+    "FlightOperationalStatus",
+    "TakeOff.removeFromDepartureSequence()",
+    "AtcSystem.detectFlight()",
+    "AtcUnit->Flight [association]"
+   ]
+  },
+  "c015": {
+   "run": "multi/run_02",
+   "claim": "M8.effect.1.c1",
+   "kind": "operation",
+   "pool": [
+    "GroundHandlingStarted.updateTobt()",
+    "InBlock.updateDownstreamEstimates()",
+    "GroundHandlingStarted",
+    "OffBlock.informAobt()",
+    "AirportCdmPlatform.calculateTobtFromEldt()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "GroundHandlingStarted.updateTobt()",
+    "InBlock.updateDownstreamEstimates()",
+    "GroundHandlingStarted",
+    "OffBlock.informAobt()",
+    "AirportCdmPlatform.calculateTobtFromEldt()"
+   ]
+  },
+  "c016": {
+   "run": "noscaffold/run_01",
+   "claim": "M2.procedures.5.c1",
+   "kind": "operation",
+   "pool": [
+    "Flight.computeTTOT()",
+    "Flight.mttt",
+    "AircraftTurnRound.minimumTurnRoundTime",
+    "ConsistencyCheck->Flight [dependency]",
+    "AircraftOperator->Flight [association]"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "Flight.computeTTOT()",
+    "Flight.mttt",
+    "AircraftTurnRound.minimumTurnRoundTime",
+    "ConsistencyCheck->Flight [dependency]",
+    "AircraftOperator->Flight [association]"
+   ]
+  },
+  "c017": {
+   "run": "noscaffold/run_03",
+   "claim": "M12.data_quality.1.c1",
+   "kind": "attribute",
+   "pool": [
+    "Flight.ardt",
+    "ATCFlightPlan->AirportFlightData [association]",
+    "AirportFlightData",
+    "AirportCDMPlatform",
+    "Flight.computeTtot()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "Flight.ardt",
+    "ATCFlightPlan->AirportFlightData [association]",
+    "AirportFlightData",
+    "AirportCDMPlatform",
+    "Flight.computeTtot()"
+   ]
+  },
+  "c018": {
+   "run": "single/run_03",
+   "claim": "M16.procedures.1.c1",
+   "kind": "operation",
+   "pool": [
+    "TakeOff.informPartnersOfAtot()",
+    "BoardingStarts.informPartnersOfAsbt()",
+    "StartUpRequested.informPartnersOfAsrt()",
+    "AircraftReady.informPartnersOfArdt()",
+    "OffBlock.informPartnersOfAobt()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "TakeOff.informPartnersOfAtot()",
+    "BoardingStarts.informPartnersOfAsbt()",
+    "StartUpRequested.informPartnersOfAsrt()",
+    "AircraftReady.informPartnersOfArdt()",
+    "OffBlock.informPartnersOfAobt()"
+   ]
+  },
+  "c019": {
+   "run": "single/run_04",
+   "claim": "M5.procedures.2.c1",
+   "kind": "operation",
+   "pool": [
+    "FinalApproachMilestone.informNetworkOperationsIfTTOTExceedsTolerance()",
+    "FinalTOBTConfirmationMilestone.checkTOBTConsistency()",
+    "TimeQuantity.exceedsTolerance()",
+    "TimeQuantity.tolerance",
+    "OffBlockMilestone.checkTTOTAfterAOBT()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "FinalApproachMilestone.informNetworkOperationsIfTTOTExceedsTolerance()",
+    "FinalTOBTConfirmationMilestone.checkTOBTConsistency()",
+    "TimeQuantity.exceedsTolerance()",
+    "TimeQuantity.tolerance",
+    "OffBlockMilestone.checkTTOTAfterAOBT()"
+   ]
+  },
+  "c020": {
+   "run": "multi/run_04",
+   "claim": "M8.procedures.2.c5",
+   "kind": "relationship",
+   "pool": [
+    "InBlockMilestone->NetworkOperations [dependency]",
+    "LandedMilestone->NetworkOperations [dependency]",
+    "TobtCheckMilestone.informNetworkOperationsOfTtotChange()",
+    "TobtCheckMilestone",
+    "RegulationCheckMilestone.informNetworkOperationsViaTDpi()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "InBlockMilestone->NetworkOperations [dependency]",
+    "LandedMilestone->NetworkOperations [dependency]",
+    "TobtCheckMilestone.informNetworkOperationsOfTtotChange()",
+    "TobtCheckMilestone",
+    "RegulationCheckMilestone.informNetworkOperationsViaTDpi()"
+   ]
+  },
+  "c021": {
+   "run": "single_high/run_02",
+   "claim": "M11.procedures.6.c1",
+   "kind": "attribute",
+   "pool": [
+    "M9FinalConfirmationTOBT",
+    "TurnRoundPartner.confirmFinalTOBT()",
+    "M10TSATIssued",
+    "ATCUnit.issueTSAT()",
+    "M11BoardingStarts.checkBoardingStatus()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "M9FinalConfirmationTOBT",
+    "TurnRoundPartner.confirmFinalTOBT()",
+    "M10TSATIssued",
+    "ATCUnit.issueTSAT()",
+    "M11BoardingStarts.checkBoardingStatus()"
+   ]
+  },
+  "c022": {
+   "run": "noscaffold/run_02",
+   "claim": "M1.procedures.3.c3",
+   "kind": "attribute",
+   "pool": [
+    "Flight.aircraftRegistration"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "Flight.aircraftRegistration"
+   ]
+  },
+  "c023": {
+   "run": "multi/run_03",
+   "claim": "M3.procedures.3.c2",
+   "kind": "attribute",
+   "pool": [
+    "TakeOffTime.tolerance",
+    "TakeOffFromOutstation.notifyNetworkOperationsIfToleranceExceeded()",
+    "TakeOffTime.accuracy",
+    "StartUpApprovalTime.toleranceWindow",
+    "OffBlock.checkTtotToleranceExceeded()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "TakeOffTime.tolerance",
+    "TakeOffFromOutstation.notifyNetworkOperationsIfToleranceExceeded()",
+    "TakeOffTime.accuracy",
+    "StartUpApprovalTime.toleranceWindow",
+    "OffBlock.checkTtotToleranceExceeded()"
+   ]
+  },
+  "c024": {
+   "run": "multi/run_05",
+   "claim": "M13.effect.1.c1",
+   "kind": "operation",
+   "pool": [
+    "DepartureSequence",
+    "Flight.tsat",
+    "Tsat",
+    "TsatIssuance",
+    "Aircrew"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "DepartureSequence",
+    "Flight.tsat",
+    "Tsat",
+    "TsatIssuance",
+    "Aircrew"
+   ]
+  },
+  "c025": {
+   "run": "single/run_03",
+   "claim": "M8.effect.1.c2",
+   "kind": "operation",
+   "pool": [
+    "InBlock.updateTobtTtot()",
+    "TurnRound.mttt",
+    "Eobt2HrCheck.calculateTtot()",
+    "Flight.ttot",
+    "AirportCdmPlatform.computeTobtAutomatically()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "InBlock.updateTobtTtot()",
+    "TurnRound.mttt",
+    "Eobt2HrCheck.calculateTtot()",
+    "Flight.ttot",
+    "AirportCdmPlatform.computeTobtAutomatically()"
+   ]
+  },
+  "c026": {
+   "run": "multi/run_02",
+   "claim": "M1.action_on_cdm.1.c3",
+   "kind": "operation",
+   "pool": [
+    "FlightPlanActivation.updateTimingsOnActivation()",
+    "InBlock.updateDownstreamEstimates()",
+    "EobtMinus2Hours.checkEstimatesConsistency()",
+    "EobtMinus2Hours",
+    "LocalRadarUpdate"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "FlightPlanActivation.updateTimingsOnActivation()",
+    "InBlock.updateDownstreamEstimates()",
+    "EobtMinus2Hours.checkEstimatesConsistency()",
+    "EobtMinus2Hours",
+    "LocalRadarUpdate"
+   ]
+  },
+  "c027": {
+   "run": "single_high/run_03",
+   "claim": "M3.procedures.4.c1",
+   "kind": "operation",
+   "pool": [
+    "TakeOffFromOutstation.calculateTtot()",
+    "TurnroundTime.minimumTurnRoundTime",
+    "TurnroundTime",
+    "ATCSystem.calculateExot()",
+    "Flight.turnroundTimeEstimate"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "TakeOffFromOutstation.calculateTtot()",
+    "TurnroundTime.minimumTurnRoundTime",
+    "TurnroundTime",
+    "ATCSystem.calculateExot()",
+    "Flight.turnroundTimeEstimate"
+   ]
+  },
+  "c028": {
+   "run": "single_high/run_01",
+   "claim": "M1.origin_and_priority.1.c2",
+   "kind": "relationship",
+   "pool": [
+    "ATCFlightPlan->AircraftOperator [association]",
+    "AircraftOperator",
+    "ATCFlightPlan",
+    "Flight.aircraftRegistration",
+    "FlightPlanActivated"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "ATCFlightPlan->AircraftOperator [association]",
+    "AircraftOperator",
+    "ATCFlightPlan",
+    "Flight.aircraftRegistration",
+    "FlightPlanActivated"
+   ]
+  },
+  "c029": {
+   "run": "single_high/run_04",
+   "claim": "M5.procedures.2.c1",
+   "kind": "operation",
+   "pool": [
+    "Milestone.informNetworkOperationsOnTTOTChange()",
+    "Milestone",
+    "OffBlock.checkTTOTChange()",
+    "TTOT",
+    "TakeOffFromOutstation.checkFeasibility()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "Milestone.informNetworkOperationsOnTTOTChange()",
+    "Milestone",
+    "OffBlock.checkTTOTChange()",
+    "TTOT",
+    "TakeOffFromOutstation.checkFeasibility()"
+   ]
+  },
+  "c030": {
+   "run": "noscaffold/run_03",
+   "claim": "M10.procedures.2.c4",
+   "kind": "operation",
+   "pool": [
+    "DpiMessageType",
+    "NetworkOperations.receiveDpi()",
+    "NetworkOperations",
+    "DpiMessage->NetworkOperations [dependency]",
+    "DpiMessage"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "DpiMessageType",
+    "NetworkOperations.receiveDpi()",
+    "NetworkOperations",
+    "DpiMessage->NetworkOperations [dependency]",
+    "DpiMessage"
+   ]
+  },
+  "c031": {
+   "run": "multi/run_04",
+   "claim": "M10.procedures.3.c3",
+   "kind": "attribute",
+   "pool": [
+    "TsatIssuedMilestone",
+    "StartUpApprovalTime.tolerance",
+    "StartUpRequestTime.toleranceWindow",
+    "LocalRadarUpdateMilestone",
+    "TsatIssuedMilestone.localParameterT"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "TsatIssuedMilestone",
+    "StartUpApprovalTime.tolerance",
+    "StartUpRequestTime.toleranceWindow",
+    "LocalRadarUpdateMilestone",
+    "TsatIssuedMilestone.localParameterT"
+   ]
+  },
+  "c032": {
+   "run": "single/run_01",
+   "claim": "M15.procedures.4.c2",
+   "kind": "class",
+   "pool": [
+    "ADPIMessage",
+    "DPIMessage",
+    "DPIProcess",
+    "TDPIMessage",
+    "EDPIMessage"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "ADPIMessage",
+    "DPIMessage",
+    "DPIProcess",
+    "TDPIMessage",
+    "EDPIMessage"
+   ]
+  },
+  "c033": {
+   "run": "multi/run_03",
+   "claim": "M1.effect.4.c1",
+   "kind": "class",
+   "pool": [
+    "EobtMinusTwoHourCheck.updateEldtFromFum()",
+    "TakeOffFromOutstation.calculateEldtFromAtot()",
+    "LandingTime",
+    "Landed",
+    "StandGateManagement"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "EobtMinusTwoHourCheck.updateEldtFromFum()",
+    "TakeOffFromOutstation.calculateEldtFromAtot()",
+    "LandingTime",
+    "Landed",
+    "StandGateManagement"
+   ]
+  },
+  "c034": {
+   "run": "noscaffold/run_01",
+   "claim": "M1.procedures.7.c1",
+   "kind": "operation",
+   "pool": [
+    "ATCFlightPlan.submissionTime",
+    "ATCFlightPlan.eobt",
+    "NetworkOperations.issueCTOT()",
+    "Flight.ctot",
+    "Flight.computeTTOT()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "ATCFlightPlan.submissionTime",
+    "ATCFlightPlan.eobt",
+    "NetworkOperations.issueCTOT()",
+    "Flight.ctot",
+    "Flight.computeTTOT()"
+   ]
+  },
+  "c035": {
+   "run": "noscaffold/run_03",
+   "claim": "M1.procedures.2.c2",
+   "kind": "relationship",
+   "pool": [
+    "ATCFlightPlan.checkConsistency()",
+    "DpiMessage.messageType",
+    "AirportFlightData.firstDestination",
+    "DpiMessage->DpiMessageType [association]",
+    "DpiMessage->NetworkOperations [dependency]"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "ATCFlightPlan.checkConsistency()",
+    "DpiMessage.messageType",
+    "AirportFlightData.firstDestination",
+    "DpiMessage->DpiMessageType [association]",
+    "DpiMessage->NetworkOperations [dependency]"
+   ]
+  },
+  "c036": {
+   "run": "single/run_04",
+   "claim": "M16.action_on_cdm.1.c1",
+   "kind": "operation",
+   "pool": [
+    "AirportCDMPlatform.recordATOT()",
+    "AirportCDMPlatform.recordAOBT()",
+    "TimeQuantity.recordedAt",
+    "OffBlockMilestone.checkTTOTAfterAOBT()",
+    "MovementMessage.actualTakeOffTime"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "AirportCDMPlatform.recordATOT()",
+    "AirportCDMPlatform.recordAOBT()",
+    "TimeQuantity.recordedAt",
+    "OffBlockMilestone.checkTTOTAfterAOBT()",
+    "MovementMessage.actualTakeOffTime"
+   ]
+  },
+  "c037": {
+   "run": "single/run_02",
+   "claim": "M13.procedures.1.c1",
+   "kind": "operation",
+   "pool": [
+    "StartUpRequested.recordAsrt()",
+    "AirportCdmPlatform.informPartners()",
+    "AircraftReady.recordArdt()",
+    "StartUpRequested.checkStartUpRequestedWithinTolerance()",
+    "BoardingStarts.recordAsbt()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "StartUpRequested.recordAsrt()",
+    "AirportCdmPlatform.informPartners()",
+    "AircraftReady.recordArdt()",
+    "StartUpRequested.checkStartUpRequestedWithinTolerance()",
+    "BoardingStarts.recordAsbt()"
+   ]
+  },
+  "c038": {
+   "run": "noscaffold/run_02",
+   "claim": "M7.definition.3.c3",
+   "kind": "class",
+   "pool": [
+    "Flight.acgt",
+    "GroundHandler"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "Flight.acgt",
+    "GroundHandler"
+   ]
+  },
+  "c039": {
+   "run": "single/run_02",
+   "claim": "M3.procedures.4.c1",
+   "kind": "operation",
+   "pool": [
+    "TimeQuantity.calculateTtot()",
+    "InBlockMilestone.updateTobtTtotFromTurnround()",
+    "TurnRound.mttt",
+    "GroundHandlingStarted.updateTobtFromTurnround()",
+    "FinalConfirmationOfTobt.calculateExot()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "TimeQuantity.calculateTtot()",
+    "InBlockMilestone.updateTobtTtotFromTurnround()",
+    "TurnRound.mttt",
+    "GroundHandlingStarted.updateTobtFromTurnround()",
+    "FinalConfirmationOfTobt.calculateExot()"
+   ]
+  },
+  "c040": {
+   "run": "single_high/run_04",
+   "claim": "M15.definition.2.c3",
+   "kind": "attribute",
+   "pool": [
+    "AOBT",
+    "OffBlock",
+    "OffBlock.informPartnersOfAOBT()",
+    "AircraftReady",
+    "StartUpApproved.informPartnersOfASAT()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "AOBT",
+    "OffBlock",
+    "OffBlock.informPartnersOfAOBT()",
+    "AircraftReady",
+    "StartUpApproved.informPartnersOfASAT()"
+   ]
+  },
+  "c041": {
+   "run": "single/run_02",
+   "claim": "M7.procedures.1.c1",
+   "kind": "operation",
+   "pool": [
+    "InBlockMilestone.checkTobtConsistency()",
+    "FinalApproach.commenceTobtProcess()",
+    "Eobt2hrCheck.checkFlightEstimatesConsistency()",
+    "TakeOffFromOutstation.checkLandingEstimateConsistency()",
+    "AtcFlightPlanActivated.checkConsistency()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "InBlockMilestone.checkTobtConsistency()",
+    "FinalApproach.commenceTobtProcess()",
+    "Eobt2hrCheck.checkFlightEstimatesConsistency()",
+    "TakeOffFromOutstation.checkLandingEstimateConsistency()",
+    "AtcFlightPlanActivated.checkConsistency()"
+   ]
+  },
+  "c042": {
+   "run": "multi/run_04",
+   "claim": "M7.definition.3.c2",
+   "kind": "attribute",
+   "pool": [
+    "AcarsSystem->InBlockTime [association]",
+    "AcarsSystem->LandingTime [association]",
+    "AcarsSystem",
+    "FlightPlanActivationMilestone.updateArrivalOrDepartureTimings()",
+    "OffBlockTime.originator"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "AcarsSystem->InBlockTime [association]",
+    "AcarsSystem->LandingTime [association]",
+    "AcarsSystem",
+    "FlightPlanActivationMilestone.updateArrivalOrDepartureTimings()",
+    "OffBlockTime.originator"
+   ]
+  },
+  "c043": {
+   "run": "single/run_05",
+   "claim": "M1.definition.2.c1",
+   "kind": "class",
+   "pool": [
+    "AirportCDMPlatform",
+    "AirportCDMPlatform->Milestone [association]",
+    "AirportCDMPlatform->FSAMessage [dependency]",
+    "FlightPlanActivation",
+    "DPIMessage"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "AirportCDMPlatform",
+    "AirportCDMPlatform->Milestone [association]",
+    "AirportCDMPlatform->FSAMessage [dependency]",
+    "FlightPlanActivation",
+    "DPIMessage"
+   ]
+  },
+  "c044": {
+   "run": "noscaffold/run_01",
+   "claim": "M16.data_quality.1.c1",
+   "kind": "attribute",
+   "pool": [
+    "Flight.atot",
+    "Flight.aldt",
+    "ACARSSystem.reportActualTime()",
+    "AirportCDMPlatform.initiateFlight()",
+    "ConsistencyCheck.toleranceValue"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "Flight.atot",
+    "Flight.aldt",
+    "ACARSSystem.reportActualTime()",
+    "AirportCDMPlatform.initiateFlight()",
+    "ConsistencyCheck.toleranceValue"
+   ]
+  },
+  "c045": {
+   "run": "single_high/run_04",
+   "claim": "M10.procedures.2.c1",
+   "kind": "class",
+   "pool": [
+    "DPIMessageType",
+    "DPIMessage",
+    "AircraftOperator.provideTOBT()",
+    "TakeOffFromOutstation.sendTDPIt()",
+    "TSATIssued.sendTDPIs()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "DPIMessageType",
+    "DPIMessage",
+    "AircraftOperator.provideTOBT()",
+    "TakeOffFromOutstation.sendTDPIt()",
+    "TSATIssued.sendTDPIs()"
+   ]
+  },
+  "c046": {
+   "run": "multi/run_02",
+   "claim": "M11.procedures.4.c2",
+   "kind": "attribute",
+   "pool": [
+    "BoardingStarts.checkBoardingStatus()",
+    "BoardingStarts.boardingCheckOffset",
+    "FinalConfirmationOfTobt",
+    "FinalConfirmationOfTobt.confirmTobt()",
+    "LocalRadarUpdate.commenceTobtProcess()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "BoardingStarts.checkBoardingStatus()",
+    "BoardingStarts.boardingCheckOffset",
+    "FinalConfirmationOfTobt",
+    "FinalConfirmationOfTobt.confirmTobt()",
+    "LocalRadarUpdate.commenceTobtProcess()"
+   ]
+  },
+  "c047": {
+   "run": "multi/run_01",
+   "claim": "M5.data_quality.1.c1",
+   "kind": "attribute",
+   "pool": [
+    "ATCSystem.detectMilestoneEvent()",
+    "AirTrafficControlUnit.recordASRT()",
+    "AirTrafficControlUnit.recordASAT()",
+    "TimeQuantity.accuracy",
+    "MilestoneEOBTMinus2Hours.calculateTTOT()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "ATCSystem.detectMilestoneEvent()",
+    "AirTrafficControlUnit.recordASRT()",
+    "AirTrafficControlUnit.recordASAT()",
+    "TimeQuantity.accuracy",
+    "MilestoneEOBTMinus2Hours.calculateTTOT()"
+   ]
+  },
+  "c048": {
+   "run": "single_high/run_05",
+   "claim": "M1.effect.3.c2",
+   "kind": "attribute",
+   "pool": [
+    "Aircraft.type",
+    "Flight.aircraftType",
+    "MovementMessage.eventType",
+    "DPIMessage.dpiType",
+    "AirTrafficControl.unitType"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "Aircraft.type",
+    "Flight.aircraftType",
+    "MovementMessage.eventType",
+    "DPIMessage.dpiType",
+    "AirTrafficControl.unitType"
+   ]
+  },
+  "c049": {
+   "run": "multi/run_03",
+   "claim": "M3.procedures.5.c1",
+   "kind": "operation",
+   "pool": [
+    "TakeOffFromOutstation.calculateTtot()",
+    "TurnRound.minimumTurnRoundTime",
+    "OffBlock.updateTtot()",
+    "TakeOffFromOutstation.notifyNetworkOperationsIfToleranceExceeded()",
+    "AtcSystem.calculateExot()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "TakeOffFromOutstation.calculateTtot()",
+    "TurnRound.minimumTurnRoundTime",
+    "OffBlock.updateTtot()",
+    "TakeOffFromOutstation.notifyNetworkOperationsIfToleranceExceeded()",
+    "AtcSystem.calculateExot()"
+   ]
+  },
+  "c050": {
+   "run": "multi/run_03",
+   "claim": "M4.effect.1.c6",
+   "kind": "relationship",
+   "pool": [
+    "LocalRadarUpdate.triggerTobtUpdate()",
+    "FinalApproach",
+    "GroundHandler",
+    "AircraftOperator.provideFinalTobt()",
+    "FinalConfirmationOfTobt"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "LocalRadarUpdate.triggerTobtUpdate()",
+    "FinalApproach",
+    "GroundHandler",
+    "AircraftOperator.provideFinalTobt()",
+    "FinalConfirmationOfTobt"
+   ]
+  },
+  "c051": {
+   "run": "single/run_04",
+   "claim": "M15.origin_and_priority.1.c5",
+   "kind": "relationship",
+   "pool": [
+    "TimeQuantity.originator",
+    "ACARS",
+    "ATCSystem",
+    "ACARS->TimeQuantity [dependency]",
+    "BoardingStartsMilestone.checkBoardingStatus()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "TimeQuantity.originator",
+    "ACARS",
+    "ATCSystem",
+    "ACARS->TimeQuantity [dependency]",
+    "BoardingStartsMilestone.checkBoardingStatus()"
+   ]
+  },
+  "c052": {
+   "run": "multi/run_01",
+   "claim": "M10.procedures.1.c1",
+   "kind": "operation",
+   "pool": [
+    "MilestoneTSATIssued.informPartnersOfTSAT()",
+    "Flight.startUpApprovalTime",
+    "MilestoneTakeOff.informPartnersOfTakeOff()",
+    "MilestoneBoardingStarts.informPartnersOfASBT()",
+    "MilestoneStartUpRequested.informPartnersOfASRT()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "MilestoneTSATIssued.informPartnersOfTSAT()",
+    "Flight.startUpApprovalTime",
+    "MilestoneTakeOff.informPartnersOfTakeOff()",
+    "MilestoneBoardingStarts.informPartnersOfASBT()",
+    "MilestoneStartUpRequested.informPartnersOfASRT()"
+   ]
+  },
+  "c053": {
+   "run": "multi/run_01",
+   "claim": "M14.definition.1.c1",
+   "kind": "class",
+   "pool": [
+    "MilestoneStartUpApproved->CDMPartnerNotification [dependency]",
+    "MilestoneStartUpApproved.checkASATAgainstTSAT()",
+    "AirTrafficControlUnit.recordASAT()",
+    "NotificationType",
+    "MilestoneStartUpApproved.informPartnersOfASAT()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "MilestoneStartUpApproved->CDMPartnerNotification [dependency]",
+    "MilestoneStartUpApproved.checkASATAgainstTSAT()",
+    "AirTrafficControlUnit.recordASAT()",
+    "NotificationType",
+    "MilestoneStartUpApproved.informPartnersOfASAT()"
+   ]
+  },
+  "c054": {
+   "run": "multi/run_05",
+   "claim": "M11.procedures.6.c1",
+   "kind": "attribute",
+   "pool": [
+    "BoardingStartCheck.checkBoardingStatus()",
+    "BoardingStartCheck.triggerOffset",
+    "TsatIssuance.issueTsat()",
+    "TobtFinalConfirmation.confirmationOffset",
+    "TsatIssuance.issuanceOffset"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "BoardingStartCheck.checkBoardingStatus()",
+    "BoardingStartCheck.triggerOffset",
+    "TsatIssuance.issueTsat()",
+    "TobtFinalConfirmation.confirmationOffset",
+    "TsatIssuance.issuanceOffset"
+   ]
+  },
+  "c055": {
+   "run": "noscaffold/run_03",
+   "claim": "M14.procedures.2.c1",
+   "kind": "operation",
+   "pool": [
+    "AtcUnit.approveStartUp()",
+    "AtcUnit",
+    "Flight.asat",
+    "Flight.tsat",
+    "AtcUnit->Flight [association]"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "AtcUnit.approveStartUp()",
+    "AtcUnit",
+    "Flight.asat",
+    "Flight.tsat",
+    "AtcUnit->Flight [association]"
+   ]
+  },
+  "c056": {
+   "run": "single_high/run_04",
+   "claim": "M12.data_quality.1.c1",
+   "kind": "attribute",
+   "pool": [
+    "ARDT",
+    "TimeQuantity.accuracy",
+    "Flight.direction",
+    "ASRT",
+    "ATOT"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "ARDT",
+    "TimeQuantity.accuracy",
+    "Flight.direction",
+    "ASRT",
+    "ATOT"
+   ]
+  },
+  "c057": {
+   "run": "multi/run_05",
+   "claim": "M10.procedures.3.c3",
+   "kind": "attribute",
+   "pool": [
+    "Tobt.updateCount",
+    "TsatIssuance.updateCountThreshold",
+    "TsatIssuance.checkTobtUpdateCount()",
+    "StartUpRequestCheck.toleranceWindow",
+    "StartUpApprovalCheck.toleranceOffset"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "Tobt.updateCount",
+    "TsatIssuance.updateCountThreshold",
+    "TsatIssuance.checkTobtUpdateCount()",
+    "StartUpRequestCheck.toleranceWindow",
+    "StartUpApprovalCheck.toleranceOffset"
+   ]
+  },
+  "c058": {
+   "run": "single/run_02",
+   "claim": "M1.action_on_cdm.1.c1",
+   "kind": "operation",
+   "pool": [
+    "AtcFlightPlanActivated.updateEldtEibtEtot()",
+    "Landed.updateEibtFromAldt()",
+    "AirportCdmPlatform.calculateTobtAutomatically()",
+    "TimeQuantity.calculateEibt()",
+    "LocalRadarUpdate"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "AtcFlightPlanActivated.updateEldtEibtEtot()",
+    "Landed.updateEibtFromAldt()",
+    "AirportCdmPlatform.calculateTobtAutomatically()",
+    "TimeQuantity.calculateEibt()",
+    "LocalRadarUpdate"
+   ]
+  },
+  "c059": {
+   "run": "single/run_01",
+   "claim": "M1.action_on_cdm.1.c4",
+   "kind": "class",
+   "pool": [
+    "ETOT",
+    "Flight.etot",
+    "ETOT->TimeQuantity [generalization]",
+    "CTOT",
+    "ELDT"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "ETOT",
+    "Flight.etot",
+    "ETOT->TimeQuantity [generalization]",
+    "CTOT",
+    "ELDT"
+   ]
+  },
+  "c060": {
+   "run": "single_high/run_02",
+   "claim": "M2.effect.1.c3",
+   "kind": "operation",
+   "pool": [
+    "M2EOBTMinus2h.updateInboundELDT()",
+    "FlightUpdateMessage",
+    "Flight.offBlockTime",
+    "NetworkOperations.monitorFlightProgress()",
+    "ETFMS.monitorProgress()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "M2EOBTMinus2h.updateInboundELDT()",
+    "FlightUpdateMessage",
+    "Flight.offBlockTime",
+    "NetworkOperations.monitorFlightProgress()",
+    "ETFMS.monitorProgress()"
+   ]
+  },
+  "c061": {
+   "run": "single_high/run_05",
+   "claim": "M12.effect.2.c3",
+   "kind": "relationship",
+   "pool": [
+    "Pilot.requestStartUp()",
+    "TurnRoundOperator.manageTurnRoundProcess()",
+    "GroundHandler->TurnRoundOperator [generalization]",
+    "GroundHandler",
+    "TurnRoundOperator.recordActualCommenceGroundHandling()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "Pilot.requestStartUp()",
+    "TurnRoundOperator.manageTurnRoundProcess()",
+    "GroundHandler->TurnRoundOperator [generalization]",
+    "GroundHandler",
+    "TurnRoundOperator.recordActualCommenceGroundHandling()"
+   ]
+  },
+  "c062": {
+   "run": "noscaffold/run_03",
+   "claim": "M7.effect.1.c7",
+   "kind": "attribute",
+   "pool": [
+    "TurnRound.estimatedTurnRoundPeriod",
+    "TurnRound",
+    "Flight.ttot",
+    "Flight.computeTtot()",
+    "AircraftOperator"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "TurnRound.estimatedTurnRoundPeriod",
+    "TurnRound",
+    "Flight.ttot",
+    "Flight.computeTtot()",
+    "AircraftOperator"
+   ]
+  },
+  "c063": {
+   "run": "single_high/run_03",
+   "claim": "M12.effect.2.c3",
+   "kind": "relationship",
+   "pool": [
+    "FlightCrew.requestStartUp()",
+    "GroundOperationsPartner.manageTurnRound()",
+    "GroundHandler->GroundOperationsPartner [generalization]",
+    "GroundHandler",
+    "GroundOperationsPartner"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "FlightCrew.requestStartUp()",
+    "GroundOperationsPartner.manageTurnRound()",
+    "GroundHandler->GroundOperationsPartner [generalization]",
+    "GroundHandler",
+    "GroundOperationsPartner"
+   ]
+  },
+  "c064": {
+   "run": "multi/run_02",
+   "claim": "M12.effect.1.c2",
+   "kind": "operation",
+   "pool": [
+    "AirTrafficControlUnit->AircraftReady [association]",
+    "FinalConfirmationOfTobt.introduceToPreDepartureSequence()",
+    "AirTrafficControlUnit",
+    "FlightOperationalStatus",
+    "TakeOff.informTakeOff()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "AirTrafficControlUnit->AircraftReady [association]",
+    "FinalConfirmationOfTobt.introduceToPreDepartureSequence()",
+    "AirTrafficControlUnit",
+    "FlightOperationalStatus",
+    "TakeOff.informTakeOff()"
+   ]
+  },
+  "c065": {
+   "run": "noscaffold/run_03",
+   "claim": "M2.procedures.1.c1",
+   "kind": "operation",
+   "pool": [
+    "ATCFlightPlan.checkConsistency()",
+    "MilestoneProcess",
+    "Flight.checkTtotTolerance()",
+    "ATCFlightPlan->AirportFlightData [association]",
+    "AircraftOperator"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "ATCFlightPlan.checkConsistency()",
+    "MilestoneProcess",
+    "Flight.checkTtotTolerance()",
+    "ATCFlightPlan->AirportFlightData [association]",
+    "AircraftOperator"
+   ]
+  },
+  "c066": {
+   "run": "single_high/run_04",
+   "claim": "M14.procedures.2.c2",
+   "kind": "operation",
+   "pool": [
+    "StartUpApproved.informPartnersOfASAT()",
+    "BoardingStarts.informPartnersOfASBT()",
+    "StartUpRequested.informPartnersOfASRT()",
+    "OffBlock.informPartnersOfAOBT()",
+    "AircraftReady.informPartnersOfARDT()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "StartUpApproved.informPartnersOfASAT()",
+    "BoardingStarts.informPartnersOfASBT()",
+    "StartUpRequested.informPartnersOfASRT()",
+    "OffBlock.informPartnersOfAOBT()",
+    "AircraftReady.informPartnersOfARDT()"
+   ]
+  },
+  "c067": {
+   "run": "single_high/run_03",
+   "claim": "M2.procedures.4.c4",
+   "kind": "class",
+   "pool": [
+    "TurnroundTime.minimumTurnRoundTime",
+    "TurnroundTime",
+    "Flight.turnroundTimeEstimate",
+    "TakeOffFromOutstation.calculateTtot()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "TurnroundTime.minimumTurnRoundTime",
+    "TurnroundTime",
+    "Flight.turnroundTimeEstimate",
+    "TakeOffFromOutstation.calculateTtot()"
+   ]
+  },
+  "c068": {
+   "run": "multi/run_05",
+   "claim": "M12.effect.1.c2",
+   "kind": "operation",
+   "pool": [
+    "DepartureSequence",
+    "DepartureSequence.addFlight()",
+    "Aircrew",
+    "Flight.tsat",
+    "Tsat"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "DepartureSequence",
+    "DepartureSequence.addFlight()",
+    "Aircrew",
+    "Flight.tsat",
+    "Tsat"
+   ]
+  },
+  "c069": {
+   "run": "single_high/run_05",
+   "claim": "M6.effect.1.c5",
+   "kind": "attribute",
+   "pool": [
+    "TurnRoundOperator.updateTOBT()",
+    "LandedMilestone.updateTOBTAndTTOT()",
+    "TurnRound->Flight [aggregation]",
+    "Flight.direction",
+    "Flight->MinimumTurnRoundTime [aggregation]"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "TurnRoundOperator.updateTOBT()",
+    "LandedMilestone.updateTOBTAndTTOT()",
+    "TurnRound->Flight [aggregation]",
+    "Flight.direction",
+    "Flight->MinimumTurnRoundTime [aggregation]"
+   ]
+  },
+  "c070": {
+   "run": "single_high/run_04",
+   "claim": "M5.definition.1.a1",
+   "kind": "operation",
+   "pool": [
+    "FinalApproach",
+    "Flight.destinationAerodrome",
+    "AirportCDMPlatform->Flight [association]",
+    "LocalRadarUpdate",
+    "FinalApproach->Milestone [generalization]"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "FinalApproach",
+    "Flight.destinationAerodrome",
+    "AirportCDMPlatform->Flight [association]",
+    "LocalRadarUpdate",
+    "FinalApproach->Milestone [generalization]"
+   ]
+  },
+  "c071": {
+   "run": "multi/run_04",
+   "claim": "M1.action_on_cdm.1.c3",
+   "kind": "operation",
+   "pool": [
+    "FlightPlanActivationMilestone.updateArrivalOrDepartureTimings()",
+    "RegulationCheckMilestone.informNetworkOperationsViaTDpi()",
+    "InBlockMilestone.triggerDownstreamUpdatesFromAibt()",
+    "LandedMilestone.triggerDownstreamUpdatesFromAldt()",
+    "NetworkOperations.issueCtot()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "FlightPlanActivationMilestone.updateArrivalOrDepartureTimings()",
+    "RegulationCheckMilestone.informNetworkOperationsViaTDpi()",
+    "InBlockMilestone.triggerDownstreamUpdatesFromAibt()",
+    "LandedMilestone.triggerDownstreamUpdatesFromAldt()",
+    "NetworkOperations.issueCtot()"
+   ]
+  },
+  "c072": {
+   "run": "noscaffold/run_01",
+   "claim": "M9.timing.1.c1",
+   "kind": "operation",
+   "pool": [
+    "DPIMessageType",
+    "AircraftOperator->Flight [association]",
+    "GroundHandler->Flight [association]",
+    "GroundHandler.provideTOBT()",
+    "DPIMessage.messageType"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "DPIMessageType",
+    "AircraftOperator->Flight [association]",
+    "GroundHandler->Flight [association]",
+    "GroundHandler.provideTOBT()",
+    "DPIMessage.messageType"
+   ]
+  },
+  "c073": {
+   "run": "single_high/run_03",
+   "claim": "M2.action_on_cdm.1.c1",
+   "kind": "operation",
+   "pool": [
+    "AirportCDMPlatform.markRegulated()",
+    "AirportCDMPlatform.updateEtotTtotCtot()",
+    "Flight.regulated",
+    "RegulationCheck.calculateTtot()",
+    "NetworkOperations.issueCtot()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "AirportCDMPlatform.markRegulated()",
+    "AirportCDMPlatform.updateEtotTtotCtot()",
+    "Flight.regulated",
+    "RegulationCheck.calculateTtot()",
+    "NetworkOperations.issueCtot()"
+   ]
+  },
+  "c074": {
+   "run": "noscaffold/run_01",
+   "claim": "M7.procedures.2.c1",
+   "kind": "operation",
+   "pool": [
+    "Flight.exceedsTTOTTolerance()",
+    "ConsistencyCheck.toleranceValue",
+    "DPIMessage->NetworkOperations [association]",
+    "ConsistencyCheck",
+    "NetworkOperations"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "Flight.exceedsTTOTTolerance()",
+    "ConsistencyCheck.toleranceValue",
+    "DPIMessage->NetworkOperations [association]",
+    "ConsistencyCheck",
+    "NetworkOperations"
+   ]
+  },
+  "c075": {
+   "run": "single_high/run_01",
+   "claim": "M15.procedures.2.c1",
+   "kind": "operation",
+   "pool": [
+    "InBlock.notifyNetworkOperationsIfTTOTChanges()",
+    "OffBlock.checkTTOTChangeAndNotify()",
+    "OffBlock.sendADPI()",
+    "OffBlockTime.toleranceWindow",
+    "TakeOffFromOutstation.sendTDPIt()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "InBlock.notifyNetworkOperationsIfTTOTChanges()",
+    "OffBlock.checkTTOTChangeAndNotify()",
+    "OffBlock.sendADPI()",
+    "OffBlockTime.toleranceWindow",
+    "TakeOffFromOutstation.sendTDPIt()"
+   ]
+  },
+  "c076": {
+   "run": "single_high/run_03",
+   "claim": "M9.action_on_cdm.2.c1",
+   "kind": "operation",
+   "pool": [
+    "AirportCDMPlatform.evaluateTobtConfirmationNeeded()",
+    "GroundOperationsPartner->AirportCDMPlatform [association]",
+    "AirportCDMPlatform.updateEldtEibtTobtTtot()",
+    "GroundOperationsPartner.confirmFinalTobt()",
+    "FinalTobtConfirmation"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "AirportCDMPlatform.evaluateTobtConfirmationNeeded()",
+    "GroundOperationsPartner->AirportCDMPlatform [association]",
+    "AirportCDMPlatform.updateEldtEibtTobtTtot()",
+    "GroundOperationsPartner.confirmFinalTobt()",
+    "FinalTobtConfirmation"
+   ]
+  },
+  "c077": {
+   "run": "single/run_05",
+   "claim": "M4.effect.1.c7",
+   "kind": "operation",
+   "pool": [
+    "AirportCDMPlatform.markAsRegulated()",
+    "TakeOffFromOutstation.calculateTTOT()",
+    "FinalConfirmationOfTOBT.calculateEXOT()",
+    "CTOT->TimeQuantity [generalization]",
+    "Flight->CTOT [association]"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "AirportCDMPlatform.markAsRegulated()",
+    "TakeOffFromOutstation.calculateTTOT()",
+    "FinalConfirmationOfTOBT.calculateEXOT()",
+    "CTOT->TimeQuantity [generalization]",
+    "Flight->CTOT [association]"
+   ]
+  },
+  "c078": {
+   "run": "multi/run_02",
+   "claim": "M7.procedures.1.c1",
+   "kind": "operation",
+   "pool": [
+    "TobtFeasibilityCheckMilestone.checkTobtConsistency()",
+    "EobtMinus2Hours.checkEstimatesConsistency()",
+    "FinalApproach.commenceTobtProcess()",
+    "TakeOffFromOutstation.checkLandingEstimateConsistency()",
+    "TobtFeasibilityCheckMilestone"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "TobtFeasibilityCheckMilestone.checkTobtConsistency()",
+    "EobtMinus2Hours.checkEstimatesConsistency()",
+    "FinalApproach.commenceTobtProcess()",
+    "TakeOffFromOutstation.checkLandingEstimateConsistency()",
+    "TobtFeasibilityCheckMilestone"
+   ]
+  },
+  "c079": {
+   "run": "multi/run_02",
+   "claim": "M1.definition.2.c3",
+   "kind": "operation",
+   "pool": [
+    "AirportCdmPartner",
+    "AirportCdmPlatform",
+    "Ifps->AirportCdmPartner [generalization]",
+    "FlightCrew->AirportCdmPartner [generalization]",
+    "AirportCdmPlatform.markRegulated()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "AirportCdmPartner",
+    "AirportCdmPlatform",
+    "Ifps->AirportCdmPartner [generalization]",
+    "FlightCrew->AirportCdmPartner [generalization]",
+    "AirportCdmPlatform.markRegulated()"
+   ]
+  },
+  "c080": {
+   "run": "single/run_05",
+   "claim": "M14.definition.2.c2",
+   "kind": "class",
+   "pool": [
+    "StartUpApproved",
+    "ASAT",
+    "StartUpRequested.checkStartUpRequestedInTime()",
+    "TSATIssued",
+    "TSAT"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "StartUpApproved",
+    "ASAT",
+    "StartUpRequested.checkStartUpRequestedInTime()",
+    "TSATIssued",
+    "TSAT"
+   ]
+  },
+  "c081": {
+   "run": "noscaffold/run_01",
+   "claim": "M2.origin_and_priority.1.c3",
+   "kind": "attribute",
+   "pool": [
+    "NetworkOperations->Flight [association]",
+    "Flight.ctot",
+    "NetworkOperations",
+    "NetworkOperations.issueCTOT()",
+    "NetworkOperations->FlightUpdateMessage [dependency]"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "NetworkOperations->Flight [association]",
+    "Flight.ctot",
+    "NetworkOperations",
+    "NetworkOperations.issueCTOT()",
+    "NetworkOperations->FlightUpdateMessage [dependency]"
+   ]
+  },
+  "c082": {
+   "run": "multi/run_01",
+   "claim": "M1.origin_and_priority.2.c1",
+   "kind": "relationship",
+   "pool": [
+    "IFPS.distributeFlightPlan()",
+    "IFPS",
+    "IFPS->AirTrafficControlUnit [association]",
+    "AirTrafficControlUnit.recordASAT()",
+    "AirTrafficControlUnit->Flight [association]"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "IFPS.distributeFlightPlan()",
+    "IFPS",
+    "IFPS->AirTrafficControlUnit [association]",
+    "AirTrafficControlUnit.recordASAT()",
+    "AirTrafficControlUnit->Flight [association]"
+   ]
+  },
+  "c083": {
+   "run": "single/run_01",
+   "claim": "M8.procedures.1.c1",
+   "kind": "operation",
+   "pool": [
+    "GroundHandlingStartedMilestone.checkTOBTConsistency()",
+    "FinalApproachMilestone.commenceTOBTProcess()",
+    "TakeOffFromOutstationMilestone.checkEstimatedLandingConsistency()",
+    "EOBTMinus2hMilestone.checkEstimatesConsistency()",
+    "ATCFlightPlan"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "GroundHandlingStartedMilestone.checkTOBTConsistency()",
+    "FinalApproachMilestone.commenceTOBTProcess()",
+    "TakeOffFromOutstationMilestone.checkEstimatedLandingConsistency()",
+    "EOBTMinus2hMilestone.checkEstimatesConsistency()",
+    "ATCFlightPlan"
+   ]
+  },
+  "c084": {
+   "run": "single_high/run_04",
+   "claim": "M8.action_on_cdm.1.c1",
+   "kind": "operation",
+   "pool": [
+    "InBlock.calculateTOBTAndTTOT()",
+    "TakeOffFromOutstation.calculateTTOT()",
+    "AirportCDMPlatform.updateTimeQuantity()",
+    "TTOT",
+    "GroundHandlingStarted.calculateTOBT()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "InBlock.calculateTOBTAndTTOT()",
+    "TakeOffFromOutstation.calculateTTOT()",
+    "AirportCDMPlatform.updateTimeQuantity()",
+    "TTOT",
+    "GroundHandlingStarted.calculateTOBT()"
+   ]
+  },
+  "c085": {
+   "run": "single/run_03",
+   "claim": "M13.definition.1.c1",
+   "kind": "class",
+   "pool": [
+    "Flight.asrt",
+    "StartUpRequested.informPartnersOfAsrt()",
+    "StartUpRequested",
+    "ActualTime",
+    "TimeQuantity.quantityName"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "Flight.asrt",
+    "StartUpRequested.informPartnersOfAsrt()",
+    "StartUpRequested",
+    "ActualTime",
+    "TimeQuantity.quantityName"
+   ]
+  },
+  "c086": {
+   "run": "noscaffold/run_02",
+   "claim": "M1.procedures.1.c2",
+   "kind": "operation",
+   "pool": [
+    "ATCUnit->FlightPlan [association]",
+    "AirportCDMPlatform",
+    "NetworkOperations->FlightUpdateMessage [association]",
+    "NetworkOperations",
+    "Milestone"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "ATCUnit->FlightPlan [association]",
+    "AirportCDMPlatform",
+    "NetworkOperations->FlightUpdateMessage [association]",
+    "NetworkOperations",
+    "Milestone"
+   ]
+  },
+  "c087": {
+   "run": "single_high/run_02",
+   "claim": "M16.procedures.3.c5",
+   "kind": "relationship",
+   "pool": [
+    "M16TakeOff.generateAirborneMessageAndRemoveFromSequence()",
+    "AirportSurveillanceSystem.detectTakeOff()",
+    "AirportSurveillanceSystem",
+    "Milestone.trigger",
+    "ATCUnit.unitRole"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "M16TakeOff.generateAirborneMessageAndRemoveFromSequence()",
+    "AirportSurveillanceSystem.detectTakeOff()",
+    "AirportSurveillanceSystem",
+    "Milestone.trigger",
+    "ATCUnit.unitRole"
+   ]
+  },
+  "c088": {
+   "run": "multi/run_02",
+   "claim": "M14.procedures.4.c2",
+   "kind": "attribute",
+   "pool": [
+    "StartUpApproved.tsatTolerance",
+    "TakeOffFromOutstation.ttotTolerance",
+    "AircraftReady.readyTolerance",
+    "TsatIssued.tobtUpdateThreshold",
+    "StartUpRequested"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "StartUpApproved.tsatTolerance",
+    "TakeOffFromOutstation.ttotTolerance",
+    "AircraftReady.readyTolerance",
+    "TsatIssued.tobtUpdateThreshold",
+    "StartUpRequested"
+   ]
+  },
+  "c089": {
+   "run": "single/run_03",
+   "claim": "M3.definition.1.c1",
+   "kind": "class",
+   "pool": [
+    "TakeOffFromOutstation",
+    "Outstation",
+    "Flight.atot",
+    "Outstation.provideAtot()",
+    "TakeOffFromOutstation.calculateEldt()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "TakeOffFromOutstation",
+    "Outstation",
+    "Flight.atot",
+    "Outstation.provideAtot()",
+    "TakeOffFromOutstation.calculateEldt()"
+   ]
+  },
+  "c090": {
+   "run": "single/run_04",
+   "claim": "M4.effect.8.c1",
+   "kind": "operation",
+   "pool": [
+    "TimeQuantity.calculateEIBT()",
+    "TimeQuantityType",
+    "AirportCDMPlatform.changeELDTToALDT()",
+    "AirportCDMPlatform.updateArrivalAndDepartureEstimates()",
+    "ATCSystem.calculateEXOT()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "TimeQuantity.calculateEIBT()",
+    "TimeQuantityType",
+    "AirportCDMPlatform.changeELDTToALDT()",
+    "AirportCDMPlatform.updateArrivalAndDepartureEstimates()",
+    "ATCSystem.calculateEXOT()"
+   ]
+  },
+  "c091": {
+   "run": "multi/run_04",
+   "claim": "M7.origin_and_priority.1.c2",
+   "kind": "class",
+   "pool": [
+    "AutomatedDockingSystem",
+    "AutomatedDockingSystem->InBlockTime [association]",
+    "AutomatedDockingSystem->OffBlockTime [association]",
+    "InBlockTime.originator",
+    "AirportCdmPlatform.calculateTobtAutomatically()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "AutomatedDockingSystem",
+    "AutomatedDockingSystem->InBlockTime [association]",
+    "AutomatedDockingSystem->OffBlockTime [association]",
+    "InBlockTime.originator",
+    "AirportCdmPlatform.calculateTobtAutomatically()"
+   ]
+  },
+  "c092": {
+   "run": "noscaffold/run_03",
+   "claim": "M9.timing.1.c2",
+   "kind": "attribute",
+   "pool": [
+    "MilestoneProcess.tolerance",
+    "DpiMessageType",
+    "DpiMessage.messageType",
+    "Flight.checkTtotTolerance()",
+    "AirportFlightData.aircraftRegistration"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "MilestoneProcess.tolerance",
+    "DpiMessageType",
+    "DpiMessage.messageType",
+    "Flight.checkTtotTolerance()",
+    "AirportFlightData.aircraftRegistration"
+   ]
+  },
+  "c093": {
+   "run": "single_high/run_03",
+   "claim": "M10.procedures.2.c4",
+   "kind": "operation",
+   "pool": [
+    "TsatIssued.informPartnersOfTsat()",
+    "TakeOffFromOutstation.informNetworkOperationsTdpiT()",
+    "RegulationCheck.informNetworkOperationsOfTtot()",
+    "Flight.startUpApprovalTime",
+    "NetworkOperations"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "TsatIssued.informPartnersOfTsat()",
+    "TakeOffFromOutstation.informNetworkOperationsTdpiT()",
+    "RegulationCheck.informNetworkOperationsOfTtot()",
+    "Flight.startUpApprovalTime",
+    "NetworkOperations"
+   ]
+  },
+  "c094": {
+   "run": "single_high/run_04",
+   "claim": "M8.procedures.2.c2",
+   "kind": "attribute",
+   "pool": [
+    "Milestone.informNetworkOperationsOnTTOTChange()",
+    "Milestone",
+    "StartUpRequested.checkStartUpRequestTimeliness()",
+    "TTOT",
+    "TimeQuantity.accuracy"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "Milestone.informNetworkOperationsOnTTOTChange()",
+    "Milestone",
+    "StartUpRequested.checkStartUpRequestTimeliness()",
+    "TTOT",
+    "TimeQuantity.accuracy"
+   ]
+  },
+  "c095": {
+   "run": "single/run_04",
+   "claim": "M1.timing.2.c1",
+   "kind": "class",
+   "pool": [
+    "RepetitiveFlightPlan",
+    "RepetitiveFlightPlan->ATCFlightPlan [generalization]",
+    "RepetitiveFlightPlan.frequency",
+    "IFPS",
+    "FlightPlanActivationMilestone"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "RepetitiveFlightPlan",
+    "RepetitiveFlightPlan->ATCFlightPlan [generalization]",
+    "RepetitiveFlightPlan.frequency",
+    "IFPS",
+    "FlightPlanActivationMilestone"
+   ]
+  },
+  "c096": {
+   "run": "noscaffold/run_03",
+   "claim": "M1.effect.4.c2",
+   "kind": "operation",
+   "pool": [
+    "ATCFlightPlan->AirportSlot [association]",
+    "ATCFlightPlan.checkConsistency()",
+    "ATCFlightPlan->AirportFlightData [association]",
+    "ATCFlightPlan.estimatedElapsedTime",
+    "AirportSlot"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "ATCFlightPlan->AirportSlot [association]",
+    "ATCFlightPlan.checkConsistency()",
+    "ATCFlightPlan->AirportFlightData [association]",
+    "ATCFlightPlan.estimatedElapsedTime",
+    "AirportSlot"
+   ]
+  },
+  "c097": {
+   "run": "multi/run_03",
+   "claim": "M3.effect.1.c4",
+   "kind": "relationship",
+   "pool": [
+    "NetworkOperations->FlightUpdateMessage [association]",
+    "TakeOffFromOutstation",
+    "OffBlock.sendADpi()",
+    "Outstation->NetworkOperations [dependency]",
+    "FlightUpdateMessage"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "NetworkOperations->FlightUpdateMessage [association]",
+    "TakeOffFromOutstation",
+    "OffBlock.sendADpi()",
+    "Outstation->NetworkOperations [dependency]",
+    "FlightUpdateMessage"
+   ]
+  },
+  "c098": {
+   "run": "noscaffold/run_03",
+   "claim": "M11.procedures.1.c2",
+   "kind": "class",
+   "pool": [
+    "Flight.asbt",
+    "GroundHandler",
+    "AirportCDMPlatform.notifyPartners()",
+    "Flight.asat",
+    "AtcUnit.approveStartUp()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "Flight.asbt",
+    "GroundHandler",
+    "AirportCDMPlatform.notifyPartners()",
+    "Flight.asat",
+    "AtcUnit.approveStartUp()"
+   ]
+  },
+  "c099": {
+   "run": "noscaffold/run_01",
+   "claim": "M1.action_on_cdm.1.c1",
+   "kind": "operation",
+   "pool": [
+    "Flight.eldt",
+    "Flight.computeEIBT()",
+    "AirportCDMPlatform.processMilestone()",
+    "FlightUpdateMessage->Flight [association]",
+    "FlightUpdateMessage.updatedELDT"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "Flight.eldt",
+    "Flight.computeEIBT()",
+    "AirportCDMPlatform.processMilestone()",
+    "FlightUpdateMessage->Flight [association]",
+    "FlightUpdateMessage.updatedELDT"
+   ]
+  },
+  "c100": {
+   "run": "noscaffold/run_01",
+   "claim": "M3.origin_and_priority.1.c4",
+   "kind": "class",
+   "pool": [
+    "MilestoneProcess.name",
+    "Flight.atot",
+    "Flight.estimatedElapsedTime"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "MilestoneProcess.name",
+    "Flight.atot",
+    "Flight.estimatedElapsedTime"
+   ]
+  },
+  "c101": {
+   "run": "single/run_04",
+   "claim": "M3.procedures.4.c1",
+   "kind": "operation",
+   "pool": [
+    "TimeQuantity.calculateTTOT()",
+    "TimeQuantityType",
+    "ATCSystem.calculateEXOT()",
+    "TakeOffFromOutstationMilestone.sendTDPIt()",
+    "TurnRound.turnRoundPeriod"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "TimeQuantity.calculateTTOT()",
+    "TimeQuantityType",
+    "ATCSystem.calculateEXOT()",
+    "TakeOffFromOutstationMilestone.sendTDPIt()",
+    "TurnRound.turnRoundPeriod"
+   ]
+  },
+  "c102": {
+   "run": "single/run_04",
+   "claim": "M16.procedures.3.c1",
+   "kind": "operation",
+   "pool": [
+    "TakeOffMilestone->MovementMessage [dependency]",
+    "ATCSystem",
+    "AirTrafficControl",
+    "RadarSystem->Flight [dependency]",
+    "RadarSystem.detectFlight()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "TakeOffMilestone->MovementMessage [dependency]",
+    "ATCSystem",
+    "AirTrafficControl",
+    "RadarSystem->Flight [dependency]",
+    "RadarSystem.detectFlight()"
+   ]
+  },
+  "c103": {
+   "run": "single/run_01",
+   "claim": "M3.procedures.3.c2",
+   "kind": "attribute",
+   "pool": [
+    "TakeOffFromOutstationMilestone.checkTTOTTolerance()",
+    "Flight.ttot",
+    "TTOT",
+    "InBlockMilestone.informNetworkOperationsIfTolerated()",
+    "OffBlockMilestone.checkTTOTToleranceAndInform()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "TakeOffFromOutstationMilestone.checkTTOTTolerance()",
+    "Flight.ttot",
+    "TTOT",
+    "InBlockMilestone.informNetworkOperationsIfTolerated()",
+    "OffBlockMilestone.checkTTOTToleranceAndInform()"
+   ]
+  },
+  "c104": {
+   "run": "single/run_04",
+   "claim": "M2.definition.1.a1",
+   "kind": "operation",
+   "pool": [
+    "EOBTMinus2HourMilestone",
+    "AirportCDMPlatform.markRegulated()",
+    "AirportCDMPlatform->Flight [association]",
+    "AirportCDMPlatform",
+    "AirportCDMPlatform->MilestoneEvent [aggregation]"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "EOBTMinus2HourMilestone",
+    "AirportCDMPlatform.markRegulated()",
+    "AirportCDMPlatform->Flight [association]",
+    "AirportCDMPlatform",
+    "AirportCDMPlatform->MilestoneEvent [aggregation]"
+   ]
+  },
+  "c105": {
+   "run": "single_high/run_05",
+   "claim": "M16.procedures.3.c2",
+   "kind": "class",
+   "pool": [
+    "TakeOffMilestone.generateAirborneMessage()",
+    "ReadyTime",
+    "AircraftReadyMilestone",
+    "AirTrafficControl",
+    "AirTrafficControl.unitType"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "TakeOffMilestone.generateAirborneMessage()",
+    "ReadyTime",
+    "AircraftReadyMilestone",
+    "AirTrafficControl",
+    "AirTrafficControl.unitType"
+   ]
+  },
+  "c106": {
+   "run": "noscaffold/run_01",
+   "claim": "M4.procedures.2.c5",
+   "kind": "operation",
+   "pool": [
+    "NetworkOperations.receiveDPI()",
+    "DPIMessage->NetworkOperations [association]",
+    "AirportCDMPlatform->DPIMessage [dependency]",
+    "DPIMessageType",
+    "DPIMessage"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "NetworkOperations.receiveDPI()",
+    "DPIMessage->NetworkOperations [association]",
+    "AirportCDMPlatform->DPIMessage [dependency]",
+    "DPIMessageType",
+    "DPIMessage"
+   ]
+  },
+  "c107": {
+   "run": "single_high/run_01",
+   "claim": "M8.effect.1.c5",
+   "kind": "attribute",
+   "pool": [
+    "TurnRound.minimumTurnRoundTime",
+    "GroundHandlingStarted.recordACGT()",
+    "AircraftOperator.provideTOBT()",
+    "InBlock.recordAIBT()",
+    "Landed.recordALDT()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "TurnRound.minimumTurnRoundTime",
+    "GroundHandlingStarted.recordACGT()",
+    "AircraftOperator.provideTOBT()",
+    "InBlock.recordAIBT()",
+    "Landed.recordALDT()"
+   ]
+  },
+  "c108": {
+   "run": "single_high/run_05",
+   "claim": "M12.origin_and_priority.1.c4",
+   "kind": "relationship",
+   "pool": [
+    "TurnRoundOperator",
+    "TurnRoundOperator.provideTOBT()",
+    "FinalTOBTConfirmationMilestone",
+    "TimeQuantity.originator",
+    "GroundHandler"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "TurnRoundOperator",
+    "TurnRoundOperator.provideTOBT()",
+    "FinalTOBTConfirmationMilestone",
+    "TimeQuantity.originator",
+    "GroundHandler"
+   ]
+  },
+  "c109": {
+   "run": "multi/run_05",
+   "claim": "M9.effect.6.c5",
+   "kind": "operation",
+   "pool": [
+    "TobtFinalConfirmation->DepartureSequence [dependency]",
+    "DepartureSequence.addFlight()",
+    "DepartureSequence",
+    "Aircrew",
+    "Flight.tsat"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "TobtFinalConfirmation->DepartureSequence [dependency]",
+    "DepartureSequence.addFlight()",
+    "DepartureSequence",
+    "Aircrew",
+    "Flight.tsat"
+   ]
+  },
+  "c110": {
+   "run": "single/run_02",
+   "claim": "M15.procedures.4.c1",
+   "kind": "operation",
+   "pool": [
+    "OffBlockMilestone.sendADpi()",
+    "OffBlockMilestone.checkTtotToleranceAndInform()",
+    "NetworkOperations->DpiMessage [association]",
+    "Eobt2hrCheck.sendTDpi()",
+    "TakeOffFromOutstation.sendTDpiT()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "OffBlockMilestone.sendADpi()",
+    "OffBlockMilestone.checkTtotToleranceAndInform()",
+    "NetworkOperations->DpiMessage [association]",
+    "Eobt2hrCheck.sendTDpi()",
+    "TakeOffFromOutstation.sendTDpiT()"
+   ]
+  },
+  "c111": {
+   "run": "single_high/run_05",
+   "claim": "M10.timing.1.c1",
+   "kind": "operation",
+   "pool": [
+    "TSATIssuedMilestone.issueOffsetMinutes",
+    "FinalTOBTConfirmationMilestone.confirmationOffsetMinutes",
+    "AirTrafficControl.issueTSAT()",
+    "TurnRoundOperator.confirmFinalTOBT()",
+    "FinalTOBTConfirmationMilestone"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "TSATIssuedMilestone.issueOffsetMinutes",
+    "FinalTOBTConfirmationMilestone.confirmationOffsetMinutes",
+    "AirTrafficControl.issueTSAT()",
+    "TurnRoundOperator.confirmFinalTOBT()",
+    "FinalTOBTConfirmationMilestone"
+   ]
+  },
+  "c112": {
+   "run": "single_high/run_04",
+   "claim": "M12.definition.1.c3",
+   "kind": "operation",
+   "pool": [
+    "AircraftReady",
+    "ARDT",
+    "AircraftReady.informPartnersOfARDT()",
+    "AircraftReady->ARDT [association]",
+    "OffBlock.informPartnersOfAOBT()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "AircraftReady",
+    "ARDT",
+    "AircraftReady.informPartnersOfARDT()",
+    "AircraftReady->ARDT [association]",
+    "OffBlock.informPartnersOfAOBT()"
+   ]
+  },
+  "c113": {
+   "run": "multi/run_03",
+   "claim": "M11.operational_status.1.c1",
+   "kind": "enumeration",
+   "pool": [
+    "FlightOperationalStatus",
+    "Flight->StartBoardingTime [composition]",
+    "BoardingStarts->Milestone [generalization]",
+    "StartBoardingTime",
+    "BoardingStarts"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "FlightOperationalStatus",
+    "Flight->StartBoardingTime [composition]",
+    "BoardingStarts->Milestone [generalization]",
+    "StartBoardingTime",
+    "BoardingStarts"
+   ]
+  },
+  "c114": {
+   "run": "multi/run_03",
+   "claim": "M6.procedures.2.c4",
+   "kind": "relationship",
+   "pool": [
+    "InBlock.notifyNetworkOperationsIfToleranceExceeded()",
+    "OffBlock.checkTtotToleranceExceeded()",
+    "TakeOffTime.tolerance",
+    "OffBlock.sendADpi()",
+    "EobtMinusTwoHourCheck.informNetworkOperationsViaFirstTdpi()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "InBlock.notifyNetworkOperationsIfToleranceExceeded()",
+    "OffBlock.checkTtotToleranceExceeded()",
+    "TakeOffTime.tolerance",
+    "OffBlock.sendADpi()",
+    "EobtMinusTwoHourCheck.informNetworkOperationsViaFirstTdpi()"
+   ]
+  },
+  "c115": {
+   "run": "single/run_04",
+   "claim": "M4.procedures.2.c3",
+   "kind": "attribute",
+   "pool": [
+    "TimeQuantity.tolerance",
+    "InBlockMilestone.informNetworkOperationsIfTTOTExceedsTolerance()",
+    "TimeQuantity.exceedsTolerance()",
+    "StartUpRequestedMilestone.alertIfNoStartUpRequested()",
+    "FinalTOBTConfirmationMilestone.checkTOBTConsistency()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "TimeQuantity.tolerance",
+    "InBlockMilestone.informNetworkOperationsIfTTOTExceedsTolerance()",
+    "TimeQuantity.exceedsTolerance()",
+    "StartUpRequestedMilestone.alertIfNoStartUpRequested()",
+    "FinalTOBTConfirmationMilestone.checkTOBTConsistency()"
+   ]
+  },
+  "c116": {
+   "run": "single_high/run_05",
+   "claim": "M13.procedures.4.c2",
+   "kind": "operation",
+   "pool": [
+    "StartUpRequestedMilestone.alertIfNoStartUpRequested()",
+    "StartUpRequestedMilestone.informPartnersOfASRT()",
+    "TSATIssuedMilestone.informPartnersOfTSAT()",
+    "Pilot.requestStartUp()",
+    "StartUpRequestedMilestone->Milestone [generalization]"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "StartUpRequestedMilestone.alertIfNoStartUpRequested()",
+    "StartUpRequestedMilestone.informPartnersOfASRT()",
+    "TSATIssuedMilestone.informPartnersOfTSAT()",
+    "Pilot.requestStartUp()",
+    "StartUpRequestedMilestone->Milestone [generalization]"
+   ]
+  },
+  "c117": {
+   "run": "single_high/run_04",
+   "claim": "M2.effect.1.c3",
+   "kind": "operation",
+   "pool": [
+    "FUMMessage",
+    "ETFMS.monitorFlightProgress()",
+    "FUMMessage->Flight [dependency]",
+    "ELDT",
+    "GroundHandler.provideTOBT()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "FUMMessage",
+    "ETFMS.monitorFlightProgress()",
+    "FUMMessage->Flight [dependency]",
+    "ELDT",
+    "GroundHandler.provideTOBT()"
+   ]
+  },
+  "c118": {
+   "run": "multi/run_01",
+   "claim": "M16.procedures.2.c1",
+   "kind": "operation",
+   "pool": [
+    "MilestoneTakeOff.generateAirborneMessage()",
+    "Flight.takeOffTime",
+    "NotificationType",
+    "MilestoneTakeOffFromOutstation->DPIMessage [dependency]",
+    "MilestoneTakeOff->Milestone [generalization]"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "MilestoneTakeOff.generateAirborneMessage()",
+    "Flight.takeOffTime",
+    "NotificationType",
+    "MilestoneTakeOffFromOutstation->DPIMessage [dependency]",
+    "MilestoneTakeOff->Milestone [generalization]"
+   ]
+  },
+  "c119": {
+   "run": "multi/run_04",
+   "claim": "M3.effect.3.c2",
+   "kind": "class",
+   "pool": [
+    "EtfmsSystem",
+    "EtfmsSystem->Flight [dependency]",
+    "EtfmsSystem->FlightUpdateMessage [dependency]",
+    "NetworkOperations",
+    "EtfmsSystem.monitorProgressAndSendFum()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "EtfmsSystem",
+    "EtfmsSystem->Flight [dependency]",
+    "EtfmsSystem->FlightUpdateMessage [dependency]",
+    "NetworkOperations",
+    "EtfmsSystem.monitorProgressAndSendFum()"
+   ]
+  },
+  "c120": {
+   "run": "single_high/run_01",
+   "claim": "M2.timing.1.c1",
+   "kind": "operation",
+   "pool": [
+    "NetworkOperations.issueCTOT()",
+    "NetworkOperations",
+    "NetworkOperations->Flight [association]",
+    "EOBTMinus2Hours.markAsRegulated()",
+    "EOBTMinus2Hours"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "NetworkOperations.issueCTOT()",
+    "NetworkOperations",
+    "NetworkOperations->Flight [association]",
+    "EOBTMinus2Hours.markAsRegulated()",
+    "EOBTMinus2Hours"
+   ]
+  },
+  "c121": {
+   "run": "single_high/run_05",
+   "claim": "M3.effect.2.c1",
+   "kind": "operation",
+   "pool": [
+    "TakeOffFromOutstationMilestone.calculateELDT()",
+    "ElapsedTime",
+    "LocalRadarUpdateMilestone.calculateEIBT()",
+    "TakeOffFromOutstationMilestone",
+    "TakeOffMilestone.informPartnersOfATOT()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "TakeOffFromOutstationMilestone.calculateELDT()",
+    "ElapsedTime",
+    "LocalRadarUpdateMilestone.calculateEIBT()",
+    "TakeOffFromOutstationMilestone",
+    "TakeOffMilestone.informPartnersOfATOT()"
+   ]
+  },
+  "c122": {
+   "run": "single/run_02",
+   "claim": "M1.procedures.3.c1",
+   "kind": "operation",
+   "pool": [
+    "AtcFlightPlanActivated.sendFirstEdpi()",
+    "AirportSlot.sobt",
+    "AtcFlightPlanActivated.checkConsistency()",
+    "OffBlockMilestone.checkTtotToleranceAndInform()",
+    "TakeOffFromOutstation.sendTDpiT()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "AtcFlightPlanActivated.sendFirstEdpi()",
+    "AirportSlot.sobt",
+    "AtcFlightPlanActivated.checkConsistency()",
+    "OffBlockMilestone.checkTtotToleranceAndInform()",
+    "TakeOffFromOutstation.sendTDpiT()"
+   ]
+  },
+  "c123": {
+   "run": "multi/run_03",
+   "claim": "M8.definition.2.c1",
+   "kind": "operation",
+   "pool": [
+    "GroundHandlingStarted",
+    "GroundHandlingStarted.checkFeasibility()",
+    "GroundHandlingStarted->Milestone [generalization]",
+    "EobtMinusTwoHourCheck.informNetworkOperationsViaFirstTdpi()",
+    "EobtMinusTwoHourCheck"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "GroundHandlingStarted",
+    "GroundHandlingStarted.checkFeasibility()",
+    "GroundHandlingStarted->Milestone [generalization]",
+    "EobtMinusTwoHourCheck.informNetworkOperationsViaFirstTdpi()",
+    "EobtMinusTwoHourCheck"
+   ]
+  },
+  "c124": {
+   "run": "single/run_04",
+   "claim": "M13.effect.1.c1",
+   "kind": "operation",
+   "pool": [
+    "ATCFlightPlan.aircraftRegistration",
+    "ATCFlightPlan.sobt",
+    "AirTrafficControl",
+    "FlightPlanActivationMilestone.sendEDPI()",
+    "FlightOperationalStatus"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "ATCFlightPlan.aircraftRegistration",
+    "ATCFlightPlan.sobt",
+    "AirTrafficControl",
+    "FlightPlanActivationMilestone.sendEDPI()",
+    "FlightOperationalStatus"
+   ]
+  },
+  "c125": {
+   "run": "single_high/run_04",
+   "claim": "M9.procedures.5.c2",
+   "kind": "operation",
+   "pool": [
+    "AirportCDMPlatform",
+    "AirportCDMPlatform.processFlightInformation()",
+    "AirportCDMPlatform->Flight [association]",
+    "Milestone->AirportCDMPlatform [dependency]",
+    "Milestone"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "AirportCDMPlatform",
+    "AirportCDMPlatform.processFlightInformation()",
+    "AirportCDMPlatform->Flight [association]",
+    "Milestone->AirportCDMPlatform [dependency]",
+    "Milestone"
+   ]
+  },
+  "c126": {
+   "run": "single_high/run_03",
+   "claim": "M14.procedures.2.c1",
+   "kind": "operation",
+   "pool": [
+    "StartUpApproved.checkAsatAgainstTsat()",
+    "TsatIssued.checkTobtUpdateCount()",
+    "StartUpApproved.informPartnersOfAsat()",
+    "FinalTobtConfirmation.checkTobtConsistency()",
+    "StartUpRequested.checkStartUpRequestedInTime()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "StartUpApproved.checkAsatAgainstTsat()",
+    "TsatIssued.checkTobtUpdateCount()",
+    "StartUpApproved.informPartnersOfAsat()",
+    "FinalTobtConfirmation.checkTobtConsistency()",
+    "StartUpRequested.checkStartUpRequestedInTime()"
+   ]
+  },
+  "c127": {
+   "run": "single/run_02",
+   "claim": "M7.effect.1.c7",
+   "kind": "attribute",
+   "pool": [
+    "TurnRound.mttt",
+    "InBlockMilestone.updateTobtTtotFromTurnround()",
+    "GroundHandlingStarted.updateTobtFromTurnround()",
+    "TurnRound",
+    "TimeQuantity.calculateTtot()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "TurnRound.mttt",
+    "InBlockMilestone.updateTobtTtotFromTurnround()",
+    "GroundHandlingStarted.updateTobtFromTurnround()",
+    "TurnRound",
+    "TimeQuantity.calculateTtot()"
+   ]
+  },
+  "c128": {
+   "run": "multi/run_04",
+   "claim": "M10.procedures.2.c1",
+   "kind": "class",
+   "pool": [
+    "DpiMessageType",
+    "DpiMessage",
+    "DpiMessage.type",
+    "TakeOffFromOutstationMilestone->NetworkOperations [dependency]",
+    "TakeOffFromOutstationMilestone.informNetworkOperationsViaTDpiT()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "DpiMessageType",
+    "DpiMessage",
+    "DpiMessage.type",
+    "TakeOffFromOutstationMilestone->NetworkOperations [dependency]",
+    "TakeOffFromOutstationMilestone.informNetworkOperationsViaTDpiT()"
+   ]
+  },
+  "c129": {
+   "run": "noscaffold/run_02",
+   "claim": "M9.definition.1.c4",
+   "kind": "relationship",
+   "pool": [
+    "Flight.tobt",
+    "GroundHandler",
+    "AircraftOperator",
+    "GroundHandler->Flight [association]",
+    "Flight.aircraftRegistration"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "Flight.tobt",
+    "GroundHandler",
+    "AircraftOperator",
+    "GroundHandler->Flight [association]",
+    "Flight.aircraftRegistration"
+   ]
+  },
+  "c130": {
+   "run": "noscaffold/run_01",
+   "claim": "M14.timing.1.c1",
+   "kind": "attribute",
+   "pool": [
+    "Flight.asat",
+    "AirportCDMPlatform.initiateFlight()",
+    "AirportCDMPlatform",
+    "ConsistencyCheck",
+    "MilestoneProcess.milestoneNumber"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "Flight.asat",
+    "AirportCDMPlatform.initiateFlight()",
+    "AirportCDMPlatform",
+    "ConsistencyCheck",
+    "MilestoneProcess.milestoneNumber"
+   ]
+  },
+  "c131": {
+   "run": "single/run_04",
+   "claim": "M4.effect.6.a1",
+   "kind": "operation",
+   "pool": [
+    "LocalRadarUpdateMilestone.commenceTOBTProcess()",
+    "LocalRadarUpdateMilestone.informNetworkOperationsIfTTOTExceedsTolerance()",
+    "LocalRadarUpdateMilestone->MilestoneEvent [generalization]",
+    "OffBlockMilestone.checkTTOTAfterAOBT()",
+    "AircraftReadyMilestone.informReady()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "LocalRadarUpdateMilestone.commenceTOBTProcess()",
+    "LocalRadarUpdateMilestone.informNetworkOperationsIfTTOTExceedsTolerance()",
+    "LocalRadarUpdateMilestone->MilestoneEvent [generalization]",
+    "OffBlockMilestone.checkTTOTAfterAOBT()",
+    "AircraftReadyMilestone.informReady()"
+   ]
+  },
+  "c132": {
+   "run": "multi/run_03",
+   "claim": "M1.origin_and_priority.1.c2",
+   "kind": "relationship",
+   "pool": [
+    "AircraftOperator->AtcFlightPlan [association]",
+    "AtcFlightPlan",
+    "AircraftOperator",
+    "AtcFlightPlanActivation",
+    "AtcFlightPlanActivation.validateDataBeforeFirstEdpi()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "AircraftOperator->AtcFlightPlan [association]",
+    "AtcFlightPlan",
+    "AircraftOperator",
+    "AtcFlightPlanActivation",
+    "AtcFlightPlanActivation.validateDataBeforeFirstEdpi()"
+   ]
+  },
+  "c133": {
+   "run": "multi/run_03",
+   "claim": "M5.definition.1.a1",
+   "kind": "operation",
+   "pool": [
+    "FinalApproach",
+    "SurveillanceRadarSystem",
+    "SurveillanceRadarSystem.detectFlightOnFinalApproach()",
+    "FinalApproach->Milestone [generalization]",
+    "AirportFlightData->Flight [association]"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "FinalApproach",
+    "SurveillanceRadarSystem",
+    "SurveillanceRadarSystem.detectFlightOnFinalApproach()",
+    "FinalApproach->Milestone [generalization]",
+    "AirportFlightData->Flight [association]"
+   ]
+  },
+  "c134": {
+   "run": "single/run_01",
+   "claim": "M7.procedures.2.c2",
+   "kind": "attribute",
+   "pool": [
+    "InBlockMilestone.informNetworkOperationsIfTolerated()",
+    "Flight.ttot",
+    "TTOT",
+    "TakeOffFromOutstationMilestone.checkTTOTTolerance()",
+    "OffBlockMilestone.checkTTOTToleranceAndInform()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "InBlockMilestone.informNetworkOperationsIfTolerated()",
+    "Flight.ttot",
+    "TTOT",
+    "TakeOffFromOutstationMilestone.checkTTOTTolerance()",
+    "OffBlockMilestone.checkTTOTToleranceAndInform()"
+   ]
+  },
+  "c135": {
+   "run": "multi/run_02",
+   "claim": "M8.effect.1.c2",
+   "kind": "operation",
+   "pool": [
+    "InBlock.updateDownstreamEstimates()",
+    "GroundHandlingStarted.updateTobt()",
+    "EobtMinus2Hours.calculateTtot()",
+    "TurnRoundTime",
+    "AirportCdmPlatform.calculateTobtFromEldt()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "InBlock.updateDownstreamEstimates()",
+    "GroundHandlingStarted.updateTobt()",
+    "EobtMinus2Hours.calculateTtot()",
+    "TurnRoundTime",
+    "AirportCdmPlatform.calculateTobtFromEldt()"
+   ]
+  },
+  "c136": {
+   "run": "single_high/run_05",
+   "claim": "M6.procedures.1.c1",
+   "kind": "operation",
+   "pool": [
+    "LandedMilestone.checkTOBTConsistency()",
+    "EOBTMinus2HourMilestone.checkFlightEstimatesConsistency()",
+    "FinalApproachMilestone.commenceTOBTProcess()",
+    "TakeOffFromOutstationMilestone.checkLandingEstimateConsistency()",
+    "BoardingStartsMilestone.checkBoardingStatus()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "LandedMilestone.checkTOBTConsistency()",
+    "EOBTMinus2HourMilestone.checkFlightEstimatesConsistency()",
+    "FinalApproachMilestone.commenceTOBTProcess()",
+    "TakeOffFromOutstationMilestone.checkLandingEstimateConsistency()",
+    "BoardingStartsMilestone.checkBoardingStatus()"
+   ]
+  },
+  "c137": {
+   "run": "noscaffold/run_03",
+   "claim": "M8.procedures.1.c1",
+   "kind": "operation",
+   "pool": [
+    "ATCFlightPlan.checkConsistency()",
+    "AircraftOperator",
+    "MilestoneProcess",
+    "ATCFlightPlan->AirportFlightData [association]",
+    "Flight.updateTobt()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "ATCFlightPlan.checkConsistency()",
+    "AircraftOperator",
+    "MilestoneProcess",
+    "ATCFlightPlan->AirportFlightData [association]",
+    "Flight.updateTobt()"
+   ]
+  },
+  "c138": {
+   "run": "noscaffold/run_03",
+   "claim": "M1.effect.2.c1",
+   "kind": "operation",
+   "pool": [
+    "AirportSlot.isCoordinatedAirport",
+    "ATCFlightPlan->AirportSlot [association]",
+    "ATCFlightPlan->AirportFlightData [association]",
+    "ATCFlightPlan.checkConsistency()",
+    "AirportCDMPlatform.notifyPartners()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "AirportSlot.isCoordinatedAirport",
+    "ATCFlightPlan->AirportSlot [association]",
+    "ATCFlightPlan->AirportFlightData [association]",
+    "ATCFlightPlan.checkConsistency()",
+    "AirportCDMPlatform.notifyPartners()"
+   ]
+  },
+  "c139": {
+   "run": "single_high/run_02",
+   "claim": "M16.procedures.2.c3",
+   "kind": "operation",
+   "pool": [
+    "M16TakeOff.generateAirborneMessageAndRemoveFromSequence()",
+    "AirborneMessage",
+    "OperationalStatus",
+    "AirportSurveillanceSystem.detectTakeOff()",
+    "Flight.takeOffTime"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "M16TakeOff.generateAirborneMessageAndRemoveFromSequence()",
+    "AirborneMessage",
+    "OperationalStatus",
+    "AirportSurveillanceSystem.detectTakeOff()",
+    "Flight.takeOffTime"
+   ]
+  },
+  "c140": {
+   "run": "single/run_01",
+   "claim": "M7.definition.3.c2",
+   "kind": "attribute",
+   "pool": [
+    "Flight.aibt",
+    "ACARS->InBlockMilestone [dependency]",
+    "ACARS->LandedMilestone [dependency]",
+    "ACARS",
+    "GroundHandler"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "Flight.aibt",
+    "ACARS->InBlockMilestone [dependency]",
+    "ACARS->LandedMilestone [dependency]",
+    "ACARS",
+    "GroundHandler"
+   ]
+  },
+  "c141": {
+   "run": "noscaffold/run_01",
+   "claim": "M5.origin_and_priority.2.c5",
+   "kind": "attribute",
+   "pool": [
+    "AirportCDMPlatform.processMilestone()",
+    "MilestoneProcess",
+    "Flight.aobt",
+    "Flight.exot",
+    "AircraftTurnRound->Flight [composition]"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "AirportCDMPlatform.processMilestone()",
+    "MilestoneProcess",
+    "Flight.aobt",
+    "Flight.exot",
+    "AircraftTurnRound->Flight [composition]"
+   ]
+  },
+  "c142": {
+   "run": "single_high/run_04",
+   "claim": "M1.procedures.3.c3",
+   "kind": "attribute",
+   "pool": [
+    "Flight.aircraftRegistration",
+    "FlightPlanActivation.sendFirstEDPI()",
+    "AircraftOperator.submitATCFlightPlan()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "Flight.aircraftRegistration",
+    "FlightPlanActivation.sendFirstEDPI()",
+    "AircraftOperator.submitATCFlightPlan()"
+   ]
+  },
+  "c143": {
+   "run": "multi/run_02",
+   "claim": "M8.procedures.2.c5",
+   "kind": "relationship",
+   "pool": [
+    "TobtFeasibilityCheckMilestone.informNetworkOperationsIfTtotChanged()",
+    "OffBlock.checkTtotChange()",
+    "OffBlock.ttotTolerance",
+    "TobtFeasibilityCheckMilestone",
+    "OffBlock->NetworkOperations [association]"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "TobtFeasibilityCheckMilestone.informNetworkOperationsIfTtotChanged()",
+    "OffBlock.checkTtotChange()",
+    "OffBlock.ttotTolerance",
+    "TobtFeasibilityCheckMilestone",
+    "OffBlock->NetworkOperations [association]"
+   ]
+  },
+  "c144": {
+   "run": "multi/run_04",
+   "claim": "M1.operational_status.1.c1",
+   "kind": "enumeration",
+   "pool": [
+    "FlightOperationalStatus",
+    "AirportCdmPlatform->Flight [dependency]",
+    "FlightPlanActivationMilestone->Flight [dependency]",
+    "AirportCdmPlatform.initiateForFlight()",
+    "Flight.operationalStatus"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "FlightOperationalStatus",
+    "AirportCdmPlatform->Flight [dependency]",
+    "FlightPlanActivationMilestone->Flight [dependency]",
+    "AirportCdmPlatform.initiateForFlight()",
+    "Flight.operationalStatus"
+   ]
+  },
+  "c145": {
+   "run": "single_high/run_01",
+   "claim": "M16.effect.1.c1",
+   "kind": "class",
+   "pool": [
+    "FSAMessage",
+    "FSAMessage->Message [generalization]",
+    "TakeOff->FSAMessage [dependency]",
+    "TakeOff.sendFSAAndMVT()",
+    "MVTMessage"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "FSAMessage",
+    "FSAMessage->Message [generalization]",
+    "TakeOff->FSAMessage [dependency]",
+    "TakeOff.sendFSAAndMVT()",
+    "MVTMessage"
+   ]
+  },
+  "c146": {
+   "run": "multi/run_04",
+   "claim": "M1.definition.1.a1",
+   "kind": "class",
+   "pool": [
+    "AirTrafficControlUnit",
+    "AtcSystem",
+    "AirTrafficControlUnit->FlightPlan [association]",
+    "AtcSystem->InBlockTime [association]",
+    "AirportSlot"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "AirTrafficControlUnit",
+    "AtcSystem",
+    "AirTrafficControlUnit->FlightPlan [association]",
+    "AtcSystem->InBlockTime [association]",
+    "AirportSlot"
+   ]
+  },
+  "c147": {
+   "run": "noscaffold/run_01",
+   "claim": "M11.origin_and_priority.1.c1",
+   "kind": "attribute",
+   "pool": [
+    "GroundHandler",
+    "ACARSSystem",
+    "Flight.computeTTOT()",
+    "Flight.tobt",
+    "GroundHandler->Flight [association]"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "GroundHandler",
+    "ACARSSystem",
+    "Flight.computeTTOT()",
+    "Flight.tobt",
+    "GroundHandler->Flight [association]"
+   ]
+  },
+  "c148": {
+   "run": "single/run_05",
+   "claim": "M10.procedures.2.c3",
+   "kind": "relationship",
+   "pool": [
+    "DPIMessage",
+    "DPIMessageType",
+    "TSATIssued.informPartnersOfTSAT()",
+    "NetworkOperations->DPIMessage [dependency]",
+    "TakeOffFromOutstation.sendTDPIt()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "DPIMessage",
+    "DPIMessageType",
+    "TSATIssued.informPartnersOfTSAT()",
+    "NetworkOperations->DPIMessage [dependency]",
+    "TakeOffFromOutstation.sendTDPIt()"
+   ]
+  },
+  "c149": {
+   "run": "single/run_05",
+   "claim": "M14.definition.1.c1",
+   "kind": "class",
+   "pool": [
+    "ASAT",
+    "ASAT->TimeQuantity [generalization]",
+    "Flight->ASAT [association]",
+    "StartUpApproved.checkASATConsistencyWithTSAT()",
+    "StartUpApproved.informPartnersOfASAT()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "ASAT",
+    "ASAT->TimeQuantity [generalization]",
+    "Flight->ASAT [association]",
+    "StartUpApproved.checkASATConsistencyWithTSAT()",
+    "StartUpApproved.informPartnersOfASAT()"
+   ]
+  },
+  "c150": {
+   "run": "multi/run_03",
+   "claim": "M1.definition.2.c3",
+   "kind": "operation",
+   "pool": [
+    "AirportCdmPlatform",
+    "AirportCdmPlatform.commenceDpiProcess()",
+    "AirportCdmPartner",
+    "SurveillanceRadarSystem.detectFlightAtFirBoundary()",
+    "AirportCdmPlatform->DpiMessage [association]"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "AirportCdmPlatform",
+    "AirportCdmPlatform.commenceDpiProcess()",
+    "AirportCdmPartner",
+    "SurveillanceRadarSystem.detectFlightAtFirBoundary()",
+    "AirportCdmPlatform->DpiMessage [association]"
+   ]
+  },
+  "c151": {
+   "run": "multi/run_05",
+   "claim": "M15.origin_and_priority.1.c5",
+   "kind": "relationship",
+   "pool": [
+    "AtcSystem.provideActualInBlockTime()",
+    "AtcSystem.provideActualOffBlockTime()",
+    "TimeQuantity.originator",
+    "AutomatedDockingSystem->Aibt [dependency]",
+    "AutomatedDockingSystem->Aobt [dependency]"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "AtcSystem.provideActualInBlockTime()",
+    "AtcSystem.provideActualOffBlockTime()",
+    "TimeQuantity.originator",
+    "AutomatedDockingSystem->Aibt [dependency]",
+    "AutomatedDockingSystem->Aobt [dependency]"
+   ]
+  },
+  "c152": {
+   "run": "single_high/run_05",
+   "claim": "M16.procedures.3.c6",
+   "kind": "relationship",
+   "pool": [
+    "TakeOffMilestone.generateAirborneMessage()",
+    "ATCSystem.detectFlight()",
+    "AirTrafficControl.unitType",
+    "ATCSystem",
+    "ATCSystem->Flight [dependency]"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "TakeOffMilestone.generateAirborneMessage()",
+    "ATCSystem.detectFlight()",
+    "AirTrafficControl.unitType",
+    "ATCSystem",
+    "ATCSystem->Flight [dependency]"
+   ]
+  },
+  "c153": {
+   "run": "single/run_03",
+   "claim": "M16.origin_and_priority.1.c4",
+   "kind": "relationship",
+   "pool": [
+    "Landed->AtcSystem [dependency]",
+    "AtcSystem",
+    "TimeQuantity.originator",
+    "InBlock->Acars [dependency]",
+    "Ifps"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "Landed->AtcSystem [dependency]",
+    "AtcSystem",
+    "TimeQuantity.originator",
+    "InBlock->Acars [dependency]",
+    "Ifps"
+   ]
+  },
+  "c154": {
+   "run": "single_high/run_05",
+   "claim": "M5.procedures.1.c2",
+   "kind": "operation",
+   "pool": [
+    "FinalTOBTConfirmationMilestone.checkTOBTConsistency()",
+    "FinalApproachMilestone.commenceTOBTProcess()",
+    "EOBTMinus2HourMilestone.checkFlightEstimatesConsistency()",
+    "TakeOffFromOutstationMilestone.checkLandingEstimateConsistency()",
+    "BoardingStartsMilestone.checkBoardingStatus()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "FinalTOBTConfirmationMilestone.checkTOBTConsistency()",
+    "FinalApproachMilestone.commenceTOBTProcess()",
+    "EOBTMinus2HourMilestone.checkFlightEstimatesConsistency()",
+    "TakeOffFromOutstationMilestone.checkLandingEstimateConsistency()",
+    "BoardingStartsMilestone.checkBoardingStatus()"
+   ]
+  },
+  "c155": {
+   "run": "multi/run_01",
+   "claim": "M16.procedures.3.c6",
+   "kind": "relationship",
+   "pool": [
+    "AirportCDMPlatform.updateEstimatesAfterRadarUpdate()",
+    "MilestoneLocalRadarUpdate",
+    "ATCSystem.detectMilestoneEvent()",
+    "ATCSystem",
+    "MilestoneLocalRadarUpdate->TOBTConsistencyMilestone [generalization]"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "AirportCDMPlatform.updateEstimatesAfterRadarUpdate()",
+    "MilestoneLocalRadarUpdate",
+    "ATCSystem.detectMilestoneEvent()",
+    "ATCSystem",
+    "MilestoneLocalRadarUpdate->TOBTConsistencyMilestone [generalization]"
+   ]
+  },
+  "c156": {
+   "run": "single/run_03",
+   "claim": "M4.definition.1.c3",
+   "kind": "class",
+   "pool": [
+    "FlightOperationalStatus",
+    "AtcSystem.detectFlight()",
+    "LocalRadarUpdate",
+    "FlightPlanActivation->EDpiMessage [dependency]",
+    "TDpiSMessage"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "FlightOperationalStatus",
+    "AtcSystem.detectFlight()",
+    "LocalRadarUpdate",
+    "FlightPlanActivation->EDpiMessage [dependency]",
+    "TDpiSMessage"
+   ]
+  },
+  "c157": {
+   "run": "single/run_02",
+   "claim": "M1.effect.7.c1",
+   "kind": "operation",
+   "pool": [
+    "AtcFlightPlanActivated.sendFirstEdpi()",
+    "NetworkOperations->DpiMessage [association]",
+    "AircraftOperator.submitAtcFlightPlan()",
+    "Eobt2hrCheck.sendTDpi()",
+    "OffBlockMilestone.sendADpi()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "AtcFlightPlanActivated.sendFirstEdpi()",
+    "NetworkOperations->DpiMessage [association]",
+    "AircraftOperator.submitAtcFlightPlan()",
+    "Eobt2hrCheck.sendTDpi()",
+    "OffBlockMilestone.sendADpi()"
+   ]
+  },
+  "c158": {
+   "run": "single_high/run_03",
+   "claim": "M4.action_on_cdm.1.c1",
+   "kind": "operation",
+   "pool": [
+    "AirportCDMPlatform.updateEldtEibtTobtTtot()",
+    "AirportCDMPlatform.updateAldtEibtTobtTtot()",
+    "RegulationCheck.informNetworkOperationsOfTtot()",
+    "TakeOffFromOutstation.calculateTtot()",
+    "OffBlock.checkTtotChangeAgainstTolerance()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "AirportCDMPlatform.updateEldtEibtTobtTtot()",
+    "AirportCDMPlatform.updateAldtEibtTobtTtot()",
+    "RegulationCheck.informNetworkOperationsOfTtot()",
+    "TakeOffFromOutstation.calculateTtot()",
+    "OffBlock.checkTtotChangeAgainstTolerance()"
+   ]
+  },
+  "c159": {
+   "run": "single/run_01",
+   "claim": "M16.operational_status.1.c1",
+   "kind": "enumeration",
+   "pool": [
+    "FlightOperationalStatus",
+    "Flight.etot",
+    "ETOT",
+    "TakeOffMilestone.informPartnersOfATOT()",
+    "OffBlockMilestone.checkTTOTToleranceAndInform()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "FlightOperationalStatus",
+    "Flight.etot",
+    "ETOT",
+    "TakeOffMilestone.informPartnersOfATOT()",
+    "OffBlockMilestone.checkTTOTToleranceAndInform()"
+   ]
+  },
+  "c160": {
+   "run": "noscaffold/run_01",
+   "claim": "M4.effect.5.c1",
+   "kind": "operation",
+   "pool": [
+    "Flight.exot",
+    "Flight.exit",
+    "AircraftOperator.provideTOBT()",
+    "FlightUpdateMessage->Flight [association]",
+    "FlightUpdateMessage.updatedELDT"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "Flight.exot",
+    "Flight.exit",
+    "AircraftOperator.provideTOBT()",
+    "FlightUpdateMessage->Flight [association]",
+    "FlightUpdateMessage.updatedELDT"
+   ]
+  },
+  "c161": {
+   "run": "single/run_03",
+   "claim": "M8.procedures.2.c1",
+   "kind": "operation",
+   "pool": [
+    "Landed.informNetworkOperationsIfTtotChanges()",
+    "OffBlock.checkTtotAgainstTolerance()",
+    "TakeOffFromOutstation.calculateTtot()",
+    "Flight.ttot",
+    "DpiMessage"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "Landed.informNetworkOperationsIfTtotChanges()",
+    "OffBlock.checkTtotAgainstTolerance()",
+    "TakeOffFromOutstation.calculateTtot()",
+    "Flight.ttot",
+    "DpiMessage"
+   ]
+  },
+  "c162": {
+   "run": "multi/run_03",
+   "claim": "M16.definition.3.c3",
+   "kind": "attribute",
+   "pool": [
+    "Acars",
+    "DpiMessage.sobt",
+    "OffBlock->Milestone [generalization]",
+    "TakeOff->Milestone [generalization]",
+    "Outstation.provideAtot()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "Acars",
+    "DpiMessage.sobt",
+    "OffBlock->Milestone [generalization]",
+    "TakeOff->Milestone [generalization]",
+    "Outstation.provideAtot()"
+   ]
+  },
+  "c163": {
+   "run": "single/run_01",
+   "claim": "M6.action_on_cdm.1.c1",
+   "kind": "operation",
+   "pool": [
+    "AirportCDMPlatform.updateAfterLanding()",
+    "EXIT",
+    "LocalRadarUpdateMilestone.checkStandGateChangeDeadline()",
+    "TakeOffFromOutstationMilestone.calculateELDT()",
+    "AirportCDMPlatform.updateELDTAndEOBTData()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "AirportCDMPlatform.updateAfterLanding()",
+    "EXIT",
+    "LocalRadarUpdateMilestone.checkStandGateChangeDeadline()",
+    "TakeOffFromOutstationMilestone.calculateELDT()",
+    "AirportCDMPlatform.updateELDTAndEOBTData()"
+   ]
+  },
+  "c164": {
+   "run": "multi/run_03",
+   "claim": "M3.procedures.6.c1",
+   "kind": "operation",
+   "pool": [
+    "TakeOffFromOutstation.calculateTtot()",
+    "AtcSystem.calculateExot()",
+    "TurnRound.minimumTurnRoundTime",
+    "TakeOffFromOutstation",
+    "OffBlock.updateTtot()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "TakeOffFromOutstation.calculateTtot()",
+    "AtcSystem.calculateExot()",
+    "TurnRound.minimumTurnRoundTime",
+    "TakeOffFromOutstation",
+    "OffBlock.updateTtot()"
+   ]
+  },
+  "c165": {
+   "run": "noscaffold/run_03",
+   "claim": "M11.data_quality.1.c1",
+   "kind": "attribute",
+   "pool": [
+    "ATCFlightPlan->AirportFlightData [association]",
+    "AirportFlightData",
+    "AirportCDMPlatform",
+    "Flight.computeTtot()",
+    "AirportFlightData.aircraftRegistration"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "ATCFlightPlan->AirportFlightData [association]",
+    "AirportFlightData",
+    "AirportCDMPlatform",
+    "Flight.computeTtot()",
+    "AirportFlightData.aircraftRegistration"
+   ]
+  },
+  "c166": {
+   "run": "noscaffold/run_03",
+   "claim": "M1.effect.5.c1",
+   "kind": "operation",
+   "pool": [
+    "AirportSlot.isCoordinatedAirport",
+    "ATCFlightPlan->AirportSlot [association]",
+    "ATCFlightPlan->AirportFlightData [association]",
+    "ATCFlightPlan",
+    "ATCFlightPlan.checkConsistency()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "AirportSlot.isCoordinatedAirport",
+    "ATCFlightPlan->AirportSlot [association]",
+    "ATCFlightPlan->AirportFlightData [association]",
+    "ATCFlightPlan",
+    "ATCFlightPlan.checkConsistency()"
+   ]
+  },
+  "c167": {
+   "run": "single_high/run_01",
+   "claim": "M10.procedures.8.c1",
+   "kind": "operation",
+   "pool": [
+    "TSATIssued.checkTOBTUpdateCount()",
+    "TSATIssued.issueTSAT()",
+    "LocalRadarUpdate.commenceTOBTProcess()",
+    "TakeOffTime.calculateTTOT()",
+    "Landed.recordALDT()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "TSATIssued.checkTOBTUpdateCount()",
+    "TSATIssued.issueTSAT()",
+    "LocalRadarUpdate.commenceTOBTProcess()",
+    "TakeOffTime.calculateTTOT()",
+    "Landed.recordALDT()"
+   ]
+  },
+  "c168": {
+   "run": "multi/run_05",
+   "claim": "M3.procedures.1.c3",
+   "kind": "class",
+   "pool": [
+    "DpiType",
+    "TakeOffFromOutstationCheck.informNetworkOperationsWithTDpiT()",
+    "DpiMessage",
+    "DpiMessage.dpiType",
+    "TakeOffFromOutstationCheck"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "DpiType",
+    "TakeOffFromOutstationCheck.informNetworkOperationsWithTDpiT()",
+    "DpiMessage",
+    "DpiMessage.dpiType",
+    "TakeOffFromOutstationCheck"
+   ]
+  },
+  "c169": {
+   "run": "single_high/run_02",
+   "claim": "M1.procedures.7.c1",
+   "kind": "operation",
+   "pool": [
+    "M1FlightPlanActivated.sendFirstEDPI()",
+    "AtcFlightPlan.submissionTime",
+    "AircraftOperator.submitAtcFlightPlan()",
+    "AtcFlightPlan",
+    "Flight.isReadyWithin15MinOfEOBT()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "M1FlightPlanActivated.sendFirstEDPI()",
+    "AtcFlightPlan.submissionTime",
+    "AircraftOperator.submitAtcFlightPlan()",
+    "AtcFlightPlan",
+    "Flight.isReadyWithin15MinOfEOBT()"
+   ]
+  },
+  "c170": {
+   "run": "multi/run_02",
+   "claim": "M13.effect.2.c1",
+   "kind": "operation",
+   "pool": [
+    "AircraftReady.informArdt()",
+    "AirTrafficControlUnit->AircraftReady [association]",
+    "AtcSystem.calculateExot()",
+    "AirTrafficControlUnit->StartUpRequested [association]",
+    "ReadyTime"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "AircraftReady.informArdt()",
+    "AirTrafficControlUnit->AircraftReady [association]",
+    "AtcSystem.calculateExot()",
+    "AirTrafficControlUnit->StartUpRequested [association]",
+    "ReadyTime"
+   ]
+  },
+  "c171": {
+   "run": "multi/run_01",
+   "claim": "M15.procedures.4.c1",
+   "kind": "operation",
+   "pool": [
+    "MilestoneOffBlock.sendADPI()",
+    "MilestoneOffBlock.checkTTOTAfterAOBT()",
+    "Flight.offBlockTime",
+    "MilestoneEOBTMinus2Hours.informNetworkOperationsViaTDPI()",
+    "NetworkOperations->DPIMessage [dependency]"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "MilestoneOffBlock.sendADPI()",
+    "MilestoneOffBlock.checkTTOTAfterAOBT()",
+    "Flight.offBlockTime",
+    "MilestoneEOBTMinus2Hours.informNetworkOperationsViaTDPI()",
+    "NetworkOperations->DPIMessage [dependency]"
+   ]
+  },
+  "c172": {
+   "run": "single_high/run_02",
+   "claim": "M16.procedures.2.c2",
+   "kind": "class",
+   "pool": [
+    "AirborneMessage",
+    "M16TakeOff->AirborneMessage [dependency]",
+    "M16TakeOff.generateAirborneMessageAndRemoveFromSequence()",
+    "OperationalStatus",
+    "FSAMessage"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "AirborneMessage",
+    "M16TakeOff->AirborneMessage [dependency]",
+    "M16TakeOff.generateAirborneMessageAndRemoveFromSequence()",
+    "OperationalStatus",
+    "FSAMessage"
+   ]
+  },
+  "c173": {
+   "run": "single/run_03",
+   "claim": "M3.procedures.4.c1",
+   "kind": "operation",
+   "pool": [
+    "Eobt2HrCheck.calculateTtot()",
+    "Flight.ttot",
+    "TurnRound.mttt",
+    "InBlock.updateTobtTtot()",
+    "FinalConfirmationOfTobt.calculateExot()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "Eobt2HrCheck.calculateTtot()",
+    "Flight.ttot",
+    "TurnRound.mttt",
+    "InBlock.updateTobtTtot()",
+    "FinalConfirmationOfTobt.calculateExot()"
+   ]
+  },
+  "c174": {
+   "run": "single/run_05",
+   "claim": "M3.procedures.6.c1",
+   "kind": "operation",
+   "pool": [
+    "TakeOffFromOutstation.calculateTTOT()",
+    "TTOT",
+    "MTTT",
+    "FinalConfirmationOfTOBT.calculateEXOT()",
+    "EXOT"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "TakeOffFromOutstation.calculateTTOT()",
+    "TTOT",
+    "MTTT",
+    "FinalConfirmationOfTOBT.calculateEXOT()",
+    "EXOT"
+   ]
+  },
+  "c175": {
+   "run": "single/run_01",
+   "claim": "M1.procedures.3.c1",
+   "kind": "operation",
+   "pool": [
+    "EDPIMessage",
+    "DPIProcess.sendEDPI()",
+    "ATCFlightPlan.sobt",
+    "AirportFlightData",
+    "FlightPlanActivatedMilestone.checkConsistency()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "EDPIMessage",
+    "DPIProcess.sendEDPI()",
+    "ATCFlightPlan.sobt",
+    "AirportFlightData",
+    "FlightPlanActivatedMilestone.checkConsistency()"
+   ]
+  },
+  "c176": {
+   "run": "multi/run_03",
+   "claim": "M15.data_quality.1.c1",
+   "kind": "attribute",
+   "pool": [
+    "OffBlockTime.accuracy",
+    "AirportFlightData->Flight [association]",
+    "AtcFlightPlan->AirportFlightData [association]",
+    "AirportFlightData",
+    "AtcFlightPlanActivation.validateDataBeforeFirstEdpi()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "OffBlockTime.accuracy",
+    "AirportFlightData->Flight [association]",
+    "AtcFlightPlan->AirportFlightData [association]",
+    "AirportFlightData",
+    "AtcFlightPlanActivation.validateDataBeforeFirstEdpi()"
+   ]
+  },
+  "c177": {
+   "run": "single/run_01",
+   "claim": "M1.definition.2.c1",
+   "kind": "class",
+   "pool": [
+    "AirportCDMPlatform",
+    "AirportCDMPlatform->Milestone [association]",
+    "AirportCDMPlatform->Flight [association]",
+    "AirportCDMPlatform.platformId",
+    "FlightPlanActivatedMilestone"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "AirportCDMPlatform",
+    "AirportCDMPlatform->Milestone [association]",
+    "AirportCDMPlatform->Flight [association]",
+    "AirportCDMPlatform.platformId",
+    "FlightPlanActivatedMilestone"
+   ]
+  },
+  "c178": {
+   "run": "multi/run_04",
+   "claim": "M12.effect.1.c2",
+   "kind": "operation",
+   "pool": [
+    "TakeOffMilestone->Flight [dependency]",
+    "FlightOperationalStatus",
+    "TakeOffMilestone.generateAirborneMessageAndRemoveFromSequence()",
+    "TakeOffMilestone",
+    "StartUpApprovedMilestone.resequenceFlight()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "TakeOffMilestone->Flight [dependency]",
+    "FlightOperationalStatus",
+    "TakeOffMilestone.generateAirborneMessageAndRemoveFromSequence()",
+    "TakeOffMilestone",
+    "StartUpApprovedMilestone.resequenceFlight()"
+   ]
+  },
+  "c179": {
+   "run": "single_high/run_03",
+   "claim": "M1.timing.2.c1",
+   "kind": "class",
+   "pool": [
+    "AtcFlightPlan.isRepetitive",
+    "IFPS",
+    "AtcFlightPlan",
+    "FlightPlanActivated",
+    "FlightPlanActivated->Milestone [generalization]"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "AtcFlightPlan.isRepetitive",
+    "IFPS",
+    "AtcFlightPlan",
+    "FlightPlanActivated",
+    "FlightPlanActivated->Milestone [generalization]"
+   ]
+  },
+  "c180": {
+   "run": "single/run_02",
+   "claim": "M7.procedures.2.c1",
+   "kind": "operation",
+   "pool": [
+    "FinalApproach.informNetworkOperationsIfTtotExceedsTolerance()",
+    "TimeQuantity.checkTtotToleranceExceeded()",
+    "OffBlockMilestone.checkTtotToleranceAndInform()",
+    "TimeQuantity.tolerance",
+    "TakeOffFromOutstation.sendTDpiT()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "FinalApproach.informNetworkOperationsIfTtotExceedsTolerance()",
+    "TimeQuantity.checkTtotToleranceExceeded()",
+    "OffBlockMilestone.checkTtotToleranceAndInform()",
+    "TimeQuantity.tolerance",
+    "TakeOffFromOutstation.sendTDpiT()"
+   ]
+  },
+  "c181": {
+   "run": "single/run_02",
+   "claim": "M7.origin_and_priority.1.c1",
+   "kind": "attribute",
+   "pool": [
+    "TimeQuantity.originator",
+    "Acars",
+    "Acars->TimeQuantity [dependency]",
+    "AirTrafficControl.unitType",
+    "TakeOffMilestone.recordAtot()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "TimeQuantity.originator",
+    "Acars",
+    "Acars->TimeQuantity [dependency]",
+    "AirTrafficControl.unitType",
+    "TakeOffMilestone.recordAtot()"
+   ]
+  },
+  "c182": {
+   "run": "multi/run_01",
+   "claim": "M4.effect.5.c2",
+   "kind": "class",
+   "pool": [
+    "DurationType",
+    "AirTrafficControlUnit.calculateEXOT()",
+    "Flight.taxiInTime",
+    "Flight.taxiOutTime",
+    "MilestoneEOBTMinus2Hours.calculateTTOT()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "DurationType",
+    "AirTrafficControlUnit.calculateEXOT()",
+    "Flight.taxiInTime",
+    "Flight.taxiOutTime",
+    "MilestoneEOBTMinus2Hours.calculateTTOT()"
+   ]
+  },
+  "c183": {
+   "run": "multi/run_01",
+   "claim": "M7.operational_status.1.c1",
+   "kind": "enumeration",
+   "pool": [
+    "FlightOperationalStatus",
+    "TimeEvent",
+    "Flight.inBlockTime",
+    "StandGateManagement->Flight [dependency]",
+    "Flight.offBlockTime"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "FlightOperationalStatus",
+    "TimeEvent",
+    "Flight.inBlockTime",
+    "StandGateManagement->Flight [dependency]",
+    "Flight.offBlockTime"
+   ]
+  },
+  "c184": {
+   "run": "single/run_02",
+   "claim": "M15.procedures.4.c5",
+   "kind": "operation",
+   "pool": [
+    "OffBlockMilestone.sendADpi()",
+    "OffBlockMilestone.checkTtotToleranceAndInform()",
+    "TimeQuantity.checkTtotToleranceExceeded()",
+    "FinalConfirmationOfTobt.confirmTobt()",
+    "TurnRound.mttt"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "OffBlockMilestone.sendADpi()",
+    "OffBlockMilestone.checkTtotToleranceAndInform()",
+    "TimeQuantity.checkTtotToleranceExceeded()",
+    "FinalConfirmationOfTobt.confirmTobt()",
+    "TurnRound.mttt"
+   ]
+  },
+  "c185": {
+   "run": "noscaffold/run_01",
+   "claim": "M16.definition.1.c1",
+   "kind": "class",
+   "pool": [
+    "Flight.atot",
+    "Flight.computeELDTFromATOT()",
+    "ACARSSystem.reportActualTime()",
+    "ACARSSystem",
+    "NetworkOperations->Flight [association]"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "Flight.atot",
+    "Flight.computeELDTFromATOT()",
+    "ACARSSystem.reportActualTime()",
+    "ACARSSystem",
+    "NetworkOperations->Flight [association]"
+   ]
+  },
+  "c186": {
+   "run": "multi/run_03",
+   "claim": "M7.effect.1.c6",
+   "kind": "operation",
+   "pool": [
+    "InBlock.updateTobtAndTtot()",
+    "Landed.updateTobtAndTtot()",
+    "GroundHandlingStarted.updateTobt()",
+    "TurnRound.minimumTurnRoundTime",
+    "TakeOffFromOutstation.calculateTtot()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "InBlock.updateTobtAndTtot()",
+    "Landed.updateTobtAndTtot()",
+    "GroundHandlingStarted.updateTobt()",
+    "TurnRound.minimumTurnRoundTime",
+    "TakeOffFromOutstation.calculateTtot()"
+   ]
+  },
+  "c187": {
+   "run": "single_high/run_02",
+   "claim": "M3.effect.1.c4",
+   "kind": "relationship",
+   "pool": [
+    "M3TakeOffFromOutstation.receiveOutstationATOT()",
+    "NetworkOperations->FlightUpdateMessage [dependency]",
+    "NetworkOperations.receiveDPI()",
+    "FlightUpdateMessage",
+    "M3TakeOffFromOutstation->FlightUpdateMessage [dependency]"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "M3TakeOffFromOutstation.receiveOutstationATOT()",
+    "NetworkOperations->FlightUpdateMessage [dependency]",
+    "NetworkOperations.receiveDPI()",
+    "FlightUpdateMessage",
+    "M3TakeOffFromOutstation->FlightUpdateMessage [dependency]"
+   ]
+  },
+  "c188": {
+   "run": "multi/run_05",
+   "claim": "M12.procedures.4.c2",
+   "kind": "attribute",
+   "pool": [
+    "Flight.tobt",
+    "StartUpRequestCheck.toleranceWindow",
+    "Ttot.toleranceThreshold",
+    "StartUpApprovalCheck.toleranceOffset",
+    "Tobt.updateCount"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "Flight.tobt",
+    "StartUpRequestCheck.toleranceWindow",
+    "Ttot.toleranceThreshold",
+    "StartUpApprovalCheck.toleranceOffset",
+    "Tobt.updateCount"
+   ]
+  },
+  "c189": {
+   "run": "single/run_05",
+   "claim": "M10.procedures.1.c2",
+   "kind": "relationship",
+   "pool": [
+    "TSATIssued.informPartnersOfTSAT()",
+    "Flight->TSAT [association]",
+    "AirportCDMPlatform.updateTTOTOnTSAT()",
+    "TSATIssued",
+    "StartUpApproved.checkASATConsistencyWithTSAT()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "TSATIssued.informPartnersOfTSAT()",
+    "Flight->TSAT [association]",
+    "AirportCDMPlatform.updateTTOTOnTSAT()",
+    "TSATIssued",
+    "StartUpApproved.checkASATConsistencyWithTSAT()"
+   ]
+  },
+  "c190": {
+   "run": "single/run_02",
+   "claim": "M7.operational_status.1.c1",
+   "kind": "enumeration",
+   "pool": [
+    "EventType",
+    "OperationalStatus",
+    "InBlockMilestone->Milestone [generalization]",
+    "OffBlockMilestone->Milestone [generalization]",
+    "AtcFlightPlan.eobt"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "EventType",
+    "OperationalStatus",
+    "InBlockMilestone->Milestone [generalization]",
+    "OffBlockMilestone->Milestone [generalization]",
+    "AtcFlightPlan.eobt"
+   ]
+  },
+  "c191": {
+   "run": "single_high/run_04",
+   "claim": "M1.procedures.1.a1",
+   "kind": "attribute",
+   "pool": [
+    "AircraftOperator.submitATCFlightPlan()",
+    "FlightPlan.firstDestination",
+    "FlightPlanActivation.sendFirstEDPI()",
+    "FlightPlanActivation.checkConsistency()",
+    "Flight.flightNumber"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "AircraftOperator.submitATCFlightPlan()",
+    "FlightPlan.firstDestination",
+    "FlightPlanActivation.sendFirstEDPI()",
+    "FlightPlanActivation.checkConsistency()",
+    "Flight.flightNumber"
+   ]
+  },
+  "c192": {
+   "run": "multi/run_04",
+   "claim": "M1.procedures.3.c3",
+   "kind": "attribute",
+   "pool": [
+    "Aircraft.registration",
+    "AircraftOperator->Aircraft [association]",
+    "Aircraft",
+    "AircraftOperator.provideFlightPlanData()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "Aircraft.registration",
+    "AircraftOperator->Aircraft [association]",
+    "Aircraft",
+    "AircraftOperator.provideFlightPlanData()"
+   ]
+  },
+  "c193": {
+   "run": "single/run_03",
+   "claim": "M1.effect.6.c1",
+   "kind": "operation",
+   "pool": [
+    "Flight->AtcFlightPlan [association]",
+    "AircraftOperator->AtcFlightPlan [dependency]",
+    "AtcFlightPlan",
+    "AtcFlightPlan.destinationAerodrome",
+    "TakeOffFromOutstation.calculateTtot()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "Flight->AtcFlightPlan [association]",
+    "AircraftOperator->AtcFlightPlan [dependency]",
+    "AtcFlightPlan",
+    "AtcFlightPlan.destinationAerodrome",
+    "TakeOffFromOutstation.calculateTtot()"
+   ]
+  },
+  "c194": {
+   "run": "single_high/run_03",
+   "claim": "M5.timing.1.c1",
+   "kind": "attribute",
+   "pool": [
+    "ATCSystem.detectFlight()",
+    "FinalApproach.checkTobtConsistency()",
+    "BoardingTime.boardingCheckOffset",
+    "OffBlockTime.tobtUpdateThreshold",
+    "BoardingStarts.checkBoardingStatus()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "ATCSystem.detectFlight()",
+    "FinalApproach.checkTobtConsistency()",
+    "BoardingTime.boardingCheckOffset",
+    "OffBlockTime.tobtUpdateThreshold",
+    "BoardingStarts.checkBoardingStatus()"
+   ]
+  },
+  "c195": {
+   "run": "multi/run_05",
+   "claim": "M9.procedures.6.c2",
+   "kind": "operation",
+   "pool": [
+    "TobtFinalConfirmation.confirmTobtPriorToTsat()",
+    "TobtFinalConfirmation",
+    "TsatIssuance.issueTsat()",
+    "TsatIssuance.checkTobtUpdateCount()",
+    "Tobt.updateCount"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "TobtFinalConfirmation.confirmTobtPriorToTsat()",
+    "TobtFinalConfirmation",
+    "TsatIssuance.issueTsat()",
+    "TsatIssuance.checkTobtUpdateCount()",
+    "Tobt.updateCount"
+   ]
+  },
+  "c196": {
+   "run": "multi/run_01",
+   "claim": "M8.procedures.1.c1",
+   "kind": "operation",
+   "pool": [
+    "TOBTConsistencyMilestone.checkTOBTConsistency()",
+    "MilestoneEOBTMinus2Hours.checkEstimatesConsistency()",
+    "MilestoneTakeOffFromOutstation.checkLandingEstimateConsistency()",
+    "MilestoneFinalTOBTConfirmation",
+    "MilestoneBoardingStarts.checkBoardingStatus()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "TOBTConsistencyMilestone.checkTOBTConsistency()",
+    "MilestoneEOBTMinus2Hours.checkEstimatesConsistency()",
+    "MilestoneTakeOffFromOutstation.checkLandingEstimateConsistency()",
+    "MilestoneFinalTOBTConfirmation",
+    "MilestoneBoardingStarts.checkBoardingStatus()"
+   ]
+  },
+  "c197": {
+   "run": "single_high/run_04",
+   "claim": "M12.procedures.6.c1",
+   "kind": "operation",
+   "pool": [
+    "AircraftReady.informPartnersOfARDT()",
+    "AirportCDMPlatform->Flight [association]",
+    "AirportCDMPlatform->DPIMessage [dependency]",
+    "AirportCDMPlatform",
+    "AirportCDMPlatform.processFlightInformation()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "AircraftReady.informPartnersOfARDT()",
+    "AirportCDMPlatform->Flight [association]",
+    "AirportCDMPlatform->DPIMessage [dependency]",
+    "AirportCDMPlatform",
+    "AirportCDMPlatform.processFlightInformation()"
+   ]
+  },
+  "c198": {
+   "run": "single_high/run_01",
+   "claim": "M10.action_on_cdm.1.c1",
+   "kind": "operation",
+   "pool": [
+    "AirportCDMPlatform.updateField()",
+    "LocalRadarUpdate.notifyNetworkOperationsIfTTOTChanges()",
+    "OffBlock.checkTTOTChangeAndNotify()",
+    "TakeOffTime.calculateTTOT()",
+    "EOBTMinus2Hours.sendFirstTDPI()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "AirportCDMPlatform.updateField()",
+    "LocalRadarUpdate.notifyNetworkOperationsIfTTOTChanges()",
+    "OffBlock.checkTTOTChangeAndNotify()",
+    "TakeOffTime.calculateTTOT()",
+    "EOBTMinus2Hours.sendFirstTDPI()"
+   ]
+  },
+  "c199": {
+   "run": "single_high/run_05",
+   "claim": "M8.effect.1.c2",
+   "kind": "operation",
+   "pool": [
+    "InBlockMilestone.updateTOBTAndTTOT()",
+    "TurnRoundOperator.updateTOBT()",
+    "EOBTMinus2HourMilestone.calculateTTOT()",
+    "MinimumTurnRoundTime",
+    "TurnRoundOperator.provideTOBT()"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "InBlockMilestone.updateTOBTAndTTOT()",
+    "TurnRoundOperator.updateTOBT()",
+    "EOBTMinus2HourMilestone.calculateTTOT()",
+    "MinimumTurnRoundTime",
+    "TurnRoundOperator.provideTOBT()"
+   ]
+  },
+  "c200": {
+   "run": "noscaffold/run_02",
+   "claim": "M3.effect.1.c4",
+   "kind": "relationship",
+   "pool": [
+    "NetworkOperations",
+    "NetworkOperations->FlightUpdateMessage [association]",
+    "FlightUpdateMessage",
+    "Flight.isRegulated",
+    "Flight.sobt"
+   ],
+   "judge_paths": [],
+   "lexical_paths": [
+    "NetworkOperations",
+    "NetworkOperations->FlightUpdateMessage [association]",
+    "FlightUpdateMessage",
+    "Flight.isRegulated",
+    "Flight.sobt"
+   ]
+  }
+ }
+}

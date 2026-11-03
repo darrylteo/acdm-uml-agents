@@ -1,0 +1,49 @@
+# Milestone 3: Take Off from Outstation
+
+The section, split into sentences. The field name precedes each field; the id precedes each sentence.
+
+
+## Definition
+
+[M3.definition.1] The ATOT from the outstation (ADEP)
+
+## Origin and priority
+
+[M3.origin_and_priority.1] The outstation provides ATOT to the Network Operations and Aircraft Operator.
+
+## Timing
+
+[M3.timing.1] The information is directly available after occurrence of the milestone.
+
+## Data Quality
+
+[M3.data_quality.1] The accuracy of ATOT is +/- 1 minute.
+
+## Effect
+
+[M3.effect.1] If the departure airport is more than 3hrs flying time from the destination airport the ATOT is received from either the Network Operations FUM or via the Aircraft Operator / Ground Handler.
+[M3.effect.2] Using the ATOT an ELDT can be calculated by using the Estimated Elapsed Time on the FPL.
+[M3.effect.3] If the flight is within 3hrs flying time of the destination airport the Network Operations monitors progress of the flight using the ETFMS and send a Flight Update Message (FUM) that provides updates of the flight's progress.
+
+## Procedures
+
+[M3.procedures.1] To check whether the AO/GH estimated landing time after take off from outstation are consistent with the outbound ATC Flight Plan, and when needed inform the Network Operations about the updated take off time estimates using a T-DPI-t Message.
+[M3.procedures.2] This check shall be performed to verify feasibility of the ATC Flight Plan at take off from outstation.
+[M3.procedures.3] A TTOT tolerance of 5 minutes is respected before Network Operations is informed of the updated TTOT.
+[M3.procedures.4] Calculation basis for the TTOT shall take into account EIBT+MTTT+EXOT.
+[M3.procedures.5] In case EOBT is later than EIBT+MTTT, TTOT equals EOBT+EXOT.
+[M3.procedures.6] In the case where TOBT is available this prediction will overrule the EIBT+MTTT estimate, hence TTOT equals TOBT+EXOT.
+[M3.procedures.7] This process is triggered by
+[M3.procedures.8] - the take off from outstation.
+
+## Operational Status
+
+[M3.operational_status.1] AIRBORNE
+
+## Action on CDM Operation
+
+[M3.action_on_cdm.1] ELDT, EIBT, TOBT and TTOT updated
+
+# Task
+
+Return every sentence with keep or drop, a reason, and the claims of each kept sentence, as JSON conforming to the schema.

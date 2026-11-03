@@ -1,0 +1,36 @@
+{
+  "condition": "single",
+  "steps": [
+    {
+      "ok": true,
+      "output": null,
+      "error": null,
+      "model": "claude-sonnet-5",
+      "input_tokens": 27084,
+      "output_tokens": 124318,
+      "thinking_tokens": 81740,
+      "cache_creation_tokens": 21122,
+      "cache_read_tokens": 5958,
+      "cost_usd": 1.3288676000000001,
+      "duration_ms": 992412,
+      "attempts": 1,
+      "num_turns": 3
+    }
+  ],
+  "ok": true,
+  "model_alias": "claude-sonnet-5",
+  "effort": "high",
+  "validation_errors": [],
+  "structural_problems": [],
+  "unmodelled": [
+    "Milestone 12 mentions the Dispatcher / Supervisor / Redcap as roles coordinating with the Ground Handler without further definition, so they could not be modelled as distinct classes.",
+    "Milestone 14 mentions start-up request by flight crew 'voice or DCL' without defining DCL, so it could not be modelled as a distinct message.",
+    "Milestone 1's DPI process messaging with Network Operations is deferred to 'attachment 2' and section 3.7.3, which are not part of this document and so could not be modelled in detail.",
+    "Milestone 8's Action on CDM Operation names 'ETTT' without defining it elsewhere in the document; it is only reflected via the general turn-round time attribute for lack of a clearer definition.",
+    "Milestone 9 states its process 'is actually constantly applicable in the CDM Platform, as soon as a TOBT is available,' a continuous-applicability rule that does not fit a single triggered operation."
+  ],
+  "total_input_tokens": 27084,
+  "total_output_tokens": 124318,
+  "total_cost_usd": 1.3288676000000001,
+  "total_duration_ms": 992412
+}

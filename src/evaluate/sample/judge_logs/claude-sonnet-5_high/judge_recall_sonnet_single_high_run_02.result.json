@@ -1,0 +1,100 @@
+{
+  "meta": {
+    "ok": true,
+    "output": null,
+    "error": null,
+    "model": "claude-sonnet-5",
+    "input_tokens": 28759,
+    "output_tokens": 2140,
+    "thinking_tokens": 1482,
+    "cache_creation_tokens": 26434,
+    "cache_read_tokens": 2323,
+    "cost_usd": 0.12760459999999998,
+    "duration_ms": 16800,
+    "attempts": 1,
+    "num_turns": 2
+  },
+  "output": {
+    "items": [
+      {
+        "id": "c002",
+        "grade": 1,
+        "elements": [
+          "M13StartUpRequested",
+          "Flight.startUpRequestTime",
+          "Aircrew.requestStartUp()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c011",
+        "grade": 0.5,
+        "elements": [
+          "ATCUnit.unitRole"
+        ],
+        "note": "ACC/Approach mentioned only in attribute description, no structural M4-ATCUnit link"
+      },
+      {
+        "id": "c021",
+        "grade": 1,
+        "elements": [
+          "M11BoardingStarts.checkBoardingStatus(timeBeforeTOBT)",
+          "Milestone.trigger"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c060",
+        "grade": 1,
+        "elements": [
+          "M2EOBTMinus2h.updateInboundELDT()",
+          "FlightUpdateMessage"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c087",
+        "grade": 1,
+        "elements": [
+          "M16TakeOff->AirportSurveillanceSystem",
+          "AirportSurveillanceSystem.detectTakeOff()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c139",
+        "grade": 1,
+        "elements": [
+          "M16TakeOff.generateAirborneMessageAndRemoveFromSequence()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c169",
+        "grade": 1,
+        "elements": [
+          "AtcFlightPlan.submissionTime",
+          "M1FlightPlanActivated.sendFirstEDPI()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c172",
+        "grade": 1,
+        "elements": [
+          "AirborneMessage"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c187",
+        "grade": 1,
+        "elements": [
+          "M3TakeOffFromOutstation->FlightUpdateMessage",
+          "M3TakeOffFromOutstation.receiveOutstationATOT()"
+        ],
+        "note": ""
+      }
+    ]
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "meta": {
+    "ok": true,
+    "output": null,
+    "error": null,
+    "model": "claude-sonnet-5",
+    "input_tokens": 26128,
+    "output_tokens": 2876,
+    "thinking_tokens": 2176,
+    "cache_creation_tokens": 23803,
+    "cache_read_tokens": 2323,
+    "cost_usd": 0.12444060000000001,
+    "duration_ms": 22967,
+    "attempts": 1,
+    "num_turns": 2
+  },
+  "output": {
+    "items": [
+      {
+        "id": "c001",
+        "grade": 0.5,
+        "elements": [
+          "GroundHandlingStartedMilestone"
+        ],
+        "note": "only in class description, not structural"
+      },
+      {
+        "id": "c008",
+        "grade": 1,
+        "elements": [
+          "Milestone.accuracy"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c032",
+        "grade": 1,
+        "elements": [
+          "ADPIMessage"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c059",
+        "grade": 1,
+        "elements": [
+          "ETOT"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c083",
+        "grade": 1,
+        "elements": [
+          "GroundHandlingStartedMilestone.checkTOBTConsistency()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c103",
+        "grade": 0.5,
+        "elements": [
+          "TakeOffFromOutstationMilestone.checkTTOTTolerance()"
+        ],
+        "note": "5-minute value only in operation description, no tolerance attribute"
+      },
+      {
+        "id": "c134",
+        "grade": 0.5,
+        "elements": [
+          "InBlockMilestone.informNetworkOperationsIfTolerated()"
+        ],
+        "note": "tolerance concept only in description, no attribute"
+      },
+      {
+        "id": "c140",
+        "grade": 0.5,
+        "elements": [
+          "ACARS",
+          "AIBT"
+        ],
+        "note": "ACARS=IN equivalence only in class description"
+      },
+      {
+        "id": "c159",
+        "grade": 1,
+        "elements": [
+          "FlightOperationalStatus.DEPARTED / TAKE OFF"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c163",
+        "grade": 1,
+        "elements": [
+          "AirportCDMPlatform.updateAfterLanding()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c175",
+        "grade": 1,
+        "elements": [
+          "DPIProcess.sendEDPI()",
+          "AircraftOperator->ATCFlightPlan"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c177",
+        "grade": 1,
+        "elements": [
+          "AirportCDMPlatform"
+        ],
+        "note": ""
+      }
+    ]
+  }
+}

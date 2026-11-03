@@ -1,0 +1,1499 @@
+{
+ "grader": "claude-opus-5/high",
+ "task": "precision",
+ "seed": 0,
+ "prompt": "judge_grounding.md",
+ "calls": {
+  "multi/run_02": {
+   "ok": true,
+   "error": null,
+   "meta": {
+    "model": "claude-opus-5",
+    "input_tokens": 14714,
+    "output_tokens": 1317,
+    "thinking_tokens": 870,
+    "cache_read_tokens": 1525,
+    "cost_usd": 0.16556750000000003,
+    "duration_ms": 14054,
+    "attempts": 1
+   },
+   "judged": "2026-09-21T22:58:51",
+   "missing": []
+  },
+  "multi/run_03": {
+   "ok": true,
+   "error": null,
+   "meta": {
+    "model": "claude-opus-5",
+    "input_tokens": 14757,
+    "output_tokens": 1716,
+    "thinking_tokens": 1193,
+    "cache_read_tokens": 1525,
+    "cost_usd": 0.1759725,
+    "duration_ms": 18954,
+    "attempts": 1
+   },
+   "judged": "2026-09-21T22:59:12",
+   "missing": []
+  },
+  "multi/run_04": {
+   "ok": true,
+   "error": null,
+   "meta": {
+    "model": "claude-opus-5",
+    "input_tokens": 15601,
+    "output_tokens": 1288,
+    "thinking_tokens": 808,
+    "cache_read_tokens": 1525,
+    "cost_usd": 0.1737125,
+    "duration_ms": 13601,
+    "attempts": 1
+   },
+   "judged": "2026-09-21T22:59:28",
+   "missing": []
+  },
+  "multi/run_05": {
+   "ok": true,
+   "error": null,
+   "meta": {
+    "model": "claude-opus-5",
+    "input_tokens": 16254,
+    "output_tokens": 1379,
+    "thinking_tokens": 746,
+    "cache_read_tokens": 1525,
+    "cost_usd": 0.1825175,
+    "duration_ms": 14295,
+    "attempts": 1
+   },
+   "judged": "2026-09-21T22:59:45",
+   "missing": []
+  },
+  "noscaffold/run_01": {
+   "ok": true,
+   "error": null,
+   "meta": {
+    "model": "claude-opus-5",
+    "input_tokens": 15274,
+    "output_tokens": 1502,
+    "thinking_tokens": 874,
+    "cache_read_tokens": 1525,
+    "cost_usd": 0.17579250000000002,
+    "duration_ms": 22273,
+    "attempts": 1
+   },
+   "judged": "2026-09-21T23:00:10",
+   "missing": []
+  },
+  "noscaffold/run_02": {
+   "ok": true,
+   "error": null,
+   "meta": {
+    "model": "claude-opus-5",
+    "input_tokens": 14863,
+    "output_tokens": 988,
+    "thinking_tokens": 628,
+    "cache_read_tokens": 1525,
+    "cost_usd": 0.15883250000000002,
+    "duration_ms": 10499,
+    "attempts": 1
+   },
+   "judged": "2026-09-21T23:00:23",
+   "missing": []
+  },
+  "noscaffold/run_03": {
+   "ok": true,
+   "error": null,
+   "meta": {
+    "model": "claude-opus-5",
+    "input_tokens": 15585,
+    "output_tokens": 1217,
+    "thinking_tokens": 695,
+    "cache_read_tokens": 1525,
+    "cost_usd": 0.17177749999999997,
+    "duration_ms": 19623,
+    "attempts": 1
+   },
+   "judged": "2026-09-21T23:00:46",
+   "missing": []
+  },
+  "single/run_02": {
+   "ok": true,
+   "error": null,
+   "meta": {
+    "model": "claude-opus-5",
+    "input_tokens": 14989,
+    "output_tokens": 1360,
+    "thinking_tokens": 905,
+    "cache_read_tokens": 1525,
+    "cost_usd": 0.1693925,
+    "duration_ms": 25578,
+    "attempts": 1
+   },
+   "judged": "2026-09-21T23:01:31",
+   "missing": []
+  },
+  "single/run_03": {
+   "ok": true,
+   "error": null,
+   "meta": {
+    "model": "claude-opus-5",
+    "input_tokens": 15319,
+    "output_tokens": 1774,
+    "thinking_tokens": 1250,
+    "cache_read_tokens": 1525,
+    "cost_usd": 0.18304250000000002,
+    "duration_ms": 18966,
+    "attempts": 1
+   },
+   "judged": "2026-09-21T23:01:52",
+   "missing": []
+  },
+  "single/run_04": {
+   "ok": true,
+   "error": null,
+   "meta": {
+    "model": "claude-opus-5",
+    "input_tokens": 15126,
+    "output_tokens": 1025,
+    "thinking_tokens": 572,
+    "cache_read_tokens": 1525,
+    "cost_usd": 0.1623875,
+    "duration_ms": 11160,
+    "attempts": 1
+   },
+   "judged": "2026-09-21T23:02:06",
+   "missing": []
+  },
+  "single_high/run_01": {
+   "ok": true,
+   "error": null,
+   "meta": {
+    "model": "claude-opus-5",
+    "input_tokens": 15344,
+    "output_tokens": 1753,
+    "thinking_tokens": 1149,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.197255,
+    "duration_ms": 18159,
+    "attempts": 1
+   },
+   "judged": "2026-09-22T00:14:53",
+   "missing": []
+  },
+  "single_high/run_02": {
+   "ok": true,
+   "error": null,
+   "meta": {
+    "model": "claude-opus-5",
+    "input_tokens": 15276,
+    "output_tokens": 1475,
+    "thinking_tokens": 1043,
+    "cache_read_tokens": 1525,
+    "cost_usd": 0.1751375,
+    "duration_ms": 15655,
+    "attempts": 1
+   },
+   "judged": "2026-09-22T00:15:12",
+   "missing": []
+  },
+  "single_high/run_03": {
+   "ok": true,
+   "error": null,
+   "meta": {
+    "model": "claude-opus-5",
+    "input_tokens": 15213,
+    "output_tokens": 1325,
+    "thinking_tokens": 857,
+    "cache_read_tokens": 1525,
+    "cost_usd": 0.1707575,
+    "duration_ms": 15236,
+    "attempts": 1
+   },
+   "judged": "2026-09-22T00:15:29",
+   "missing": []
+  },
+  "multi/run_01": {
+   "ok": true,
+   "error": null,
+   "meta": {
+    "model": "claude-opus-5",
+    "input_tokens": 15916,
+    "output_tokens": 1494,
+    "thinking_tokens": 1023,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.1965,
+    "duration_ms": 17146,
+    "attempts": 1
+   },
+   "judged": "2026-09-22T01:29:32",
+   "missing": []
+  },
+  "single/run_01": {
+   "ok": true,
+   "error": null,
+   "meta": {
+    "model": "claude-opus-5",
+    "input_tokens": 14953,
+    "output_tokens": 1233,
+    "thinking_tokens": 792,
+    "cache_read_tokens": 1525,
+    "cost_usd": 0.1658575,
+    "duration_ms": 13350,
+    "attempts": 1
+   },
+   "judged": "2026-09-22T01:29:49",
+   "missing": []
+  },
+  "single/run_05": {
+   "ok": true,
+   "error": null,
+   "meta": {
+    "model": "claude-opus-5",
+    "input_tokens": 14928,
+    "output_tokens": 766,
+    "thinking_tokens": 459,
+    "cache_read_tokens": 1525,
+    "cost_usd": 0.1539325,
+    "duration_ms": 8483,
+    "attempts": 1
+   },
+   "judged": "2026-09-22T01:30:00",
+   "missing": []
+  },
+  "single_high/run_04": {
+   "ok": true,
+   "error": null,
+   "meta": {
+    "model": "claude-opus-5",
+    "input_tokens": 14843,
+    "output_tokens": 1109,
+    "thinking_tokens": 737,
+    "cache_read_tokens": 1525,
+    "cost_usd": 0.1616575,
+    "duration_ms": 13089,
+    "attempts": 1
+   },
+   "judged": "2026-09-22T01:30:16",
+   "missing": []
+  },
+  "single_high/run_05": {
+   "ok": true,
+   "error": null,
+   "meta": {
+    "model": "claude-opus-5",
+    "input_tokens": 15421,
+    "output_tokens": 1730,
+    "thinking_tokens": 1204,
+    "cache_read_tokens": 1525,
+    "cost_usd": 0.1829625,
+    "duration_ms": 17673,
+    "attempts": 1
+   },
+   "judged": "2026-09-22T01:30:36",
+   "missing": []
+  }
+ },
+ "grades": {
+  "g041": {
+   "credit": 1,
+   "sentence": "M3.procedures.3",
+   "note": "",
+   "sentence_known": true
+  },
+  "g074": {
+   "credit": 1,
+   "sentence": "M15.action_on_cdm.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g077": {
+   "credit": 1,
+   "sentence": "M2.procedures.4",
+   "note": "",
+   "sentence_known": true
+  },
+  "g092": {
+   "credit": 1,
+   "sentence": "M9.effect.5",
+   "note": "AO submits the flight plan and computes TOBT for the flight; 'operates' is the document's own term for the AO",
+   "sentence_known": true
+  },
+  "g096": {
+   "credit": 1,
+   "sentence": "M1.operational_status.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g099": {
+   "credit": 1,
+   "sentence": "M3.procedures.4",
+   "note": "",
+   "sentence_known": true
+  },
+  "g114": {
+   "credit": 1,
+   "sentence": "M15.action_on_cdm.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g148": {
+   "credit": 1,
+   "sentence": "M8.action_on_cdm.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g186": {
+   "credit": 0.5,
+   "sentence": "M6.definition.1",
+   "note": "Times are named throughout; 'appended rather than overwritten' is not in the document, which says e.g. ELDT changes to ALDT",
+   "sentence_known": true
+  },
+  "g195": {
+   "credit": 1,
+   "sentence": "M1.origin_and_priority.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g031": {
+   "credit": 1,
+   "sentence": "M15.definition.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g049": {
+   "credit": 1,
+   "sentence": "M15.procedures.4",
+   "note": "",
+   "sentence_known": true
+  },
+  "g054": {
+   "credit": 0.5,
+   "sentence": "M3.timing.1",
+   "note": "Time of update is prescribed structure, but append-not-overwrite rule and post-analysis purpose are not in the document.",
+   "sentence_known": true
+  },
+  "g083": {
+   "credit": 1,
+   "sentence": "M3.effect.3",
+   "note": "",
+   "sentence_known": true
+  },
+  "g089": {
+   "credit": 1,
+   "sentence": "M15.procedures.4",
+   "note": "",
+   "sentence_known": true
+  },
+  "g125": {
+   "credit": 1,
+   "sentence": "M9.effect.3",
+   "note": "",
+   "sentence_known": true
+  },
+  "g127": {
+   "credit": 1,
+   "sentence": "M6.effect.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g191": {
+   "credit": 1,
+   "sentence": "M16.procedures.3",
+   "note": "",
+   "sentence_known": true
+  },
+  "g196": {
+   "credit": 1,
+   "sentence": "M1.procedures.3",
+   "note": "",
+   "sentence_known": true
+  },
+  "g182": {
+   "credit": 0.5,
+   "sentence": "M3.timing.1",
+   "note": "Time of update is prescribed structure, but append-not-overwrite rule and post-analysis purpose are not in the document.",
+   "sentence_known": true
+  },
+  "g016": {
+   "credit": 1,
+   "sentence": "M1.operational_status.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g019": {
+   "credit": 1,
+   "sentence": "M10.origin_and_priority.1",
+   "note": "ATC named as stakeholder; base class prescribed by scaffold",
+   "sentence_known": true
+  },
+  "g029": {
+   "credit": 1,
+   "sentence": "M1.origin_and_priority.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g068": {
+   "credit": 1,
+   "sentence": "M7.effect.1",
+   "note": "estimated turn-round period is the basis for TOBT/TTOT",
+   "sentence_known": true
+  },
+  "g104": {
+   "credit": 0.5,
+   "sentence": "M15.action_on_cdm.1",
+   "note": "append-rather-than-overwrite history rule not stated; document says ELDT changes to ALDT",
+   "sentence_known": true
+  },
+  "g139": {
+   "credit": 1,
+   "sentence": "M1.definition.2",
+   "note": "",
+   "sentence_known": true
+  },
+  "g151": {
+   "credit": 1,
+   "sentence": "M2.origin_and_priority.1",
+   "note": "Network Operations named as stakeholder; base class prescribed by scaffold",
+   "sentence_known": true
+  },
+  "g158": {
+   "credit": 1,
+   "sentence": "M3.operational_status.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g168": {
+   "credit": 1,
+   "sentence": "M3.definition.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g170": {
+   "credit": 1,
+   "sentence": "M7.definition.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g187": {
+   "credit": 1,
+   "sentence": "M9.effect.6",
+   "note": "",
+   "sentence_known": true
+  },
+  "g023": {
+   "credit": 1,
+   "sentence": "M2.action_on_cdm.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g063": {
+   "credit": 1,
+   "sentence": "M10.procedures.7",
+   "note": "Scaffold field; counting TOBT updates implies successive values kept.",
+   "sentence_known": true
+  },
+  "g065": {
+   "credit": 1,
+   "sentence": "M7.definition.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g069": {
+   "credit": 1,
+   "sentence": "M15.data_quality.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g105": {
+   "credit": 1,
+   "sentence": "M5.procedures.6",
+   "note": "",
+   "sentence_known": true
+  },
+  "g106": {
+   "credit": 1,
+   "sentence": "M15.definition.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g119": {
+   "credit": 1,
+   "sentence": "M11.procedures.4",
+   "note": "",
+   "sentence_known": true
+  },
+  "g134": {
+   "credit": 1,
+   "sentence": "M4.procedures.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g135": {
+   "credit": 1,
+   "sentence": "M15.data_quality.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g137": {
+   "credit": 1,
+   "sentence": "M8.definition.1",
+   "note": "Scaffold field on a named time (ACGT).",
+   "sentence_known": true
+  },
+  "g147": {
+   "credit": 1,
+   "sentence": "M4.procedures.2",
+   "note": "",
+   "sentence_known": true
+  },
+  "g169": {
+   "credit": 1,
+   "sentence": "M5.procedures.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g017": {
+   "credit": 1,
+   "sentence": "M9.definition.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g022": {
+   "credit": 1,
+   "sentence": "M4.effect.5",
+   "note": "",
+   "sentence_known": true
+  },
+  "g026": {
+   "credit": 1,
+   "sentence": "M2.procedures.4",
+   "note": "",
+   "sentence_known": true
+  },
+  "g036": {
+   "credit": 1,
+   "sentence": "M5.procedures.6",
+   "note": "",
+   "sentence_known": true
+  },
+  "g051": {
+   "credit": 1,
+   "sentence": "M13.definition.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g055": {
+   "credit": 1,
+   "sentence": "M1.action_on_cdm.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g056": {
+   "credit": 1,
+   "sentence": "M9.effect.6",
+   "note": "EXOT named as taxi-out time; duration nature follows from EIBT+MTTT+EXOT arithmetic",
+   "sentence_known": true
+  },
+  "g073": {
+   "credit": 1,
+   "sentence": "M1.effect.7",
+   "note": "",
+   "sentence_known": true
+  },
+  "g076": {
+   "credit": 1,
+   "sentence": "M11.procedures.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g078": {
+   "credit": 1,
+   "sentence": "M3.effect.2",
+   "note": "",
+   "sentence_known": true
+  },
+  "g115": {
+   "credit": 1,
+   "sentence": "M7.definition.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g123": {
+   "credit": 1,
+   "sentence": "M12.definition.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g126": {
+   "credit": 1,
+   "sentence": "M1.action_on_cdm.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g138": {
+   "credit": 1,
+   "sentence": "M1.timing.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g144": {
+   "credit": 1,
+   "sentence": "M3.effect.3",
+   "note": "",
+   "sentence_known": true
+  },
+  "g162": {
+   "credit": 1,
+   "sentence": "M1.definition.2",
+   "note": "",
+   "sentence_known": true
+  },
+  "g165": {
+   "credit": 1,
+   "sentence": "M1.timing.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g002": {
+   "credit": 1,
+   "sentence": "M15.procedures.4",
+   "note": "E-DPI (M1.procedures.2), T-DPI (M2.procedures.1), T-DPI-t (M3.procedures.1), T-DPI-s (M10.procedures.2), A-DPI all named.",
+   "sentence_known": true
+  },
+  "g013": {
+   "credit": 1,
+   "sentence": "M14.definition.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g028": {
+   "credit": 1,
+   "sentence": "M12.definition.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g075": {
+   "credit": 1,
+   "sentence": "M16.effect.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g085": {
+   "credit": 1,
+   "sentence": "M4.origin_and_priority.1",
+   "note": "ACC/Approach at M4; Tower at M16.procedures.3; TSAT issue M10.origin_and_priority.1; approval M14.origin_and_priority.1.",
+   "sentence_known": true
+  },
+  "g136": {
+   "credit": 1,
+   "sentence": "M1.origin_and_priority.2",
+   "note": "Destination aerodrome named; 'ICAO code' is a format detail.",
+   "sentence_known": true
+  },
+  "g149": {
+   "credit": 1,
+   "sentence": "M12.procedures.1",
+   "note": "Also M11/M13/M14/M15.procedures.1.",
+   "sentence_known": true
+  },
+  "g179": {
+   "credit": 1,
+   "sentence": "M14.procedures.6",
+   "note": "Milestones numbered 1-16 throughout; 'Milestone Process 13' referenced.",
+   "sentence_known": true
+  },
+  "g184": {
+   "credit": 1,
+   "sentence": "M9.effect.3",
+   "note": "3 hr lead from M1.timing.1.",
+   "sentence_known": true
+  },
+  "g193": {
+   "credit": 1,
+   "sentence": "M2.procedures.4",
+   "note": "TOBT+EXOT at M2.procedures.5; updates at M3-M10, M15.",
+   "sentence_known": true
+  },
+  "g018": {
+   "credit": 1,
+   "sentence": "M1.definition.2",
+   "note": "",
+   "sentence_known": true
+  },
+  "g064": {
+   "credit": 1,
+   "sentence": "M2.procedures.3",
+   "note": "",
+   "sentence_known": true
+  },
+  "g066": {
+   "credit": 1,
+   "sentence": "M2.procedures.2",
+   "note": "Submission timing from M1.timing.1",
+   "sentence_known": true
+  },
+  "g094": {
+   "credit": 1,
+   "sentence": "M3.timing.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g107": {
+   "credit": 1,
+   "sentence": "M1.action_on_cdm.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g111": {
+   "credit": 1,
+   "sentence": "M6.definition.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g121": {
+   "credit": 1,
+   "sentence": "M1.origin_and_priority.2",
+   "note": "",
+   "sentence_known": true
+  },
+  "g132": {
+   "credit": 1,
+   "sentence": "M1.operational_status.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g157": {
+   "credit": 1,
+   "sentence": "M2.timing.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g001": {
+   "credit": 1,
+   "sentence": "M1.timing.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g008": {
+   "credit": 1,
+   "sentence": "M2.procedures.2",
+   "note": "",
+   "sentence_known": true
+  },
+  "g038": {
+   "credit": 1,
+   "sentence": "M1.definition.2",
+   "note": "Identifier prescribed by scaffold; platform named.",
+   "sentence_known": true
+  },
+  "g039": {
+   "credit": 1,
+   "sentence": "M2.procedures.4",
+   "note": "",
+   "sentence_known": true
+  },
+  "g043": {
+   "credit": 1,
+   "sentence": "M7.definition.2",
+   "note": "",
+   "sentence_known": true
+  },
+  "g067": {
+   "credit": 1,
+   "sentence": "M3.effect.3",
+   "note": "",
+   "sentence_known": true
+  },
+  "g102": {
+   "credit": 1,
+   "sentence": "M10.definition.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g108": {
+   "credit": 1,
+   "sentence": "M2.procedures.2",
+   "note": "Duplicate of g008.",
+   "sentence_known": true
+  },
+  "g113": {
+   "credit": 1,
+   "sentence": "M1.data_quality.1",
+   "note": "Identifier prescribed by scaffold; airport slot named.",
+   "sentence_known": true
+  },
+  "g145": {
+   "credit": 1,
+   "sentence": "M12.definition.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g146": {
+   "credit": 1,
+   "sentence": "M2.procedures.3",
+   "note": "DPI message named; sending time described.",
+   "sentence_known": true
+  },
+  "g163": {
+   "credit": 1,
+   "sentence": "M1.operational_status.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g189": {
+   "credit": 1,
+   "sentence": "M1.definition.2",
+   "note": "",
+   "sentence_known": true
+  },
+  "g032": {
+   "credit": 1,
+   "sentence": "M16.action_on_cdm.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g033": {
+   "credit": 1,
+   "sentence": "M1.effect.7",
+   "note": "DPI messages named; base-class specialisation is scaffold-prescribed",
+   "sentence_known": true
+  },
+  "g044": {
+   "credit": 1,
+   "sentence": "M1.definition.2",
+   "note": "",
+   "sentence_known": true
+  },
+  "g053": {
+   "credit": 1,
+   "sentence": "M1.definition.2",
+   "note": "identifier prescribed by scaffold; flight named",
+   "sentence_known": true
+  },
+  "g079": {
+   "credit": 1,
+   "sentence": "M9.effect.6",
+   "note": "",
+   "sentence_known": true
+  },
+  "g097": {
+   "credit": 1,
+   "sentence": "M12.effect.2",
+   "note": "aircrew/pilot named as stakeholder; specialisation prescribed by scaffold",
+   "sentence_known": true
+  },
+  "g109": {
+   "credit": 1,
+   "sentence": "M14.definition.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g143": {
+   "credit": 1,
+   "sentence": "M9.procedures.5",
+   "note": "",
+   "sentence_known": true
+  },
+  "g154": {
+   "credit": 1,
+   "sentence": "M2.effect.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g192": {
+   "credit": 1,
+   "sentence": "M7.definition.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g034": {
+   "credit": 1,
+   "sentence": "M3.data_quality.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g042": {
+   "credit": 1,
+   "sentence": "M9.definition.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g058": {
+   "credit": 1,
+   "sentence": "M2.origin_and_priority.1",
+   "note": "Stakeholder named; but document has IFPS distribute flight plans and Network Operations send (not receive) FUM.",
+   "sentence_known": true
+  },
+  "g082": {
+   "credit": 1,
+   "sentence": "M9.definition.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g129": {
+   "credit": 1,
+   "sentence": "M1.data_quality.1",
+   "note": "Slot named; document says flight plan (not slot) initiates outbound flight, and only at non-coordinated airports.",
+   "sentence_known": true
+  },
+  "g133": {
+   "credit": 1,
+   "sentence": "M1.procedures.2",
+   "note": "",
+   "sentence_known": true
+  },
+  "g141": {
+   "credit": 1,
+   "sentence": "M1.effect.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g150": {
+   "credit": 1,
+   "sentence": "M3.effect.2",
+   "note": "",
+   "sentence_known": true
+  },
+  "g171": {
+   "credit": 1,
+   "sentence": "M1.origin_and_priority.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g175": {
+   "credit": 1,
+   "sentence": "M3.data_quality.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g010": {
+   "credit": 1,
+   "sentence": "M2.origin_and_priority.1",
+   "note": "Network Operations is a named stakeholder; common base class is prescribed structure.",
+   "sentence_known": true
+  },
+  "g014": {
+   "credit": 1,
+   "sentence": "M6.effect.2",
+   "note": "",
+   "sentence_known": true
+  },
+  "g015": {
+   "credit": 1,
+   "sentence": "M15.definition.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g025": {
+   "credit": 1,
+   "sentence": "M1.effect.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g027": {
+   "credit": 1,
+   "sentence": "M1.origin_and_priority.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g040": {
+   "credit": 1,
+   "sentence": "M1.definition.2",
+   "note": "",
+   "sentence_known": true
+  },
+  "g071": {
+   "credit": 0.5,
+   "sentence": "M1.procedures.3",
+   "note": "SOBT is named, but the 'shared by ATC, Network Operations and Stand/Gate Management' statement (M9.effect.3) is about EOBT, not SOBT.",
+   "sentence_known": true
+  },
+  "g081": {
+   "credit": 1,
+   "sentence": "M14.procedures.6",
+   "note": "",
+   "sentence_known": true
+  },
+  "g090": {
+   "credit": 1,
+   "sentence": "M6.definition.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g160": {
+   "credit": 1,
+   "sentence": "M4.effect.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g177": {
+   "credit": 1,
+   "sentence": "M16.procedures.3",
+   "note": "",
+   "sentence_known": true
+  },
+  "g198": {
+   "credit": 1,
+   "sentence": "M10.procedures.3",
+   "note": "",
+   "sentence_known": true
+  },
+  "g003": {
+   "credit": 1,
+   "sentence": "M1.definition.2",
+   "note": "",
+   "sentence_known": true
+  },
+  "g110": {
+   "credit": 1,
+   "sentence": "M9.procedures.5",
+   "note": "",
+   "sentence_known": true
+  },
+  "g112": {
+   "credit": 1,
+   "sentence": "M1.definition.2",
+   "note": "",
+   "sentence_known": true
+  },
+  "g120": {
+   "credit": 1,
+   "sentence": "M9.procedures.5",
+   "note": "",
+   "sentence_known": true
+  },
+  "g131": {
+   "credit": 1,
+   "sentence": "M14.procedures.6",
+   "note": "Milestones are numbered 1-16 throughout; identifier is scaffold-prescribed.",
+   "sentence_known": true
+  },
+  "g152": {
+   "credit": 1,
+   "sentence": "M1.effect.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g156": {
+   "credit": 1,
+   "sentence": "M4.effect.8",
+   "note": "",
+   "sentence_known": true
+  },
+  "g164": {
+   "credit": 1,
+   "sentence": "M9.procedures.5",
+   "note": "",
+   "sentence_known": true
+  },
+  "g176": {
+   "credit": 1,
+   "sentence": "M1.definition.2",
+   "note": "Scaffold-prescribed identifier on a named thing.",
+   "sentence_known": true
+  },
+  "g181": {
+   "credit": 1,
+   "sentence": "M4.origin_and_priority.2",
+   "note": "",
+   "sentence_known": true
+  },
+  "g183": {
+   "credit": 1,
+   "sentence": "M1.effect.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g007": {
+   "credit": 1,
+   "sentence": "M1.definition.2",
+   "note": "",
+   "sentence_known": true
+  },
+  "g020": {
+   "credit": 1,
+   "sentence": "M6.definition.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g072": {
+   "credit": 1,
+   "sentence": "M6.effect.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g080": {
+   "credit": 1,
+   "sentence": "M16.procedures.2",
+   "note": "",
+   "sentence_known": true
+  },
+  "g098": {
+   "credit": 1,
+   "sentence": "M1.effect.2",
+   "note": "",
+   "sentence_known": true
+  },
+  "g101": {
+   "credit": 1,
+   "sentence": "M6.effect.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g140": {
+   "credit": 1,
+   "sentence": "M1.definition.2",
+   "note": "",
+   "sentence_known": true
+  },
+  "g194": {
+   "credit": 1,
+   "sentence": "M1.action_on_cdm.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g004": {
+   "credit": 1,
+   "sentence": "M7.procedures.2",
+   "note": "",
+   "sentence_known": true
+  },
+  "g011": {
+   "credit": 1,
+   "sentence": "M3.data_quality.1",
+   "note": "Prescribed time-quantity structure; times named throughout.",
+   "sentence_known": true
+  },
+  "g012": {
+   "credit": 1,
+   "sentence": "M1.effect.7",
+   "note": "",
+   "sentence_known": true
+  },
+  "g035": {
+   "credit": 1,
+   "sentence": "M16.definition.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g037": {
+   "credit": 1,
+   "sentence": "M6.definition.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g047": {
+   "credit": 1,
+   "sentence": "M16.definition.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g050": {
+   "credit": 1,
+   "sentence": "M1.origin_and_priority.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g088": {
+   "credit": 1,
+   "sentence": "M2.definition.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g093": {
+   "credit": 1,
+   "sentence": "M1.operational_status.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g100": {
+   "credit": 1,
+   "sentence": "M1.procedures.3",
+   "note": "SOBT/EOBT/TOBT/AOBT/CTOT name the prefixes.",
+   "sentence_known": true
+  },
+  "g103": {
+   "credit": 1,
+   "sentence": "M9.procedures.5",
+   "note": "",
+   "sentence_known": true
+  },
+  "g116": {
+   "credit": 1,
+   "sentence": "M15.definition.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g161": {
+   "credit": 1,
+   "sentence": "M6.origin_and_priority.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g173": {
+   "credit": 1,
+   "sentence": "M1.operational_status.1",
+   "note": "Document gives a distinct operational status per milestone.",
+   "sentence_known": true
+  },
+  "g178": {
+   "credit": 1,
+   "sentence": "M11.procedures.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g005": {
+   "credit": 1,
+   "sentence": "M3.definition.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g021": {
+   "credit": 1,
+   "sentence": "M1.effect.6",
+   "note": "",
+   "sentence_known": true
+  },
+  "g057": {
+   "credit": 1,
+   "sentence": "M2.origin_and_priority.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g060": {
+   "credit": 1,
+   "sentence": "M7.definition.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g062": {
+   "credit": 1,
+   "sentence": "M3.procedures.5",
+   "note": "",
+   "sentence_known": true
+  },
+  "g087": {
+   "credit": 1,
+   "sentence": "M16.action_on_cdm.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g091": {
+   "credit": 1,
+   "sentence": "M15.definition.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g122": {
+   "credit": 1,
+   "sentence": "M6.definition.1",
+   "note": "Document names Actual/Estimated/Target qualifiers of times explicitly",
+   "sentence_known": true
+  },
+  "g124": {
+   "credit": 1,
+   "sentence": "M11.procedures.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g167": {
+   "credit": 1,
+   "sentence": "M16.definition.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g174": {
+   "credit": 1,
+   "sentence": "M14.definition.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g048": {
+   "credit": 0.5,
+   "sentence": "M6.action_on_cdm.1",
+   "note": "Base time class is prescribed, but 'all values kept rather than overwritten' is not stated; document only says values are updated/changed.",
+   "sentence_known": true
+  },
+  "g061": {
+   "credit": 1,
+   "sentence": "M16.definition.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g070": {
+   "credit": 1,
+   "sentence": "M9.action_on_cdm.2",
+   "note": "",
+   "sentence_known": true
+  },
+  "g118": {
+   "credit": 1,
+   "sentence": "M1.operational_status.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g128": {
+   "credit": 1,
+   "sentence": "M1.procedures.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g130": {
+   "credit": 1,
+   "sentence": "M3.data_quality.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g142": {
+   "credit": 1,
+   "sentence": "M8.definition.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g166": {
+   "credit": 1,
+   "sentence": "M3.data_quality.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g197": {
+   "credit": 0.5,
+   "sentence": "M6.action_on_cdm.1",
+   "note": "Values of time quantities are named, but keeping every successive value (append, not overwrite) for later analysis is not stated.",
+   "sentence_known": true
+  },
+  "g200": {
+   "credit": 1,
+   "sentence": "M11.procedures.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g009": {
+   "credit": 0.5,
+   "sentence": "M1.origin_and_priority.1",
+   "note": "Document describes what each stakeholder does but names no explicit role property.",
+   "sentence_known": true
+  },
+  "g024": {
+   "credit": 1,
+   "sentence": "M10.definition.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g030": {
+   "credit": 1,
+   "sentence": "M10.procedures.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g045": {
+   "credit": 1,
+   "sentence": "M3.procedures.7",
+   "note": "",
+   "sentence_known": true
+  },
+  "g059": {
+   "credit": 1,
+   "sentence": "M1.action_on_cdm.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g084": {
+   "credit": 1,
+   "sentence": "M1.effect.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g095": {
+   "credit": 1,
+   "sentence": "M9.effect.7",
+   "note": "",
+   "sentence_known": true
+  },
+  "g159": {
+   "credit": 1,
+   "sentence": "M1.origin_and_priority.2",
+   "note": "",
+   "sentence_known": true
+  },
+  "g180": {
+   "credit": 1,
+   "sentence": "M1.effect.4",
+   "note": "",
+   "sentence_known": true
+  },
+  "g006": {
+   "credit": 1,
+   "sentence": "M3.effect.3",
+   "note": "",
+   "sentence_known": true
+  },
+  "g046": {
+   "credit": 1,
+   "sentence": "M7.definition.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g052": {
+   "credit": 1,
+   "sentence": "M9.definition.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g086": {
+   "credit": 1,
+   "sentence": "M9.origin_and_priority.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g117": {
+   "credit": 1,
+   "sentence": "M9.action_on_cdm.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g153": {
+   "credit": 1,
+   "sentence": "M12.definition.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g155": {
+   "credit": 0.5,
+   "sentence": "M6.action_on_cdm.1",
+   "note": "Time of update is prescribed; append-not-overwrite history for post-analysis is not stated by the document.",
+   "sentence_known": true
+  },
+  "g172": {
+   "credit": 1,
+   "sentence": "M1.action_on_cdm.1",
+   "note": "Each milestone lists its Action on CDM Operation (ACISP); platform initiated per flight in M1.definition.2.",
+   "sentence_known": true
+  },
+  "g185": {
+   "credit": 1,
+   "sentence": "M15.definition.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g188": {
+   "credit": 1,
+   "sentence": "M4.procedures.6",
+   "note": "",
+   "sentence_known": true
+  },
+  "g190": {
+   "credit": 1,
+   "sentence": "M13.effect.1",
+   "note": "",
+   "sentence_known": true
+  },
+  "g199": {
+   "credit": 1,
+   "sentence": "M1.action_on_cdm.1",
+   "note": "",
+   "sentence_known": true
+  }
+ },
+ "exported": "2026-09-22T01:30:36"
+}

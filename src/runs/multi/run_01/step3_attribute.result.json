@@ -1,0 +1,395 @@
+{
+  "meta": {
+    "ok": true,
+    "output": null,
+    "error": null,
+    "model": "claude-sonnet-5",
+    "input_tokens": 24468,
+    "output_tokens": 9193,
+    "thinking_tokens": 5051,
+    "cache_creation_tokens": 24466,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.18979800000000002,
+    "duration_ms": 77941,
+    "attempts": 1
+  },
+  "output": {
+    "classes": [
+      {
+        "name": "CDMPartner",
+        "attributes": [
+          {
+            "name": "name",
+            "type": "String",
+            "description": "The identifying name of the stakeholder that originates or receives information in the Airport CDM process."
+          }
+        ]
+      },
+      {
+        "name": "Flight",
+        "attributes": [
+          {
+            "name": "operationalStatus",
+            "type": "FlightOperationalStatus",
+            "description": "The current operational status of the flight, updated as each milestone occurs (e.g. INITIATED, AIRBORNE, LANDED, OFF_BLOCK)."
+          },
+          {
+            "name": "isRegulated",
+            "type": "Boolean",
+            "description": "Whether the flight has received a CTOT from Network Operations and its fields are marked REGULATED (milestone 2)."
+          },
+          {
+            "name": "offBlockTime",
+            "type": "TimeQuantity",
+            "description": "The successive scheduled, estimated, target and actual off-block time values (SOBT, EOBT, TOBT, AOBT) recorded for the flight."
+          },
+          {
+            "name": "inBlockTime",
+            "type": "TimeQuantity",
+            "description": "The successive estimated and actual in-block time values (EIBT, AIBT) recorded for the flight."
+          },
+          {
+            "name": "landingTime",
+            "type": "TimeQuantity",
+            "description": "The successive estimated and actual landing time values (ELDT, ALDT) recorded for the flight."
+          },
+          {
+            "name": "takeOffTime",
+            "type": "TimeQuantity",
+            "description": "The successive estimated, target, calculated and actual take-off time values (ETOT, TTOT, CTOT, ATOT) recorded for the flight."
+          },
+          {
+            "name": "startUpApprovalTime",
+            "type": "TimeQuantity",
+            "description": "The target and actual start-up approval time values (TSAT, ASAT) recorded for the flight."
+          },
+          {
+            "name": "boardingTime",
+            "type": "TimeQuantity",
+            "description": "The actual start boarding time (ASBT) recorded for the flight, accurate to +/-1 minute (milestone 11)."
+          },
+          {
+            "name": "readyTime",
+            "type": "TimeQuantity",
+            "description": "The actual ready time (ARDT) recorded for the flight, accurate to +/-1 minute (milestone 12)."
+          },
+          {
+            "name": "startUpRequestTime",
+            "type": "TimeQuantity",
+            "description": "The actual start-up request time (ASRT) recorded for the flight, accurate to +/-1 minute (milestone 13)."
+          },
+          {
+            "name": "groundHandlingStartTime",
+            "type": "TimeQuantity",
+            "description": "The actual commencement of ground handling time (ACGT) recorded for the flight, accurate to +/-1 minute (milestone 8)."
+          },
+          {
+            "name": "taxiOutTime",
+            "type": "DurationEstimate",
+            "description": "The Estimated Taxi-Out Time (EXOT) calculated by ATC based on predicted traffic load, gate/stand location, runway in use and holding-position waiting period (milestone 9)."
+          },
+          {
+            "name": "taxiInTime",
+            "type": "DurationEstimate",
+            "description": "The estimated taxi-in time (EXIT) used together with ELDT to compute EIBT (milestones 4, 6)."
+          },
+          {
+            "name": "minimumTurnRoundTime",
+            "type": "DurationEstimate",
+            "description": "The Minimum Turn-round Time (MTTT) used with EIBT and EXOT as a basis for calculating TTOT (milestones 2, 3)."
+          },
+          {
+            "name": "estimatedTurnRoundTime",
+            "type": "DurationEstimate",
+            "description": "The Estimated Turn-round Time (ETTT) used to update TOBT after ground handling starts (milestone 8)."
+          },
+          {
+            "name": "parkingPosition",
+            "type": "ParkingPosition",
+            "description": "The stand or gate currently assigned to the flight, changes to which are avoided after ELDT-30 minutes (milestone 4)."
+          }
+        ]
+      },
+      {
+        "name": "TurnRound",
+        "attributes": [
+          {
+            "name": "period",
+            "type": "DurationEstimate",
+            "description": "The defined or estimated turn-round period (MTTT/ETTT) on which the departing flight's TOBT and TTOT updates are based (milestones 6, 7, 8)."
+          }
+        ]
+      },
+      {
+        "name": "Aircraft",
+        "attributes": [
+          {
+            "name": "registration",
+            "type": "String",
+            "description": "The aircraft registration that must be provided consistently before the first E-DPI message is sent (milestone 1)."
+          },
+          {
+            "name": "aircraftType",
+            "type": "String",
+            "description": "The type of aircraft, which the ATC Flight Plan may be used to update (milestone 1)."
+          }
+        ]
+      },
+      {
+        "name": "FlightPlan",
+        "attributes": [
+          {
+            "name": "isRepetitive",
+            "type": "Boolean",
+            "description": "Whether the submitted flight plan is a repetitive flight plan (RFPL) covering daily or weekly flights (milestone 1)."
+          },
+          {
+            "name": "destination",
+            "type": "String",
+            "description": "The first destination aerodrome data that must be consistent and correct before the first E-DPI message is sent (milestone 1)."
+          },
+          {
+            "name": "estimatedElapsedTime",
+            "type": "Duration",
+            "description": "The Estimated Elapsed Time stated on the flight plan, used together with ATOT to calculate ELDT (milestone 3)."
+          }
+        ]
+      },
+      {
+        "name": "AirportSlot",
+        "attributes": [
+          {
+            "name": "assignedTime",
+            "type": "DateTime",
+            "description": "The time assigned by the airport slot programme, with which the ATC Flight Plan must be consistent; for long-distance flights the ELDT may differ from this slot time (milestone 1)."
+          }
+        ]
+      },
+      {
+        "name": "ParkingPosition",
+        "attributes": [
+          {
+            "name": "identifier",
+            "type": "String",
+            "description": "The stand or gate identifier assigned to the flight."
+          }
+        ]
+      },
+      {
+        "name": "TimeQuantity",
+        "attributes": [
+          {
+            "name": "prefix",
+            "type": "TimePrefix",
+            "description": "Whether this value is a Scheduled, Estimated, Target, Actual or Calculated time for its event."
+          },
+          {
+            "name": "event",
+            "type": "TimeEvent",
+            "description": "The milestone event this time quantity describes, e.g. Off-Block, In-Block, Landing or Take-Off."
+          },
+          {
+            "name": "value",
+            "type": "DateTime",
+            "description": "The date and time of the estimated, target, calculated or actual occurrence."
+          },
+          {
+            "name": "accuracy",
+            "type": "Duration",
+            "description": "The stated accuracy of this value, typically +/-1 minute for actual times recorded directly at occurrence (e.g. ALDT, AIBT, AOBT, ATOT, ASBT, ARDT, ASRT, ASAT)."
+          },
+          {
+            "name": "originator",
+            "type": "CDMPartner",
+            "description": "The stakeholder or system that provided or last updated this value."
+          },
+          {
+            "name": "recordedAt",
+            "type": "DateTime",
+            "description": "The time this value was appended to the flight's record, so that a turn-round can be analysed afterwards without overwriting prior values."
+          }
+        ]
+      },
+      {
+        "name": "DurationEstimate",
+        "attributes": [
+          {
+            "name": "durationType",
+            "type": "DurationType",
+            "description": "The kind of calculated interval this estimate represents (Taxi-Out Time, Taxi-In Time, Minimum Turn-round Time or Estimated Turn-round Time)."
+          },
+          {
+            "name": "value",
+            "type": "Duration",
+            "description": "The length of the estimated interval."
+          }
+        ]
+      },
+      {
+        "name": "Milestone",
+        "attributes": [
+          {
+            "name": "number",
+            "type": "Integer",
+            "description": "The milestone number (1 to 16) identifying this event in the CDM turn-round process."
+          },
+          {
+            "name": "resultingStatus",
+            "type": "FlightOperationalStatus",
+            "description": "The operational status the flight changes to when this milestone occurs."
+          },
+          {
+            "name": "ttotTolerance",
+            "type": "Duration",
+            "description": "The locally agreed tolerance for TTOT change (e.g. 5 minutes at take-off from outstation) beyond which Network Operations must be re-informed."
+          }
+        ]
+      },
+      {
+        "name": "MilestoneFlightPlanActivation",
+        "attributes": [
+          {
+            "name": "activationOffset",
+            "type": "Duration",
+            "description": "The normal timing of this milestone, 3 hours before EOBT, though it may occur later."
+          },
+          {
+            "name": "readinessOffset",
+            "type": "Duration",
+            "description": "The maximum time after the planned EOBT, 15 minutes, by which the flight must be ready."
+          }
+        ]
+      },
+      {
+        "name": "MilestoneEOBTMinus2Hours",
+        "attributes": [
+          {
+            "name": "offsetBeforeEOBT",
+            "type": "Duration",
+            "description": "The fixed timing of this milestone, 2 hours before EOBT, at which a CTOT is issued for regulated flights."
+          }
+        ]
+      },
+      {
+        "name": "MilestoneFinalTOBTConfirmation",
+        "attributes": [
+          {
+            "name": "confirmationOffset",
+            "type": "Duration",
+            "description": "The locally agreed parameter t, the number of minutes before EOBT at which the AO/GH provides their most accurate final TOBT."
+          }
+        ]
+      },
+      {
+        "name": "MilestoneTSATIssued",
+        "attributes": [
+          {
+            "name": "issueOffset",
+            "type": "Duration",
+            "description": "The locally agreed parameter t, the number of minutes before EOBT/TOBT at which ATC issues the TSAT."
+          },
+          {
+            "name": "tobtUpdateThreshold",
+            "type": "Integer",
+            "description": "The locally defined threshold on the number of TOBT updates permitted after TSAT has been issued before local procedure is applied."
+          }
+        ]
+      },
+      {
+        "name": "MilestoneBoardingStarts",
+        "attributes": [
+          {
+            "name": "boardingCheckOffset",
+            "type": "Duration",
+            "description": "The local variable time before TOBT (e.g. based on aircraft type) at which boarding status is checked."
+          }
+        ]
+      },
+      {
+        "name": "MilestoneAircraftReady",
+        "attributes": [
+          {
+            "name": "readyTolerance",
+            "type": "Duration",
+            "description": "The tolerance added to TOBT after which the AO/GH is informed that no ARDT or Ready Status has been received."
+          }
+        ]
+      },
+      {
+        "name": "MilestoneStartUpRequested",
+        "attributes": [
+          {
+            "name": "requestTolerance",
+            "type": "Duration",
+            "description": "The locally agreed TSAT tolerance window within which a start-up request must be made before partners are alerted."
+          }
+        ]
+      },
+      {
+        "name": "MilestoneStartUpApproved",
+        "attributes": [
+          {
+            "name": "approvalTolerance",
+            "type": "Duration",
+            "description": "The tolerance added to TSAT after which, if start-up approval has not been granted, all partners are informed and the flight is re-sequenced."
+          }
+        ]
+      },
+      {
+        "name": "DPIMessage",
+        "attributes": [
+          {
+            "name": "type",
+            "type": "DPIType",
+            "description": "The kind of Departure Planning Information message being sent (E-DPI, T-DPI, T-DPI-t, T-DPI-s or A-DPI)."
+          },
+          {
+            "name": "scheduledOffBlockTime",
+            "type": "DateTime",
+            "description": "The SOBT conveyed in the E-DPI message, required to be consistent before the first E-DPI is sent (milestone 1)."
+          },
+          {
+            "name": "aircraftRegistration",
+            "type": "String",
+            "description": "The aircraft registration conveyed in the E-DPI message, required to be consistent before the first E-DPI is sent (milestone 1)."
+          },
+          {
+            "name": "destination",
+            "type": "String",
+            "description": "The first destination data conveyed in the E-DPI message, required to be consistent before the first E-DPI is sent (milestone 1)."
+          },
+          {
+            "name": "takeOffTimeEstimate",
+            "type": "DateTime",
+            "description": "The updated take-off time estimate (ETOT/TTOT) conveyed by a T-DPI, T-DPI-t or T-DPI-s message."
+          }
+        ]
+      },
+      {
+        "name": "FlightUpdateMessage",
+        "attributes": [
+          {
+            "name": "estimatedLandingTime",
+            "type": "DateTime",
+            "description": "The updated ELDT provided by the FUM based on the flight's actual progress as monitored by ETFMS (milestones 1, 3)."
+          }
+        ]
+      },
+      {
+        "name": "CDMPartnerNotification",
+        "attributes": [
+          {
+            "name": "type",
+            "type": "NotificationType",
+            "description": "The kind of event or status this notification conveys (e.g. ASBT, ARDT, ASRT, ASAT, AOBT, ATOT, RDY, FSA, MVT)."
+          },
+          {
+            "name": "timestamp",
+            "type": "DateTime",
+            "description": "The time at which the notified event occurred."
+          }
+        ]
+      }
+    ]
+  }
+}

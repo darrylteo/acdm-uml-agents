@@ -1,0 +1,432 @@
+{
+  "meta": {
+    "ok": true,
+    "output": null,
+    "error": null,
+    "model": "claude-opus-5",
+    "input_tokens": 4013,
+    "output_tokens": 4632,
+    "thinking_tokens": 1354,
+    "cache_creation_tokens": 1533,
+    "cache_read_tokens": 2478,
+    "cost_usd": 0.132379,
+    "duration_ms": 45271,
+    "attempts": 1,
+    "num_turns": 2
+  },
+  "output": {
+    "sentences": [
+      {
+        "id": "M3.definition.1",
+        "decision": "keep",
+        "reason": "Names the time quantity the milestone carries (ATOT) and its origin airport.",
+        "claims": [
+          {
+            "text": "The ATOT from the outstation (ADEP)",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "The ATOT from the outstation (ADEP)",
+            "kind": "relationship",
+            "owner": "",
+            "rel_type": "other",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M3.origin_and_priority.1",
+        "decision": "keep",
+        "reason": "States the originator of ATOT and its recipients.",
+        "claims": [
+          {
+            "text": "The outstation provides ATOT",
+            "kind": "attribute",
+            "owner": "ATOT",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "The outstation provides ATOT",
+            "kind": "relationship",
+            "owner": "",
+            "rel_type": "other",
+            "duplicate_of": ""
+          },
+          {
+            "text": "The outstation provides ATOT to the Network Operations and Aircraft Operator.",
+            "kind": "relationship",
+            "owner": "",
+            "rel_type": "other",
+            "duplicate_of": ""
+          },
+          {
+            "text": "The outstation",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "the Network Operations",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "Aircraft Operator",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M3.timing.1",
+        "decision": "keep",
+        "reason": "States the availability timing of the milestone information.",
+        "claims": [
+          {
+            "text": "The information is directly available after occurrence of the milestone.",
+            "kind": "attribute",
+            "owner": "Milestone 3",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M3.data_quality.1",
+        "decision": "keep",
+        "reason": "States the accuracy of the ATOT quantity.",
+        "claims": [
+          {
+            "text": "The accuracy of ATOT is +/- 1 minute.",
+            "kind": "attribute",
+            "owner": "ATOT",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M3.effect.1",
+        "decision": "keep",
+        "reason": "Conditional rule on how ATOT is received, naming FUM and Ground Handler as sources.",
+        "claims": [
+          {
+            "text": "If the departure airport is more than 3hrs flying time from the destination airport the ATOT is received from either the Network Operations FUM or via the Aircraft Operator / Ground Handler.",
+            "kind": "operation",
+            "owner": "Milestone 3",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "Network Operations FUM",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "Ground Handler",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "the ATOT is received from either the Network Operations FUM",
+            "kind": "relationship",
+            "owner": "",
+            "rel_type": "other",
+            "duplicate_of": ""
+          },
+          {
+            "text": "the ATOT is received ... via the Aircraft Operator / Ground Handler",
+            "kind": "relationship",
+            "owner": "",
+            "rel_type": "other",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M3.effect.2",
+        "decision": "keep",
+        "reason": "Calculation of ELDT from ATOT and the FPL Estimated Elapsed Time.",
+        "claims": [
+          {
+            "text": "Using the ATOT an ELDT can be calculated by using the Estimated Elapsed Time on the FPL.",
+            "kind": "operation",
+            "owner": "Milestone 3",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "ELDT",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "FPL",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "the Estimated Elapsed Time on the FPL",
+            "kind": "attribute",
+            "owner": "FPL",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M3.effect.3",
+        "decision": "keep",
+        "reason": "Conditional monitoring and FUM notification performed by Network Operations using ETFMS.",
+        "claims": [
+          {
+            "text": "If the flight is within 3hrs flying time of the destination airport the Network Operations monitors progress of the flight using the ETFMS and send a Flight Update Message (FUM) that provides updates of the flight's progress.",
+            "kind": "operation",
+            "owner": "Network Operations",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "the ETFMS",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "Flight Update Message (FUM)",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": "M3.effect.1.c2"
+          },
+          {
+            "text": "the Network Operations ... send a Flight Update Message (FUM)",
+            "kind": "relationship",
+            "owner": "",
+            "rel_type": "other",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M3.procedures.1",
+        "decision": "keep",
+        "reason": "States the milestone's consistency check and the T-DPI-t notification to Network Operations.",
+        "claims": [
+          {
+            "text": "To check whether the AO/GH estimated landing time after take off from outstation are consistent with the outbound ATC Flight Plan",
+            "kind": "operation",
+            "owner": "Milestone 3",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "when needed inform the Network Operations about the updated take off time estimates using a T-DPI-t Message",
+            "kind": "operation",
+            "owner": "Milestone 3",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "T-DPI-t Message",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "outbound ATC Flight Plan",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "inform the Network Operations ... using a T-DPI-t Message",
+            "kind": "relationship",
+            "owner": "",
+            "rel_type": "other",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M3.procedures.2",
+        "decision": "drop",
+        "reason": "Rationale for the check already claimed in procedures.1; adds no model element.",
+        "claims": []
+      },
+      {
+        "id": "M3.procedures.3",
+        "decision": "keep",
+        "reason": "States the TTOT tolerance and the rule gating notification of Network Operations.",
+        "claims": [
+          {
+            "text": "A TTOT tolerance of 5 minutes is respected before Network Operations is informed of the updated TTOT.",
+            "kind": "operation",
+            "owner": "Milestone 3",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "A TTOT tolerance of 5 minutes",
+            "kind": "attribute",
+            "owner": "TTOT",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "TTOT",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M3.procedures.4",
+        "decision": "keep",
+        "reason": "Formula for TTOT calculation naming EIBT, MTTT and EXOT.",
+        "claims": [
+          {
+            "text": "Calculation basis for the TTOT shall take into account EIBT+MTTT+EXOT.",
+            "kind": "operation",
+            "owner": "Milestone 3",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "EIBT",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "MTTT",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "EXOT",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M3.procedures.5",
+        "decision": "keep",
+        "reason": "Conditional TTOT formula based on EOBT.",
+        "claims": [
+          {
+            "text": "In case EOBT is later than EIBT+MTTT, TTOT equals EOBT+EXOT.",
+            "kind": "operation",
+            "owner": "Milestone 3",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "EOBT",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M3.procedures.6",
+        "decision": "keep",
+        "reason": "Conditional TTOT formula when TOBT is available.",
+        "claims": [
+          {
+            "text": "In the case where TOBT is available this prediction will overrule the EIBT+MTTT estimate, hence TTOT equals TOBT+EXOT.",
+            "kind": "operation",
+            "owner": "Milestone 3",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "TOBT",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M3.procedures.7",
+        "decision": "drop",
+        "reason": "Lead-in fragment; the trigger itself is stated in procedures.8.",
+        "claims": []
+      },
+      {
+        "id": "M3.procedures.8",
+        "decision": "keep",
+        "reason": "States the event that triggers the milestone process.",
+        "claims": [
+          {
+            "text": "- the take off from outstation.",
+            "kind": "relationship",
+            "owner": "",
+            "rel_type": "other",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M3.operational_status.1",
+        "decision": "keep",
+        "reason": "Operational status literal the milestone sets on the flight.",
+        "claims": [
+          {
+            "text": "AIRBORNE",
+            "kind": "enumeration",
+            "owner": "Flight",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M3.action_on_cdm.1",
+        "decision": "keep",
+        "reason": "Updates the CDM platform performs on four time quantities at this milestone.",
+        "claims": [
+          {
+            "text": "ELDT, EIBT, TOBT and TTOT updated",
+            "kind": "operation",
+            "owner": "CDM platform",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+# Milestone 7: In-Block
+
+The section, split into sentences. The field name precedes each field; the id precedes each sentence.
+
+
+## Definition
+
+[M7.definition.1] AIBT - Actual In-Block Time.
+[M7.definition.2] This is the time that an aircraft arrives in-blocks.
+[M7.definition.3] (Equivalent to Airline/Handler ATA - Actual Time of Arrival, ACARS = IN) Note: ACGT is considered to commence at AIBT
+
+## Origin and priority
+
+[M7.origin_and_priority.1] ACARS equipped aircraft or automated docking systems or ATC systems (e.g. A-SMGCS) or by manual input.
+
+## Timing
+
+[M7.timing.1] The information is directly available after occurrence of the milestone.
+
+## Data Quality
+
+[M7.data_quality.1] Data is available with an accuracy of +/- 1 minute.
+
+## Effect
+
+[M7.effect.1] The occurrence of AIBT should trigger an update of downstream estimates: TOBT and TTOT are updated automatically or inserted manually by the Aircraft Operator / Ground Handler, calculated on the basis of the estimated turn-round period for the departing flight.
+
+## Procedures
+
+[M7.procedures.1] To check whether the AO/GH TOBT is consistent with the ATC Flight Plan.
+[M7.procedures.2] Network Operations is informed when the TTOT changes by more than the agreed TTOT tolerance.
+[M7.procedures.3] This check shall be performed to verify feasibility of the ATC Flight Plan given the updated TOBT or ATC Flight Plan.
+[M7.procedures.4] A TTOT tolerance is respected before Network Operations is informed on updated TTOT.
+[M7.procedures.5] This process is triggered by
+[M7.procedures.6] - Actual In Blocks Time: AIBT
+
+## Operational Status
+
+[M7.operational_status.1] IN-BLOCK
+
+## Action on CDM Operation
+
+[M7.action_on_cdm.1] EIBT changes to AIBT TOBT and TTOT updated
+
+# Task
+
+Return every sentence with keep or drop, a reason, and the claims of each kept sentence, as JSON conforming to the schema.

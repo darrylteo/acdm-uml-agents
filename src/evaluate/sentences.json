@@ -1,0 +1,1822 @@
+[
+ {
+  "id": "M1.definition.1",
+  "milestone": 1,
+  "field": "definition",
+  "k": 1,
+  "text": "The ICAO flight plan is submitted to ATC."
+ },
+ {
+  "id": "M1.definition.2",
+  "milestone": 1,
+  "field": "definition",
+  "k": 2,
+  "text": "The Airport CDM Platform is initiated for this flight, and all available information is processed."
+ },
+ {
+  "id": "M1.origin_and_priority.1",
+  "milestone": 1,
+  "field": "origin_and_priority",
+  "k": 1,
+  "text": "The ATC Flight Plan is submitted by the Aircraft Operator and distributed by the IFPS."
+ },
+ {
+  "id": "M1.origin_and_priority.2",
+  "milestone": 1,
+  "field": "origin_and_priority",
+  "k": 2,
+  "text": "All involved ATC units receive the flight plan, including departure and destination aerodromes."
+ },
+ {
+  "id": "M1.timing.1",
+  "milestone": 1,
+  "field": "timing",
+  "k": 1,
+  "text": "Normally this takes place 3 hours before EOBT, however it may be later."
+ },
+ {
+  "id": "M1.timing.2",
+  "milestone": 1,
+  "field": "timing",
+  "k": 2,
+  "text": "In some cases a repetitive flight plan (RFPL) has been submitted, covering daily or weekly flights."
+ },
+ {
+  "id": "M1.data_quality.1",
+  "milestone": 1,
+  "field": "data_quality",
+  "k": 1,
+  "text": "The ATC Flight Plan corresponds to the airport slot programme."
+ },
+ {
+  "id": "M1.effect.1",
+  "milestone": 1,
+  "field": "effect",
+  "k": 1,
+  "text": "One aircraft turn-round normally includes an arriving and a departing flight, meaning that it will have two related flight plans."
+ },
+ {
+  "id": "M1.effect.2",
+  "milestone": 1,
+  "field": "effect",
+  "k": 2,
+  "text": "For coordinated airports, the outbound flight is already known."
+ },
+ {
+  "id": "M1.effect.3",
+  "milestone": 1,
+  "field": "effect",
+  "k": 3,
+  "text": "The flight plan may be used to update certain information such as type of aircraft."
+ },
+ {
+  "id": "M1.effect.4",
+  "milestone": 1,
+  "field": "effect",
+  "k": 4,
+  "text": "For long distance flights, the ELDT may differ from the airport slot."
+ },
+ {
+  "id": "M1.effect.5",
+  "milestone": 1,
+  "field": "effect",
+  "k": 5,
+  "text": "For non coordinated airports, the flight plan is used to initiate the outbound flight."
+ },
+ {
+  "id": "M1.effect.6",
+  "milestone": 1,
+  "field": "effect",
+  "k": 6,
+  "text": "The flight is ready not later than 15 minutes after the planned EOBT."
+ },
+ {
+  "id": "M1.effect.7",
+  "milestone": 1,
+  "field": "effect",
+  "k": 7,
+  "text": "The DPI process commences the correct messaging with Network Operations (if implemented - see attachment 2 for details)."
+ },
+ {
+  "id": "M1.procedures.1",
+  "milestone": 1,
+  "field": "procedures",
+  "k": 1,
+  "text": "To check consistency between ATC Flight Plan, Airport Slot and Airport flight data and then confirm the flight to the Network Operations and allow further local processing of the flight."
+ },
+ {
+  "id": "M1.procedures.2",
+  "milestone": 1,
+  "field": "procedures",
+  "k": 2,
+  "text": "This check shall be performed to verify the consistency between the ATC Flight Plan, Airport Slot and Airport flight data before the first E-DPI is sent."
+ },
+ {
+  "id": "M1.procedures.3",
+  "milestone": 1,
+  "field": "procedures",
+  "k": 3,
+  "text": "The AO must provide correct information before this first E-DPI message, in order to feed Network Operations with consistent SOBT, aircraft registration, and first destination data, as early in time as possible."
+ },
+ {
+  "id": "M1.procedures.4",
+  "milestone": 1,
+  "field": "procedures",
+  "k": 4,
+  "text": "The E-DPI message should not be sent if no or inconsistent information is provided."
+ },
+ {
+  "id": "M1.procedures.5",
+  "milestone": 1,
+  "field": "procedures",
+  "k": 5,
+  "text": "This process is triggered by:"
+ },
+ {
+  "id": "M1.procedures.6",
+  "milestone": 1,
+  "field": "procedures",
+  "k": 6,
+  "text": "- The first activation of the ATC Flight Plan (earliest EOBT-3 hr), or"
+ },
+ {
+  "id": "M1.procedures.7",
+  "milestone": 1,
+  "field": "procedures",
+  "k": 7,
+  "text": "- New or late submissions of the ATC Flight Plan, after cancellation or revised EOBT"
+ },
+ {
+  "id": "M1.operational_status.1",
+  "milestone": 1,
+  "field": "operational_status",
+  "k": 1,
+  "text": "INITIATED"
+ },
+ {
+  "id": "M1.action_on_cdm.1",
+  "milestone": 1,
+  "field": "action_on_cdm",
+  "k": 1,
+  "text": "ELDT and EIBT updated for an arrival EOBT and ETOT updated for a departure The DPI process commences (if implemented - see section 3.7.3 for details)."
+ },
+ {
+  "id": "M2.definition.1",
+  "milestone": 2,
+  "field": "definition",
+  "k": 1,
+  "text": "At EOBT-2 hr most flights will be known in the Airport CDM Platform including if they are regulated or not."
+ },
+ {
+  "id": "M2.definition.2",
+  "milestone": 2,
+  "field": "definition",
+  "k": 2,
+  "text": "All regulated flights receive a CTOT from Network Operations."
+ },
+ {
+  "id": "M2.origin_and_priority.1",
+  "milestone": 2,
+  "field": "origin_and_priority",
+  "k": 1,
+  "text": "The CTOT is issued by the Network Operations and is sent to relevant ATS units as well as the departure aerodrome."
+ },
+ {
+  "id": "M2.origin_and_priority.2",
+  "milestone": 2,
+  "field": "origin_and_priority",
+  "k": 2,
+  "text": "CTOT flights usually have a priority over unregulated flights."
+ },
+ {
+  "id": "M2.timing.1",
+  "milestone": 2,
+  "field": "timing",
+  "k": 1,
+  "text": "If the flight is regulated, a CTOT is issued at EOBT-2h."
+ },
+ {
+  "id": "M2.data_quality.1",
+  "milestone": 2,
+  "field": "data_quality",
+  "k": 1,
+  "text": "Not applicable."
+ },
+ {
+  "id": "M2.effect.1",
+  "milestone": 2,
+  "field": "effect",
+  "k": 1,
+  "text": "For inbound flights, ELDT is updated based on information provided by the FUM messages, taking into account the actual progress of the flight."
+ },
+ {
+  "id": "M2.procedures.1",
+  "milestone": 2,
+  "field": "procedures",
+  "k": 1,
+  "text": "To check (before or after take off from outstation) whether AO/GH flight estimates are consistent with the ATC Flight Plan and to inform Network Operations about the updated take off time estimate, using a T-DPI Message."
+ },
+ {
+  "id": "M2.procedures.2",
+  "milestone": 2,
+  "field": "procedures",
+  "k": 2,
+  "text": "This check shall be performed to verify feasibility of the ATC Flight Plan estimated off block time at EOBT-2 hrs."
+ },
+ {
+  "id": "M2.procedures.3",
+  "milestone": 2,
+  "field": "procedures",
+  "k": 3,
+  "text": "At EOBT-2 hrs Network Operations is informed through the first T-DPI message."
+ },
+ {
+  "id": "M2.procedures.4",
+  "milestone": 2,
+  "field": "procedures",
+  "k": 4,
+  "text": "Calculation basis for the TTOT shall take into account EIBT+MTTT+EXOT, if later than EOBT+EXOT."
+ },
+ {
+  "id": "M2.procedures.5",
+  "milestone": 2,
+  "field": "procedures",
+  "k": 5,
+  "text": "In the case of manual input of TOBT, this estimate will override the EIBT+MTTT estimate, hence TTOT equals TOBT+EXOT."
+ },
+ {
+  "id": "M2.procedures.6",
+  "milestone": 2,
+  "field": "procedures",
+  "k": 6,
+  "text": "This procedure is triggered by"
+ },
+ {
+  "id": "M2.procedures.7",
+  "milestone": 2,
+  "field": "procedures",
+  "k": 7,
+  "text": "- a time stamp, at EOBT - 2h."
+ },
+ {
+  "id": "M2.operational_status.1",
+  "milestone": 2,
+  "field": "operational_status",
+  "k": 1,
+  "text": "N. A."
+ },
+ {
+  "id": "M2.action_on_cdm.1",
+  "milestone": 2,
+  "field": "action_on_cdm",
+  "k": 1,
+  "text": "ETOT/TTOT/CTOT Mark appropriate fields as REGULATED"
+ },
+ {
+  "id": "M3.definition.1",
+  "milestone": 3,
+  "field": "definition",
+  "k": 1,
+  "text": "The ATOT from the outstation (ADEP)"
+ },
+ {
+  "id": "M3.origin_and_priority.1",
+  "milestone": 3,
+  "field": "origin_and_priority",
+  "k": 1,
+  "text": "The outstation provides ATOT to the Network Operations and Aircraft Operator."
+ },
+ {
+  "id": "M3.timing.1",
+  "milestone": 3,
+  "field": "timing",
+  "k": 1,
+  "text": "The information is directly available after occurrence of the milestone."
+ },
+ {
+  "id": "M3.data_quality.1",
+  "milestone": 3,
+  "field": "data_quality",
+  "k": 1,
+  "text": "The accuracy of ATOT is +/- 1 minute."
+ },
+ {
+  "id": "M3.effect.1",
+  "milestone": 3,
+  "field": "effect",
+  "k": 1,
+  "text": "If the departure airport is more than 3hrs flying time from the destination airport the ATOT is received from either the Network Operations FUM or via the Aircraft Operator / Ground Handler."
+ },
+ {
+  "id": "M3.effect.2",
+  "milestone": 3,
+  "field": "effect",
+  "k": 2,
+  "text": "Using the ATOT an ELDT can be calculated by using the Estimated Elapsed Time on the FPL."
+ },
+ {
+  "id": "M3.effect.3",
+  "milestone": 3,
+  "field": "effect",
+  "k": 3,
+  "text": "If the flight is within 3hrs flying time of the destination airport the Network Operations monitors progress of the flight using the ETFMS and send a Flight Update Message (FUM) that provides updates of the flight's progress."
+ },
+ {
+  "id": "M3.procedures.1",
+  "milestone": 3,
+  "field": "procedures",
+  "k": 1,
+  "text": "To check whether the AO/GH estimated landing time after take off from outstation are consistent with the outbound ATC Flight Plan, and when needed inform the Network Operations about the updated take off time estimates using a T-DPI-t Message."
+ },
+ {
+  "id": "M3.procedures.2",
+  "milestone": 3,
+  "field": "procedures",
+  "k": 2,
+  "text": "This check shall be performed to verify feasibility of the ATC Flight Plan at take off from outstation."
+ },
+ {
+  "id": "M3.procedures.3",
+  "milestone": 3,
+  "field": "procedures",
+  "k": 3,
+  "text": "A TTOT tolerance of 5 minutes is respected before Network Operations is informed of the updated TTOT."
+ },
+ {
+  "id": "M3.procedures.4",
+  "milestone": 3,
+  "field": "procedures",
+  "k": 4,
+  "text": "Calculation basis for the TTOT shall take into account EIBT+MTTT+EXOT."
+ },
+ {
+  "id": "M3.procedures.5",
+  "milestone": 3,
+  "field": "procedures",
+  "k": 5,
+  "text": "In case EOBT is later than EIBT+MTTT, TTOT equals EOBT+EXOT."
+ },
+ {
+  "id": "M3.procedures.6",
+  "milestone": 3,
+  "field": "procedures",
+  "k": 6,
+  "text": "In the case where TOBT is available this prediction will overrule the EIBT+MTTT estimate, hence TTOT equals TOBT+EXOT."
+ },
+ {
+  "id": "M3.procedures.7",
+  "milestone": 3,
+  "field": "procedures",
+  "k": 7,
+  "text": "This process is triggered by"
+ },
+ {
+  "id": "M3.procedures.8",
+  "milestone": 3,
+  "field": "procedures",
+  "k": 8,
+  "text": "- the take off from outstation."
+ },
+ {
+  "id": "M3.operational_status.1",
+  "milestone": 3,
+  "field": "operational_status",
+  "k": 1,
+  "text": "AIRBORNE"
+ },
+ {
+  "id": "M3.action_on_cdm.1",
+  "milestone": 3,
+  "field": "action_on_cdm",
+  "k": 1,
+  "text": "ELDT, EIBT, TOBT and TTOT updated"
+ },
+ {
+  "id": "M4.definition.1",
+  "milestone": 4,
+  "field": "definition",
+  "k": 1,
+  "text": "The flight enters the FIR (Flight Information Region) or the local airspace of the destination airport."
+ },
+ {
+  "id": "M4.origin_and_priority.1",
+  "milestone": 4,
+  "field": "origin_and_priority",
+  "k": 1,
+  "text": "This information is normally available from the Area Control Centre (ACC) or Approach Control Unit that is associated with an airport."
+ },
+ {
+  "id": "M4.origin_and_priority.2",
+  "milestone": 4,
+  "field": "origin_and_priority",
+  "k": 2,
+  "text": "The radar system is able to detect a flight based upon the assigned SSR code when the flight crosses a defined FIR/ATC boundary."
+ },
+ {
+  "id": "M4.timing.1",
+  "milestone": 4,
+  "field": "timing",
+  "k": 1,
+  "text": "Dependent upon the position of the airport in relation to the FIR boundary."
+ },
+ {
+  "id": "M4.data_quality.1",
+  "milestone": 4,
+  "field": "data_quality",
+  "k": 1,
+  "text": "Must be equal to the accuracy of the ATC system."
+ },
+ {
+  "id": "M4.effect.1",
+  "milestone": 4,
+  "field": "effect",
+  "k": 1,
+  "text": "Update of the ELDT can trigger a new TOBT to be entered by the AO/GH, or calculated automatically by the Airport CDM Platform."
+ },
+ {
+  "id": "M4.effect.2",
+  "milestone": 4,
+  "field": "effect",
+  "k": 2,
+  "text": "The accuracy of ELDT is particularly important at this stage since downstream decisions are taken, such as stand /gate / aircraft changes, preparation of arrival sequence, preparation of ground handling operations, decisions for connecting passengers."
+ },
+ {
+  "id": "M4.effect.3",
+  "milestone": 4,
+  "field": "effect",
+  "k": 3,
+  "text": "Uncertainty and ELDT non-accuracy at this stage significantly increase risks for bad and last minute decisions and internal disruptions."
+ },
+ {
+  "id": "M4.effect.4",
+  "milestone": 4,
+  "field": "effect",
+  "k": 4,
+  "text": "The objective to decrease the number of stand and gate changes in the last 30 minutes requires high accuracy regarding departure and arrival times."
+ },
+ {
+  "id": "M4.effect.5",
+  "milestone": 4,
+  "field": "effect",
+  "k": 5,
+  "text": "Therefore, taking into account the taxi-in time (EXIT), any change to a stand or gate is not preferred after ELDT-30'."
+ },
+ {
+  "id": "M4.effect.6",
+  "milestone": 4,
+  "field": "effect",
+  "k": 6,
+  "text": "The update of TOBT for the related departing flight takes place following this milestone."
+ },
+ {
+  "id": "M4.effect.7",
+  "milestone": 4,
+  "field": "effect",
+  "k": 7,
+  "text": "Decisions such as the turn-round period, connecting passengers etc are taken and need to be stable at this event."
+ },
+ {
+  "id": "M4.effect.8",
+  "milestone": 4,
+  "field": "effect",
+  "k": 8,
+  "text": "An estimated in-block time (EIBT) is computed using the ELDT and the estimated taxi-in time."
+ },
+ {
+  "id": "M4.procedures.1",
+  "milestone": 4,
+  "field": "procedures",
+  "k": 1,
+  "text": "To commence the TOBT process and check whether the AO/GH TOBT is consistent with the ATC Flight Plan."
+ },
+ {
+  "id": "M4.procedures.2",
+  "milestone": 4,
+  "field": "procedures",
+  "k": 2,
+  "text": "Network Operations is informed when the TTOT changes by more than the agreed TTOT tolerance."
+ },
+ {
+  "id": "M4.procedures.3",
+  "milestone": 4,
+  "field": "procedures",
+  "k": 3,
+  "text": "This check shall be performed to verify feasibility of the ATC Flight Plan given the up-dated TOBT."
+ },
+ {
+  "id": "M4.procedures.4",
+  "milestone": 4,
+  "field": "procedures",
+  "k": 4,
+  "text": "The TTOT tolerance is respected before Network Operations is informed of updated TTOT."
+ },
+ {
+  "id": "M4.procedures.5",
+  "milestone": 4,
+  "field": "procedures",
+  "k": 5,
+  "text": "This process is triggered by"
+ },
+ {
+  "id": "M4.procedures.6",
+  "milestone": 4,
+  "field": "procedures",
+  "k": 6,
+  "text": "- the detection of the flight by radar in either FIR, TMA, or on Final Approach."
+ },
+ {
+  "id": "M4.operational_status.1",
+  "milestone": 4,
+  "field": "operational_status",
+  "k": 1,
+  "text": "FIR"
+ },
+ {
+  "id": "M4.action_on_cdm.1",
+  "milestone": 4,
+  "field": "action_on_cdm",
+  "k": 1,
+  "text": "ELDT, EIBT, TOBT and TTOT updated"
+ },
+ {
+  "id": "M5.definition.1",
+  "milestone": 5,
+  "field": "definition",
+  "k": 1,
+  "text": "The flight enters the Final Approach phase at the destination airport."
+ },
+ {
+  "id": "M5.origin_and_priority.1",
+  "milestone": 5,
+  "field": "origin_and_priority",
+  "k": 1,
+  "text": "This information is normally available from ATC."
+ },
+ {
+  "id": "M5.origin_and_priority.2",
+  "milestone": 5,
+  "field": "origin_and_priority",
+  "k": 2,
+  "text": "The radar system detects a flight based upon the assigned SSR code and identifies when the flight crosses either a defined range / position or passes/leaves a predetermined level."
+ },
+ {
+  "id": "M5.timing.1",
+  "milestone": 5,
+  "field": "timing",
+  "k": 1,
+  "text": "Dependent upon local parameters that are defined by ATC."
+ },
+ {
+  "id": "M5.data_quality.1",
+  "milestone": 5,
+  "field": "data_quality",
+  "k": 1,
+  "text": "Must be equal to the accuracy of the ATC system."
+ },
+ {
+  "id": "M5.effect.1",
+  "milestone": 5,
+  "field": "effect",
+  "k": 1,
+  "text": "Update of the ELDT to determine a new TOBT."
+ },
+ {
+  "id": "M5.effect.2",
+  "milestone": 5,
+  "field": "effect",
+  "k": 2,
+  "text": "When a flight reaches this stage it is usually between 2 and 5 minutes from landing (depending on the parameter set by ATC)."
+ },
+ {
+  "id": "M5.effect.3",
+  "milestone": 5,
+  "field": "effect",
+  "k": 3,
+  "text": "This is often the prompt for many partners to start moving resources connected with the flight, such as positioning a parking marshal and ground handling services."
+ },
+ {
+  "id": "M5.procedures.1",
+  "milestone": 5,
+  "field": "procedures",
+  "k": 1,
+  "text": "To commence the TOBT process and check whether the AO/GH TOBT is consistent with the ATC Flight Plan."
+ },
+ {
+  "id": "M5.procedures.2",
+  "milestone": 5,
+  "field": "procedures",
+  "k": 2,
+  "text": "Network Operations is informed when the TTOT changes by more than the agreed TTOT tolerance."
+ },
+ {
+  "id": "M5.procedures.3",
+  "milestone": 5,
+  "field": "procedures",
+  "k": 3,
+  "text": "This check shall be performed to verify feasibility of the ATC Flight Plan given the up-dated TOBT."
+ },
+ {
+  "id": "M5.procedures.4",
+  "milestone": 5,
+  "field": "procedures",
+  "k": 4,
+  "text": "The TTOT tolerance is respected before Network Operations is informed of updated TTOT."
+ },
+ {
+  "id": "M5.procedures.5",
+  "milestone": 5,
+  "field": "procedures",
+  "k": 5,
+  "text": "This process is triggered by"
+ },
+ {
+  "id": "M5.procedures.6",
+  "milestone": 5,
+  "field": "procedures",
+  "k": 6,
+  "text": "- the detection of the flight by radar in either FIR, TMA, or on Final Approach."
+ },
+ {
+  "id": "M5.operational_status.1",
+  "milestone": 5,
+  "field": "operational_status",
+  "k": 1,
+  "text": "FINAL"
+ },
+ {
+  "id": "M5.action_on_cdm.1",
+  "milestone": 5,
+  "field": "action_on_cdm",
+  "k": 1,
+  "text": "ELDT, EIBT, TOBT and TTOT updated"
+ },
+ {
+  "id": "M6.definition.1",
+  "milestone": 6,
+  "field": "definition",
+  "k": 1,
+  "text": "ALDT - Actual Landing Time."
+ },
+ {
+  "id": "M6.definition.2",
+  "milestone": 6,
+  "field": "definition",
+  "k": 2,
+  "text": "This is the time that an aircraft touches down on a runway."
+ },
+ {
+  "id": "M6.definition.3",
+  "milestone": 6,
+  "field": "definition",
+  "k": 3,
+  "text": "(Equivalent to ATC ATA - Actual Time of Arrival landing, ACARS=ON)."
+ },
+ {
+  "id": "M6.origin_and_priority.1",
+  "milestone": 6,
+  "field": "origin_and_priority",
+  "k": 1,
+  "text": "Provided by ATC system or by ACARS from equipped aircraft."
+ },
+ {
+  "id": "M6.timing.1",
+  "milestone": 6,
+  "field": "timing",
+  "k": 1,
+  "text": "The information is directly available after occurrence of the milestone."
+ },
+ {
+  "id": "M6.data_quality.1",
+  "milestone": 6,
+  "field": "data_quality",
+  "k": 1,
+  "text": "Data is available with an accuracy of +/- 1 minute."
+ },
+ {
+  "id": "M6.effect.1",
+  "milestone": 6,
+  "field": "effect",
+  "k": 1,
+  "text": "The occurrence of ALDT triggers an update of downstream estimates: TOBT and TTOT are updated automatically or inserted manually by the Aircraft Operator / Ground Handler, calculated on the basis of the defined turn-round period for the departing flight."
+ },
+ {
+  "id": "M6.effect.2",
+  "milestone": 6,
+  "field": "effect",
+  "k": 2,
+  "text": "The EIBT can be updated according to the ALDT +EXIT."
+ },
+ {
+  "id": "M6.procedures.1",
+  "milestone": 6,
+  "field": "procedures",
+  "k": 1,
+  "text": "To check whether the AO/GH TOBT is consistent with the ATC Flight Plan."
+ },
+ {
+  "id": "M6.procedures.2",
+  "milestone": 6,
+  "field": "procedures",
+  "k": 2,
+  "text": "Network Operations is informed when the TTOT changes by more than the agreed TTOT tolerance."
+ },
+ {
+  "id": "M6.procedures.3",
+  "milestone": 6,
+  "field": "procedures",
+  "k": 3,
+  "text": "This check shall be performed to verify feasibility of the ATC Flight Plan given the updated TOBT or ATC Flight Plan."
+ },
+ {
+  "id": "M6.procedures.4",
+  "milestone": 6,
+  "field": "procedures",
+  "k": 4,
+  "text": "A TTOT tolerance is respected before Network Operations is informed on updated TTOT."
+ },
+ {
+  "id": "M6.procedures.5",
+  "milestone": 6,
+  "field": "procedures",
+  "k": 5,
+  "text": "This process is triggered by"
+ },
+ {
+  "id": "M6.procedures.6",
+  "milestone": 6,
+  "field": "procedures",
+  "k": 6,
+  "text": "- Actual Landing Time: ALDT"
+ },
+ {
+  "id": "M6.operational_status.1",
+  "milestone": 6,
+  "field": "operational_status",
+  "k": 1,
+  "text": "LANDED"
+ },
+ {
+  "id": "M6.action_on_cdm.1",
+  "milestone": 6,
+  "field": "action_on_cdm",
+  "k": 1,
+  "text": "ELDT changes to ALDT, EIBT, TOBT and TTOT updated"
+ },
+ {
+  "id": "M7.definition.1",
+  "milestone": 7,
+  "field": "definition",
+  "k": 1,
+  "text": "AIBT - Actual In-Block Time."
+ },
+ {
+  "id": "M7.definition.2",
+  "milestone": 7,
+  "field": "definition",
+  "k": 2,
+  "text": "This is the time that an aircraft arrives in-blocks."
+ },
+ {
+  "id": "M7.definition.3",
+  "milestone": 7,
+  "field": "definition",
+  "k": 3,
+  "text": "(Equivalent to Airline/Handler ATA - Actual Time of Arrival, ACARS = IN) Note: ACGT is considered to commence at AIBT"
+ },
+ {
+  "id": "M7.origin_and_priority.1",
+  "milestone": 7,
+  "field": "origin_and_priority",
+  "k": 1,
+  "text": "ACARS equipped aircraft or automated docking systems or ATC systems (e.g. A-SMGCS) or by manual input."
+ },
+ {
+  "id": "M7.timing.1",
+  "milestone": 7,
+  "field": "timing",
+  "k": 1,
+  "text": "The information is directly available after occurrence of the milestone."
+ },
+ {
+  "id": "M7.data_quality.1",
+  "milestone": 7,
+  "field": "data_quality",
+  "k": 1,
+  "text": "Data is available with an accuracy of +/- 1 minute."
+ },
+ {
+  "id": "M7.effect.1",
+  "milestone": 7,
+  "field": "effect",
+  "k": 1,
+  "text": "The occurrence of AIBT should trigger an update of downstream estimates: TOBT and TTOT are updated automatically or inserted manually by the Aircraft Operator / Ground Handler, calculated on the basis of the estimated turn-round period for the departing flight."
+ },
+ {
+  "id": "M7.procedures.1",
+  "milestone": 7,
+  "field": "procedures",
+  "k": 1,
+  "text": "To check whether the AO/GH TOBT is consistent with the ATC Flight Plan."
+ },
+ {
+  "id": "M7.procedures.2",
+  "milestone": 7,
+  "field": "procedures",
+  "k": 2,
+  "text": "Network Operations is informed when the TTOT changes by more than the agreed TTOT tolerance."
+ },
+ {
+  "id": "M7.procedures.3",
+  "milestone": 7,
+  "field": "procedures",
+  "k": 3,
+  "text": "This check shall be performed to verify feasibility of the ATC Flight Plan given the updated TOBT or ATC Flight Plan."
+ },
+ {
+  "id": "M7.procedures.4",
+  "milestone": 7,
+  "field": "procedures",
+  "k": 4,
+  "text": "A TTOT tolerance is respected before Network Operations is informed on updated TTOT."
+ },
+ {
+  "id": "M7.procedures.5",
+  "milestone": 7,
+  "field": "procedures",
+  "k": 5,
+  "text": "This process is triggered by"
+ },
+ {
+  "id": "M7.procedures.6",
+  "milestone": 7,
+  "field": "procedures",
+  "k": 6,
+  "text": "- Actual In Blocks Time: AIBT"
+ },
+ {
+  "id": "M7.operational_status.1",
+  "milestone": 7,
+  "field": "operational_status",
+  "k": 1,
+  "text": "IN-BLOCK"
+ },
+ {
+  "id": "M7.action_on_cdm.1",
+  "milestone": 7,
+  "field": "action_on_cdm",
+  "k": 1,
+  "text": "EIBT changes to AIBT TOBT and TTOT updated"
+ },
+ {
+  "id": "M8.definition.1",
+  "milestone": 8,
+  "field": "definition",
+  "k": 1,
+  "text": "Commence of Ground Handling Operations (ACGT)."
+ },
+ {
+  "id": "M8.definition.2",
+  "milestone": 8,
+  "field": "definition",
+  "k": 2,
+  "text": "Note: this milestone is specific to flights that are the first operation of the day or that have been long term parked."
+ },
+ {
+  "id": "M8.definition.3",
+  "milestone": 8,
+  "field": "definition",
+  "k": 3,
+  "text": "For flights that are on a normal turn-round ACGT is considered to commence at AIBT."
+ },
+ {
+  "id": "M8.origin_and_priority.1",
+  "milestone": 8,
+  "field": "origin_and_priority",
+  "k": 1,
+  "text": "Aircraft Operator / Ground Handler will provide the information."
+ },
+ {
+  "id": "M8.timing.1",
+  "milestone": 8,
+  "field": "timing",
+  "k": 1,
+  "text": "The information is directly available after occurrence of the milestone."
+ },
+ {
+  "id": "M8.data_quality.1",
+  "milestone": 8,
+  "field": "data_quality",
+  "k": 1,
+  "text": "Data is available with an accuracy of +/- 1 minute."
+ },
+ {
+  "id": "M8.effect.1",
+  "milestone": 8,
+  "field": "effect",
+  "k": 1,
+  "text": "The occurrence of ACGT triggers an update of downstream estimates: TOBT is updated automatically or inserted manually by the Aircraft Operator / Ground Handler, calculated on the basis of the estimated turn-round period for the departing flight."
+ },
+ {
+  "id": "M8.procedures.1",
+  "milestone": 8,
+  "field": "procedures",
+  "k": 1,
+  "text": "To check whether the AO/GH TOBT is consistent with the ATC Flight Plan."
+ },
+ {
+  "id": "M8.procedures.2",
+  "milestone": 8,
+  "field": "procedures",
+  "k": 2,
+  "text": "Network Operations is informed when the TTOT changes by more than the agreed TTOT tolerance."
+ },
+ {
+  "id": "M8.procedures.3",
+  "milestone": 8,
+  "field": "procedures",
+  "k": 3,
+  "text": "This check shall be performed to verify feasibility of the ATC Flight Plan given the updated TOBT or ATC Flight Plan."
+ },
+ {
+  "id": "M8.procedures.4",
+  "milestone": 8,
+  "field": "procedures",
+  "k": 4,
+  "text": "A TTOT tolerance is respected before Network Operations is informed on updated TTOT."
+ },
+ {
+  "id": "M8.procedures.5",
+  "milestone": 8,
+  "field": "procedures",
+  "k": 5,
+  "text": "This process is triggered by"
+ },
+ {
+  "id": "M8.procedures.6",
+  "milestone": 8,
+  "field": "procedures",
+  "k": 6,
+  "text": "- Actual Commence of Ground Handling: ACGT"
+ },
+ {
+  "id": "M8.operational_status.1",
+  "milestone": 8,
+  "field": "operational_status",
+  "k": 1,
+  "text": "IN-BLOCK"
+ },
+ {
+  "id": "M8.action_on_cdm.1",
+  "milestone": 8,
+  "field": "action_on_cdm",
+  "k": 1,
+  "text": "ETTT/TOBT, TTOT updated"
+ },
+ {
+  "id": "M9.definition.1",
+  "milestone": 9,
+  "field": "definition",
+  "k": 1,
+  "text": "The time at which the Aircraft Operator or Ground Handler provide their most accurate TOBT taking into account the operational situation."
+ },
+ {
+  "id": "M9.origin_and_priority.1",
+  "milestone": 9,
+  "field": "origin_and_priority",
+  "k": 1,
+  "text": "The Aircraft Operator / Ground Handler provides the information."
+ },
+ {
+  "id": "M9.timing.1",
+  "milestone": 9,
+  "field": "timing",
+  "k": 1,
+  "text": "The information is provided t minutes before EOBT (t is a parameter time agreed locally)."
+ },
+ {
+  "id": "M9.data_quality.1",
+  "milestone": 9,
+  "field": "data_quality",
+  "k": 1,
+  "text": "Accuracy is agreed locally."
+ },
+ {
+  "id": "M9.effect.1",
+  "milestone": 9,
+  "field": "effect",
+  "k": 1,
+  "text": "The aim of the final TOBT is to give a timely, accurate and reliable assessment of the off-block time."
+ },
+ {
+  "id": "M9.effect.2",
+  "milestone": 9,
+  "field": "effect",
+  "k": 2,
+  "text": "It is recognised that main benefits of sharing the TOBT are expected in case of disruptions (internal or external)."
+ },
+ {
+  "id": "M9.effect.3",
+  "milestone": 9,
+  "field": "effect",
+  "k": 3,
+  "text": "In such cases, the difference between EOBT (shared by ATC, Network Operations and Stand / Gate Management) and TOBT may be important."
+ },
+ {
+  "id": "M9.effect.4",
+  "milestone": 9,
+  "field": "effect",
+  "k": 4,
+  "text": "An accurate TOBT at [EOBT-t minutes] is a pre-requisite for ATC to establish a push back / pre-departure sequence."
+ },
+ {
+  "id": "M9.effect.5",
+  "milestone": 9,
+  "field": "effect",
+  "k": 5,
+  "text": "Emphasis is put on the need for the Aircraft Operator to integrate his own strategy to compute a TOBT related to the flight."
+ },
+ {
+  "id": "M9.effect.6",
+  "milestone": 9,
+  "field": "effect",
+  "k": 6,
+  "text": "Following the receipt of the TOBT, the ATC system will calculate and provide the Estimated Taxi-Out Time (EXOT) based on the predicted traffic load, gate / stand location, runway in use, and waiting period at the Holding Position, etc. The flight is introduced into the pre-departure sequence."
+ },
+ {
+  "id": "M9.effect.7",
+  "milestone": 9,
+  "field": "effect",
+  "k": 7,
+  "text": "The Aircraft Operator / Ground Handler, in coordination with the aircrew, can manage the turn-round process accordingly."
+ },
+ {
+  "id": "M9.procedures.1",
+  "milestone": 9,
+  "field": "procedures",
+  "k": 1,
+  "text": "To check whether the AO/GH TOBT is consistent with the ATC Flight Plan."
+ },
+ {
+  "id": "M9.procedures.2",
+  "milestone": 9,
+  "field": "procedures",
+  "k": 2,
+  "text": "Network Operations is informed when the TTOT changes by more than the agreed TTOT tolerance."
+ },
+ {
+  "id": "M9.procedures.3",
+  "milestone": 9,
+  "field": "procedures",
+  "k": 3,
+  "text": "This check should be performed at a predefined time (local parameter) to confirm TOBT prior to TSAT issue and verify feasibility of the ATC Flight Plan estimates given the updated TOBT."
+ },
+ {
+  "id": "M9.procedures.4",
+  "milestone": 9,
+  "field": "procedures",
+  "k": 4,
+  "text": "A TTOT tolerance is respected before Network Operations is informed on updated TTOT."
+ },
+ {
+  "id": "M9.procedures.5",
+  "milestone": 9,
+  "field": "procedures",
+  "k": 5,
+  "text": "This Milestone Process is actually constantly applicable in the CDM Platform, as soon as a TOBT is available."
+ },
+ {
+  "id": "M9.procedures.6",
+  "milestone": 9,
+  "field": "procedures",
+  "k": 6,
+  "text": "However the confirmed TOBT prior to TSAT has special status, where AO/GH check the quality of TOBT before TSAT issue."
+ },
+ {
+  "id": "M9.operational_status.1",
+  "milestone": 9,
+  "field": "operational_status",
+  "k": 1,
+  "text": "IN-BLOCK"
+ },
+ {
+  "id": "M9.action_on_cdm.1",
+  "milestone": 9,
+  "field": "action_on_cdm",
+  "k": 1,
+  "text": "This process is triggered by - a new TOBT or TTOT update."
+ },
+ {
+  "id": "M9.action_on_cdm.2",
+  "milestone": 9,
+  "field": "action_on_cdm",
+  "k": 2,
+  "text": "No need to confirm an existing TOBT if it has been manually modified before."
+ },
+ {
+  "id": "M10.definition.1",
+  "milestone": 10,
+  "field": "definition",
+  "k": 1,
+  "text": "The time ATC issues the Target Start Up Approval Time"
+ },
+ {
+  "id": "M10.origin_and_priority.1",
+  "milestone": 10,
+  "field": "origin_and_priority",
+  "k": 1,
+  "text": "ATC"
+ },
+ {
+  "id": "M10.timing.1",
+  "milestone": 10,
+  "field": "timing",
+  "k": 1,
+  "text": "The information is provided t-minutes before EOBT, where t is a parameter agreed locally"
+ },
+ {
+  "id": "M10.data_quality.1",
+  "milestone": 10,
+  "field": "data_quality",
+  "k": 1,
+  "text": "Accuracy is agreed locally."
+ },
+ {
+  "id": "M10.effect.1",
+  "milestone": 10,
+  "field": "effect",
+  "k": 1,
+  "text": "The flight is stabilised into the pre-departure sequence."
+ },
+ {
+  "id": "M10.effect.2",
+  "milestone": 10,
+  "field": "effect",
+  "k": 2,
+  "text": "The Aircraft Operator/ Ground Handler, in coordination with the aircrew, can manage the turn-round process accordingly."
+ },
+ {
+  "id": "M10.procedures.1",
+  "milestone": 10,
+  "field": "procedures",
+  "k": 1,
+  "text": "First step: To inform all relevant partners of the TSAT that has been allocated to the flight."
+ },
+ {
+  "id": "M10.procedures.2",
+  "milestone": 10,
+  "field": "procedures",
+  "k": 2,
+  "text": "The Network Operations is informed by a T-DPI-s for non regulated flights."
+ },
+ {
+  "id": "M10.procedures.3",
+  "milestone": 10,
+  "field": "procedures",
+  "k": 3,
+  "text": "Second step: To check whether the number of TOBT updates exceeds a tolerance defined locally, after TSAT has been issued."
+ },
+ {
+  "id": "M10.procedures.4",
+  "milestone": 10,
+  "field": "procedures",
+  "k": 4,
+  "text": "First: The TSAT will indicate to the partners the time when the start up approval can be expected."
+ },
+ {
+  "id": "M10.procedures.5",
+  "milestone": 10,
+  "field": "procedures",
+  "k": 5,
+  "text": "Network Operations will be informed with a T-DPI-s for non regulated flights."
+ },
+ {
+  "id": "M10.procedures.6",
+  "milestone": 10,
+  "field": "procedures",
+  "k": 6,
+  "text": "No check is performed."
+ },
+ {
+  "id": "M10.procedures.7",
+  "milestone": 10,
+  "field": "procedures",
+  "k": 7,
+  "text": "Second: A check shall be performed to see the number of TOBT updates after TSAT has been issued."
+ },
+ {
+  "id": "M10.procedures.8",
+  "milestone": 10,
+  "field": "procedures",
+  "k": 8,
+  "text": "In case the number of TOBT updates exceeds a threshold, then the TOBT input should be processed according to local procedure."
+ },
+ {
+  "id": "M10.procedures.9",
+  "milestone": 10,
+  "field": "procedures",
+  "k": 9,
+  "text": "This process is triggered by"
+ },
+ {
+  "id": "M10.procedures.10",
+  "milestone": 10,
+  "field": "procedures",
+  "k": 10,
+  "text": "- A defined time (local parameter) before TOBT"
+ },
+ {
+  "id": "M10.procedures.11",
+  "milestone": 10,
+  "field": "procedures",
+  "k": 11,
+  "text": "- TOBT update after TSAT issue"
+ },
+ {
+  "id": "M10.operational_status.1",
+  "milestone": 10,
+  "field": "operational_status",
+  "k": 1,
+  "text": "SEQUENCED"
+ },
+ {
+  "id": "M10.action_on_cdm.1",
+  "milestone": 10,
+  "field": "action_on_cdm",
+  "k": 1,
+  "text": "TTOT updated"
+ },
+ {
+  "id": "M11.definition.1",
+  "milestone": 11,
+  "field": "definition",
+  "k": 1,
+  "text": "The gate is open for passengers to physically start boarding (independent of whether boarding takes place via an air-bridge/pier, aircraft steps or coaching to a stand)."
+ },
+ {
+  "id": "M11.definition.2",
+  "milestone": 11,
+  "field": "definition",
+  "k": 2,
+  "text": "This is not to be confused with the time passengers are pre-called to the gate via flight information display systems (FIDS) or public address systems."
+ },
+ {
+  "id": "M11.origin_and_priority.1",
+  "milestone": 11,
+  "field": "origin_and_priority",
+  "k": 1,
+  "text": "Automatic from airport system or manual input by Aircraft Operator/ Ground Handler."
+ },
+ {
+  "id": "M11.timing.1",
+  "milestone": 11,
+  "field": "timing",
+  "k": 1,
+  "text": "The information is directly available after occurrence of the milestone."
+ },
+ {
+  "id": "M11.data_quality.1",
+  "milestone": 11,
+  "field": "data_quality",
+  "k": 1,
+  "text": "Data is available with an accuracy of +/- 1 minute."
+ },
+ {
+  "id": "M11.effect.1",
+  "milestone": 11,
+  "field": "effect",
+  "k": 1,
+  "text": "When boarding commences it gives the Airport CDM Partners a good indication of whether the TOBT/TSAT will be respected."
+ },
+ {
+  "id": "M11.procedures.1",
+  "milestone": 11,
+  "field": "procedures",
+  "k": 1,
+  "text": "First step: To inform all relevant Airport CDM Partners of Actual Start Boarding Time (ASBT)."
+ },
+ {
+  "id": "M11.procedures.2",
+  "milestone": 11,
+  "field": "procedures",
+  "k": 2,
+  "text": "Second step: To check whether boarding starts in time to respect TOBT and inform the AO/GH in case TOBT needs to be updated."
+ },
+ {
+  "id": "M11.procedures.3",
+  "milestone": 11,
+  "field": "procedures",
+  "k": 3,
+  "text": "Inform of Actual Start Boarding Time (ASBT) when it occurs."
+ },
+ {
+  "id": "M11.procedures.4",
+  "milestone": 11,
+  "field": "procedures",
+  "k": 4,
+  "text": "At a certain time before TOBT (local variable e.g. corresponding to aircraft type) a check shall be performed to check the boarding status."
+ },
+ {
+  "id": "M11.procedures.5",
+  "milestone": 11,
+  "field": "procedures",
+  "k": 5,
+  "text": "This process is triggered by"
+ },
+ {
+  "id": "M11.procedures.6",
+  "milestone": 11,
+  "field": "procedures",
+  "k": 6,
+  "text": "- a time variable <value> minutes before TOBT."
+ },
+ {
+  "id": "M11.operational_status.1",
+  "milestone": 11,
+  "field": "operational_status",
+  "k": 1,
+  "text": "BOARDING"
+ },
+ {
+  "id": "M11.action_on_cdm.1",
+  "milestone": 11,
+  "field": "action_on_cdm",
+  "k": 1,
+  "text": "N.A"
+ },
+ {
+  "id": "M12.definition.1",
+  "milestone": 12,
+  "field": "definition",
+  "k": 1,
+  "text": "The time when all doors are closed, boarding bridge removed, push back vehicle connected, ready to taxi immediately upon reception of TWR instructions (ARDT)."
+ },
+ {
+  "id": "M12.origin_and_priority.1",
+  "milestone": 12,
+  "field": "origin_and_priority",
+  "k": 1,
+  "text": "Provided by the Aircraft Operator/ Ground Handler."
+ },
+ {
+  "id": "M12.timing.1",
+  "milestone": 12,
+  "field": "timing",
+  "k": 1,
+  "text": "The information is directly available after occurrence of the milestone."
+ },
+ {
+  "id": "M12.data_quality.1",
+  "milestone": 12,
+  "field": "data_quality",
+  "k": 1,
+  "text": "Data is directly available with an accuracy of +/- 1 minute."
+ },
+ {
+  "id": "M12.effect.1",
+  "milestone": 12,
+  "field": "effect",
+  "k": 1,
+  "text": "ATC refines the pre-departure sequence."
+ },
+ {
+  "id": "M12.effect.2",
+  "milestone": 12,
+  "field": "effect",
+  "k": 2,
+  "text": "The pilot requests start up just before TSAT, following coordination with the Ground Handler."
+ },
+ {
+  "id": "M12.effect.3",
+  "milestone": 12,
+  "field": "effect",
+  "k": 3,
+  "text": "(Dispatcher / Supervisor / Redcap)."
+ },
+ {
+  "id": "M12.procedures.1",
+  "milestone": 12,
+  "field": "procedures",
+  "k": 1,
+  "text": "First step: To inform all relevant Airport CDM Partners of Actual Ready Time (ARDT) in the Airport CDM Platform and that the aircraft is ready for start up / push-back."
+ },
+ {
+  "id": "M12.procedures.2",
+  "milestone": 12,
+  "field": "procedures",
+  "k": 2,
+  "text": "Second step: To inform the AO/GH that TOBT has passed and the Airport CDM Platform has not yet received ARDT or Ready Status (RDY)."
+ },
+ {
+  "id": "M12.procedures.3",
+  "milestone": 12,
+  "field": "procedures",
+  "k": 3,
+  "text": "Inform of ARDT or RDY confirming that the flight follows the indicated TOBT."
+ },
+ {
+  "id": "M12.procedures.4",
+  "milestone": 12,
+  "field": "procedures",
+  "k": 4,
+  "text": "At TOBT + tolerance the AO/GH are informed that TOBT has passed and there has not been a ready status message yet."
+ },
+ {
+  "id": "M12.procedures.5",
+  "milestone": 12,
+  "field": "procedures",
+  "k": 5,
+  "text": "This procedure is triggered by"
+ },
+ {
+  "id": "M12.procedures.6",
+  "milestone": 12,
+  "field": "procedures",
+  "k": 6,
+  "text": "- an input to the Airport CDM Platform."
+ },
+ {
+  "id": "M12.operational_status.1",
+  "milestone": 12,
+  "field": "operational_status",
+  "k": 1,
+  "text": "READY"
+ },
+ {
+  "id": "M12.action_on_cdm.1",
+  "milestone": 12,
+  "field": "action_on_cdm",
+  "k": 1,
+  "text": "N.A"
+ },
+ {
+  "id": "M13.definition.1",
+  "milestone": 13,
+  "field": "definition",
+  "k": 1,
+  "text": "The time that start up is requested (ASRT)."
+ },
+ {
+  "id": "M13.origin_and_priority.1",
+  "milestone": 13,
+  "field": "origin_and_priority",
+  "k": 1,
+  "text": "ATC (based on pilot request)."
+ },
+ {
+  "id": "M13.timing.1",
+  "milestone": 13,
+  "field": "timing",
+  "k": 1,
+  "text": "The information is directly available after occurrence of the milestone."
+ },
+ {
+  "id": "M13.data_quality.1",
+  "milestone": 13,
+  "field": "data_quality",
+  "k": 1,
+  "text": "Data is available with an accuracy of +/- 1 minute."
+ },
+ {
+  "id": "M13.effect.1",
+  "milestone": 13,
+  "field": "effect",
+  "k": 1,
+  "text": "ATC confirms TSAT to the pilot in order to maintain the aircraft in the pre-departure sequence."
+ },
+ {
+  "id": "M13.effect.2",
+  "milestone": 13,
+  "field": "effect",
+  "k": 2,
+  "text": "Provided the aircraft was ready on time (ARDT), it is now up to ATC to assure that a regulated flight can respect its CTOT."
+ },
+ {
+  "id": "M13.procedures.1",
+  "milestone": 13,
+  "field": "procedures",
+  "k": 1,
+  "text": "First step: To inform all relevant Airport CDM Partners of Actual Start up Request Time (ASRT) in the Airport CDM Platform."
+ },
+ {
+  "id": "M13.procedures.2",
+  "milestone": 13,
+  "field": "procedures",
+  "k": 2,
+  "text": "Second step: to alert all relevant Airport CDM Partners when no start up has been re-quested inside the locally agreed TSAT tolerance window."
+ },
+ {
+  "id": "M13.procedures.3",
+  "milestone": 13,
+  "field": "procedures",
+  "k": 3,
+  "text": "Inform of ASRT when it occurs."
+ },
+ {
+  "id": "M13.procedures.4",
+  "milestone": 13,
+  "field": "procedures",
+  "k": 4,
+  "text": "If the start up request is not made by TSAT + tolerance, the AO/GH is informed that no start up has been requested, and should update TOBT."
+ },
+ {
+  "id": "M13.procedures.5",
+  "milestone": 13,
+  "field": "procedures",
+  "k": 5,
+  "text": "Timestamp when the tolerance window has passed at TSAT."
+ },
+ {
+  "id": "M13.operational_status.1",
+  "milestone": 13,
+  "field": "operational_status",
+  "k": 1,
+  "text": "N.A"
+ },
+ {
+  "id": "M13.action_on_cdm.1",
+  "milestone": 13,
+  "field": "action_on_cdm",
+  "k": 1,
+  "text": "N.A"
+ },
+ {
+  "id": "M14.definition.1",
+  "milestone": 14,
+  "field": "definition",
+  "k": 1,
+  "text": "ASAT - Actual start up Approval Time."
+ },
+ {
+  "id": "M14.definition.2",
+  "milestone": 14,
+  "field": "definition",
+  "k": 2,
+  "text": "This is the time that an aircraft receives its start up approval."
+ },
+ {
+  "id": "M14.origin_and_priority.1",
+  "milestone": 14,
+  "field": "origin_and_priority",
+  "k": 1,
+  "text": "ATC"
+ },
+ {
+  "id": "M14.timing.1",
+  "milestone": 14,
+  "field": "timing",
+  "k": 1,
+  "text": "The information is directly available after occurrence of the milestone."
+ },
+ {
+  "id": "M14.data_quality.1",
+  "milestone": 14,
+  "field": "data_quality",
+  "k": 1,
+  "text": "Data is available with an accuracy of +/- 1 minute."
+ },
+ {
+  "id": "M14.effect.1",
+  "milestone": 14,
+  "field": "effect",
+  "k": 1,
+  "text": "On receipt of ATC approval, the aircraft will start up, push back and start to taxi."
+ },
+ {
+  "id": "M14.procedures.1",
+  "milestone": 14,
+  "field": "procedures",
+  "k": 1,
+  "text": "First step: To inform all relevant Airport CDM Partners of Actual start up approval Time (ASAT) in the Airport CDM Platform and that the aircraft has received start up approval / push-back clearance."
+ },
+ {
+  "id": "M14.procedures.2",
+  "milestone": 14,
+  "field": "procedures",
+  "k": 2,
+  "text": "Second step: To check if ASAT is in accordance to TSAT and to alert all relevant Airport CDM Partners when no start up has been granted."
+ },
+ {
+  "id": "M14.procedures.3",
+  "milestone": 14,
+  "field": "procedures",
+  "k": 3,
+  "text": "Inform of ASAT when it occurs."
+ },
+ {
+  "id": "M14.procedures.4",
+  "milestone": 14,
+  "field": "procedures",
+  "k": 4,
+  "text": "In case the start up approval is not granted at TSAT + tolerance, all relevant partners should be informed."
+ },
+ {
+  "id": "M14.procedures.5",
+  "milestone": 14,
+  "field": "procedures",
+  "k": 5,
+  "text": "The flight will be re-sequenced."
+ },
+ {
+  "id": "M14.procedures.6",
+  "milestone": 14,
+  "field": "procedures",
+  "k": 6,
+  "text": "Start up request by flight crew (voice or DCL) or a locally defined time around TSAT if Milestone Process 13 is omitted."
+ },
+ {
+  "id": "M14.operational_status.1",
+  "milestone": 14,
+  "field": "operational_status",
+  "k": 1,
+  "text": "N.A"
+ },
+ {
+  "id": "M14.action_on_cdm.1",
+  "milestone": 14,
+  "field": "action_on_cdm",
+  "k": 1,
+  "text": "N.A"
+ },
+ {
+  "id": "M15.definition.1",
+  "milestone": 15,
+  "field": "definition",
+  "k": 1,
+  "text": "AOBT - Actual Off-Block Time."
+ },
+ {
+  "id": "M15.definition.2",
+  "milestone": 15,
+  "field": "definition",
+  "k": 2,
+  "text": "The time the aircraft pushes back/vacates the parking position (Equivalent to Airline/Handler ATD - Actual Time of Departure ACARS=OUT)."
+ },
+ {
+  "id": "M15.origin_and_priority.1",
+  "milestone": 15,
+  "field": "origin_and_priority",
+  "k": 1,
+  "text": "ACARS equipped aircraft or automated docking systems or ATC systems (e.g. A-SMGCS) or by manual input."
+ },
+ {
+  "id": "M15.timing.1",
+  "milestone": 15,
+  "field": "timing",
+  "k": 1,
+  "text": "The information is directly available after occurrence of the milestone."
+ },
+ {
+  "id": "M15.data_quality.1",
+  "milestone": 15,
+  "field": "data_quality",
+  "k": 1,
+  "text": "Data is available with an accuracy of +/- 1 minute."
+ },
+ {
+  "id": "M15.effect.1",
+  "milestone": 15,
+  "field": "effect",
+  "k": 1,
+  "text": "TTOT updated considering the EXOT."
+ },
+ {
+  "id": "M15.procedures.1",
+  "milestone": 15,
+  "field": "procedures",
+  "k": 1,
+  "text": "First step: To inform all relevant Airport CDM Partners of Actual Off-Block Time (AOBT) in the Airport CDM Platform and that the aircraft has commenced push-back / taxi from parking position."
+ },
+ {
+  "id": "M15.procedures.2",
+  "milestone": 15,
+  "field": "procedures",
+  "k": 2,
+  "text": "Second step: To check if TTOT changes by more than the agreed tolerance and inform Network Operations."
+ },
+ {
+  "id": "M15.procedures.3",
+  "milestone": 15,
+  "field": "procedures",
+  "k": 3,
+  "text": "Inform of AOBT when it occurs."
+ },
+ {
+  "id": "M15.procedures.4",
+  "milestone": 15,
+  "field": "procedures",
+  "k": 4,
+  "text": "AOBT always triggers an A-DPI message to Network Operations or in the case of remote holding at a defined time prior to TTOT."
+ },
+ {
+  "id": "M15.procedures.5",
+  "milestone": 15,
+  "field": "procedures",
+  "k": 5,
+  "text": "After a first A-DPI is sent this check shall be performed to check TTOT updates against the TTOT tolerance before Network Operations is informed, with a new A-DPI, of the updated TTOT."
+ },
+ {
+  "id": "M15.procedures.6",
+  "milestone": 15,
+  "field": "procedures",
+  "k": 6,
+  "text": "This process is triggered by AOBT detection."
+ },
+ {
+  "id": "M15.operational_status.1",
+  "milestone": 15,
+  "field": "operational_status",
+  "k": 1,
+  "text": "OFF-BLOCK"
+ },
+ {
+  "id": "M15.action_on_cdm.1",
+  "milestone": 15,
+  "field": "action_on_cdm",
+  "k": 1,
+  "text": "AOBT recorded"
+ },
+ {
+  "id": "M16.definition.1",
+  "milestone": 16,
+  "field": "definition",
+  "k": 1,
+  "text": "ATOT - Actual Take Off Time."
+ },
+ {
+  "id": "M16.definition.2",
+  "milestone": 16,
+  "field": "definition",
+  "k": 2,
+  "text": "This is the time that an aircraft takes off from the runway."
+ },
+ {
+  "id": "M16.definition.3",
+  "milestone": 16,
+  "field": "definition",
+  "k": 3,
+  "text": "(Equivalent to ATC ATD-Actual Time of Departure, ACARS = OFF)."
+ },
+ {
+  "id": "M16.origin_and_priority.1",
+  "milestone": 16,
+  "field": "origin_and_priority",
+  "k": 1,
+  "text": "Provided by ATC system or from ACARS equipped aircraft."
+ },
+ {
+  "id": "M16.timing.1",
+  "milestone": 16,
+  "field": "timing",
+  "k": 1,
+  "text": "The information is directly available as soon as possible after occurrence of the milestone."
+ },
+ {
+  "id": "M16.data_quality.1",
+  "milestone": 16,
+  "field": "data_quality",
+  "k": 1,
+  "text": "Data is available with an accuracy of +/- 1 minute."
+ },
+ {
+  "id": "M16.effect.1",
+  "milestone": 16,
+  "field": "effect",
+  "k": 1,
+  "text": "FSA and MVT messages are sent."
+ },
+ {
+  "id": "M16.procedures.1",
+  "milestone": 16,
+  "field": "procedures",
+  "k": 1,
+  "text": "To inform all relevant Airport CDM Partners about the actual take off."
+ },
+ {
+  "id": "M16.procedures.2",
+  "milestone": 16,
+  "field": "procedures",
+  "k": 2,
+  "text": "An airborne message is generated and the flight is removed from the departure sequence."
+ },
+ {
+  "id": "M16.procedures.3",
+  "milestone": 16,
+  "field": "procedures",
+  "k": 3,
+  "text": "This process is triggered by Tower FDPS, A-SMGCS / Radar detection or ACARS."
+ },
+ {
+  "id": "M16.operational_status.1",
+  "milestone": 16,
+  "field": "operational_status",
+  "k": 1,
+  "text": "DEPARTED / TAKE OFF"
+ },
+ {
+  "id": "M16.action_on_cdm.1",
+  "milestone": 16,
+  "field": "action_on_cdm",
+  "k": 1,
+  "text": "ATOT recorded"
+ }
+]

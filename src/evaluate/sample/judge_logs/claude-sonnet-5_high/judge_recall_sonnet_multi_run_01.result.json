@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "ok": true,
+    "output": null,
+    "error": null,
+    "model": "claude-sonnet-5",
+    "input_tokens": 29563,
+    "output_tokens": 2930,
+    "thinking_tokens": 2319,
+    "cache_creation_tokens": 29561,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.147548,
+    "duration_ms": 23986,
+    "attempts": 1,
+    "num_turns": 2
+  },
+  "output": {
+    "items": [
+      {
+        "id": "c047",
+        "grade": 0.5,
+        "elements": [
+          "TimeQuantity.accuracy",
+          "ATCSystem.detectMilestoneEvent()"
+        ],
+        "note": "tie to ATC system accuracy only in operation description, not a structural link"
+      },
+      {
+        "id": "c052",
+        "grade": 1,
+        "elements": [
+          "MilestoneTSATIssued.informPartnersOfTSAT()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c053",
+        "grade": 1,
+        "elements": [
+          "Flight.startUpApprovalTime",
+          "AirTrafficControlUnit.recordASAT()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c082",
+        "grade": 1,
+        "elements": [
+          "IFPS->AirTrafficControlUnit"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c118",
+        "grade": 1,
+        "elements": [
+          "MilestoneTakeOff.generateAirborneMessage()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c155",
+        "grade": 0.5,
+        "elements": [
+          "ATCSystem"
+        ],
+        "note": "A-SMGCS/Radar detection mentioned only in ATCSystem's description, not as a structural trigger relationship to Milestone16"
+      },
+      {
+        "id": "c171",
+        "grade": 1,
+        "elements": [
+          "MilestoneOffBlock.sendADPI()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c182",
+        "grade": 1,
+        "elements": [
+          "Flight.taxiInTime",
+          "DurationType.TaxiInTime"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c183",
+        "grade": 1,
+        "elements": [
+          "FlightOperationalStatus.IN_BLOCK"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c196",
+        "grade": 1,
+        "elements": [
+          "TOBTConsistencyMilestone.checkTOBTConsistency()"
+        ],
+        "note": ""
+      }
+    ]
+  }
+}

@@ -1,0 +1,471 @@
+{
+  "meta": {
+    "ok": true,
+    "output": null,
+    "error": null,
+    "model": "claude-opus-5",
+    "input_tokens": 4210,
+    "output_tokens": 5347,
+    "thinking_tokens": 1561,
+    "cache_creation_tokens": 1730,
+    "cache_read_tokens": 2478,
+    "cost_usd": 0.15222400000000003,
+    "duration_ms": 53419,
+    "attempts": 1,
+    "num_turns": 2
+  },
+  "output": {
+    "sentences": [
+      {
+        "id": "M4.definition.1",
+        "decision": "keep",
+        "reason": "States the event that constitutes the milestone: the trigger condition and the things involved.",
+        "claims": [
+          {
+            "text": "The flight enters the FIR (Flight Information Region) or the local airspace of the destination airport.",
+            "kind": "operation",
+            "owner": "Milestone 4: Local Radar Update",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "The flight",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "the FIR (Flight Information Region)",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M4.origin_and_priority.1",
+        "decision": "keep",
+        "reason": "States the origin of the milestone information and names the originating stakeholders.",
+        "claims": [
+          {
+            "text": "This information is normally available from the Area Control Centre (ACC) or Approach Control Unit that is associated with an airport.",
+            "kind": "attribute",
+            "owner": "Milestone 4: Local Radar Update",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "Area Control Centre (ACC)",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "Approach Control Unit",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "This information is normally available from the Area Control Centre (ACC) or Approach Control Unit",
+            "kind": "relationship",
+            "owner": "",
+            "rel_type": "other",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M4.origin_and_priority.2",
+        "decision": "keep",
+        "reason": "Describes the detection rule performed by the radar system and the identifier it relies on.",
+        "claims": [
+          {
+            "text": "The radar system is able to detect a flight based upon the assigned SSR code when the flight crosses a defined FIR/ATC boundary.",
+            "kind": "operation",
+            "owner": "radar system",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "The radar system",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "the assigned SSR code",
+            "kind": "attribute",
+            "owner": "flight",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M4.timing.1",
+        "decision": "keep",
+        "reason": "States the timing property of the milestone.",
+        "claims": [
+          {
+            "text": "Dependent upon the position of the airport in relation to the FIR boundary.",
+            "kind": "attribute",
+            "owner": "Milestone 4: Local Radar Update",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M4.data_quality.1",
+        "decision": "keep",
+        "reason": "States the accuracy requirement of the milestone.",
+        "claims": [
+          {
+            "text": "Must be equal to the accuracy of the ATC system.",
+            "kind": "attribute",
+            "owner": "Milestone 4: Local Radar Update",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M4.effect.1",
+        "decision": "keep",
+        "reason": "States a trigger from ELDT update to TOBT, names the time quantities, and who enters or calculates TOBT.",
+        "claims": [
+          {
+            "text": "Update of the ELDT can trigger a new TOBT to be entered by the AO/GH, or calculated automatically by the Airport CDM Platform.",
+            "kind": "operation",
+            "owner": "Milestone 4: Local Radar Update",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "ELDT",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "TOBT",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "AO/GH",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "Airport CDM Platform",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "a new TOBT to be entered by the AO/GH",
+            "kind": "relationship",
+            "owner": "",
+            "rel_type": "other",
+            "duplicate_of": ""
+          },
+          {
+            "text": "calculated automatically by the Airport CDM Platform",
+            "kind": "operation",
+            "owner": "Airport CDM Platform",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M4.effect.2",
+        "decision": "drop",
+        "reason": "Explanatory rationale about why ELDT accuracy matters; no element to realise.",
+        "claims": []
+      },
+      {
+        "id": "M4.effect.3",
+        "decision": "drop",
+        "reason": "Explanatory rationale about risks; no element to realise.",
+        "claims": []
+      },
+      {
+        "id": "M4.effect.4",
+        "decision": "drop",
+        "reason": "States an objective/rationale rather than a rule, value, or thing.",
+        "claims": []
+      },
+      {
+        "id": "M4.effect.5",
+        "decision": "keep",
+        "reason": "States a rule about stand/gate changes relative to ELDT and names the taxi-in time quantity.",
+        "claims": [
+          {
+            "text": "taking into account the taxi-in time (EXIT), any change to a stand or gate is not preferred after ELDT-30'.",
+            "kind": "operation",
+            "owner": "Milestone 4: Local Radar Update",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "the taxi-in time (EXIT)",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M4.effect.6",
+        "decision": "keep",
+        "reason": "States the TOBT update following the milestone and links the arriving flight to its related departing flight.",
+        "claims": [
+          {
+            "text": "The update of TOBT for the related departing flight takes place following this milestone.",
+            "kind": "operation",
+            "owner": "Milestone 4: Local Radar Update",
+            "rel_type": "",
+            "duplicate_of": "M4.effect.1.c1"
+          },
+          {
+            "text": "the related departing flight",
+            "kind": "relationship",
+            "owner": "",
+            "rel_type": "other",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M4.effect.7",
+        "decision": "drop",
+        "reason": "Explanatory statement about decision stability; no checkable rule, value, or thing.",
+        "claims": []
+      },
+      {
+        "id": "M4.effect.8",
+        "decision": "keep",
+        "reason": "Gives the EIBT calculation and names the time quantities involved.",
+        "claims": [
+          {
+            "text": "An estimated in-block time (EIBT) is computed using the ELDT and the estimated taxi-in time.",
+            "kind": "operation",
+            "owner": "Airport CDM Platform",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "estimated in-block time (EIBT)",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "the ELDT",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": "M4.effect.1.c2"
+          },
+          {
+            "text": "the estimated taxi-in time",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": "M4.effect.5.c2"
+          }
+        ]
+      },
+      {
+        "id": "M4.procedures.1",
+        "decision": "keep",
+        "reason": "States two procedures under the milestone: commencing the TOBT process and a consistency check against the ATC Flight Plan.",
+        "claims": [
+          {
+            "text": "To commence the TOBT process",
+            "kind": "operation",
+            "owner": "Milestone 4: Local Radar Update",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "check whether the AO/GH TOBT is consistent with the ATC Flight Plan",
+            "kind": "operation",
+            "owner": "Milestone 4: Local Radar Update",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "the ATC Flight Plan",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M4.procedures.2",
+        "decision": "keep",
+        "reason": "States a notification rule with a tolerance condition and names the receiving stakeholder and time quantity.",
+        "claims": [
+          {
+            "text": "Network Operations is informed when the TTOT changes by more than the agreed TTOT tolerance.",
+            "kind": "operation",
+            "owner": "Milestone 4: Local Radar Update",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "TTOT",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "the agreed TTOT tolerance",
+            "kind": "attribute",
+            "owner": "TTOT",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "Network Operations",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "Network Operations is informed",
+            "kind": "relationship",
+            "owner": "",
+            "rel_type": "other",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M4.procedures.3",
+        "decision": "keep",
+        "reason": "Restates the flight plan consistency check as a feasibility check given the updated TOBT.",
+        "claims": [
+          {
+            "text": "This check shall be performed to verify feasibility of the ATC Flight Plan given the up-dated TOBT.",
+            "kind": "operation",
+            "owner": "Milestone 4: Local Radar Update",
+            "rel_type": "",
+            "duplicate_of": "M4.procedures.1.c2"
+          }
+        ]
+      },
+      {
+        "id": "M4.procedures.4",
+        "decision": "keep",
+        "reason": "Restates the TTOT tolerance condition on informing Network Operations.",
+        "claims": [
+          {
+            "text": "The TTOT tolerance is respected before Network Operations is informed of updated TTOT.",
+            "kind": "operation",
+            "owner": "Milestone 4: Local Radar Update",
+            "rel_type": "",
+            "duplicate_of": "M4.procedures.2.c1"
+          }
+        ]
+      },
+      {
+        "id": "M4.procedures.5",
+        "decision": "drop",
+        "reason": "Incomplete lead-in fragment; the trigger is stated in the following sentence.",
+        "claims": []
+      },
+      {
+        "id": "M4.procedures.6",
+        "decision": "keep",
+        "reason": "States the trigger of the milestone process by radar detection.",
+        "claims": [
+          {
+            "text": "the detection of the flight by radar in either FIR, TMA, or on Final Approach.",
+            "kind": "operation",
+            "owner": "Milestone 4: Local Radar Update",
+            "rel_type": "",
+            "duplicate_of": "M4.definition.1.c1"
+          }
+        ]
+      },
+      {
+        "id": "M4.operational_status.1",
+        "decision": "keep",
+        "reason": "Gives the operational status literal the milestone sets on the flight.",
+        "claims": [
+          {
+            "text": "FIR",
+            "kind": "enumeration",
+            "owner": "Flight",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M4.action_on_cdm.1",
+        "decision": "keep",
+        "reason": "States the CDM platform update action on four time quantities.",
+        "claims": [
+          {
+            "text": "ELDT, EIBT, TOBT and TTOT updated",
+            "kind": "operation",
+            "owner": "Airport CDM Platform",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "ELDT",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": "M4.effect.1.c2"
+          },
+          {
+            "text": "EIBT",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": "M4.effect.8.c2"
+          },
+          {
+            "text": "TOBT",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": "M4.effect.1.c3"
+          },
+          {
+            "text": "TTOT",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": "M4.procedures.2.c2"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,6678 @@
+{
+ "reviewers": [
+  "grader_A",
+  "grader_B"
+ ],
+ "exported": "2026-09-21T18:39:58.257Z",
+ "draft_generated": "2026-09-18T14:15:01",
+ "reviews_exported": {
+  "grader_A": "2026-09-21T16:19:20.498Z",
+  "grader_B": "2026-09-18T15:10:16.190Z"
+ },
+ "families": {},
+ "claims": {
+  "M1.definition.1.c1": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "The ICAO flight plan",
+   "rel_type": "",
+   "note": ""
+  },
+  "M1.definition.1.c2": {
+   "decision": "accept",
+   "kind": "relationship",
+   "owner": "",
+   "text": "The ICAO flight plan is submitted to ATC",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M1.definition.2.c1": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "The Airport CDM Platform",
+   "rel_type": "",
+   "note": ""
+  },
+  "M1.definition.2.c2": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Airport CDM Platform",
+   "text": "The Airport CDM Platform is initiated for this flight",
+   "rel_type": "",
+   "note": ""
+  },
+  "M1.definition.2.c3": {
+   "decision": "edit",
+   "kind": "operation",
+   "owner": "Airport CDM Platform",
+   "text": "all available information for this flight is processed",
+   "rel_type": "",
+   "note": "all available information \"for this flight\" is processed"
+  },
+  "M1.origin_and_priority.1.c1": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "The ATC Flight Plan",
+   "rel_type": "",
+   "note": ""
+  },
+  "M1.origin_and_priority.1.c2": {
+   "decision": "accept",
+   "kind": "relationship",
+   "owner": "",
+   "text": "The ATC Flight Plan is submitted by the Aircraft Operator",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M1.origin_and_priority.1.c3": {
+   "decision": "accept",
+   "kind": "relationship",
+   "owner": "",
+   "text": "The ATC Flight Plan is ... distributed by the IFPS",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M1.origin_and_priority.2.c1": {
+   "decision": "accept",
+   "kind": "relationship",
+   "owner": "",
+   "text": "All involved ATC units receive the flight plan",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M1.origin_and_priority.2.c2": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M1.timing.1.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 1: ATC Flight Plan Activated",
+   "text": "Normally this takes place 3 hours before EOBT, however it may be later",
+   "rel_type": "",
+   "note": ""
+  },
+  "M1.timing.1.c2": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "EOBT",
+   "rel_type": "",
+   "note": ""
+  },
+  "M1.timing.2.c1": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "a repetitive flight plan (RFPL)",
+   "rel_type": "",
+   "note": ""
+  },
+  "M1.timing.2.c2": {
+   "decision": "accept",
+   "kind": "relationship",
+   "owner": "",
+   "text": "a repetitive flight plan (RFPL) has been submitted, covering daily or weekly flights",
+   "rel_type": "generalization",
+   "note": ""
+  },
+  "M1.data_quality.1.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 1: ATC Flight Plan Activated",
+   "text": "The ATC Flight Plan corresponds to the airport slot programme",
+   "rel_type": "",
+   "note": ""
+  },
+  "M1.data_quality.1.c2": {
+   "decision": "edit",
+   "kind": "attribute",
+   "owner": "Airport",
+   "text": "the airport slot programme",
+   "rel_type": "",
+   "note": ""
+  },
+  "M1.effect.1.c1": {
+   "decision": "accept",
+   "kind": "relationship",
+   "owner": "",
+   "text": "One aircraft turn-round normally includes an arriving and a departing flight",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M1.effect.1.c2": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M1.effect.2.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 1: ATC Flight Plan Activated",
+   "text": "For coordinated airports, the outbound flight is already known",
+   "rel_type": "",
+   "note": ""
+  },
+  "M1.effect.3.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 1: ATC Flight Plan Activated",
+   "text": "The flight plan may be used to update certain information such as type of aircraft",
+   "rel_type": "",
+   "note": ""
+  },
+  "M1.effect.3.c2": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "Aircraft",
+   "text": "type of aircraft",
+   "rel_type": "",
+   "note": ""
+  },
+  "M1.effect.4.c1": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "ELDT",
+   "rel_type": "",
+   "note": ""
+  },
+  "M1.effect.4.c2": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 1: ATC Flight Plan Activated",
+   "text": "For long distance flights, the ELDT may differ from the airport slot",
+   "rel_type": "",
+   "note": ""
+  },
+  "M1.effect.5.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 1: ATC Flight Plan Activated",
+   "text": "For non coordinated airports, the flight plan is used to initiate the outbound flight",
+   "rel_type": "",
+   "note": ""
+  },
+  "M1.effect.6.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 1: ATC Flight Plan Activated",
+   "text": "The flight is ready not later than 15 minutes after the planned EOBT",
+   "rel_type": "",
+   "note": ""
+  },
+  "M1.effect.7.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 1: ATC Flight Plan Activated",
+   "text": "The DPI process commences the correct messaging with Network Operations",
+   "rel_type": "",
+   "note": ""
+  },
+  "M1.effect.7.c2": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "Network Operations",
+   "rel_type": "",
+   "note": ""
+  },
+  "M1.procedures.1.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 1: ATC Flight Plan Activated",
+   "text": "To check consistency between ATC Flight Plan, Airport Slot and Airport flight data",
+   "rel_type": "",
+   "note": ""
+  },
+  "M1.procedures.1.c2": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 1: ATC Flight Plan Activated",
+   "text": "confirm the flight to the Network Operations and allow further local processing of the flight",
+   "rel_type": "",
+   "note": ""
+  },
+  "M1.procedures.1.c3": {
+   "decision": "edit",
+   "kind": "attribute",
+   "owner": "Airport",
+   "text": "Airport Slot",
+   "rel_type": "",
+   "note": ""
+  },
+  "M1.procedures.2.c2": {
+   "decision": "edit",
+   "kind": "relationship",
+   "owner": "",
+   "text": "the first E-DPI",
+   "rel_type": "generalization",
+   "note": ""
+  },
+  "M1.procedures.3.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Aircraft Operator",
+   "text": "The AO must provide correct information before this first E-DPI message, in order to feed Network Operations with consistent SOBT, aircraft registration, and first destination data, as early in time as possible",
+   "rel_type": "",
+   "note": ""
+  },
+  "M1.procedures.3.c2": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "SOBT",
+   "rel_type": "",
+   "note": ""
+  },
+  "M1.procedures.3.c3": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "Aircraft",
+   "text": "aircraft registration",
+   "rel_type": "",
+   "note": ""
+  },
+  "M1.procedures.3.c4": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "Flight",
+   "text": "first destination",
+   "rel_type": "",
+   "note": ""
+  },
+  "M1.procedures.4.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 1: ATC Flight Plan Activated",
+   "text": "The E-DPI message should not be sent if no or inconsistent information is provided",
+   "rel_type": "",
+   "note": ""
+  },
+  "M1.procedures.6.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 1: ATC Flight Plan Activated",
+   "text": "The first activation of the ATC Flight Plan (earliest EOBT-3 hr)",
+   "rel_type": "",
+   "note": ""
+  },
+  "M1.procedures.7.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 1: ATC Flight Plan Activated",
+   "text": "New or late submissions of the ATC Flight Plan, after cancellation or revised EOBT",
+   "rel_type": "",
+   "note": ""
+  },
+  "M1.operational_status.1.c1": {
+   "decision": "accept",
+   "kind": "enumeration",
+   "owner": "Flight",
+   "text": "INITIATED",
+   "rel_type": "",
+   "note": ""
+  },
+  "M1.action_on_cdm.1.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Airport CDM Platform",
+   "text": "ELDT and EIBT updated for an arrival",
+   "rel_type": "",
+   "note": ""
+  },
+  "M1.action_on_cdm.1.c2": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "EIBT",
+   "rel_type": "",
+   "note": ""
+  },
+  "M1.action_on_cdm.1.c3": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Airport CDM Platform",
+   "text": "EOBT and ETOT updated for a departure",
+   "rel_type": "",
+   "note": ""
+  },
+  "M1.action_on_cdm.1.c4": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "ETOT",
+   "rel_type": "",
+   "note": ""
+  },
+  "M2.definition.1.c1": {
+   "decision": "edit",
+   "kind": "class",
+   "owner": "",
+   "text": "Airport CDM Platform",
+   "rel_type": "",
+   "note": ""
+  },
+  "M2.definition.1.c2": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M2.definition.1.c3": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "Flight",
+   "text": "including if they are regulated or not",
+   "rel_type": "",
+   "note": ""
+  },
+  "M2.definition.2.c1": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "a CTOT",
+   "rel_type": "",
+   "note": ""
+  },
+  "M2.definition.2.c3": {
+   "decision": "accept",
+   "kind": "relationship",
+   "owner": "",
+   "text": "All regulated flights receive a CTOT from Network Operations.",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M2.origin_and_priority.1.c3": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "CTOT",
+   "text": "The CTOT is issued by the Network Operations",
+   "rel_type": "",
+   "note": ""
+  },
+  "M2.origin_and_priority.1.c4": {
+   "decision": "edit",
+   "kind": "relationship",
+   "owner": "",
+   "text": "CTOT ... is sent to relevant ATS units",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M2.origin_and_priority.1.c5": {
+   "decision": "edit",
+   "kind": "relationship",
+   "owner": "",
+   "text": "CTOT ... is sent ... as well as the departure aerodrome",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M2.origin_and_priority.2.c1": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "CTOT",
+   "text": "CTOT flights usually have a priority over unregulated flights.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M2.timing.1.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Network Operations",
+   "text": "If the flight is regulated, a CTOT is issued at EOBT-2h.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M2.effect.1.c2": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "the FUM messages",
+   "rel_type": "",
+   "note": ""
+  },
+  "M2.effect.1.c3": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 2: EOBT - 2 hr",
+   "text": "For inbound flights, ELDT is updated based on information provided by the FUM messages, taking into account the actual progress of the flight.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M2.effect.1.c4": {
+   "decision": "accept",
+   "kind": "relationship",
+   "owner": "",
+   "text": "ELDT is updated based on information provided by the FUM messages",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M2.procedures.1.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 2: EOBT - 2 hr",
+   "text": "To check (before or after take off from outstation) whether AO/GH flight estimates are consistent with the ATC Flight Plan",
+   "rel_type": "",
+   "note": ""
+  },
+  "M2.procedures.1.c2": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 2: EOBT - 2 hr",
+   "text": "to inform Network Operations about the updated take off time estimate, using a T-DPI Message",
+   "rel_type": "",
+   "note": ""
+  },
+  "M2.procedures.1.c3": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "a T-DPI Message",
+   "rel_type": "",
+   "note": ""
+  },
+  "M2.procedures.1.c5": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "AO/GH",
+   "rel_type": "",
+   "note": ""
+  },
+  "M2.procedures.1.c6": {
+   "decision": "accept",
+   "kind": "relationship",
+   "owner": "",
+   "text": "to inform Network Operations about the updated take off time estimate, using a T-DPI Message",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M2.procedures.4.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 2: EOBT - 2 hr",
+   "text": "Calculation basis for the TTOT shall take into account EIBT+MTTT+EXOT, if later than EOBT+EXOT.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M2.procedures.4.c2": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "the TTOT",
+   "rel_type": "",
+   "note": ""
+  },
+  "M2.procedures.4.c4": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "MTTT",
+   "rel_type": "",
+   "note": ""
+  },
+  "M2.procedures.4.c5": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "EXOT",
+   "rel_type": "",
+   "note": ""
+  },
+  "M2.procedures.5.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 2: EOBT - 2 hr",
+   "text": "In the case of manual input of TOBT, this estimate will override the EIBT+MTTT estimate, hence TTOT equals TOBT+EXOT.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M2.procedures.5.c2": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "TOBT",
+   "rel_type": "",
+   "note": ""
+  },
+  "M2.procedures.7.c1": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M2.action_on_cdm.1.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Airport CDM Platform",
+   "text": "ETOT/TTOT/CTOT Mark appropriate fields as REGULATED",
+   "rel_type": "",
+   "note": ""
+  },
+  "M2.action_on_cdm.1.c2": {
+   "decision": "accept",
+   "kind": "enumeration",
+   "owner": "Flight",
+   "text": "REGULATED",
+   "rel_type": "",
+   "note": ""
+  },
+  "M3.definition.1.c1": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "The ATOT from the outstation (ADEP)",
+   "rel_type": "",
+   "note": ""
+  },
+  "M3.definition.1.c2": {
+   "decision": "accept",
+   "kind": "relationship",
+   "owner": "",
+   "text": "The ATOT from the outstation (ADEP)",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M3.origin_and_priority.1.c1": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M3.origin_and_priority.1.c2": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M3.origin_and_priority.1.c3": {
+   "decision": "accept",
+   "kind": "relationship",
+   "owner": "",
+   "text": "The outstation provides ATOT to the Network Operations and Aircraft Operator.",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M3.origin_and_priority.1.c4": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "The outstation",
+   "rel_type": "",
+   "note": ""
+  },
+  "M3.origin_and_priority.1.c6": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "Aircraft Operator",
+   "rel_type": "",
+   "note": ""
+  },
+  "M3.timing.1.c1": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "Milestone 3: Take Off from Outstation",
+   "text": "The information is directly available after occurrence of the milestone.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M3.data_quality.1.c1": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "ATOT",
+   "text": "The accuracy of ATOT is +/- 1 minute.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M3.effect.1.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 3: Take Off from Outstation",
+   "text": "If the departure airport is more than 3hrs flying time from the destination airport the ATOT is received from either the Network Operations FUM or via the Aircraft Operator / Ground Handler.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M3.effect.1.c2": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "Network Operations FUM",
+   "rel_type": "",
+   "note": ""
+  },
+  "M3.effect.1.c3": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "Ground Handler",
+   "rel_type": "",
+   "note": ""
+  },
+  "M3.effect.1.c4": {
+   "decision": "accept",
+   "kind": "relationship",
+   "owner": "",
+   "text": "the ATOT is received from either the Network Operations FUM",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M3.effect.1.c5": {
+   "decision": "accept",
+   "kind": "relationship",
+   "owner": "",
+   "text": "the ATOT is received ... via the Aircraft Operator / Ground Handler",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M3.effect.2.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 3: Take Off from Outstation",
+   "text": "Using the ATOT an ELDT can be calculated by using the Estimated Elapsed Time on the FPL.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M3.effect.2.c3": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "FPL",
+   "rel_type": "",
+   "note": ""
+  },
+  "M3.effect.2.c4": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "FPL",
+   "text": "the Estimated Elapsed Time on the FPL",
+   "rel_type": "",
+   "note": ""
+  },
+  "M3.effect.3.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Network Operations",
+   "text": "If the flight is within 3hrs flying time of the destination airport the Network Operations monitors progress of the flight using the ETFMS and send a Flight Update Message (FUM) that provides updates of the flight's progress.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M3.effect.3.c2": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "the ETFMS",
+   "rel_type": "",
+   "note": ""
+  },
+  "M3.effect.3.c4": {
+   "decision": "accept",
+   "kind": "relationship",
+   "owner": "",
+   "text": "the Network Operations ... send a Flight Update Message (FUM)",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M3.procedures.1.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 3: Take Off from Outstation",
+   "text": "To check whether the AO/GH estimated landing time after take off from outstation are consistent with the outbound ATC Flight Plan",
+   "rel_type": "",
+   "note": ""
+  },
+  "M3.procedures.1.c2": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 3: Take Off from Outstation",
+   "text": "when needed inform the Network Operations about the updated take off time estimates using a T-DPI-t Message",
+   "rel_type": "",
+   "note": ""
+  },
+  "M3.procedures.1.c3": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "T-DPI-t Message",
+   "rel_type": "",
+   "note": ""
+  },
+  "M3.procedures.1.c4": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "outbound ATC Flight Plan",
+   "rel_type": "",
+   "note": ""
+  },
+  "M3.procedures.1.c5": {
+   "decision": "accept",
+   "kind": "relationship",
+   "owner": "",
+   "text": "inform the Network Operations ... using a T-DPI-t Message",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M3.procedures.3.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 3: Take Off from Outstation",
+   "text": "A TTOT tolerance of 5 minutes is respected before Network Operations is informed of the updated TTOT.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M3.procedures.3.c2": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "TTOT",
+   "text": "A TTOT tolerance of 5 minutes",
+   "rel_type": "",
+   "note": ""
+  },
+  "M3.procedures.4.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 3: Take Off from Outstation",
+   "text": "Calculation basis for the TTOT shall take into account EIBT+MTTT+EXOT.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M3.procedures.5.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 3: Take Off from Outstation",
+   "text": "In case EOBT is later than EIBT+MTTT, TTOT equals EOBT+EXOT.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M3.procedures.6.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 3: Take Off from Outstation",
+   "text": "In the case where TOBT is available this prediction will overrule the EIBT+MTTT estimate, hence TTOT equals TOBT+EXOT.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M3.procedures.8.c1": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M3.operational_status.1.c1": {
+   "decision": "accept",
+   "kind": "enumeration",
+   "owner": "Flight",
+   "text": "AIRBORNE",
+   "rel_type": "",
+   "note": ""
+  },
+  "M3.action_on_cdm.1.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Airport CDM Platform",
+   "text": "ELDT, EIBT, TOBT and TTOT updated",
+   "rel_type": "",
+   "note": ""
+  },
+  "M4.definition.1.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 4: Local Radar Update",
+   "text": "The flight enters the FIR (Flight Information Region) or the local airspace of the destination airport.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M4.definition.1.c2": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "The flight",
+   "rel_type": "",
+   "note": ""
+  },
+  "M4.definition.1.c3": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "the FIR (Flight Information Region)",
+   "rel_type": "",
+   "note": ""
+  },
+  "M4.origin_and_priority.1.c1": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M4.origin_and_priority.1.c2": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "Area Control Centre (ACC)",
+   "rel_type": "",
+   "note": ""
+  },
+  "M4.origin_and_priority.1.c3": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "Approach Control Unit",
+   "rel_type": "",
+   "note": ""
+  },
+  "M4.origin_and_priority.1.c4": {
+   "decision": "accept",
+   "kind": "relationship",
+   "owner": "",
+   "text": "This information is normally available from the Area Control Centre (ACC) or Approach Control Unit",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M4.origin_and_priority.2.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Radar system",
+   "text": "The radar system is able to detect a flight based upon the assigned SSR code when the flight crosses a defined FIR/ATC boundary.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M4.origin_and_priority.2.c2": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "The radar system",
+   "rel_type": "",
+   "note": ""
+  },
+  "M4.origin_and_priority.2.c3": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "Flight",
+   "text": "the assigned SSR code",
+   "rel_type": "",
+   "note": ""
+  },
+  "M4.timing.1.c1": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "Milestone 4: Local Radar Update",
+   "text": "Dependent upon the position of the airport in relation to the FIR boundary.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M4.data_quality.1.c1": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "Milestone 4: Local Radar Update",
+   "text": "Must be equal to the accuracy of the ATC system.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M4.effect.1.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 4: Local Radar Update",
+   "text": "Update of the ELDT can trigger a new TOBT to be entered by the AO/GH, or calculated automatically by the Airport CDM Platform.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M4.effect.1.c6": {
+   "decision": "accept",
+   "kind": "relationship",
+   "owner": "",
+   "text": "a new TOBT to be entered by the AO/GH",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M4.effect.1.c7": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Airport CDM Platform",
+   "text": "calculated automatically by the Airport CDM Platform",
+   "rel_type": "",
+   "note": ""
+  },
+  "M4.effect.5.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 4: Local Radar Update",
+   "text": "taking into account the taxi-in time (EXIT), any change to a stand or gate is not preferred after ELDT-30'.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M4.effect.5.c2": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "the taxi-in time (EXIT)",
+   "rel_type": "",
+   "note": ""
+  },
+  "M4.effect.6.c2": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M4.effect.8.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Airport CDM Platform",
+   "text": "An estimated in-block time (EIBT) is computed using the ELDT and the estimated taxi-in time.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M4.procedures.1.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 4: Local Radar Update",
+   "text": "To commence the TOBT process",
+   "rel_type": "",
+   "note": ""
+  },
+  "M4.procedures.1.c2": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 4: Local Radar Update",
+   "text": "check whether the AO/GH TOBT is consistent with the ATC Flight Plan",
+   "rel_type": "",
+   "note": ""
+  },
+  "M4.procedures.2.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 4: Local Radar Update",
+   "text": "Network Operations is informed when the TTOT changes by more than the agreed TTOT tolerance.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M4.procedures.2.c3": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "TTOT",
+   "text": "the agreed TTOT tolerance",
+   "rel_type": "",
+   "note": ""
+  },
+  "M4.procedures.2.c5": {
+   "decision": "edit",
+   "kind": "operation",
+   "owner": "Network Operations",
+   "text": "Network Operations is informed",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M4.operational_status.1.c1": {
+   "decision": "accept",
+   "kind": "enumeration",
+   "owner": "Flight",
+   "text": "FIR",
+   "rel_type": "",
+   "note": ""
+  },
+  "M4.action_on_cdm.1.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Airport CDM Platform",
+   "text": "ELDT, EIBT, TOBT and TTOT updated",
+   "rel_type": "",
+   "note": ""
+  },
+  "M5.definition.1.c1": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M5.definition.1.c2": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M5.origin_and_priority.1.c1": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M5.origin_and_priority.1.c2": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "ATC",
+   "rel_type": "",
+   "note": ""
+  },
+  "M5.origin_and_priority.1.c3": {
+   "decision": "edit",
+   "kind": "operation",
+   "owner": "ATC",
+   "text": "This information is normally available from ATC.",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M5.origin_and_priority.2.c2": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "Flight",
+   "text": "the assigned SSR code",
+   "rel_type": "",
+   "note": ""
+  },
+  "M5.origin_and_priority.2.c3": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Radar system",
+   "text": "The radar system detects a flight based upon the assigned SSR code",
+   "rel_type": "",
+   "note": ""
+  },
+  "M5.origin_and_priority.2.c4": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Radar system",
+   "text": "identifies when the flight crosses either a defined range / position or passes/leaves a predetermined level",
+   "rel_type": "",
+   "note": ""
+  },
+  "M5.origin_and_priority.2.c5": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "Radar system",
+   "text": "a defined range / position",
+   "rel_type": "",
+   "note": ""
+  },
+  "M5.origin_and_priority.2.c6": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "Radar system",
+   "text": "a predetermined level",
+   "rel_type": "",
+   "note": ""
+  },
+  "M5.timing.1.c1": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "Milestone 5: Final Approach",
+   "text": "Dependent upon local parameters that are defined by ATC.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M5.timing.1.c2": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M5.data_quality.1.c1": {
+   "decision": "edit",
+   "kind": "attribute",
+   "owner": "ATC system",
+   "text": "Must be equal to the accuracy of the ATC system.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M5.data_quality.1.c2": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "the ATC system",
+   "rel_type": "",
+   "note": ""
+  },
+  "M5.data_quality.1.c3": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M5.effect.1.c3": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 5: Final Approach",
+   "text": "Update of the ELDT to determine a new TOBT.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M5.effect.2.c1": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "Milestone 5: Final Approach",
+   "text": "When a flight reaches this stage it is usually between 2 and 5 minutes from landing (depending on the parameter set by ATC).",
+   "rel_type": "",
+   "note": ""
+  },
+  "M5.procedures.1.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 5: Final Approach",
+   "text": "To commence the TOBT process",
+   "rel_type": "",
+   "note": ""
+  },
+  "M5.procedures.1.c2": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 5: Final Approach",
+   "text": "check whether the AO/GH TOBT is consistent with the ATC Flight Plan",
+   "rel_type": "",
+   "note": ""
+  },
+  "M5.procedures.1.c5": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M5.procedures.2.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 5: Final Approach",
+   "text": "Network Operations is informed when the TTOT changes by more than the agreed TTOT tolerance.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M5.procedures.2.c4": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "TTOT",
+   "text": "the agreed TTOT tolerance",
+   "rel_type": "",
+   "note": ""
+  },
+  "M5.procedures.2.c5": {
+   "decision": "accept",
+   "kind": "relationship",
+   "owner": "",
+   "text": "Network Operations is informed when the TTOT changes",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M5.procedures.6.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 5: Final Approach",
+   "text": "the detection of the flight by radar in either FIR, TMA, or on Final Approach.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M5.procedures.6.c2": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M5.procedures.6.c3": {
+   "decision": "accept",
+   "kind": "enumeration",
+   "owner": "Radar system",
+   "text": "either FIR, TMA, or on Final Approach",
+   "rel_type": "",
+   "note": ""
+  },
+  "M5.operational_status.1.c1": {
+   "decision": "accept",
+   "kind": "enumeration",
+   "owner": "Flight",
+   "text": "FINAL",
+   "rel_type": "",
+   "note": ""
+  },
+  "M5.action_on_cdm.1.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Airport CDM Platform",
+   "text": "ELDT, EIBT, TOBT and TTOT updated",
+   "rel_type": "",
+   "note": ""
+  },
+  "M6.definition.1.c1": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "ALDT - Actual Landing Time.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M6.definition.3.c1": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "ATC ATA - Actual Time of Arrival landing",
+   "rel_type": "",
+   "note": ""
+  },
+  "M6.definition.3.c2": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M6.origin_and_priority.1.c1": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "ALDT",
+   "text": "Provided by ATC system or by ACARS from equipped aircraft.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M6.origin_and_priority.1.c3": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "ACARS",
+   "rel_type": "",
+   "note": ""
+  },
+  "M6.origin_and_priority.1.c4": {
+   "decision": "edit",
+   "kind": "operation",
+   "owner": "ATC system",
+   "text": "Provided by ATC system",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M6.origin_and_priority.1.c5": {
+   "decision": "edit",
+   "kind": "operation",
+   "owner": "Aircraft",
+   "text": "by ACARS from equipped aircraft",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M6.timing.1.c1": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M6.data_quality.1.c1": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "ALDT",
+   "text": "Data is available with an accuracy of +/- 1 minute.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M6.effect.1.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 6: Landed",
+   "text": "The occurrence of ALDT triggers an update of downstream estimates: TOBT and TTOT are updated automatically or inserted manually by the Aircraft Operator / Ground Handler",
+   "rel_type": "",
+   "note": ""
+  },
+  "M6.effect.1.c4": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M6.effect.1.c5": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "Flight",
+   "text": "the defined turn-round period for the departing flight",
+   "rel_type": "",
+   "note": ""
+  },
+  "M6.effect.1.c6": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Aircraft Operator / Ground Handler",
+   "text": "calculated on the basis of the defined turn-round period for the departing flight",
+   "rel_type": "",
+   "note": ""
+  },
+  "M6.effect.2.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 6: Landed",
+   "text": "The EIBT can be updated according to the ALDT +EXIT.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M6.procedures.1.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 6: Landed",
+   "text": "To check whether the AO/GH TOBT is consistent with the ATC Flight Plan.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M6.procedures.2.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 6: Landed",
+   "text": "Network Operations is informed when the TTOT changes by more than the agreed TTOT tolerance.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M6.procedures.2.c2": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "TTOT",
+   "text": "the agreed TTOT tolerance",
+   "rel_type": "",
+   "note": ""
+  },
+  "M6.procedures.2.c4": {
+   "decision": "edit",
+   "kind": "relationship",
+   "owner": "",
+   "text": "Network Operations is informed when the TTOT changes by more than the agreed TTOT tolerance.",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M6.procedures.6.c1": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M6.operational_status.1.c1": {
+   "decision": "accept",
+   "kind": "enumeration",
+   "owner": "Flight",
+   "text": "LANDED",
+   "rel_type": "",
+   "note": ""
+  },
+  "M6.action_on_cdm.1.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Airport CDM Platform",
+   "text": "ELDT changes to ALDT",
+   "rel_type": "",
+   "note": ""
+  },
+  "M7.definition.1.c1": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "AIBT - Actual In-Block Time.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M7.definition.3.c1": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "Airline/Handler ATA - Actual Time of Arrival",
+   "rel_type": "",
+   "note": ""
+  },
+  "M7.definition.3.c2": {
+   "decision": "edit",
+   "kind": "attribute",
+   "owner": "Aircraft",
+   "text": "(Equivalent to Airline/Handler ATA - Actual Time of Arrival, ACARS = IN)",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M7.definition.3.c3": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "ACGT",
+   "rel_type": "",
+   "note": ""
+  },
+  "M7.definition.3.c4": {
+   "decision": "edit",
+   "kind": "operation",
+   "owner": "Milestone 7: In-Block",
+   "text": "ACGT is considered to commence at AIBT",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M7.origin_and_priority.1.c1": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "AIBT",
+   "text": "ACARS equipped aircraft or automated docking systems or ATC systems (e.g. A-SMGCS) or by manual input.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M7.origin_and_priority.1.c2": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "automated docking systems",
+   "rel_type": "",
+   "note": ""
+  },
+  "M7.origin_and_priority.1.c3": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "ATC systems (e.g. A-SMGCS)",
+   "rel_type": "",
+   "note": ""
+  },
+  "M7.origin_and_priority.1.c4": {
+   "decision": "edit",
+   "kind": "operation",
+   "owner": "Milestone 7: In-Block",
+   "text": "ACARS equipped aircraft or automated docking systems or ATC systems (e.g. A-SMGCS) or by manual input.",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M7.timing.1.c1": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "Milestone 7: In-Block",
+   "text": "The information is directly available after occurrence of the milestone.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M7.data_quality.1.c1": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "AIBT",
+   "text": "Data is available with an accuracy of +/- 1 minute.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M7.effect.1.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 7: In-Block",
+   "text": "The occurrence of AIBT should trigger an update of downstream estimates: TOBT and TTOT are updated automatically or inserted manually by the Aircraft Operator / Ground Handler",
+   "rel_type": "",
+   "note": ""
+  },
+  "M7.effect.1.c5": {
+   "decision": "edit",
+   "kind": "operation",
+   "owner": "Milestone 7: In-Block",
+   "text": "TOBT and TTOT are updated automatically or inserted manually by the Aircraft Operator / Ground Handler",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M7.effect.1.c6": {
+   "decision": "edit",
+   "kind": "operation",
+   "owner": "Aircraft Operator / Ground Handler",
+   "text": "TOBT and TTOT ... calculated on the basis of the estimated turn-round period for the departing flight",
+   "rel_type": "",
+   "note": ""
+  },
+  "M7.effect.1.c7": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "departing flight",
+   "text": "the estimated turn-round period for the departing flight",
+   "rel_type": "",
+   "note": ""
+  },
+  "M7.procedures.1.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 7: In-Block",
+   "text": "To check whether the AO/GH TOBT is consistent with the ATC Flight Plan.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M7.procedures.2.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 7: In-Block",
+   "text": "Network Operations is informed when the TTOT changes by more than the agreed TTOT tolerance.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M7.procedures.2.c2": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "TTOT",
+   "text": "the agreed TTOT tolerance",
+   "rel_type": "",
+   "note": ""
+  },
+  "M7.procedures.2.c4": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M7.procedures.6.c1": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M7.operational_status.1.c1": {
+   "decision": "accept",
+   "kind": "enumeration",
+   "owner": "Flight",
+   "text": "IN-BLOCK",
+   "rel_type": "",
+   "note": ""
+  },
+  "M7.action_on_cdm.1.c1": {
+   "decision": "edit",
+   "kind": "operation",
+   "owner": "Airport CDM Platform",
+   "text": "EIBT changes to AIBT TOBT and TTOT updated",
+   "rel_type": "",
+   "note": ""
+  },
+  "M8.definition.1.c1": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "Commence of Ground Handling Operations (ACGT).",
+   "rel_type": "",
+   "note": ""
+  },
+  "M8.definition.2.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 8: Ground Handling Started",
+   "text": "this milestone is specific to flights that are the first operation of the day or that have been long term parked.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M8.definition.3.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 8: Ground Handling Started",
+   "text": "For flights that are on a normal turn-round ACGT is considered to commence at AIBT.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M8.origin_and_priority.1.c1": {
+   "decision": "accept",
+   "kind": "relationship",
+   "owner": "",
+   "text": "Aircraft Operator / Ground Handler will provide the information.",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M8.origin_and_priority.1.c2": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M8.timing.1.c1": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M8.data_quality.1.c1": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "ACGT",
+   "text": "Data is available with an accuracy of +/- 1 minute.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M8.effect.1.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 8: Ground Handling Started",
+   "text": "The occurrence of ACGT triggers an update of downstream estimates",
+   "rel_type": "",
+   "note": ""
+  },
+  "M8.effect.1.c2": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Aircraft Operator / Ground Handler",
+   "text": "TOBT is updated automatically or inserted manually by the Aircraft Operator / Ground Handler, calculated on the basis of the estimated turn-round period for the departing flight.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M8.effect.1.c4": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M8.effect.1.c5": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "Flight",
+   "text": "the estimated turn-round period for the departing flight",
+   "rel_type": "",
+   "note": ""
+  },
+  "M8.procedures.1.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 8: Ground Handling Started",
+   "text": "To check whether the AO/GH TOBT is consistent with the ATC Flight Plan.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M8.procedures.2.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 8: Ground Handling Started",
+   "text": "Network Operations is informed when the TTOT changes by more than the agreed TTOT tolerance.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M8.procedures.2.c2": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "TTOT",
+   "text": "the agreed TTOT tolerance",
+   "rel_type": "",
+   "note": ""
+  },
+  "M8.procedures.2.c5": {
+   "decision": "accept",
+   "kind": "relationship",
+   "owner": "",
+   "text": "Network Operations is informed when the TTOT changes",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M8.procedures.6.c1": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M8.action_on_cdm.1.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Airport CDM Platform",
+   "text": "ETTT/TOBT, TTOT updated",
+   "rel_type": "",
+   "note": ""
+  },
+  "M8.action_on_cdm.1.c2": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "ETTT",
+   "rel_type": "",
+   "note": ""
+  },
+  "M9.definition.1.c1": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "their most accurate TOBT",
+   "rel_type": "",
+   "note": ""
+  },
+  "M9.definition.1.c4": {
+   "decision": "accept",
+   "kind": "relationship",
+   "owner": "",
+   "text": "the Aircraft Operator or Ground Handler provide their most accurate TOBT",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M9.origin_and_priority.1.c1": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M9.timing.1.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 9: Final Confirmation of the TOBT",
+   "text": "The information is provided t minutes before EOBT",
+   "rel_type": "",
+   "note": ""
+  },
+  "M9.timing.1.c2": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "Milestone 9: Final Confirmation of the TOBT",
+   "text": "t is a parameter time agreed locally",
+   "rel_type": "",
+   "note": ""
+  },
+  "M9.data_quality.1.c1": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "Milestone 9: Final Confirmation of the TOBT",
+   "text": "Accuracy is agreed locally.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M9.effect.3.c1": {
+   "decision": "edit",
+   "kind": "operation",
+   "owner": "Milestone 9: Final Confirmation of the TOBT",
+   "text": "EOBT (shared by ATC, Network Operations and Stand / Gate Management)",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M9.effect.3.c4": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "Stand / Gate Management",
+   "rel_type": "",
+   "note": ""
+  },
+  "M9.effect.4.c1": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "push back / pre-departure sequence",
+   "rel_type": "",
+   "note": ""
+  },
+  "M9.effect.4.c2": {
+   "decision": "edit",
+   "kind": "operation",
+   "owner": "ATC",
+   "text": "for ATC to establish a push back / pre-departure sequence",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M9.effect.6.c3": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "ATC system",
+   "text": "Following the receipt of the TOBT, the ATC system will calculate and provide the Estimated Taxi-Out Time (EXOT) based on the predicted traffic load, gate / stand location, runway in use, and waiting period at the Holding Position, etc.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M9.effect.6.c4": {
+   "decision": "edit",
+   "kind": "operation",
+   "owner": "ATC system",
+   "text": "the ATC system will calculate and provide the Estimated Taxi-Out Time (EXOT)",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M9.effect.6.c5": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "ATC system",
+   "text": "The flight is introduced into the pre-departure sequence.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M9.procedures.1.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 9: Final Confirmation of the TOBT",
+   "text": "To check whether the AO/GH TOBT is consistent with the ATC Flight Plan.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M9.procedures.2.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 9: Final Confirmation of the TOBT",
+   "text": "Network Operations is informed when the TTOT changes by more than the agreed TTOT tolerance.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M9.procedures.2.c3": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "TTOT",
+   "text": "the agreed TTOT tolerance",
+   "rel_type": "",
+   "note": ""
+  },
+  "M9.procedures.2.c4": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M9.procedures.3.c1": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M9.procedures.3.c2": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 9: Final Confirmation of the TOBT",
+   "text": "to confirm TOBT prior to TSAT issue",
+   "rel_type": "",
+   "note": ""
+  },
+  "M9.procedures.3.c4": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "TSAT",
+   "rel_type": "",
+   "note": ""
+  },
+  "M9.procedures.5.c1": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "CDM Platform",
+   "rel_type": "",
+   "note": ""
+  },
+  "M9.procedures.5.c2": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Airport CDM Platform",
+   "text": "This Milestone Process is actually constantly applicable in the CDM Platform, as soon as a TOBT is available.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M9.procedures.6.c1": {
+   "decision": "accept",
+   "kind": "enumeration",
+   "owner": "TOBT",
+   "text": "the confirmed TOBT prior to TSAT has special status",
+   "rel_type": "",
+   "note": ""
+  },
+  "M9.procedures.6.c2": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Aircraft Operator / Ground Handler",
+   "text": "AO/GH check the quality of TOBT before TSAT issue",
+   "rel_type": "",
+   "note": ""
+  },
+  "M9.action_on_cdm.1.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Airport CDM Platform",
+   "text": "This process is triggered by - a new TOBT or TTOT update.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M9.action_on_cdm.2.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Airport CDM Platform",
+   "text": "No need to confirm an existing TOBT if it has been manually modified before.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M10.definition.1.c2": {
+   "decision": "accept",
+   "kind": "relationship",
+   "owner": "",
+   "text": "ATC issues the Target Start Up Approval Time",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M10.definition.1.c3": {
+   "decision": "reject",
+   "note": "equivalent as c2"
+  },
+  "M10.origin_and_priority.1.c1": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M10.timing.1.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 10: TSAT Issued",
+   "text": "The information is provided t-minutes before EOBT, where t is a parameter agreed locally",
+   "rel_type": "",
+   "note": ""
+  },
+  "M10.timing.1.c2": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M10.data_quality.1.c1": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "Milestone 10: TSAT Issued",
+   "text": "Accuracy is agreed locally.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M10.effect.1.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 10: TSAT Issued",
+   "text": "The flight is stabilised into the pre-departure sequence.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M10.effect.1.c2": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M10.procedures.1.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 10: TSAT Issued",
+   "text": "To inform all relevant partners of the TSAT that has been allocated to the flight.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M10.procedures.1.c2": {
+   "decision": "accept",
+   "kind": "relationship",
+   "owner": "",
+   "text": "the TSAT that has been allocated to the flight",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M10.procedures.2.c1": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "T-DPI-s",
+   "rel_type": "",
+   "note": ""
+  },
+  "M10.procedures.2.c3": {
+   "decision": "accept",
+   "kind": "relationship",
+   "owner": "",
+   "text": "The Network Operations is informed by a T-DPI-s",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M10.procedures.2.c4": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 10: TSAT Issued",
+   "text": "The Network Operations is informed by a T-DPI-s for non regulated flights.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M10.procedures.3.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 10: TSAT Issued",
+   "text": "To check whether the number of TOBT updates exceeds a tolerance defined locally, after TSAT has been issued.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M10.procedures.3.c2": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "Flight",
+   "text": "the number of TOBT updates",
+   "rel_type": "",
+   "note": ""
+  },
+  "M10.procedures.3.c3": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "Milestone 10: TSAT Issued",
+   "text": "a tolerance defined locally",
+   "rel_type": "",
+   "note": ""
+  },
+  "M10.procedures.8.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 10: TSAT Issued",
+   "text": "In case the number of TOBT updates exceeds a threshold, then the TOBT input should be processed according to local procedure.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M10.procedures.10.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 10: TSAT Issued",
+   "text": "A defined time (local parameter) before TOBT",
+   "rel_type": "",
+   "note": ""
+  },
+  "M10.procedures.10.c2": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M10.procedures.11.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 10: TSAT Issued",
+   "text": "TOBT update after TSAT issue",
+   "rel_type": "",
+   "note": ""
+  },
+  "M10.operational_status.1.c1": {
+   "decision": "accept",
+   "kind": "enumeration",
+   "owner": "Flight",
+   "text": "SEQUENCED",
+   "rel_type": "",
+   "note": ""
+  },
+  "M10.action_on_cdm.1.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Airport CDM Platform",
+   "text": "TTOT updated",
+   "rel_type": "",
+   "note": ""
+  },
+  "M11.definition.1.c1": {
+   "decision": "edit",
+   "kind": "operation",
+   "owner": "Milestone 11: Boarding Starts",
+   "text": "The gate is open for passengers to physically start boarding (independent of whether boarding takes place via an air-bridge/pier, aircraft steps or coaching to a stand).",
+   "rel_type": "",
+   "note": ""
+  },
+  "M11.origin_and_priority.1.c1": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "Milestone 11: Boarding Starts",
+   "text": "Automatic from airport system or manual input by Aircraft Operator/ Ground Handler.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M11.origin_and_priority.1.c2": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M11.origin_and_priority.1.c3": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M11.timing.1.c1": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "Milestone 11: Boarding Starts",
+   "text": "The information is directly available after occurrence of the milestone.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M11.data_quality.1.c1": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "Milestone 11: Boarding Starts",
+   "text": "Data is available with an accuracy of +/- 1 minute.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M11.procedures.1.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 11: Boarding Starts",
+   "text": "To inform all relevant Airport CDM Partners of Actual Start Boarding Time (ASBT).",
+   "rel_type": "",
+   "note": ""
+  },
+  "M11.procedures.1.c2": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "Actual Start Boarding Time (ASBT)",
+   "rel_type": "",
+   "note": ""
+  },
+  "M11.procedures.1.c3": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M11.procedures.2.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 11: Boarding Starts",
+   "text": "To check whether boarding starts in time to respect TOBT",
+   "rel_type": "",
+   "note": ""
+  },
+  "M11.procedures.2.c2": {
+   "decision": "edit",
+   "kind": "operation",
+   "owner": "Aircraft Operator / Ground Handler",
+   "text": "inform the AO/GH in case TOBT needs to be updated",
+   "rel_type": "",
+   "note": ""
+  },
+  "M11.procedures.4.c2": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "Milestone 11: Boarding Starts",
+   "text": "a certain time before TOBT (local variable e.g. corresponding to aircraft type)",
+   "rel_type": "",
+   "note": ""
+  },
+  "M11.procedures.6.c1": {
+   "decision": "edit",
+   "kind": "attribute",
+   "owner": "Milestone 11: Boarding Starts",
+   "text": "- a time variable <value> minutes before TOBT.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M11.operational_status.1.c1": {
+   "decision": "accept",
+   "kind": "enumeration",
+   "owner": "Flight",
+   "text": "BOARDING",
+   "rel_type": "",
+   "note": ""
+  },
+  "M12.definition.1.c1": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "Aircraft Ready",
+   "rel_type": "",
+   "note": ""
+  },
+  "M12.definition.1.c2": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "(ARDT)",
+   "rel_type": "",
+   "note": ""
+  },
+  "M12.definition.1.c3": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 12: Aircraft Ready",
+   "text": "The time when all doors are closed, boarding bridge removed, push back vehicle connected, ready to taxi immediately upon reception of TWR instructions (ARDT).",
+   "rel_type": "",
+   "note": ""
+  },
+  "M12.definition.1.c4": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M12.origin_and_priority.1.c3": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M12.origin_and_priority.1.c4": {
+   "decision": "accept",
+   "kind": "relationship",
+   "owner": "",
+   "text": "Provided by the Aircraft Operator/ Ground Handler.",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M12.timing.1.c1": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M12.data_quality.1.c1": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "ARDT",
+   "text": "Data is directly available with an accuracy of +/- 1 minute.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M12.effect.1.c2": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "ATC",
+   "text": "ATC refines the pre-departure sequence.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M12.effect.2.c2": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Pilot",
+   "text": "The pilot requests start up just before TSAT, following coordination with the Ground Handler.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M12.effect.2.c3": {
+   "decision": "accept",
+   "kind": "relationship",
+   "owner": "",
+   "text": "following coordination with the Ground Handler",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M12.procedures.1.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 12: Aircraft Ready",
+   "text": "To inform all relevant Airport CDM Partners of Actual Ready Time (ARDT) in the Airport CDM Platform and that the aircraft is ready for start up / push-back.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M12.procedures.1.c3": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "Airport CDM Partners",
+   "rel_type": "",
+   "note": ""
+  },
+  "M12.procedures.1.c4": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M12.procedures.2.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 12: Aircraft Ready",
+   "text": "To inform the AO/GH that TOBT has passed and the Airport CDM Platform has not yet received ARDT or Ready Status (RDY).",
+   "rel_type": "",
+   "note": ""
+  },
+  "M12.procedures.2.c3": {
+   "decision": "accept",
+   "kind": "enumeration",
+   "owner": "Flight",
+   "text": "Ready Status (RDY)",
+   "rel_type": "",
+   "note": ""
+  },
+  "M12.procedures.4.c2": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "TOBT",
+   "text": "TOBT + tolerance",
+   "rel_type": "",
+   "note": ""
+  },
+  "M12.procedures.6.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 12: Aircraft Ready",
+   "text": "- an input to the Airport CDM Platform.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M12.procedures.6.c2": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M12.operational_status.1.c1": {
+   "decision": "accept",
+   "kind": "enumeration",
+   "owner": "Flight",
+   "text": "READY",
+   "rel_type": "",
+   "note": ""
+  },
+  "M13.definition.1.c1": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "The time that start up is requested (ASRT).",
+   "rel_type": "",
+   "note": ""
+  },
+  "M13.definition.1.c2": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M13.origin_and_priority.1.c1": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M13.origin_and_priority.1.c2": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M13.timing.1.c1": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "Milestone 13: Start Up Requested",
+   "text": "The information is directly available after occurrence of the milestone.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M13.data_quality.1.c1": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "ASRT",
+   "text": "Data is available with an accuracy of +/- 1 minute.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M13.effect.1.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "ATC",
+   "text": "ATC confirms TSAT to the pilot in order to maintain the aircraft in the pre-departure sequence.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M13.effect.1.c3": {
+   "decision": "accept",
+   "kind": "relationship",
+   "owner": "",
+   "text": "ATC confirms TSAT to the pilot",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M13.effect.2.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "ATC",
+   "text": "Provided the aircraft was ready on time (ARDT), it is now up to ATC to assure that a regulated flight can respect its CTOT.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M13.procedures.1.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 13: Start Up Requested",
+   "text": "To inform all relevant Airport CDM Partners of Actual Start up Request Time (ASRT) in the Airport CDM Platform.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M13.procedures.1.c4": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M13.procedures.2.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 13: Start Up Requested",
+   "text": "to alert all relevant Airport CDM Partners when no start up has been re-quested inside the locally agreed TSAT tolerance window.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M13.procedures.2.c2": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "TSAT",
+   "text": "the locally agreed TSAT tolerance window",
+   "rel_type": "",
+   "note": ""
+  },
+  "M13.procedures.4.c2": {
+   "decision": "edit",
+   "kind": "operation",
+   "owner": "Aircraft Operator / Ground Handler",
+   "text": "the AO/GH is informed that no start up has been requested",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M13.procedures.4.c3": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Aircraft Operator / Ground Handler",
+   "text": "and should update TOBT.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M13.procedures.5.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 13: Start Up Requested",
+   "text": "Timestamp when the tolerance window has passed at TSAT.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M14.definition.1.c1": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "ASAT - Actual start up Approval Time.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M14.definition.2.c2": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "an aircraft receives its start up approval",
+   "rel_type": "",
+   "note": ""
+  },
+  "M14.definition.2.c3": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M14.origin_and_priority.1.c1": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M14.origin_and_priority.1.c3": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M14.timing.1.c1": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "ASAT",
+   "text": "The information is directly available after occurrence of the milestone.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M14.data_quality.1.c1": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "ASAT",
+   "text": "Data is available with an accuracy of +/- 1 minute.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M14.effect.1.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Aircraft",
+   "text": "On receipt of ATC approval, the aircraft will start up, push back and start to taxi.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M14.procedures.1.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 14: Start Up Approved",
+   "text": "To inform all relevant Airport CDM Partners of Actual start up approval Time (ASAT) in the Airport CDM Platform and that the aircraft has received start up approval / push-back clearance.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M14.procedures.1.c4": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M14.procedures.2.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 14: Start Up Approved",
+   "text": "To check if ASAT is in accordance to TSAT",
+   "rel_type": "",
+   "note": ""
+  },
+  "M14.procedures.2.c2": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 14: Start Up Approved",
+   "text": "to alert all relevant Airport CDM Partners when no start up has been granted",
+   "rel_type": "",
+   "note": ""
+  },
+  "M14.procedures.4.c2": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "TSAT",
+   "text": "TSAT + tolerance",
+   "rel_type": "",
+   "note": ""
+  },
+  "M14.procedures.5.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 14: Start Up Approved",
+   "text": "The flight will be re-sequenced.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M14.procedures.6.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 14: Start Up Approved",
+   "text": "Start up request by flight crew (voice or DCL) or a locally defined time around TSAT if Milestone Process 13 is omitted.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M14.procedures.6.c2": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "Start up request",
+   "rel_type": "",
+   "note": ""
+  },
+  "M14.procedures.6.c3": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "flight crew",
+   "rel_type": "",
+   "note": ""
+  },
+  "M14.procedures.6.c4": {
+   "decision": "accept",
+   "kind": "relationship",
+   "owner": "",
+   "text": "Start up request by flight crew",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M14.procedures.6.c5": {
+   "decision": "accept",
+   "kind": "enumeration",
+   "owner": "Start up request",
+   "text": "(voice or DCL)",
+   "rel_type": "",
+   "note": ""
+  },
+  "M14.procedures.6.c6": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "Milestone 14: Start Up Approved",
+   "text": "a locally defined time around TSAT",
+   "rel_type": "",
+   "note": ""
+  },
+  "M15.definition.1.c1": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "AOBT - Actual Off-Block Time.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M15.definition.1.c2": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M15.definition.2.c1": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "Airline/Handler ATD - Actual Time of Departure",
+   "rel_type": "",
+   "note": ""
+  },
+  "M15.definition.2.c2": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M15.definition.2.c3": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "AOBT",
+   "text": "The time the aircraft pushes back/vacates the parking position",
+   "rel_type": "",
+   "note": ""
+  },
+  "M15.origin_and_priority.1.c1": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M15.origin_and_priority.1.c2": {
+   "decision": "edit",
+   "kind": "attribute",
+   "owner": "Aircraft",
+   "text": "ACARS equipped aircraft",
+   "rel_type": "generalization",
+   "note": ""
+  },
+  "M15.origin_and_priority.1.c5": {
+   "decision": "accept",
+   "kind": "relationship",
+   "owner": "",
+   "text": "ACARS equipped aircraft or automated docking systems or ATC systems (e.g. A-SMGCS) or by manual input.",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M15.timing.1.c1": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "Milestone 15: Off-Block",
+   "text": "The information is directly available after occurrence of the milestone.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M15.data_quality.1.c1": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "AOBT",
+   "text": "Data is available with an accuracy of +/- 1 minute.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M15.effect.1.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 15: Off-Block",
+   "text": "TTOT updated considering the EXOT.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M15.procedures.1.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 15: Off-Block",
+   "text": "To inform all relevant Airport CDM Partners of Actual Off-Block Time (AOBT) in the Airport CDM Platform and that the aircraft has commenced push-back / taxi from parking position.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M15.procedures.1.c4": {
+   "decision": "edit",
+   "kind": "attribute",
+   "owner": "Airport CDM Platform",
+   "text": "Actual Off-Block Time (AOBT) in the Airport CDM Platform",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M15.procedures.2.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 15: Off-Block",
+   "text": "To check if TTOT changes by more than the agreed tolerance and inform Network Operations.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M15.procedures.2.c2": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "TTOT",
+   "text": "the agreed tolerance",
+   "rel_type": "",
+   "note": ""
+  },
+  "M15.procedures.4.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 15: Off-Block",
+   "text": "AOBT always triggers an A-DPI message to Network Operations",
+   "rel_type": "",
+   "note": ""
+  },
+  "M15.procedures.4.c2": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "A-DPI message",
+   "rel_type": "",
+   "note": ""
+  },
+  "M15.procedures.4.c3": {
+   "decision": "edit",
+   "kind": "relationship",
+   "owner": "",
+   "text": "AOBT always triggers an A-DPI message to Network Operations",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M15.procedures.4.c4": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M15.procedures.4.c5": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 15: Off-Block",
+   "text": "in the case of remote holding at a defined time prior to TTOT",
+   "rel_type": "",
+   "note": ""
+  },
+  "M15.procedures.6.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 15: Off-Block",
+   "text": "This process is triggered by AOBT detection.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M15.procedures.6.c2": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M15.operational_status.1.c1": {
+   "decision": "accept",
+   "kind": "enumeration",
+   "owner": "Flight",
+   "text": "OFF-BLOCK",
+   "rel_type": "",
+   "note": ""
+  },
+  "M15.action_on_cdm.1.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Airport CDM Platform",
+   "text": "AOBT recorded",
+   "rel_type": "",
+   "note": ""
+  },
+  "M16.definition.1.c1": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "ATOT - Actual Take Off Time.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M16.definition.1.c2": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M16.definition.3.c1": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "ATC ATD-Actual Time of Departure",
+   "rel_type": "",
+   "note": ""
+  },
+  "M16.definition.3.c2": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M16.definition.3.c3": {
+   "decision": "edit",
+   "kind": "attribute",
+   "owner": "Aircraft",
+   "text": "ACARS = OFF",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M16.origin_and_priority.1.c1": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M16.origin_and_priority.1.c4": {
+   "decision": "accept",
+   "kind": "relationship",
+   "owner": "",
+   "text": "Provided by ATC system",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M16.origin_and_priority.1.c5": {
+   "decision": "accept",
+   "kind": "relationship",
+   "owner": "",
+   "text": "or from ACARS equipped aircraft",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M16.timing.1.c1": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "Milestone 16: Take Off",
+   "text": "The information is directly available as soon as possible after occurrence of the milestone.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M16.data_quality.1.c1": {
+   "decision": "accept",
+   "kind": "attribute",
+   "owner": "ATOT",
+   "text": "Data is available with an accuracy of +/- 1 minute.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M16.effect.1.c1": {
+   "decision": "edit",
+   "kind": "class",
+   "owner": "",
+   "text": "FSA .. messages",
+   "rel_type": "",
+   "note": ""
+  },
+  "M16.effect.1.c2": {
+   "decision": "edit",
+   "kind": "class",
+   "owner": "",
+   "text": "MVT .. messages",
+   "rel_type": "",
+   "note": ""
+  },
+  "M16.effect.1.c3": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 16: Take Off",
+   "text": "FSA and MVT messages are sent.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M16.effect.1.c4": {
+   "decision": "reject",
+   "note": ""
+  },
+  "M16.procedures.1.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 16: Take Off",
+   "text": "To inform all relevant Airport CDM Partners about the actual take off.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M16.procedures.2.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 16: Take Off",
+   "text": "An airborne message is generated",
+   "rel_type": "",
+   "note": ""
+  },
+  "M16.procedures.2.c2": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "airborne message",
+   "rel_type": "",
+   "note": ""
+  },
+  "M16.procedures.2.c3": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 16: Take Off",
+   "text": "the flight is removed from the departure sequence.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M16.procedures.2.c4": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "departure sequence",
+   "rel_type": "",
+   "note": ""
+  },
+  "M16.procedures.3.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Milestone 16: Take Off",
+   "text": "This process is triggered by Tower FDPS, A-SMGCS / Radar detection or ACARS.",
+   "rel_type": "",
+   "note": ""
+  },
+  "M16.procedures.3.c2": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "Tower FDPS",
+   "rel_type": "",
+   "note": ""
+  },
+  "M16.procedures.3.c3": {
+   "decision": "accept",
+   "kind": "class",
+   "owner": "",
+   "text": "A-SMGCS / Radar",
+   "rel_type": "",
+   "note": ""
+  },
+  "M16.procedures.3.c5": {
+   "decision": "accept",
+   "kind": "relationship",
+   "owner": "",
+   "text": "triggered by Tower FDPS",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M16.procedures.3.c6": {
+   "decision": "accept",
+   "kind": "relationship",
+   "owner": "",
+   "text": "triggered by A-SMGCS / Radar detection",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M16.procedures.3.c7": {
+   "decision": "accept",
+   "kind": "relationship",
+   "owner": "",
+   "text": "triggered by ACARS",
+   "rel_type": "other",
+   "note": ""
+  },
+  "M16.operational_status.1.c1": {
+   "decision": "accept",
+   "kind": "enumeration",
+   "owner": "Flight",
+   "text": "DEPARTED / TAKE OFF",
+   "rel_type": "",
+   "note": ""
+  },
+  "M16.action_on_cdm.1.c1": {
+   "decision": "accept",
+   "kind": "operation",
+   "owner": "Airport CDM Platform",
+   "text": "ATOT recorded",
+   "rel_type": "",
+   "note": ""
+  }
+ },
+ "added": {
+  "M1.definition.1": [
+   {
+    "kind": "relationship",
+    "owner": "",
+    "text": "ICAO flight plan",
+    "rel_type": "generalization",
+    "note": "",
+    "by": [
+     "grader_B"
+    ]
+   },
+   {
+    "kind": "class",
+    "owner": "",
+    "text": "ATC",
+    "rel_type": "",
+    "note": "",
+    "by": [
+     "grader_B"
+    ]
+   }
+  ],
+  "M1.definition.2": [
+   {
+    "kind": "class",
+    "owner": "",
+    "text": "flight",
+    "rel_type": "",
+    "note": "",
+    "by": [
+     "grader_B"
+    ]
+   }
+  ],
+  "M1.origin_and_priority.1": [
+   {
+    "kind": "relationship",
+    "owner": "",
+    "text": "The ATC Flight Plan",
+    "rel_type": "generalization",
+    "note": "",
+    "by": [
+     "grader_B"
+    ]
+   }
+  ],
+  "M1.origin_and_priority.2": [
+   {
+    "kind": "class",
+    "owner": "",
+    "text": "Airport",
+    "rel_type": "",
+    "note": "",
+    "by": [
+     "grader_A",
+     "grader_B"
+    ]
+   }
+  ],
+  "M1.timing.2": [
+   {
+    "kind": "relationship",
+    "owner": "",
+    "text": "repetitive flight plan (RFPL)",
+    "rel_type": "generalization",
+    "note": "",
+    "by": [
+     "grader_B"
+    ]
+   }
+  ],
+  "M1.data_quality.1": [
+   {
+    "kind": "relationship",
+    "owner": "",
+    "text": "ATC Flight Plan",
+    "rel_type": "generalization",
+    "note": "",
+    "by": [
+     "grader_B"
+    ]
+   },
+   {
+    "kind": "class",
+    "owner": "",
+    "text": "Flight Plan",
+    "rel_type": "",
+    "note": "",
+    "by": [
+     "grader_B"
+    ]
+   }
+  ],
+  "M1.effect.2": [
+   {
+    "kind": "enumeration",
+    "owner": "Airport",
+    "text": "coordinated",
+    "rel_type": "",
+    "note": "",
+    "by": [
+     "grader_A",
+     "grader_B"
+    ]
+   }
+  ],
+  "M1.effect.5": [
+   {
+    "kind": "enumeration",
+    "owner": "Airport",
+    "text": "non-coordinated",
+    "rel_type": "",
+    "note": "",
+    "by": [
+     "grader_A",
+     "grader_B"
+    ]
+   }
+  ],
+  "M1.effect.6": [
+   {
+    "kind": "class",
+    "owner": "",
+    "text": "EOBT",
+    "rel_type": "",
+    "note": "",
+    "by": [
+     "grader_B"
+    ]
+   }
+  ],
+  "M1.procedures.1": [
+   {
+    "kind": "attribute",
+    "owner": "Airport",
+    "text": "Airport flight data",
+    "rel_type": "",
+    "note": "",
+    "by": [
+     "grader_A",
+     "grader_B"
+    ]
+   },
+   {
+    "kind": "class",
+    "owner": "",
+    "text": "Network Operations",
+    "rel_type": "",
+    "note": "",
+    "by": [
+     "grader_B"
+    ]
+   }
+  ],
+  "M1.action_on_cdm.1": [
+   {
+    "kind": "operation",
+    "owner": "Milestone 1: ATC Flight Plan Activated",
+    "text": "The DPI process commences (if implemented - see section 3.7.3 for details).",
+    "rel_type": "",
+    "note": "",
+    "by": [
+     "grader_B"
+    ]
+   }
+  ],
+  "M2.definition.1": [
+   {
+    "kind": "operation",
+    "owner": "",
+    "text": "At EOBT-2 hr most flights will be known in the Airport CDM Platform including if they are regulated or not.",
+    "rel_type": "",
+    "note": "",
+    "by": [
+     "grader_B"
+    ]
+   }
+  ],
+  "M2.origin_and_priority.2": [
+   {
+    "kind": "attribute",
+    "owner": "Flight",
+    "text": "CTOT flights",
+    "rel_type": "generalization",
+    "note": "",
+    "by": [
+     "grader_B"
+    ]
+   },
+   {
+    "kind": "attribute",
+    "owner": "Flight",
+    "text": "unregulated flights",
+    "rel_type": "",
+    "note": "",
+    "by": [
+     "grader_B"
+    ]
+   }
+  ],
+  "M2.procedures.4": [
+   {
+    "kind": "class",
+    "owner": "",
+    "text": "EIBT",
+    "rel_type": "",
+    "note": "",
+    "by": [
+     "grader_B"
+    ]
+   },
+   {
+    "kind": "class",
+    "owner": "",
+    "text": "EOBT",
+    "rel_type": "",
+    "note": "",
+    "by": [
+     "grader_B"
+    ]
+   },
+   {
+    "kind": "class",
+    "owner": "",
+    "text": "EXOT",
+    "rel_type": "",
+    "note": "",
+    "by": [
+     "grader_B"
+    ]
+   }
+  ],
+  "M4.timing.1": [
+   {
+    "kind": "class",
+    "owner": "",
+    "text": "FIR",
+    "rel_type": "",
+    "note": "",
+    "by": [
+     "grader_B"
+    ]
+   }
+  ],
+  "M4.effect.6": [
+   {
+    "kind": "operation",
+    "owner": "Milestone 4: Local Radar Update",
+    "text": "The update of TOBT for the related departing flight takes place following this milestone.\n",
+    "rel_type": "",
+    "note": "",
+    "by": [
+     "grader_B"
+    ]
+   }
+  ],
+  "M5.definition.1": [
+   {
+    "kind": "operation",
+    "owner": "Flight",
+    "text": "The flight enters the Final Approach phase at the destination airport.",
+    "rel_type": "",
+    "note": "",
+    "by": [
+     "grader_B"
+    ]
+   }
+  ],
+  "M6.definition.3": [
+   {
+    "kind": "enumeration",
+    "owner": "Aircraft",
+    "text": "ACARS=ON",
+    "rel_type": "",
+    "note": "",
+    "by": [
+     "grader_B"
+    ]
+   }
+  ],
+  "M6.procedures.6": [
+   {
+    "kind": "class",
+    "owner": "",
+    "text": "Actual Landing Time: ALDT",
+    "rel_type": "",
+    "note": "",
+    "by": [
+     "grader_B"
+    ]
+   }
+  ],
+  "M9.effect.6": [
+   {
+    "kind": "attribute",
+    "owner": "ATC system",
+    "text": " predicted traffic load, gate / stand location, runway in use, and waiting period at the Holding Position, etc.",
+    "rel_type": "",
+    "note": "",
+    "by": [
+     "grader_B"
+    ]
+   }
+  ],
+  "M9.procedures.1": [
+   {
+    "kind": "relationship",
+    "owner": "",
+    "text": "AO/GH TOBT",
+    "rel_type": "generalization",
+    "note": "",
+    "by": [
+     "grader_A"
+    ]
+   }
+  ],
+  "M9.procedures.3": [
+   {
+    "kind": "attribute",
+    "owner": "ATC",
+    "text": "verify feasibility of the ATC Flight Plan estimates given the updated TOBT.",
+    "rel_type": "",
+    "note": "",
+    "by": [
+     "grader_B"
+    ]
+   }
+  ],
+  "M12.procedures.1": [
+   {
+    "kind": "class",
+    "owner": "",
+    "text": "Airport CDM Platform",
+    "rel_type": "",
+    "note": "",
+    "by": [
+     "grader_A"
+    ]
+   },
+   {
+    "kind": "operation",
+    "owner": "Aircraft",
+    "text": "aircraft is ready for start up / push-back.",
+    "rel_type": "",
+    "note": "",
+    "by": [
+     "grader_A"
+    ]
+   }
+  ],
+  "M14.procedures.4": [
+   {
+    "kind": "class",
+    "owner": "",
+    "text": "start up approval",
+    "rel_type": "",
+    "note": "",
+    "by": [
+     "grader_B"
+    ]
+   }
+  ]
+ },
+ "merges": {
+  "M1.data_quality.1.a2": "M1.origin_and_priority.1.c1",
+  "M3.procedures.1.c4": "M1.data_quality.1.a2",
+  "M5.data_quality.1.c2": "M1.definition.1.a2",
+  "M9.procedures.5.c1": "M2.definition.1.c1",
+  "M3.effect.2.c3": "M1.data_quality.1.a2",
+  "M3.effect.1.c2": "M2.effect.1.c2",
+  "M3.procedures.1.c3": "M2.procedures.1.c3",
+  "M10.procedures.2.c1": "M2.procedures.1.c3",
+  "M5.procedures.6.c3": "M4.operational_status.1.c1",
+  "M16.procedures.3.c3": "M4.origin_and_priority.2.c2",
+  "M7.origin_and_priority.1.c3": "M5.data_quality.1.c2",
+  "M6.definition.3.c1": "M6.definition.1.c1",
+  "M6.procedures.6.a1": "M6.definition.3.c1",
+  "M6.origin_and_priority.1.c3": "M6.definition.3.a1",
+  "M8.definition.1.c1": "M7.definition.3.c3",
+  "M16.procedures.2.c4": "M9.effect.4.c1",
+  "M9.procedures.6.c1": "M9.procedures.3.c4",
+  "M14.procedures.4.a1": "M14.definition.2.c2",
+  "M12.procedures.1.a1": "M9.procedures.5.c1"
+ },
+ "pairs": {
+  "M1.definition.1.c1|M1.data_quality.1.add.1": "same",
+  "M1.definition.1.add.1|M1.origin_and_priority.1.c1": "distinct",
+  "M1.definition.1.add.1|M3.procedures.1.c4": "same",
+  "M1.definition.1.add.1|M5.data_quality.1.c2": "same",
+  "M1.definition.1.add.1|M6.definition.3.c1": "distinct",
+  "M1.definition.1.add.1|M7.origin_and_priority.1.c3": "distinct",
+  "M1.definition.1.add.1|M16.definition.3.c1": "distinct",
+  "M1.definition.2.c1|M9.procedures.5.c1": "same",
+  "M1.origin_and_priority.1.c1|M1.data_quality.1.add.1": "same",
+  "M1.origin_and_priority.1.c1|M3.procedures.1.c4": "same",
+  "M1.origin_and_priority.1.c1|M5.origin_and_priority.1.c2": "distinct",
+  "M1.timing.1.c2|M15.operational_status.1.c1": "distinct",
+  "M1.timing.2.c1|M1.data_quality.1.add.1": "distinct",
+  "M1.data_quality.1.add.1|M3.effect.2.c3": "same",
+  "M1.data_quality.1.add.1|M3.procedures.1.c4": "same",
+  "M1.effect.6.add.0|M15.operational_status.1.c1": "distinct",
+  "M1.effect.7.c2|M3.effect.1.c2": "distinct",
+  "M1.procedures.1.add.1|M3.effect.1.c2": "distinct",
+  "M1.procedures.3.c2|M15.operational_status.1.c1": "distinct",
+  "M1.action_on_cdm.1.c2|M7.operational_status.1.c1": "distinct",
+  "M2.definition.1.c1|M9.procedures.5.c1": "same",
+  "M2.effect.1.c2|M3.effect.1.c2": "same",
+  "M2.procedures.1.c3|M3.procedures.1.c3": "same",
+  "M2.procedures.1.c3|M10.procedures.2.c1": "same",
+  "M2.procedures.1.c5|M3.origin_and_priority.1.c6": "distinct",
+  "M2.procedures.1.c5|M3.effect.1.c3": "distinct",
+  "M2.procedures.4.add.0|M7.operational_status.1.c1": "distinct",
+  "M2.procedures.4.add.1|M15.operational_status.1.c1": "distinct",
+  "M2.procedures.5.c2|M9.procedures.6.c1": "distinct",
+  "M2.procedures.5.c2|M15.operational_status.1.c1": "distinct",
+  "M3.definition.1.c1|M16.definition.1.c1": "distinct",
+  "M3.procedures.1.c4|M5.origin_and_priority.1.c2": "distinct",
+  "M4.definition.1.c3|M5.procedures.6.c3": "same",
+  "M4.origin_and_priority.2.c2|M16.procedures.3.c3": "same",
+  "M4.timing.1.add.0|M5.procedures.6.c3": "same",
+  "M4.operational_status.1.c1|M5.procedures.6.c3": "same",
+  "M5.origin_and_priority.1.c2|M5.data_quality.1.c2": "distinct",
+  "M5.origin_and_priority.1.c2|M6.definition.3.c1": "distinct",
+  "M5.origin_and_priority.1.c2|M7.origin_and_priority.1.c3": "distinct",
+  "M5.origin_and_priority.1.c2|M16.definition.3.c1": "distinct",
+  "M5.data_quality.1.c2|M7.origin_and_priority.1.c3": "same",
+  "M6.definition.1.c1|M6.definition.3.c1": "same",
+  "M6.definition.3.c1|M6.procedures.6.add.0": "same",
+  "M6.definition.3.add.0|M6.origin_and_priority.1.c3": "same",
+  "M7.definition.1.c1|M7.operational_status.1.c1": "distinct",
+  "M7.definition.3.c3|M8.definition.1.c1": "same",
+  "M9.definition.1.c1|M9.procedures.6.c1": "distinct",
+  "M9.definition.1.c1|M15.operational_status.1.c1": "distinct",
+  "M9.effect.4.c1|M16.procedures.2.c4": "same",
+  "M9.procedures.3.c4|M9.procedures.6.c1": "same",
+  "M9.procedures.3.c4|M14.procedures.4.add.0": "same",
+  "M9.procedures.5.c1|M12.procedures.1.add.0": "same",
+  "M9.procedures.6.c1|M14.procedures.4.add.0": "same",
+  "M9.procedures.6.c1|M15.operational_status.1.c1": "distinct",
+  "M13.definition.1.c1|M14.procedures.6.c2": "distinct",
+  "M14.definition.1.c1|M14.procedures.4.add.0": "distinct",
+  "M14.definition.2.c2|M14.procedures.4.add.0": "same",
+  "M15.definition.1.c1|M15.operational_status.1.c1": "distinct"
+ },
+ "unresolved": {
+  "claims": 0,
+  "additions": 0,
+  "pairs": 0
+ },
+ "changed_at_meeting": 12,
+ "state": {
+  "claims": {
+   "M1.definition.1.c1": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "The ICAO flight plan",
+    "rel_type": "",
+    "note": ""
+   },
+   "M1.definition.1.c2": {
+    "decision": "accept",
+    "kind": "relationship",
+    "owner": "",
+    "text": "The ICAO flight plan is submitted to ATC",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M1.definition.2.c1": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "The Airport CDM Platform",
+    "rel_type": "",
+    "note": ""
+   },
+   "M1.definition.2.c2": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Airport CDM Platform",
+    "text": "The Airport CDM Platform is initiated for this flight",
+    "rel_type": "",
+    "note": ""
+   },
+   "M1.definition.2.c3": {
+    "decision": "edit",
+    "kind": "operation",
+    "owner": "Airport CDM Platform",
+    "text": "all available information for this flight is processed",
+    "rel_type": "",
+    "note": "all available information \"for this flight\" is processed"
+   },
+   "M1.origin_and_priority.1.c1": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "The ATC Flight Plan",
+    "rel_type": "",
+    "note": ""
+   },
+   "M1.origin_and_priority.1.c2": {
+    "decision": "accept",
+    "kind": "relationship",
+    "owner": "",
+    "text": "The ATC Flight Plan is submitted by the Aircraft Operator",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M1.origin_and_priority.1.c3": {
+    "decision": "accept",
+    "kind": "relationship",
+    "owner": "",
+    "text": "The ATC Flight Plan is ... distributed by the IFPS",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M1.origin_and_priority.2.c1": {
+    "decision": "accept",
+    "kind": "relationship",
+    "owner": "",
+    "text": "All involved ATC units receive the flight plan",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M1.origin_and_priority.2.c2": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M1.timing.1.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 1: ATC Flight Plan Activated",
+    "text": "Normally this takes place 3 hours before EOBT, however it may be later",
+    "rel_type": "",
+    "note": ""
+   },
+   "M1.timing.1.c2": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "EOBT",
+    "rel_type": "",
+    "note": ""
+   },
+   "M1.timing.2.c1": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "a repetitive flight plan (RFPL)",
+    "rel_type": "",
+    "note": ""
+   },
+   "M1.timing.2.c2": {
+    "decision": "accept",
+    "kind": "relationship",
+    "owner": "",
+    "text": "a repetitive flight plan (RFPL) has been submitted, covering daily or weekly flights",
+    "rel_type": "generalization",
+    "note": ""
+   },
+   "M1.data_quality.1.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 1: ATC Flight Plan Activated",
+    "text": "The ATC Flight Plan corresponds to the airport slot programme",
+    "rel_type": "",
+    "note": ""
+   },
+   "M1.data_quality.1.c2": {
+    "decision": "edit",
+    "kind": "attribute",
+    "owner": "Airport",
+    "text": "the airport slot programme",
+    "rel_type": "",
+    "note": ""
+   },
+   "M1.effect.1.c1": {
+    "decision": "accept",
+    "kind": "relationship",
+    "owner": "",
+    "text": "One aircraft turn-round normally includes an arriving and a departing flight",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M1.effect.1.c2": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M1.effect.2.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 1: ATC Flight Plan Activated",
+    "text": "For coordinated airports, the outbound flight is already known",
+    "rel_type": "",
+    "note": ""
+   },
+   "M1.effect.3.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 1: ATC Flight Plan Activated",
+    "text": "The flight plan may be used to update certain information such as type of aircraft",
+    "rel_type": "",
+    "note": ""
+   },
+   "M1.effect.3.c2": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "Aircraft",
+    "text": "type of aircraft",
+    "rel_type": "",
+    "note": ""
+   },
+   "M1.effect.4.c1": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "ELDT",
+    "rel_type": "",
+    "note": ""
+   },
+   "M1.effect.4.c2": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 1: ATC Flight Plan Activated",
+    "text": "For long distance flights, the ELDT may differ from the airport slot",
+    "rel_type": "",
+    "note": ""
+   },
+   "M1.effect.5.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 1: ATC Flight Plan Activated",
+    "text": "For non coordinated airports, the flight plan is used to initiate the outbound flight",
+    "rel_type": "",
+    "note": ""
+   },
+   "M1.effect.6.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 1: ATC Flight Plan Activated",
+    "text": "The flight is ready not later than 15 minutes after the planned EOBT",
+    "rel_type": "",
+    "note": ""
+   },
+   "M1.effect.7.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 1: ATC Flight Plan Activated",
+    "text": "The DPI process commences the correct messaging with Network Operations",
+    "rel_type": "",
+    "note": ""
+   },
+   "M1.effect.7.c2": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "Network Operations",
+    "rel_type": "",
+    "note": ""
+   },
+   "M1.procedures.1.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 1: ATC Flight Plan Activated",
+    "text": "To check consistency between ATC Flight Plan, Airport Slot and Airport flight data",
+    "rel_type": "",
+    "note": ""
+   },
+   "M1.procedures.1.c2": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 1: ATC Flight Plan Activated",
+    "text": "confirm the flight to the Network Operations and allow further local processing of the flight",
+    "rel_type": "",
+    "note": ""
+   },
+   "M1.procedures.1.c3": {
+    "decision": "edit",
+    "kind": "attribute",
+    "owner": "Airport",
+    "text": "Airport Slot",
+    "rel_type": "",
+    "note": ""
+   },
+   "M1.procedures.2.c2": {
+    "decision": "edit",
+    "kind": "relationship",
+    "owner": "",
+    "text": "the first E-DPI",
+    "rel_type": "generalization",
+    "note": ""
+   },
+   "M1.procedures.3.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Aircraft Operator",
+    "text": "The AO must provide correct information before this first E-DPI message, in order to feed Network Operations with consistent SOBT, aircraft registration, and first destination data, as early in time as possible",
+    "rel_type": "",
+    "note": ""
+   },
+   "M1.procedures.3.c2": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "SOBT",
+    "rel_type": "",
+    "note": ""
+   },
+   "M1.procedures.3.c3": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "Aircraft",
+    "text": "aircraft registration",
+    "rel_type": "",
+    "note": ""
+   },
+   "M1.procedures.3.c4": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "Flight",
+    "text": "first destination",
+    "rel_type": "",
+    "note": ""
+   },
+   "M1.procedures.4.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 1: ATC Flight Plan Activated",
+    "text": "The E-DPI message should not be sent if no or inconsistent information is provided",
+    "rel_type": "",
+    "note": ""
+   },
+   "M1.procedures.6.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 1: ATC Flight Plan Activated",
+    "text": "The first activation of the ATC Flight Plan (earliest EOBT-3 hr)",
+    "rel_type": "",
+    "note": ""
+   },
+   "M1.procedures.7.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 1: ATC Flight Plan Activated",
+    "text": "New or late submissions of the ATC Flight Plan, after cancellation or revised EOBT",
+    "rel_type": "",
+    "note": ""
+   },
+   "M1.operational_status.1.c1": {
+    "decision": "accept",
+    "kind": "enumeration",
+    "owner": "Flight",
+    "text": "INITIATED",
+    "rel_type": "",
+    "note": ""
+   },
+   "M1.action_on_cdm.1.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Airport CDM Platform",
+    "text": "ELDT and EIBT updated for an arrival",
+    "rel_type": "",
+    "note": ""
+   },
+   "M1.action_on_cdm.1.c2": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "EIBT",
+    "rel_type": "",
+    "note": ""
+   },
+   "M1.action_on_cdm.1.c3": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Airport CDM Platform",
+    "text": "EOBT and ETOT updated for a departure",
+    "rel_type": "",
+    "note": ""
+   },
+   "M1.action_on_cdm.1.c4": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "ETOT",
+    "rel_type": "",
+    "note": ""
+   },
+   "M2.definition.1.c1": {
+    "decision": "edit",
+    "kind": "class",
+    "owner": "",
+    "text": "Airport CDM Platform",
+    "rel_type": "",
+    "note": ""
+   },
+   "M2.definition.1.c2": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M2.definition.1.c3": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "Flight",
+    "text": "including if they are regulated or not",
+    "rel_type": "",
+    "note": ""
+   },
+   "M2.definition.2.c1": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "a CTOT",
+    "rel_type": "",
+    "note": ""
+   },
+   "M2.definition.2.c3": {
+    "decision": "accept",
+    "kind": "relationship",
+    "owner": "",
+    "text": "All regulated flights receive a CTOT from Network Operations.",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M2.origin_and_priority.1.c3": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "CTOT",
+    "text": "The CTOT is issued by the Network Operations",
+    "rel_type": "",
+    "note": ""
+   },
+   "M2.origin_and_priority.1.c4": {
+    "decision": "edit",
+    "kind": "relationship",
+    "owner": "",
+    "text": "CTOT ... is sent to relevant ATS units",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M2.origin_and_priority.1.c5": {
+    "decision": "edit",
+    "kind": "relationship",
+    "owner": "",
+    "text": "CTOT ... is sent ... as well as the departure aerodrome",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M2.origin_and_priority.2.c1": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "CTOT",
+    "text": "CTOT flights usually have a priority over unregulated flights.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M2.timing.1.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Network Operations",
+    "text": "If the flight is regulated, a CTOT is issued at EOBT-2h.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M2.effect.1.c2": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "the FUM messages",
+    "rel_type": "",
+    "note": ""
+   },
+   "M2.effect.1.c3": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 2: EOBT - 2 hr",
+    "text": "For inbound flights, ELDT is updated based on information provided by the FUM messages, taking into account the actual progress of the flight.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M2.effect.1.c4": {
+    "decision": "accept",
+    "kind": "relationship",
+    "owner": "",
+    "text": "ELDT is updated based on information provided by the FUM messages",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M2.procedures.1.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 2: EOBT - 2 hr",
+    "text": "To check (before or after take off from outstation) whether AO/GH flight estimates are consistent with the ATC Flight Plan",
+    "rel_type": "",
+    "note": ""
+   },
+   "M2.procedures.1.c2": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 2: EOBT - 2 hr",
+    "text": "to inform Network Operations about the updated take off time estimate, using a T-DPI Message",
+    "rel_type": "",
+    "note": ""
+   },
+   "M2.procedures.1.c3": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "a T-DPI Message",
+    "rel_type": "",
+    "note": ""
+   },
+   "M2.procedures.1.c5": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "AO/GH",
+    "rel_type": "",
+    "note": ""
+   },
+   "M2.procedures.1.c6": {
+    "decision": "accept",
+    "kind": "relationship",
+    "owner": "",
+    "text": "to inform Network Operations about the updated take off time estimate, using a T-DPI Message",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M2.procedures.4.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 2: EOBT - 2 hr",
+    "text": "Calculation basis for the TTOT shall take into account EIBT+MTTT+EXOT, if later than EOBT+EXOT.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M2.procedures.4.c2": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "the TTOT",
+    "rel_type": "",
+    "note": ""
+   },
+   "M2.procedures.4.c4": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "MTTT",
+    "rel_type": "",
+    "note": ""
+   },
+   "M2.procedures.4.c5": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "EXOT",
+    "rel_type": "",
+    "note": ""
+   },
+   "M2.procedures.5.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 2: EOBT - 2 hr",
+    "text": "In the case of manual input of TOBT, this estimate will override the EIBT+MTTT estimate, hence TTOT equals TOBT+EXOT.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M2.procedures.5.c2": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "TOBT",
+    "rel_type": "",
+    "note": ""
+   },
+   "M2.procedures.7.c1": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M2.action_on_cdm.1.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Airport CDM Platform",
+    "text": "ETOT/TTOT/CTOT Mark appropriate fields as REGULATED",
+    "rel_type": "",
+    "note": ""
+   },
+   "M2.action_on_cdm.1.c2": {
+    "decision": "accept",
+    "kind": "enumeration",
+    "owner": "Flight",
+    "text": "REGULATED",
+    "rel_type": "",
+    "note": ""
+   },
+   "M3.definition.1.c1": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "The ATOT from the outstation (ADEP)",
+    "rel_type": "",
+    "note": ""
+   },
+   "M3.definition.1.c2": {
+    "decision": "accept",
+    "kind": "relationship",
+    "owner": "",
+    "text": "The ATOT from the outstation (ADEP)",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M3.origin_and_priority.1.c1": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M3.origin_and_priority.1.c2": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M3.origin_and_priority.1.c3": {
+    "decision": "accept",
+    "kind": "relationship",
+    "owner": "",
+    "text": "The outstation provides ATOT to the Network Operations and Aircraft Operator.",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M3.origin_and_priority.1.c4": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "The outstation",
+    "rel_type": "",
+    "note": ""
+   },
+   "M3.origin_and_priority.1.c6": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "Aircraft Operator",
+    "rel_type": "",
+    "note": ""
+   },
+   "M3.timing.1.c1": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "Milestone 3: Take Off from Outstation",
+    "text": "The information is directly available after occurrence of the milestone.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M3.data_quality.1.c1": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "ATOT",
+    "text": "The accuracy of ATOT is +/- 1 minute.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M3.effect.1.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 3: Take Off from Outstation",
+    "text": "If the departure airport is more than 3hrs flying time from the destination airport the ATOT is received from either the Network Operations FUM or via the Aircraft Operator / Ground Handler.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M3.effect.1.c2": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "Network Operations FUM",
+    "rel_type": "",
+    "note": ""
+   },
+   "M3.effect.1.c3": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "Ground Handler",
+    "rel_type": "",
+    "note": ""
+   },
+   "M3.effect.1.c4": {
+    "decision": "accept",
+    "kind": "relationship",
+    "owner": "",
+    "text": "the ATOT is received from either the Network Operations FUM",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M3.effect.1.c5": {
+    "decision": "accept",
+    "kind": "relationship",
+    "owner": "",
+    "text": "the ATOT is received ... via the Aircraft Operator / Ground Handler",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M3.effect.2.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 3: Take Off from Outstation",
+    "text": "Using the ATOT an ELDT can be calculated by using the Estimated Elapsed Time on the FPL.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M3.effect.2.c3": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "FPL",
+    "rel_type": "",
+    "note": ""
+   },
+   "M3.effect.2.c4": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "FPL",
+    "text": "the Estimated Elapsed Time on the FPL",
+    "rel_type": "",
+    "note": ""
+   },
+   "M3.effect.3.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Network Operations",
+    "text": "If the flight is within 3hrs flying time of the destination airport the Network Operations monitors progress of the flight using the ETFMS and send a Flight Update Message (FUM) that provides updates of the flight's progress.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M3.effect.3.c2": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "the ETFMS",
+    "rel_type": "",
+    "note": ""
+   },
+   "M3.effect.3.c4": {
+    "decision": "accept",
+    "kind": "relationship",
+    "owner": "",
+    "text": "the Network Operations ... send a Flight Update Message (FUM)",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M3.procedures.1.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 3: Take Off from Outstation",
+    "text": "To check whether the AO/GH estimated landing time after take off from outstation are consistent with the outbound ATC Flight Plan",
+    "rel_type": "",
+    "note": ""
+   },
+   "M3.procedures.1.c2": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 3: Take Off from Outstation",
+    "text": "when needed inform the Network Operations about the updated take off time estimates using a T-DPI-t Message",
+    "rel_type": "",
+    "note": ""
+   },
+   "M3.procedures.1.c3": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "T-DPI-t Message",
+    "rel_type": "",
+    "note": ""
+   },
+   "M3.procedures.1.c4": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "outbound ATC Flight Plan",
+    "rel_type": "",
+    "note": ""
+   },
+   "M3.procedures.1.c5": {
+    "decision": "accept",
+    "kind": "relationship",
+    "owner": "",
+    "text": "inform the Network Operations ... using a T-DPI-t Message",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M3.procedures.3.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 3: Take Off from Outstation",
+    "text": "A TTOT tolerance of 5 minutes is respected before Network Operations is informed of the updated TTOT.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M3.procedures.3.c2": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "TTOT",
+    "text": "A TTOT tolerance of 5 minutes",
+    "rel_type": "",
+    "note": ""
+   },
+   "M3.procedures.4.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 3: Take Off from Outstation",
+    "text": "Calculation basis for the TTOT shall take into account EIBT+MTTT+EXOT.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M3.procedures.5.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 3: Take Off from Outstation",
+    "text": "In case EOBT is later than EIBT+MTTT, TTOT equals EOBT+EXOT.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M3.procedures.6.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 3: Take Off from Outstation",
+    "text": "In the case where TOBT is available this prediction will overrule the EIBT+MTTT estimate, hence TTOT equals TOBT+EXOT.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M3.procedures.8.c1": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M3.operational_status.1.c1": {
+    "decision": "accept",
+    "kind": "enumeration",
+    "owner": "Flight",
+    "text": "AIRBORNE",
+    "rel_type": "",
+    "note": ""
+   },
+   "M3.action_on_cdm.1.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Airport CDM Platform",
+    "text": "ELDT, EIBT, TOBT and TTOT updated",
+    "rel_type": "",
+    "note": ""
+   },
+   "M4.definition.1.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 4: Local Radar Update",
+    "text": "The flight enters the FIR (Flight Information Region) or the local airspace of the destination airport.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M4.definition.1.c2": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "The flight",
+    "rel_type": "",
+    "note": ""
+   },
+   "M4.definition.1.c3": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "the FIR (Flight Information Region)",
+    "rel_type": "",
+    "note": ""
+   },
+   "M4.origin_and_priority.1.c1": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M4.origin_and_priority.1.c2": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "Area Control Centre (ACC)",
+    "rel_type": "",
+    "note": ""
+   },
+   "M4.origin_and_priority.1.c3": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "Approach Control Unit",
+    "rel_type": "",
+    "note": ""
+   },
+   "M4.origin_and_priority.1.c4": {
+    "decision": "accept",
+    "kind": "relationship",
+    "owner": "",
+    "text": "This information is normally available from the Area Control Centre (ACC) or Approach Control Unit",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M4.origin_and_priority.2.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Radar system",
+    "text": "The radar system is able to detect a flight based upon the assigned SSR code when the flight crosses a defined FIR/ATC boundary.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M4.origin_and_priority.2.c2": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "The radar system",
+    "rel_type": "",
+    "note": ""
+   },
+   "M4.origin_and_priority.2.c3": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "Flight",
+    "text": "the assigned SSR code",
+    "rel_type": "",
+    "note": ""
+   },
+   "M4.timing.1.c1": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "Milestone 4: Local Radar Update",
+    "text": "Dependent upon the position of the airport in relation to the FIR boundary.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M4.data_quality.1.c1": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "Milestone 4: Local Radar Update",
+    "text": "Must be equal to the accuracy of the ATC system.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M4.effect.1.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 4: Local Radar Update",
+    "text": "Update of the ELDT can trigger a new TOBT to be entered by the AO/GH, or calculated automatically by the Airport CDM Platform.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M4.effect.1.c6": {
+    "decision": "accept",
+    "kind": "relationship",
+    "owner": "",
+    "text": "a new TOBT to be entered by the AO/GH",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M4.effect.1.c7": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Airport CDM Platform",
+    "text": "calculated automatically by the Airport CDM Platform",
+    "rel_type": "",
+    "note": ""
+   },
+   "M4.effect.5.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 4: Local Radar Update",
+    "text": "taking into account the taxi-in time (EXIT), any change to a stand or gate is not preferred after ELDT-30'.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M4.effect.5.c2": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "the taxi-in time (EXIT)",
+    "rel_type": "",
+    "note": ""
+   },
+   "M4.effect.6.c2": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M4.effect.8.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Airport CDM Platform",
+    "text": "An estimated in-block time (EIBT) is computed using the ELDT and the estimated taxi-in time.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M4.procedures.1.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 4: Local Radar Update",
+    "text": "To commence the TOBT process",
+    "rel_type": "",
+    "note": ""
+   },
+   "M4.procedures.1.c2": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 4: Local Radar Update",
+    "text": "check whether the AO/GH TOBT is consistent with the ATC Flight Plan",
+    "rel_type": "",
+    "note": ""
+   },
+   "M4.procedures.2.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 4: Local Radar Update",
+    "text": "Network Operations is informed when the TTOT changes by more than the agreed TTOT tolerance.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M4.procedures.2.c3": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "TTOT",
+    "text": "the agreed TTOT tolerance",
+    "rel_type": "",
+    "note": ""
+   },
+   "M4.procedures.2.c5": {
+    "decision": "edit",
+    "kind": "operation",
+    "owner": "Network Operations",
+    "text": "Network Operations is informed",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M4.operational_status.1.c1": {
+    "decision": "accept",
+    "kind": "enumeration",
+    "owner": "Flight",
+    "text": "FIR",
+    "rel_type": "",
+    "note": ""
+   },
+   "M4.action_on_cdm.1.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Airport CDM Platform",
+    "text": "ELDT, EIBT, TOBT and TTOT updated",
+    "rel_type": "",
+    "note": ""
+   },
+   "M5.definition.1.c1": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M5.definition.1.c2": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M5.origin_and_priority.1.c1": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M5.origin_and_priority.1.c2": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "ATC",
+    "rel_type": "",
+    "note": ""
+   },
+   "M5.origin_and_priority.1.c3": {
+    "decision": "edit",
+    "kind": "operation",
+    "owner": "ATC",
+    "text": "This information is normally available from ATC.",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M5.origin_and_priority.2.c2": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "Flight",
+    "text": "the assigned SSR code",
+    "rel_type": "",
+    "note": ""
+   },
+   "M5.origin_and_priority.2.c3": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Radar system",
+    "text": "The radar system detects a flight based upon the assigned SSR code",
+    "rel_type": "",
+    "note": ""
+   },
+   "M5.origin_and_priority.2.c4": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Radar system",
+    "text": "identifies when the flight crosses either a defined range / position or passes/leaves a predetermined level",
+    "rel_type": "",
+    "note": ""
+   },
+   "M5.origin_and_priority.2.c5": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "Radar system",
+    "text": "a defined range / position",
+    "rel_type": "",
+    "note": ""
+   },
+   "M5.origin_and_priority.2.c6": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "Radar system",
+    "text": "a predetermined level",
+    "rel_type": "",
+    "note": ""
+   },
+   "M5.timing.1.c1": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "Milestone 5: Final Approach",
+    "text": "Dependent upon local parameters that are defined by ATC.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M5.timing.1.c2": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M5.data_quality.1.c1": {
+    "decision": "edit",
+    "kind": "attribute",
+    "owner": "ATC system",
+    "text": "Must be equal to the accuracy of the ATC system.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M5.data_quality.1.c2": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "the ATC system",
+    "rel_type": "",
+    "note": ""
+   },
+   "M5.data_quality.1.c3": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M5.effect.1.c3": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 5: Final Approach",
+    "text": "Update of the ELDT to determine a new TOBT.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M5.effect.2.c1": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "Milestone 5: Final Approach",
+    "text": "When a flight reaches this stage it is usually between 2 and 5 minutes from landing (depending on the parameter set by ATC).",
+    "rel_type": "",
+    "note": ""
+   },
+   "M5.procedures.1.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 5: Final Approach",
+    "text": "To commence the TOBT process",
+    "rel_type": "",
+    "note": ""
+   },
+   "M5.procedures.1.c2": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 5: Final Approach",
+    "text": "check whether the AO/GH TOBT is consistent with the ATC Flight Plan",
+    "rel_type": "",
+    "note": ""
+   },
+   "M5.procedures.1.c5": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M5.procedures.2.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 5: Final Approach",
+    "text": "Network Operations is informed when the TTOT changes by more than the agreed TTOT tolerance.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M5.procedures.2.c4": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "TTOT",
+    "text": "the agreed TTOT tolerance",
+    "rel_type": "",
+    "note": ""
+   },
+   "M5.procedures.2.c5": {
+    "decision": "accept",
+    "kind": "relationship",
+    "owner": "",
+    "text": "Network Operations is informed when the TTOT changes",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M5.procedures.6.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 5: Final Approach",
+    "text": "the detection of the flight by radar in either FIR, TMA, or on Final Approach.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M5.procedures.6.c2": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M5.procedures.6.c3": {
+    "decision": "accept",
+    "kind": "enumeration",
+    "owner": "Radar system",
+    "text": "either FIR, TMA, or on Final Approach",
+    "rel_type": "",
+    "note": ""
+   },
+   "M5.operational_status.1.c1": {
+    "decision": "accept",
+    "kind": "enumeration",
+    "owner": "Flight",
+    "text": "FINAL",
+    "rel_type": "",
+    "note": ""
+   },
+   "M5.action_on_cdm.1.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Airport CDM Platform",
+    "text": "ELDT, EIBT, TOBT and TTOT updated",
+    "rel_type": "",
+    "note": ""
+   },
+   "M6.definition.1.c1": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "ALDT - Actual Landing Time.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M6.definition.3.c1": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "ATC ATA - Actual Time of Arrival landing",
+    "rel_type": "",
+    "note": ""
+   },
+   "M6.definition.3.c2": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M6.origin_and_priority.1.c1": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "ALDT",
+    "text": "Provided by ATC system or by ACARS from equipped aircraft.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M6.origin_and_priority.1.c3": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "ACARS",
+    "rel_type": "",
+    "note": ""
+   },
+   "M6.origin_and_priority.1.c4": {
+    "decision": "edit",
+    "kind": "operation",
+    "owner": "ATC system",
+    "text": "Provided by ATC system",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M6.origin_and_priority.1.c5": {
+    "decision": "edit",
+    "kind": "operation",
+    "owner": "Aircraft",
+    "text": "by ACARS from equipped aircraft",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M6.timing.1.c1": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M6.data_quality.1.c1": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "ALDT",
+    "text": "Data is available with an accuracy of +/- 1 minute.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M6.effect.1.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 6: Landed",
+    "text": "The occurrence of ALDT triggers an update of downstream estimates: TOBT and TTOT are updated automatically or inserted manually by the Aircraft Operator / Ground Handler",
+    "rel_type": "",
+    "note": ""
+   },
+   "M6.effect.1.c4": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M6.effect.1.c5": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "Flight",
+    "text": "the defined turn-round period for the departing flight",
+    "rel_type": "",
+    "note": ""
+   },
+   "M6.effect.1.c6": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Aircraft Operator / Ground Handler",
+    "text": "calculated on the basis of the defined turn-round period for the departing flight",
+    "rel_type": "",
+    "note": ""
+   },
+   "M6.effect.2.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 6: Landed",
+    "text": "The EIBT can be updated according to the ALDT +EXIT.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M6.procedures.1.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 6: Landed",
+    "text": "To check whether the AO/GH TOBT is consistent with the ATC Flight Plan.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M6.procedures.2.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 6: Landed",
+    "text": "Network Operations is informed when the TTOT changes by more than the agreed TTOT tolerance.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M6.procedures.2.c2": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "TTOT",
+    "text": "the agreed TTOT tolerance",
+    "rel_type": "",
+    "note": ""
+   },
+   "M6.procedures.2.c4": {
+    "decision": "edit",
+    "kind": "relationship",
+    "owner": "",
+    "text": "Network Operations is informed when the TTOT changes by more than the agreed TTOT tolerance.",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M6.procedures.6.c1": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M6.operational_status.1.c1": {
+    "decision": "accept",
+    "kind": "enumeration",
+    "owner": "Flight",
+    "text": "LANDED",
+    "rel_type": "",
+    "note": ""
+   },
+   "M6.action_on_cdm.1.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Airport CDM Platform",
+    "text": "ELDT changes to ALDT",
+    "rel_type": "",
+    "note": ""
+   },
+   "M7.definition.1.c1": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "AIBT - Actual In-Block Time.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M7.definition.3.c1": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "Airline/Handler ATA - Actual Time of Arrival",
+    "rel_type": "",
+    "note": ""
+   },
+   "M7.definition.3.c2": {
+    "decision": "edit",
+    "kind": "attribute",
+    "owner": "Aircraft",
+    "text": "(Equivalent to Airline/Handler ATA - Actual Time of Arrival, ACARS = IN)",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M7.definition.3.c3": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "ACGT",
+    "rel_type": "",
+    "note": ""
+   },
+   "M7.definition.3.c4": {
+    "decision": "edit",
+    "kind": "operation",
+    "owner": "Milestone 7: In-Block",
+    "text": "ACGT is considered to commence at AIBT",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M7.origin_and_priority.1.c1": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "AIBT",
+    "text": "ACARS equipped aircraft or automated docking systems or ATC systems (e.g. A-SMGCS) or by manual input.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M7.origin_and_priority.1.c2": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "automated docking systems",
+    "rel_type": "",
+    "note": ""
+   },
+   "M7.origin_and_priority.1.c3": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "ATC systems (e.g. A-SMGCS)",
+    "rel_type": "",
+    "note": ""
+   },
+   "M7.origin_and_priority.1.c4": {
+    "decision": "edit",
+    "kind": "operation",
+    "owner": "Milestone 7: In-Block",
+    "text": "ACARS equipped aircraft or automated docking systems or ATC systems (e.g. A-SMGCS) or by manual input.",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M7.timing.1.c1": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "Milestone 7: In-Block",
+    "text": "The information is directly available after occurrence of the milestone.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M7.data_quality.1.c1": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "AIBT",
+    "text": "Data is available with an accuracy of +/- 1 minute.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M7.effect.1.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 7: In-Block",
+    "text": "The occurrence of AIBT should trigger an update of downstream estimates: TOBT and TTOT are updated automatically or inserted manually by the Aircraft Operator / Ground Handler",
+    "rel_type": "",
+    "note": ""
+   },
+   "M7.effect.1.c5": {
+    "decision": "edit",
+    "kind": "operation",
+    "owner": "Milestone 7: In-Block",
+    "text": "TOBT and TTOT are updated automatically or inserted manually by the Aircraft Operator / Ground Handler",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M7.effect.1.c6": {
+    "decision": "edit",
+    "kind": "operation",
+    "owner": "Aircraft Operator / Ground Handler",
+    "text": "TOBT and TTOT ... calculated on the basis of the estimated turn-round period for the departing flight",
+    "rel_type": "",
+    "note": ""
+   },
+   "M7.effect.1.c7": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "departing flight",
+    "text": "the estimated turn-round period for the departing flight",
+    "rel_type": "",
+    "note": ""
+   },
+   "M7.procedures.1.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 7: In-Block",
+    "text": "To check whether the AO/GH TOBT is consistent with the ATC Flight Plan.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M7.procedures.2.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 7: In-Block",
+    "text": "Network Operations is informed when the TTOT changes by more than the agreed TTOT tolerance.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M7.procedures.2.c2": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "TTOT",
+    "text": "the agreed TTOT tolerance",
+    "rel_type": "",
+    "note": ""
+   },
+   "M7.procedures.2.c4": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M7.procedures.6.c1": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M7.operational_status.1.c1": {
+    "decision": "accept",
+    "kind": "enumeration",
+    "owner": "Flight",
+    "text": "IN-BLOCK",
+    "rel_type": "",
+    "note": ""
+   },
+   "M7.action_on_cdm.1.c1": {
+    "decision": "edit",
+    "kind": "operation",
+    "owner": "Airport CDM Platform",
+    "text": "EIBT changes to AIBT TOBT and TTOT updated",
+    "rel_type": "",
+    "note": ""
+   },
+   "M8.definition.1.c1": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "Commence of Ground Handling Operations (ACGT).",
+    "rel_type": "",
+    "note": ""
+   },
+   "M8.definition.2.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 8: Ground Handling Started",
+    "text": "this milestone is specific to flights that are the first operation of the day or that have been long term parked.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M8.definition.3.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 8: Ground Handling Started",
+    "text": "For flights that are on a normal turn-round ACGT is considered to commence at AIBT.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M8.origin_and_priority.1.c1": {
+    "decision": "accept",
+    "kind": "relationship",
+    "owner": "",
+    "text": "Aircraft Operator / Ground Handler will provide the information.",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M8.origin_and_priority.1.c2": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M8.timing.1.c1": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M8.data_quality.1.c1": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "ACGT",
+    "text": "Data is available with an accuracy of +/- 1 minute.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M8.effect.1.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 8: Ground Handling Started",
+    "text": "The occurrence of ACGT triggers an update of downstream estimates",
+    "rel_type": "",
+    "note": ""
+   },
+   "M8.effect.1.c2": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Aircraft Operator / Ground Handler",
+    "text": "TOBT is updated automatically or inserted manually by the Aircraft Operator / Ground Handler, calculated on the basis of the estimated turn-round period for the departing flight.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M8.effect.1.c4": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M8.effect.1.c5": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "Flight",
+    "text": "the estimated turn-round period for the departing flight",
+    "rel_type": "",
+    "note": ""
+   },
+   "M8.procedures.1.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 8: Ground Handling Started",
+    "text": "To check whether the AO/GH TOBT is consistent with the ATC Flight Plan.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M8.procedures.2.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 8: Ground Handling Started",
+    "text": "Network Operations is informed when the TTOT changes by more than the agreed TTOT tolerance.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M8.procedures.2.c2": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "TTOT",
+    "text": "the agreed TTOT tolerance",
+    "rel_type": "",
+    "note": ""
+   },
+   "M8.procedures.2.c5": {
+    "decision": "accept",
+    "kind": "relationship",
+    "owner": "",
+    "text": "Network Operations is informed when the TTOT changes",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M8.procedures.6.c1": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M8.action_on_cdm.1.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Airport CDM Platform",
+    "text": "ETTT/TOBT, TTOT updated",
+    "rel_type": "",
+    "note": ""
+   },
+   "M8.action_on_cdm.1.c2": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "ETTT",
+    "rel_type": "",
+    "note": ""
+   },
+   "M9.definition.1.c1": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "their most accurate TOBT",
+    "rel_type": "",
+    "note": ""
+   },
+   "M9.definition.1.c4": {
+    "decision": "accept",
+    "kind": "relationship",
+    "owner": "",
+    "text": "the Aircraft Operator or Ground Handler provide their most accurate TOBT",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M9.origin_and_priority.1.c1": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M9.timing.1.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 9: Final Confirmation of the TOBT",
+    "text": "The information is provided t minutes before EOBT",
+    "rel_type": "",
+    "note": ""
+   },
+   "M9.timing.1.c2": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "Milestone 9: Final Confirmation of the TOBT",
+    "text": "t is a parameter time agreed locally",
+    "rel_type": "",
+    "note": ""
+   },
+   "M9.data_quality.1.c1": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "Milestone 9: Final Confirmation of the TOBT",
+    "text": "Accuracy is agreed locally.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M9.effect.3.c1": {
+    "decision": "edit",
+    "kind": "operation",
+    "owner": "Milestone 9: Final Confirmation of the TOBT",
+    "text": "EOBT (shared by ATC, Network Operations and Stand / Gate Management)",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M9.effect.3.c4": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "Stand / Gate Management",
+    "rel_type": "",
+    "note": ""
+   },
+   "M9.effect.4.c1": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "push back / pre-departure sequence",
+    "rel_type": "",
+    "note": ""
+   },
+   "M9.effect.4.c2": {
+    "decision": "edit",
+    "kind": "operation",
+    "owner": "ATC",
+    "text": "for ATC to establish a push back / pre-departure sequence",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M9.effect.6.c3": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "ATC system",
+    "text": "Following the receipt of the TOBT, the ATC system will calculate and provide the Estimated Taxi-Out Time (EXOT) based on the predicted traffic load, gate / stand location, runway in use, and waiting period at the Holding Position, etc.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M9.effect.6.c4": {
+    "decision": "edit",
+    "kind": "operation",
+    "owner": "ATC system",
+    "text": "the ATC system will calculate and provide the Estimated Taxi-Out Time (EXOT)",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M9.effect.6.c5": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "ATC system",
+    "text": "The flight is introduced into the pre-departure sequence.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M9.procedures.1.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 9: Final Confirmation of the TOBT",
+    "text": "To check whether the AO/GH TOBT is consistent with the ATC Flight Plan.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M9.procedures.2.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 9: Final Confirmation of the TOBT",
+    "text": "Network Operations is informed when the TTOT changes by more than the agreed TTOT tolerance.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M9.procedures.2.c3": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "TTOT",
+    "text": "the agreed TTOT tolerance",
+    "rel_type": "",
+    "note": ""
+   },
+   "M9.procedures.2.c4": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M9.procedures.3.c1": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M9.procedures.3.c2": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 9: Final Confirmation of the TOBT",
+    "text": "to confirm TOBT prior to TSAT issue",
+    "rel_type": "",
+    "note": ""
+   },
+   "M9.procedures.3.c4": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "TSAT",
+    "rel_type": "",
+    "note": ""
+   },
+   "M9.procedures.5.c1": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "CDM Platform",
+    "rel_type": "",
+    "note": ""
+   },
+   "M9.procedures.5.c2": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Airport CDM Platform",
+    "text": "This Milestone Process is actually constantly applicable in the CDM Platform, as soon as a TOBT is available.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M9.procedures.6.c1": {
+    "decision": "accept",
+    "kind": "enumeration",
+    "owner": "TOBT",
+    "text": "the confirmed TOBT prior to TSAT has special status",
+    "rel_type": "",
+    "note": ""
+   },
+   "M9.procedures.6.c2": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Aircraft Operator / Ground Handler",
+    "text": "AO/GH check the quality of TOBT before TSAT issue",
+    "rel_type": "",
+    "note": ""
+   },
+   "M9.action_on_cdm.1.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Airport CDM Platform",
+    "text": "This process is triggered by - a new TOBT or TTOT update.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M9.action_on_cdm.2.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Airport CDM Platform",
+    "text": "No need to confirm an existing TOBT if it has been manually modified before.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M10.definition.1.c2": {
+    "decision": "accept",
+    "kind": "relationship",
+    "owner": "",
+    "text": "ATC issues the Target Start Up Approval Time",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M10.definition.1.c3": {
+    "decision": "reject",
+    "note": "equivalent as c2"
+   },
+   "M10.origin_and_priority.1.c1": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M10.timing.1.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 10: TSAT Issued",
+    "text": "The information is provided t-minutes before EOBT, where t is a parameter agreed locally",
+    "rel_type": "",
+    "note": ""
+   },
+   "M10.timing.1.c2": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M10.data_quality.1.c1": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "Milestone 10: TSAT Issued",
+    "text": "Accuracy is agreed locally.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M10.effect.1.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 10: TSAT Issued",
+    "text": "The flight is stabilised into the pre-departure sequence.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M10.effect.1.c2": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M10.procedures.1.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 10: TSAT Issued",
+    "text": "To inform all relevant partners of the TSAT that has been allocated to the flight.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M10.procedures.1.c2": {
+    "decision": "accept",
+    "kind": "relationship",
+    "owner": "",
+    "text": "the TSAT that has been allocated to the flight",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M10.procedures.2.c1": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "T-DPI-s",
+    "rel_type": "",
+    "note": ""
+   },
+   "M10.procedures.2.c3": {
+    "decision": "accept",
+    "kind": "relationship",
+    "owner": "",
+    "text": "The Network Operations is informed by a T-DPI-s",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M10.procedures.2.c4": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 10: TSAT Issued",
+    "text": "The Network Operations is informed by a T-DPI-s for non regulated flights.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M10.procedures.3.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 10: TSAT Issued",
+    "text": "To check whether the number of TOBT updates exceeds a tolerance defined locally, after TSAT has been issued.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M10.procedures.3.c2": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "Flight",
+    "text": "the number of TOBT updates",
+    "rel_type": "",
+    "note": ""
+   },
+   "M10.procedures.3.c3": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "Milestone 10: TSAT Issued",
+    "text": "a tolerance defined locally",
+    "rel_type": "",
+    "note": ""
+   },
+   "M10.procedures.8.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 10: TSAT Issued",
+    "text": "In case the number of TOBT updates exceeds a threshold, then the TOBT input should be processed according to local procedure.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M10.procedures.10.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 10: TSAT Issued",
+    "text": "A defined time (local parameter) before TOBT",
+    "rel_type": "",
+    "note": ""
+   },
+   "M10.procedures.10.c2": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M10.procedures.11.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 10: TSAT Issued",
+    "text": "TOBT update after TSAT issue",
+    "rel_type": "",
+    "note": ""
+   },
+   "M10.operational_status.1.c1": {
+    "decision": "accept",
+    "kind": "enumeration",
+    "owner": "Flight",
+    "text": "SEQUENCED",
+    "rel_type": "",
+    "note": ""
+   },
+   "M10.action_on_cdm.1.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Airport CDM Platform",
+    "text": "TTOT updated",
+    "rel_type": "",
+    "note": ""
+   },
+   "M11.definition.1.c1": {
+    "decision": "edit",
+    "kind": "operation",
+    "owner": "Milestone 11: Boarding Starts",
+    "text": "The gate is open for passengers to physically start boarding (independent of whether boarding takes place via an air-bridge/pier, aircraft steps or coaching to a stand).",
+    "rel_type": "",
+    "note": ""
+   },
+   "M11.origin_and_priority.1.c1": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "Milestone 11: Boarding Starts",
+    "text": "Automatic from airport system or manual input by Aircraft Operator/ Ground Handler.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M11.origin_and_priority.1.c2": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M11.origin_and_priority.1.c3": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M11.timing.1.c1": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "Milestone 11: Boarding Starts",
+    "text": "The information is directly available after occurrence of the milestone.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M11.data_quality.1.c1": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "Milestone 11: Boarding Starts",
+    "text": "Data is available with an accuracy of +/- 1 minute.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M11.procedures.1.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 11: Boarding Starts",
+    "text": "To inform all relevant Airport CDM Partners of Actual Start Boarding Time (ASBT).",
+    "rel_type": "",
+    "note": ""
+   },
+   "M11.procedures.1.c2": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "Actual Start Boarding Time (ASBT)",
+    "rel_type": "",
+    "note": ""
+   },
+   "M11.procedures.1.c3": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M11.procedures.2.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 11: Boarding Starts",
+    "text": "To check whether boarding starts in time to respect TOBT",
+    "rel_type": "",
+    "note": ""
+   },
+   "M11.procedures.2.c2": {
+    "decision": "edit",
+    "kind": "operation",
+    "owner": "Aircraft Operator / Ground Handler",
+    "text": "inform the AO/GH in case TOBT needs to be updated",
+    "rel_type": "",
+    "note": ""
+   },
+   "M11.procedures.4.c2": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "Milestone 11: Boarding Starts",
+    "text": "a certain time before TOBT (local variable e.g. corresponding to aircraft type)",
+    "rel_type": "",
+    "note": ""
+   },
+   "M11.procedures.6.c1": {
+    "decision": "edit",
+    "kind": "attribute",
+    "owner": "Milestone 11: Boarding Starts",
+    "text": "- a time variable <value> minutes before TOBT.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M11.operational_status.1.c1": {
+    "decision": "accept",
+    "kind": "enumeration",
+    "owner": "Flight",
+    "text": "BOARDING",
+    "rel_type": "",
+    "note": ""
+   },
+   "M12.definition.1.c1": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "Aircraft Ready",
+    "rel_type": "",
+    "note": ""
+   },
+   "M12.definition.1.c2": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "(ARDT)",
+    "rel_type": "",
+    "note": ""
+   },
+   "M12.definition.1.c3": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 12: Aircraft Ready",
+    "text": "The time when all doors are closed, boarding bridge removed, push back vehicle connected, ready to taxi immediately upon reception of TWR instructions (ARDT).",
+    "rel_type": "",
+    "note": ""
+   },
+   "M12.definition.1.c4": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M12.origin_and_priority.1.c3": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M12.origin_and_priority.1.c4": {
+    "decision": "accept",
+    "kind": "relationship",
+    "owner": "",
+    "text": "Provided by the Aircraft Operator/ Ground Handler.",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M12.timing.1.c1": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M12.data_quality.1.c1": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "ARDT",
+    "text": "Data is directly available with an accuracy of +/- 1 minute.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M12.effect.1.c2": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "ATC",
+    "text": "ATC refines the pre-departure sequence.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M12.effect.2.c2": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Pilot",
+    "text": "The pilot requests start up just before TSAT, following coordination with the Ground Handler.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M12.effect.2.c3": {
+    "decision": "accept",
+    "kind": "relationship",
+    "owner": "",
+    "text": "following coordination with the Ground Handler",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M12.procedures.1.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 12: Aircraft Ready",
+    "text": "To inform all relevant Airport CDM Partners of Actual Ready Time (ARDT) in the Airport CDM Platform and that the aircraft is ready for start up / push-back.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M12.procedures.1.c3": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "Airport CDM Partners",
+    "rel_type": "",
+    "note": ""
+   },
+   "M12.procedures.1.c4": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M12.procedures.2.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 12: Aircraft Ready",
+    "text": "To inform the AO/GH that TOBT has passed and the Airport CDM Platform has not yet received ARDT or Ready Status (RDY).",
+    "rel_type": "",
+    "note": ""
+   },
+   "M12.procedures.2.c3": {
+    "decision": "accept",
+    "kind": "enumeration",
+    "owner": "Flight",
+    "text": "Ready Status (RDY)",
+    "rel_type": "",
+    "note": ""
+   },
+   "M12.procedures.4.c2": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "TOBT",
+    "text": "TOBT + tolerance",
+    "rel_type": "",
+    "note": ""
+   },
+   "M12.procedures.6.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 12: Aircraft Ready",
+    "text": "- an input to the Airport CDM Platform.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M12.procedures.6.c2": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M12.operational_status.1.c1": {
+    "decision": "accept",
+    "kind": "enumeration",
+    "owner": "Flight",
+    "text": "READY",
+    "rel_type": "",
+    "note": ""
+   },
+   "M13.definition.1.c1": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "The time that start up is requested (ASRT).",
+    "rel_type": "",
+    "note": ""
+   },
+   "M13.definition.1.c2": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M13.origin_and_priority.1.c1": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M13.origin_and_priority.1.c2": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M13.timing.1.c1": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "Milestone 13: Start Up Requested",
+    "text": "The information is directly available after occurrence of the milestone.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M13.data_quality.1.c1": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "ASRT",
+    "text": "Data is available with an accuracy of +/- 1 minute.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M13.effect.1.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "ATC",
+    "text": "ATC confirms TSAT to the pilot in order to maintain the aircraft in the pre-departure sequence.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M13.effect.1.c3": {
+    "decision": "accept",
+    "kind": "relationship",
+    "owner": "",
+    "text": "ATC confirms TSAT to the pilot",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M13.effect.2.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "ATC",
+    "text": "Provided the aircraft was ready on time (ARDT), it is now up to ATC to assure that a regulated flight can respect its CTOT.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M13.procedures.1.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 13: Start Up Requested",
+    "text": "To inform all relevant Airport CDM Partners of Actual Start up Request Time (ASRT) in the Airport CDM Platform.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M13.procedures.1.c4": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M13.procedures.2.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 13: Start Up Requested",
+    "text": "to alert all relevant Airport CDM Partners when no start up has been re-quested inside the locally agreed TSAT tolerance window.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M13.procedures.2.c2": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "TSAT",
+    "text": "the locally agreed TSAT tolerance window",
+    "rel_type": "",
+    "note": ""
+   },
+   "M13.procedures.4.c2": {
+    "decision": "edit",
+    "kind": "operation",
+    "owner": "Aircraft Operator / Ground Handler",
+    "text": "the AO/GH is informed that no start up has been requested",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M13.procedures.4.c3": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Aircraft Operator / Ground Handler",
+    "text": "and should update TOBT.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M13.procedures.5.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 13: Start Up Requested",
+    "text": "Timestamp when the tolerance window has passed at TSAT.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M14.definition.1.c1": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "ASAT - Actual start up Approval Time.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M14.definition.2.c2": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "an aircraft receives its start up approval",
+    "rel_type": "",
+    "note": ""
+   },
+   "M14.definition.2.c3": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M14.origin_and_priority.1.c1": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M14.origin_and_priority.1.c3": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M14.timing.1.c1": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "ASAT",
+    "text": "The information is directly available after occurrence of the milestone.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M14.data_quality.1.c1": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "ASAT",
+    "text": "Data is available with an accuracy of +/- 1 minute.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M14.effect.1.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Aircraft",
+    "text": "On receipt of ATC approval, the aircraft will start up, push back and start to taxi.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M14.procedures.1.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 14: Start Up Approved",
+    "text": "To inform all relevant Airport CDM Partners of Actual start up approval Time (ASAT) in the Airport CDM Platform and that the aircraft has received start up approval / push-back clearance.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M14.procedures.1.c4": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M14.procedures.2.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 14: Start Up Approved",
+    "text": "To check if ASAT is in accordance to TSAT",
+    "rel_type": "",
+    "note": ""
+   },
+   "M14.procedures.2.c2": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 14: Start Up Approved",
+    "text": "to alert all relevant Airport CDM Partners when no start up has been granted",
+    "rel_type": "",
+    "note": ""
+   },
+   "M14.procedures.4.c2": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "TSAT",
+    "text": "TSAT + tolerance",
+    "rel_type": "",
+    "note": ""
+   },
+   "M14.procedures.5.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 14: Start Up Approved",
+    "text": "The flight will be re-sequenced.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M14.procedures.6.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 14: Start Up Approved",
+    "text": "Start up request by flight crew (voice or DCL) or a locally defined time around TSAT if Milestone Process 13 is omitted.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M14.procedures.6.c2": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "Start up request",
+    "rel_type": "",
+    "note": ""
+   },
+   "M14.procedures.6.c3": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "flight crew",
+    "rel_type": "",
+    "note": ""
+   },
+   "M14.procedures.6.c4": {
+    "decision": "accept",
+    "kind": "relationship",
+    "owner": "",
+    "text": "Start up request by flight crew",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M14.procedures.6.c5": {
+    "decision": "accept",
+    "kind": "enumeration",
+    "owner": "Start up request",
+    "text": "(voice or DCL)",
+    "rel_type": "",
+    "note": ""
+   },
+   "M14.procedures.6.c6": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "Milestone 14: Start Up Approved",
+    "text": "a locally defined time around TSAT",
+    "rel_type": "",
+    "note": ""
+   },
+   "M15.definition.1.c1": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "AOBT - Actual Off-Block Time.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M15.definition.1.c2": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M15.definition.2.c1": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "Airline/Handler ATD - Actual Time of Departure",
+    "rel_type": "",
+    "note": ""
+   },
+   "M15.definition.2.c2": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M15.definition.2.c3": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "AOBT",
+    "text": "The time the aircraft pushes back/vacates the parking position",
+    "rel_type": "",
+    "note": ""
+   },
+   "M15.origin_and_priority.1.c1": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M15.origin_and_priority.1.c2": {
+    "decision": "edit",
+    "kind": "attribute",
+    "owner": "Aircraft",
+    "text": "ACARS equipped aircraft",
+    "rel_type": "generalization",
+    "note": ""
+   },
+   "M15.origin_and_priority.1.c5": {
+    "decision": "accept",
+    "kind": "relationship",
+    "owner": "",
+    "text": "ACARS equipped aircraft or automated docking systems or ATC systems (e.g. A-SMGCS) or by manual input.",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M15.timing.1.c1": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "Milestone 15: Off-Block",
+    "text": "The information is directly available after occurrence of the milestone.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M15.data_quality.1.c1": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "AOBT",
+    "text": "Data is available with an accuracy of +/- 1 minute.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M15.effect.1.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 15: Off-Block",
+    "text": "TTOT updated considering the EXOT.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M15.procedures.1.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 15: Off-Block",
+    "text": "To inform all relevant Airport CDM Partners of Actual Off-Block Time (AOBT) in the Airport CDM Platform and that the aircraft has commenced push-back / taxi from parking position.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M15.procedures.1.c4": {
+    "decision": "edit",
+    "kind": "attribute",
+    "owner": "Airport CDM Platform",
+    "text": "Actual Off-Block Time (AOBT) in the Airport CDM Platform",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M15.procedures.2.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 15: Off-Block",
+    "text": "To check if TTOT changes by more than the agreed tolerance and inform Network Operations.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M15.procedures.2.c2": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "TTOT",
+    "text": "the agreed tolerance",
+    "rel_type": "",
+    "note": ""
+   },
+   "M15.procedures.4.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 15: Off-Block",
+    "text": "AOBT always triggers an A-DPI message to Network Operations",
+    "rel_type": "",
+    "note": ""
+   },
+   "M15.procedures.4.c2": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "A-DPI message",
+    "rel_type": "",
+    "note": ""
+   },
+   "M15.procedures.4.c3": {
+    "decision": "edit",
+    "kind": "relationship",
+    "owner": "",
+    "text": "AOBT always triggers an A-DPI message to Network Operations",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M15.procedures.4.c4": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M15.procedures.4.c5": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 15: Off-Block",
+    "text": "in the case of remote holding at a defined time prior to TTOT",
+    "rel_type": "",
+    "note": ""
+   },
+   "M15.procedures.6.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 15: Off-Block",
+    "text": "This process is triggered by AOBT detection.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M15.procedures.6.c2": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M15.operational_status.1.c1": {
+    "decision": "accept",
+    "kind": "enumeration",
+    "owner": "Flight",
+    "text": "OFF-BLOCK",
+    "rel_type": "",
+    "note": ""
+   },
+   "M15.action_on_cdm.1.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Airport CDM Platform",
+    "text": "AOBT recorded",
+    "rel_type": "",
+    "note": ""
+   },
+   "M16.definition.1.c1": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "ATOT - Actual Take Off Time.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M16.definition.1.c2": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M16.definition.3.c1": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "ATC ATD-Actual Time of Departure",
+    "rel_type": "",
+    "note": ""
+   },
+   "M16.definition.3.c2": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M16.definition.3.c3": {
+    "decision": "edit",
+    "kind": "attribute",
+    "owner": "Aircraft",
+    "text": "ACARS = OFF",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M16.origin_and_priority.1.c1": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M16.origin_and_priority.1.c4": {
+    "decision": "accept",
+    "kind": "relationship",
+    "owner": "",
+    "text": "Provided by ATC system",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M16.origin_and_priority.1.c5": {
+    "decision": "accept",
+    "kind": "relationship",
+    "owner": "",
+    "text": "or from ACARS equipped aircraft",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M16.timing.1.c1": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "Milestone 16: Take Off",
+    "text": "The information is directly available as soon as possible after occurrence of the milestone.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M16.data_quality.1.c1": {
+    "decision": "accept",
+    "kind": "attribute",
+    "owner": "ATOT",
+    "text": "Data is available with an accuracy of +/- 1 minute.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M16.effect.1.c1": {
+    "decision": "edit",
+    "kind": "class",
+    "owner": "",
+    "text": "FSA .. messages",
+    "rel_type": "",
+    "note": ""
+   },
+   "M16.effect.1.c2": {
+    "decision": "edit",
+    "kind": "class",
+    "owner": "",
+    "text": "MVT .. messages",
+    "rel_type": "",
+    "note": ""
+   },
+   "M16.effect.1.c3": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 16: Take Off",
+    "text": "FSA and MVT messages are sent.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M16.effect.1.c4": {
+    "decision": "reject",
+    "note": ""
+   },
+   "M16.procedures.1.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 16: Take Off",
+    "text": "To inform all relevant Airport CDM Partners about the actual take off.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M16.procedures.2.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 16: Take Off",
+    "text": "An airborne message is generated",
+    "rel_type": "",
+    "note": ""
+   },
+   "M16.procedures.2.c2": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "airborne message",
+    "rel_type": "",
+    "note": ""
+   },
+   "M16.procedures.2.c3": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 16: Take Off",
+    "text": "the flight is removed from the departure sequence.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M16.procedures.2.c4": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "departure sequence",
+    "rel_type": "",
+    "note": ""
+   },
+   "M16.procedures.3.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Milestone 16: Take Off",
+    "text": "This process is triggered by Tower FDPS, A-SMGCS / Radar detection or ACARS.",
+    "rel_type": "",
+    "note": ""
+   },
+   "M16.procedures.3.c2": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "Tower FDPS",
+    "rel_type": "",
+    "note": ""
+   },
+   "M16.procedures.3.c3": {
+    "decision": "accept",
+    "kind": "class",
+    "owner": "",
+    "text": "A-SMGCS / Radar",
+    "rel_type": "",
+    "note": ""
+   },
+   "M16.procedures.3.c5": {
+    "decision": "accept",
+    "kind": "relationship",
+    "owner": "",
+    "text": "triggered by Tower FDPS",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M16.procedures.3.c6": {
+    "decision": "accept",
+    "kind": "relationship",
+    "owner": "",
+    "text": "triggered by A-SMGCS / Radar detection",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M16.procedures.3.c7": {
+    "decision": "accept",
+    "kind": "relationship",
+    "owner": "",
+    "text": "triggered by ACARS",
+    "rel_type": "other",
+    "note": ""
+   },
+   "M16.operational_status.1.c1": {
+    "decision": "accept",
+    "kind": "enumeration",
+    "owner": "Flight",
+    "text": "DEPARTED / TAKE OFF",
+    "rel_type": "",
+    "note": ""
+   },
+   "M16.action_on_cdm.1.c1": {
+    "decision": "accept",
+    "kind": "operation",
+    "owner": "Airport CDM Platform",
+    "text": "ATOT recorded",
+    "rel_type": "",
+    "note": ""
+   }
+  },
+  "added": {
+   "M1.definition.1": [
+    {
+     "kind": "relationship",
+     "owner": "",
+     "text": "ICAO flight plan",
+     "rel_type": "generalization",
+     "note": "",
+     "by": [
+      "grader_B"
+     ],
+     "keep": true
+    },
+    {
+     "kind": "class",
+     "owner": "",
+     "text": "ATC",
+     "rel_type": "",
+     "note": "",
+     "by": [
+      "grader_B"
+     ],
+     "keep": true,
+     "repeat_of": ""
+    }
+   ],
+   "M1.definition.2": [
+    {
+     "kind": "class",
+     "owner": "",
+     "text": "flight",
+     "rel_type": "",
+     "note": "",
+     "by": [
+      "grader_B"
+     ],
+     "keep": true,
+     "repeat_of": ""
+    }
+   ],
+   "M1.origin_and_priority.1": [
+    {
+     "kind": "relationship",
+     "owner": "",
+     "text": "The ATC Flight Plan",
+     "rel_type": "generalization",
+     "note": "",
+     "by": [
+      "grader_B"
+     ],
+     "keep": true
+    }
+   ],
+   "M1.origin_and_priority.2": [
+    {
+     "kind": "class",
+     "owner": "",
+     "text": "Airport",
+     "rel_type": "",
+     "note": "",
+     "by": [
+      "grader_A",
+      "grader_B"
+     ],
+     "keep": true,
+     "repeat_of": ""
+    }
+   ],
+   "M1.timing.2": [
+    {
+     "kind": "relationship",
+     "owner": "",
+     "text": "repetitive flight plan (RFPL)",
+     "rel_type": "generalization",
+     "note": "",
+     "by": [
+      "grader_B"
+     ],
+     "keep": true
+    }
+   ],
+   "M1.data_quality.1": [
+    {
+     "kind": "relationship",
+     "owner": "",
+     "text": "ATC Flight Plan",
+     "rel_type": "generalization",
+     "note": "",
+     "by": [
+      "grader_B"
+     ],
+     "keep": true
+    },
+    {
+     "kind": "class",
+     "owner": "",
+     "text": "Flight Plan",
+     "rel_type": "",
+     "note": "",
+     "by": [
+      "grader_B"
+     ],
+     "keep": true,
+     "repeat_of": ""
+    }
+   ],
+   "M1.effect.2": [
+    {
+     "kind": "enumeration",
+     "owner": "Airport",
+     "text": "coordinated",
+     "rel_type": "",
+     "note": "",
+     "by": [
+      "grader_A",
+      "grader_B"
+     ],
+     "keep": true,
+     "repeat_of": ""
+    }
+   ],
+   "M1.effect.5": [
+    {
+     "kind": "enumeration",
+     "owner": "Airport",
+     "text": "non-coordinated",
+     "rel_type": "",
+     "note": "",
+     "by": [
+      "grader_A",
+      "grader_B"
+     ],
+     "keep": true,
+     "repeat_of": ""
+    }
+   ],
+   "M1.effect.6": [
+    {
+     "kind": "class",
+     "owner": "",
+     "text": "EOBT",
+     "rel_type": "",
+     "note": "",
+     "by": [
+      "grader_B"
+     ],
+     "keep": true,
+     "repeat_of": "M1.timing.1.c2"
+    }
+   ],
+   "M1.procedures.1": [
+    {
+     "kind": "attribute",
+     "owner": "Airport",
+     "text": "Airport flight data",
+     "rel_type": "",
+     "note": "",
+     "by": [
+      "grader_A",
+      "grader_B"
+     ],
+     "keep": true
+    },
+    {
+     "kind": "class",
+     "owner": "",
+     "text": "Network Operations",
+     "rel_type": "",
+     "note": "",
+     "by": [
+      "grader_B"
+     ],
+     "keep": true,
+     "repeat_of": "M1.effect.7.c2"
+    }
+   ],
+   "M1.action_on_cdm.1": [
+    {
+     "kind": "operation",
+     "owner": "Milestone 1: ATC Flight Plan Activated",
+     "text": "The DPI process commences (if implemented - see section 3.7.3 for details).",
+     "rel_type": "",
+     "note": "",
+     "by": [
+      "grader_B"
+     ],
+     "keep": true
+    }
+   ],
+   "M2.definition.1": [
+    {
+     "kind": "operation",
+     "owner": "",
+     "text": "At EOBT-2 hr most flights will be known in the Airport CDM Platform including if they are regulated or not.",
+     "rel_type": "",
+     "note": "",
+     "by": [
+      "grader_B"
+     ],
+     "keep": true
+    }
+   ],
+   "M2.origin_and_priority.2": [
+    {
+     "kind": "attribute",
+     "owner": "Flight",
+     "text": "CTOT flights",
+     "rel_type": "generalization",
+     "note": "",
+     "by": [
+      "grader_B"
+     ],
+     "keep": true
+    },
+    {
+     "kind": "attribute",
+     "owner": "Flight",
+     "text": "unregulated flights",
+     "rel_type": "",
+     "note": "",
+     "by": [
+      "grader_B"
+     ],
+     "keep": true
+    }
+   ],
+   "M2.procedures.4": [
+    {
+     "kind": "class",
+     "owner": "",
+     "text": "EIBT",
+     "rel_type": "",
+     "note": "",
+     "by": [
+      "grader_B"
+     ],
+     "keep": true,
+     "repeat_of": "M1.action_on_cdm.1.c2"
+    },
+    {
+     "kind": "class",
+     "owner": "",
+     "text": "EOBT",
+     "rel_type": "",
+     "note": "",
+     "by": [
+      "grader_B"
+     ],
+     "keep": true,
+     "repeat_of": "M1.timing.1.c2"
+    },
+    {
+     "kind": "class",
+     "owner": "",
+     "text": "EXOT",
+     "rel_type": "",
+     "note": "",
+     "by": [
+      "grader_B"
+     ],
+     "keep": true,
+     "repeat_of": "M2.procedures.4.c5"
+    }
+   ],
+   "M4.timing.1": [
+    {
+     "kind": "class",
+     "owner": "",
+     "text": "FIR",
+     "rel_type": "",
+     "note": "",
+     "by": [
+      "grader_B"
+     ],
+     "keep": true,
+     "repeat_of": "M4.definition.1.c3"
+    }
+   ],
+   "M4.effect.6": [
+    {
+     "kind": "operation",
+     "owner": "Milestone 4: Local Radar Update",
+     "text": "The update of TOBT for the related departing flight takes place following this milestone.\n",
+     "rel_type": "",
+     "note": "",
+     "by": [
+      "grader_B"
+     ],
+     "keep": true
+    }
+   ],
+   "M5.definition.1": [
+    {
+     "kind": "operation",
+     "owner": "Flight",
+     "text": "The flight enters the Final Approach phase at the destination airport.",
+     "rel_type": "",
+     "note": "",
+     "by": [
+      "grader_B"
+     ],
+     "keep": true
+    }
+   ],
+   "M6.definition.3": [
+    {
+     "kind": "enumeration",
+     "owner": "Aircraft",
+     "text": "ACARS=ON",
+     "rel_type": "",
+     "note": "",
+     "by": [
+      "grader_B"
+     ],
+     "keep": true,
+     "repeat_of": ""
+    }
+   ],
+   "M6.procedures.6": [
+    {
+     "kind": "class",
+     "owner": "",
+     "text": "Actual Landing Time: ALDT",
+     "rel_type": "",
+     "note": "",
+     "by": [
+      "grader_B"
+     ],
+     "keep": true,
+     "repeat_of": "M6.definition.1.c1"
+    }
+   ],
+   "M9.definition.1": [
+    {
+     "kind": "class",
+     "owner": "",
+     "text": "operational situation",
+     "rel_type": "",
+     "note": "",
+     "by": [
+      "grader_B"
+     ],
+     "keep": false,
+     "repeat_of": ""
+    }
+   ],
+   "M9.effect.6": [
+    {
+     "kind": "attribute",
+     "owner": "ATC system",
+     "text": " predicted traffic load, gate / stand location, runway in use, and waiting period at the Holding Position, etc.",
+     "rel_type": "",
+     "note": "",
+     "by": [
+      "grader_B"
+     ],
+     "keep": true
+    }
+   ],
+   "M9.procedures.1": [
+    {
+     "kind": "relationship",
+     "owner": "",
+     "text": "AO/GH TOBT",
+     "rel_type": "generalization",
+     "note": "",
+     "by": [
+      "grader_A"
+     ],
+     "keep": true
+    }
+   ],
+   "M9.procedures.3": [
+    {
+     "kind": "attribute",
+     "owner": "ATC",
+     "text": "verify feasibility of the ATC Flight Plan estimates given the updated TOBT.",
+     "rel_type": "",
+     "note": "",
+     "by": [
+      "grader_B"
+     ],
+     "keep": true
+    }
+   ],
+   "M12.procedures.1": [
+    {
+     "kind": "class",
+     "owner": "",
+     "text": "Airport CDM Platform",
+     "rel_type": "",
+     "note": "",
+     "by": [
+      "grader_A"
+     ],
+     "keep": true,
+     "repeat_of": "M1.definition.2.c1"
+    },
+    {
+     "kind": "operation",
+     "owner": "Aircraft",
+     "text": "aircraft is ready for start up / push-back.",
+     "rel_type": "",
+     "note": "",
+     "by": [
+      "grader_A"
+     ],
+     "keep": true
+    }
+   ],
+   "M14.procedures.4": [
+    {
+     "kind": "class",
+     "owner": "",
+     "text": "start up approval",
+     "rel_type": "",
+     "note": "",
+     "by": [
+      "grader_B"
+     ],
+     "keep": true,
+     "repeat_of": ""
+    }
+   ]
+  },
+  "pairs": {
+   "M1.definition.1.c1|M1.data_quality.1.add.1": "same",
+   "M1.definition.1.add.1|M1.origin_and_priority.1.c1": "distinct",
+   "M1.definition.1.add.1|M3.procedures.1.c4": "same",
+   "M1.definition.1.add.1|M5.data_quality.1.c2": "same",
+   "M1.definition.1.add.1|M6.definition.3.c1": "distinct",
+   "M1.definition.1.add.1|M7.origin_and_priority.1.c3": "distinct",
+   "M1.definition.1.add.1|M16.definition.3.c1": "distinct",
+   "M1.definition.2.c1|M9.procedures.5.c1": "same",
+   "M1.origin_and_priority.1.c1|M1.data_quality.1.add.1": "same",
+   "M1.origin_and_priority.1.c1|M3.procedures.1.c4": "same",
+   "M1.origin_and_priority.1.c1|M5.origin_and_priority.1.c2": "distinct",
+   "M1.timing.1.c2|M15.operational_status.1.c1": "distinct",
+   "M1.timing.2.c1|M1.data_quality.1.add.1": "distinct",
+   "M1.data_quality.1.add.1|M3.effect.2.c3": "same",
+   "M1.data_quality.1.add.1|M3.procedures.1.c4": "same",
+   "M1.effect.6.add.0|M15.operational_status.1.c1": "distinct",
+   "M1.effect.7.c2|M3.effect.1.c2": "distinct",
+   "M1.procedures.1.add.1|M3.effect.1.c2": "distinct",
+   "M1.procedures.3.c2|M15.operational_status.1.c1": "distinct",
+   "M1.action_on_cdm.1.c2|M7.operational_status.1.c1": "distinct",
+   "M2.definition.1.c1|M9.procedures.5.c1": "same",
+   "M2.effect.1.c2|M3.effect.1.c2": "same",
+   "M2.procedures.1.c3|M3.procedures.1.c3": "same",
+   "M2.procedures.1.c3|M10.procedures.2.c1": "same",
+   "M2.procedures.1.c5|M3.origin_and_priority.1.c6": "distinct",
+   "M2.procedures.1.c5|M3.effect.1.c3": "distinct",
+   "M2.procedures.4.add.0|M7.operational_status.1.c1": "distinct",
+   "M2.procedures.4.add.1|M15.operational_status.1.c1": "distinct",
+   "M2.procedures.5.c2|M15.operational_status.1.c1": "distinct",
+   "M2.procedures.5.c2|M9.procedures.6.c1": "distinct",
+   "M3.definition.1.c1|M16.definition.1.c1": "distinct",
+   "M3.procedures.1.c4|M5.origin_and_priority.1.c2": "distinct",
+   "M4.definition.1.c3|M5.procedures.6.c3": "same",
+   "M4.origin_and_priority.2.c2|M16.procedures.3.c3": "same",
+   "M4.timing.1.add.0|M5.procedures.6.c3": "same",
+   "M4.operational_status.1.c1|M5.procedures.6.c3": "same",
+   "M5.origin_and_priority.1.c2|M5.data_quality.1.c2": "distinct",
+   "M5.origin_and_priority.1.c2|M6.definition.3.c1": "distinct",
+   "M5.origin_and_priority.1.c2|M7.origin_and_priority.1.c3": "distinct",
+   "M5.origin_and_priority.1.c2|M16.definition.3.c1": "distinct",
+   "M5.data_quality.1.c2|M7.origin_and_priority.1.c3": "same",
+   "M6.definition.1.c1|M6.definition.3.c1": "same",
+   "M6.definition.3.c1|M6.procedures.6.add.0": "same",
+   "M6.definition.3.add.0|M6.origin_and_priority.1.c3": "same",
+   "M7.definition.1.c1|M7.operational_status.1.c1": "distinct",
+   "M7.definition.3.c3|M8.definition.1.c1": "same",
+   "M9.definition.1.c1|M9.procedures.6.c1": "distinct",
+   "M9.definition.1.c1|M15.operational_status.1.c1": "distinct",
+   "M9.effect.4.c1|M16.procedures.2.c4": "same",
+   "M9.procedures.3.c4|M9.procedures.6.c1": "same",
+   "M9.procedures.3.c4|M14.procedures.4.add.0": "same",
+   "M9.procedures.5.c1|M12.procedures.1.add.0": "same",
+   "M9.procedures.6.c1|M14.procedures.4.add.0": "same",
+   "M9.procedures.6.c1|M15.operational_status.1.c1": "distinct",
+   "M13.definition.1.c1|M14.procedures.6.c2": "distinct",
+   "M14.definition.1.c1|M14.procedures.4.add.0": "distinct",
+   "M14.definition.2.c2|M14.procedures.4.add.0": "same",
+   "M15.definition.1.c1|M15.operational_status.1.c1": "distinct"
+  },
+  "families": {},
+  "cur": "pairs",
+  "ms": 1
+ }
+}

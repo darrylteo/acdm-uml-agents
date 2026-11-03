@@ -1,0 +1,87 @@
+{
+  "meta": {
+    "ok": true,
+    "output": null,
+    "error": null,
+    "model": "claude-sonnet-5",
+    "input_tokens": 15316,
+    "output_tokens": 2650,
+    "thinking_tokens": 2036,
+    "cache_creation_tokens": 13814,
+    "cache_read_tokens": 1500,
+    "cost_usd": 0.08206,
+    "duration_ms": 25726,
+    "attempts": 1,
+    "num_turns": 2
+  },
+  "output": {
+    "items": [
+      {
+        "id": "g005",
+        "grade": 1,
+        "sentence": "M3.definition.1",
+        "note": "milestones specialize base class per scaffold"
+      },
+      {
+        "id": "g021",
+        "grade": 1,
+        "sentence": "M1.effect.6",
+        "note": ""
+      },
+      {
+        "id": "g057",
+        "grade": 1,
+        "sentence": "M2.origin_and_priority.1",
+        "note": ""
+      },
+      {
+        "id": "g060",
+        "grade": 1,
+        "sentence": "M7.definition.1",
+        "note": "EIBT and AIBT both named in document"
+      },
+      {
+        "id": "g062",
+        "grade": 1,
+        "sentence": "M2.procedures.4",
+        "note": ""
+      },
+      {
+        "id": "g087",
+        "grade": 1,
+        "sentence": "M1.action_on_cdm.1",
+        "note": "flight's take-off time values updated throughout"
+      },
+      {
+        "id": "g091",
+        "grade": 1,
+        "sentence": "M1.procedures.3",
+        "note": "SOBT, EOBT, TOBT, AOBT all named"
+      },
+      {
+        "id": "g122",
+        "grade": 0.5,
+        "sentence": "M14.definition.1",
+        "note": "document uses prefixed abbreviations but never states a 'prefix' attribute or full Calculated/Scheduled spellouts"
+      },
+      {
+        "id": "g124",
+        "grade": 1,
+        "sentence": "M11.procedures.1",
+        "note": ""
+      },
+      {
+        "id": "g167",
+        "grade": 1,
+        "sentence": "M2.action_on_cdm.1",
+        "note": "ETOT, TTOT, CTOT, ATOT all named"
+      },
+      {
+        "id": "g174",
+        "grade": 1,
+        "sentence": "M10.definition.1",
+        "note": "TSAT and ASAT both named"
+      }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+# Milestone 6: Landed
+
+The section, split into sentences. The field name precedes each field; the id precedes each sentence.
+
+
+## Definition
+
+[M6.definition.1] ALDT - Actual Landing Time.
+[M6.definition.2] This is the time that an aircraft touches down on a runway.
+[M6.definition.3] (Equivalent to ATC ATA - Actual Time of Arrival landing, ACARS=ON).
+
+## Origin and priority
+
+[M6.origin_and_priority.1] Provided by ATC system or by ACARS from equipped aircraft.
+
+## Timing
+
+[M6.timing.1] The information is directly available after occurrence of the milestone.
+
+## Data Quality
+
+[M6.data_quality.1] Data is available with an accuracy of +/- 1 minute.
+
+## Effect
+
+[M6.effect.1] The occurrence of ALDT triggers an update of downstream estimates: TOBT and TTOT are updated automatically or inserted manually by the Aircraft Operator / Ground Handler, calculated on the basis of the defined turn-round period for the departing flight.
+[M6.effect.2] The EIBT can be updated according to the ALDT +EXIT.
+
+## Procedures
+
+[M6.procedures.1] To check whether the AO/GH TOBT is consistent with the ATC Flight Plan.
+[M6.procedures.2] Network Operations is informed when the TTOT changes by more than the agreed TTOT tolerance.
+[M6.procedures.3] This check shall be performed to verify feasibility of the ATC Flight Plan given the updated TOBT or ATC Flight Plan.
+[M6.procedures.4] A TTOT tolerance is respected before Network Operations is informed on updated TTOT.
+[M6.procedures.5] This process is triggered by
+[M6.procedures.6] - Actual Landing Time: ALDT
+
+## Operational Status
+
+[M6.operational_status.1] LANDED
+
+## Action on CDM Operation
+
+[M6.action_on_cdm.1] ELDT changes to ALDT, EIBT, TOBT and TTOT updated
+
+# Task
+
+Return every sentence with keep or drop, a reason, and the claims of each kept sentence, as JSON conforming to the schema.

@@ -1,0 +1,46 @@
+# Milestone 14: Start Up Approved
+
+The section, split into sentences. The field name precedes each field; the id precedes each sentence.
+
+
+## Definition
+
+[M14.definition.1] ASAT - Actual start up Approval Time.
+[M14.definition.2] This is the time that an aircraft receives its start up approval.
+
+## Origin and priority
+
+[M14.origin_and_priority.1] ATC
+
+## Timing
+
+[M14.timing.1] The information is directly available after occurrence of the milestone.
+
+## Data Quality
+
+[M14.data_quality.1] Data is available with an accuracy of +/- 1 minute.
+
+## Effect
+
+[M14.effect.1] On receipt of ATC approval, the aircraft will start up, push back and start to taxi.
+
+## Procedures
+
+[M14.procedures.1] First step: To inform all relevant Airport CDM Partners of Actual start up approval Time (ASAT) in the Airport CDM Platform and that the aircraft has received start up approval / push-back clearance.
+[M14.procedures.2] Second step: To check if ASAT is in accordance to TSAT and to alert all relevant Airport CDM Partners when no start up has been granted.
+[M14.procedures.3] Inform of ASAT when it occurs.
+[M14.procedures.4] In case the start up approval is not granted at TSAT + tolerance, all relevant partners should be informed.
+[M14.procedures.5] The flight will be re-sequenced.
+[M14.procedures.6] Start up request by flight crew (voice or DCL) or a locally defined time around TSAT if Milestone Process 13 is omitted.
+
+## Operational Status
+
+[M14.operational_status.1] N.A
+
+## Action on CDM Operation
+
+[M14.action_on_cdm.1] N.A
+
+# Task
+
+Return every sentence with keep or drop, a reason, and the claims of each kept sentence, as JSON conforming to the schema.

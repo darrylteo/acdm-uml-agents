@@ -1,0 +1,357 @@
+{
+  "meta": {
+    "ok": true,
+    "output": null,
+    "error": null,
+    "model": "claude-opus-5",
+    "input_tokens": 3846,
+    "output_tokens": 3932,
+    "thinking_tokens": 1163,
+    "cache_creation_tokens": 1366,
+    "cache_read_tokens": 2478,
+    "cost_usd": 0.113209,
+    "duration_ms": 35612,
+    "attempts": 1,
+    "num_turns": 2
+  },
+  "output": {
+    "sentences": [
+      {
+        "id": "M15.definition.1",
+        "decision": "keep",
+        "reason": "Names the time quantity the milestone carries; a time quantity is a class in Timings.",
+        "claims": [
+          {
+            "text": "AOBT - Actual Off-Block Time.",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "AOBT - Actual Off-Block Time.",
+            "kind": "attribute",
+            "owner": "Off-Block",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M15.definition.2",
+        "decision": "keep",
+        "reason": "Defines AOBT and states its equivalence to another named time quantity (ATD, ACARS OUT).",
+        "claims": [
+          {
+            "text": "Airline/Handler ATD - Actual Time of Departure",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "Equivalent to Airline/Handler ATD - Actual Time of Departure ACARS=OUT",
+            "kind": "relationship",
+            "owner": "",
+            "rel_type": "other",
+            "duplicate_of": ""
+          },
+          {
+            "text": "The time the aircraft pushes back/vacates the parking position",
+            "kind": "attribute",
+            "owner": "AOBT",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M15.origin_and_priority.1",
+        "decision": "keep",
+        "reason": "States the origin of AOBT and names the originating systems.",
+        "claims": [
+          {
+            "text": "ACARS equipped aircraft or automated docking systems or ATC systems (e.g. A-SMGCS) or by manual input.",
+            "kind": "attribute",
+            "owner": "AOBT",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "ACARS equipped aircraft",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "automated docking systems",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "ATC systems (e.g. A-SMGCS)",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "ACARS equipped aircraft or automated docking systems or ATC systems (e.g. A-SMGCS) or by manual input.",
+            "kind": "relationship",
+            "owner": "",
+            "rel_type": "other",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M15.timing.1",
+        "decision": "keep",
+        "reason": "States the timing (availability) property of the milestone's information.",
+        "claims": [
+          {
+            "text": "The information is directly available after occurrence of the milestone.",
+            "kind": "attribute",
+            "owner": "Off-Block",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M15.data_quality.1",
+        "decision": "keep",
+        "reason": "States the accuracy of AOBT, a typed attribute of the time quantity.",
+        "claims": [
+          {
+            "text": "Data is available with an accuracy of +/- 1 minute.",
+            "kind": "attribute",
+            "owner": "AOBT",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M15.effect.1",
+        "decision": "keep",
+        "reason": "Describes an update of TTOT using EXOT; an operation, and names two time quantities.",
+        "claims": [
+          {
+            "text": "TTOT updated considering the EXOT.",
+            "kind": "operation",
+            "owner": "Off-Block",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "TTOT",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "EXOT",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M15.procedures.1",
+        "decision": "keep",
+        "reason": "Procedure stated under the milestone: notification of partners via the platform.",
+        "claims": [
+          {
+            "text": "To inform all relevant Airport CDM Partners of Actual Off-Block Time (AOBT) in the Airport CDM Platform and that the aircraft has commenced push-back / taxi from parking position.",
+            "kind": "operation",
+            "owner": "Off-Block",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "Airport CDM Partners",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "Airport CDM Platform",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "Actual Off-Block Time (AOBT) in the Airport CDM Platform",
+            "kind": "relationship",
+            "owner": "",
+            "rel_type": "other",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M15.procedures.2",
+        "decision": "keep",
+        "reason": "Procedure: a tolerance check on TTOT with a notification to Network Operations.",
+        "claims": [
+          {
+            "text": "To check if TTOT changes by more than the agreed tolerance and inform Network Operations.",
+            "kind": "operation",
+            "owner": "Off-Block",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "the agreed tolerance",
+            "kind": "attribute",
+            "owner": "TTOT",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "Network Operations",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M15.procedures.3",
+        "decision": "keep",
+        "reason": "Restates the AOBT notification of the first step.",
+        "claims": [
+          {
+            "text": "Inform of AOBT when it occurs.",
+            "kind": "operation",
+            "owner": "Off-Block",
+            "rel_type": "",
+            "duplicate_of": "M15.procedures.1.c1"
+          }
+        ]
+      },
+      {
+        "id": "M15.procedures.4",
+        "decision": "keep",
+        "reason": "States the trigger of the A-DPI message, its recipient, and the remote-holding variant.",
+        "claims": [
+          {
+            "text": "AOBT always triggers an A-DPI message to Network Operations",
+            "kind": "operation",
+            "owner": "Off-Block",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "A-DPI message",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "AOBT always triggers an A-DPI message",
+            "kind": "relationship",
+            "owner": "",
+            "rel_type": "other",
+            "duplicate_of": ""
+          },
+          {
+            "text": "an A-DPI message to Network Operations",
+            "kind": "relationship",
+            "owner": "",
+            "rel_type": "other",
+            "duplicate_of": ""
+          },
+          {
+            "text": "in the case of remote holding at a defined time prior to TTOT",
+            "kind": "operation",
+            "owner": "Off-Block",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M15.procedures.5",
+        "decision": "keep",
+        "reason": "Restates the TTOT tolerance check before a new A-DPI is sent; the TTOT tolerance attribute recurs.",
+        "claims": [
+          {
+            "text": "After a first A-DPI is sent this check shall be performed to check TTOT updates against the TTOT tolerance before Network Operations is informed, with a new A-DPI, of the updated TTOT.",
+            "kind": "operation",
+            "owner": "Off-Block",
+            "rel_type": "",
+            "duplicate_of": "M15.procedures.2.c1"
+          },
+          {
+            "text": "the TTOT tolerance",
+            "kind": "attribute",
+            "owner": "TTOT",
+            "rel_type": "",
+            "duplicate_of": "M15.procedures.2.c2"
+          }
+        ]
+      },
+      {
+        "id": "M15.procedures.6",
+        "decision": "keep",
+        "reason": "States what triggers the milestone process.",
+        "claims": [
+          {
+            "text": "This process is triggered by AOBT detection.",
+            "kind": "operation",
+            "owner": "Off-Block",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "This process is triggered by AOBT detection.",
+            "kind": "relationship",
+            "owner": "",
+            "rel_type": "other",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M15.operational_status.1",
+        "decision": "keep",
+        "reason": "The operational status the milestone sets on the flight is an enumeration literal.",
+        "claims": [
+          {
+            "text": "OFF-BLOCK",
+            "kind": "enumeration",
+            "owner": "Flight",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M15.action_on_cdm.1",
+        "decision": "keep",
+        "reason": "A CDM platform action: recording AOBT.",
+        "claims": [
+          {
+            "text": "AOBT recorded",
+            "kind": "operation",
+            "owner": "Airport CDM Platform",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      }
+    ]
+  }
+}

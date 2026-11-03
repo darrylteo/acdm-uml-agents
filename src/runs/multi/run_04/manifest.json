@@ -1,0 +1,128 @@
+{
+  "condition": "multi",
+  "steps": [
+    {
+      "ok": true,
+      "output": null,
+      "error": null,
+      "model": "claude-sonnet-5",
+      "input_tokens": 11708,
+      "output_tokens": 14165,
+      "thinking_tokens": 6489,
+      "cache_creation_tokens": 10541,
+      "cache_read_tokens": 1165,
+      "cost_usd": 0.18405100000000002,
+      "duration_ms": 88704,
+      "attempts": 1,
+      "step": "analyst",
+      "num_turns": 2
+    },
+    {
+      "ok": true,
+      "output": null,
+      "error": null,
+      "model": "claude-sonnet-5",
+      "input_tokens": 19727,
+      "output_tokens": 12051,
+      "thinking_tokens": 5208,
+      "cache_creation_tokens": 17496,
+      "cache_read_tokens": 2229,
+      "cost_usd": 0.1909438,
+      "duration_ms": 100355,
+      "attempts": 1,
+      "step": "class",
+      "num_turns": 2
+    },
+    {
+      "ok": true,
+      "output": null,
+      "error": null,
+      "model": "claude-sonnet-5",
+      "input_tokens": 25164,
+      "output_tokens": 7989,
+      "thinking_tokens": 4121,
+      "cache_creation_tokens": 25162,
+      "cache_read_tokens": 0,
+      "cost_usd": 0.18054199999999998,
+      "duration_ms": 67801,
+      "attempts": 1,
+      "step": "attribute",
+      "num_turns": 2
+    },
+    {
+      "ok": true,
+      "output": null,
+      "error": null,
+      "model": "claude-sonnet-5",
+      "input_tokens": 28511,
+      "output_tokens": 16340,
+      "thinking_tokens": 8100,
+      "cache_creation_tokens": 27453,
+      "cache_read_tokens": 1056,
+      "cost_usd": 0.2734272,
+      "duration_ms": 122286,
+      "attempts": 1,
+      "step": "operation",
+      "num_turns": 2
+    },
+    {
+      "ok": true,
+      "output": null,
+      "error": null,
+      "model": "claude-sonnet-5",
+      "input_tokens": 91959,
+      "output_tokens": 28415,
+      "thinking_tokens": 10521,
+      "cache_creation_tokens": 54681,
+      "cache_read_tokens": 37274,
+      "cost_usd": 0.5103367999999999,
+      "duration_ms": 199179,
+      "attempts": 1,
+      "step": "relationship",
+      "num_turns": 3
+    },
+    {
+      "ok": true,
+      "output": null,
+      "error": null,
+      "model": "claude-sonnet-5",
+      "input_tokens": 125292,
+      "output_tokens": 59557,
+      "thinking_tokens": 8168,
+      "cache_creation_tokens": 77111,
+      "cache_read_tokens": 48177,
+      "cost_usd": 0.9136574,
+      "duration_ms": 400599,
+      "attempts": 1,
+      "step": "reviewer",
+      "num_turns": 3
+    }
+  ],
+  "ok": true,
+  "diagnostics": [
+    {
+      "step": "relationship",
+      "merge_problems": [
+        "duplicate relationship ('aggregation', 'TurnRound', 'Flight') dropped",
+        "duplicate relationship ('association', 'FlightPlan', 'Aerodrome') dropped"
+      ]
+    }
+  ],
+  "model_alias": "claude-sonnet-5",
+  "effort": "medium",
+  "validation_errors": [],
+  "structural_problems": [],
+  "unmodelled": [
+    "Milestone 1 refers to Attachment 2 for details of the DPI process implementation, which the document does not further specify.",
+    "The distinction between coordinated and non-coordinated airports (milestone 1), affecting whether the outbound flight is already known or must be initiated from the flight plan, is a rule about airport type rather than a standalone class.",
+    "The generic term 'Airport CDM Partners' used throughout milestones 9-16 to denote all stakeholders collectively is not modelled as its own class since it is a collective reference to the existing stakeholder classes.",
+    "Milestone 8 notes that Ground Handling Started is specific to flights that are the first operation of the day or have been long-term parked, a qualifying condition on when the milestone applies rather than a separate class.",
+    "Milestone 12 mentions roles such as Dispatcher/Supervisor/Redcap coordinating with the Ground Handler, which are not separately modelled beyond the GroundHandler stakeholder.",
+    "Section 3.7.3 referenced in milestone 1 for DPI process details is not included in the document and cannot be modelled further.",
+    "Milestone 8's Action on CDM Operation mentions 'ETTT' alongside TOBT and TTOT updates, but the document does not define this quantity distinctly from the existing time classes, so it cannot be modelled as a separate typed attribute."
+  ],
+  "total_input_tokens": 302361,
+  "total_output_tokens": 138517,
+  "total_cost_usd": 2.2529582,
+  "total_duration_ms": 978924
+}

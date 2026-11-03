@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "ok": true,
+    "output": null,
+    "error": null,
+    "model": "claude-opus-5",
+    "input_tokens": 27083,
+    "output_tokens": 1212,
+    "thinking_tokens": 551,
+    "cache_creation_tokens": 25275,
+    "cache_read_tokens": 1806,
+    "cost_usd": 0.28396299999999997,
+    "duration_ms": 11654,
+    "attempts": 1,
+    "num_turns": 2
+  },
+  "output": {
+    "items": [
+      {
+        "id": "c027",
+        "grade": 1,
+        "elements": [
+          "TakeOffFromOutstation.calculateTtot()",
+          "TurnroundTime.minimumTurnRoundTime",
+          "TaxiOutTime"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c063",
+        "grade": 0.5,
+        "elements": [
+          "FlightCrew.requestStartUp()",
+          "GroundOperationsPartner.manageTurnRound()"
+        ],
+        "note": "Coordination with Ground Handler only in operation descriptions; no FlightCrew-GroundHandler link"
+      },
+      {
+        "id": "c067",
+        "grade": 1,
+        "elements": [
+          "TurnroundTime",
+          "TurnroundTime.minimumTurnRoundTime"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c073",
+        "grade": 1,
+        "elements": [
+          "AirportCDMPlatform.updateEtotTtotCtot()",
+          "AirportCDMPlatform.markRegulated()",
+          "Flight.regulated"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c076",
+        "grade": 1,
+        "elements": [
+          "AirportCDMPlatform.evaluateTobtConfirmationNeeded()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c093",
+        "grade": 1,
+        "elements": [
+          "TsatIssued.informPartnersOfTsat()",
+          "DpiType.T-DPI-s",
+          "TsatIssued->DpiMessage"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c126",
+        "grade": 1,
+        "elements": [
+          "StartUpApproved.checkAsatAgainstTsat()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c158",
+        "grade": 1,
+        "elements": [
+          "AirportCDMPlatform.updateEldtEibtTobtTtot()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c179",
+        "grade": 1,
+        "elements": [
+          "AtcFlightPlan.isRepetitive",
+          "AtcFlightPlan"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c194",
+        "grade": 1,
+        "elements": [
+          "Milestone.timingRule",
+          "FinalApproach"
+        ],
+        "note": ""
+      }
+    ]
+  }
+}

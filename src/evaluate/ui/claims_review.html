@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claim inventory review</title>
+<style>
+  :root { --bg:#fafafa; --ink:#222; --muted:#666; --line:#ddd; --sel:#1a73e8; --ok:#2e7d32; --warn:#b26a00; --bad:#c62828;
+          --font:"Segoe UI", Arial, sans-serif; --mono:Consolas, monospace; }
+  html, body { margin:0; height:100%; font:13px/1.45 var(--font); color:var(--ink); background:var(--bg); }
+  #app { display:grid; grid-template-rows:auto 1fr; grid-template-columns:230px 1fr; height:100vh; }
+  #bar { grid-column:1 / span 2; display:flex; flex-wrap:wrap; gap:10px; align-items:center; padding:6px 12px;
+         border-bottom:1px solid #ccc; background:#fff; }
+  #bar h1 { font-size:14px; margin:0 8px 0 0; }
+  #bar input[type=text] { font:inherit; padding:2px 6px; width:140px; }
+  #bar button { font:inherit; padding:2px 10px; }
+  #progress { flex:1; min-width:160px; height:8px; background:#e5e5e5; border-radius:4px; overflow:hidden; }
+  #progress div { height:100%; background:var(--ok); width:0; }
+  #count { font-variant-numeric:tabular-nums; color:var(--muted); }
+  #nav { border-right:1px solid #ccc; background:#fff; overflow:auto; padding:8px 0; }
+  #nav a { display:flex; justify-content:space-between; padding:4px 12px; color:var(--ink); text-decoration:none; cursor:pointer; }
+  #nav a:hover { background:#f0f4ff; }
+  #nav a.cur { background:#e3ecfb; font-weight:600; }
+  #nav a .n { color:var(--muted); font-variant-numeric:tabular-nums; }
+  #nav a.done .n { color:var(--ok); }
+  #main { overflow:auto; padding:10px 18px 60vh; }
+  h2 { font-size:16px; margin:8px 0 10px; }
+  h3 { font-size:12px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); margin:18px 0 6px; }
+  .sent { background:#fff; border:1px solid var(--line); border-radius:4px; padding:8px 10px; margin-bottom:8px; }
+  .sent .sid { font-family:var(--mono); font-size:11px; color:var(--muted); }
+  .sent .text { margin:2px 0 4px; }
+  .sent .judge { font-size:12px; color:var(--muted); }
+  .pill { display:inline-block; padding:0 6px; border-radius:3px; font-size:11px; border:1px solid transparent; margin-right:4px; vertical-align:middle; }
+  .pill.keep { background:#e8f5e9; color:var(--ok); }
+  .pill.drop { background:#fbe9e7; color:var(--bad); }
+  .pill.k-class { background:#e3f2fd; color:#0d47a1; }
+  .pill.k-attribute { background:#f3e5f5; color:#6a1b9a; }
+  .pill.k-operation { background:#fff3e0; color:#e65100; }
+  .pill.k-relationship { background:#e0f2f1; color:#00695c; }
+  .pill.k-enumeration { background:#fffde7; color:#827717; }
+  .claim { display:grid; grid-template-columns:auto 1fr auto; gap:6px 10px; align-items:start; padding:6px 8px; margin:6px 0 0;
+           border:1px solid var(--line); border-left:4px solid #ccc; border-radius:3px; background:#fcfcfc; }
+  .claim:focus { outline:2px solid var(--sel); outline-offset:1px; }
+  .claim.accept { border-left-color:var(--ok); }
+  .claim.edit { border-left-color:var(--warn); }
+  .claim.reject { border-left-color:var(--bad); opacity:.75; }
+  .claim.added { border-left-color:var(--sel); }
+  .claim .cid { font-family:var(--mono); font-size:11px; color:var(--muted); white-space:nowrap; padding-top:2px; }
+  .claim .body .meta { font-size:12px; color:var(--muted); margin-top:2px; }
+  .claim .body .meta b { color:var(--ink); font-weight:600; }
+  .claim .btns { display:flex; gap:4px; white-space:nowrap; }
+  .claim .btns button { font:inherit; font-size:12px; padding:1px 8px; border:1px solid #bbb; background:#fff; border-radius:3px; cursor:pointer; }
+  .claim .btns button.on.a { background:var(--ok); color:#fff; border-color:var(--ok); }
+  .claim .btns button.on.e { background:var(--warn); color:#fff; border-color:var(--warn); }
+  .claim .btns button.on.r { background:var(--bad); color:#fff; border-color:var(--bad); }
+  .editor { grid-column:1 / span 3; display:grid; grid-template-columns:90px 1fr; gap:4px 8px; padding:6px 0 2px; border-top:1px dashed var(--line); margin-top:4px; }
+  .editor label { color:var(--muted); font-size:12px; padding-top:3px; }
+  .editor input, .editor select, .editor textarea { font:inherit; font-size:12px; padding:2px 4px; width:100%; box-sizing:border-box; }
+  .editor textarea { min-height:38px; resize:vertical; }
+  .note { grid-column:1 / span 3; }
+  .note input { font:inherit; font-size:12px; width:100%; box-sizing:border-box; border:1px solid #eee; padding:2px 4px; background:#fff; }
+  .add { font:inherit; font-size:12px; margin-top:6px; padding:1px 8px; border:1px dashed #999; background:#fff; border-radius:3px; cursor:pointer; color:#444; }
+  .help { color:var(--muted); font-size:12px; }
+  kbd { font-family:var(--mono); font-size:11px; border:1px solid #bbb; border-bottom-width:2px; border-radius:3px; padding:0 4px; background:#fff; }
+  #legend { background:#fff; border:1px solid var(--line); border-radius:4px; padding:8px 12px; margin-bottom:12px; }
+  #legend summary { cursor:pointer; font-weight:600; }
+  #legend p { margin:6px 0; }
+  table.legend { border-collapse:collapse; width:100%; margin:6px 0; font-size:12px; }
+  table.legend th, table.legend td { text-align:left; vertical-align:top; padding:4px 8px 4px 0; border-top:1px solid #eee; }
+  table.legend th { color:var(--muted); font-weight:600; }
+  .editor div { display:flex; flex-direction:column; }
+</style>
+</head>
+<body>
+<div id="app">
+  <div id="bar">
+    <h1>Claim inventory review</h1>
+    <label>Reviewer <input type="text" id="reviewer" placeholder="your name"></label>
+    <label><input type="checkbox" id="undecided"> undecided only</label>
+    <div id="progress"><div></div></div>
+    <span id="count"></span>
+    <button id="export">Export JSON</button>
+    <button id="import">Import…</button>
+    <input type="file" id="file" accept="application/json" style="display:none">
+    <span id="saved" class="help"></span>
+  </div>
+  <nav id="nav"></nav>
+  <main id="main"></main>
+</div>
+<script type="application/json" id="data">__DATA__</script>
+<script>
+const DATA = JSON.parse(document.getElementById('data').textContent);
+const KINDS = ['class', 'attribute', 'operation', 'relationship', 'enumeration'];
+const FIELD = {definition:'Definition', origin_and_priority:'Origin and priority', timing:'Timing', data_quality:'Data Quality',
+               effect:'Effect', procedures:'Procedures', operational_status:'Operational Status', action_on_cdm:'Action on CDM Operation'};
+const KEY = 'claims_review_' + DATA.generated + '_' + (DATA.reviewer || '');
+let S = load();
+
+function load() {
+  try { const s = JSON.parse(localStorage.getItem(KEY)); if (s) return s; } catch (e) {}
+  // a seed baked in at build time (e.g. a structural addition another reviewer already made and settled
+  // on, such as a missing class) so this reviewer starts from it instead of importing it by hand
+  const seed = DATA.seed || {};
+  return {reviewer: seed.reviewer || '', claims: seed.claims || {}, added: seed.added || {}, sentences: {}, curField: null};
+}
+function save() {
+  S.curField = curField; S.reviewer = document.getElementById('reviewer').value;
+  try { localStorage.setItem(KEY, JSON.stringify(S)); document.getElementById('saved').textContent = 'saved ' + new Date().toLocaleTimeString(); }
+  catch (e) { document.getElementById('saved').textContent = 'autosave unavailable: export often'; }
+  renderNav(); renderProgress();
+}
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const allClaims = () => DATA.sentences.filter(inScope).flatMap(s => s.claims);  // repeats are left out when grade_ui builds the page
+const decided = c => (S.claims[c.id] || {}).decision;
+const milestones = (DATA.assigned && DATA.assigned.length ? DATA.assigned : [...new Set(DATA.sentences.map(s => s.milestone))]).sort((a, b) => a - b);
+const inScope = s => milestones.includes(s.milestone);
+// grouped by field across the reviewer's assigned milestones (not milestone-first), so each field's
+// claims are judged together for consistency, per the fields' natural order in the document.
+const fields = Object.keys(FIELD).filter(f => DATA.sentences.some(s => inScope(s) && s.field === f));
+let curField = (S.curField && fields.includes(S.curField)) ? S.curField : fields[0];
+
+function renderProgress() {
+  const cs = allClaims(), d = cs.filter(decided).length;
+  document.querySelector('#progress div').style.width = (cs.length ? 100 * d / cs.length : 0) + '%';
+  const added = Object.values(S.added).reduce((n, a) => n + a.length, 0);
+  document.getElementById('count').textContent = `${d} / ${cs.length} decided` + (added ? `, ${added} added` : '');
+}
+function renderNav() {
+  const nav = document.getElementById('nav');
+  nav.innerHTML = fields.map(f => {
+    const cs = DATA.sentences.filter(s => inScope(s) && s.field === f).flatMap(s => s.claims);
+    const d = cs.filter(decided).length;
+    return `<a class="${f === curField ? 'cur' : ''} ${d === cs.length ? 'done' : ''}" data-field="${f}"><span>${esc(FIELD[f] || f)}</span><span class="n">${d}/${cs.length}</span></a>`;
+  }).join('');
+  nav.querySelectorAll('a').forEach(a => a.onclick = () => { curField = a.dataset.field; renderMain(); save(); });
+}
+const OWNERS = DATA.owners || [];
+const norm = t => t.toLowerCase().replace(/\(.*?\)/g, '').replace(/^(the|a|an)\s+/, '').replace(/[^a-z0-9 ]/g, '').trim();
+function ownerOptions(s, current) {
+  const mine = `Milestone ${s.milestone}: ${DATA.names[s.milestone] || ''}`;
+  const list = [mine, ...OWNERS.filter(o => o !== mine)];
+  if (current && !list.includes(current)) list.push(current);
+  return list;
+}
+function claimRow(c, s, added) {
+  const st = S.claims[c.id] || {};
+  const dec = added ? 'added' : (st.decision || '');
+  const f = k => (st.decision === 'edit' && st[k] != null) ? st[k] : c[k];
+  const kind = f('kind');
+  const meta = [f('owner') ? `owner <b>${esc(f('owner'))}</b>` : '',
+                kind === 'relationship' ? `type <b>${esc(f('rel_type') || 'other')}</b>` : ''].filter(Boolean).join(' · ');
+  let editor = '';
+  if (st.decision === 'edit' || added) {
+    const needsOwner = ['attribute', 'operation', 'enumeration'].includes(kind);
+    const owner = f('owner') || '';
+    const ownerOpts = ownerOptions(s, owner);
+    const ownerIsOther = owner && !ownerOpts.includes(owner);
+    editor = `
+    <div class="editor">
+      <label>text</label><textarea data-k="text" placeholder="the clause of the sentence that states the claim, in the document's words">${esc(f('text'))}</textarea>
+      <label>kind</label><select data-k="kind">${KINDS.map(k => `<option ${kind === k ? 'selected' : ''}>${k}</option>`).join('')}</select>
+      <label>owner</label><div>
+        <select data-k="owner" ${needsOwner ? '' : 'disabled'}><option value="" ${!owner ? 'selected' : ''}>${needsOwner ? '(choose the party or thing the document names)' : '(none: a class or relationship has no owner)'}</option>${ownerOpts.map(o => `<option ${owner === o ? 'selected' : ''}>${esc(o)}</option>`).join('')}<option value="__other__" ${ownerIsOther ? 'selected' : ''}>other (type below)</option></select>
+        <input data-k="owner_other" class="other" value="${ownerIsOther ? esc(owner) : ''}" placeholder="owner in the document's words" style="${ownerIsOther ? '' : 'display:none'}; margin-top:3px"></div>
+      <label>rel_type</label><select data-k="rel_type" ${kind === 'relationship' ? '' : 'disabled'}><option value="" ${!f('rel_type') ? 'selected' : ''}>${kind === 'relationship' ? '(choose)' : '(not a relationship)'}</option><option ${f('rel_type') === 'other' ? 'selected' : ''}>other</option><option ${f('rel_type') === 'generalization' ? 'selected' : ''}>generalization</option></select>
+    </div>`;
+  }
+  const btns = added ? `<div class="btns"><button class="del" title="remove this added claim">remove</button></div>`
+    : `<div class="btns"><button class="a ${st.decision === 'accept' ? 'on' : ''}" title="accept (a); click again to clear">Accept</button><button class="e ${st.decision === 'edit' ? 'on' : ''}" title="edit (e); click again to clear">Edit</button><button class="r ${st.decision === 'reject' ? 'on' : ''}" title="reject (r); click again to clear">Reject</button></div>`;
+  return `<div class="claim ${dec}" tabindex="0" data-cid="${esc(c.id)}" data-sid="${esc(s.id)}" ${added ? `data-added="${c._i}"` : ''}>
+    <span class="cid">${esc(c.id)}</span>
+    <div class="body"><span class="pill k-${esc(kind)}">${esc(kind)}</span>${esc(added ? '' : c.text)}<div class="meta">${meta}${added ? ' · added by reviewer' : ''}</div></div>
+    ${btns}${editor}
+    <div class="note"><input data-k="note" value="${esc(st.note || c.note || '')}" placeholder="note (optional: why, or what you were unsure about)"></div>
+  </div>`;
+}
+const LEGEND = `<details id="legend"><summary>Definitions, examples, and keys</summary>
+    <p><b>What you decide.</b> Each proposed claim is one thing a class model built from this document would have to contain. Press <b>Accept</b> if the kind and owner are right, <b>Edit</b> if the claim is real but a field is wrong, <b>Reject</b> if the sentence does not state this or it is not something a class model holds. Click the same button again to clear it; a claim may be left undecided if you are unsure, and a note helps us. A class or status claimed a second time (a restatement, or a thing already claimed in an earlier milestone) is not shown again; a grey line under the sentence says which earlier claim it repeats, and you do not decide it. <b>+ Add claim</b> under any sentence for something the model missed. Wording is never scored, and the kind and the owner are labels that help us report results and help the later graders find things.</p>
+    <table class="legend">
+      <tr><th>kind</th><th>meaning</th><th>owner</th><th>example from milestone 1</th></tr>
+      <tr><td><span class="pill k-class">class</span></td><td>a thing that persists across the process: stakeholder, flight, aircraft, flight plan, slot, milestone, message, system, or time quantity (every time quantity such as EOBT or TOBT is a class)</td><td>none</td><td>"The ATC Flight Plan"; "EOBT"; "Network Operations"</td></tr>
+      <tr><td><span class="pill k-attribute">attribute</span></td><td>a named value or property of such a thing, including an origin, priority, accuracy, or tolerance the document states</td><td>the thing that holds it</td><td>"type of aircraft", owner Aircraft; "aircraft registration", owner Aircraft</td></tr>
+      <tr><td><span class="pill k-operation">operation</span></td><td>a rule, calculation, check, tolerance, trigger, update, or notification the document describes</td><td>the party or thing named as performing it; the milestone itself for a procedure with no other performer</td><td>"To check consistency between ATC Flight Plan, Airport Slot and Airport flight data", owner Milestone 1; "ELDT and EIBT updated for an arrival", owner Airport CDM Platform</td></tr>
+      <tr><td><span class="pill k-relationship">relationship</span></td><td>a structural link the document states between two things: who originates, sends, receives, holds, or triggers what; type <i>generalization</i> when several things are kinds of one thing, otherwise <i>other</i></td><td>none</td><td>"The ATC Flight Plan is submitted by the Aircraft Operator" (other); "a repetitive flight plan (RFPL)" as a kind of flight plan (generalization)</td></tr>
+      <tr><td><span class="pill k-enumeration">enumeration</span></td><td>a status or other fixed set of named values; the operational status a milestone sets is one literal</td><td>the thing whose state it describes</td><td>"INITIATED", owner Flight</td></tr>
+    </table>
+    <p><b>Edit fields.</b> <i>text</i>: the clause of the sentence that states the claim, in the document's words (shorten or extend it; do not paraphrase). <i>kind</i>: one of the five above. <i>owner</i>: pick from the list, which holds every party, thing, and milestone the document names; "other" for anything else, in the document's words. It is disabled for a class or relationship, which have no owner. <i>rel_type</i>: only for a relationship.</p>
+    <p>Keys: <kbd>a</kbd> <kbd>e</kbd> <kbd>r</kbd> decide the focused claim (press again to clear); <kbd>j</kbd>/<kbd>k</kbd> next/previous claim; <kbd>n</kbd>/<kbd>p</kbd> next/previous field. Autosaves in this browser; <b>Export JSON</b> when finished and send the file back.</p></details>`;
+function renderMain() {
+  const main = document.getElementById('main');
+  const only = document.getElementById('undecided').checked;
+  const sents = DATA.sentences.filter(s => inScope(s) && s.field === curField)
+    .sort((a, b) => a.milestone - b.milestone);
+  let html = LEGEND;
+  html += `<h2>${esc(FIELD[curField] || curField)}</h2>`;
+  let ms = null;
+  for (const s of sents) {
+    const added = (S.added[s.id] || []).map((a, i) => ({...a, id: `${s.id}.a${i + 1}`, _i: i}));
+    let visible = s.claims;
+    if (only) visible = visible.filter(c => !decided(c));
+    if (only && !visible.length && !added.length) continue;
+    if (s.milestone !== ms) { ms = s.milestone; html += `<h3>Milestone ${ms}: ${esc(DATA.names[ms] || '')}</h3>`; }
+    const j = s.judge;
+    html += `<div class="sent"><div class="sid">${esc(s.id)}</div><div class="text">${esc(s.text)}</div>
+      <div class="judge">${j ? `<span class="pill ${j.decision}">${j.decision}</span>${esc(j.reason)}` : '<span class="pill">not judged</span>'}</div>
+      ${visible.map(c => claimRow(c, s, false)).join('')}${added.map(c => claimRow(c, s, true)).join('')}
+      ${(s.repeats || []).length ? `<div class="help" style="margin-top:4px">${s.repeats.length} proposal${s.repeats.length > 1 ? 's' : ''} not shown: repeat${s.repeats.length > 1 ? '' : 's'} ${[...new Set(s.repeats)].map(esc).join(', ')}</div>` : ''}
+      <button class="add" data-sid="${esc(s.id)}">+ Add claim</button></div>`;
+  }
+  main.innerHTML = html;
+  main.querySelectorAll('.claim').forEach(wire);
+  main.querySelectorAll('.add').forEach(b => b.onclick = () => {
+    (S.added[b.dataset.sid] = S.added[b.dataset.sid] || []).push({text:'', kind:'operation', owner:'', rel_type:'', note:''});
+    save(); renderMain();
+    const rows = main.querySelectorAll(`.claim[data-sid="${b.dataset.sid}"][data-added]`); rows[rows.length - 1]?.querySelector('textarea')?.focus();
+  });
+}
+function wire(row) {
+  const cid = row.dataset.cid, sid = row.dataset.sid, addedIdx = row.dataset.added;
+  const set = (dec) => {
+    const st = S.claims[cid] = S.claims[cid] || {};
+    st.decision = st.decision === dec ? null : dec;   // same button again clears the decision
+    save(); rerenderRow(row);
+  };
+  const target = () => addedIdx != null ? S.added[sid][+addedIdx] : (S.claims[cid] = S.claims[cid] || {});
+  row.querySelector('.a')?.addEventListener('click', () => set('accept'));
+  row.querySelector('.e')?.addEventListener('click', () => set('edit'));
+  row.querySelector('.r')?.addEventListener('click', () => set('reject'));
+  row.querySelector('.del')?.addEventListener('click', () => { S.added[sid].splice(+addedIdx, 1); save(); renderMain(); });
+  row.querySelectorAll('[data-k]').forEach(inp => inp.addEventListener('input', () => {
+    const k = inp.dataset.k, t = target();
+    if (k === 'owner') {
+      const other = row.querySelector('[data-k=owner_other]');
+      if (inp.value === '__other__') { other.style.display = ''; t.owner = other.value; other.focus(); }
+      else { other.style.display = 'none'; t.owner = inp.value; }
+    } else if (k === 'owner_other') t.owner = inp.value;
+    else t[k] = inp.value;
+    save();
+    if (k === 'kind') rerenderRow(row, true);   // owner and rel_type enable/disable with the kind
+  }));
+  row.addEventListener('keydown', ev => {
+    if (ev.target.matches('input, textarea, select')) return;
+    const k = ev.key;
+    if (addedIdx == null && k === 'a') set('accept');
+    else if (addedIdx == null && k === 'e') set('edit');
+    else if (addedIdx == null && k === 'r') set('reject');
+    else return;
+    ev.preventDefault();
+  });
+}
+function rerenderRow(row, keepFocus) {
+  const cid = row.dataset.cid, sid = row.dataset.sid, addedIdx = row.dataset.added;
+  const s = DATA.sentences.find(x => x.id === sid);
+  const c = addedIdx != null ? {...S.added[sid][+addedIdx], id: cid, _i: +addedIdx} : s.claims.find(x => x.id === cid);
+  const tmp = document.createElement('div'); tmp.innerHTML = claimRow(c, s, addedIdx != null);
+  const fresh = tmp.firstElementChild; row.replaceWith(fresh); wire(fresh);
+  if (keepFocus) fresh.querySelector('select[data-k=kind]')?.focus();
+  else { fresh.focus(); if ((S.claims[cid] || {}).decision === 'edit') fresh.querySelector('select[data-k=kind]')?.focus(); }
+}
+document.addEventListener('keydown', ev => {
+  if (ev.target.matches('input, textarea, select')) return;
+  const rows = [...document.querySelectorAll('.claim')];
+  const i = rows.indexOf(document.activeElement);
+  if (ev.key === 'j') { (rows[i + 1] || rows[0])?.focus(); ev.preventDefault(); }
+  else if (ev.key === 'k') { (rows[i - 1] || rows[rows.length - 1])?.focus(); ev.preventDefault(); }
+  else if (ev.key === 'n' && fields.indexOf(curField) < fields.length - 1) { curField = fields[fields.indexOf(curField) + 1]; renderMain(); save(); document.querySelector('.claim')?.focus(); }
+  else if (ev.key === 'p' && fields.indexOf(curField) > 0) { curField = fields[fields.indexOf(curField) - 1]; renderMain(); save(); document.querySelector('.claim')?.focus(); }
+});
+document.getElementById('undecided').onchange = renderMain;
+document.getElementById('reviewer').value = S.reviewer || '';
+document.getElementById('reviewer').oninput = save;
+document.getElementById('export').onclick = () => {
+  const out = {reviewer: S.reviewer, exported: new Date().toISOString(), draft_generated: DATA.generated, assigned: milestones,
+               claims: S.claims, added: Object.fromEntries(Object.entries(S.added).filter(([, v]) => v.length)), sentences: S.sentences};
+  const blob = new Blob([JSON.stringify(out, null, 1)], {type: 'application/json'});
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+  a.download = `claims_review_${(S.reviewer || 'reviewer').toLowerCase().replace(/\W+/g, '_')}.json`; a.click();
+};
+document.getElementById('import').onclick = () => document.getElementById('file').click();
+document.getElementById('file').onchange = ev => {
+  const f = ev.target.files[0]; if (!f) return;
+  f.text().then(t => { const d = JSON.parse(t); S = {reviewer: d.reviewer || '', claims: d.claims || {}, added: d.added || {}, sentences: d.sentences || {}, curField};
+    document.getElementById('reviewer').value = S.reviewer; save(); renderMain(); });
+};
+if (DATA.reviewer) { const r = document.getElementById('reviewer'); r.value = DATA.reviewer; r.readOnly = true; S.reviewer = DATA.reviewer; }
+renderNav(); renderProgress(); renderMain();
+</script>
+</body>
+</html>

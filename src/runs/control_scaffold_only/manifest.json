@@ -1,0 +1,10 @@
+{
+  "condition": "control_scaffold_only",
+  "ok": true,
+  "validation_errors": [],
+  "note": "Deterministic. No LLM call, no cost, no latency.",
+  "total_input_tokens": 0,
+  "total_output_tokens": 0,
+  "total_cost_usd": 0.0,
+  "total_duration_ms": 0
+}

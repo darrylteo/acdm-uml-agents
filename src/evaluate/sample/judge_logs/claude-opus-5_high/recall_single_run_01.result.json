@@ -1,0 +1,126 @@
+{
+  "meta": {
+    "ok": true,
+    "output": null,
+    "error": null,
+    "model": "claude-opus-5",
+    "input_tokens": 25539,
+    "output_tokens": 2169,
+    "thinking_tokens": 1476,
+    "cache_creation_tokens": 23731,
+    "cache_read_tokens": 1806,
+    "cost_usd": 0.292448,
+    "duration_ms": 23180,
+    "attempts": 1,
+    "num_turns": 2
+  },
+  "output": {
+    "items": [
+      {
+        "id": "c001",
+        "grade": 0.5,
+        "elements": [
+          "GroundHandlingStartedMilestone"
+        ],
+        "note": "First-of-day / long-term-parked scope only in the class definition text, no structural element."
+      },
+      {
+        "id": "c008",
+        "grade": 1,
+        "elements": [
+          "Milestone.accuracy",
+          "TimeQuantity.accuracy"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c032",
+        "grade": 1,
+        "elements": [
+          "ADPIMessage",
+          "DPIProcess.sendADPI()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c059",
+        "grade": 1,
+        "elements": [
+          "ETOT",
+          "Flight.etot"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c083",
+        "grade": 1,
+        "elements": [
+          "GroundHandlingStartedMilestone.checkTOBTConsistency()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c103",
+        "grade": 1,
+        "elements": [
+          "TakeOffFromOutstationMilestone.checkTTOTTolerance()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c134",
+        "grade": 1,
+        "elements": [
+          "InBlockMilestone.informNetworkOperationsIfTolerated()",
+          "TakeOffFromOutstationMilestone.checkTTOTTolerance()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c140",
+        "grade": 1,
+        "elements": [
+          "Flight.aibt",
+          "AIBT",
+          "ACARS->InBlockMilestone"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c159",
+        "grade": 1,
+        "elements": [
+          "FlightOperationalStatus.DEPARTED / TAKE OFF"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c163",
+        "grade": 1,
+        "elements": [
+          "AirportCDMPlatform.updateAfterLanding()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c175",
+        "grade": 1,
+        "elements": [
+          "DPIProcess.sendEDPI()",
+          "ATCFlightPlan.sobt",
+          "Aircraft.registration",
+          "ATCFlightPlan.destinationAerodrome"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c177",
+        "grade": 1,
+        "elements": [
+          "AirportCDMPlatform"
+        ],
+        "note": ""
+      }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "condition": "single",
+  "steps": [
+    {
+      "ok": true,
+      "output": null,
+      "error": null,
+      "model": "claude-sonnet-5",
+      "input_tokens": 27088,
+      "output_tokens": 119501,
+      "thinking_tokens": 75735,
+      "cache_creation_tokens": 21126,
+      "cache_read_tokens": 5958,
+      "cost_usd": 1.2807136000000001,
+      "duration_ms": 923167,
+      "attempts": 1,
+      "num_turns": 3
+    }
+  ],
+  "ok": true,
+  "model_alias": "claude-sonnet-5",
+  "effort": "high",
+  "validation_errors": [],
+  "structural_problems": [],
+  "unmodelled": [
+    "Milestone 1 references 'attachment 2' for further details of the DPI process implementation, which is not itself described in the text.",
+    "Milestone 1 references 'section 3.7.3' for further details of the DPI process, which is not itself described in the text.",
+    "Milestone 12 parenthetically names the roles Dispatcher / Supervisor / Redcap as those the pilot coordinates with, without describing their responsibilities further.",
+    "Milestone 8's note that for a flight on a normal turn-round, ACGT is considered to commence at AIBT rather than being separately recorded, is a definitional special case rather than a separate rule with a class to own it."
+  ],
+  "total_input_tokens": 27088,
+  "total_output_tokens": 119501,
+  "total_cost_usd": 1.2807136000000001,
+  "total_duration_ms": 923167
+}

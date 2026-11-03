@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Grading: __TASK__ sample</title>
+<style>
+:root{--bg:#fafafa;--ink:#222;--muted:#666;--line:#ddd;--sel:#1a73e8;--hl:#fff3b0;--ok:#2e7d32;--font:"Segoe UI",Arial,sans-serif;--mono:Consolas,monospace}
+body{margin:0;font:13.5px/1.45 var(--font);color:var(--ink);background:var(--bg)}
+#top{display:flex;gap:14px;align-items:center;padding:8px 14px;border-bottom:1px solid var(--line);background:#fff;flex-wrap:wrap}
+#top b{font-size:14px} .muted{color:var(--muted)} #top button,#top input{font:inherit;padding:3px 10px}
+#progress{flex:1;min-width:140px;height:8px;background:#e5e5e5;border-radius:4px;overflow:hidden}#progress div{height:100%;background:var(--ok);width:0}
+#wrap{display:grid;grid-template-columns:1fr 1.4fr;height:calc(100vh - 46px)}
+.pane{overflow:auto;padding:14px 18px}.pane.left{border-right:1px solid var(--line);background:#fff}
+h3{margin:0 0 6px;font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.passage{background:#fff;border:1px solid var(--line);border-radius:6px;padding:10px 12px;margin-bottom:12px}
+.passage .f{color:var(--muted);font-weight:600;margin-top:8px;font-size:12px}
+.passage .s{display:block;padding:2px 0;color:#555}.passage .s.hl{background:var(--hl);color:var(--ink);font-weight:600;padding:4px 6px;border-radius:4px}
+.q{position:sticky;bottom:0;background:#fff;border-top:2px solid var(--sel);padding:12px 0 6px;margin-top:14px}
+.q p{margin:0 0 8px;font-weight:600}
+.grades button{font:inherit;padding:8px 14px;margin-right:6px;border:1px solid var(--line);border-radius:6px;background:#fff;cursor:pointer;text-align:left}
+.grades button.on{background:var(--sel);color:#fff;border-color:var(--sel)}
+.grades small{display:block;font-weight:400;color:var(--muted)}.grades button.on small{color:#e3ecff}
+.note{width:100%;box-sizing:border-box;margin-top:8px;padding:6px;border:1px solid var(--line);border-radius:4px;font:inherit}
+.cands{margin-bottom:6px} .cand{background:#fff;border:1px solid var(--line);border-radius:6px;padding:8px 10px;margin-bottom:6px}
+.cand code{font:12.5px var(--mono)} .cand .d{color:var(--muted);font-size:12.5px}
+.owner .cls{border-color:var(--sel)} .owner .hd{background:#eef4ff}
+.k{font-size:10.5px;color:#fff;border-radius:3px;padding:1px 5px;margin-right:6px;letter-spacing:.2px}
+.k.attribute{background:#2e7d32}.k.operation{background:#1565c0}.k.relationship{background:#6d4c41}.k.class{background:#7a3e9d}.k.enumeration{background:#9c6b00}
+.filter{width:100%;box-sizing:border-box;padding:6px;border:1px solid var(--line);border-radius:4px;margin:10px 0 8px;font:inherit}
+.tree .cls{border:1px solid var(--line);border-radius:6px;background:#fff;margin-bottom:6px}
+.tree .hd{display:flex;gap:8px;align-items:center;padding:6px 10px;cursor:pointer}.tree .hd .pk{color:var(--muted)}.tree .hd .nm{font-weight:600}
+.tree .body{padding:2px 10px 8px 28px;border-top:1px dashed var(--line)}.cls.collapsed .body{display:none}
+.tree .hd .nm::before{content:"\25be ";color:var(--muted)}.cls.collapsed .hd .nm::before{content:"\25b8 ";color:var(--muted)}
+#foldall{font:inherit;padding:2px 8px;margin-left:8px}
+.tree .def{color:var(--muted);font-style:italic;margin:4px 0 6px}
+.mem{padding:3px 0}
+.mem code{font:12.5px var(--mono)}.mem .d{color:var(--muted);font-size:12.5px}
+.el{background:#fff;border:1px solid var(--line);border-radius:6px;padding:10px 12px;margin-bottom:12px}
+.keys{font-size:12px;color:var(--muted)}
+details.help{margin-bottom:10px}details.help summary{cursor:pointer;color:var(--sel)}details.help p{margin:6px 0}
+</style>
+</head>
+<body>
+<div id="top"><b id="title"></b><span class="muted" id="sub"></span>
+  <div id="progress"><div></div></div><span id="count" class="muted"></span>
+  <button id="prev" title="previous (←)">←</button><button id="next" title="next (→)">→</button><button id="nextun" title="next ungraded (n)">next ungraded</button>
+  <label class="muted">grader <input id="grader" type="text" size="10"></label>
+  <button id="import">Import</button><input type="file" id="file" accept="application/json" style="display:none"><button id="export">Export JSON</button><span id="saved" class="muted"></span></div>
+<div id="wrap"></div>
+<script type="application/json" id="data">__DATA__</script>
+<script>
+const DATA = JSON.parse(document.getElementById('data').textContent);
+const ITEMS = DATA.items, TASK = DATA.task;
+// the key carries a fingerprint of the items, so a page rebuilt from a changed sample never picks up grades made on the old one
+const KEY = 'grade_' + TASK + '_' + DATA.seed + '_' + (DATA.grader || '') + '_' + DATA.fingerprint;
+let S = load(); let cur = S.cur || 0; let shownAt = Date.now();
+function load(){ try { const s = JSON.parse(localStorage.getItem(KEY)); if (s) return s; } catch (e) {}
+  // a starting state baked in at build time (grades carried over from an earlier pass), so the grader opens straight into it
+  return {grader: DATA.grader || '', grades: (DATA.start && DATA.start.grades) || {}, cur: 0}; }
+function save(){ S.cur = cur; S.grader = document.getElementById('grader').value;
+  try { localStorage.setItem(KEY, JSON.stringify(S)); document.getElementById('saved').textContent = 'saved ' + new Date().toLocaleTimeString(); }
+  catch (e) { document.getElementById('saved').textContent = 'autosave unavailable: export often'; } renderTop(); }
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const G = id => S.grades[id] || (S.grades[id] = {credit: null, note: '', seconds: 0});
+const graded = () => ITEMS.filter(it => G(it.id).credit != null).length;
+function renderTop(){ const d = graded(); document.querySelector('#progress div').style.width = (100 * d / ITEMS.length) + '%';
+  document.getElementById('count').textContent = `${d} / ${ITEMS.length} graded`;
+  document.getElementById('title').textContent = `Item ${cur + 1} of ${ITEMS.length}`; }
+const RECALL = [['1','1','the model holds it, anywhere, under any name'],['0.5','0.5','something near the claim, but not the claim'],['0','0','the model does not hold it']];
+const PREC = [['1','1','the document states it'],['0.5','0.5','implied, not stated; or the description adds what the document does not give'],['0','0','neither']];
+function gradeBox(it){ const g = G(it.id); const labels = TASK === 'recall' ? RECALL : PREC;
+  return `<div class="q"><p>${TASK === 'recall' ? 'Does the model hold the information in this claim?' : 'Does the document support this element?'}</p>
+  <div class="grades">${labels.map(([v,l,d]) => `<button class="${String(g.credit) === v ? 'on' : ''}" data-g="${v}"><b>${l}</b><small>${d}</small></button>`).join('')}</div>
+  <input class="note" placeholder="note (optional: why, or what you were unsure about)" value="${esc(g.note)}"></div>`; }
+function contentLines(c){ return Object.entries(c).filter(([k, v]) => v !== '' && v != null && !(Array.isArray(v) && !v.length)).map(([k, v]) => `<div><span class="muted">${esc(k)}</span> ${esc(Array.isArray(v) ? v.join(', ') : v)}</div>`).join(''); }
+function render(){
+  const it = ITEMS[cur]; const w = document.getElementById('wrap'); const g = G(it.id); shownAt = Date.now();
+  document.getElementById('sub').textContent = `model ${it.model} · M${it.milestone} ${it.milestone_name}` + (it.field ? ` · ${it.field}` : '');
+  if (TASK === 'recall') {
+    const model = DATA.models[it.model] || [];
+    const findEl = p => { for (const c of model) { if (c.path === p) return {label: c.path, kind: c.kind, desc: c.definition, cls: ''}; for (const m of c.members) if (m.path === p) return {label: m.label, kind: m.kind, desc: m.desc, cls: c.kind === 'relationships' ? '' : c.path}; } return {label: p, kind: 'class', desc: '', cls: ''}; };
+    const c = it.claim;
+    const card = (cl, open) => `<div class="cls ${open ? '' : 'collapsed'}"><div class="hd" data-p="${esc(cl.path)}"><span class="pk">${esc(cl.package || '')}</span>${cl.kind === 'relationships' ? '' : `<span class="k ${cl.kind}">${cl.kind}</span>`}<span class="nm">${cl.kind === 'relationships' ? 'relationships' : esc(cl.path)}</span><span class="muted" style="margin-left:auto">${cl.members.length}</span></div>
+          <div class="body">${cl.definition ? `<div class="def">${esc(cl.definition)}</div>` : ''}${cl.members.map(m => `<div class="mem"><span class="k ${m.kind}">${m.kind}</span><code>${esc(m.label)}</code>${m.desc ? `<div class="d">${esc(m.desc)}</div>` : ''}</div>`).join('')}</div></div>`;
+    const owners = (it.owner_classes || []).map(p => model.find(cl => cl.path === p)).filter(Boolean);
+    w.innerHTML = `<div class="pane left">
+      <details class="help"><summary>how to grade</summary><p>Grade whether the model <b>holds the information</b> in the claim, anywhere and under any name. <b>1</b>: the model holds it, as an attribute, an operation, a typed parameter, an enumeration literal, a class or a relationship, where a developer would look for it, and the model's name for it need not be the document's. It may take several elements together, a class and its attribute, or an operation and its parameter; you are grading the claim against the whole model, not pairing it with one element. <b>0.5</b>: the information is there but weaker, namely only inside a description or a definition where nothing in the model's structure carries it, or a stated link carried only by a typed attribute. A typed parameter, an enumeration literal and an attribute are all structure, so they are 1, not 0.5. <b>0</b>: nothing in the model holds it.</p>
+      <p><b>Grade the claim's subject, not its qualifiers.</b> A claim is about one thing, and the conditions, triggers, exceptions and times attached to it do not have to be in the model as well. For <i>New or late submissions of the ATC Flight Plan, after cancellation or revised EOBT</i>, an attribute <code>submissionTime</code> on the flight plan is a 1; the model need not also carry cancellation, the revised EOBT, or that these re-trigger the process. Grade 0.5 when the model has something near the claim but not the claim itself, and 0 when the subject is missing.</p>
+      <p><b>Where the model puts it is not graded.</b> The claim's owner is where the document puts it, not where the model must. An operation the document gives to Milestone 8 is a 1 on any class that carries it, and a 1 if one operation on a shared base class covers Milestone 8 along with the others. Likewise the kind: a status the document states is a 1 as an enumeration literal, as a Boolean attribute, or as a class. Grade what the model carries, not how it chose to carry it.</p>
+      <p>Search for the <b>thing</b>, not the word. For the claim <i>unregulated flights</i>, filter for <i>regulat</i> (and CTOT, which only regulated flights have); an attribute <code>regulated: Boolean</code> on Flight holds it, and so does a literal REGULATED in a status enumeration. Try the stem of the word, the abbreviation and its expansion, and the word without its un-/non- prefix. That a class named <i>Flight</i> exists is no evidence for <i>unregulated flights</i>: a class matching one word of the claim is never a 0.5.</p>
+      <p>The right pane shows, in order, up to five candidate elements ranked by the words they share with the claim (a shortlist, often incomplete; a candidate class or enumeration is shown opened, so its attributes and its literals are there to read), then the class the claim's owner names, then the whole model behind the filter box. <b>Your grade is against the model, not the list.</b> Before grading 0, filter the model for a word of the claim. Both panes label a thing with the same five words, namely class, enumeration, attribute, operation and relationship. The grey word before a class is the model's package, which is where it filed the class and is not graded; the model's stereotypes (&laquo;entity&raquo;, &laquo;boundary&raquo;, &laquo;control&raquo;) are not shown on this task at all, for the same reason.</p></details>
+      <h3>the claim</h3><div class="el"><span class="k ${esc(c.kind)}">${esc(c.kind)}</span>${esc(c.text)}${c.owner ? `<div class="muted" style="margin-top:4px">owner: ${esc(c.owner)}</div>` : ''}${c.kind === 'relationship' ? `<div class="muted">type: ${esc(c.rel_type || 'other')}</div>` : ''}</div>
+      <h3>its sentence, in the ${esc(it.field)} field of milestone ${it.milestone}</h3><div class="passage">${it.field_sentences.map(s => `<span class="s ${s.hl ? 'hl' : ''}">${esc(s.text)}</span>`).join('')}</div>
+      ${gradeBox(it)}<p class="keys">keys: 1 · 2 (=0.5) · 3 (=0), or 1 · 5 · 0 · j/→ next · k/← back · n next ungraded. Grading does not move on; press j when done.</p></div>
+    <div class="pane">
+      <h3>candidate elements of ${it.model}, most shared words first (a shortlist; may miss the one that holds the claim)</h3>
+      ${it.candidates.map(p => { const cl = model.find(c => c.path === p && c.kind !== 'relationships');
+        if (cl) return `<div class="tree cands">${card(cl, true)}</div>`;   // a class or an enumeration opens, literals and all: a bare name would hide a literal such as READY inside OperationalStatus
+        const e = findEl(p); return `<div class="cand"><div>${e.cls ? `<span class="muted">${esc(e.cls)} · </span>` : ''}<span class="k ${e.kind}">${e.kind}</span><code>${esc(e.label)}</code><div class="d">${esc(e.desc)}</div></div></div>`; }).join('') || '<div class="muted">no element shares a word with the claim: search the model below</div>'}
+      ${owners.length ? `<h3 style="margin-top:14px">the claim's owner in ${it.model}: ${owners.map(o => esc(o.path)).join(', ')}</h3><div class="tree owner">${owners.map(o => card(o, true)).join('')}</div>` : (c.owner ? `<h3 style="margin-top:14px">no class of ${it.model} is named as the claim's owner (${esc(c.owner)})</h3>` : '')}
+      <h3 style="margin-top:14px">the whole model ${it.model}, every class open so the browser's own search (Ctrl+F) reaches every member<button id="foldall"></button></h3>
+      <input class="filter" id="filter" placeholder="filter every class and member (e.g. regulat, TTOT, taxi, off-block)" value="${esc(g.filter || '')}">
+      <div class="tree" id="tree"></div></div>`;
+    const tree = w.querySelector('#tree'); const fold = w.querySelector('#foldall');
+    const drawTree = () => { const q = (w.querySelector('#filter').value || '').toLowerCase().trim();
+      const hit = s => !q || String(s).toLowerCase().includes(q);
+      tree.innerHTML = model.map(cl => { const ms = cl.members.filter(m => !q || hit(m.label) || hit(m.desc) || hit(cl.path)); if (q && !ms.length && !hit(cl.path) && !hit(cl.definition)) return '';
+        return card({...cl, members: ms}, !g.folded); }).join('');
+      fold.textContent = g.folded ? 'expand all' : 'collapse all';
+      w.querySelectorAll('.tree .hd').forEach(h => h.onclick = () => h.parentElement.classList.toggle('collapsed')); };
+    fold.onclick = () => { g.folded = !g.folded; save(); drawTree(); };
+    w.querySelector('#filter').oninput = () => { g.filter = w.querySelector('#filter').value; save(); drawTree(); };
+    drawTree();
+  } else {
+    const e = it.element; const all = g.all !== false;   // full milestone by default (the support is often elsewhere in the table)
+    w.innerHTML = `<div class="pane left">
+      <details class="help"><summary>how to grade</summary><p>Judge against the document as a whole; this milestone, the one among those the element cites that names it best, is where to look first, and anything stated in any of the sixteen milestones counts in full (search the PDF if it is not here). <b>1</b>: the document states the thing, the value, the rule or condition in the operation's description, or the link. <b>0.5</b>: the text implies it without stating it, or the name is the text's but the description adds a formula or condition the text does not give. <b>0</b>: neither. The whole milestone is shown, with the sentences most related to the element highlighted; start from those, but read the rest before grading 0, since what you need is often elsewhere in the table. For an enumeration, grade whether the document names the status or any of its values; the list of literals is not graded. Structure the models were told to build (value, originator, time of update and accuracy on every time; identifiers; a common base class for times, milestones, messages and stakeholders) is 1 when the document names the underlying thing. <b>Not graded here:</b> whether the model chose a class, an attribute, or an enumeration for it, and its stereotype and package; these are shown only so you know what the element is. The stereotypes are Jacobson's, as the models were told them: <i>entity</i> holds information that persists across the process; <i>boundary</i> models an interface between the system and something outside it (a stakeholder, an external system, a message); <i>control</i> holds the logic of a procedure (sequencing, checking, computation).</p></details>
+      <h3>the element, with everything ${it.model} says about it</h3>
+      <div class="el">${e.class ? `<div class="muted">${esc(e.class.package)} · «${esc(e.class.stereotype)}» <b>${esc(e.class.name)}</b></div><div class="muted" style="font-style:italic;margin:2px 0 8px">${esc(e.class.definition)}</div>` : ''}
+      <span class="k ${esc(e.kind)}">${esc(e.kind)}</span> <code style="font:13px var(--mono)">${esc(e.path)}</code><div style="margin-top:6px">${contentLines(e.content)}</div></div>
+      ${gradeBox(it)}<p class="keys">keys: 1 · 2 (=0.5) · 3 (=0), or 1 · 5 · 0 · j/→ next · k/← back · n next ungraded. Grading does not move on; press j when done.</p></div>
+    <div class="pane"><h3>milestone ${it.milestone}: ${esc(it.milestone_name)}, where to look first. The sentences sharing most words with the element are highlighted; support anywhere in the document counts.</h3>
+      <label class="muted" style="display:block;margin-bottom:8px"><input type="checkbox" id="allsent" ${all ? 'checked' : ''}> show every sentence of the milestone (${it.sentences.length} sentences); untick to see only the highlighted ones</label>
+      <div class="passage">${(() => { let f = ''; return it.sentences.filter(s => s.hl || all).map(s => { const h = s.field !== f ? `<div class="f">${esc(s.field)}</div>` : ''; f = s.field; return h + `<span class="s ${s.hl ? 'hl' : ''}">${esc(s.text)}</span>`; }).join(''); })()}</div></div>`;
+    w.querySelector('#allsent').onchange = ev => { g.all = ev.target.checked; save(); render(); };
+  }
+  w.querySelectorAll('.grades button').forEach(b => b.onclick = () => setGrade(b.dataset.g));
+  w.querySelector('.note').oninput = ev => { g.note = ev.target.value; save(); };
+  renderTop();
+}
+function setGrade(v){ const it = ITEMS[cur]; const g = G(it.id);
+  g.credit = parseFloat(v); g.seconds = (g.seconds || 0) + Math.round((Date.now() - shownAt) / 1000); g.graded_at = new Date().toISOString(); save();
+  document.querySelectorAll('.grades button').forEach(x => x.classList.toggle('on', x.dataset.g === v)); renderTop(); }
+function go(i){ if (i < 0 || i >= ITEMS.length) return; const g = G(ITEMS[cur].id); g.seconds = (g.seconds || 0) + Math.round((Date.now() - shownAt) / 1000); cur = i; save(); render(); }
+function nextUngraded(){ for (let k = 1; k <= ITEMS.length; k++) { const i = (cur + k) % ITEMS.length; if (G(ITEMS[i].id).credit == null) { go(i); return; } } renderTop(); }
+document.getElementById('prev').onclick = () => go(cur - 1); document.getElementById('next').onclick = () => go(cur + 1); document.getElementById('nextun').onclick = nextUngraded;
+document.addEventListener('keydown', ev => { if (ev.target.matches('input[type=text], textarea, .note, .filter')) return;
+  if (ev.key === '1') setGrade('1'); else if (ev.key === '2' || ev.key === '5') setGrade('0.5'); else if (ev.key === '3' || ev.key === '0') setGrade('0');
+  else if (ev.key === 'ArrowLeft' || ev.key === 'k') go(cur - 1); else if (ev.key === 'ArrowRight' || ev.key === 'j') go(cur + 1); else if (ev.key === 'n') nextUngraded();
+  else return; });
+document.getElementById('grader').value = S.grader || DATA.grader || ''; document.getElementById('grader').oninput = save;
+if (DATA.grader) document.getElementById('grader').readOnly = true;
+document.getElementById('export').onclick = () => {
+  const out = {grader: S.grader, task: TASK, seed: DATA.seed, exported: new Date().toISOString(), grades: S.grades};
+  const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([JSON.stringify(out, null, 1)], {type: 'application/json'}));
+  a.download = `grades_${TASK}_${(S.grader || 'grader').toLowerCase().replace(/\W+/g, '_')}.json`; a.click(); };
+document.getElementById('import').onclick = () => document.getElementById('file').click();
+document.getElementById('file').onchange = ev => { const f = ev.target.files[0]; if (!f) return; f.text().then(t => { const d = JSON.parse(t); S = {grader: d.grader || S.grader, grades: d.grades || {}, cur}; save(); render(); }); };
+render();
+</script>
+</body>
+</html>

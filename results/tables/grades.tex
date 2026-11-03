@@ -1,0 +1,32 @@
+% Written by src/evaluate/paper_numbers.py; do not edit by hand.
+\begin{table}[t]
+\centering
+\caption{Mean grade of each grader, and its agreement with each researcher (Gwet's AC2, linear weights). A and B are the researchers, Op. (Opus) and Son. (Sonnet) the model graders. 95\% intervals are about $\pm$0.06 per configuration and $\pm$0.11 for the no-scaffold probe; the scaffold-only bound is by construction. Differences quoted in the text are computed before rounding.}
+\label{tab:grades}
+\footnotesize
+\setlength{\tabcolsep}{2.2pt}
+\begin{tabular}{l r cccc r cccc}
+\toprule
+ & \multicolumn{5}{c}{Recall} & \multicolumn{5}{c}{Precision} \\
+\cmidrule(lr){2-6}\cmidrule(lr){7-11}
+ & $n$ & A & B & Op. & Son. & $n$ & A & B & Op. & Son. \\
+\midrule
+All items & 200 & 0.88 & 0.89 & 0.93 & 0.90 & 200 & 0.90 & 0.92 & 0.98 & 0.96 \\
+\midrule
+Multi-agent & 59 & 0.92 & 0.92 & 0.92 & 0.87 & 60 & 0.88 & 0.93 & 0.97 & 0.94 \\
+Single-agent & 53 & 0.90 & 0.90 & 0.98 & 0.92 & 51 & 0.94 & 0.92 & 0.99 & 0.96 \\
+Single, high & 53 & 0.93 & 0.94 & 0.94 & 0.92 & 57 & 0.89 & 0.89 & 0.96 & 0.96 \\
+No scaffold & 35 & 0.69 & 0.76 & 0.84 & 0.86 & 32 & 0.89 & 0.92 & 1.00 & 0.98 \\
+Scaffold only & -- & \multicolumn{4}{c}{$\le$0.23} & -- & \multicolumn{4}{c}{not sampled} \\
+\midrule
+Class & 29 & 0.97 & 0.93 & 0.98 & 0.98 & 37 & 0.96 & 0.95 & 0.97 & 0.99 \\
+Attribute & 41 & 0.84 & 0.90 & 0.85 & 0.82 & 79 & 0.83 & 0.92 & 0.96 & 0.93 \\
+Operation & 100 & 0.86 & 0.88 & 0.94 & 0.90 & 35 & 0.99 & 0.90 & 1.00 & 1.00 \\
+Relationship & 24 & 0.83 & 0.85 & 0.92 & 0.90 & 44 & 0.92 & 0.90 & 1.00 & 0.94 \\
+Enumeration & 6 & 1.00 & 1.00 & 1.00 & 1.00 & 5 & 0.90 & 1.00 & 1.00 & 1.00 \\
+\midrule
+AC2 with A & 200 & -- & 0.92 & 0.85 & 0.85 & 200 & -- & 0.84 & 0.91 & 0.91 \\
+AC2 with B & 200 & 0.92 & -- & 0.84 & 0.83 & 200 & 0.84 & -- & 0.89 & 0.87 \\
+\bottomrule
+\end{tabular}
+\end{table}

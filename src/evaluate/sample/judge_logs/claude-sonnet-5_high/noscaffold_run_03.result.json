@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "ok": true,
+    "output": null,
+    "error": null,
+    "model": "claude-sonnet-5",
+    "input_tokens": 15623,
+    "output_tokens": 2148,
+    "thinking_tokens": 1607,
+    "cache_creation_tokens": 14121,
+    "cache_read_tokens": 1500,
+    "cost_usd": 0.078268,
+    "duration_ms": 17415,
+    "attempts": 1,
+    "num_turns": 2
+  },
+  "output": {
+    "items": [
+      {
+        "id": "g001",
+        "grade": 1,
+        "sentence": "M1.timing.1",
+        "note": ""
+      },
+      {
+        "id": "g008",
+        "grade": 1,
+        "sentence": "M2.timing.1",
+        "note": ""
+      },
+      {
+        "id": "g038",
+        "grade": 1,
+        "sentence": "M1.definition.2",
+        "note": ""
+      },
+      {
+        "id": "g039",
+        "grade": 1,
+        "sentence": "M2.procedures.4",
+        "note": ""
+      },
+      {
+        "id": "g043",
+        "grade": 1,
+        "sentence": "M7.definition.1",
+        "note": ""
+      },
+      {
+        "id": "g067",
+        "grade": 1,
+        "sentence": "M3.effect.3",
+        "note": ""
+      },
+      {
+        "id": "g102",
+        "grade": 1,
+        "sentence": "M10.definition.1",
+        "note": ""
+      },
+      {
+        "id": "g108",
+        "grade": 1,
+        "sentence": "M2.timing.1",
+        "note": ""
+      },
+      {
+        "id": "g113",
+        "grade": 1,
+        "sentence": "M1.data_quality.1",
+        "note": ""
+      },
+      {
+        "id": "g145",
+        "grade": 1,
+        "sentence": "M12.definition.1",
+        "note": ""
+      },
+      {
+        "id": "g146",
+        "grade": 1,
+        "sentence": "M2.procedures.3",
+        "note": ""
+      },
+      {
+        "id": "g163",
+        "grade": 1,
+        "sentence": "M1.operational_status.1",
+        "note": ""
+      },
+      {
+        "id": "g189",
+        "grade": 1,
+        "sentence": "M1.definition.2",
+        "note": ""
+      }
+    ]
+  }
+}

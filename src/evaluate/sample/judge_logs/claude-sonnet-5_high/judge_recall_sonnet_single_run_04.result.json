@@ -1,0 +1,120 @@
+{
+  "meta": {
+    "ok": true,
+    "output": null,
+    "error": null,
+    "model": "claude-sonnet-5",
+    "input_tokens": 24377,
+    "output_tokens": 3568,
+    "thinking_tokens": 2875,
+    "cache_creation_tokens": 22052,
+    "cache_read_tokens": 2323,
+    "cost_usd": 0.1243566,
+    "duration_ms": 36002,
+    "attempts": 1,
+    "num_turns": 2
+  },
+  "output": {
+    "items": [
+      {
+        "id": "c009",
+        "grade": 1,
+        "elements": [
+          "Flight.regulated"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c019",
+        "grade": 1,
+        "elements": [
+          "FinalApproachMilestone.informNetworkOperationsIfTTOTExceedsTolerance()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c036",
+        "grade": 1,
+        "elements": [
+          "AirportCDMPlatform.recordATOT()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c051",
+        "grade": 1,
+        "elements": [
+          "ACARS->TimeQuantity",
+          "TimeQuantity.originator"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c090",
+        "grade": 1,
+        "elements": [
+          "TimeQuantity.calculateEIBT()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c095",
+        "grade": 1,
+        "elements": [
+          "RepetitiveFlightPlan"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c101",
+        "grade": 1,
+        "elements": [
+          "TimeQuantity.calculateTTOT()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c102",
+        "grade": 1,
+        "elements": [
+          "MilestoneEvent.trigger",
+          "TakeOffMilestone"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c104",
+        "grade": 1,
+        "elements": [
+          "Flight.regulated",
+          "AirportCDMPlatform->Flight"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c115",
+        "grade": 1,
+        "elements": [
+          "TimeQuantity.tolerance"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c124",
+        "grade": 0.5,
+        "elements": [
+          "TSATIssuedMilestone.informPartnersOfTSAT()"
+        ],
+        "note": "near: informs of TSAT at milestone 10, not ATC confirming to pilot at M13"
+      },
+      {
+        "id": "c131",
+        "grade": 1,
+        "elements": [
+          "LocalRadarUpdateMilestone.commenceTOBTProcess()"
+        ],
+        "note": ""
+      }
+    ]
+  }
+}

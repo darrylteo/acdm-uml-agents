@@ -1,0 +1,418 @@
+{
+  "meta": {
+    "ok": true,
+    "output": null,
+    "error": null,
+    "model": "claude-opus-5",
+    "input_tokens": 12990,
+    "output_tokens": 8341,
+    "thinking_tokens": 1701,
+    "cache_creation_tokens": 6640,
+    "cache_read_tokens": 6346,
+    "cost_usd": 0.278118,
+    "duration_ms": 74422,
+    "attempts": 1,
+    "num_turns": 3
+  },
+  "output": {
+    "sentences": [
+      {
+        "id": "M5.definition.1",
+        "decision": "keep",
+        "reason": "Names the milestone and the flight phase transition it marks.",
+        "claims": [
+          {
+            "text": "The flight enters the Final Approach phase at the destination airport.",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "The flight enters the Final Approach phase",
+            "kind": "relationship",
+            "owner": "",
+            "rel_type": "other",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M5.origin_and_priority.1",
+        "decision": "keep",
+        "reason": "States the origin of the milestone information (ATC).",
+        "claims": [
+          {
+            "text": "This information is normally available from ATC.",
+            "kind": "attribute",
+            "owner": "Milestone 5 Final Approach",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "ATC",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "This information is normally available from ATC.",
+            "kind": "relationship",
+            "owner": "",
+            "rel_type": "other",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M5.origin_and_priority.2",
+        "decision": "keep",
+        "reason": "Describes the radar system, the SSR code identifier and the detection/crossing checks it performs.",
+        "claims": [
+          {
+            "text": "The radar system",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "the assigned SSR code",
+            "kind": "attribute",
+            "owner": "Flight",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "The radar system detects a flight based upon the assigned SSR code",
+            "kind": "operation",
+            "owner": "Radar system",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "identifies when the flight crosses either a defined range / position or passes/leaves a predetermined level",
+            "kind": "operation",
+            "owner": "Radar system",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "a defined range / position",
+            "kind": "attribute",
+            "owner": "Radar system",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "a predetermined level",
+            "kind": "attribute",
+            "owner": "Radar system",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M5.timing.1",
+        "decision": "keep",
+        "reason": "States the milestone timing as a locally defined parameter originated by ATC.",
+        "claims": [
+          {
+            "text": "Dependent upon local parameters that are defined by ATC.",
+            "kind": "attribute",
+            "owner": "Milestone 5 Final Approach",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "local parameters that are defined by ATC",
+            "kind": "relationship",
+            "owner": "",
+            "rel_type": "other",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M5.data_quality.1",
+        "decision": "keep",
+        "reason": "States the accuracy of the milestone as a rule tied to the ATC system.",
+        "claims": [
+          {
+            "text": "Must be equal to the accuracy of the ATC system.",
+            "kind": "attribute",
+            "owner": "Milestone 5 Final Approach",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "the ATC system",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "Must be equal to the accuracy of the ATC system.",
+            "kind": "operation",
+            "owner": "Milestone 5 Final Approach",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M5.effect.1",
+        "decision": "keep",
+        "reason": "Names two time quantities and the update that derives one from the other.",
+        "claims": [
+          {
+            "text": "ELDT",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "TOBT",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "Update of the ELDT to determine a new TOBT.",
+            "kind": "operation",
+            "owner": "Milestone 5 Final Approach",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M5.effect.2",
+        "decision": "keep",
+        "reason": "Gives a checkable value (2\u20135 minutes from landing) set by an ATC parameter.",
+        "claims": [
+          {
+            "text": "When a flight reaches this stage it is usually between 2 and 5 minutes from landing (depending on the parameter set by ATC).",
+            "kind": "attribute",
+            "owner": "Milestone 5 Final Approach",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M5.effect.3",
+        "decision": "drop",
+        "reason": "Explanatory rationale about partner behaviour; no element a class model realises.",
+        "claims": []
+      },
+      {
+        "id": "M5.procedures.1",
+        "decision": "keep",
+        "reason": "States two procedures: start of the TOBT process and the TOBT/ATC Flight Plan consistency check.",
+        "claims": [
+          {
+            "text": "To commence the TOBT process",
+            "kind": "operation",
+            "owner": "Milestone 5 Final Approach",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "check whether the AO/GH TOBT is consistent with the ATC Flight Plan",
+            "kind": "operation",
+            "owner": "Milestone 5 Final Approach",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "ATC Flight Plan",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "AO/GH",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "the AO/GH TOBT",
+            "kind": "relationship",
+            "owner": "",
+            "rel_type": "other",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M5.procedures.2",
+        "decision": "keep",
+        "reason": "States a notification rule with its tolerance condition and the receiving party.",
+        "claims": [
+          {
+            "text": "Network Operations is informed when the TTOT changes by more than the agreed TTOT tolerance.",
+            "kind": "operation",
+            "owner": "Milestone 5 Final Approach",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "Network Operations",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "TTOT",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "the agreed TTOT tolerance",
+            "kind": "attribute",
+            "owner": "TTOT",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "Network Operations is informed when the TTOT changes",
+            "kind": "relationship",
+            "owner": "",
+            "rel_type": "other",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M5.procedures.3",
+        "decision": "keep",
+        "reason": "Restates the TOBT/ATC Flight Plan feasibility check from procedures.1.",
+        "claims": [
+          {
+            "text": "This check shall be performed to verify feasibility of the ATC Flight Plan given the up-dated TOBT.",
+            "kind": "operation",
+            "owner": "Milestone 5 Final Approach",
+            "rel_type": "",
+            "duplicate_of": "M5.procedures.1.c2"
+          }
+        ]
+      },
+      {
+        "id": "M5.procedures.4",
+        "decision": "keep",
+        "reason": "Restates the TTOT tolerance rule governing notification of Network Operations.",
+        "claims": [
+          {
+            "text": "The TTOT tolerance is respected before Network Operations is informed of updated TTOT.",
+            "kind": "operation",
+            "owner": "Milestone 5 Final Approach",
+            "rel_type": "",
+            "duplicate_of": "M5.procedures.2.c1"
+          }
+        ]
+      },
+      {
+        "id": "M5.procedures.5",
+        "decision": "drop",
+        "reason": "Incomplete lead-in fragment; the trigger it introduces is carried by procedures.6.",
+        "claims": []
+      },
+      {
+        "id": "M5.procedures.6",
+        "decision": "keep",
+        "reason": "States the trigger of the process (radar detection) and the fixed set of detection locations.",
+        "claims": [
+          {
+            "text": "the detection of the flight by radar in either FIR, TMA, or on Final Approach.",
+            "kind": "operation",
+            "owner": "Milestone 5 Final Approach",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "the detection of the flight by radar",
+            "kind": "relationship",
+            "owner": "",
+            "rel_type": "other",
+            "duplicate_of": ""
+          },
+          {
+            "text": "either FIR, TMA, or on Final Approach",
+            "kind": "enumeration",
+            "owner": "Radar system",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M5.operational_status.1",
+        "decision": "keep",
+        "reason": "Names the operational status literal the milestone sets on the flight.",
+        "claims": [
+          {
+            "text": "FINAL",
+            "kind": "enumeration",
+            "owner": "Flight",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M5.action_on_cdm.1",
+        "decision": "keep",
+        "reason": "States the CDM platform update of four time quantities; EIBT is newly named here.",
+        "claims": [
+          {
+            "text": "ELDT, EIBT, TOBT and TTOT updated",
+            "kind": "operation",
+            "owner": "CDM platform",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "EIBT",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "ELDT",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": "M5.effect.1.c1"
+          },
+          {
+            "text": "TOBT",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": "M5.effect.1.c2"
+          },
+          {
+            "text": "TTOT",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": "M5.procedures.2.c3"
+          }
+        ]
+      }
+    ]
+  }
+}

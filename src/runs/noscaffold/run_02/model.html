@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A-CDM class model (run_02)</title>
+<style>
+  :root { --bg:#fafafa; --ink:#222; --muted:#666; --line:#555; --pkg:#f3f3f3; --pkgline:#999;
+          --hdr:#fff; --comp:#e8eef7; --sel:#1a73e8; --dim:0.25; --font:"Segoe UI", Arial, sans-serif; }
+  html, body { margin:0; height:100%; font:13px var(--font); color:var(--ink); background:var(--bg); }
+  #app { display:grid; grid-template-rows:auto 1fr; grid-template-columns:1fr 360px; height:100vh; }
+  #toolbar { grid-column:1 / span 2; display:flex; flex-wrap:wrap; gap:10px; align-items:center;
+             padding:6px 10px; border-bottom:1px solid #ccc; background:#fff; }
+  #toolbar h1 { font-size:14px; margin:0 12px 0 0; }
+  #toolbar label { display:inline-flex; align-items:center; gap:4px; }
+  #toolbar button, #toolbar select, #toolbar input { font:inherit; }
+  #canvas { overflow:auto; position:relative; }
+  #panel { border-left:1px solid #ccc; background:#fff; overflow:auto; padding:12px 14px; }
+  #panel h2 { font-size:15px; margin:0 0 4px; }
+  #panel h3 { font-size:12px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); margin:14px 0 4px; }
+  #panel table { border-collapse:collapse; width:100%; }
+  #panel td { vertical-align:top; padding:3px 4px; border-top:1px solid #eee; }
+  #panel td:first-child { font-family:Consolas, monospace; font-size:12px; word-break:break-word; max-width:180px; }
+  #panel .tag { display:inline-block; padding:1px 6px; border-radius:3px; background:#eee; margin-right:4px; font-size:11px; }
+  #panel .m { display:inline-block; margin:2px 4px 2px 0; padding:1px 6px; border:1px solid #cfd8dc; border-radius:3px; font-size:11px; background:#f7f9fb; }
+  #panel a { color:var(--sel); cursor:pointer; text-decoration:none; }
+  #panel a:hover { text-decoration:underline; }
+  #panel .def { margin:6px 0; }
+  svg text { font:13px var(--font); user-select:none; }
+  .node .hdr { fill:var(--hdr); stroke:var(--line); }
+  .node .body { fill:#fff; stroke:var(--line); }
+  .node .name { font-weight:600; }
+  .node .stereo { font-size:11px; fill:var(--muted); }
+  .node .comp { fill:var(--comp); }
+  .node .comptext { font-size:12px; fill:#333; }
+  .node .member { font-size:12px; }
+  .node .btn { cursor:pointer; }
+  .node .btn rect { fill:#fff; stroke:#888; }
+  .node .btn text { font-size:11px; fill:#444; pointer-events:none; }
+  .node.selected .hdr, .node.selected .body { stroke:var(--sel); stroke-width:2; }
+  .node.dim, .edge.dim { opacity:var(--dim); }
+  .edge path { fill:none; stroke:var(--line); stroke-width:1.2; }
+  .edge.dependency path { stroke-dasharray:6 4; }
+  .edge.selected path { stroke:var(--sel); stroke-width:2.2; }
+  .edge.related path { stroke:#d81b60; stroke-width:1.8; }
+  .edge text { font-size:11px; fill:#333; }
+  .edge .lblbg { fill:#fff; opacity:.85; }
+  .edge .hit { stroke:transparent; stroke-width:10; cursor:pointer; }
+  .pkg > rect { fill:var(--pkg); stroke:var(--pkgline); }
+  .pkg .tab { fill:#e6e6e6; stroke:var(--pkgline); cursor:pointer; }
+  .pkg .title { font-weight:600; font-size:13px; }
+  .spot circle { stroke:#666; }
+  .spot text { font-size:10px; font-weight:700; fill:#222; }
+  .legend text { font-size:11px; }
+</style>
+</head>
+<body>
+<div id="app">
+  <div id="toolbar">
+    <h1 id="title"></h1>
+    <label>Columns <select id="cols"><option>1</option><option selected>2</option><option>3</option></select></label>
+    <button id="expandAll">Expand all</button>
+    <button id="collapseAll">Collapse all</button>
+    <button id="collapseOps">Hide operations</button>
+    <span style="border-left:1px solid #ccc;height:18px"></span>
+    <label><input type="checkbox" class="etype" value="generalization" checked> generalization</label>
+    <label><input type="checkbox" class="etype" value="association" checked> association</label>
+    <label><input type="checkbox" class="etype" value="aggregation" checked> aggregation</label>
+    <label><input type="checkbox" class="etype" value="composition" checked> composition</label>
+    <label><input type="checkbox" class="etype" value="dependency" checked> dependency</label>
+    <span style="border-left:1px solid #ccc;height:18px"></span>
+    <label>Find <input id="search" type="search" placeholder="class, attribute, operation" size="24"></label>
+    <span style="border-left:1px solid #ccc;height:18px"></span>
+    <button id="zoomOut">−</button><span id="zoomPct">100%</span><button id="zoomIn">+</button>
+    <button id="zoomFit">Fit width</button>
+    <button id="downloadSvg">Download SVG</button>
+  </div>
+  <div id="canvas"></div>
+  <div id="panel"></div>
+</div>
+<script>
+const MODEL = {"packages": [{"name": "FlightData", "description": "Core flight, flight plan, and turn-round data managed throughout the CDM process."}, {"name": "CDMProcess", "description": "The Airport CDM Platform, its milestone process, and consistency-check logic."}, {"name": "Stakeholders", "description": "The actors involved in the CDM process: Aircraft Operator, Ground Handler, ATC, Network Operations, IFPS."}, {"name": "Messaging", "description": "Messages exchanged between the Airport CDM Platform and Network Operations (DPI, FUM)."}], "classes": [{"name": "Flight", "package": "FlightData", "stereotype": "entity", "definition": "A single flight (arrival or departure leg) tracked through the CDM milestone process with all its estimated and actual times.", "source_milestones": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16], "attributes": [{"name": "flightId", "type": "String", "description": "Unique identifier of the flight."}, {"name": "aircraftRegistration", "type": "String", "description": "Registration of the aircraft operating the flight, provided by the AO before the first E-DPI."}, {"name": "aircraftType", "type": "String", "description": "Type of aircraft, may be updated from the ATC Flight Plan."}, {"name": "isRegulated", "type": "boolean", "description": "Whether the flight is regulated and thus receives a CTOT from Network Operations at EOBT-2h."}, {"name": "operationalStatus", "type": "OperationalStatus", "description": "Current operational status of the flight, updated at each milestone."}, {"name": "eobt", "type": "DateTime", "description": "Estimated Off-Block Time from the ATC Flight Plan/airport slot."}, {"name": "sobt", "type": "DateTime", "description": "Scheduled Off-Block Time fed to Network Operations before the first E-DPI."}, {"name": "tobt", "type": "DateTime", "description": "Target Off-Block Time provided/updated by the AO/GH, used to compute TTOT."}, {"name": "tsat", "type": "DateTime", "description": "Target Start-Up Approval Time issued by ATC."}, {"name": "ctot", "type": "DateTime", "description": "Calculated Take-Off Time issued by Network Operations for regulated flights at EOBT-2h."}, {"name": "etot", "type": "DateTime", "description": "Estimated Take-Off Time."}, {"name": "ttot", "type": "DateTime", "description": "Target Take-Off Time, calculated from EIBT+MTTT+EXOT or TOBT+EXOT."}, {"name": "exot", "type": "Duration", "description": "Estimated Taxi-Out Time calculated by ATC based on traffic load, gate/stand, runway, holding."}, {"name": "exit", "type": "Duration", "description": "Estimated Taxi-In Time used to compute EIBT."}, {"name": "eldt", "type": "DateTime", "description": "Estimated Landing Time, updated via FUM, ATOT+elapsed time, or radar detections."}, {"name": "eibt", "type": "DateTime", "description": "Estimated In-Block Time computed from ELDT and EXIT."}, {"name": "aldt", "type": "DateTime", "description": "Actual Landing Time, +/-1 minute accuracy, from ATC system or ACARS."}, {"name": "aibt", "type": "DateTime", "description": "Actual In-Block Time, +/-1 minute accuracy."}, {"name": "acgt", "type": "DateTime", "description": "Actual Commence of Ground Handling Time, for first-of-day or long-parked flights."}, {"name": "asbt", "type": "DateTime", "description": "Actual Start Boarding Time."}, {"name": "ardt", "type": "DateTime", "description": "Actual Ready Time, when the aircraft is ready for start-up/push-back."}, {"name": "asrt", "type": "DateTime", "description": "Actual Start-up Request Time."}, {"name": "asat", "type": "DateTime", "description": "Actual Start-up Approval Time."}, {"name": "aobt", "type": "DateTime", "description": "Actual Off-Block Time, +/-1 minute accuracy."}, {"name": "atot", "type": "DateTime", "description": "Actual Take-Off Time, +/-1 minute accuracy."}], "operations": []}, {"name": "FlightPlan", "package": "FlightData", "stereotype": "entity", "definition": "The ICAO ATC Flight Plan submitted by the Aircraft Operator and distributed by IFPS, which the CDM platform checks for consistency against the airport slot and flight data.", "source_milestones": [1, 2, 3, 4, 5, 6, 7, 8, 9], "attributes": [{"name": "planId", "type": "String", "description": "Identifier of the ATC Flight Plan."}, {"name": "eobt", "type": "DateTime", "description": "Estimated off-block time in the flight plan, normally submitted 3 hours before EOBT."}, {"name": "firstDestination", "type": "String", "description": "First destination data fed to Network Operations before the first E-DPI."}, {"name": "estimatedElapsedTime", "type": "Duration", "description": "Estimated elapsed time used with ATOT to calculate ELDT."}, {"name": "isRepetitive", "type": "boolean", "description": "Whether this is a repetitive flight plan (RFPL) covering daily or weekly flights."}], "operations": []}, {"name": "AirportSlot", "package": "FlightData", "stereotype": "entity", "definition": "The airport slot allocated to the flight, against which the ATC Flight Plan must be consistent, from the airport slot programme.", "source_milestones": [1], "attributes": [{"name": "slotId", "type": "String", "description": "Identifier of the airport slot."}, {"name": "scheduledTime", "type": "DateTime", "description": "Scheduled time associated with the slot per the airport slot programme."}], "operations": []}, {"name": "TurnRound", "package": "FlightData", "stereotype": "entity", "definition": "The turn-round linking an arriving flight and its related departing flight at a coordinated or non-coordinated airport.", "source_milestones": [1, 6, 7, 8], "attributes": [{"name": "mttt", "type": "Duration", "description": "Minimum Turn-Round Time used to calculate TOBT/TTOT for the departing flight."}], "operations": []}, {"name": "Milestone", "package": "CDMProcess", "stereotype": "entity", "definition": "One of the 16 defined CDM milestone events in a flight's life-cycle, each with a definition, timing, trigger, and resulting operational status change.", "source_milestones": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16], "attributes": [{"name": "milestoneNumber", "type": "int", "description": "The milestone number (1 to 16)."}, {"name": "name", "type": "String", "description": "Name of the milestone, e.g. 'Landed', 'Off-Block'."}, {"name": "timestamp", "type": "DateTime", "description": "Time at which the milestone occurred."}, {"name": "triggeredBy", "type": "String", "description": "The event/trigger that raises this milestone, e.g. ALDT detection, radar detection."}, {"name": "resultingStatus", "type": "OperationalStatus", "description": "The operational status the flight transitions to upon this milestone."}], "operations": []}, {"name": "AirportCDMPlatform", "package": "CDMProcess", "stereotype": "control", "definition": "The central platform that is initiated for each flight, processes available information, performs consistency checks, records milestones, and triggers messaging to Network Operations.", "source_milestones": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16], "attributes": [], "operations": [{"name": "checkConsistency", "parameters": [{"name": "flight", "type": "Flight"}], "returns": "boolean", "description": "Verifies consistency between the ATC Flight Plan, Airport Slot and Airport flight data before the first E-DPI is sent (M1)."}, {"name": "updateELDT", "parameters": [{"name": "flight", "type": "Flight"}], "returns": "void", "description": "Updates ELDT based on FUM messages, ATOT plus elapsed time, or radar detection at FIR/Final Approach/Landing (M2-6)."}, {"name": "calculateTTOT", "parameters": [{"name": "flight", "type": "Flight"}], "returns": "DateTime", "description": "Calculates TTOT as EIBT+MTTT+EXOT, or EOBT+EXOT if later, or TOBT+EXOT if TOBT is manually input (M2,3)."}, {"name": "recordMilestone", "parameters": [{"name": "flight", "type": "Flight"}, {"name": "milestoneNumber", "type": "int"}], "returns": "void", "description": "Records the occurrence of a milestone against a flight and updates its operational status."}, {"name": "triggerDPI", "parameters": [{"name": "flight", "type": "Flight"}, {"name": "type", "type": "DPIMessageType"}], "returns": "void", "description": "Sends the appropriate DPI message to Network Operations when TTOT changes beyond the agreed tolerance."}, {"name": "checkTOBTUpdateCount", "parameters": [{"name": "flight", "type": "Flight"}], "returns": "boolean", "description": "Checks whether the number of TOBT updates after TSAT issue exceeds a locally defined threshold (M10)."}]}, {"name": "AircraftOperator", "package": "Stakeholders", "stereotype": "entity", "definition": "The airline responsible for submitting the ATC Flight Plan and providing TOBT, ready and boarding information for its flights.", "source_milestones": [1, 3, 6, 7, 8, 9, 11, 12], "attributes": [{"name": "operatorId", "type": "String", "description": "Identifier of the Aircraft Operator."}], "operations": []}, {"name": "GroundHandler", "package": "Stakeholders", "stereotype": "entity", "definition": "The ground handling agent that manages the turn-round process and provides estimates such as TOBT, ARDT, ASBT, and ACGT.", "source_milestones": [3, 6, 7, 8, 9, 11, 12], "attributes": [{"name": "handlerId", "type": "String", "description": "Identifier of the Ground Handler."}], "operations": []}, {"name": "ATCUnit", "package": "Stakeholders", "stereotype": "entity", "definition": "An air traffic control unit (Area Control Centre, Approach Control, Tower) that receives the flight plan, detects the flight by radar, and issues TSAT/start-up approval.", "source_milestones": [1, 4, 5, 9, 10, 13, 14, 16], "attributes": [{"name": "unitId", "type": "String", "description": "Identifier of the ATC unit."}, {"name": "unitType", "type": "String", "description": "Type of ATC unit, e.g. ACC, Approach, Tower."}], "operations": []}, {"name": "NetworkOperations", "package": "Stakeholders", "stereotype": "entity", "definition": "The network management function that issues CTOT for regulated flights, monitors flight progress via ETFMS, and receives DPI/FUM messages.", "source_milestones": [1, 2, 3, 10, 15], "attributes": [], "operations": [{"name": "issueCTOT", "parameters": [{"name": "flight", "type": "Flight"}], "returns": "DateTime", "description": "Issues a Calculated Take-Off Time to a regulated flight at EOBT-2h."}]}, {"name": "IFPS", "package": "Stakeholders", "stereotype": "entity", "definition": "The Integrated Initial Flight Plan Processing System that distributes the submitted ATC Flight Plan to all involved ATC units.", "source_milestones": [1], "attributes": [], "operations": []}, {"name": "DPIMessage", "package": "Messaging", "stereotype": "entity", "definition": "A Departure Planning Information message (E-DPI, T-DPI, T-DPI-t, T-DPI-s, A-DPI) sent from the Airport CDM Platform to Network Operations with updated flight time estimates.", "source_milestones": [1, 2, 3, 4, 10, 15], "attributes": [{"name": "messageType", "type": "DPIMessageType", "description": "The specific type of DPI message sent."}, {"name": "sentTime", "type": "DateTime", "description": "Time the DPI message was sent."}], "operations": []}, {"name": "FlightUpdateMessage", "package": "Messaging", "stereotype": "entity", "definition": "A Flight Update Message (FUM) sent by Network Operations providing progress updates for an inbound flight within 3 hours flying time of destination.", "source_milestones": [2, 3], "attributes": [{"name": "sentTime", "type": "DateTime", "description": "Time the FUM was sent."}], "operations": []}], "enumerations": [{"name": "OperationalStatus", "package": "FlightData", "literals": ["INITIATED", "REGULATED", "AIRBORNE", "FIR", "FINAL", "LANDED", "IN_BLOCK", "SEQUENCED", "BOARDING", "READY", "OFF_BLOCK", "DEPARTED"], "source_milestones": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]}, {"name": "DPIMessageType", "package": "Messaging", "literals": ["E_DPI", "T_DPI", "T_DPI_t", "T_DPI_s", "A_DPI"], "source_milestones": [1, 2, 3, 10, 15]}], "relationships": [{"type": "dependency", "source": "AircraftOperator", "target": "FlightPlan", "label": "submits", "source_multiplicity": "1", "target_multiplicity": "1..*", "source_milestones": [1]}, {"type": "dependency", "source": "IFPS", "target": "FlightPlan", "label": "distributes", "source_multiplicity": "1", "target_multiplicity": "1..*", "source_milestones": [1]}, {"type": "association", "source": "ATCUnit", "target": "FlightPlan", "label": "receives", "source_multiplicity": "1..*", "target_multiplicity": "1", "source_milestones": [1]}, {"type": "association", "source": "FlightPlan", "target": "AirportSlot", "label": "corresponds to", "source_multiplicity": "1", "target_multiplicity": "0..1", "source_milestones": [1]}, {"type": "association", "source": "Flight", "target": "FlightPlan", "label": "based on", "source_multiplicity": "1", "target_multiplicity": "1", "source_milestones": [1, 2, 3, 4, 5, 6, 7, 8, 9]}, {"type": "association", "source": "Flight", "target": "AirportSlot", "label": "matched to", "source_multiplicity": "0..1", "target_multiplicity": "1", "source_milestones": [1]}, {"type": "aggregation", "source": "TurnRound", "target": "Flight", "label": "arrival flight", "source_multiplicity": "1", "target_multiplicity": "1", "source_milestones": [1, 6, 7, 8]}, {"type": "aggregation", "source": "TurnRound", "target": "Flight", "label": "departure flight", "source_multiplicity": "1", "target_multiplicity": "1", "source_milestones": [1, 6, 7, 8]}, {"type": "association", "source": "AirportCDMPlatform", "target": "Flight", "label": "manages", "source_multiplicity": "1", "target_multiplicity": "*", "source_milestones": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]}, {"type": "composition", "source": "Flight", "target": "Milestone", "label": "progresses through", "source_multiplicity": "1", "target_multiplicity": "1..*", "source_milestones": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]}, {"type": "dependency", "source": "AirportCDMPlatform", "target": "Milestone", "label": "records", "source_multiplicity": "1", "target_multiplicity": "*", "source_milestones": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]}, {"type": "association", "source": "AirportCDMPlatform", "target": "DPIMessage", "label": "sends", "source_multiplicity": "1", "target_multiplicity": "*", "source_milestones": [1, 2, 3, 4, 10, 15]}, {"type": "association", "source": "DPIMessage", "target": "NetworkOperations", "label": "informs", "source_multiplicity": "*", "target_multiplicity": "1", "source_milestones": [1, 2, 3, 4, 10, 15]}, {"type": "association", "source": "NetworkOperations", "target": "FlightUpdateMessage", "label": "sends", "source_multiplicity": "1", "target_multiplicity": "*", "source_milestones": [2, 3]}, {"type": "dependency", "source": "FlightUpdateMessage", "target": "Flight", "label": "updates ELDT of", "source_multiplicity": "*", "target_multiplicity": "1", "source_milestones": [2, 3]}, {"type": "association", "source": "NetworkOperations", "target": "Flight", "label": "issues CTOT to", "source_multiplicity": "1", "target_multiplicity": "*", "source_milestones": [2]}, {"type": "association", "source": "ATCUnit", "target": "Flight", "label": "detects / issues TSAT for", "source_multiplicity": "1", "target_multiplicity": "*", "source_milestones": [4, 5, 9, 10, 13, 14, 16]}, {"type": "association", "source": "GroundHandler", "target": "Flight", "label": "provides estimates for", "source_multiplicity": "1", "target_multiplicity": "*", "source_milestones": [3, 6, 7, 8, 9, 11, 12]}, {"type": "association", "source": "AircraftOperator", "target": "Flight", "label": "operates", "source_multiplicity": "1", "target_multiplicity": "*", "source_milestones": [1, 3, 6, 7, 8, 9, 11, 12]}, {"type": "association", "source": "GroundHandler", "target": "TurnRound", "label": "manages", "source_multiplicity": "1", "target_multiplicity": "*", "source_milestones": [6, 7, 8]}], "unmodelled": ["M1: For long distance flights the ELDT may differ from the airport slot, a nuance of data quality not captured as a distinct rule owner.", "M4: The objective to decrease stand/gate changes in the last 30 minutes and the rule that stand/gate changes are not preferred after ELDT-30' is not modelled as a distinct class attribute or operation.", "M9-M14: The distinction between voice, DCL (Data Communication / CPDLC), and manual input channels for start-up request/approval is not represented.", "M10: The local procedure applied when TOBT update count exceeds a threshold is referenced but its concrete actions are not specified in the document and so not modelled.", "M11: The distinction between physical boarding start and passenger pre-call via FIDS/PA systems is not modelled as separate classes.", "M15: The special handling of AOBT/A-DPI in case of remote holding at a defined time prior to TTOT is not separately modelled.", "M16: FSA and MVT messages sent at Take Off are mentioned but not modelled as distinct message classes.", "General: Attachment 2 (DPI process implementation details) and section 3.7.3 are referenced but their content is outside the document's text and not modelled."]};
+const MILESTONES = {"1": "ATC Flight Plan Activated", "2": "EOBT - 2 hr", "3": "Take Off from Outstation", "4": "Local Radar Update", "5": "Final Approach", "6": "Landed", "7": "In-Block", "8": "Ground Handling Started", "9": "Final Confirmation of the TOBT", "10": "TSAT Issued", "11": "Boarding Starts", "12": "Aircraft Ready", "13": "Start Up Requested", "14": "Start Up Approved", "15": "Off-Block", "16": "Take Off"};
+const TITLE = "A-CDM class model (run_02)";
+
+// ---------- constants ----------
+const F = '13px "Segoe UI", Arial, sans-serif', FM = '12px "Segoe UI", Arial, sans-serif';
+const HDR_H = 30, COMP_H = 22, ROW_H = 20, PAD = 10, MIN_W = 150, MAX_W = 330;
+const NODE_GAP_X = 36, NODE_GAP_Y = 56, PKG_PAD = 18, PKG_TAB = 26, PKG_GAP = 40, MAX_PKG_W = 1100;
+const SPOT = { entity: ['E', '#C8E6C9'], boundary: ['B', '#BBDEFB'], control: ['C', '#FFE0B2'] };
+const NS = 'http://www.w3.org/2000/svg';
+const ctx = document.createElement('canvas').getContext('2d');
+const tw = (s, f = F) => { ctx.font = f; return ctx.measureText(s).width; };
+const el = (tag, attrs = {}, parent) => {
+  const e = document.createElementNS(NS, tag);
+  for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, v);
+  if (parent) parent.appendChild(e);
+  return e;
+};
+const txt = (parent, x, y, s, attrs = {}) => { const t = el('text', { x, y, ...attrs }, parent); t.textContent = s; return t; };
+const clip = (s, maxw, f = FM) => { if (tw(s, f) <= maxw) return s; let t = s; while (t.length > 3 && tw(t + '…', f) > maxw) t = t.slice(0, -1); return t + '…'; };
+const sig = op => `+ ${op.name}(${(op.parameters || []).map(p => `${p.name} : ${p.type}`).join(', ')}) : ${op.returns || 'void'}`;
+const msName = n => MILESTONES[String(n)] ? `M${n} ${MILESTONES[String(n)]}` : `M${n}`;
+
+// ---------- model ----------
+const nodes = new Map();
+for (const c of MODEL.classes) nodes.set(c.name, { id: c.name, kind: 'class', pkg: c.package, data: c, body: true, attrs: true, ops: true });
+for (const e of MODEL.enumerations || []) if (!nodes.has(e.name)) nodes.set(e.name, { id: e.name, kind: 'enum', pkg: e.package, data: e, body: true, attrs: true, ops: true });
+const edges = MODEL.relationships.filter(r => nodes.has(r.source) && nodes.has(r.target)).map((r, i) => ({ ...r, i }));
+const pkgOrder = MODEL.packages.map(p => p.name);
+for (const n of nodes.values()) if (!pkgOrder.includes(n.pkg)) pkgOrder.push(n.pkg);
+const pkgDesc = Object.fromEntries(MODEL.packages.map(p => [p.name, p.description || '']));
+const parents = new Map();
+for (const e of edges) if (e.type === 'generalization') parents.set(e.source, e.target);
+const state = { cols: 2, zoom: 1, hidden: new Set(), selected: null, search: '' };
+
+// ---------- geometry ----------
+function size(n) {
+  const d = n.data;
+  let w = tw(n.id) + 70;
+  const rows = [];
+  if (n.kind === 'class') {
+    if (n.body) {
+      rows.push(['comp', 'Attributes', 'attrs']);
+      if (n.attrs) for (const a of d.attributes) rows.push(['member', `+ ${a.name} : ${a.type}`, a.description]);
+      rows.push(['comp', 'Operations', 'ops']);
+      if (n.ops) for (const o of d.operations) rows.push(['member', sig(o), o.description]);
+    }
+  } else if (n.body) {
+    rows.push(['comp', 'Literals', 'attrs']);
+    if (n.attrs) for (const l of d.literals) rows.push(['member', l, '']);
+  }
+  for (const r of rows) w = Math.max(w, tw(r[1], FM) + 2 * PAD + (r[0] === 'comp' ? 24 : 0));
+  n.w = Math.min(MAX_W, Math.max(MIN_W, Math.ceil(w)));
+  n.h = HDR_H + rows.reduce((s, r) => s + (r[0] === 'comp' ? COMP_H : ROW_H), 0) + (rows.length ? 4 : 0);
+  n.rows = rows;
+}
+
+function layout() {
+  for (const n of nodes.values()) size(n);
+  const pkgs = pkgOrder.map(name => {
+    const members = [...nodes.values()].filter(n => n.pkg === name);
+    // depth by generalization within the package: parents sit above children
+    const depth = n => { let d = 0, p = parents.get(n.id); while (p && nodes.get(p)?.pkg === name && d < 20) { d++; p = parents.get(p); } return d; };
+    members.forEach(n => { n.depth = depth(n); n.parentKey = parents.get(n.id) || ''; });
+    members.sort((a, b) => a.depth - b.depth || a.parentKey.localeCompare(b.parentKey) || a.id.localeCompare(b.id));
+    const rows = []; // rows of nodes, wrapped at MAX_PKG_W
+    let cur = null, curDepth = -1, curW = 0;
+    for (const n of members) {
+      if (!cur || n.depth !== curDepth || curW + NODE_GAP_X + n.w > MAX_PKG_W) { cur = []; rows.push(cur); curDepth = n.depth; curW = 0; }
+      cur.push(n); curW += (cur.length > 1 ? NODE_GAP_X : 0) + n.w;
+    }
+    let y = PKG_TAB + PKG_PAD, w = 0;
+    for (const row of rows) {
+      const rowW = row.reduce((s, n) => s + n.w, 0) + NODE_GAP_X * (row.length - 1);
+      w = Math.max(w, rowW);
+      let x = PKG_PAD; const rowH = Math.max(...row.map(n => n.h));
+      for (const n of row) { n.rx = x; n.ry = y; x += n.w + NODE_GAP_X; }
+      y += rowH + NODE_GAP_Y;
+    }
+    // centre rows
+    for (const row of rows) { const rowW = row.reduce((s, n) => s + n.w, 0) + NODE_GAP_X * (row.length - 1); const off = (w - rowW) / 2; for (const n of row) n.rx += off; }
+    return { name, members, w: Math.max(w + 2 * PKG_PAD, tw(name) + 60), h: (rows.length ? y - NODE_GAP_Y : y) + PKG_PAD };
+  }).filter(p => p.members.length);
+  // masonry into columns, in package order
+  const colH = Array(state.cols).fill(PKG_GAP), colW = Array(state.cols).fill(0), colOf = [];
+  pkgs.forEach((p, i) => { const c = state.cols === 1 ? 0 : colH.indexOf(Math.min(...colH)); colOf[i] = c; p.y = colH[c]; colH[c] += p.h + PKG_GAP; colW[c] = Math.max(colW[c], p.w); });
+  const colX = []; let x = PKG_GAP; for (let c = 0; c < state.cols; c++) { colX[c] = x; x += colW[c] + PKG_GAP; }
+  pkgs.forEach((p, i) => { p.x = colX[colOf[i]]; for (const n of p.members) { n.x = p.x + n.rx; n.y = p.y + n.ry; } });
+  return { pkgs, W: x, H: Math.max(...colH) + 120 };
+}
+
+// ---------- drawing ----------
+function drawNode(g, n) {
+  const d = n.data, grp = el('g', { class: 'node', 'data-id': n.id, transform: `translate(${n.x},${n.y})` }, g);
+  el('title', {}, grp).textContent = (n.kind === 'class' ? d.definition : `enumeration ${n.id}`) + (d.source_milestones?.length ? `\nSource: ${d.source_milestones.map(msName).join('; ')}` : '');
+  el('rect', { class: 'body', x: 0, y: 0, width: n.w, height: n.h, rx: 2 }, grp);
+  el('rect', { class: 'hdr', x: 0, y: 0, width: n.w, height: HDR_H }, grp);
+  const hasBody = n.kind === 'class' || d.literals?.length;
+  if (hasBody) {
+    const b = el('g', { class: 'btn', transform: 'translate(6,8)' }, grp);
+    el('rect', { width: 14, height: 14, rx: 2 }, b); txt(b, 7, 11, n.body ? '⌃' : '⌄', { 'text-anchor': 'middle' });
+    b.addEventListener('click', ev => { ev.stopPropagation(); n.body = !n.body; render(); });
+  }
+  const st = n.kind === 'class' ? d.stereotype : 'enumeration';
+  txt(grp, n.w / 2, 12, `«${st}»`, { class: 'stereo', 'text-anchor': 'middle' });
+  txt(grp, n.w / 2, 25, clip(n.id, n.w - 60, F), { class: 'name', 'text-anchor': 'middle' });
+  const [letter, colour] = SPOT[st] || ['Σ', '#eeeeee'];
+  const sp = el('g', { class: 'spot', transform: `translate(${n.w - 16},15)` }, grp);
+  el('circle', { r: 8, fill: colour }, sp); txt(sp, 0, 4, letter, { 'text-anchor': 'middle' });
+  grp.querySelector('.hdr').addEventListener('click', () => select({ kind: 'node', id: n.id }));
+  grp.querySelector('.name').addEventListener('click', () => select({ kind: 'node', id: n.id }));
+  let y = HDR_H;
+  for (const [kind, label, extra] of n.rows) {
+    if (kind === 'comp') {
+      const c = el('g', { class: 'btn', transform: `translate(0,${y})` }, grp);
+      el('rect', { class: 'comp', width: n.w, height: COMP_H, stroke: '#ccd', 'stroke-width': .5 }, c);
+      el('rect', { x: 6, y: 5, width: 12, height: 12, rx: 2 }, c); txt(c, 12, 14, n[extra] ? '−' : '+', { 'text-anchor': 'middle' });
+      txt(c, 24, 15, label, { class: 'comptext' });
+      c.addEventListener('click', ev => { ev.stopPropagation(); n[extra] = !n[extra]; render(); });
+      y += COMP_H;
+    } else {
+      const t = txt(grp, PAD, y + 14, clip(label, n.w - 2 * PAD), { class: 'member' });
+      el('title', {}, t).textContent = label + (extra ? `\n${extra}` : '');
+      y += ROW_H;
+    }
+  }
+}
+
+function anchor(n, tx, ty) {
+  // intersection of the line from the node centre towards (tx,ty) with the node border
+  const cx = n.x + n.w / 2, cy = n.y + n.h / 2, dx = tx - cx, dy = ty - cy;
+  if (!dx && !dy) return [cx, cy];
+  const sx = (n.w / 2) / Math.abs(dx || 1e-9), sy = (n.h / 2) / Math.abs(dy || 1e-9), s = Math.min(sx, sy);
+  return [cx + dx * s, cy + dy * s];
+}
+
+function drawEdge(g, e) {
+  const a = nodes.get(e.source), b = nodes.get(e.target);
+  const grp = el('g', { class: `edge ${e.type}`, 'data-i': e.i }, g);
+  el('title', {}, grp).textContent = `${e.type}: ${e.source} → ${e.target}${e.label ? ' (' + e.label + ')' : ''}` + (e.source_milestones?.length ? `\nSource: ${e.source_milestones.map(msName).join('; ')}` : '');
+  let dpath, lx, ly, p1, p2;
+  if (e.type === 'generalization' && b.y + b.h <= a.y) {
+    // orthogonal, parent above: child top -> bus -> parent bottom
+    const x1 = a.x + a.w / 2, y1 = a.y, x2 = b.x + b.w / 2, y2 = b.y + b.h, ym = y2 + 20;
+    // a box between child and parent in the same column? then climb through the gutter to its left
+    const blocked = [...nodes.values()].some(n => n !== a && n !== b && n.y + n.h <= y1 && n.y >= y2 && n.x < x1 && n.x + n.w > x1);
+    if (blocked) { const gx = a.x - NODE_GAP_X / 2, yb = y1 - NODE_GAP_Y / 2; dpath = `M${x1},${y1} V${yb} H${gx} V${ym} H${x2} V${y2}`; }
+    else dpath = `M${x1},${y1} V${ym} H${x2} V${y2}`;
+    p1 = [x1, y1]; p2 = [x2, y2]; lx = (x1 + x2) / 2; ly = ym;
+  } else if (a === b) {
+    const x = a.x + a.w, y = a.y + 12; dpath = `M${x},${y} h24 v20 h-24`; p1 = [x, y]; p2 = [x, y + 20]; lx = x + 26; ly = y + 10;
+  } else {
+    p1 = anchor(a, b.x + b.w / 2, b.y + b.h / 2); p2 = anchor(b, a.x + a.w / 2, a.y + a.h / 2);
+    dpath = `M${p1[0]},${p1[1]} L${p2[0]},${p2[1]}`; lx = (p1[0] + p2[0]) / 2; ly = (p1[1] + p2[1]) / 2;
+  }
+  const marker = { generalization: 'url(#tri)', dependency: 'url(#arrow)' }[e.type] || 'none';
+  const start = { composition: 'url(#diamondF)', aggregation: 'url(#diamondH)' }[e.type] || 'none';
+  el('path', { class: 'hit', d: dpath }, grp);
+  el('path', { d: dpath, 'marker-end': marker, 'marker-start': start }, grp);
+  const labelAt = (x, y, s, anchorT = 'middle') => { const t = txt(grp, x, y, s, { 'text-anchor': anchorT }); const bb = { w: tw(s, '11px "Segoe UI", Arial') + 4, h: 13 }; const r = el('rect', { class: 'lblbg', x: anchorT === 'middle' ? x - bb.w / 2 : x - 2, y: y - 10, width: bb.w, height: bb.h }); grp.insertBefore(r, t); return t; };
+  if (e.label) labelAt(lx, ly - 4, e.label);
+  const mult = (p, q, m) => { if (!m) return; const dx = q[0] - p[0], dy = q[1] - p[1], L = Math.hypot(dx, dy) || 1; labelAt(p[0] + dx / L * 14 - dy / L * 9, p[1] + dy / L * 14 + dx / L * 9 + 4, m); };
+  mult(p1, p2, e.source_multiplicity); mult(p2, p1, e.target_multiplicity);
+  grp.addEventListener('click', () => select({ kind: 'edge', i: e.i }));
+}
+
+function defs(svg) {
+  const d = el('defs', {}, svg);
+  const mk = (id, path, fill, w = 12) => { const m = el('marker', { id, viewBox: '0 0 12 12', refX: 11, refY: 6, markerWidth: w, markerHeight: w, orient: 'auto-start-reverse', markerUnits: 'userSpaceOnUse' }, d); el('path', { d: path, fill, stroke: '#555', 'stroke-width': 1 }, m); };
+  mk('tri', 'M1,1 L11,6 L1,11 Z', '#fff', 14);
+  mk('arrow', 'M2,2 L11,6 L2,10', 'none', 12);
+  mk('diamondF', 'M1,6 L6,1 L11,6 L6,11 Z', '#555', 14);
+  mk('diamondH', 'M1,6 L6,1 L11,6 L6,11 Z', '#fff', 14);
+}
+
+function drawLegend(svg, x, y) {
+  const g = el('g', { class: 'legend', transform: `translate(${x},${y})` }, svg);
+  el('rect', { width: 640, height: 48, fill: '#fff', stroke: '#bbb' }, g);
+  const items = [['generalization', 'url(#tri)', 'none', 'subclass → superclass'], ['association', 'none', 'none', 'association, ends carry multiplicity'], ['composition', 'none', 'url(#diamondF)', 'whole → part'], ['aggregation', 'none', 'url(#diamondH)', 'group → member'], ['dependency', 'url(#arrow)', 'none', 'uses']];
+  items.forEach(([t, me, ms, s], i) => { const gx = 12 + (i % 3) * 210, gy = i < 3 ? 18 : 38; const eg = el('g', { class: `edge ${t}` }, g); el('path', { d: `M${gx},${gy} h40`, 'marker-end': me, 'marker-start': ms }, eg); txt(g, gx + 48, gy + 4, `${t}: ${s}`); });
+  txt(g, 12, 44, '', {});
+}
+
+function render() {
+  const L = layout();
+  const canvas = document.getElementById('canvas'); canvas.innerHTML = '';
+  const svg = el('svg', { xmlns: NS, width: L.W * state.zoom, height: L.H * state.zoom, viewBox: `0 0 ${L.W} ${L.H}` }, canvas);
+  defs(svg);
+  const root = el('g', {}, svg);
+  for (const p of L.pkgs) {
+    const g = el('g', { class: 'pkg' }, root);
+    el('rect', { x: p.x, y: p.y, width: p.w, height: p.h, rx: 3 }, g);
+    const tab = el('rect', { class: 'tab', x: p.x, y: p.y, width: Math.min(p.w, tw(p.name) + 40), height: PKG_TAB }, g);
+    txt(g, p.x + 12, p.y + 18, p.name, { class: 'title' });
+    el('title', {}, tab).textContent = pkgDesc[p.name] || p.name;
+    tab.addEventListener('click', () => select({ kind: 'pkg', name: p.name }));
+  }
+  const eg = el('g', { class: 'edges' }, root);
+  for (const e of edges) if (!state.hidden.has(e.type)) drawEdge(eg, e);
+  const ng = el('g', { class: 'nodes' }, root);
+  for (const p of L.pkgs) for (const n of p.members) drawNode(ng, n);
+  drawLegend(root, PKG_GAP, L.H - 70);
+  applyHighlight();
+  document.getElementById('zoomPct').textContent = Math.round(state.zoom * 100) + '%';
+  state.W = L.W;
+}
+
+// ---------- selection, search, panel ----------
+function matches(n) {
+  const q = state.search.trim().toLowerCase(); if (!q) return true;
+  const d = n.data;
+  return n.id.toLowerCase().includes(q) || (d.attributes || []).some(a => a.name.toLowerCase().includes(q) || a.type.toLowerCase().includes(q)) || (d.operations || []).some(o => o.name.toLowerCase().includes(q)) || (d.literals || []).some(l => l.toLowerCase().includes(q));
+}
+function applyHighlight() {
+  const sel = state.selected;
+  document.querySelectorAll('.node').forEach(g => { const n = nodes.get(g.dataset.id); g.classList.toggle('dim', !matches(n)); g.classList.toggle('selected', sel?.kind === 'node' && sel.id === n.id); });
+  document.querySelectorAll('.edge[data-i]').forEach(g => { const e = edges[+g.dataset.i]; g.classList.toggle('selected', sel?.kind === 'edge' && sel.i === e.i); g.classList.toggle('related', sel?.kind === 'node' && (e.source === sel.id || e.target === sel.id)); g.classList.toggle('dim', state.search && !(matches(nodes.get(e.source)) || matches(nodes.get(e.target)))); });
+}
+function select(s) { state.selected = s; applyHighlight(); panel(); }
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const ms = list => list?.length ? list.map(m => `<span class="m">${esc(msName(m))}</span>`).join('') : '<span class="m">none stated</span>';
+const link = id => `<a data-node="${esc(id)}">${esc(id)}</a>`;
+function panel() {
+  const p = document.getElementById('panel'), s = state.selected;
+  if (!s) { p.innerHTML = `<h2>${esc(TITLE)}</h2><p>${nodes.size} classes and enumerations, ${edges.length} relationships, ${pkgOrder.length} packages.</p><p>Click a class header for its definition, provenance, and members with descriptions. Click a relationship line or label for its provenance. Use the ⌃ button to collapse a class and the −/+ boxes to collapse a compartment.</p><h3>Packages</h3>${pkgOrder.map(n => `<div><a data-pkg="${esc(n)}">${esc(n)}</a> <span style="color:#666">${esc(pkgDesc[n])}</span></div>`).join('')}${MODEL.unmodelled?.length ? `<h3>Unmodelled</h3><ul>${MODEL.unmodelled.map(u => `<li>${esc(u)}</li>`).join('')}</ul>` : ''}`; }
+  else if (s.kind === 'pkg') p.innerHTML = `<h2>Package ${esc(s.name)}</h2><div class="def">${esc(pkgDesc[s.name]) || '<i>no description</i>'}</div><h3>Members</h3>${[...nodes.values()].filter(n => n.pkg === s.name).map(n => `<div>${link(n.id)} <span class="tag">${n.kind === 'class' ? n.data.stereotype : 'enumeration'}</span></div>`).join('')}`;
+  else if (s.kind === 'node') {
+    const n = nodes.get(s.id), d = n.data, rel = edges.filter(e => e.source === n.id || e.target === n.id);
+    const rows = (list, f) => list?.length ? `<table>${list.map(f).join('')}</table>` : '<div style="color:#888">none</div>';
+    p.innerHTML = `<h2>${esc(n.id)}</h2><span class="tag">«${n.kind === 'class' ? esc(d.stereotype) : 'enumeration'}»</span><span class="tag">${esc(n.pkg)}</span>` +
+      (n.kind === 'class' ? `<div class="def">${esc(d.definition)}</div>` : '') +
+      `<h3>Source milestones</h3>${ms(d.source_milestones)}` +
+      (n.kind === 'class' ? `<h3>Attributes (${d.attributes.length})</h3>${rows(d.attributes, a => `<tr><td>${esc(a.name)} : ${esc(a.type)}</td><td>${esc(a.description)}</td></tr>`)}<h3>Operations (${d.operations.length})</h3>${rows(d.operations, o => `<tr><td>${esc(sig(o).slice(2))}</td><td>${esc(o.description)}</td></tr>`)}` : `<h3>Literals</h3>${rows(d.literals, l => `<tr><td>${esc(l)}</td><td></td></tr>`)}`) +
+      `<h3>Relationships (${rel.length})</h3>${rel.map(e => `<div><a data-edge="${e.i}">${esc(e.type)}</a> ${link(e.source)} → ${link(e.target)}${e.label ? ' <i>' + esc(e.label) + '</i>' : ''}</div>`).join('') || '<div style="color:#888">none</div>'}`;
+  } else if (s.kind === 'edge') {
+    const e = edges[s.i];
+    p.innerHTML = `<h2>${esc(e.type)}</h2><div class="def">${link(e.source)}${e.source_multiplicity ? ' [' + esc(e.source_multiplicity) + ']' : ''} → ${link(e.target)}${e.target_multiplicity ? ' [' + esc(e.target_multiplicity) + ']' : ''}</div>${e.label ? `<div class="def"><i>${esc(e.label)}</i></div>` : ''}<h3>Source milestones</h3>${ms(e.source_milestones)}`;
+  }
+  p.querySelectorAll('a[data-node]').forEach(a => a.onclick = () => { select({ kind: 'node', id: a.dataset.node }); scrollTo(a.dataset.node); });
+  p.querySelectorAll('a[data-edge]').forEach(a => a.onclick = () => select({ kind: 'edge', i: +a.dataset.edge }));
+  p.querySelectorAll('a[data-pkg]').forEach(a => a.onclick = () => select({ kind: 'pkg', name: a.dataset.pkg }));
+}
+function scrollTo(id) { const g = document.querySelector(`.node[data-id="${CSS.escape(id)}"]`); if (g) g.scrollIntoView({ block: 'center', inline: 'center', behavior: 'smooth' }); }
+
+// ---------- controls ----------
+document.getElementById('title').textContent = TITLE;
+document.getElementById('cols').onchange = ev => { state.cols = +ev.target.value; render(); };
+document.getElementById('expandAll').onclick = () => { for (const n of nodes.values()) { n.body = n.attrs = n.ops = true; } render(); };
+document.getElementById('collapseAll').onclick = () => { for (const n of nodes.values()) n.body = false; render(); };
+document.getElementById('collapseOps').onclick = ev => { const hide = ev.target.textContent.startsWith('Hide'); for (const n of nodes.values()) n.ops = !hide; ev.target.textContent = hide ? 'Show operations' : 'Hide operations'; render(); };
+document.querySelectorAll('.etype').forEach(cb => cb.onchange = () => { cb.checked ? state.hidden.delete(cb.value) : state.hidden.add(cb.value); render(); });
+document.getElementById('search').oninput = ev => { state.search = ev.target.value; applyHighlight(); };
+document.getElementById('zoomIn').onclick = () => { state.zoom = Math.min(2, state.zoom * 1.2); render(); };
+document.getElementById('zoomOut').onclick = () => { state.zoom = Math.max(0.2, state.zoom / 1.2); render(); };
+document.getElementById('zoomFit').onclick = () => { state.zoom = Math.max(0.2, Math.min(1.5, (document.getElementById('canvas').clientWidth - 20) / state.W)); render(); };
+document.getElementById('downloadSvg').onclick = () => {
+  const svg = document.querySelector('#canvas svg').cloneNode(true);
+  const style = document.createElementNS(NS, 'style'); style.textContent = document.querySelector('style').textContent; svg.insertBefore(style, svg.firstChild);
+  const blob = new Blob(['<?xml version="1.0" encoding="UTF-8"?>\n' + svg.outerHTML], { type: 'image/svg+xml' });
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'model.svg'; a.click();
+};
+render(); panel();
+</script>
+</body>
+</html>

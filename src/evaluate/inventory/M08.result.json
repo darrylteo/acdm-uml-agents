@@ -1,0 +1,356 @@
+{
+  "meta": {
+    "ok": true,
+    "output": null,
+    "error": null,
+    "model": "claude-opus-5",
+    "input_tokens": 3841,
+    "output_tokens": 4031,
+    "thinking_tokens": 1282,
+    "cache_creation_tokens": 1361,
+    "cache_read_tokens": 2478,
+    "cost_usd": 0.115634,
+    "duration_ms": 37357,
+    "attempts": 1,
+    "num_turns": 2
+  },
+  "output": {
+    "sentences": [
+      {
+        "id": "M8.definition.1",
+        "decision": "keep",
+        "reason": "Names the milestone and its time quantity ACGT.",
+        "claims": [
+          {
+            "text": "Commence of Ground Handling Operations (ACGT).",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "Commence of Ground Handling Operations (ACGT).",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M8.definition.2",
+        "decision": "keep",
+        "reason": "States an applicability condition of the milestone that a model would realise as a rule.",
+        "claims": [
+          {
+            "text": "this milestone is specific to flights that are the first operation of the day or that have been long term parked.",
+            "kind": "operation",
+            "owner": "Milestone 8: Ground Handling Started",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M8.definition.3",
+        "decision": "keep",
+        "reason": "States a rule deriving ACGT from AIBT and names AIBT.",
+        "claims": [
+          {
+            "text": "For flights that are on a normal turn-round ACGT is considered to commence at AIBT.",
+            "kind": "operation",
+            "owner": "Milestone 8: Ground Handling Started",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "AIBT",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M8.origin_and_priority.1",
+        "decision": "keep",
+        "reason": "Names the originator of ACGT.",
+        "claims": [
+          {
+            "text": "Aircraft Operator / Ground Handler will provide the information.",
+            "kind": "relationship",
+            "owner": "",
+            "rel_type": "other",
+            "duplicate_of": ""
+          },
+          {
+            "text": "Aircraft Operator / Ground Handler will provide the information.",
+            "kind": "attribute",
+            "owner": "ACGT",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "Aircraft Operator",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "Ground Handler",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M8.timing.1",
+        "decision": "keep",
+        "reason": "States the availability timing of the ACGT value.",
+        "claims": [
+          {
+            "text": "The information is directly available after occurrence of the milestone.",
+            "kind": "attribute",
+            "owner": "ACGT",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M8.data_quality.1",
+        "decision": "keep",
+        "reason": "States the accuracy of ACGT.",
+        "claims": [
+          {
+            "text": "Data is available with an accuracy of +/- 1 minute.",
+            "kind": "attribute",
+            "owner": "ACGT",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M8.effect.1",
+        "decision": "keep",
+        "reason": "Describes the trigger, the TOBT update rule and its basis.",
+        "claims": [
+          {
+            "text": "The occurrence of ACGT triggers an update of downstream estimates",
+            "kind": "operation",
+            "owner": "Milestone 8: Ground Handling Started",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "TOBT is updated automatically or inserted manually by the Aircraft Operator / Ground Handler, calculated on the basis of the estimated turn-round period for the departing flight.",
+            "kind": "operation",
+            "owner": "Aircraft Operator / Ground Handler",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "TOBT",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "The occurrence of ACGT triggers an update of downstream estimates: TOBT",
+            "kind": "relationship",
+            "owner": "",
+            "rel_type": "other",
+            "duplicate_of": ""
+          },
+          {
+            "text": "the estimated turn-round period for the departing flight",
+            "kind": "attribute",
+            "owner": "Flight",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M8.procedures.1",
+        "decision": "keep",
+        "reason": "States the consistency check between TOBT and the ATC Flight Plan.",
+        "claims": [
+          {
+            "text": "To check whether the AO/GH TOBT is consistent with the ATC Flight Plan.",
+            "kind": "operation",
+            "owner": "Milestone 8: Ground Handling Started",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "ATC Flight Plan",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M8.procedures.2",
+        "decision": "keep",
+        "reason": "States the notification rule, the TTOT tolerance and the receiver.",
+        "claims": [
+          {
+            "text": "Network Operations is informed when the TTOT changes by more than the agreed TTOT tolerance.",
+            "kind": "operation",
+            "owner": "Milestone 8: Ground Handling Started",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "the agreed TTOT tolerance",
+            "kind": "attribute",
+            "owner": "TTOT",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "TTOT",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "Network Operations",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "Network Operations is informed when the TTOT changes",
+            "kind": "relationship",
+            "owner": "",
+            "rel_type": "other",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M8.procedures.3",
+        "decision": "keep",
+        "reason": "Restates the flight plan feasibility check with its inputs.",
+        "claims": [
+          {
+            "text": "This check shall be performed to verify feasibility of the ATC Flight Plan given the updated TOBT or ATC Flight Plan.",
+            "kind": "operation",
+            "owner": "Milestone 8: Ground Handling Started",
+            "rel_type": "",
+            "duplicate_of": "M8.procedures.1.c1"
+          }
+        ]
+      },
+      {
+        "id": "M8.procedures.4",
+        "decision": "keep",
+        "reason": "Restates the TTOT tolerance rule before informing Network Operations.",
+        "claims": [
+          {
+            "text": "A TTOT tolerance is respected before Network Operations is informed on updated TTOT.",
+            "kind": "operation",
+            "owner": "Milestone 8: Ground Handling Started",
+            "rel_type": "",
+            "duplicate_of": "M8.procedures.2.c1"
+          },
+          {
+            "text": "A TTOT tolerance",
+            "kind": "attribute",
+            "owner": "TTOT",
+            "rel_type": "",
+            "duplicate_of": "M8.procedures.2.c2"
+          }
+        ]
+      },
+      {
+        "id": "M8.procedures.5",
+        "decision": "drop",
+        "reason": "Incomplete lead-in clause; its trigger content is carried by the following sentence.",
+        "claims": []
+      },
+      {
+        "id": "M8.procedures.6",
+        "decision": "keep",
+        "reason": "Names the trigger of the milestone process.",
+        "claims": [
+          {
+            "text": "- Actual Commence of Ground Handling: ACGT",
+            "kind": "relationship",
+            "owner": "",
+            "rel_type": "other",
+            "duplicate_of": ""
+          },
+          {
+            "text": "Actual Commence of Ground Handling: ACGT",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": "M8.definition.1.c1"
+          }
+        ]
+      },
+      {
+        "id": "M8.operational_status.1",
+        "decision": "keep",
+        "reason": "States the operational status the milestone sets on the flight.",
+        "claims": [
+          {
+            "text": "IN-BLOCK",
+            "kind": "enumeration",
+            "owner": "Flight",
+            "rel_type": "",
+            "duplicate_of": ""
+          }
+        ]
+      },
+      {
+        "id": "M8.action_on_cdm.1",
+        "decision": "keep",
+        "reason": "States the CDM platform update action and names the quantities updated.",
+        "claims": [
+          {
+            "text": "ETTT/TOBT, TTOT updated",
+            "kind": "operation",
+            "owner": "CDM platform",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "ETTT",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": ""
+          },
+          {
+            "text": "TOBT",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": "M8.effect.1.c3"
+          },
+          {
+            "text": "TTOT",
+            "kind": "class",
+            "owner": "",
+            "rel_type": "",
+            "duplicate_of": "M8.procedures.2.c3"
+          }
+        ]
+      }
+    ]
+  }
+}

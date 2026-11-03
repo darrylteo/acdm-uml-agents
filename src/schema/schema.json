@@ -1,0 +1,250 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "UML class model",
+  "description": "A UML class model extracted from an operational document. All agents and the ground truth use this schema.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "packages",
+    "classes",
+    "enumerations",
+    "relationships"
+  ],
+  "properties": {
+    "packages": {
+      "type": "array",
+      "description": "UML packages. The scaffold packages must be present; a further package may be added only if a class fits none of them.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "description"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "classes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "package",
+          "stereotype",
+          "definition",
+          "source_milestones",
+          "attributes",
+          "operations"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "UpperCamelCase class name."
+          },
+          "package": {
+            "type": "string",
+            "description": "Name of the package this class belongs to."
+          },
+          "stereotype": {
+            "type": "string",
+            "enum": [
+              "entity",
+              "boundary",
+              "control"
+            ]
+          },
+          "definition": {
+            "type": "string",
+            "description": "One sentence, grounded in the document."
+          },
+          "source_milestones": {
+            "type": "array",
+            "description": "Milestone numbers (1-16) whose text grounds this class.",
+            "items": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 16
+            }
+          },
+          "attributes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "name",
+                "type",
+                "description"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "lowerCamelCase attribute name."
+                },
+                "type": {
+                  "type": "string",
+                  "description": "A primitive type, an enumeration name, or a class name."
+                },
+                "description": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "operations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "name",
+                "parameters",
+                "returns",
+                "description"
+              ],
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "lowerCamelCase operation name."
+                },
+                "parameters": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "name",
+                      "type"
+                    ],
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "returns": {
+                  "type": "string",
+                  "description": "Return type, or 'void'."
+                },
+                "description": {
+                  "type": "string",
+                  "description": "What the operation does, including any rule or formula the document states."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "enumerations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "package",
+          "literals",
+          "source_milestones"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "package": {
+            "type": "string"
+          },
+          "literals": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "source_milestones": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 16
+            }
+          }
+        }
+      }
+    },
+    "relationships": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "type",
+          "source",
+          "target",
+          "label",
+          "source_multiplicity",
+          "target_multiplicity",
+          "source_milestones"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "generalization",
+              "association",
+              "aggregation",
+              "composition",
+              "dependency"
+            ]
+          },
+          "source": {
+            "type": "string",
+            "description": "Class name. For generalization, the subclass."
+          },
+          "target": {
+            "type": "string",
+            "description": "Class name. For generalization, the superclass."
+          },
+          "label": {
+            "type": "string",
+            "description": "Role or verb phrase; empty string for generalization."
+          },
+          "source_multiplicity": {
+            "type": "string",
+            "description": "e.g. '1', '0..1', '*', '1..*'; empty string if not stated."
+          },
+          "target_multiplicity": {
+            "type": "string"
+          },
+          "source_milestones": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 16
+            }
+          }
+        }
+      }
+    },
+    "unmodelled": {
+      "type": "array",
+      "description": "Anything the document states that could not be placed under the scaffold: a concept that fits no package, a rule with no class to own it, or an element the schema cannot express. One sentence each, in the document's terms, with the milestone number. Empty if there is nothing.",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

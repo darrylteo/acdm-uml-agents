@@ -1,0 +1,51 @@
+# Milestone 10: TSAT Issued
+
+The section, split into sentences. The field name precedes each field; the id precedes each sentence.
+
+
+## Definition
+
+[M10.definition.1] The time ATC issues the Target Start Up Approval Time
+
+## Origin and priority
+
+[M10.origin_and_priority.1] ATC
+
+## Timing
+
+[M10.timing.1] The information is provided t-minutes before EOBT, where t is a parameter agreed locally
+
+## Data Quality
+
+[M10.data_quality.1] Accuracy is agreed locally.
+
+## Effect
+
+[M10.effect.1] The flight is stabilised into the pre-departure sequence.
+[M10.effect.2] The Aircraft Operator/ Ground Handler, in coordination with the aircrew, can manage the turn-round process accordingly.
+
+## Procedures
+
+[M10.procedures.1] First step: To inform all relevant partners of the TSAT that has been allocated to the flight.
+[M10.procedures.2] The Network Operations is informed by a T-DPI-s for non regulated flights.
+[M10.procedures.3] Second step: To check whether the number of TOBT updates exceeds a tolerance defined locally, after TSAT has been issued.
+[M10.procedures.4] First: The TSAT will indicate to the partners the time when the start up approval can be expected.
+[M10.procedures.5] Network Operations will be informed with a T-DPI-s for non regulated flights.
+[M10.procedures.6] No check is performed.
+[M10.procedures.7] Second: A check shall be performed to see the number of TOBT updates after TSAT has been issued.
+[M10.procedures.8] In case the number of TOBT updates exceeds a threshold, then the TOBT input should be processed according to local procedure.
+[M10.procedures.9] This process is triggered by
+[M10.procedures.10] - A defined time (local parameter) before TOBT
+[M10.procedures.11] - TOBT update after TSAT issue
+
+## Operational Status
+
+[M10.operational_status.1] SEQUENCED
+
+## Action on CDM Operation
+
+[M10.action_on_cdm.1] TTOT updated
+
+# Task
+
+Return every sentence with keep or drop, a reason, and the claims of each kept sentence, as JSON conforming to the schema.

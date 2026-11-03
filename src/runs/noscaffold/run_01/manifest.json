@@ -1,0 +1,35 @@
+{
+  "condition": "noscaffold",
+  "steps": [
+    {
+      "ok": true,
+      "output": null,
+      "error": null,
+      "model": "claude-sonnet-5",
+      "input_tokens": 11336,
+      "output_tokens": 14289,
+      "thinking_tokens": 5069,
+      "cache_creation_tokens": 9504,
+      "cache_read_tokens": 1830,
+      "cost_usd": 0.181276,
+      "duration_ms": 110502,
+      "attempts": 1,
+      "num_turns": 2
+    }
+  ],
+  "ok": true,
+  "model_alias": "claude-sonnet-5",
+  "effort": "medium",
+  "validation_errors": [],
+  "structural_problems": [],
+  "unmodelled": [
+    "Local parameter thresholds such as 't minutes before EOBT' for final TOBT confirmation, TSAT/ASRT/ASAT tolerance windows, and the count of allowed TOBT updates after TSAT are locally agreed values referenced but not modelled as separate classes (milestones 9,10,11,12,13,14).",
+    "Attachment 2's detailed DPI process implementation and Section 3.7.3's detailed CDM operation actions are referenced but their content is not described in the document (milestone 1).",
+    "The pre-departure sequence and arrival sequence into which flights are placed/refined/removed are mentioned as ATC constructs but no distinct class is warranted beyond the operational status changes already modelled (milestones 9,10,12,16).",
+    "The distinction between long-distance flights (ELDT differing from airport slot) and non-coordinated airports where the flight plan initiates the outbound flight are business rules without a clear owning class beyond Flight/AirportSlot (milestone 1)."
+  ],
+  "total_input_tokens": 11336,
+  "total_output_tokens": 14289,
+  "total_cost_usd": 0.181276,
+  "total_duration_ms": 110502
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Recall grades for sampled claims against the whole model",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["items"],
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "grade", "elements", "note"],
+        "properties": {
+          "id": {"type": "string", "description": "The item id as given, e.g. c001."},
+          "grade": {"type": "number", "enum": [1, 0.5, 0]},
+          "elements": {"type": "array", "items": {"type": "string"}, "description": "Names of the model elements that carry the claim, best first; empty for 0."},
+          "note": {"type": "string", "description": "At most one short line; empty for a plain 1."}
+        }
+      }
+    }
+  }
+}

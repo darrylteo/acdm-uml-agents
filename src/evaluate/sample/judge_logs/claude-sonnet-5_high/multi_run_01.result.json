@@ -1,0 +1,81 @@
+{
+  "meta": {
+    "ok": true,
+    "output": null,
+    "error": null,
+    "model": "claude-sonnet-5",
+    "input_tokens": 15955,
+    "output_tokens": 2406,
+    "thinking_tokens": 1986,
+    "cache_creation_tokens": 15953,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.087876,
+    "duration_ms": 24981,
+    "attempts": 1,
+    "num_turns": 2
+  },
+  "output": {
+    "items": [
+      {
+        "id": "g041",
+        "grade": 1,
+        "sentence": "M3.procedures.3",
+        "note": ""
+      },
+      {
+        "id": "g074",
+        "grade": 1,
+        "sentence": "M6.effect.1",
+        "note": "Flight's association to its time quantities is implied throughout milestones"
+      },
+      {
+        "id": "g077",
+        "grade": 1,
+        "sentence": "M2.procedures.4",
+        "note": ""
+      },
+      {
+        "id": "g092",
+        "grade": 1,
+        "sentence": "M9.effect.7",
+        "note": ""
+      },
+      {
+        "id": "g096",
+        "grade": 1,
+        "sentence": "M1.operational_status.1",
+        "note": ""
+      },
+      {
+        "id": "g099",
+        "grade": 1,
+        "sentence": "M3.procedures.4",
+        "note": ""
+      },
+      {
+        "id": "g114",
+        "grade": 1,
+        "sentence": "M15.action_on_cdm.1",
+        "note": ""
+      },
+      {
+        "id": "g148",
+        "grade": 1,
+        "sentence": "M8.action_on_cdm.1",
+        "note": ""
+      },
+      {
+        "id": "g186",
+        "grade": 1,
+        "sentence": "M1.action_on_cdm.1",
+        "note": ""
+      },
+      {
+        "id": "g195",
+        "grade": 1,
+        "sentence": "M1.origin_and_priority.1",
+        "note": ""
+      }
+    ]
+  }
+}

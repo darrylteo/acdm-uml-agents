@@ -1,0 +1,885 @@
+{
+  "meta": {
+    "ok": true,
+    "output": null,
+    "error": null,
+    "model": "claude-sonnet-5",
+    "input_tokens": 37319,
+    "output_tokens": 8844,
+    "thinking_tokens": 3830,
+    "cache_creation_tokens": 36134,
+    "cache_read_tokens": 1183,
+    "cost_usd": 0.2332166,
+    "duration_ms": 66417,
+    "attempts": 1
+  },
+  "output": {
+    "relationships": [
+      {
+        "type": "generalization",
+        "source": "AircraftOperator",
+        "target": "CDMPartner",
+        "label": "",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          1
+        ]
+      },
+      {
+        "type": "generalization",
+        "source": "GroundHandler",
+        "target": "CDMPartner",
+        "label": "",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          6
+        ]
+      },
+      {
+        "type": "generalization",
+        "source": "AirTrafficControlUnit",
+        "target": "CDMPartner",
+        "label": "",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          1
+        ]
+      },
+      {
+        "type": "generalization",
+        "source": "NetworkOperations",
+        "target": "CDMPartner",
+        "label": "",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          1
+        ]
+      },
+      {
+        "type": "generalization",
+        "source": "FlightCrew",
+        "target": "CDMPartner",
+        "label": "",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          12
+        ]
+      },
+      {
+        "type": "generalization",
+        "source": "StandGateManagement",
+        "target": "CDMPartner",
+        "label": "",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          9
+        ]
+      },
+      {
+        "type": "generalization",
+        "source": "MilestoneFlightPlanActivation",
+        "target": "Milestone",
+        "label": "",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          1
+        ]
+      },
+      {
+        "type": "generalization",
+        "source": "MilestoneEOBTMinus2Hours",
+        "target": "Milestone",
+        "label": "",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          2
+        ]
+      },
+      {
+        "type": "generalization",
+        "source": "MilestoneTakeOffFromOutstation",
+        "target": "Milestone",
+        "label": "",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          3
+        ]
+      },
+      {
+        "type": "generalization",
+        "source": "MilestoneLocalRadarUpdate",
+        "target": "Milestone",
+        "label": "",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          4
+        ]
+      },
+      {
+        "type": "generalization",
+        "source": "MilestoneFinalApproach",
+        "target": "Milestone",
+        "label": "",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          5
+        ]
+      },
+      {
+        "type": "generalization",
+        "source": "MilestoneLanded",
+        "target": "Milestone",
+        "label": "",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          6
+        ]
+      },
+      {
+        "type": "generalization",
+        "source": "MilestoneInBlock",
+        "target": "Milestone",
+        "label": "",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          7
+        ]
+      },
+      {
+        "type": "generalization",
+        "source": "MilestoneGroundHandlingStarted",
+        "target": "Milestone",
+        "label": "",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          8
+        ]
+      },
+      {
+        "type": "generalization",
+        "source": "MilestoneFinalTOBTConfirmation",
+        "target": "Milestone",
+        "label": "",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          9
+        ]
+      },
+      {
+        "type": "generalization",
+        "source": "MilestoneTSATIssued",
+        "target": "Milestone",
+        "label": "",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          10
+        ]
+      },
+      {
+        "type": "generalization",
+        "source": "MilestoneBoardingStarts",
+        "target": "Milestone",
+        "label": "",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          11
+        ]
+      },
+      {
+        "type": "generalization",
+        "source": "MilestoneAircraftReady",
+        "target": "Milestone",
+        "label": "",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          12
+        ]
+      },
+      {
+        "type": "generalization",
+        "source": "MilestoneStartUpRequested",
+        "target": "Milestone",
+        "label": "",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          13
+        ]
+      },
+      {
+        "type": "generalization",
+        "source": "MilestoneStartUpApproved",
+        "target": "Milestone",
+        "label": "",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          14
+        ]
+      },
+      {
+        "type": "generalization",
+        "source": "MilestoneOffBlock",
+        "target": "Milestone",
+        "label": "",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          15
+        ]
+      },
+      {
+        "type": "generalization",
+        "source": "MilestoneTakeOff",
+        "target": "Milestone",
+        "label": "",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          16
+        ]
+      },
+      {
+        "type": "association",
+        "source": "Flight",
+        "target": "FlightPlan",
+        "label": "is described by",
+        "source_multiplicity": "1",
+        "target_multiplicity": "1..2",
+        "source_milestones": [
+          1
+        ]
+      },
+      {
+        "type": "association",
+        "source": "Flight",
+        "target": "Aircraft",
+        "label": "is operated by",
+        "source_multiplicity": "*",
+        "target_multiplicity": "1",
+        "source_milestones": [
+          1
+        ]
+      },
+      {
+        "type": "composition",
+        "source": "TurnRound",
+        "target": "Flight",
+        "label": "comprises arriving and departing flight",
+        "source_multiplicity": "1",
+        "target_multiplicity": "2",
+        "source_milestones": [
+          1,
+          6,
+          7,
+          8
+        ]
+      },
+      {
+        "type": "composition",
+        "source": "TurnRound",
+        "target": "DurationEstimate",
+        "label": "period",
+        "source_multiplicity": "1",
+        "target_multiplicity": "1",
+        "source_milestones": [
+          6,
+          7,
+          8
+        ]
+      },
+      {
+        "type": "dependency",
+        "source": "FlightPlan",
+        "target": "AirportSlot",
+        "label": "checks consistency with",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          1
+        ]
+      },
+      {
+        "type": "dependency",
+        "source": "FlightPlan",
+        "target": "Aircraft",
+        "label": "may update",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          1
+        ]
+      },
+      {
+        "type": "association",
+        "source": "Flight",
+        "target": "ParkingPosition",
+        "label": "is assigned to",
+        "source_multiplicity": "1",
+        "target_multiplicity": "0..1",
+        "source_milestones": [
+          4
+        ]
+      },
+      {
+        "type": "composition",
+        "source": "Flight",
+        "target": "TimeQuantity",
+        "label": "records",
+        "source_multiplicity": "1",
+        "target_multiplicity": "0..*",
+        "source_milestones": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ]
+      },
+      {
+        "type": "aggregation",
+        "source": "Flight",
+        "target": "DurationEstimate",
+        "label": "uses",
+        "source_multiplicity": "1",
+        "target_multiplicity": "0..*",
+        "source_milestones": [
+          2,
+          3,
+          4,
+          6,
+          8,
+          9
+        ]
+      },
+      {
+        "type": "association",
+        "source": "TimeQuantity",
+        "target": "CDMPartner",
+        "label": "originator",
+        "source_multiplicity": "*",
+        "target_multiplicity": "1",
+        "source_milestones": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ]
+      },
+      {
+        "type": "dependency",
+        "source": "AircraftOperator",
+        "target": "FlightPlan",
+        "label": "submits",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          1
+        ]
+      },
+      {
+        "type": "dependency",
+        "source": "IFPS",
+        "target": "FlightPlan",
+        "label": "distributes",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          1
+        ]
+      },
+      {
+        "type": "association",
+        "source": "IFPS",
+        "target": "AirTrafficControlUnit",
+        "label": "distributes flight plan to",
+        "source_multiplicity": "1",
+        "target_multiplicity": "*",
+        "source_milestones": [
+          1
+        ]
+      },
+      {
+        "type": "dependency",
+        "source": "NetworkOperations",
+        "target": "DPIMessage",
+        "label": "receives",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          1,
+          2,
+          3,
+          10,
+          15
+        ]
+      },
+      {
+        "type": "dependency",
+        "source": "AirportCDMPlatform",
+        "target": "DPIMessage",
+        "label": "sends",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          1,
+          2,
+          3,
+          10,
+          15
+        ]
+      },
+      {
+        "type": "dependency",
+        "source": "NetworkOperations",
+        "target": "FlightUpdateMessage",
+        "label": "sends",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          1,
+          3
+        ]
+      },
+      {
+        "type": "aggregation",
+        "source": "NetworkOperations",
+        "target": "ETFMS",
+        "label": "uses",
+        "source_multiplicity": "1",
+        "target_multiplicity": "1",
+        "source_milestones": [
+          3
+        ]
+      },
+      {
+        "type": "dependency",
+        "source": "ETFMS",
+        "target": "Flight",
+        "label": "monitors progress of",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          3
+        ]
+      },
+      {
+        "type": "association",
+        "source": "AirportCDMPlatform",
+        "target": "Flight",
+        "label": "manages",
+        "source_multiplicity": "1",
+        "target_multiplicity": "1..*",
+        "source_milestones": [
+          1,
+          4,
+          9,
+          10,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      {
+        "type": "dependency",
+        "source": "ATCSystem",
+        "target": "TimeQuantity",
+        "label": "provides",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          4,
+          5,
+          6,
+          7,
+          9,
+          15,
+          16
+        ]
+      },
+      {
+        "type": "dependency",
+        "source": "ACARS",
+        "target": "TimeQuantity",
+        "label": "provides",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          6,
+          7,
+          15,
+          16
+        ]
+      },
+      {
+        "type": "association",
+        "source": "AirTrafficControlUnit",
+        "target": "FlightCrew",
+        "label": "confirms TSAT to",
+        "source_multiplicity": "1",
+        "target_multiplicity": "1",
+        "source_milestones": [
+          13
+        ]
+      },
+      {
+        "type": "dependency",
+        "source": "CDMPartnerNotification",
+        "target": "CDMPartner",
+        "label": "informs",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ]
+      },
+      {
+        "type": "dependency",
+        "source": "CDMPartnerNotification",
+        "target": "Flight",
+        "label": "concerns",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ]
+      },
+      {
+        "type": "dependency",
+        "source": "Milestone",
+        "target": "Flight",
+        "label": "processes",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ]
+      },
+      {
+        "type": "dependency",
+        "source": "MilestoneFlightPlanActivation",
+        "target": "FlightPlan",
+        "label": "checks",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          1
+        ]
+      },
+      {
+        "type": "dependency",
+        "source": "MilestoneFlightPlanActivation",
+        "target": "AirportSlot",
+        "label": "checks",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          1
+        ]
+      },
+      {
+        "type": "dependency",
+        "source": "MilestoneFlightPlanActivation",
+        "target": "DPIMessage",
+        "label": "sends E-DPI",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          1
+        ]
+      },
+      {
+        "type": "dependency",
+        "source": "MilestoneEOBTMinus2Hours",
+        "target": "DPIMessage",
+        "label": "sends T-DPI",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          2
+        ]
+      },
+      {
+        "type": "dependency",
+        "source": "MilestoneTakeOffFromOutstation",
+        "target": "DPIMessage",
+        "label": "sends T-DPI-t",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          3
+        ]
+      },
+      {
+        "type": "dependency",
+        "source": "MilestoneTSATIssued",
+        "target": "DPIMessage",
+        "label": "sends T-DPI-s",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          10
+        ]
+      },
+      {
+        "type": "dependency",
+        "source": "MilestoneOffBlock",
+        "target": "DPIMessage",
+        "label": "sends A-DPI",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          15
+        ]
+      },
+      {
+        "type": "dependency",
+        "source": "MilestoneTSATIssued",
+        "target": "CDMPartnerNotification",
+        "label": "informs partners of TSAT",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          10
+        ]
+      },
+      {
+        "type": "dependency",
+        "source": "MilestoneBoardingStarts",
+        "target": "CDMPartnerNotification",
+        "label": "informs partners of ASBT",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          11
+        ]
+      },
+      {
+        "type": "dependency",
+        "source": "MilestoneAircraftReady",
+        "target": "CDMPartnerNotification",
+        "label": "informs partners of ARDT",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          12
+        ]
+      },
+      {
+        "type": "dependency",
+        "source": "MilestoneStartUpRequested",
+        "target": "CDMPartnerNotification",
+        "label": "informs partners of ASRT",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          13
+        ]
+      },
+      {
+        "type": "dependency",
+        "source": "MilestoneStartUpApproved",
+        "target": "CDMPartnerNotification",
+        "label": "informs partners of ASAT",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          14
+        ]
+      },
+      {
+        "type": "dependency",
+        "source": "MilestoneOffBlock",
+        "target": "CDMPartnerNotification",
+        "label": "informs partners of AOBT",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          15
+        ]
+      },
+      {
+        "type": "dependency",
+        "source": "MilestoneTakeOff",
+        "target": "CDMPartnerNotification",
+        "label": "informs partners of take off",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          16
+        ]
+      },
+      {
+        "type": "association",
+        "source": "AircraftOperator",
+        "target": "Flight",
+        "label": "operates",
+        "source_multiplicity": "1",
+        "target_multiplicity": "*",
+        "source_milestones": [
+          1,
+          2,
+          3,
+          6,
+          7,
+          8,
+          9,
+          11,
+          12,
+          13,
+          15
+        ]
+      },
+      {
+        "type": "association",
+        "source": "GroundHandler",
+        "target": "Flight",
+        "label": "handles",
+        "source_multiplicity": "1",
+        "target_multiplicity": "*",
+        "source_milestones": [
+          6,
+          7,
+          8,
+          9,
+          11,
+          12,
+          13,
+          15
+        ]
+      },
+      {
+        "type": "association",
+        "source": "AirTrafficControlUnit",
+        "target": "Flight",
+        "label": "controls",
+        "source_multiplicity": "1",
+        "target_multiplicity": "*",
+        "source_milestones": [
+          1,
+          4,
+          5,
+          9,
+          10,
+          13,
+          14,
+          16
+        ]
+      },
+      {
+        "type": "association",
+        "source": "NetworkOperations",
+        "target": "Flight",
+        "label": "coordinates",
+        "source_multiplicity": "1",
+        "target_multiplicity": "*",
+        "source_milestones": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          15
+        ]
+      },
+      {
+        "type": "association",
+        "source": "FlightCrew",
+        "target": "Flight",
+        "label": "requests start-up for",
+        "source_multiplicity": "1",
+        "target_multiplicity": "1",
+        "source_milestones": [
+          12,
+          13,
+          14
+        ]
+      },
+      {
+        "type": "dependency",
+        "source": "StandGateManagement",
+        "target": "Flight",
+        "label": "shares EOBT with",
+        "source_multiplicity": "",
+        "target_multiplicity": "",
+        "source_milestones": [
+          9
+        ]
+      }
+    ]
+  }
+}

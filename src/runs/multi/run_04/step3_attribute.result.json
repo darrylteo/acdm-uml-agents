@@ -1,0 +1,435 @@
+{
+  "meta": {
+    "ok": true,
+    "output": null,
+    "error": null,
+    "model": "claude-sonnet-5",
+    "input_tokens": 25164,
+    "output_tokens": 7989,
+    "thinking_tokens": 4121,
+    "cache_creation_tokens": 25162,
+    "cache_read_tokens": 0,
+    "cost_usd": 0.18054199999999998,
+    "duration_ms": 67801,
+    "attempts": 1
+  },
+  "output": {
+    "classes": [
+      {
+        "name": "Flight",
+        "attributes": [
+          {
+            "name": "operationalStatus",
+            "type": "FlightOperationalStatus",
+            "description": "The flight's current operational status, changed at each milestone from INITIATED through DEPARTED/TAKE OFF."
+          }
+        ]
+      },
+      {
+        "name": "TurnRound",
+        "attributes": [
+          {
+            "name": "turnRoundPeriod",
+            "type": "Duration",
+            "description": "The defined or estimated turn-round period for the departing flight, used to calculate TOBT after ALDT, AIBT, or ACGT (milestones 6, 7, 8)."
+          }
+        ]
+      },
+      {
+        "name": "Aircraft",
+        "attributes": [
+          {
+            "name": "registration",
+            "type": "String",
+            "description": "The aircraft registration, provided by the AO before the first E-DPI message to feed Network Operations with consistent data."
+          },
+          {
+            "name": "type",
+            "type": "String",
+            "description": "The type of aircraft, which the ATC Flight Plan may be used to update."
+          }
+        ]
+      },
+      {
+        "name": "FlightPlan",
+        "attributes": [
+          {
+            "name": "isRepetitive",
+            "type": "Boolean",
+            "description": "Whether the flight plan is a repetitive flight plan (RFPL) submitted to cover daily or weekly flights."
+          }
+        ]
+      },
+      {
+        "name": "OffBlockTime",
+        "attributes": [
+          {
+            "name": "prefix",
+            "type": "TimePrefix",
+            "description": "Whether this off-block time is the scheduled (SOBT), estimated (EOBT), target (TOBT), or actual (AOBT) value."
+          },
+          {
+            "name": "value",
+            "type": "DateTime",
+            "description": "The date and time of the off-block event for this prefix."
+          },
+          {
+            "name": "originator",
+            "type": "String",
+            "description": "The party or system that provided this value, such as the AO/GH, ATC, or an automated docking/ACARS system."
+          },
+          {
+            "name": "timeOfUpdate",
+            "type": "DateTime",
+            "description": "The time at which this value was recorded, so successive values can be kept and analysed afterwards."
+          },
+          {
+            "name": "accuracy",
+            "type": "Duration",
+            "description": "The accuracy of the value; AOBT is available with an accuracy of +/- 1 minute (milestone 15)."
+          }
+        ]
+      },
+      {
+        "name": "LandingTime",
+        "attributes": [
+          {
+            "name": "prefix",
+            "type": "TimePrefix",
+            "description": "Whether this landing time is estimated (ELDT) or actual (ALDT)."
+          },
+          {
+            "name": "value",
+            "type": "DateTime",
+            "description": "The date and time of the landing event for this prefix."
+          },
+          {
+            "name": "originator",
+            "type": "String",
+            "description": "The party or system that provided this value, such as ATC, ACARS, or Network Operations FUM."
+          },
+          {
+            "name": "timeOfUpdate",
+            "type": "DateTime",
+            "description": "The time at which this value was recorded, appended rather than overwriting the prior value."
+          },
+          {
+            "name": "accuracy",
+            "type": "Duration",
+            "description": "The accuracy of the value; ALDT is available with an accuracy of +/- 1 minute (milestone 6)."
+          }
+        ]
+      },
+      {
+        "name": "InBlockTime",
+        "attributes": [
+          {
+            "name": "prefix",
+            "type": "TimePrefix",
+            "description": "Whether this in-block time is estimated (EIBT) or actual (AIBT)."
+          },
+          {
+            "name": "value",
+            "type": "DateTime",
+            "description": "The date and time of the in-block event for this prefix."
+          },
+          {
+            "name": "originator",
+            "type": "String",
+            "description": "The party or system that provided this value, such as ACARS, an automated docking system, ATC systems, or manual input."
+          },
+          {
+            "name": "timeOfUpdate",
+            "type": "DateTime",
+            "description": "The time at which this value was recorded, appended rather than overwriting the prior value."
+          },
+          {
+            "name": "accuracy",
+            "type": "Duration",
+            "description": "The accuracy of the value; AIBT is available with an accuracy of +/- 1 minute (milestone 7)."
+          }
+        ]
+      },
+      {
+        "name": "TakeOffTime",
+        "attributes": [
+          {
+            "name": "prefix",
+            "type": "TimePrefix",
+            "description": "Whether this take-off time is estimated (ETOT), target (TTOT), calculated (CTOT), or actual (ATOT)."
+          },
+          {
+            "name": "value",
+            "type": "DateTime",
+            "description": "The date and time of the take-off event for this prefix."
+          },
+          {
+            "name": "originator",
+            "type": "String",
+            "description": "The party or system that provided this value, such as ATC, ACARS, or Network Operations."
+          },
+          {
+            "name": "timeOfUpdate",
+            "type": "DateTime",
+            "description": "The time at which this value was recorded, appended rather than overwriting the prior value."
+          },
+          {
+            "name": "accuracy",
+            "type": "Duration",
+            "description": "The accuracy of the value; ATOT is available with an accuracy of +/- 1 minute (milestones 3, 16)."
+          },
+          {
+            "name": "tolerance",
+            "type": "Duration",
+            "description": "The TTOT tolerance respected before Network Operations is informed of an updated TTOT; a tolerance of 5 minutes is used after take-off from outstation (milestone 3)."
+          }
+        ]
+      },
+      {
+        "name": "StartUpApprovalTime",
+        "attributes": [
+          {
+            "name": "prefix",
+            "type": "TimePrefix",
+            "description": "Whether this value is the target (TSAT) or actual (ASAT) start-up approval time."
+          },
+          {
+            "name": "value",
+            "type": "DateTime",
+            "description": "The date and time of the start-up approval event for this prefix."
+          },
+          {
+            "name": "originator",
+            "type": "String",
+            "description": "The party that provided this value, namely ATC."
+          },
+          {
+            "name": "timeOfUpdate",
+            "type": "DateTime",
+            "description": "The time at which this value was recorded, appended rather than overwriting the prior value."
+          },
+          {
+            "name": "accuracy",
+            "type": "Duration",
+            "description": "The accuracy of the value; ASAT is available with an accuracy of +/- 1 minute (milestone 14)."
+          },
+          {
+            "name": "tolerance",
+            "type": "Duration",
+            "description": "The locally agreed TSAT tolerance window within which start-up must be requested and approved (milestones 9-14)."
+          }
+        ]
+      },
+      {
+        "name": "StartUpRequestTime",
+        "attributes": [
+          {
+            "name": "value",
+            "type": "DateTime",
+            "description": "The date and time at which start-up is requested (ASRT)."
+          },
+          {
+            "name": "originator",
+            "type": "String",
+            "description": "The party that provided this value, namely ATC based on the pilot's request."
+          },
+          {
+            "name": "timeOfUpdate",
+            "type": "DateTime",
+            "description": "The time at which this value was recorded."
+          },
+          {
+            "name": "accuracy",
+            "type": "Duration",
+            "description": "The accuracy of the value; ASRT is available with an accuracy of +/- 1 minute (milestone 13)."
+          },
+          {
+            "name": "toleranceWindow",
+            "type": "Duration",
+            "description": "The locally agreed TSAT tolerance window inside which the start-up request must occur, after which AO/GH are alerted (milestone 13)."
+          }
+        ]
+      },
+      {
+        "name": "ReadyTime",
+        "attributes": [
+          {
+            "name": "value",
+            "type": "DateTime",
+            "description": "The date and time at which the aircraft is ready for start-up/push-back (ARDT)."
+          },
+          {
+            "name": "originator",
+            "type": "String",
+            "description": "The party that provided this value, namely the Aircraft Operator/Ground Handler."
+          },
+          {
+            "name": "timeOfUpdate",
+            "type": "DateTime",
+            "description": "The time at which this value was recorded."
+          },
+          {
+            "name": "accuracy",
+            "type": "Duration",
+            "description": "The accuracy of the value; ARDT is directly available with an accuracy of +/- 1 minute (milestone 12)."
+          },
+          {
+            "name": "tolerance",
+            "type": "Duration",
+            "description": "The tolerance after TOBT at which AO/GH are informed that no ARDT or ready status has been received (milestone 12)."
+          }
+        ]
+      },
+      {
+        "name": "BoardingTime",
+        "attributes": [
+          {
+            "name": "value",
+            "type": "DateTime",
+            "description": "The date and time at which boarding starts (ASBT)."
+          },
+          {
+            "name": "originator",
+            "type": "String",
+            "description": "The party or system that provided this value, namely the automatic airport system or manual input by AO/GH."
+          },
+          {
+            "name": "timeOfUpdate",
+            "type": "DateTime",
+            "description": "The time at which this value was recorded."
+          },
+          {
+            "name": "accuracy",
+            "type": "Duration",
+            "description": "The accuracy of the value; ASBT is available with an accuracy of +/- 1 minute (milestone 11)."
+          }
+        ]
+      },
+      {
+        "name": "GroundHandlingTime",
+        "attributes": [
+          {
+            "name": "value",
+            "type": "DateTime",
+            "description": "The date and time at which ground handling operations commence (ACGT)."
+          },
+          {
+            "name": "originator",
+            "type": "String",
+            "description": "The party that provided this value, namely the Aircraft Operator/Ground Handler."
+          },
+          {
+            "name": "timeOfUpdate",
+            "type": "DateTime",
+            "description": "The time at which this value was recorded."
+          },
+          {
+            "name": "accuracy",
+            "type": "Duration",
+            "description": "The accuracy of the value; ACGT data is available with an accuracy of +/- 1 minute (milestone 8)."
+          }
+        ]
+      },
+      {
+        "name": "TaxiTime",
+        "attributes": [
+          {
+            "name": "type",
+            "type": "String",
+            "description": "Whether this is the estimated taxi-out time (EXOT) or estimated taxi-in time (EXIT)."
+          },
+          {
+            "name": "duration",
+            "type": "Duration",
+            "description": "The estimated duration of the taxi phase, used in the calculation of TTOT or EIBT."
+          },
+          {
+            "name": "calculationBasis",
+            "type": "String",
+            "description": "For EXOT, the basis of calculation: predicted traffic load, gate/stand location, runway in use, and waiting period at the holding position (milestone 9)."
+          }
+        ]
+      },
+      {
+        "name": "MinimumTurnRoundTime",
+        "attributes": [
+          {
+            "name": "duration",
+            "type": "Duration",
+            "description": "The minimum turn-round time (MTTT) defined for an aircraft type, used as a calculation basis for TTOT (milestones 2, 3)."
+          }
+        ]
+      },
+      {
+        "name": "FlightPlanActivationMilestone",
+        "attributes": [
+          {
+            "name": "triggerOffset",
+            "type": "Duration",
+            "description": "The nominal timing of this milestone, normally 3 hours before EOBT, though it may occur later (milestone 1)."
+          }
+        ]
+      },
+      {
+        "name": "RegulationCheckMilestone",
+        "attributes": [
+          {
+            "name": "triggerOffset",
+            "type": "Duration",
+            "description": "The fixed timing of this milestone, occurring at EOBT-2 hours (milestone 2)."
+          }
+        ]
+      },
+      {
+        "name": "FinalTobtConfirmationMilestone",
+        "attributes": [
+          {
+            "name": "localParameterT",
+            "type": "Duration",
+            "description": "The locally agreed parameter t, the number of minutes before EOBT at which the AO/GH must provide the final confirmed TOBT (milestone 9)."
+          }
+        ]
+      },
+      {
+        "name": "TsatIssuedMilestone",
+        "attributes": [
+          {
+            "name": "localParameterT",
+            "type": "Duration",
+            "description": "The locally agreed parameter t, the number of minutes before EOBT/TOBT at which TSAT is issued (milestone 10)."
+          }
+        ]
+      },
+      {
+        "name": "BoardingStartsMilestone",
+        "attributes": [
+          {
+            "name": "triggerOffset",
+            "type": "Duration",
+            "description": "The locally defined time variable, in minutes before TOBT, at which the boarding status check is triggered (milestone 11)."
+          }
+        ]
+      },
+      {
+        "name": "DpiMessage",
+        "attributes": [
+          {
+            "name": "type",
+            "type": "DpiMessageType",
+            "description": "Which kind of DPI message this is: E-DPI, T-DPI, T-DPI-t, T-DPI-s, or A-DPI."
+          }
+        ]
+      },
+      {
+        "name": "TakeOffNotificationMessage",
+        "attributes": [
+          {
+            "name": "type",
+            "type": "TakeOffNotificationType",
+            "description": "Which kind of take-off notification this is: FSA, MVT, or airborne message."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,991 @@
+{
+ "reviewer": "grader_B",
+ "exported": "2026-09-18T15:10:16.190Z",
+ "draft_generated": "2026-09-18T14:15:01",
+ "assigned": [
+  1,
+  2,
+  4,
+  5,
+  6,
+  7,
+  9,
+  11,
+  14
+ ],
+ "claims": {
+  "M1.definition.1.c1": {
+   "decision": "accept"
+  },
+  "M1.definition.1.c2": {
+   "decision": "accept"
+  },
+  "M1.definition.2.c1": {
+   "decision": "accept"
+  },
+  "M1.definition.2.c2": {
+   "decision": "accept"
+  },
+  "M1.definition.2.c3": {
+   "decision": "accept"
+  },
+  "M1.origin_and_priority.1.c2": {
+   "decision": "accept"
+  },
+  "M1.origin_and_priority.1.c3": {
+   "decision": "accept"
+  },
+  "M1.origin_and_priority.1.c1": {
+   "decision": "accept"
+  },
+  "M1.origin_and_priority.2.c1": {
+   "decision": "edit",
+   "text": "All involved ATC units receive the flight plan, including departure and destination aerodromes."
+  },
+  "M1.origin_and_priority.2.c2": {
+   "decision": "reject"
+  },
+  "M1.timing.1.c1": {
+   "decision": "accept"
+  },
+  "M1.timing.1.c2": {
+   "decision": "accept"
+  },
+  "M1.timing.2.c1": {
+   "decision": "accept"
+  },
+  "M1.timing.2.c2": {
+   "decision": "accept"
+  },
+  "M1.data_quality.1.c1": {
+   "decision": "accept"
+  },
+  "M1.data_quality.1.c2": {
+   "decision": "edit",
+   "kind": "attribute",
+   "owner": "Airport"
+  },
+  "M1.effect.1.c1": {
+   "decision": "accept"
+  },
+  "M1.effect.1.c2": {
+   "decision": "accept"
+  },
+  "M1.effect.2.c1": {
+   "decision": "accept"
+  },
+  "M1.effect.3.c1": {
+   "decision": "accept"
+  },
+  "M1.effect.3.c2": {
+   "decision": "accept"
+  },
+  "M1.effect.4.c1": {
+   "decision": "accept"
+  },
+  "M1.effect.4.c2": {
+   "decision": "accept"
+  },
+  "M1.effect.5.c1": {
+   "decision": "accept"
+  },
+  "M1.effect.6.c1": {
+   "decision": "accept"
+  },
+  "M1.effect.7.c1": {
+   "decision": "accept"
+  },
+  "M1.effect.7.c2": {
+   "decision": "accept"
+  },
+  "M1.procedures.1.c1": {
+   "decision": "accept"
+  },
+  "M1.procedures.1.c2": {
+   "decision": "accept"
+  },
+  "M1.procedures.1.c3": {
+   "decision": "edit",
+   "kind": "attribute",
+   "owner": "Airport"
+  },
+  "M1.procedures.2.c2": {
+   "decision": "edit",
+   "kind": "relationship",
+   "rel_type": "generalization"
+  },
+  "M1.procedures.3.c1": {
+   "decision": "accept"
+  },
+  "M1.procedures.3.c2": {
+   "decision": "accept"
+  },
+  "M1.procedures.3.c3": {
+   "decision": "accept"
+  },
+  "M1.procedures.3.c4": {
+   "decision": "accept",
+   "text": "first destination"
+  },
+  "M1.procedures.4.c1": {
+   "decision": "accept"
+  },
+  "M1.procedures.6.c1": {
+   "decision": "accept"
+  },
+  "M1.procedures.7.c1": {
+   "decision": "accept"
+  },
+  "M1.operational_status.1.c1": {
+   "decision": "accept"
+  },
+  "M1.action_on_cdm.1.c1": {
+   "decision": "accept"
+  },
+  "M1.action_on_cdm.1.c2": {
+   "decision": "accept"
+  },
+  "M1.action_on_cdm.1.c3": {
+   "decision": "accept"
+  },
+  "M1.action_on_cdm.1.c4": {
+   "decision": "accept"
+  },
+  "M2.definition.1.c1": {
+   "decision": "edit",
+   "text": "Airport CDM Platform"
+  },
+  "M2.definition.1.c2": {
+   "decision": "reject"
+  },
+  "M2.definition.1.c3": {
+   "decision": "accept"
+  },
+  "M2.definition.2.c1": {
+   "decision": "accept"
+  },
+  "M2.definition.2.c3": {
+   "decision": "accept"
+  },
+  "M2.origin_and_priority.1.c3": {
+   "decision": "accept"
+  },
+  "M2.origin_and_priority.1.c4": {
+   "decision": "edit",
+   "text": "CTOT ... is sent to relevant ATS units"
+  },
+  "M2.origin_and_priority.1.c5": {
+   "decision": "edit",
+   "text": "CTOT ... is sent ... as well as the departure aerodrome"
+  },
+  "M2.origin_and_priority.2.c1": {
+   "decision": "accept"
+  },
+  "M2.timing.1.c1": {
+   "decision": "accept"
+  },
+  "M2.effect.1.c2": {
+   "decision": "accept"
+  },
+  "M2.effect.1.c3": {
+   "decision": "accept"
+  },
+  "M2.effect.1.c4": {
+   "decision": "accept"
+  },
+  "M2.procedures.1.c1": {
+   "decision": "accept"
+  },
+  "M2.procedures.1.c2": {
+   "decision": "accept"
+  },
+  "M2.procedures.1.c3": {
+   "decision": "accept"
+  },
+  "M2.procedures.1.c5": {
+   "decision": "accept"
+  },
+  "M2.procedures.1.c6": {
+   "decision": "accept"
+  },
+  "M2.procedures.4.c2": {
+   "decision": "accept"
+  },
+  "M2.procedures.4.c4": {
+   "decision": "accept"
+  },
+  "M2.procedures.4.c5": {
+   "decision": "accept"
+  },
+  "M2.procedures.5.c1": {
+   "decision": "accept"
+  },
+  "M2.procedures.5.c2": {
+   "decision": "accept"
+  },
+  "M2.procedures.7.c1": {
+   "decision": "reject"
+  },
+  "M2.action_on_cdm.1.c2": {
+   "decision": "accept"
+  },
+  "M2.action_on_cdm.1.c1": {
+   "decision": "accept"
+  },
+  "M2.procedures.4.c1": {
+   "decision": "accept"
+  },
+  "M4.definition.1.c1": {
+   "decision": "accept"
+  },
+  "M4.definition.1.c2": {
+   "decision": "accept"
+  },
+  "M4.definition.1.c3": {
+   "decision": "accept"
+  },
+  "M4.origin_and_priority.1.c2": {
+   "decision": "accept"
+  },
+  "M4.origin_and_priority.1.c3": {
+   "decision": "accept"
+  },
+  "M4.origin_and_priority.1.c1": {
+   "decision": "reject"
+  },
+  "M4.origin_and_priority.1.c4": {
+   "decision": "accept"
+  },
+  "M4.origin_and_priority.2.c1": {
+   "decision": "accept"
+  },
+  "M4.origin_and_priority.2.c2": {
+   "decision": "accept"
+  },
+  "M4.origin_and_priority.2.c3": {
+   "decision": "accept"
+  },
+  "M4.timing.1.c1": {
+   "decision": "accept"
+  },
+  "M4.data_quality.1.c1": {
+   "decision": "accept"
+  },
+  "M4.effect.1.c1": {
+   "decision": "accept"
+  },
+  "M4.effect.1.c6": {
+   "decision": "accept"
+  },
+  "M4.effect.1.c7": {
+   "decision": "accept"
+  },
+  "M4.effect.5.c2": {
+   "decision": "accept"
+  },
+  "M4.effect.5.c1": {
+   "decision": "accept"
+  },
+  "M4.effect.6.c2": {
+   "decision": "reject"
+  },
+  "M4.effect.8.c1": {
+   "decision": "accept"
+  },
+  "M4.procedures.1.c1": {
+   "decision": "accept"
+  },
+  "M4.procedures.1.c2": {
+   "decision": "accept"
+  },
+  "M4.procedures.2.c1": {
+   "decision": "accept"
+  },
+  "M4.procedures.2.c3": {
+   "decision": "accept"
+  },
+  "M4.procedures.2.c5": {
+   "decision": "edit",
+   "kind": "operation",
+   "owner": "Network Operations"
+  },
+  "M4.operational_status.1.c1": {
+   "decision": "accept"
+  },
+  "M4.action_on_cdm.1.c1": {
+   "decision": "accept"
+  },
+  "M5.definition.1.c1": {
+   "decision": "reject"
+  },
+  "M5.definition.1.c2": {
+   "decision": "reject"
+  },
+  "M5.origin_and_priority.1.c1": {
+   "decision": "reject"
+  },
+  "M5.origin_and_priority.1.c2": {
+   "decision": "accept"
+  },
+  "M5.origin_and_priority.1.c3": {
+   "decision": "edit",
+   "kind": "operation",
+   "owner": "ATC"
+  },
+  "M5.origin_and_priority.2.c2": {
+   "decision": "accept"
+  },
+  "M5.origin_and_priority.2.c3": {
+   "decision": "accept"
+  },
+  "M5.origin_and_priority.2.c4": {
+   "decision": "accept"
+  },
+  "M5.origin_and_priority.2.c5": {
+   "decision": "accept"
+  },
+  "M5.origin_and_priority.2.c6": {
+   "decision": "accept"
+  },
+  "M5.timing.1.c1": {
+   "decision": "accept"
+  },
+  "M5.timing.1.c2": {
+   "decision": "reject"
+  },
+  "M5.data_quality.1.c1": {
+   "decision": "edit",
+   "owner": "ATC system"
+  },
+  "M5.data_quality.1.c2": {
+   "decision": "accept"
+  },
+  "M5.data_quality.1.c3": {
+   "decision": "reject"
+  },
+  "M5.effect.1.c3": {
+   "decision": "accept"
+  },
+  "M5.effect.2.c1": {
+   "decision": "accept"
+  },
+  "M5.procedures.1.c1": {
+   "decision": "accept"
+  },
+  "M5.procedures.1.c2": {
+   "decision": "accept"
+  },
+  "M5.procedures.1.c5": {
+   "decision": "reject"
+  },
+  "M5.procedures.2.c1": {
+   "decision": "accept"
+  },
+  "M5.procedures.2.c4": {
+   "decision": "accept"
+  },
+  "M5.procedures.2.c5": {
+   "decision": "accept"
+  },
+  "M5.procedures.6.c1": {
+   "decision": "accept"
+  },
+  "M5.procedures.6.c2": {
+   "decision": "reject"
+  },
+  "M5.procedures.6.c3": {
+   "decision": "accept"
+  },
+  "M5.operational_status.1.c1": {
+   "decision": "accept"
+  },
+  "M5.action_on_cdm.1.c1": {
+   "decision": "accept"
+  },
+  "M6.action_on_cdm.1.c1": {
+   "decision": "accept"
+  },
+  "M6.operational_status.1.c1": {
+   "decision": "accept"
+  },
+  "M6.procedures.6.c1": {
+   "decision": "reject"
+  },
+  "M6.procedures.2.c1": {
+   "decision": "accept"
+  },
+  "M6.procedures.2.c2": {
+   "decision": "accept"
+  },
+  "M6.procedures.2.c4": {
+   "decision": "edit",
+   "text": "Network Operations is informed when the TTOT changes by more than the agreed TTOT tolerance."
+  },
+  "M6.procedures.1.c1": {
+   "decision": "accept"
+  },
+  "M6.effect.2.c1": {
+   "decision": "accept"
+  },
+  "M6.definition.1.c1": {
+   "decision": "accept"
+  },
+  "M6.definition.3.c1": {
+   "decision": "accept"
+  },
+  "M6.definition.3.c2": {
+   "decision": "reject"
+  },
+  "M6.origin_and_priority.1.c1": {
+   "decision": "accept"
+  },
+  "M6.origin_and_priority.1.c3": {
+   "decision": "accept"
+  },
+  "M6.origin_and_priority.1.c4": {
+   "decision": "edit",
+   "kind": "operation",
+   "owner": "ATC system"
+  },
+  "M6.origin_and_priority.1.c5": {
+   "decision": "edit",
+   "kind": "operation",
+   "owner": "Aircraft"
+  },
+  "M6.timing.1.c1": {
+   "decision": "reject"
+  },
+  "M6.data_quality.1.c1": {
+   "decision": "accept"
+  },
+  "M6.effect.1.c1": {
+   "decision": "accept"
+  },
+  "M6.effect.1.c4": {
+   "decision": "reject",
+   "text": "TOBT and TTOT ...inserted manually by the Aircraft Operator / Ground Handler"
+  },
+  "M6.effect.1.c5": {
+   "decision": "accept"
+  },
+  "M6.effect.1.c6": {
+   "decision": "accept"
+  },
+  "M7.definition.1.c1": {
+   "decision": "accept"
+  },
+  "M7.action_on_cdm.1.c1": {
+   "decision": "edit",
+   "text": "EIBT changes to AIBT TOBT and TTOT updated"
+  },
+  "M7.operational_status.1.c1": {
+   "decision": "accept"
+  },
+  "M7.procedures.6.c1": {
+   "decision": "reject"
+  },
+  "M7.definition.3.c1": {
+   "decision": "accept"
+  },
+  "M7.definition.3.c2": {
+   "decision": "edit",
+   "kind": "attribute",
+   "owner": "Aircraft"
+  },
+  "M7.definition.3.c3": {
+   "decision": "accept"
+  },
+  "M7.definition.3.c4": {
+   "decision": "edit",
+   "kind": "operation",
+   "owner": "Milestone 7: In-Block"
+  },
+  "M7.origin_and_priority.1.c1": {
+   "decision": "accept"
+  },
+  "M7.origin_and_priority.1.c2": {
+   "decision": "accept"
+  },
+  "M7.origin_and_priority.1.c3": {
+   "decision": "accept"
+  },
+  "M7.origin_and_priority.1.c4": {
+   "decision": "edit",
+   "kind": "operation",
+   "owner": "Milestone 7: In-Block"
+  },
+  "M7.timing.1.c1": {
+   "decision": "accept"
+  },
+  "M7.data_quality.1.c1": {
+   "decision": "accept"
+  },
+  "M7.procedures.2.c2": {
+   "decision": "accept"
+  },
+  "M7.procedures.2.c1": {
+   "decision": "accept"
+  },
+  "M7.procedures.2.c4": {
+   "decision": "reject"
+  },
+  "M7.procedures.1.c1": {
+   "decision": "accept"
+  },
+  "M7.effect.1.c7": {
+   "decision": "accept"
+  },
+  "M7.effect.1.c1": {
+   "decision": "accept"
+  },
+  "M7.effect.1.c5": {
+   "decision": "edit",
+   "kind": "operation",
+   "owner": "Milestone 7: In-Block"
+  },
+  "M7.effect.1.c6": {
+   "decision": "edit",
+   "text": "TOBT and TTOT ... calculated on the basis of the estimated turn-round period for the departing flight"
+  },
+  "M9.definition.1.c1": {
+   "decision": "accept"
+  },
+  "M9.definition.1.c4": {
+   "decision": "accept"
+  },
+  "M9.origin_and_priority.1.c1": {
+   "decision": "accept"
+  },
+  "M9.timing.1.c1": {
+   "decision": "accept"
+  },
+  "M9.timing.1.c2": {
+   "decision": "accept"
+  },
+  "M9.data_quality.1.c1": {
+   "decision": "accept"
+  },
+  "M9.effect.3.c1": {
+   "decision": "edit",
+   "kind": "operation",
+   "owner": "Milestone 9: Final Confirmation of the TOBT"
+  },
+  "M9.effect.3.c4": {
+   "decision": "accept"
+  },
+  "M9.effect.4.c1": {
+   "decision": "accept"
+  },
+  "M9.effect.4.c2": {
+   "decision": "edit",
+   "kind": "operation",
+   "owner": "ATC"
+  },
+  "M9.effect.6.c3": {
+   "decision": "accept"
+  },
+  "M9.effect.6.c4": {
+   "decision": "accept"
+  },
+  "M9.effect.6.c5": {
+   "decision": "accept"
+  },
+  "M9.procedures.1.c1": {
+   "decision": "accept"
+  },
+  "M9.procedures.2.c1": {
+   "decision": "accept"
+  },
+  "M9.procedures.2.c3": {
+   "decision": "accept"
+  },
+  "M9.procedures.2.c4": {
+   "decision": "reject"
+  },
+  "M9.procedures.3.c1": {
+   "decision": "accept"
+  },
+  "M9.procedures.3.c2": {
+   "decision": "accept"
+  },
+  "M9.procedures.3.c4": {
+   "decision": "accept"
+  },
+  "M9.procedures.5.c1": {
+   "decision": "accept"
+  },
+  "M9.procedures.5.c2": {
+   "decision": "accept"
+  },
+  "M9.procedures.6.c1": {
+   "decision": "accept"
+  },
+  "M9.procedures.6.c2": {
+   "decision": "accept"
+  },
+  "M9.action_on_cdm.1.c1": {
+   "decision": "accept"
+  },
+  "M9.action_on_cdm.2.c1": {
+   "decision": "accept"
+  },
+  "M11.operational_status.1.c1": {
+   "decision": "accept"
+  },
+  "M11.procedures.6.c1": {
+   "decision": "edit",
+   "kind": "attribute"
+  },
+  "M11.procedures.4.c2": {
+   "decision": "accept"
+  },
+  "M11.procedures.2.c2": {
+   "decision": "edit",
+   "owner": "Aircraft Operator / Ground Handler"
+  },
+  "M11.procedures.2.c1": {
+   "decision": "accept"
+  },
+  "M11.procedures.1.c3": {
+   "decision": "reject"
+  },
+  "M11.procedures.1.c2": {
+   "decision": "accept"
+  },
+  "M11.procedures.1.c1": {
+   "decision": "accept"
+  },
+  "M11.data_quality.1.c1": {
+   "decision": "accept"
+  },
+  "M11.timing.1.c1": {
+   "decision": "accept"
+  },
+  "M11.origin_and_priority.1.c1": {
+   "decision": "accept"
+  },
+  "M11.origin_and_priority.1.c2": {
+   "decision": "reject"
+  },
+  "M11.origin_and_priority.1.c3": {
+   "decision": "reject"
+  },
+  "M11.definition.1.c1": {
+   "decision": "edit",
+   "kind": "operation",
+   "owner": "Milestone 11: Boarding Starts"
+  },
+  "M14.definition.1.c1": {
+   "decision": "accept"
+  },
+  "M14.definition.2.c2": {
+   "decision": "accept"
+  },
+  "M14.definition.2.c3": {
+   "decision": "reject"
+  },
+  "M14.origin_and_priority.1.c1": {
+   "decision": "reject"
+  },
+  "M14.origin_and_priority.1.c3": {
+   "decision": "reject"
+  },
+  "M14.timing.1.c1": {
+   "decision": "accept"
+  },
+  "M14.data_quality.1.c1": {
+   "decision": "accept"
+  },
+  "M14.effect.1.c1": {
+   "decision": "accept"
+  },
+  "M14.procedures.1.c1": {
+   "decision": "accept"
+  },
+  "M14.procedures.1.c4": {
+   "decision": "reject"
+  },
+  "M14.procedures.2.c1": {
+   "decision": "accept"
+  },
+  "M14.procedures.2.c2": {
+   "decision": "accept"
+  },
+  "M14.procedures.4.c2": {
+   "decision": "accept"
+  },
+  "M14.procedures.5.c1": {
+   "decision": "accept"
+  },
+  "M14.procedures.6.c1": {
+   "decision": "accept"
+  },
+  "M14.procedures.6.c2": {
+   "decision": "accept"
+  },
+  "M14.procedures.6.c3": {
+   "decision": "accept"
+  },
+  "M14.procedures.6.c4": {
+   "decision": "accept"
+  },
+  "M14.procedures.6.c5": {
+   "decision": "accept"
+  },
+  "M14.procedures.6.c6": {
+   "decision": "accept"
+  }
+ },
+ "added": {
+  "M1.definition.1": [
+   {
+    "text": "ICAO flight plan",
+    "kind": "relationship",
+    "owner": "",
+    "rel_type": "generalization",
+    "note": ""
+   },
+   {
+    "text": "ATC",
+    "kind": "class",
+    "owner": "",
+    "rel_type": "",
+    "note": ""
+   }
+  ],
+  "M1.definition.2": [
+   {
+    "text": "flight",
+    "kind": "class",
+    "owner": "",
+    "rel_type": "",
+    "note": ""
+   }
+  ],
+  "M1.origin_and_priority.1": [
+   {
+    "text": "The ATC Flight Plan",
+    "kind": "relationship",
+    "owner": "",
+    "rel_type": "generalization",
+    "note": ""
+   }
+  ],
+  "M1.timing.2": [
+   {
+    "text": "repetitive flight plan (RFPL)",
+    "kind": "relationship",
+    "owner": "",
+    "rel_type": "generalization",
+    "note": ""
+   }
+  ],
+  "M1.data_quality.1": [
+   {
+    "text": "ATC Flight Plan",
+    "kind": "relationship",
+    "owner": "",
+    "rel_type": "generalization",
+    "note": ""
+   },
+   {
+    "text": "Flight Plan",
+    "kind": "class",
+    "owner": "",
+    "rel_type": "",
+    "note": ""
+   }
+  ],
+  "M1.effect.2": [
+   {
+    "text": "coordinated",
+    "kind": "enumeration",
+    "owner": "Airport",
+    "rel_type": "",
+    "note": ""
+   }
+  ],
+  "M1.effect.5": [
+   {
+    "text": "non-coordinated",
+    "kind": "enumeration",
+    "owner": "Airport",
+    "rel_type": "",
+    "note": ""
+   }
+  ],
+  "M1.effect.6": [
+   {
+    "text": "EOBT",
+    "kind": "class",
+    "owner": "",
+    "rel_type": "",
+    "note": ""
+   }
+  ],
+  "M1.procedures.1": [
+   {
+    "text": "Network Operations",
+    "kind": "class",
+    "owner": "",
+    "rel_type": "",
+    "note": ""
+   },
+   {
+    "text": "Airport flight data",
+    "kind": "attribute",
+    "owner": "Airport",
+    "rel_type": "",
+    "note": ""
+   }
+  ],
+  "M1.action_on_cdm.1": [
+   {
+    "text": "The DPI process commences (if implemented - see section 3.7.3 for details).",
+    "kind": "operation",
+    "owner": "Milestone 1: ATC Flight Plan Activated",
+    "rel_type": "",
+    "note": ""
+   }
+  ],
+  "M2.definition.1": [
+   {
+    "text": "At EOBT-2 hr most flights will be known in the Airport CDM Platform including if they are regulated or not.",
+    "kind": "operation",
+    "owner": "",
+    "rel_type": "",
+    "note": ""
+   }
+  ],
+  "M2.origin_and_priority.2": [
+   {
+    "text": "CTOT flights",
+    "kind": "attribute",
+    "owner": "Flight",
+    "rel_type": "generalization",
+    "note": ""
+   },
+   {
+    "text": "unregulated flights",
+    "kind": "attribute",
+    "owner": "Flight",
+    "rel_type": "",
+    "note": ""
+   }
+  ],
+  "M2.procedures.4": [
+   {
+    "text": "EIBT",
+    "kind": "class",
+    "owner": "",
+    "rel_type": "",
+    "note": ""
+   },
+   {
+    "text": "EOBT",
+    "kind": "class",
+    "owner": "",
+    "rel_type": "",
+    "note": ""
+   },
+   {
+    "text": "EXOT",
+    "kind": "class",
+    "owner": "",
+    "rel_type": "",
+    "note": ""
+   }
+  ],
+  "M4.timing.1": [
+   {
+    "text": "FIR",
+    "kind": "class",
+    "owner": "",
+    "rel_type": "",
+    "note": ""
+   }
+  ],
+  "M4.effect.6": [
+   {
+    "text": "The update of TOBT for the related departing flight takes place following this milestone.\n",
+    "kind": "operation",
+    "owner": "Milestone 4: Local Radar Update",
+    "rel_type": "",
+    "note": ""
+   }
+  ],
+  "M5.definition.1": [
+   {
+    "text": "The flight enters the Final Approach phase at the destination airport.",
+    "kind": "operation",
+    "owner": "Flight",
+    "rel_type": "",
+    "note": ""
+   }
+  ],
+  "M6.procedures.6": [
+   {
+    "text": "Actual Landing Time: ALDT",
+    "kind": "class",
+    "owner": "",
+    "rel_type": "",
+    "note": ""
+   }
+  ],
+  "M6.definition.3": [
+   {
+    "text": "ACARS=ON",
+    "kind": "enumeration",
+    "owner": "Aircraft",
+    "rel_type": "",
+    "note": ""
+   }
+  ],
+  "M9.definition.1": [
+   {
+    "text": "operational situation",
+    "kind": "class",
+    "owner": "",
+    "rel_type": "",
+    "note": ""
+   }
+  ],
+  "M9.effect.6": [
+   {
+    "text": " predicted traffic load, gate / stand location, runway in use, and waiting period at the Holding Position, etc.",
+    "kind": "attribute",
+    "owner": "ATC system",
+    "rel_type": "",
+    "note": ""
+   }
+  ],
+  "M9.procedures.3": [
+   {
+    "text": "verify feasibility of the ATC Flight Plan estimates given the updated TOBT.",
+    "kind": "attribute",
+    "owner": "ATC",
+    "rel_type": "",
+    "note": ""
+   }
+  ],
+  "M14.procedures.4": [
+   {
+    "text": "start up approval",
+    "kind": "class",
+    "owner": "",
+    "rel_type": "",
+    "note": ""
+   }
+  ],
+  "M1.origin_and_priority.2": [
+   {
+    "text": "Airport",
+    "kind": "class",
+    "owner": "",
+    "rel_type": "",
+    "note": ""
+   }
+  ]
+ },
+ "sentences": {}
+}

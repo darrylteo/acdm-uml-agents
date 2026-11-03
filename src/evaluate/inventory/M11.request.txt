@@ -1,0 +1,46 @@
+# Milestone 11: Boarding Starts
+
+The section, split into sentences. The field name precedes each field; the id precedes each sentence.
+
+
+## Definition
+
+[M11.definition.1] The gate is open for passengers to physically start boarding (independent of whether boarding takes place via an air-bridge/pier, aircraft steps or coaching to a stand).
+[M11.definition.2] This is not to be confused with the time passengers are pre-called to the gate via flight information display systems (FIDS) or public address systems.
+
+## Origin and priority
+
+[M11.origin_and_priority.1] Automatic from airport system or manual input by Aircraft Operator/ Ground Handler.
+
+## Timing
+
+[M11.timing.1] The information is directly available after occurrence of the milestone.
+
+## Data Quality
+
+[M11.data_quality.1] Data is available with an accuracy of +/- 1 minute.
+
+## Effect
+
+[M11.effect.1] When boarding commences it gives the Airport CDM Partners a good indication of whether the TOBT/TSAT will be respected.
+
+## Procedures
+
+[M11.procedures.1] First step: To inform all relevant Airport CDM Partners of Actual Start Boarding Time (ASBT).
+[M11.procedures.2] Second step: To check whether boarding starts in time to respect TOBT and inform the AO/GH in case TOBT needs to be updated.
+[M11.procedures.3] Inform of Actual Start Boarding Time (ASBT) when it occurs.
+[M11.procedures.4] At a certain time before TOBT (local variable e.g. corresponding to aircraft type) a check shall be performed to check the boarding status.
+[M11.procedures.5] This process is triggered by
+[M11.procedures.6] - a time variable <value> minutes before TOBT.
+
+## Operational Status
+
+[M11.operational_status.1] BOARDING
+
+## Action on CDM Operation
+
+[M11.action_on_cdm.1] N.A
+
+# Task
+
+Return every sentence with keep or drop, a reason, and the claims of each kept sentence, as JSON conforming to the schema.

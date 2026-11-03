@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claim inventory: consensus</title>
+<style>
+  :root { --bg:#fafafa; --ink:#222; --muted:#666; --line:#ddd; --sel:#1a73e8; --ok:#2e7d32; --warn:#b26a00; --bad:#c62828; --open:#fff8e1;
+          --font:"Segoe UI", Arial, sans-serif; --mono:Consolas, monospace; }
+  html, body { margin:0; height:100%; font:13px/1.45 var(--font); color:var(--ink); background:var(--bg); }
+  #app { display:grid; grid-template-rows:auto 1fr; grid-template-columns:250px 1fr; height:100vh; }
+  #bar { grid-column:1 / span 2; display:flex; flex-wrap:wrap; gap:10px; align-items:center; padding:6px 12px; border-bottom:1px solid #ccc; background:#fff; }
+  #bar h1 { font-size:14px; margin:0 8px 0 0; }
+  #bar button { font:inherit; padding:2px 10px; }
+  #count { font-variant-numeric:tabular-nums; color:var(--muted); flex:1; }
+  #count b.open { color:var(--bad); }
+  #nav { border-right:1px solid #ccc; background:#fff; overflow:auto; padding:8px 0; }
+  #nav a { display:flex; justify-content:space-between; gap:6px; padding:4px 12px; color:var(--ink); text-decoration:none; cursor:pointer; }
+  #nav a:hover { background:#f0f4ff; }
+  #nav a.cur { background:#e3ecfb; font-weight:600; }
+  #nav a .n { color:var(--muted); font-variant-numeric:tabular-nums; white-space:nowrap; }
+  #nav a.open .n { color:var(--bad); }
+  #nav a.done .n { color:var(--ok); }
+  #nav .grp { padding:8px 12px 2px; font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); }
+  #main { overflow:auto; padding:10px 18px 60vh; }
+  h2 { font-size:16px; margin:8px 0 6px; }
+  h3 { font-size:12px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); margin:18px 0 6px; }
+  p.q { margin:4px 0 8px; max-width:900px; }
+  .rule { display:grid; grid-template-columns:auto 1fr; gap:8px; align-items:start; background:#fff; border:1px solid var(--line); border-radius:4px; padding:8px 10px; margin-bottom:8px; }
+  .rule label { color:var(--muted); font-size:12px; padding-top:3px; white-space:nowrap; }
+  .rule textarea { font:inherit; font-size:12px; width:100%; box-sizing:border-box; min-height:36px; resize:vertical; }
+  .quick { display:flex; flex-wrap:wrap; gap:6px 14px; align-items:center; margin:0 0 10px; color:var(--muted); font-size:12px; }
+  .quick button { font:inherit; font-size:12px; padding:0 8px; border:1px solid #bbb; background:#fff; border-radius:3px; cursor:pointer; }
+  .sent { background:#fff; border:1px solid var(--line); border-radius:4px; padding:8px 10px; margin-bottom:8px; }
+  .sent .sid { font-family:var(--mono); font-size:11px; color:var(--muted); }
+  .sent .text { margin:2px 0 4px; }
+  .sent .judge { font-size:12px; color:var(--muted); }
+  .pill { display:inline-block; padding:0 6px; border-radius:3px; font-size:11px; border:1px solid transparent; margin-right:4px; vertical-align:middle; }
+  .pill.keep { background:#e8f5e9; color:var(--ok); }
+  .pill.drop { background:#fbe9e7; color:var(--bad); }
+  .pill.k-class { background:#e3f2fd; color:#0d47a1; }
+  .pill.k-attribute { background:#f3e5f5; color:#6a1b9a; }
+  .pill.k-operation { background:#fff3e0; color:#e65100; }
+  .pill.k-relationship { background:#e0f2f1; color:#00695c; }
+  .pill.k-enumeration { background:#fffde7; color:#827717; }
+  .claim { display:grid; grid-template-columns:auto 1fr auto; gap:4px 10px; align-items:start; padding:6px 8px; margin:6px 0 0;
+           border:1px solid var(--line); border-left:4px solid #ccc; border-radius:3px; background:#fcfcfc; }
+  .claim:focus { outline:2px solid var(--sel); outline-offset:1px; }
+  .claim.accept { border-left-color:var(--ok); }
+  .claim.edit { border-left-color:var(--warn); }
+  .claim.reject { border-left-color:var(--bad); }
+  .claim.reject .body > .ptext { opacity:.6; }
+  .claim.open { border-left-color:var(--bad); background:var(--open); }
+  .claim .cid { font-family:var(--mono); font-size:11px; color:var(--muted); white-space:nowrap; padding-top:2px; }
+  .claim .cid .ms { display:block; color:#999; }
+  .claim .body .meta { font-size:12px; color:var(--muted); margin-top:2px; }
+  .claim .body .meta b { color:var(--ink); font-weight:600; }
+  .views { grid-column:2 / span 2; display:grid; grid-template-columns:1fr 1fr; gap:4px 12px; font-size:12px; margin-top:2px; }
+  .views .v { padding:3px 6px; border-radius:3px; background:#f1f1f1; }
+  .views .v.accept { background:#e8f5e9; }
+  .views .v.reject { background:#fbe9e7; }
+  .views .v.edit { background:#fff3e0; }
+  .views .v.none { color:#999; }
+  .views .v .who { font-weight:600; margin-right:4px; }
+  .views .v .take { float:right; font:inherit; font-size:11px; padding:0 6px; border:1px solid #bbb; background:#fff; border-radius:3px; cursor:pointer; }
+  .views .v .note { color:var(--muted); font-style:italic; }
+  .claim .btns { display:flex; gap:4px; white-space:nowrap; }
+  .claim .btns button { font:inherit; font-size:12px; padding:1px 8px; border:1px solid #bbb; background:#fff; border-radius:3px; cursor:pointer; }
+  .claim .btns button.on.a { background:var(--ok); color:#fff; border-color:var(--ok); }
+  .claim .btns button.on.e { background:var(--warn); color:#fff; border-color:var(--warn); }
+  .claim .btns button.on.r { background:var(--bad); color:#fff; border-color:var(--bad); }
+  .claim .btns button.on.k { background:var(--ok); color:#fff; border-color:var(--ok); }
+  .claim .btns button.on.d { background:var(--bad); color:#fff; border-color:var(--bad); }
+  .final { grid-column:2 / span 2; font-size:12px; color:var(--muted); }
+  .final b { color:var(--ink); font-weight:600; }
+  .final .chg { color:var(--warn); }
+  .editor { grid-column:1 / span 3; display:grid; grid-template-columns:90px 1fr; gap:4px 8px; padding:6px 0 2px; border-top:1px dashed var(--line); margin-top:4px; }
+  .editor label { color:var(--muted); font-size:12px; padding-top:3px; }
+  .editor input, .editor select, .editor textarea { font:inherit; font-size:12px; padding:2px 4px; width:100%; box-sizing:border-box; }
+  .editor textarea { min-height:38px; resize:vertical; }
+  .editor div { display:flex; flex-direction:column; }
+  .note { grid-column:1 / span 3; }
+  .note input { font:inherit; font-size:12px; width:100%; box-sizing:border-box; border:1px solid #eee; padding:2px 4px; background:#fff; }
+  .quick-add { font:inherit; font-size:12px; padding:1px 8px; border:1px dashed #999; background:#fff; border-radius:3px; cursor:pointer; color:#444; }
+  .add { font:inherit; font-size:12px; margin-top:6px; padding:1px 8px; border:1px dashed #999; background:#fff; border-radius:3px; cursor:pointer; color:#444; }
+  .help { color:var(--muted); font-size:12px; }
+  kbd { font-family:var(--mono); font-size:11px; border:1px solid #bbb; border-bottom-width:2px; border-radius:3px; padding:0 4px; background:#fff; }
+  .pair { display:grid; grid-template-columns:1fr 1fr auto; gap:6px 12px; align-items:center; background:#fff; border:1px solid var(--line); border-left:4px solid #ccc; border-radius:3px; padding:6px 8px; margin:6px 0 0; }
+  .pair.same { border-left-color:var(--warn); }
+  .pair.distinct { border-left-color:var(--ok); }
+  .pair.open { border-left-color:var(--bad); background:var(--open); }
+  .pair .t { font-size:12px; }
+  .pair .t .cid { font-family:var(--mono); font-size:11px; color:var(--muted); display:block; }
+  .pair .sh { grid-column:1 / span 3; font-size:11px; color:var(--muted); }
+  .pair .btns button { font:inherit; font-size:12px; padding:1px 8px; border:1px solid #bbb; background:#fff; border-radius:3px; cursor:pointer; margin-left:4px; }
+  .pair .btns button.on.s { background:var(--warn); color:#fff; border-color:var(--warn); }
+  .pair .btns button.on.d { background:var(--ok); color:#fff; border-color:var(--ok); }
+  .mslist { display:flex; flex-wrap:wrap; gap:4px; margin:6px 0 10px; }
+  .mslist button { font:inherit; font-size:12px; padding:1px 8px; border:1px solid #bbb; background:#fff; border-radius:3px; cursor:pointer; }
+  .mslist button.cur { background:var(--sel); color:#fff; border-color:var(--sel); }
+  #legend { background:#fff; border:1px solid var(--line); border-radius:4px; padding:8px 12px; margin-bottom:12px; max-width:1000px; }
+  #legend p { margin:6px 0; }
+  table.sum { border-collapse:collapse; font-size:12px; margin:6px 0 10px; }
+  table.sum th, table.sum td { text-align:left; padding:3px 12px 3px 0; border-top:1px solid #eee; vertical-align:top; }
+  table.sum th { color:var(--muted); font-weight:600; }
+</style>
+</head>
+<body>
+<div id="app">
+  <div id="bar">
+    <h1>Claim inventory: consensus</h1>
+    <span class="help" id="who"></span>
+    <span id="count"></span>
+    <label><input type="checkbox" id="openonly"> unresolved only</label>
+    <button id="export">Export consensus JSON</button>
+    <button id="import">Import…</button>
+    <input type="file" id="file" accept="application/json" style="display:none">
+    <span id="saved" class="help"></span>
+  </div>
+  <nav id="nav"></nav>
+  <main id="main"></main>
+</div>
+<script type="application/json" id="data">__DATA__</script>
+<script>
+const DATA = JSON.parse(document.getElementById('data').textContent);
+const KINDS = ['class', 'attribute', 'operation', 'relationship', 'enumeration'];
+const FIELD = {definition:'Definition', origin_and_priority:'Origin and priority', timing:'Timing', data_quality:'Data Quality',
+               effect:'Effect', procedures:'Procedures', operational_status:'Operational Status', action_on_cdm:'Action on CDM Operation'};
+const FIELDS_ORDER = Object.keys(FIELD);
+const R = DATA.reviewers;                         // ['grader_A', 'grader_B']
+const SHARED = DATA.assigned[R[0]].filter(m => DATA.assigned[R[1]].includes(m));
+const KEY = 'claims_merge_' + DATA.generated + (DATA.state ? '_from_' + DATA.state_from : '');  // a baked-in state starts afresh, apart from the first build's local state
+const SENT = Object.fromEntries(DATA.sentences.map(s => [s.id, s]));
+const CLAIM = Object.fromEntries(DATA.sentences.flatMap(s => s.claims.map(c => [c.id, c])));
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const FIELDS_OF = ['kind', 'owner', 'text', 'rel_type'];
+let S = load();
+
+function fresh() {
+  // the seed: a consensus wherever the two reviews need no discussion, null where they differ; additions as the union
+  const claims = {};
+  for (const [id, e] of Object.entries(DATA.seed.claims)) claims[id] = e.consensus ? {...e.consensus} : null;
+  const added = {};
+  for (const [sid, list] of Object.entries(DATA.seed.added)) added[sid] = list.map(a => ({...a}));
+  return {claims, added, pairs: {}, extra: [], families: {}, cur: 'overview', ms: 1};
+}
+function load() {
+  try { const s = JSON.parse(localStorage.getItem(KEY)); if (s && s.claims) return s; } catch (e) {}
+  return DATA.state ? JSON.parse(JSON.stringify(DATA.state)) : fresh();
+}
+function save() {
+  try { localStorage.setItem(KEY, JSON.stringify(S)); document.getElementById('saved').textContent = 'saved ' + new Date().toLocaleTimeString(); }
+  catch (e) { document.getElementById('saved').textContent = 'autosave unavailable: export often'; }
+  renderNav(); renderCount();
+}
+
+// ---- state helpers
+const views = id => (DATA.seed.claims[id] || {}).views || {};
+const conflict = id => { const v = views(id); return R.every(n => v[n]) && DATA.seed.claims[id].consensus == null; };
+const isOpen = id => S.claims[id] == null;
+const kept = id => S.claims[id] && S.claims[id].decision !== 'reject';
+const finalOf = id => kept(id) ? S.claims[id] : null;
+const addUid = (sid, i) => `${sid}.add.${i}`;
+const addEntry = uid => { const m = uid.match(/^(.*)\.add\.(\d+)$/); return m && (S.added[m[1]] || [])[+m[2]]; };
+const thing = uid => uid.includes('.add.') ? addEntry(uid) : finalOf(uid);   // current kept form, or null/undefined
+const thingKept = uid => uid.includes('.add.') ? !!(addEntry(uid) && addEntry(uid).keep === true) : !!kept(uid);
+const thingIsThing = uid => { const t = thing(uid); return t && ['class', 'enumeration'].includes(t.kind); };
+const pairKey = p => p.a + '|' + p.b;
+const ORDER = {};  // freeze order: a sentence's claims, then its additions
+DATA.sentences.forEach(s => { s.claims.forEach(c => ORDER[c.id] = Object.keys(ORDER).length); (DATA.seed.added[s.id] || []).forEach((a, i) => ORDER[addUid(s.id, i)] = Object.keys(ORDER).length); });
+const allPairs = () => DATA.pairs.concat(S.extra || []);
+const livePairs = () => allPairs().filter(p => thingKept(p.a) && thingKept(p.b) && thingIsThing(p.a) && thingIsThing(p.b));
+const keptThings = () => Object.keys(ORDER).filter(uid => thingKept(uid) && thingIsThing(uid));
+const openPairs = () => livePairs().filter(p => !S.pairs[pairKey(p)]);
+const openAdds = () => Object.values(S.added).flat().filter(a => a.keep == null);
+const openClaims = () => Object.keys(S.claims).filter(isOpen);
+function famOpen(f) { return f.ids.filter(isOpen).length; }
+function changedFromSeed(id) {
+  const seed = DATA.seed.claims[id].consensus, cur = S.claims[id];
+  if (!seed || !cur) return false;
+  if ((seed.decision === 'reject') !== (cur.decision === 'reject')) return true;
+  return cur.decision !== 'reject' && FIELDS_OF.some(k => (seed[k] || '') !== (cur[k] || ''));
+}
+
+// ---- rendering
+function renderCount() {
+  const c = openClaims().length, a = openAdds().length, p = openPairs().length, f = DATA.final ? finalOpen() : 0;
+  document.getElementById('count').innerHTML = `unresolved: <b class="${c ? 'open' : ''}">${c}</b> claims · <b class="${a ? 'open' : ''}">${a}</b> additions · <b class="${p ? 'open' : ''}">${p}</b> pairs` + (DATA.final ? ` · <b class="${f ? 'open' : ''}">${f}</b> final items` : '');
+}
+function navItem(key, label, n, open, done) {
+  return `<a class="${S.cur === key ? 'cur' : ''} ${open ? 'open' : (done ? 'done' : '')}" data-sec="${key}"><span>${esc(label)}</span><span class="n">${n}</span></a>`;
+}
+function renderNav() {
+  const nav = document.getElementById('nav');
+  const confl = Object.keys(DATA.seed.claims).filter(conflict);
+  let html = '';
+  if (DATA.final) { const o = finalOpen(); html += navItem('final', 'Final meeting: what is left', o ? `${o} open` : 'done', o > 0, o === 0); }
+  html += navItem('overview', 'Overview', '', false, false);
+  html += `<div class="grp">Recurring families</div>`;
+  for (const f of DATA.families) { const o = famOpen(f); html += navItem('fam:' + f.key, `${f.key}. ${f.title}`, o ? `${o} open / ${f.ids.length}` : f.ids.length, o > 0, o === 0); }
+  html += `<div class="grp">Shared milestones ${SHARED.map(m => 'M' + m).join(', ')}</div>`;
+  const oc = confl.filter(isOpen).length;
+  html += navItem('conflicts', 'Disagreements', oc ? `${oc} open / ${confl.length}` : confl.length, oc > 0, oc === 0);
+  const oa = openAdds().length, na = Object.values(S.added).flat().length;
+  html += navItem('added', 'Additions', oa ? `${oa} open / ${na}` : na, oa > 0, oa === 0);
+  const op = openPairs().length, np = livePairs().length;
+  html += navItem('pairs', 'Near-miss pairs', op ? `${op} open / ${np}` : np, op > 0, op === 0);
+  html += `<div class="grp">Everything</div>`;
+  const oall = openClaims().length;
+  html += navItem('all', 'All claims by milestone', oall ? `${oall} open` : Object.keys(S.claims).length, oall > 0, oall === 0);
+  nav.innerHTML = html;
+  nav.querySelectorAll('a').forEach(a => a.onclick = () => { S.cur = a.dataset.sec; renderMain(); save(); });
+}
+function viewHtml(name, id) {
+  const v = views(id)[name];
+  if (!v) return `<div class="v none"><span class="who">${esc(name)}</span>– (not on their milestones)</div>`;
+  const c = CLAIM[id];
+  let what = v.decision;
+  if (v.decision === 'edit') {
+    const d = FIELDS_OF.filter(k => (v[k] || '') !== (c[k] || '')).map(k => `${k} → <b>${esc(v[k] || '(none)')}</b>`);
+    what = 'edit: ' + (d.join(' · ') || 'no field changed');
+  }
+  const take = conflict(id) ? `<button class="take" data-take="${esc(name)}" title="use this reviewer's decision as the consensus">take</button>` : '';
+  return `<div class="v ${v.decision}">${take}<span class="who">${esc(name)}</span>${what}${v.note ? ` <span class="note">“${esc(v.note)}”</span>` : ''}</div>`;
+}
+const OWNERS = DATA.owners || [];
+function ownerOptions(s, current) {
+  const mine = `Milestone ${s.milestone}: ${DATA.names[s.milestone] || ''}`;
+  const list = [mine, ...OWNERS.filter(o => o !== mine)];
+  if (current && !list.includes(current)) list.push(current);
+  return list;
+}
+function editorHtml(s, f) {
+  const kind = f('kind');
+  const needsOwner = ['attribute', 'operation', 'enumeration'].includes(kind);
+  const owner = f('owner') || '';
+  const ownerOpts = ownerOptions(s, owner);
+  const ownerIsOther = owner && !ownerOpts.includes(owner);
+  return `<div class="editor">
+      <label>text</label><textarea data-k="text" placeholder="the clause of the sentence that states the claim, in the document's words">${esc(f('text'))}</textarea>
+      <label>kind</label><select data-k="kind">${KINDS.map(k => `<option ${kind === k ? 'selected' : ''}>${k}</option>`).join('')}</select>
+      <label>owner</label><div>
+        <select data-k="owner" ${needsOwner ? '' : 'disabled'}><option value="" ${!owner ? 'selected' : ''}>${needsOwner ? '(choose the party or thing the document names)' : '(none: a class or relationship has no owner)'}</option>${ownerOpts.map(o => `<option ${owner === o ? 'selected' : ''}>${esc(o)}</option>`).join('')}<option value="__other__" ${ownerIsOther ? 'selected' : ''}>other (type below)</option></select>
+        <input data-k="owner_other" value="${ownerIsOther ? esc(owner) : ''}" placeholder="owner in the document's words" style="${ownerIsOther ? '' : 'display:none'}; margin-top:3px"></div>
+      <label>rel_type</label><select data-k="rel_type" ${kind === 'relationship' ? '' : 'disabled'}><option value="" ${!f('rel_type') ? 'selected' : ''}>${kind === 'relationship' ? '(choose)' : '(not a relationship)'}</option><option ${f('rel_type') === 'other' ? 'selected' : ''}>other</option><option ${f('rel_type') === 'generalization' ? 'selected' : ''}>generalization</option></select>
+    </div>`;
+}
+function claimRow(id, showMs) {
+  const c = CLAIM[id], s = SENT[id.replace(/\.c\d+$/, '')];
+  const st = S.claims[id];
+  const cls = st == null ? 'open' : st.decision;
+  const f = k => (st && st.decision === 'edit' && st[k] != null) ? st[k] : c[k];
+  const kind = c.kind;
+  const meta = [c.owner ? `owner <b>${esc(c.owner)}</b>` : '', kind === 'relationship' ? `type <b>${esc(c.rel_type || 'other')}</b>` : ''].filter(Boolean).join(' · ');
+  let final = '';
+  if (st && st.decision === 'edit') {
+    const d = FIELDS_OF.filter(k => (st[k] || '') !== (c[k] || '')).map(k => `${k} → <b>${esc(st[k] || '(none)')}</b>`);
+    final = `<div class="final">consensus: edit, ${d.join(' · ') || 'no field changed'}${changedFromSeed(id) ? ' <span class="chg">(changed at the meeting)</span>' : ''}</div>`;
+  } else if (st && changedFromSeed(id)) final = `<div class="final"><span class="chg">consensus changed at the meeting: ${st.decision}</span></div>`;
+  else if (!st) final = `<div class="final"><span class="chg">no consensus yet</span></div>`;
+  const editor = st && st.decision === 'edit' ? editorHtml(s, f) : '';
+  const btns = `<div class="btns"><button class="a ${st && st.decision === 'accept' ? 'on' : ''}" title="accept the proposal as it stands (a)">Accept</button><button class="e ${st && st.decision === 'edit' ? 'on' : ''}" title="keep with a corrected field (e)">Edit</button><button class="r ${st && st.decision === 'reject' ? 'on' : ''}" title="reject (r)">Reject</button></div>`;
+  return `<div class="claim ${cls}" tabindex="0" data-cid="${esc(id)}">
+    <span class="cid">${esc(id)}${showMs ? `<span class="ms">M${s.milestone} · ${esc(FIELD[s.field] || s.field)}</span>` : ''}</span>
+    <div class="body"><span class="pill k-${esc(kind)}">${esc(kind)}</span><span class="ptext">${esc(c.text)}</span><div class="meta">${meta}</div>${showMs ? `<div class="help">${esc(s.text)}</div>` : ''}</div>
+    ${btns}
+    <div class="views">${R.map(n => viewHtml(n, id)).join('')}</div>
+    ${final}${editor}
+    <div class="note"><input data-k="note" value="${esc(st && st.note || '')}" placeholder="note (optional: the reason agreed)"></div>
+  </div>`;
+}
+function addedRow(sid, i) {
+  const a = S.added[sid][i], s = SENT[sid], uid = addUid(sid, i);
+  const cls = a.keep == null ? 'open' : (a.keep ? 'accept' : 'reject');
+  const by = a.by.length === R.length ? 'added by both' : `added by ${a.by.join(', ')} only` + (SHARED.includes(s.milestone) ? ' on a shared milestone' : '');
+  const rep = a.repeat_of ? ` · repeats kept claim <b>${esc(a.repeat_of)}</b> (${esc((CLAIM[a.repeat_of] || {}).text || '')}): counted once either way` : '';
+  const bare = a.kind === 'relationship' && !BARE.test(a.text)
+    ? ' · <span style="color:var(--bad)">a relationship claim must say which two things are linked</span>' : '';
+  const f = k => a[k];
+  const meta = [a.owner ? `owner <b>${esc(a.owner)}</b>` : '', a.kind === 'relationship' ? `type <b>${esc(a.rel_type || 'other')}</b>` : ''].filter(Boolean).join(' · ');
+  return `<div class="claim ${cls}" tabindex="0" data-uid="${esc(uid)}">
+    <span class="cid">${esc(sid)}<span class="ms">addition</span></span>
+    <div class="body"><span class="pill k-${esc(a.kind)}">${esc(a.kind)}</span>${esc(a.text)}<div class="meta">${meta}${meta ? ' · ' : ''}${by}${rep}${bare}</div></div>
+    <div class="btns"><button class="k ${a.keep === true ? 'on' : ''}" title="keep as a claim (a)">Keep</button><button class="d ${a.keep === false ? 'on' : ''}" title="drop (r)">Drop</button><button class="x" title="show the fields">${a._edit ? 'close' : 'edit'}</button></div>
+    ${a._edit ? editorHtml(s, f) : ''}
+    <div class="note"><input data-k="note" value="${esc(a.note || '')}" placeholder="note (optional)"></div>
+  </div>`;
+}
+function sentenceBlock(s, ids, addIdx) {
+  const j = s.judge;
+  return `<div class="sent"><div class="sid">${esc(s.id)}</div><div class="text">${esc(s.text)}</div>
+      <div class="judge">${j ? `<span class="pill ${j.decision}">${j.decision}</span>${esc(j.reason)}` : '<span class="pill">not judged</span>'}</div>
+      ${ids.map(id => claimRow(id, false)).join('')}${addIdx.map(i => addedRow(s.id, i)).join('')}
+      ${(s.repeats || []).length ? `<div class="help" style="margin-top:4px">${s.repeats.length} proposal${s.repeats.length > 1 ? 's' : ''} not shown: repeat${s.repeats.length > 1 ? '' : 's'} ${[...new Set(s.repeats)].map(esc).join(', ')}</div>` : ''}
+      <button class="add" data-sid="${esc(s.id)}">+ Add claim</button></div>`;
+}
+const LEGEND = `<div id="legend">
+  <p><b>What this page is.</b> Both reviews of the claim inventory, side by side, and one consensus decision per claim. Where the two reviews already agree, or only one of you reviewed the milestone, the consensus is filled in from it; it stays editable. Where they differ, the claim is marked <i>open</i> and needs a decision here. The recurring families on the left are the same kind of sentence across many milestones; agree one rule per family, write it in the box so the file records it, and apply it to every row with the quick buttons or one by one. Then the shared-milestone disagreements, the additions, and the near-miss pairs. When the counter in the bar reads zero, <b>Export consensus JSON</b> and send the file back; it is what freezes the inventory.</p>
+  <p><b>Decisions.</b> <b>Accept</b> the proposal as it stands, <b>Edit</b> to keep it with a corrected kind, owner, text, or type, <b>Reject</b> if the sentence does not state it or it is not something a class model holds. <i>take</i> copies one reviewer's decision into the consensus. For an addition, <b>Keep</b> or <b>Drop</b>; an added class that repeats a kept one costs nothing either way. For a near-miss pair, <b>one thing</b> merges the later claim into the earlier (it is then counted once) and <b>two things</b> keeps both. Wording is never graded; the kind and owner are labels for reporting.</p>
+  <p>Keys on a focused row: <kbd>a</kbd> <kbd>e</kbd> <kbd>r</kbd> (accept / edit / reject, or keep / drop); <kbd>j</kbd>/<kbd>k</kbd> next/previous row. Autosaves in this browser; <b>Import…</b> restores an earlier export.</p></div>`;
+function renderOverview() {
+  const confl = Object.keys(DATA.seed.claims).filter(conflict);
+  const rows = DATA.families.map(f => `<tr><td>${f.key}. ${esc(f.title)}</td><td>${f.ids.length}</td><td>${famOpen(f)}</td><td>${f.ids.filter(changedFromSeed).length}</td></tr>`).join('');
+  return LEGEND + `<h2>Where things stand</h2>
+  <table class="sum"><tr><th>section</th><th>rows</th><th>open</th><th>changed here</th></tr>${rows}
+  <tr><td>Disagreements on the shared milestones</td><td>${confl.length}</td><td>${confl.filter(isOpen).length}</td><td>${confl.filter(changedFromSeed).length}</td></tr>
+  <tr><td>Additions (union of both reviews)</td><td>${Object.values(S.added).flat().length}</td><td>${openAdds().length}</td><td></td></tr>
+  <tr><td>Near-miss pairs still live</td><td>${livePairs().length}</td><td>${openPairs().length}</td><td>${livePairs().filter(p => S.pairs[pairKey(p)] === 'same').length} merged</td></tr>
+  <tr><td>All claims</td><td>${Object.keys(S.claims).length}</td><td>${openClaims().length}</td><td>${Object.keys(S.claims).filter(changedFromSeed).length}</td></tr></table>
+  <p class="help">Reviews imported: ${R.map(n => `${esc(n)} (${esc(DATA.exported[n].slice(0, 10))}, milestones ${DATA.assigned[n].join(', ')})`).join('; ')}. Draft of ${esc(DATA.generated.slice(0, 10))}.</p>`;
+}
+function renderFamily(f) {
+  const only = document.getElementById('openonly').checked;
+  const kinds = [...new Set(f.ids.map(id => CLAIM[id].kind))];
+  let html = `<h2>${f.key}. ${esc(f.title)}</h2><p class="q">${esc(f.question)}</p>
+    <div class="rule"><label>Rule agreed</label><textarea data-fam="${f.key}" placeholder="one sentence: how every row of this family is decided, and why">${esc(S.families[f.key] || '')}</textarea></div>
+    <div class="quick">apply to every row proposed as ${kinds.map(k => `<span><span class="pill k-${k}">${k}</span>(${f.ids.filter(id => CLAIM[id].kind === k).length}) <button data-fam="${f.key}" data-kind="${k}" data-dec="accept">accept all</button> <button data-fam="${f.key}" data-kind="${k}" data-dec="reject">reject all</button></span>`).join('')}</div>`;
+  html += f.ids.filter(id => !only || isOpen(id)).map(id => claimRow(id, true)).join('') || '<p class="help">nothing open here</p>';
+  return html;
+}
+function renderConflicts() {
+  const only = document.getElementById('openonly').checked;
+  const ids = Object.keys(DATA.seed.claims).filter(conflict).filter(id => !only || isOpen(id));
+  return `<h2>Disagreements on the shared milestones</h2><p class="q">Claims both of you decided, differently (keep or reject, kind, owner, or text). <i>take</i> copies one reviewer's decision; Edit lets you set a third reading.</p>` + (ids.map(id => claimRow(id, true)).join('') || '<p class="help">nothing open here</p>');
+}
+function renderAdded() {
+  const only = document.getElementById('openonly').checked;
+  let html = `<h2>Additions</h2><p class="q">Every claim either of you added, as a union (the same kind and text added by both is one entry). One added on a shared milestone by one reviewer only is open until both agree to keep or drop it. A relationship claim must name the two things it links; edit the text if it does not.</p>`;
+  let n = 0;
+  for (const s of DATA.sentences) {
+    const idx = (S.added[s.id] || []).map((a, i) => i).filter(i => !only || S.added[s.id][i].keep == null);
+    if (!idx.length) continue;
+    n++;
+    html += `<h3>Milestone ${s.milestone}: ${esc(DATA.names[s.milestone] || '')}</h3>` + sentenceBlock(s, [], idx);
+  }
+  return html + (n ? '' : '<p class="help">nothing open here</p>');
+}
+function thingHtml(uid) {
+  const t = thing(uid), isAdd = uid.includes('.add.');
+  const s = SENT[uid.replace(/\.(c\d+|add\.\d+)$/, '')];
+  return `<div class="t"><span class="cid">${esc(uid)}${isAdd ? ' (addition)' : ''} · M${s.milestone}</span><span class="pill k-${esc(t.kind)}">${esc(t.kind)}</span>${esc(t.text)}</div>`;
+}
+function pairRow(p, note) {
+  const d = S.pairs[pairKey(p)] || '';
+  return `<div class="pair ${d || 'open'}" data-pk="${esc(pairKey(p))}">${thingHtml(p.a)}${thingHtml(p.b)}
+      <div class="btns"><button class="s ${d === 'same' ? 'on' : ''}">one thing</button><button class="d ${d === 'distinct' ? 'on' : ''}">two things</button></div>
+      <div class="sh">${note ? `<b style="color:var(--warn)">${esc(note)}</b> · ` : ''}${p.manual ? 'added at the meeting' : 'shared words: ' + esc(p.shared.join(', '))}</div></div>`;
+}
+function finalOpen() {
+  if (!DATA.final) return 0;
+  const f = DATA.final;
+  const adds = f.additions.filter(uid => { const a = addEntry(uid); return a && a.keep === true && a.kind === 'relationship' && !BARE.test(a.text); }).length;
+  const prs = f.pairs.filter(k => { const p = allPairs().find(x => pairKey(x) === k); return p && thingKept(p.a) && thingKept(p.b) && thingIsThing(p.a) && thingIsThing(p.b) && !S.pairs[k]; }).length;
+  const fams = DATA.families.filter(fm => !(S.families[fm.key] || '').trim()).length;
+  return adds + prs + fams;
+}
+function renderFinal() {
+  const f = DATA.final;
+  let html = `<h2>Final meeting: what is left</h2><p class="q">Everything else from the first pass is kept as decided. Three groups remain; the counter in the bar and in the left column reads zero when all are done, and then <b>Export consensus JSON</b>.</p>`;
+  html += `<h3>1. One rule per family</h3><p class="q">The same sentence recurs in many milestones and the first pass decided it milestone by milestone, so the identical sentence is kept in some and rejected in others. Open each family (left column), agree one rule, write it in the box (the box must be filled for the family to count as done), and apply it with the per-kind buttons or row by row. The table shows how each family stands now, by the kind the judge proposed.</p>`;
+  html += `<table class="sum"><tr><th>family</th><th>proposed kind</th><th>kept as proposed</th><th>kept, kind changed</th><th>rejected</th><th>rule agreed</th></tr>`;
+  for (const fm of DATA.families) {
+    const kinds = [...new Set(fm.ids.map(id => CLAIM[id].kind))];
+    kinds.forEach((k, i) => {
+      const ids = fm.ids.filter(id => CLAIM[id].kind === k);
+      const kept = ids.filter(id => kept_(id) && (S.claims[id].kind || k) === k).length, chg = ids.filter(id => kept_(id) && (S.claims[id].kind || k) !== k).length, rej = ids.filter(id => S.claims[id] && S.claims[id].decision === 'reject').length;
+      html += `<tr>${i === 0 ? `<td rowspan="${kinds.length}"><a href="#" data-go="fam:${fm.key}">${fm.key}. ${esc(fm.title)}</a></td>` : ''}<td><span class="pill k-${k}">${k}</span>${ids.length}</td><td>${kept}</td><td>${chg}</td><td>${rej}</td>${i === 0 ? `<td rowspan="${kinds.length}">${(S.families[fm.key] || '').trim() ? '<span style="color:var(--ok)">yes</span>' : '<span style="color:var(--bad)">not yet</span>'}</td>` : ''}</tr>`;
+    });
+  }
+  html += `</table>`;
+  html += `<h3>2. Relationship additions whose text names no link</h3><p class="q">A relationship claim must say which two things are linked, in the document's words, or a grader cannot grade it. Edit the text (e.g. "The ICAO flight plan is submitted to ATC") or Drop it. The RFPL one is already covered by M1.timing.2.c2, kept as a generalization.</p>`;
+  const adds = f.additions.filter(uid => addEntry(uid));
+  html += adds.map(uid => { const m = uid.match(/^(.*)\.add\.(\d+)$/); return `<div class="help" style="margin-top:8px">${esc(SENT[m[1]].text)}</div>` + addedRow(m[1], +m[2]); }).join('') || '<p class="help">none</p>';
+  html += `<h3>3. Pairs to decide</h3><p class="q">Two pairs were never listed, and the merges below were reset to undecided: either the same claim was called one thing with more than one partner (the group is then decided as a whole, and the export merges the whole group into its earliest member), or the two are kinds of one thing, where the rule on the pairs section applies: two things, with the kind-of link kept as a generalization claim.</p>`;
+  const prs = f.pairs.map(k => allPairs().find(x => pairKey(x) === k)).filter(p => p && thingKept(p.a) && thingKept(p.b) && thingIsThing(p.a) && thingIsThing(p.b));
+  html += prs.map(p => pairRow(p, f.notes[pairKey(p)])).join('') || '<p class="help">none</p>';
+  return html;
+}
+const kept_ = id => S.claims[id] && S.claims[id].decision !== 'reject';
+const BARE = /\b(by|to|from|of|with|for|receives?|sends?|holds?|triggers?|is|are|has|have|between)\b/i;
+function renderPairs() {
+  const only = document.getElementById('openonly').checked;
+  const live = livePairs().filter(p => !only || !S.pairs[pairKey(p)]);
+  const moot = allPairs().length - livePairs().length;
+  let html = `<h2>Near-miss pairs</h2><p class="q">Pairs of kept class or enumeration claims whose normalised names are nested, one inside the other, sharing two or more words (the exact-repeat rule cannot decide them). <b>one thing</b>: they name the same thing and the later is counted as a repeat of the earlier. <b>two things</b>: both stay. The test: could a model hold one and lack the other, and would the document say something about the one it lacks? If not, one thing (two names for one object, such as the ICAO flight plan and the ATC flight plan). If so, two things; and when one is a kind of the other (a repetitive flight plan is a kind of flight plan), the kind-of link should itself be a relationship claim of type <i>generalization</i>, kept or added under the sentence that states it. If one member is not a class at all (ATC beside a time called ATC ATA), two things, or reject the one that is not. ${moot ? `${moot} pair${moot > 1 ? 's are' : ' is'} not shown because one member is rejected, dropped, still undecided, or no longer a class.` : ''}</p>`;
+  html += live.map(pairRow).join('') || '<p class="help">nothing open here</p>';
+  const opts = keptThings().map(uid => { const t = thing(uid); return `<option value="${esc(uid)}">${esc(uid)} · ${esc(t.kind)} · ${esc(t.text)}</option>`; }).join('');
+  html += `<h3>Two other claims that name one thing</h3><p class="help">The list above holds only pairs whose normalised names are nested (e.g. "flight plan" in "ATC flight plan"). Two names for the same thing that share no words, such as "The ICAO flight plan" and "The ATC Flight Plan", are not on it; add such a pair here and it is treated like any other.</p>
+    <div class="rule"><label>claim</label><input list="things" id="pa" placeholder="type an id or a word of the claim, then pick from the list"><label>and</label><input list="things" id="pb" placeholder="the other claim"><label></label><div><button id="addpair" class="quick-add">add as a pair</button></div></div><datalist id="things">${opts}</datalist>`;
+  return html;
+}
+function renderAll() {
+  const only = document.getElementById('openonly').checked;
+  const mss = [...new Set(DATA.sentences.map(s => s.milestone))].sort((a, b) => a - b);
+  let html = `<h2>All claims</h2><div class="mslist">${mss.map(m => { const o = DATA.sentences.filter(s => s.milestone === m).flatMap(s => s.claims).filter(c => isOpen(c.id)).length + DATA.sentences.filter(s => s.milestone === m).flatMap(s => S.added[s.id] || []).filter(a => a.keep == null).length; return `<button class="${S.ms === m ? 'cur' : ''}" data-ms="${m}">M${m}${o ? ` (${o})` : ''}</button>`; }).join('')}</div>
+    <p class="help">Milestone ${S.ms}: ${esc(DATA.names[S.ms] || '')}, reviewed by ${R.filter(n => DATA.assigned[n].includes(S.ms)).join(' and ')}.</p>`;
+  for (const fld of FIELDS_ORDER) {
+    const sents = DATA.sentences.filter(s => s.milestone === S.ms && s.field === fld);
+    if (!sents.length) continue;
+    let blocks = '';
+    for (const s of sents) {
+      const ids = s.claims.map(c => c.id).filter(id => !only || isOpen(id));
+      const idx = (S.added[s.id] || []).map((a, i) => i).filter(i => !only || S.added[s.id][i].keep == null);
+      if (only && !ids.length && !idx.length) continue;
+      blocks += sentenceBlock(s, ids, idx);
+    }
+    if (blocks) html += `<h3>${esc(FIELD[fld])}</h3>` + blocks;
+  }
+  return html;
+}
+function renderMain() {
+  const main = document.getElementById('main');
+  const cur = S.cur || 'overview';
+  if (cur === 'final' && DATA.final) main.innerHTML = renderFinal();
+  else if (cur === 'overview') main.innerHTML = renderOverview();
+  else if (cur.startsWith('fam:')) main.innerHTML = renderFamily(DATA.families.find(f => f.key === cur.slice(4)));
+  else if (cur === 'conflicts') main.innerHTML = renderConflicts();
+  else if (cur === 'added') main.innerHTML = renderAdded();
+  else if (cur === 'pairs') main.innerHTML = renderPairs();
+  else main.innerHTML = renderAll();
+  main.querySelectorAll('.claim[data-cid]').forEach(wireClaim);
+  main.querySelectorAll('.claim[data-uid]').forEach(wireAdded);
+  main.querySelectorAll('.pair').forEach(wirePair);
+  const ap = main.querySelector('#addpair');
+  if (ap) ap.onclick = () => {
+    let a = main.querySelector('#pa').value.trim(), b = main.querySelector('#pb').value.trim();
+    if (!(a in ORDER) || !(b in ORDER) || a === b) { alert('pick two different claims from the list'); return; }
+    if (!thingKept(a) || !thingKept(b) || !thingIsThing(a) || !thingIsThing(b)) { alert('both must be kept class or enumeration claims'); return; }
+    if (ORDER[a] > ORDER[b]) [a, b] = [b, a];
+    if (allPairs().some(p => p.a === a && p.b === b)) { alert('that pair is already listed'); return; }
+    (S.extra = S.extra || []).push({a, b, shared: [], manual: true});
+    save(); renderMain();
+  };
+  main.querySelectorAll('textarea[data-fam]').forEach(t => t.addEventListener('input', () => { S.families[t.dataset.fam] = t.value; save(); }));
+  main.querySelectorAll('.quick button').forEach(b => b.onclick = () => {
+    const f = DATA.families.find(x => x.key === b.dataset.fam);
+    for (const id of f.ids) if (CLAIM[id].kind === b.dataset.kind) setDecision(id, b.dataset.dec, true);
+    save(); renderMain();
+  });
+  main.querySelectorAll('.mslist button').forEach(b => b.onclick = () => { S.ms = +b.dataset.ms; save(); renderMain(); });
+  main.querySelectorAll('a[data-go]').forEach(a => a.onclick = ev => { ev.preventDefault(); S.cur = a.dataset.go; save(); renderMain(); });
+  main.querySelectorAll('.add').forEach(b => b.onclick = () => {
+    (S.added[b.dataset.sid] = S.added[b.dataset.sid] || []).push({text:'', kind:'operation', owner:'', rel_type:'', note:'', by:['meeting'], keep:true, _edit:true});
+    save(); renderMain();
+    const rows = main.querySelectorAll(`.claim[data-uid^="${b.dataset.sid}.add."]`); rows[rows.length - 1]?.querySelector('textarea')?.focus();
+  });
+}
+function setDecision(id, dec, force) {
+  const c = CLAIM[id], cur = S.claims[id];
+  if (!force && cur && cur.decision === dec) return;          // already so
+  if (dec === 'reject') S.claims[id] = {decision: 'reject', note: cur && cur.note || ''};
+  else if (dec === 'accept') S.claims[id] = {decision: 'accept', kind: c.kind, owner: c.owner, text: c.text, rel_type: c.rel_type, note: cur && cur.note || ''};
+  else {  // edit: start from the current consensus fields if any, else from a reviewer's edit, else the proposal
+    const base = (cur && cur.decision === 'edit') ? cur : (Object.values(views(id)).find(v => v.decision === 'edit') || c);
+    S.claims[id] = {decision: 'edit', kind: base.kind, owner: base.owner, text: base.text, rel_type: base.rel_type, note: cur && cur.note || ''};
+  }
+}
+function wireClaim(row) {
+  const id = row.dataset.cid;
+  const set = dec => { setDecision(id, dec, true); save(); rerender(row); };
+  row.querySelector('.a').onclick = () => set('accept');
+  row.querySelector('.e').onclick = () => set('edit');
+  row.querySelector('.r').onclick = () => set('reject');
+  row.querySelectorAll('.take').forEach(b => b.onclick = () => {
+    const v = views(id)[b.dataset.take];
+    S.claims[id] = v.decision === 'reject' ? {decision: 'reject', note: v.note || ''}
+      : {decision: v.decision, kind: v.kind, owner: v.owner, text: v.text, rel_type: v.rel_type, note: v.note || ''};
+    save(); rerender(row);
+  });
+  row.querySelectorAll('[data-k]').forEach(inp => inp.addEventListener('input', () => {
+    const k = inp.dataset.k;
+    if (k === 'note') { (S.claims[id] = S.claims[id] || {decision: null}).note = inp.value; save(); return; }
+    const t = S.claims[id];
+    if (k === 'owner') {
+      const other = row.querySelector('[data-k=owner_other]');
+      if (inp.value === '__other__') { other.style.display = ''; t.owner = other.value; other.focus(); }
+      else { other.style.display = 'none'; t.owner = inp.value; }
+    } else if (k === 'owner_other') t.owner = inp.value;
+    else t[k] = inp.value;
+    save();
+    if (k === 'kind') rerender(row, true);
+  }));
+  row.addEventListener('keydown', ev => {
+    if (ev.target.matches('input, textarea, select')) return;
+    if (ev.key === 'a') set('accept'); else if (ev.key === 'e') set('edit'); else if (ev.key === 'r') set('reject'); else return;
+    ev.preventDefault();
+  });
+}
+function wireAdded(row) {
+  const uid = row.dataset.uid, a = addEntry(uid);
+  const set = keep => { a.keep = keep; save(); rerender(row); };
+  row.querySelector('.k').onclick = () => set(true);
+  row.querySelector('.d').onclick = () => set(false);
+  row.querySelector('.x').onclick = () => { a._edit = !a._edit; save(); rerender(row); };
+  row.querySelectorAll('[data-k]').forEach(inp => inp.addEventListener('input', () => {
+    const k = inp.dataset.k;
+    if (k === 'owner') {
+      const other = row.querySelector('[data-k=owner_other]');
+      if (inp.value === '__other__') { other.style.display = ''; a.owner = other.value; other.focus(); }
+      else { other.style.display = 'none'; a.owner = inp.value; }
+    } else if (k === 'owner_other') a.owner = inp.value;
+    else a[k] = inp.value;
+    save();
+    if (k === 'kind') rerender(row, true);
+  }));
+  row.addEventListener('keydown', ev => {
+    if (ev.target.matches('input, textarea, select')) return;
+    if (ev.key === 'a') set(true); else if (ev.key === 'r') set(false); else return;
+    ev.preventDefault();
+  });
+}
+function wirePair(row) {
+  const pk = row.dataset.pk;
+  const set = d => { S.pairs[pk] = S.pairs[pk] === d ? undefined : d; save(); renderMain(); };
+  row.querySelector('.s').onclick = () => set('same');
+  row.querySelector('.d').onclick = () => set('distinct');
+}
+function rerender(row, keepFocus) {
+  const tmp = document.createElement('div');
+  if (row.dataset.cid) tmp.innerHTML = claimRow(row.dataset.cid, !!row.querySelector('.cid .ms'));
+  else { const m = row.dataset.uid.match(/^(.*)\.add\.(\d+)$/); tmp.innerHTML = addedRow(m[1], +m[2]); }
+  const fresh = tmp.firstElementChild; row.replaceWith(fresh);
+  if (fresh.dataset.cid) wireClaim(fresh); else wireAdded(fresh);
+  if (keepFocus) fresh.querySelector('select[data-k=kind]')?.focus();
+  else { fresh.focus(); if (fresh.querySelector('.editor') && fresh.dataset.cid && S.claims[fresh.dataset.cid]?.decision === 'edit') fresh.querySelector('select[data-k=kind]')?.focus(); }
+  renderNav(); renderCount();
+}
+document.addEventListener('keydown', ev => {
+  if (ev.target.matches('input, textarea, select')) return;
+  const rows = [...document.querySelectorAll('.claim, .pair')];
+  const i = rows.indexOf(document.activeElement);
+  if (ev.key === 'j') { (rows[i + 1] || rows[0])?.focus(); ev.preventDefault(); }
+  else if (ev.key === 'k') { (rows[i - 1] || rows[rows.length - 1])?.focus(); ev.preventDefault(); }
+});
+document.getElementById('openonly').onchange = renderMain;
+document.getElementById('who').textContent = `reviews: ${R.join(' and ')}`;
+
+// ---- export: the file inventory.py freeze --consensus reads
+document.getElementById('export').onclick = () => {
+  const openN = openClaims().length + openAdds().length + openPairs().length + (DATA.final ? finalOpen() : 0);
+  if (openN && !confirm(`${openN} items are still unresolved. Export anyway? (freeze will not accept an unresolved file)`)) return;
+  const claims = {};
+  for (const [id, st] of Object.entries(S.claims)) {
+    if (!st || !st.decision) continue;
+    if (st.decision === 'reject') { claims[id] = {decision: 'reject', note: st.note || ''}; continue; }
+    const c = CLAIM[id];
+    const changed = FIELDS_OF.some(k => (st[k] || '') !== (c[k] || ''));
+    claims[id] = {decision: changed ? 'edit' : 'accept', kind: st.kind, owner: st.owner || '', text: st.text, rel_type: st.rel_type || '', note: st.note || ''};
+  }
+  const added = {}, finalId = {};
+  for (const [sid, list] of Object.entries(S.added)) {
+    const keep = [];
+    list.forEach((a, i) => { if (a.keep === true && a.text.trim()) { keep.push({kind: a.kind, owner: a.owner || '', text: a.text, rel_type: a.rel_type || '', note: a.note || '', by: a.by}); finalId[addUid(sid, i)] = `${sid}.a${keep.length}`; } });
+    if (keep.length) added[sid] = keep;
+  }
+  const fid = uid => finalId[uid] || uid;
+  const merges = {}, pairs = {};
+  const parent = {}; const find = x => parent[x] === undefined || parent[x] === x ? x : (parent[x] = find(parent[x]));
+  for (const p of livePairs()) { const d = S.pairs[pairKey(p)]; if (!d) continue; pairs[fid(p.a) + '|' + fid(p.b)] = d; if (d === 'same') { const ra = find(p.a), rb = find(p.b); if (ra !== rb) parent[ORDER[ra] <= ORDER[rb] ? rb : ra] = ORDER[ra] <= ORDER[rb] ? ra : rb; } }
+  const contra = livePairs().filter(p => S.pairs[pairKey(p)] === 'distinct' && find(p.a) === find(p.b));
+  if (contra.length && !confirm(`${contra.length} pair(s) are called two things although each member is one thing with a common partner (${contra.map(p => p.a + ' / ' + p.b).join('; ')}). Export anyway?`)) return;
+  for (const x of Object.keys(parent)) { const r = find(x); if (r !== x) merges[fid(x)] = fid(r); }
+  const out = {reviewers: R, exported: new Date().toISOString(), draft_generated: DATA.generated,
+               reviews_exported: DATA.exported, families: S.families, claims, added, merges, pairs,
+               unresolved: {claims: openClaims().length, additions: openAdds().length, pairs: openPairs().length},
+               changed_at_meeting: Object.keys(S.claims).filter(id => changedFromSeed(id) || (conflict(id) && S.claims[id])).length, state: S};
+  const blob = new Blob([JSON.stringify(out, null, 1)], {type: 'application/json'});
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'claims_consensus.json'; a.click();
+};
+document.getElementById('import').onclick = () => document.getElementById('file').click();
+document.getElementById('file').onchange = ev => {
+  const f = ev.target.files[0]; if (!f) return;
+  f.text().then(t => { const d = JSON.parse(t); if (!d.state || !d.state.claims) { alert('not a consensus export'); return; } S = d.state; save(); renderMain(); });
+};
+renderNav(); renderCount(); renderMain();
+</script>
+</body>
+</html>

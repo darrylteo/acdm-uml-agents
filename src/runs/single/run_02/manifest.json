@@ -1,0 +1,36 @@
+{
+  "condition": "single",
+  "steps": [
+    {
+      "ok": true,
+      "output": null,
+      "error": null,
+      "model": "claude-sonnet-5",
+      "input_tokens": 37214,
+      "output_tokens": 25048,
+      "thinking_tokens": 10209,
+      "cache_creation_tokens": 20722,
+      "cache_read_tokens": 16488,
+      "cost_usd": 0.3366736,
+      "duration_ms": 200932,
+      "attempts": 1,
+      "num_turns": 3
+    }
+  ],
+  "ok": true,
+  "model_alias": "claude-sonnet-5",
+  "effort": "medium",
+  "validation_errors": [],
+  "structural_problems": [],
+  "unmodelled": [
+    "The flight is ready not later than 15 minutes after the planned EOBT, which does not correspond to a discrete class or operation (M1).",
+    "For long distance flights the ELDT may differ from the airport slot, a nuance not captured as a distinct rule owner (M1).",
+    "The objective to decrease the number of stand and gate changes in the last 30 minutes, requiring high accuracy of departure and arrival times, is a guidance statement rather than an operation with a clear owner (M4).",
+    "ACGT is considered to commence at AIBT for a normal turn-round, but is a separate milestone for the first operation of the day or long-parked aircraft; this conditional equivalence is not separately modelled (M7, M8).",
+    "The locally agreed parameter t (minutes before EOBT) and other local parameters (thresholds, tolerances) are referenced as configurable values rather than modelled as their own class (M9, M10, M11, M12, M13, M14)."
+  ],
+  "total_input_tokens": 37214,
+  "total_output_tokens": 25048,
+  "total_cost_usd": 0.3366736,
+  "total_duration_ms": 200932
+}

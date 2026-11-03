@@ -1,0 +1,53 @@
+# Milestone 4: Local Radar Update
+
+The section, split into sentences. The field name precedes each field; the id precedes each sentence.
+
+
+## Definition
+
+[M4.definition.1] The flight enters the FIR (Flight Information Region) or the local airspace of the destination airport.
+
+## Origin and priority
+
+[M4.origin_and_priority.1] This information is normally available from the Area Control Centre (ACC) or Approach Control Unit that is associated with an airport.
+[M4.origin_and_priority.2] The radar system is able to detect a flight based upon the assigned SSR code when the flight crosses a defined FIR/ATC boundary.
+
+## Timing
+
+[M4.timing.1] Dependent upon the position of the airport in relation to the FIR boundary.
+
+## Data Quality
+
+[M4.data_quality.1] Must be equal to the accuracy of the ATC system.
+
+## Effect
+
+[M4.effect.1] Update of the ELDT can trigger a new TOBT to be entered by the AO/GH, or calculated automatically by the Airport CDM Platform.
+[M4.effect.2] The accuracy of ELDT is particularly important at this stage since downstream decisions are taken, such as stand /gate / aircraft changes, preparation of arrival sequence, preparation of ground handling operations, decisions for connecting passengers.
+[M4.effect.3] Uncertainty and ELDT non-accuracy at this stage significantly increase risks for bad and last minute decisions and internal disruptions.
+[M4.effect.4] The objective to decrease the number of stand and gate changes in the last 30 minutes requires high accuracy regarding departure and arrival times.
+[M4.effect.5] Therefore, taking into account the taxi-in time (EXIT), any change to a stand or gate is not preferred after ELDT-30'.
+[M4.effect.6] The update of TOBT for the related departing flight takes place following this milestone.
+[M4.effect.7] Decisions such as the turn-round period, connecting passengers etc are taken and need to be stable at this event.
+[M4.effect.8] An estimated in-block time (EIBT) is computed using the ELDT and the estimated taxi-in time.
+
+## Procedures
+
+[M4.procedures.1] To commence the TOBT process and check whether the AO/GH TOBT is consistent with the ATC Flight Plan.
+[M4.procedures.2] Network Operations is informed when the TTOT changes by more than the agreed TTOT tolerance.
+[M4.procedures.3] This check shall be performed to verify feasibility of the ATC Flight Plan given the up-dated TOBT.
+[M4.procedures.4] The TTOT tolerance is respected before Network Operations is informed of updated TTOT.
+[M4.procedures.5] This process is triggered by
+[M4.procedures.6] - the detection of the flight by radar in either FIR, TMA, or on Final Approach.
+
+## Operational Status
+
+[M4.operational_status.1] FIR
+
+## Action on CDM Operation
+
+[M4.action_on_cdm.1] ELDT, EIBT, TOBT and TTOT updated
+
+# Task
+
+Return every sentence with keep or drop, a reason, and the claims of each kept sentence, as JSON conforming to the schema.

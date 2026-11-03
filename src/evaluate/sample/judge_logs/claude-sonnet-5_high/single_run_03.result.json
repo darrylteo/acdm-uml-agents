@@ -1,0 +1,93 @@
+{
+  "meta": {
+    "ok": true,
+    "output": null,
+    "error": null,
+    "model": "claude-sonnet-5",
+    "input_tokens": 15365,
+    "output_tokens": 2735,
+    "thinking_tokens": 2114,
+    "cache_creation_tokens": 13863,
+    "cache_read_tokens": 1500,
+    "cost_usd": 0.083106,
+    "duration_ms": 22639,
+    "attempts": 1,
+    "num_turns": 2
+  },
+  "output": {
+    "items": [
+      {
+        "id": "g010",
+        "grade": 0.5,
+        "sentence": "M10.procedures.5",
+        "note": "NetworkOps treated as one of several partners informed, not explicitly stated as a kind of CdmPartner"
+      },
+      {
+        "id": "g014",
+        "grade": 1,
+        "sentence": "M6.effect.2",
+        "note": ""
+      },
+      {
+        "id": "g015",
+        "grade": 1,
+        "sentence": "M15.operational_status.1",
+        "note": ""
+      },
+      {
+        "id": "g025",
+        "grade": 0.5,
+        "sentence": "M1.effect.1",
+        "note": "arrival/departure distinction implied, not a named 'direction' attribute"
+      },
+      {
+        "id": "g027",
+        "grade": 1,
+        "sentence": "M1.origin_and_priority.1",
+        "note": ""
+      },
+      {
+        "id": "g040",
+        "grade": 1,
+        "sentence": "M1.definition.1",
+        "note": "identifier structure prescribed by scaffold for named thing 'flight'"
+      },
+      {
+        "id": "g071",
+        "grade": 0.5,
+        "sentence": "M1.procedures.3",
+        "note": "SOBT named but 'shared by ATC/NetworkOps/Stand-Gate' description actually applies to EOBT (M9.effect.3)"
+      },
+      {
+        "id": "g081",
+        "grade": 1,
+        "sentence": "M1.definition.1",
+        "note": "milestone titles given as headers"
+      },
+      {
+        "id": "g090",
+        "grade": 1,
+        "sentence": "M6.definition.1",
+        "note": "scaffold-prescribed generalization for named actual times"
+      },
+      {
+        "id": "g160",
+        "grade": 1,
+        "sentence": "M9.definition.1",
+        "note": ""
+      },
+      {
+        "id": "g177",
+        "grade": 1,
+        "sentence": "M4.origin_and_priority.1",
+        "note": ""
+      },
+      {
+        "id": "g198",
+        "grade": 1,
+        "sentence": "M10.procedures.8",
+        "note": ""
+      }
+    ]
+  }
+}

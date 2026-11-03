@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "ok": true,
+    "output": null,
+    "error": null,
+    "model": "claude-sonnet-5",
+    "input_tokens": 15386,
+    "output_tokens": 1844,
+    "thinking_tokens": 1274,
+    "cache_creation_tokens": 13884,
+    "cache_read_tokens": 1500,
+    "cost_usd": 0.07428,
+    "duration_ms": 14565,
+    "attempts": 1,
+    "num_turns": 2
+  },
+  "output": {
+    "items": [
+      {
+        "id": "g004",
+        "grade": 1,
+        "sentence": "M7.procedures.2",
+        "note": ""
+      },
+      {
+        "id": "g011",
+        "grade": 1,
+        "sentence": "M3.timing.1",
+        "note": "scaffold-required update-time field on named time value"
+      },
+      {
+        "id": "g012",
+        "grade": 1,
+        "sentence": "M1.effect.7",
+        "note": ""
+      },
+      {
+        "id": "g035",
+        "grade": 1,
+        "sentence": "M2.origin_and_priority.1",
+        "note": ""
+      },
+      {
+        "id": "g037",
+        "grade": 1,
+        "sentence": "M6.definition.1",
+        "note": ""
+      },
+      {
+        "id": "g047",
+        "grade": 1,
+        "sentence": "M16.definition.1",
+        "note": ""
+      },
+      {
+        "id": "g050",
+        "grade": 1,
+        "sentence": "M1.origin_and_priority.1",
+        "note": ""
+      },
+      {
+        "id": "g088",
+        "grade": 1,
+        "sentence": "M2.definition.2",
+        "note": ""
+      },
+      {
+        "id": "g093",
+        "grade": 1,
+        "sentence": "M1.operational_status.1",
+        "note": ""
+      },
+      {
+        "id": "g100",
+        "grade": 1,
+        "sentence": "M9.definition.1",
+        "note": ""
+      },
+      {
+        "id": "g103",
+        "grade": 1,
+        "sentence": "M1.definition.1",
+        "note": ""
+      },
+      {
+        "id": "g116",
+        "grade": 1,
+        "sentence": "M9.timing.1",
+        "note": ""
+      },
+      {
+        "id": "g161",
+        "grade": 1,
+        "sentence": "M6.origin_and_priority.1",
+        "note": ""
+      },
+      {
+        "id": "g173",
+        "grade": 1,
+        "sentence": "M1.operational_status.1",
+        "note": ""
+      },
+      {
+        "id": "g178",
+        "grade": 1,
+        "sentence": "M11.procedures.1",
+        "note": ""
+      }
+    ]
+  }
+}

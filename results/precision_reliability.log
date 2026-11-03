@@ -1,0 +1,130 @@
+grader_A: 200 of 200 items graded
+grader_B: 200 of 200 items graded
+claude-opus-5/high: 200 of 200 items graded
+claude-sonnet-5/high: 200 of 200 items graded
+differences in mean grade (first set minus second), bootstrap 95% interval:
+   scaffolded - noscaffold  grader_A                 +0.014 [-0.086, +0.134]
+   scaffolded - noscaffold  grader_B                 -0.005 [-0.083, +0.084]
+   scaffolded - noscaffold  claude-opus-5/high       -0.027 [-0.045, -0.012]
+   scaffolded - noscaffold  claude-sonnet-5/high     -0.032 [-0.065, +0.010]
+        multi - single      grader_A                 -0.058 [-0.151, +0.023]
+        multi - single      grader_B                 +0.012 [-0.065, +0.096]
+        multi - single      claude-opus-5/high       -0.024 [-0.058, +0.013]
+        multi - single      claude-sonnet-5/high     -0.019 [-0.072, +0.038]
+        multi - single_high grader_A                 -0.011 [-0.106, +0.084]
+        multi - single_high grader_B                 +0.039 [-0.038, +0.116]
+        multi - single_high claude-opus-5/high       +0.002 [-0.049, +0.045]
+        multi - single_high claude-sonnet-5/high     -0.014 [-0.073, +0.037]
+  single_high - single      grader_A                 -0.046 [-0.126, +0.028]
+  single_high - single      grader_B                 -0.027 [-0.117, +0.069]
+  single_high - single      claude-opus-5/high       -0.025 [-0.061, +0.011]
+  single_high - single      claude-sonnet-5/high     -0.005 [-0.058, +0.050]
+AC2 of the two humans minus AC2 of a human-model pair, paired bootstrap 95% interval:
+  grader_A-grader_B minus grader_A-claude-opus-5/high      -0.076 [-0.122, -0.035]
+  grader_A-grader_B minus grader_B-claude-opus-5/high      -0.054 [-0.097, -0.017]
+  grader_A-grader_B minus grader_A-claude-sonnet-5/high    -0.074 [-0.121, -0.028]
+  grader_A-grader_B minus grader_B-claude-sonnet-5/high    -0.033 [-0.076, +0.005]
+
+precision by grader (mean grade over the sampled items, with a percentile bootstrap interval):
+  all              grader_A                 n=200 precision=0.902 [0.865, 0.935]
+  all              grader_B                 n=200 precision=0.917 [0.882, 0.945]
+  all              claude-opus-5/high       n=200 precision=0.978 [0.963, 0.990]
+  all              claude-sonnet-5/high     n=200 precision=0.958 [0.938, 0.975]
+  multi            grader_A                 n= 60 precision=0.883 [0.808, 0.950]
+  multi            grader_B                 n= 60 precision=0.933 [0.883, 0.975]
+  multi            claude-opus-5/high       n= 60 precision=0.967 [0.933, 0.992]
+  multi            claude-sonnet-5/high     n= 60 precision=0.942 [0.900, 0.983]
+  noscaffold       grader_A                 n= 32 precision=0.891 [0.781, 0.984]
+  noscaffold       grader_B                 n= 32 precision=0.922 [0.828, 0.984]
+  noscaffold       claude-opus-5/high       n= 32 precision=1.000 [1.000, 1.000]
+  noscaffold       claude-sonnet-5/high     n= 32 precision=0.984 [0.953, 1.000]
+  single           grader_A                 n= 51 precision=0.941 [0.892, 0.980]
+  single           grader_B                 n= 51 precision=0.922 [0.853, 0.980]
+  single           claude-opus-5/high       n= 51 precision=0.990 [0.971, 1.000]
+  single           claude-sonnet-5/high     n= 51 precision=0.961 [0.922, 0.990]
+  single_high      grader_A                 n= 57 precision=0.895 [0.833, 0.947]
+  single_high      grader_B                 n= 57 precision=0.895 [0.825, 0.956]
+  single_high      claude-opus-5/high       n= 57 precision=0.965 [0.930, 0.991]
+  single_high      claude-sonnet-5/high     n= 57 precision=0.956 [0.912, 0.991]
+  kind=attribute   grader_A                 n= 79 precision=0.829 [0.753, 0.899]
+  kind=attribute   grader_B                 n= 79 precision=0.918 [0.867, 0.962]
+  kind=attribute   claude-opus-5/high       n= 79 precision=0.956 [0.924, 0.987]
+  kind=attribute   claude-sonnet-5/high     n= 79 precision=0.930 [0.892, 0.968]
+  kind=class       grader_A                 n= 37 precision=0.959 [0.905, 1.000]
+  kind=class       grader_B                 n= 37 precision=0.946 [0.892, 0.986]
+  kind=class       claude-opus-5/high       n= 37 precision=0.973 [0.932, 1.000]
+  kind=class       claude-sonnet-5/high     n= 37 precision=0.986 [0.959, 1.000]
+  kind=enumeration grader_A                 n=  5 precision=0.900 [0.700, 1.000]  (n < 20)
+  kind=enumeration grader_B                 n=  5 precision=1.000 [1.000, 1.000]  (n < 20)
+  kind=enumeration claude-opus-5/high       n=  5 precision=1.000 [1.000, 1.000]  (n < 20)
+  kind=enumeration claude-sonnet-5/high     n=  5 precision=1.000 [1.000, 1.000]  (n < 20)
+  kind=operation   grader_A                 n= 35 precision=0.986 [0.957, 1.000]
+  kind=operation   grader_B                 n= 35 precision=0.900 [0.800, 0.971]
+  kind=operation   claude-opus-5/high       n= 35 precision=1.000 [1.000, 1.000]
+  kind=operation   claude-sonnet-5/high     n= 35 precision=1.000 [1.000, 1.000]
+  kind=relationship grader_A                 n= 44 precision=0.920 [0.864, 0.966]
+  kind=relationship grader_B                 n= 44 precision=0.898 [0.818, 0.966]
+  kind=relationship claude-opus-5/high       n= 44 precision=1.000 [1.000, 1.000]
+  kind=relationship claude-sonnet-5/high     n= 44 precision=0.943 [0.886, 0.989]
+
+all              grader_A-grader_B n=200  agree=0.795 AC2=0.835 [0.778, 0.888] (se 0.028) kappa=0.179  mean grader_A=0.902 grader_B=0.917
+all              grader_A-claude-opus-5/high n=200  agree=0.870 AC2=0.912 [0.872, 0.944] (se 0.019) kappa=0.338  mean grader_A=0.902 claude-opus-5/high=0.978
+all              grader_A-claude-sonnet-5/high n=200  agree=0.870 AC2=0.909 [0.868, 0.946] (se 0.020) kappa=0.411  mean grader_A=0.902 claude-sonnet-5/high=0.958
+all              grader_B-claude-opus-5/high n=200  agree=0.835 AC2=0.890 [0.845, 0.925] (se 0.021) kappa=0.040  mean grader_B=0.917 claude-opus-5/high=0.978
+all              grader_B-claude-sonnet-5/high n=200  agree=0.805 AC2=0.868 [0.822, 0.908] (se 0.023) kappa=0.031  mean grader_B=0.917 claude-sonnet-5/high=0.958
+all              claude-opus-5/high-claude-sonnet-5/high n=200  agree=0.950 AC2=0.972 [0.953, 0.989] (se 0.009) kappa=0.591  mean claude-opus-5/high=0.978 claude-sonnet-5/high=0.958
+multi            grader_A-grader_B n= 60  agree=0.783 AC2=0.829 [0.709, 0.915] (se 0.052) kappa=0.172  mean grader_A=0.883 grader_B=0.933
+multi            grader_A-claude-opus-5/high n= 60  agree=0.850 AC2=0.899 [0.816, 0.964] (se 0.037) kappa=0.400  mean grader_A=0.883 claude-opus-5/high=0.967
+multi            grader_A-claude-sonnet-5/high n= 60  agree=0.833 AC2=0.884 [0.794, 0.955] (se 0.040) kappa=0.411  mean grader_A=0.883 claude-sonnet-5/high=0.942
+multi            grader_B-claude-opus-5/high n= 60  agree=0.833 AC2=0.902 [0.839, 0.955] (se 0.032) kappa=0.085  mean grader_B=0.933 claude-opus-5/high=0.967
+multi            grader_B-claude-sonnet-5/high n= 60  agree=0.817 AC2=0.888 [0.809, 0.944] (se 0.035) kappa=0.162  mean grader_B=0.933 claude-sonnet-5/high=0.942
+multi            claude-opus-5/high-claude-sonnet-5/high n= 60  agree=0.917 AC2=0.952 [0.902, 0.991] (se 0.022) kappa=0.503  mean claude-opus-5/high=0.967 claude-sonnet-5/high=0.942
+noscaffold       grader_A-grader_B n= 32  agree=0.875 AC2=0.884 [0.737, 0.982] (se 0.062) kappa=0.445  mean grader_A=0.891 grader_B=0.922
+noscaffold       grader_A-claude-opus-5/high n= 32  agree=0.875 AC2=0.879 [0.731, 0.984] (se 0.064) kappa=0.000  mean grader_A=0.891 claude-opus-5/high=1.000
+noscaffold       grader_A-claude-sonnet-5/high n= 32  agree=0.844 AC2=0.858 [0.685, 0.968] (se 0.069) kappa=-0.032  mean grader_A=0.891 claude-sonnet-5/high=0.984
+noscaffold       grader_B-claude-opus-5/high n= 32  agree=0.875 AC2=0.913 [0.808, 0.984] (se 0.047) kappa=0.000  mean grader_B=0.922 claude-opus-5/high=1.000
+noscaffold       grader_B-claude-sonnet-5/high n= 32  agree=0.844 AC2=0.893 [0.763, 0.968] (se 0.052) kappa=-0.043  mean grader_B=0.922 claude-sonnet-5/high=0.984
+noscaffold       claude-opus-5/high-claude-sonnet-5/high n= 32  agree=0.969 AC2=0.984 [0.949, 1.000] (se 0.016) kappa=0.000  mean claude-opus-5/high=1.000 claude-sonnet-5/high=0.984
+single           grader_A-grader_B n= 51  agree=0.843 AC2=0.883 [0.782, 0.957] (se 0.046) kappa=0.220  mean grader_A=0.941 grader_B=0.922
+single           grader_A-claude-opus-5/high n= 51  agree=0.902 AC2=0.945 [0.895, 0.989] (se 0.025) kappa=0.261  mean grader_A=0.941 claude-opus-5/high=0.990
+single           grader_A-claude-sonnet-5/high n= 51  agree=0.922 AC2=0.954 [0.899, 0.990] (se 0.023) kappa=0.558  mean grader_A=0.941 claude-sonnet-5/high=0.961
+single           grader_B-claude-opus-5/high n= 51  agree=0.902 AC2=0.924 [0.836, 0.980] (se 0.037) kappa=0.205  mean grader_B=0.922 claude-opus-5/high=0.990
+single           grader_B-claude-sonnet-5/high n= 51  agree=0.843 AC2=0.886 [0.782, 0.958] (se 0.044) kappa=0.108  mean grader_B=0.922 claude-sonnet-5/high=0.961
+single           claude-opus-5/high-claude-sonnet-5/high n= 51  agree=0.941 AC2=0.968 [0.923, 1.000] (se 0.019) kappa=0.381  mean claude-opus-5/high=0.990 claude-sonnet-5/high=0.961
+single_high      grader_A-grader_B n= 57  agree=0.719 AC2=0.766 [0.623, 0.875] (se 0.064) kappa=0.017  mean grader_A=0.895 grader_B=0.895
+single_high      grader_A-claude-opus-5/high n= 57  agree=0.860 AC2=0.914 [0.839, 0.962] (se 0.032) kappa=0.452  mean grader_A=0.895 claude-opus-5/high=0.965
+single_high      grader_A-claude-sonnet-5/high n= 57  agree=0.877 AC2=0.924 [0.852, 0.979] (se 0.030) kappa=0.541  mean grader_A=0.895 claude-sonnet-5/high=0.956
+single_high      grader_B-claude-opus-5/high n= 57  agree=0.754 AC2=0.828 [0.726, 0.911] (se 0.050) kappa=-0.096  mean grader_B=0.895 claude-opus-5/high=0.965
+single_high      grader_B-claude-sonnet-5/high n= 57  agree=0.737 AC2=0.815 [0.701, 0.910] (se 0.052) kappa=-0.115  mean grader_B=0.895 claude-sonnet-5/high=0.956
+single_high      claude-opus-5/high-claude-sonnet-5/high n= 57  agree=0.982 AC2=0.990 [0.967, 1.000] (se 0.010) kappa=0.879  mean claude-opus-5/high=0.965 claude-sonnet-5/high=0.956
+kind=attribute   grader_A-grader_B n= 79  agree=0.759 AC2=0.777 [0.651, 0.879] (se 0.057) kappa=0.247  mean grader_A=0.829 grader_B=0.918
+kind=attribute   grader_A-claude-opus-5/high n= 79  agree=0.797 AC2=0.835 [0.734, 0.912] (se 0.047) kappa=0.351  mean grader_A=0.829 claude-opus-5/high=0.956
+kind=attribute   grader_A-claude-sonnet-5/high n= 79  agree=0.823 AC2=0.846 [0.744, 0.922] (se 0.046) kappa=0.454  mean grader_A=0.829 claude-sonnet-5/high=0.930
+kind=attribute   grader_B-claude-opus-5/high n= 79  agree=0.810 AC2=0.878 [0.802, 0.937] (se 0.034) kappa=0.114  mean grader_B=0.918 claude-opus-5/high=0.956
+kind=attribute   grader_B-claude-sonnet-5/high n= 79  agree=0.785 AC2=0.857 [0.776, 0.925] (se 0.037) kappa=0.140  mean grader_B=0.918 claude-sonnet-5/high=0.930
+kind=attribute   claude-opus-5/high-claude-sonnet-5/high n= 79  agree=0.949 AC2=0.970 [0.933, 0.993] (se 0.015) kappa=0.751  mean claude-opus-5/high=0.956 claude-sonnet-5/high=0.930
+kind=class       grader_A-grader_B n= 37  agree=0.865 AC2=0.921 [0.840, 0.984] (se 0.036) kappa=0.213  mean grader_A=0.959 grader_B=0.946
+kind=class       grader_A-claude-opus-5/high n= 37  agree=0.973 AC2=0.985 [0.951, 1.000] (se 0.015) kappa=0.786  mean grader_A=0.959 claude-opus-5/high=0.973
+kind=class       grader_A-claude-sonnet-5/high n= 37  agree=0.946 AC2=0.970 [0.921, 1.000] (se 0.021) kappa=0.479  mean grader_A=0.959 claude-sonnet-5/high=0.986
+kind=class       grader_B-claude-opus-5/high n= 37  agree=0.838 AC2=0.907 [0.812, 0.972] (se 0.039) kappa=-0.078  mean grader_B=0.946 claude-opus-5/high=0.973
+kind=class       grader_B-claude-sonnet-5/high n= 37  agree=0.865 AC2=0.925 [0.832, 0.986] (se 0.035) kappa=-0.045  mean grader_B=0.946 claude-sonnet-5/high=0.986
+kind=class       claude-opus-5/high-claude-sonnet-5/high n= 37  agree=0.973 AC2=0.986 [0.953, 1.000] (se 0.015) kappa=0.654  mean claude-opus-5/high=0.973 claude-sonnet-5/high=0.986
+kind=enumeration grader_A-grader_B n=  5 *agree=0.800 AC2=0.882 [0.538, 1.000] (se 0.122) kappa=0.000  mean grader_A=0.900 grader_B=1.000
+kind=enumeration grader_A-claude-opus-5/high n=  5 *agree=0.800 AC2=0.882 [0.538, 1.000] (se 0.122) kappa=0.000  mean grader_A=0.900 claude-opus-5/high=1.000
+kind=enumeration grader_A-claude-sonnet-5/high n=  5 *agree=0.800 AC2=0.882 [0.538, 1.000] (se 0.122) kappa=0.000  mean grader_A=0.900 claude-sonnet-5/high=1.000
+kind=enumeration grader_B-claude-opus-5/high n=  5 *agree=1.000 AC2=1.000 [1.000, 1.000] (se 0.000) kappa=1.000  mean grader_B=1.000 claude-opus-5/high=1.000
+kind=enumeration grader_B-claude-sonnet-5/high n=  5 *agree=1.000 AC2=1.000 [1.000, 1.000] (se 0.000) kappa=1.000  mean grader_B=1.000 claude-sonnet-5/high=1.000
+kind=enumeration claude-opus-5/high-claude-sonnet-5/high n=  5 *agree=1.000 AC2=1.000 [1.000, 1.000] (se 0.000) kappa=1.000  mean claude-opus-5/high=1.000 claude-sonnet-5/high=1.000
+kind=operation   grader_A-grader_B n= 35  agree=0.886 AC2=0.901 [0.772, 0.985] (se 0.054) kappa=0.222  mean grader_A=0.986 grader_B=0.900
+kind=operation   grader_A-claude-opus-5/high n= 35  agree=0.971 AC2=0.985 [0.954, 1.000] (se 0.015) kappa=0.000  mean grader_A=0.986 claude-opus-5/high=1.000
+kind=operation   grader_A-claude-sonnet-5/high n= 35  agree=0.971 AC2=0.985 [0.954, 1.000] (se 0.015) kappa=0.000  mean grader_A=0.986 claude-sonnet-5/high=1.000
+kind=operation   grader_B-claude-opus-5/high n= 35  agree=0.857 AC2=0.887 [0.758, 0.971] (se 0.055) kappa=0.000  mean grader_B=0.900 claude-opus-5/high=1.000
+kind=operation   grader_B-claude-sonnet-5/high n= 35  agree=0.857 AC2=0.887 [0.758, 0.971] (se 0.055) kappa=0.000  mean grader_B=0.900 claude-sonnet-5/high=1.000
+kind=operation   claude-opus-5/high-claude-sonnet-5/high n= 35  agree=1.000 AC2=1.000 [1.000, 1.000] (se 0.000) kappa=1.000  mean claude-opus-5/high=1.000 claude-sonnet-5/high=1.000
+kind=relationship grader_A-grader_B n= 44  agree=0.727 AC2=0.794 [0.647, 0.906] (se 0.064) kappa=-0.017  mean grader_A=0.920 grader_B=0.898
+kind=relationship grader_A-claude-opus-5/high n= 44  agree=0.841 AC2=0.909 [0.830, 0.964] (se 0.035) kappa=0.000  mean grader_A=0.920 claude-opus-5/high=1.000
+kind=relationship grader_A-claude-sonnet-5/high n= 44  agree=0.818 AC2=0.887 [0.794, 0.961] (se 0.041) kappa=0.231  mean grader_A=0.920 claude-sonnet-5/high=0.943
+kind=relationship grader_B-claude-opus-5/high n= 44  agree=0.841 AC2=0.883 [0.776, 0.964] (se 0.048) kappa=0.000  mean grader_B=0.898 claude-opus-5/high=1.000
+kind=relationship grader_B-claude-sonnet-5/high n= 44  agree=0.727 AC2=0.801 [0.662, 0.909] (se 0.063) kappa=-0.128  mean grader_B=0.898 claude-sonnet-5/high=0.943
+kind=relationship claude-opus-5/high-claude-sonnet-5/high n= 44  agree=0.886 AC2=0.938 [0.879, 0.988] (se 0.029) kappa=0.000  mean claude-opus-5/high=1.000 claude-sonnet-5/high=0.943
+  * fewer than 20 common items: the interval is not usable, the row is for completeness only

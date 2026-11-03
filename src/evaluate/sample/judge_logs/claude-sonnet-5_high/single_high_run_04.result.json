@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "ok": true,
+    "output": null,
+    "error": null,
+    "model": "claude-sonnet-5",
+    "input_tokens": 14884,
+    "output_tokens": 1962,
+    "thinking_tokens": 1525,
+    "cache_creation_tokens": 13382,
+    "cache_read_tokens": 1500,
+    "cost_usd": 0.073452,
+    "duration_ms": 17822,
+    "attempts": 1,
+    "num_turns": 2
+  },
+  "output": {
+    "items": [
+      {
+        "id": "g009",
+        "grade": 0.5,
+        "sentence": "M2.origin_and_priority.1",
+        "note": "roles of stakeholders described throughout but no explicit 'role' attribute stated"
+      },
+      {
+        "id": "g024",
+        "grade": 1,
+        "sentence": "M10.definition.1",
+        "note": ""
+      },
+      {
+        "id": "g030",
+        "grade": 1,
+        "sentence": "M10.procedures.1",
+        "note": ""
+      },
+      {
+        "id": "g045",
+        "grade": 1,
+        "sentence": "M2.procedures.7",
+        "note": ""
+      },
+      {
+        "id": "g059",
+        "grade": 1,
+        "sentence": "M1.definition.2",
+        "note": ""
+      },
+      {
+        "id": "g084",
+        "grade": 1,
+        "sentence": "M1.effect.1",
+        "note": ""
+      },
+      {
+        "id": "g095",
+        "grade": 1,
+        "sentence": "M9.origin_and_priority.1",
+        "note": ""
+      },
+      {
+        "id": "g159",
+        "grade": 1,
+        "sentence": "M1.origin_and_priority.2",
+        "note": ""
+      },
+      {
+        "id": "g180",
+        "grade": 1,
+        "sentence": "M1.action_on_cdm.1",
+        "note": ""
+      }
+    ]
+  }
+}

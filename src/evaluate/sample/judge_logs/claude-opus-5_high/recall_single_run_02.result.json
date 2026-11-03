@@ -1,0 +1,134 @@
+{
+  "meta": {
+    "ok": true,
+    "output": null,
+    "error": null,
+    "model": "claude-opus-5",
+    "input_tokens": 23491,
+    "output_tokens": 1320,
+    "thinking_tokens": 512,
+    "cache_creation_tokens": 21683,
+    "cache_read_tokens": 1806,
+    "cost_usd": 0.25074300000000005,
+    "duration_ms": 12674,
+    "attempts": 1,
+    "num_turns": 2
+  },
+  "output": {
+    "items": [
+      {
+        "id": "c037",
+        "grade": 1,
+        "elements": [
+          "StartUpRequested.recordAsrt()",
+          "EventType.Start-Up Request",
+          "AirportCdmPlatform.informPartners()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c039",
+        "grade": 1,
+        "elements": [
+          "TimeQuantity.calculateTtot()",
+          "TurnRound.mttt"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c041",
+        "grade": 1,
+        "elements": [
+          "InBlockMilestone.checkTobtConsistency()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c058",
+        "grade": 1,
+        "elements": [
+          "AtcFlightPlanActivated.updateEldtEibtEtot()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c110",
+        "grade": 1,
+        "elements": [
+          "OffBlockMilestone.sendADpi()",
+          "DpiType.A-DPI"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c122",
+        "grade": 1,
+        "elements": [
+          "AtcFlightPlanActivated.sendFirstEdpi()",
+          "AirportSlot.sobt",
+          "Aircraft.registration",
+          "AtcFlightPlan.destinationAerodrome"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c127",
+        "grade": 1,
+        "elements": [
+          "TurnRound.mttt",
+          "TurnRound",
+          "InBlockMilestone.updateTobtTtotFromTurnround()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c157",
+        "grade": 1,
+        "elements": [
+          "AtcFlightPlanActivated.sendFirstEdpi()",
+          "DpiMessage",
+          "AirportCdmPlatform->DpiMessage",
+          "NetworkOperations->DpiMessage"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c180",
+        "grade": 1,
+        "elements": [
+          "TimeQuantity.checkTtotToleranceExceeded()",
+          "Landed.informNetworkOperationsIfTtotExceedsTolerance()",
+          "TimeQuantity.tolerance"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c181",
+        "grade": 1,
+        "elements": [
+          "TimeQuantity.originator",
+          "Acars",
+          "AtcSystem"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c184",
+        "grade": 0.5,
+        "elements": [
+          "OffBlockMilestone.sendADpi()"
+        ],
+        "note": "Remote-holding case only mentioned in operation description, no structure."
+      },
+      {
+        "id": "c190",
+        "grade": 1,
+        "elements": [
+          "OperationalStatus.IN-BLOCK",
+          "Flight.operationalStatus"
+        ],
+        "note": ""
+      }
+    ]
+  }
+}

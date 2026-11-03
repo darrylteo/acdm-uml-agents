@@ -1,0 +1,138 @@
+{
+  "meta": {
+    "ok": true,
+    "output": null,
+    "error": null,
+    "model": "claude-sonnet-5",
+    "input_tokens": 20808,
+    "output_tokens": 4717,
+    "thinking_tokens": 3968,
+    "cache_creation_tokens": 18483,
+    "cache_read_tokens": 2323,
+    "cost_usd": 0.1215706,
+    "duration_ms": 43459,
+    "attempts": 1,
+    "num_turns": 2
+  },
+  "output": {
+    "items": [
+      {
+        "id": "c016",
+        "grade": 1,
+        "elements": [
+          "Flight.computeTTOT()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c034",
+        "grade": 1,
+        "elements": [
+          "AircraftOperator.submitFlightPlan()",
+          "ATCFlightPlan.submissionTime"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c044",
+        "grade": 0,
+        "elements": [],
+        "note": "atot attribute has no accuracy captured, unlike other actual-time attributes"
+      },
+      {
+        "id": "c072",
+        "grade": 1,
+        "elements": [
+          "AircraftOperator.provideTOBT()",
+          "GroundHandler.provideTOBT()",
+          "Flight.tobt"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c074",
+        "grade": 1,
+        "elements": [
+          "Flight.exceedsTTOTTolerance()",
+          "NetworkOperations"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c081",
+        "grade": 1,
+        "elements": [
+          "NetworkOperations.issueCTOT()",
+          "Flight.ctot",
+          "NetworkOperations->Flight"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c099",
+        "grade": 1,
+        "elements": [
+          "Flight.eldt",
+          "Flight.eibt",
+          "AirportCDMPlatform.initiateFlight()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c100",
+        "grade": 1,
+        "elements": [
+          "Flight.departureAerodrome"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c106",
+        "grade": 1,
+        "elements": [
+          "Flight.exceedsTTOTTolerance()",
+          "NetworkOperations.receiveDPI()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c130",
+        "grade": 1,
+        "elements": [
+          "Flight.asat"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c141",
+        "grade": 1,
+        "elements": [
+          "RadarSystem.detectFlight()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c147",
+        "grade": 0.5,
+        "elements": [
+          "OperationalStatus.BOARDING"
+        ],
+        "note": "ASBT time/origin not modeled, only BOARDING status present"
+      },
+      {
+        "id": "c160",
+        "grade": 0,
+        "elements": [],
+        "note": "no stand/gate concept in model"
+      },
+      {
+        "id": "c185",
+        "grade": 1,
+        "elements": [
+          "Flight.atot"
+        ],
+        "note": ""
+      }
+    ]
+  }
+}

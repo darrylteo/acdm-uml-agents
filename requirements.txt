@@ -1,0 +1,2 @@
+jsonschema
+pdfplumber   # only for src/ingest/parse_milestones.py (needs the PDF of the manual pages)

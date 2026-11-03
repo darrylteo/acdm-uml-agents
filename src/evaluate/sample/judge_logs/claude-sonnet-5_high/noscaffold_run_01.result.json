@@ -1,0 +1,81 @@
+{
+  "meta": {
+    "ok": true,
+    "output": null,
+    "error": null,
+    "model": "claude-sonnet-5",
+    "input_tokens": 15316,
+    "output_tokens": 1486,
+    "thinking_tokens": 1037,
+    "cache_creation_tokens": 13814,
+    "cache_read_tokens": 1500,
+    "cost_usd": 0.07042,
+    "duration_ms": 11765,
+    "attempts": 1,
+    "num_turns": 2
+  },
+  "output": {
+    "items": [
+      {
+        "id": "g002",
+        "grade": 1,
+        "sentence": "M1.procedures.3",
+        "note": ""
+      },
+      {
+        "id": "g013",
+        "grade": 1,
+        "sentence": "M14.definition.1",
+        "note": ""
+      },
+      {
+        "id": "g028",
+        "grade": 1,
+        "sentence": "M12.definition.1",
+        "note": ""
+      },
+      {
+        "id": "g075",
+        "grade": 1,
+        "sentence": "M16.effect.1",
+        "note": ""
+      },
+      {
+        "id": "g085",
+        "grade": 1,
+        "sentence": "M4.origin_and_priority.1",
+        "note": ""
+      },
+      {
+        "id": "g136",
+        "grade": 1,
+        "sentence": "M1.origin_and_priority.2",
+        "note": ""
+      },
+      {
+        "id": "g149",
+        "grade": 1,
+        "sentence": "M15.procedures.1",
+        "note": ""
+      },
+      {
+        "id": "g179",
+        "grade": 1,
+        "sentence": "M1.definition.1",
+        "note": "scaffold identifier for named milestones"
+      },
+      {
+        "id": "g184",
+        "grade": 1,
+        "sentence": "M9.effect.3",
+        "note": ""
+      },
+      {
+        "id": "g193",
+        "grade": 1,
+        "sentence": "M2.procedures.4",
+        "note": ""
+      }
+    ]
+  }
+}

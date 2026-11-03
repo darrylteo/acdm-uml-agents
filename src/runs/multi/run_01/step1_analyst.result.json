@@ -1,0 +1,637 @@
+{
+  "meta": {
+    "ok": true,
+    "output": null,
+    "error": null,
+    "model": "claude-sonnet-5",
+    "input_tokens": 11709,
+    "output_tokens": 12919,
+    "thinking_tokens": 5695,
+    "cache_creation_tokens": 10542,
+    "cache_read_tokens": 1165,
+    "cost_usd": 0.171595,
+    "duration_ms": 93358,
+    "attempts": 1
+  },
+  "output": {
+    "milestones": [
+      {
+        "number": 1,
+        "name": "ATC Flight Plan Activated",
+        "stakeholders": [
+          "Aircraft Operator",
+          "IFPS",
+          "ATC units",
+          "Network Operations"
+        ],
+        "flights": [
+          "ICAO flight plan",
+          "ATC Flight Plan",
+          "aircraft turn-round",
+          "arriving flight",
+          "departing flight",
+          "two related flight plans",
+          "airport slot",
+          "repetitive flight plan (RFPL)",
+          "outbound flight",
+          "type of aircraft"
+        ],
+        "timings": [
+          "EOBT",
+          "ELDT",
+          "SOBT",
+          "ETOT"
+        ],
+        "systems": [
+          "Airport CDM Platform",
+          "IFPS",
+          "Network Operations"
+        ],
+        "messages": [
+          "E-DPI",
+          "DPI process"
+        ],
+        "rules": [
+          "The Airport CDM Platform is initiated for this flight, and all available information is processed.",
+          "The ATC Flight Plan is submitted by the Aircraft Operator and distributed by the IFPS to all involved ATC units.",
+          "A check shall be performed to verify the consistency between the ATC Flight Plan, Airport Slot and Airport flight data before the first E-DPI is sent.",
+          "The AO must provide correct information before the first E-DPI message to feed Network Operations with consistent SOBT, aircraft registration, and first destination data.",
+          "The E-DPI message should not be sent if no or inconsistent information is provided.",
+          "The flight is ready not later than 15 minutes after the planned EOBT.",
+          "The Operational Status changes to INITIATED.",
+          "For an arrival, ELDT and EIBT are updated; for a departure, EOBT and ETOT are updated.",
+          "This process is triggered by the first activation of the ATC Flight Plan (earliest EOBT-3 hr), or by new or late submissions of the ATC Flight Plan after cancellation or revised EOBT."
+        ],
+        "other_concepts": [
+          "airport slot programme",
+          "coordinated airport",
+          "non coordinated airport",
+          "attachment 2"
+        ]
+      },
+      {
+        "number": 2,
+        "name": "EOBT - 2 hr",
+        "stakeholders": [
+          "Network Operations",
+          "relevant ATS units",
+          "departure aerodrome",
+          "AO/GH"
+        ],
+        "flights": [
+          "regulated flight",
+          "unregulated flight",
+          "ATC Flight Plan",
+          "inbound flight"
+        ],
+        "timings": [
+          "EOBT",
+          "CTOT",
+          "ELDT",
+          "TOBT",
+          "TTOT",
+          "EXOT",
+          "MTTT",
+          "EIBT"
+        ],
+        "systems": [
+          "Airport CDM Platform",
+          "Network Operations"
+        ],
+        "messages": [
+          "FUM",
+          "T-DPI"
+        ],
+        "rules": [
+          "Network Operations issues a CTOT at EOBT-2h if the flight is regulated, and sends it to relevant ATS units and the departure aerodrome.",
+          "For inbound flights, ELDT is updated based on information provided by the FUM messages, taking into account the actual progress of the flight.",
+          "A check shall be performed to verify feasibility of the ATC Flight Plan estimated off block time at EOBT-2 hrs, checking whether AO/GH flight estimates are consistent with the ATC Flight Plan.",
+          "At EOBT-2 hrs Network Operations is informed through the first T-DPI message of the updated take off time estimate.",
+          "Calculation basis for the TTOT shall take into account EIBT+MTTT+EXOT, if later than EOBT+EXOT.",
+          "In the case of manual input of TOBT, this estimate overrides the EIBT+MTTT estimate, hence TTOT equals TOBT+EXOT.",
+          "Appropriate fields are marked as REGULATED."
+        ],
+        "other_concepts": [
+          "priority of CTOT flights over unregulated flights"
+        ]
+      },
+      {
+        "number": 3,
+        "name": "Take Off from Outstation",
+        "stakeholders": [
+          "outstation (ADEP)",
+          "Network Operations",
+          "Aircraft Operator",
+          "Ground Handler"
+        ],
+        "flights": [
+          "flight",
+          "outbound ATC Flight Plan"
+        ],
+        "timings": [
+          "ATOT",
+          "ELDT",
+          "Estimated Elapsed Time",
+          "EIBT",
+          "MTTT",
+          "EXOT",
+          "EOBT",
+          "TOBT",
+          "TTOT"
+        ],
+        "systems": [
+          "Network Operations",
+          "ETFMS"
+        ],
+        "messages": [
+          "FUM",
+          "T-DPI-t"
+        ],
+        "rules": [
+          "The outstation provides ATOT to the Network Operations and Aircraft Operator, directly available with an accuracy of +/- 1 minute.",
+          "If the departure airport is more than 3hrs flying time from the destination, the ATOT is received from either the Network Operations FUM or via the AO/GH.",
+          "Using the ATOT an ELDT is calculated using the Estimated Elapsed Time on the FPL.",
+          "If the flight is within 3hrs flying time of the destination, Network Operations monitors progress using the ETFMS and sends a FUM that provides updates of the flight's progress.",
+          "A check shall be performed to verify feasibility of the ATC Flight Plan at take off from outstation, checking whether AO/GH estimated landing time is consistent with the outbound ATC Flight Plan.",
+          "A TTOT tolerance of 5 minutes is respected before Network Operations is informed of the updated TTOT via a T-DPI-t Message.",
+          "Calculation basis for the TTOT shall take into account EIBT+MTTT+EXOT.",
+          "In case EOBT is later than EIBT+MTTT, TTOT equals EOBT+EXOT.",
+          "In the case where TOBT is available, this prediction overrules the EIBT+MTTT estimate, hence TTOT equals TOBT+EXOT."
+        ],
+        "other_concepts": []
+      },
+      {
+        "number": 4,
+        "name": "Local Radar Update",
+        "stakeholders": [
+          "Area Control Centre (ACC)",
+          "Approach Control Unit",
+          "AO/GH",
+          "Network Operations"
+        ],
+        "flights": [
+          "flight",
+          "stand",
+          "gate",
+          "connecting passengers"
+        ],
+        "timings": [
+          "ELDT",
+          "TOBT",
+          "EXIT",
+          "EIBT",
+          "TTOT"
+        ],
+        "systems": [
+          "radar system",
+          "ATC system",
+          "Airport CDM Platform"
+        ],
+        "messages": [],
+        "rules": [
+          "The radar system detects a flight based upon the assigned SSR code when the flight crosses a defined FIR/ATC boundary.",
+          "Update of the ELDT can trigger a new TOBT to be entered by the AO/GH, or calculated automatically by the Airport CDM Platform.",
+          "Any change to a stand or gate is not preferred after ELDT-30', taking into account the taxi-in time (EXIT).",
+          "An estimated in-block time (EIBT) is computed using the ELDT and the estimated taxi-in time.",
+          "A check shall be performed to commence the TOBT process and verify feasibility of the ATC Flight Plan given the updated TOBT, checking whether the AO/GH TOBT is consistent with the ATC Flight Plan.",
+          "Network Operations is informed when the TTOT changes by more than the agreed TTOT tolerance."
+        ],
+        "other_concepts": [
+          "FIR",
+          "TMA",
+          "Final Approach",
+          "arrival sequence preparation",
+          "ground handling operations preparation",
+          "stand/gate changes in last 30 minutes"
+        ]
+      },
+      {
+        "number": 5,
+        "name": "Final Approach",
+        "stakeholders": [
+          "ATC",
+          "partners"
+        ],
+        "flights": [
+          "flight"
+        ],
+        "timings": [
+          "ELDT",
+          "TOBT",
+          "TTOT",
+          "EIBT"
+        ],
+        "systems": [
+          "radar system",
+          "ATC"
+        ],
+        "messages": [],
+        "rules": [
+          "The radar system detects a flight based upon the assigned SSR code and identifies when the flight crosses either a defined range/position or passes/leaves a predetermined level.",
+          "Update of the ELDT determines a new TOBT.",
+          "A check shall be performed to commence the TOBT process and verify feasibility of the ATC Flight Plan given the updated TOBT, checking whether the AO/GH TOBT is consistent with the ATC Flight Plan.",
+          "Network Operations is informed when the TTOT changes by more than the agreed TTOT tolerance."
+        ],
+        "other_concepts": [
+          "parking marshal positioning",
+          "ground handling services movement prompted"
+        ]
+      },
+      {
+        "number": 6,
+        "name": "Landed",
+        "stakeholders": [
+          "ATC",
+          "Aircraft Operator/Ground Handler",
+          "Network Operations"
+        ],
+        "flights": [
+          "flight",
+          "departing flight",
+          "turn-round period"
+        ],
+        "timings": [
+          "ALDT",
+          "ATA",
+          "ELDT",
+          "TOBT",
+          "TTOT",
+          "EIBT",
+          "EXIT"
+        ],
+        "systems": [
+          "ATC system",
+          "ACARS"
+        ],
+        "messages": [],
+        "rules": [
+          "ALDT is provided by the ATC system or by ACARS from equipped aircraft, available with an accuracy of +/- 1 minute.",
+          "The occurrence of ALDT triggers an update of TOBT and TTOT, updated automatically or inserted manually by the AO/GH, calculated on the basis of the defined turn-round period for the departing flight.",
+          "The EIBT is updated according to the ALDT+EXIT.",
+          "A check shall be performed to verify feasibility of the ATC Flight Plan given the updated TOBT or ATC Flight Plan, checking whether the AO/GH TOBT is consistent with the ATC Flight Plan.",
+          "Network Operations is informed when the TTOT changes by more than the agreed TTOT tolerance.",
+          "ELDT changes to ALDT."
+        ],
+        "other_concepts": []
+      },
+      {
+        "number": 7,
+        "name": "In-Block",
+        "stakeholders": [
+          "Aircraft Operator/Ground Handler",
+          "Network Operations"
+        ],
+        "flights": [
+          "flight",
+          "departing flight",
+          "turn-round period"
+        ],
+        "timings": [
+          "AIBT",
+          "ATA",
+          "ACGT",
+          "TOBT",
+          "TTOT",
+          "EIBT"
+        ],
+        "systems": [
+          "ACARS",
+          "automated docking systems",
+          "ATC systems (A-SMGCS)"
+        ],
+        "messages": [],
+        "rules": [
+          "AIBT is provided by ACARS equipped aircraft, automated docking systems, ATC systems, or by manual input, available with an accuracy of +/- 1 minute.",
+          "ACGT is considered to commence at AIBT.",
+          "The occurrence of AIBT triggers an update of TOBT and TTOT, updated automatically or inserted manually by the AO/GH, calculated on the basis of the estimated turn-round period for the departing flight.",
+          "A check shall be performed to verify feasibility of the ATC Flight Plan given the updated TOBT or ATC Flight Plan, checking whether the AO/GH TOBT is consistent with the ATC Flight Plan.",
+          "Network Operations is informed when the TTOT changes by more than the agreed TTOT tolerance.",
+          "EIBT changes to AIBT."
+        ],
+        "other_concepts": []
+      },
+      {
+        "number": 8,
+        "name": "Ground Handling Started",
+        "stakeholders": [
+          "Aircraft Operator/Ground Handler",
+          "Network Operations"
+        ],
+        "flights": [
+          "flight",
+          "departing flight",
+          "turn-round period"
+        ],
+        "timings": [
+          "ACGT",
+          "TOBT",
+          "TTOT",
+          "ETTT"
+        ],
+        "systems": [],
+        "messages": [],
+        "rules": [
+          "The Aircraft Operator/Ground Handler provides ACGT, available with an accuracy of +/- 1 minute.",
+          "The occurrence of ACGT triggers an update of TOBT, updated automatically or inserted manually by the AO/GH, calculated on the basis of the estimated turn-round period for the departing flight.",
+          "A check shall be performed to verify feasibility of the ATC Flight Plan given the updated TOBT or ATC Flight Plan, checking whether the AO/GH TOBT is consistent with the ATC Flight Plan.",
+          "Network Operations is informed when the TTOT changes by more than the agreed TTOT tolerance.",
+          "ETTT/TOBT and TTOT are updated."
+        ],
+        "other_concepts": [
+          "first operation of the day",
+          "long term parked flights",
+          "normal turn-round"
+        ]
+      },
+      {
+        "number": 9,
+        "name": "Final Confirmation of the TOBT",
+        "stakeholders": [
+          "Aircraft Operator",
+          "Ground Handler",
+          "ATC",
+          "Network Operations",
+          "Stand/Gate Management",
+          "aircrew"
+        ],
+        "flights": [
+          "flight"
+        ],
+        "timings": [
+          "TOBT",
+          "EOBT",
+          "EXOT",
+          "TSAT",
+          "TTOT"
+        ],
+        "systems": [
+          "ATC system",
+          "Airport CDM Platform"
+        ],
+        "messages": [],
+        "rules": [
+          "The Aircraft Operator/Ground Handler provides their most accurate TOBT t minutes before EOBT (t a locally agreed parameter).",
+          "Following the receipt of the TOBT, the ATC system calculates and provides the Estimated Taxi-Out Time (EXOT) based on the predicted traffic load, gate/stand location, runway in use, and waiting period at the Holding Position.",
+          "The flight is introduced into the pre-departure sequence.",
+          "A check shall be performed at a predefined local time to confirm TOBT prior to TSAT issue and verify feasibility of the ATC Flight Plan estimates given the updated TOBT, checking whether the AO/GH TOBT is consistent with the ATC Flight Plan.",
+          "Network Operations is informed when the TTOT changes by more than the agreed TTOT tolerance.",
+          "This process is triggered by a new TOBT or TTOT update; no need to confirm an existing TOBT if it has been manually modified before."
+        ],
+        "other_concepts": [
+          "pre-departure sequence",
+          "push back sequence",
+          "Holding Position"
+        ]
+      },
+      {
+        "number": 10,
+        "name": "TSAT Issued",
+        "stakeholders": [
+          "ATC",
+          "Network Operations",
+          "Aircraft Operator/Ground Handler",
+          "aircrew"
+        ],
+        "flights": [
+          "flight",
+          "non regulated flight"
+        ],
+        "timings": [
+          "TSAT",
+          "EOBT",
+          "TOBT",
+          "TTOT"
+        ],
+        "systems": [
+          "Airport CDM Platform"
+        ],
+        "messages": [
+          "T-DPI-s"
+        ],
+        "rules": [
+          "ATC issues the TSAT t-minutes before EOBT (t a locally agreed parameter).",
+          "All relevant partners are informed of the TSAT that has been allocated to the flight.",
+          "Network Operations is informed by a T-DPI-s for non regulated flights.",
+          "A check shall be performed to see the number of TOBT updates after TSAT has been issued against a locally defined tolerance.",
+          "In case the number of TOBT updates exceeds a threshold, the TOBT input is processed according to local procedure.",
+          "TTOT is updated."
+        ],
+        "other_concepts": [
+          "pre-departure sequence stabilisation"
+        ]
+      },
+      {
+        "number": 11,
+        "name": "Boarding Starts",
+        "stakeholders": [
+          "Aircraft Operator/Ground Handler",
+          "Airport CDM Partners"
+        ],
+        "flights": [
+          "flight"
+        ],
+        "timings": [
+          "ASBT",
+          "TOBT",
+          "TSAT"
+        ],
+        "systems": [
+          "airport system",
+          "flight information display systems (FIDS)",
+          "public address systems"
+        ],
+        "messages": [
+          "ASBT notification"
+        ],
+        "rules": [
+          "ASBT is provided automatically from the airport system or by manual input by the Aircraft Operator/Ground Handler, available with an accuracy of +/- 1 minute.",
+          "All relevant Airport CDM Partners are informed of the Actual Start Boarding Time (ASBT) when it occurs.",
+          "At a certain local time before TOBT, a check shall be performed to check the boarding status, checking whether boarding starts in time to respect TOBT.",
+          "The AO/GH is informed in case TOBT needs to be updated."
+        ],
+        "other_concepts": [
+          "air-bridge/pier",
+          "aircraft steps",
+          "coaching to a stand",
+          "pre-call to gate via FIDS or public address"
+        ]
+      },
+      {
+        "number": 12,
+        "name": "Aircraft Ready",
+        "stakeholders": [
+          "Aircraft Operator/Ground Handler",
+          "ATC",
+          "pilot",
+          "Dispatcher/Supervisor/Redcap",
+          "Airport CDM Partners"
+        ],
+        "flights": [
+          "flight"
+        ],
+        "timings": [
+          "ARDT",
+          "TOBT",
+          "TSAT"
+        ],
+        "systems": [
+          "Airport CDM Platform"
+        ],
+        "messages": [
+          "Ready Status (RDY)"
+        ],
+        "rules": [
+          "The Aircraft Operator/Ground Handler provides ARDT when all doors are closed, boarding bridge removed, and push back vehicle connected, available with an accuracy of +/- 1 minute.",
+          "ATC refines the pre-departure sequence.",
+          "All relevant Airport CDM Partners are informed of the Actual Ready Time (ARDT) in the Airport CDM Platform and that the aircraft is ready for start up/push-back.",
+          "At TOBT + tolerance, the AO/GH is informed that TOBT has passed and the Airport CDM Platform has not yet received ARDT or Ready Status (RDY)."
+        ],
+        "other_concepts": [
+          "pilot request for start up just before TSAT following coordination with Ground Handler"
+        ]
+      },
+      {
+        "number": 13,
+        "name": "Start Up Requested",
+        "stakeholders": [
+          "ATC",
+          "pilot",
+          "Aircraft Operator/Ground Handler",
+          "Airport CDM Partners"
+        ],
+        "flights": [
+          "flight",
+          "regulated flight"
+        ],
+        "timings": [
+          "ASRT",
+          "TSAT",
+          "CTOT"
+        ],
+        "systems": [
+          "Airport CDM Platform"
+        ],
+        "messages": [],
+        "rules": [
+          "ATC records the Actual Start up Request Time (ASRT), based on pilot request, available with an accuracy of +/- 1 minute.",
+          "ATC confirms TSAT to the pilot in order to maintain the aircraft in the pre-departure sequence.",
+          "All relevant Airport CDM Partners are informed of the ASRT in the Airport CDM Platform when it occurs.",
+          "All relevant Airport CDM Partners are alerted when no start up has been requested inside the locally agreed TSAT tolerance window.",
+          "If the start up request is not made by TSAT + tolerance, the AO/GH is informed that no start up has been requested, and should update TOBT.",
+          "ATC assures that a regulated flight can respect its CTOT provided the aircraft was ready on time (ARDT)."
+        ],
+        "other_concepts": []
+      },
+      {
+        "number": 14,
+        "name": "Start Up Approved",
+        "stakeholders": [
+          "ATC",
+          "Airport CDM Partners",
+          "flight crew"
+        ],
+        "flights": [
+          "flight"
+        ],
+        "timings": [
+          "ASAT",
+          "TSAT"
+        ],
+        "systems": [
+          "Airport CDM Platform"
+        ],
+        "messages": [
+          "DCL",
+          "voice"
+        ],
+        "rules": [
+          "ATC provides the Actual start up Approval Time (ASAT) when the aircraft receives its start up approval, available with an accuracy of +/- 1 minute.",
+          "All relevant Airport CDM Partners are informed of the ASAT in the Airport CDM Platform and that the aircraft has received start up approval/push-back clearance when it occurs.",
+          "A check shall be performed to see if ASAT is in accordance with TSAT.",
+          "All relevant Airport CDM Partners are alerted when no start up has been granted.",
+          "In case the start up approval is not granted at TSAT + tolerance, all relevant partners are informed and the flight is re-sequenced.",
+          "On receipt of ATC approval, the aircraft starts up, pushes back and starts to taxi."
+        ],
+        "other_concepts": [
+          "start up request by flight crew (voice or DCL)",
+          "locally defined time around TSAT if Milestone Process 13 is omitted"
+        ]
+      },
+      {
+        "number": 15,
+        "name": "Off-Block",
+        "stakeholders": [
+          "Aircraft Operator",
+          "Ground Handler",
+          "ATC",
+          "Network Operations",
+          "Airport CDM Partners"
+        ],
+        "flights": [
+          "flight"
+        ],
+        "timings": [
+          "AOBT",
+          "ATD",
+          "TTOT",
+          "EXOT"
+        ],
+        "systems": [
+          "ACARS",
+          "automated docking systems",
+          "ATC systems (A-SMGCS)",
+          "Airport CDM Platform"
+        ],
+        "messages": [
+          "A-DPI"
+        ],
+        "rules": [
+          "AOBT is provided by ACARS equipped aircraft, automated docking systems, ATC systems, or by manual input, available with an accuracy of +/- 1 minute.",
+          "TTOT is updated considering the EXOT.",
+          "All relevant Airport CDM Partners are informed of the Actual Off-Block Time (AOBT) in the Airport CDM Platform and that the aircraft has commenced push-back/taxi from parking position, when it occurs.",
+          "AOBT always triggers an A-DPI message to Network Operations, or in the case of remote holding at a defined time prior to TTOT.",
+          "After a first A-DPI is sent, a check shall be performed to check TTOT updates against the TTOT tolerance before Network Operations is informed, with a new A-DPI, of the updated TTOT.",
+          "AOBT is recorded."
+        ],
+        "other_concepts": [
+          "remote holding"
+        ]
+      },
+      {
+        "number": 16,
+        "name": "Take Off",
+        "stakeholders": [
+          "ATC",
+          "Airport CDM Partners"
+        ],
+        "flights": [
+          "flight"
+        ],
+        "timings": [
+          "ATOT",
+          "ATD"
+        ],
+        "systems": [
+          "ATC system",
+          "ACARS",
+          "Tower FDPS",
+          "A-SMGCS",
+          "Radar"
+        ],
+        "messages": [
+          "FSA",
+          "MVT",
+          "airborne message"
+        ],
+        "rules": [
+          "ATOT is provided by the ATC system or from ACARS equipped aircraft, available as soon as possible with an accuracy of +/- 1 minute.",
+          "FSA and MVT messages are sent.",
+          "All relevant Airport CDM Partners are informed about the actual take off.",
+          "An airborne message is generated and the flight is removed from the departure sequence.",
+          "ATOT is recorded."
+        ],
+        "other_concepts": []
+      }
+    ]
+  }
+}

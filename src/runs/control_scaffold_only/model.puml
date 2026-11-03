@@ -1,0 +1,161 @@
+@startuml
+skinparam classAttributeIconSize 0
+hide empty members
+
+package "Stakeholders" {
+  class AirNavigationServiceProvider <<entity>> {
+  }
+  class AircraftOperator <<entity>> {
+  }
+  class ApproachControlUnit <<entity>> {
+  }
+  class AirTrafficControl <<entity>> {
+  }
+  class GroundHandler <<entity>> {
+  }
+  class AerodromeControlTower <<entity>> {
+  }
+}
+
+package "Flights" {
+  class ArrivalManager <<entity>> {
+  }
+  class CollaborativeDecisionMaking <<entity>> {
+  }
+  class DepartureManager <<entity>> {
+  }
+  class FlightInformationRegion <<entity>> {
+  }
+  class FiledFlightPlan <<entity>> {
+  }
+  class Passengers <<entity>> {
+  }
+  class ReadyStatus <<entity>> {
+  }
+  class ReplacementFlightPlan <<entity>> {
+  }
+  class RepetitiveFlightPlan <<entity>> {
+  }
+  class Runway <<entity>> {
+  }
+  class TerminalManoeuvringArea <<entity>> {
+  }
+}
+
+package "Timings" {
+  class ActualCommenceOfGroundHandlingTime <<entity>> {
+  }
+  class ActualEndOfGroundHandlingTime <<entity>> {
+  }
+  class ActualGroundHandlingTime <<entity>> {
+  }
+  class ActualInBlockTime <<entity>> {
+  }
+  class ActualLandingTime <<entity>> {
+  }
+  class ActualOffBlockTime <<entity>> {
+  }
+  class ActualReadyTime <<entity>> {
+  }
+  class ActualStartUpApprovalTime <<entity>> {
+  }
+  class ActualStartBoardingTime <<entity>> {
+  }
+  class ActualStartUpRequestTime <<entity>> {
+  }
+  class ActualTimeOfArrival <<entity>> {
+  }
+  class ActualTimeOfDeparture <<entity>> {
+  }
+  class ActualTakeOffTime <<entity>> {
+  }
+  class ActualTurnRoundTime <<entity>> {
+  }
+  class ActualTaxiInTime <<entity>> {
+  }
+  class ActualTaxiOutTime <<entity>> {
+  }
+  class CalculatedTakeOffTime <<entity>> {
+  }
+  class EstimatedInBlockTime <<entity>> {
+  }
+  class EstimatedLandingTime <<entity>> {
+  }
+  class EstimatedOffBlockTime <<entity>> {
+  }
+  class EstimatedTakeOffTime <<entity>> {
+  }
+  class EstimatedTurnRoundTime <<entity>> {
+  }
+  class EstimatedTaxiInTime <<entity>> {
+  }
+  class EstimatedTaxiOutTime <<entity>> {
+  }
+  class MinimumTurnRoundTime <<entity>> {
+  }
+  class ScheduledInBlockTime <<entity>> {
+  }
+  class ScheduledOffBlockTime <<entity>> {
+  }
+  class ScheduledTurnRoundTime <<entity>> {
+  }
+  class TargetLandingTime <<entity>> {
+  }
+  class TargetOffBlockTime <<entity>> {
+  }
+  class TargetStartUpApprovalTime <<entity>> {
+  }
+  class TargetTakeOffTime <<entity>> {
+  }
+  class VariableTaxiTime <<entity>> {
+  }
+}
+
+package "Milestones" {
+}
+
+package "Systems" {
+  class AdvancedSurfaceMovementGuidanceAndControlSystem <<boundary>> {
+  }
+  class AircraftCommunicationsAddressingAndReportingSystem <<boundary>> {
+  }
+  class AreaControlCentre <<boundary>> {
+  }
+  class AirportCdmInformationSharingPlatform <<boundary>> {
+  }
+  class EnhancedTacticalFlowManagementSystem <<boundary>> {
+  }
+  class IntegratedInitialFlightPlanProcessingSystem <<boundary>> {
+  }
+  class NetworkManagementOperationsCentre <<boundary>> {
+  }
+  class SecondarySurveillanceRadar <<boundary>> {
+  }
+}
+
+package "Messages" {
+  class AtcDeparturePlanningInformationMessage <<boundary>> {
+  }
+  class CancelDeparturePlanningInformationMessage <<boundary>> {
+  }
+  class DeparturePlanningInformationMessage <<boundary>> {
+  }
+  class EarlyDeparturePlanningInformationMessage <<boundary>> {
+  }
+  class FlightUpdateMessage <<boundary>> {
+  }
+  class MovementMessage <<boundary>> {
+  }
+  class ReadyMessage <<boundary>> {
+  }
+  class SlotAllocationMessage <<boundary>> {
+  }
+  class SlotCancellationMessage <<boundary>> {
+  }
+  class SlotRevisionMessage <<boundary>> {
+  }
+  class TargetDeparturePlanningInformationMessage <<boundary>> {
+  }
+}
+
+@enduml

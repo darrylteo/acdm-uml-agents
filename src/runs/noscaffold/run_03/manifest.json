@@ -1,0 +1,35 @@
+{
+  "condition": "noscaffold",
+  "steps": [
+    {
+      "ok": true,
+      "output": null,
+      "error": null,
+      "model": "claude-sonnet-5",
+      "input_tokens": 32826,
+      "output_tokens": 18026,
+      "thinking_tokens": 1716,
+      "cache_creation_tokens": 19547,
+      "cache_read_tokens": 13275,
+      "cost_usd": 0.261111,
+      "duration_ms": 131409,
+      "attempts": 1,
+      "num_turns": 3
+    }
+  ],
+  "ok": true,
+  "model_alias": "claude-sonnet-5",
+  "effort": "medium",
+  "validation_errors": [],
+  "structural_problems": [],
+  "unmodelled": [
+    "The document notes that for long distance flights the ELDT may differ from the airport slot, a discrepancy rule not attached to a specific class operation (milestone 1).",
+    "Attachment 2 referenced for DPI process implementation details is not available in the document text (milestone 1).",
+    "The document distinguishes ACARS-derived events (ON/IN/OUT/OFF) as an alternate data source for ALDT/AIBT/AOBT/ATOT but does not define ACARS as a system to be modelled in detail (milestones 6,7,15,16).",
+    "Local variable thresholds (e.g. boarding check time before TOBT, TSAT tolerance window) are described as locally agreed parameters without a formal owning class beyond MilestoneProcess.tolerance (milestones 11,13,14)."
+  ],
+  "total_input_tokens": 32826,
+  "total_output_tokens": 18026,
+  "total_cost_usd": 0.261111,
+  "total_duration_ms": 131409
+}

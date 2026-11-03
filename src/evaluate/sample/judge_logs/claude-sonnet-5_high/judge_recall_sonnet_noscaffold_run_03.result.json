@@ -1,0 +1,145 @@
+{
+  "meta": {
+    "ok": true,
+    "output": null,
+    "error": null,
+    "model": "claude-sonnet-5",
+    "input_tokens": 20138,
+    "output_tokens": 4019,
+    "thinking_tokens": 3259,
+    "cache_creation_tokens": 17813,
+    "cache_read_tokens": 2323,
+    "cost_usd": 0.1119106,
+    "duration_ms": 36705,
+    "attempts": 1,
+    "num_turns": 2
+  },
+  "output": {
+    "items": [
+      {
+        "id": "c007",
+        "grade": 1,
+        "elements": [
+          "AirportCDMPlatform.notifyPartners()",
+          "Flight.asbt"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c010",
+        "grade": 1,
+        "elements": [
+          "NetworkOperations.issueCtot()",
+          "Flight.ctot"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c017",
+        "grade": 0,
+        "elements": [],
+        "note": "no accuracy attribute for ARDT in model"
+      },
+      {
+        "id": "c030",
+        "grade": 1,
+        "elements": [
+          "DpiMessageType.T-DPI-s",
+          "DpiMessage->NetworkOperations"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c035",
+        "grade": 1,
+        "elements": [
+          "DpiMessageType.E-DPI",
+          "DpiMessage"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c055",
+        "grade": 1,
+        "elements": [
+          "AtcUnit.approveStartUp()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c062",
+        "grade": 1,
+        "elements": [
+          "TurnRound.estimatedTurnRoundPeriod"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c065",
+        "grade": 1,
+        "elements": [
+          "MilestoneProcess.execute()",
+          "Flight.checkTtotTolerance()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c092",
+        "grade": 1,
+        "elements": [
+          "MilestoneProcess.triggerCondition"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c096",
+        "grade": 1,
+        "elements": [
+          "Flight.eldt",
+          "AirportSlot.scheduledTime"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c098",
+        "grade": 1,
+        "elements": [
+          "Flight.asbt"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c137",
+        "grade": 1,
+        "elements": [
+          "MilestoneProcess.execute()",
+          "Flight.checkTtotTolerance()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c138",
+        "grade": 1,
+        "elements": [
+          "AirportSlot.isCoordinatedAirport"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c165",
+        "grade": 0,
+        "elements": [],
+        "note": "no accuracy attribute for ASBT/boarding in model"
+      },
+      {
+        "id": "c166",
+        "grade": 1,
+        "elements": [
+          "AirportSlot.isCoordinatedAirport",
+          "AirportCDMPlatform.initiateFlight()"
+        ],
+        "note": ""
+      }
+    ]
+  }
+}

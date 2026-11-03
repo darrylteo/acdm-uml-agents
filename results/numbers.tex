@@ -1,0 +1,1134 @@
+% Written by src/evaluate/paper_numbers.py; do not edit by hand.
+\makeatletter
+\newcommand{\pn}[1]{\@ifundefined{pn@#1}{\textbf{\textcolor{red}{??#1}}}{\@nameuse{pn@#1}}}
+\@namedef{pn@S1:multi}{0.67 [0.44, 0.75]}
+\@namedef{pn@S1:multi:max}{0.75}
+\@namedef{pn@S1:multi:median}{0.67}
+\@namedef{pn@S1:multi:min}{0.44}
+\@namedef{pn@S1:noscaffold}{--}
+\@namedef{pn@S1:single}{0.75 [0.73, 0.81]}
+\@namedef{pn@S1:single:max}{0.81}
+\@namedef{pn@S1:single:median}{0.75}
+\@namedef{pn@S1:single:min}{0.73}
+\@namedef{pn@S1:singlehigh}{0.79 [0.69, 0.86]}
+\@namedef{pn@S1:singlehigh:max}{0.86}
+\@namedef{pn@S1:singlehigh:median}{0.79}
+\@namedef{pn@S1:singlehigh:min}{0.69}
+\@namedef{pn@S2:multi}{0 [0, 15]}
+\@namedef{pn@S2:multi:max}{15}
+\@namedef{pn@S2:multi:median}{0}
+\@namedef{pn@S2:multi:min}{0}
+\@namedef{pn@S2:noscaffold}{0 [0, 0]}
+\@namedef{pn@S2:noscaffold:max}{0}
+\@namedef{pn@S2:noscaffold:median}{0}
+\@namedef{pn@S2:noscaffold:min}{0}
+\@namedef{pn@S2:single}{0 [0, 0]}
+\@namedef{pn@S2:single:max}{0}
+\@namedef{pn@S2:single:median}{0}
+\@namedef{pn@S2:single:min}{0}
+\@namedef{pn@S2:singlehigh}{0 [0, 0]}
+\@namedef{pn@S2:singlehigh:max}{0}
+\@namedef{pn@S2:singlehigh:median}{0}
+\@namedef{pn@S2:singlehigh:min}{0}
+\@namedef{pn@S2runs:multi}{1}
+\@namedef{pn@S2runs:noscaffold}{0}
+\@namedef{pn@S2runs:single}{0}
+\@namedef{pn@S2runs:singlehigh}{0}
+\@namedef{pn@S3:multi}{0 [0, 2]}
+\@namedef{pn@S3:multi:max}{2}
+\@namedef{pn@S3:multi:median}{0}
+\@namedef{pn@S3:multi:min}{0}
+\@namedef{pn@S3:noscaffold}{23 [22, 24]}
+\@namedef{pn@S3:noscaffold:max}{24}
+\@namedef{pn@S3:noscaffold:median}{23}
+\@namedef{pn@S3:noscaffold:min}{22}
+\@namedef{pn@S3:scaffolded:max}{3}
+\@namedef{pn@S3:single}{1 [0, 3]}
+\@namedef{pn@S3:single:max}{3}
+\@namedef{pn@S3:single:median}{1}
+\@namedef{pn@S3:single:min}{0}
+\@namedef{pn@S3:singlehigh}{1 [0, 3]}
+\@namedef{pn@S3:singlehigh:max}{3}
+\@namedef{pn@S3:singlehigh:median}{1}
+\@namedef{pn@S3:singlehigh:min}{0}
+\@namedef{pn@S4:multi}{0.90 [0.50, 1.00]}
+\@namedef{pn@S4:multi:max}{1.00}
+\@namedef{pn@S4:multi:median}{0.90}
+\@namedef{pn@S4:multi:min}{0.50}
+\@namedef{pn@S4:noscaffold}{--}
+\@namedef{pn@S4:single}{1.00 [1.00, 1.00]}
+\@namedef{pn@S4:single:max}{1.00}
+\@namedef{pn@S4:single:median}{1.00}
+\@namedef{pn@S4:single:min}{1.00}
+\@namedef{pn@S4:singlehigh}{1.00 [0.07, 1.00]}
+\@namedef{pn@S4:singlehigh:max}{1.00}
+\@namedef{pn@S4:singlehigh:median}{1.00}
+\@namedef{pn@S4:singlehigh:min}{0.07}
+\@namedef{pn@S5:multi}{0.68 [0.07, 1.00]}
+\@namedef{pn@S5:multi:max}{1.00}
+\@namedef{pn@S5:multi:median}{0.68}
+\@namedef{pn@S5:multi:min}{0.07}
+\@namedef{pn@S5:noscaffold}{--}
+\@namedef{pn@S5:single}{1.00 [0.33, 1.00]}
+\@namedef{pn@S5:single:max}{1.00}
+\@namedef{pn@S5:single:median}{1.00}
+\@namedef{pn@S5:single:min}{0.33}
+\@namedef{pn@S5:singlehigh}{0.31 [0.00, 0.91]}
+\@namedef{pn@S5:singlehigh:max}{0.91}
+\@namedef{pn@S5:singlehigh:median}{0.31}
+\@namedef{pn@S5:singlehigh:min}{0.00}
+\@namedef{pn@actwo:precision:A-B}{0.84}
+\@namedef{pn@actwo:precision:A-B:attribute}{0.78}
+\@namedef{pn@actwo:precision:A-B:attribute:ci}{[0.65, 0.88]}
+\@namedef{pn@actwo:precision:A-B:ci}{[0.78, 0.89]}
+\@namedef{pn@actwo:precision:A-B:class}{0.92}
+\@namedef{pn@actwo:precision:A-B:class:ci}{[0.84, 0.98]}
+\@namedef{pn@actwo:precision:A-B:enumeration}{0.88}
+\@namedef{pn@actwo:precision:A-B:enumeration:ci}{[0.54, 1.00]}
+\@namedef{pn@actwo:precision:A-B:multi}{0.83}
+\@namedef{pn@actwo:precision:A-B:multi:ci}{[0.71, 0.92]}
+\@namedef{pn@actwo:precision:A-B:noscaffold}{0.88}
+\@namedef{pn@actwo:precision:A-B:noscaffold:ci}{[0.74, 0.98]}
+\@namedef{pn@actwo:precision:A-B:operation}{0.90}
+\@namedef{pn@actwo:precision:A-B:operation:ci}{[0.77, 0.98]}
+\@namedef{pn@actwo:precision:A-B:relationship}{0.79}
+\@namedef{pn@actwo:precision:A-B:relationship:ci}{[0.65, 0.91]}
+\@namedef{pn@actwo:precision:A-B:single}{0.88}
+\@namedef{pn@actwo:precision:A-B:single:ci}{[0.78, 0.96]}
+\@namedef{pn@actwo:precision:A-B:singlehigh}{0.77}
+\@namedef{pn@actwo:precision:A-B:singlehigh:ci}{[0.62, 0.88]}
+\@namedef{pn@actwo:precision:A-opus}{0.91}
+\@namedef{pn@actwo:precision:A-opus:attribute}{0.84}
+\@namedef{pn@actwo:precision:A-opus:attribute:ci}{[0.73, 0.91]}
+\@namedef{pn@actwo:precision:A-opus:ci}{[0.87, 0.94]}
+\@namedef{pn@actwo:precision:A-opus:class}{0.98}
+\@namedef{pn@actwo:precision:A-opus:class:ci}{[0.95, 1.00]}
+\@namedef{pn@actwo:precision:A-opus:enumeration}{0.88}
+\@namedef{pn@actwo:precision:A-opus:enumeration:ci}{[0.54, 1.00]}
+\@namedef{pn@actwo:precision:A-opus:multi}{0.90}
+\@namedef{pn@actwo:precision:A-opus:multi:ci}{[0.82, 0.96]}
+\@namedef{pn@actwo:precision:A-opus:noscaffold}{0.88}
+\@namedef{pn@actwo:precision:A-opus:noscaffold:ci}{[0.73, 0.98]}
+\@namedef{pn@actwo:precision:A-opus:operation}{0.99}
+\@namedef{pn@actwo:precision:A-opus:operation:ci}{[0.95, 1.00]}
+\@namedef{pn@actwo:precision:A-opus:relationship}{0.91}
+\@namedef{pn@actwo:precision:A-opus:relationship:ci}{[0.83, 0.96]}
+\@namedef{pn@actwo:precision:A-opus:single}{0.95}
+\@namedef{pn@actwo:precision:A-opus:single:ci}{[0.89, 0.99]}
+\@namedef{pn@actwo:precision:A-opus:singlehigh}{0.91}
+\@namedef{pn@actwo:precision:A-opus:singlehigh:ci}{[0.84, 0.96]}
+\@namedef{pn@actwo:precision:A-sonnet}{0.91}
+\@namedef{pn@actwo:precision:A-sonnet:attribute}{0.85}
+\@namedef{pn@actwo:precision:A-sonnet:attribute:ci}{[0.74, 0.92]}
+\@namedef{pn@actwo:precision:A-sonnet:ci}{[0.87, 0.95]}
+\@namedef{pn@actwo:precision:A-sonnet:class}{0.97}
+\@namedef{pn@actwo:precision:A-sonnet:class:ci}{[0.92, 1.00]}
+\@namedef{pn@actwo:precision:A-sonnet:enumeration}{0.88}
+\@namedef{pn@actwo:precision:A-sonnet:enumeration:ci}{[0.54, 1.00]}
+\@namedef{pn@actwo:precision:A-sonnet:multi}{0.88}
+\@namedef{pn@actwo:precision:A-sonnet:multi:ci}{[0.79, 0.95]}
+\@namedef{pn@actwo:precision:A-sonnet:noscaffold}{0.86}
+\@namedef{pn@actwo:precision:A-sonnet:noscaffold:ci}{[0.68, 0.97]}
+\@namedef{pn@actwo:precision:A-sonnet:operation}{0.99}
+\@namedef{pn@actwo:precision:A-sonnet:operation:ci}{[0.95, 1.00]}
+\@namedef{pn@actwo:precision:A-sonnet:relationship}{0.89}
+\@namedef{pn@actwo:precision:A-sonnet:relationship:ci}{[0.79, 0.96]}
+\@namedef{pn@actwo:precision:A-sonnet:single}{0.95}
+\@namedef{pn@actwo:precision:A-sonnet:single:ci}{[0.90, 0.99]}
+\@namedef{pn@actwo:precision:A-sonnet:singlehigh}{0.92}
+\@namedef{pn@actwo:precision:A-sonnet:singlehigh:ci}{[0.85, 0.98]}
+\@namedef{pn@actwo:precision:B-opus}{0.89}
+\@namedef{pn@actwo:precision:B-opus:attribute}{0.88}
+\@namedef{pn@actwo:precision:B-opus:attribute:ci}{[0.80, 0.94]}
+\@namedef{pn@actwo:precision:B-opus:ci}{[0.85, 0.93]}
+\@namedef{pn@actwo:precision:B-opus:class}{0.91}
+\@namedef{pn@actwo:precision:B-opus:class:ci}{[0.81, 0.97]}
+\@namedef{pn@actwo:precision:B-opus:enumeration}{1.00}
+\@namedef{pn@actwo:precision:B-opus:enumeration:ci}{[1.00, 1.00]}
+\@namedef{pn@actwo:precision:B-opus:multi}{0.90}
+\@namedef{pn@actwo:precision:B-opus:multi:ci}{[0.84, 0.96]}
+\@namedef{pn@actwo:precision:B-opus:noscaffold}{0.91}
+\@namedef{pn@actwo:precision:B-opus:noscaffold:ci}{[0.81, 0.98]}
+\@namedef{pn@actwo:precision:B-opus:operation}{0.89}
+\@namedef{pn@actwo:precision:B-opus:operation:ci}{[0.76, 0.97]}
+\@namedef{pn@actwo:precision:B-opus:relationship}{0.88}
+\@namedef{pn@actwo:precision:B-opus:relationship:ci}{[0.78, 0.96]}
+\@namedef{pn@actwo:precision:B-opus:single}{0.92}
+\@namedef{pn@actwo:precision:B-opus:single:ci}{[0.84, 0.98]}
+\@namedef{pn@actwo:precision:B-opus:singlehigh}{0.83}
+\@namedef{pn@actwo:precision:B-opus:singlehigh:ci}{[0.73, 0.91]}
+\@namedef{pn@actwo:precision:B-sonnet}{0.87}
+\@namedef{pn@actwo:precision:B-sonnet:attribute}{0.86}
+\@namedef{pn@actwo:precision:B-sonnet:attribute:ci}{[0.78, 0.92]}
+\@namedef{pn@actwo:precision:B-sonnet:ci}{[0.82, 0.91]}
+\@namedef{pn@actwo:precision:B-sonnet:class}{0.92}
+\@namedef{pn@actwo:precision:B-sonnet:class:ci}{[0.83, 0.99]}
+\@namedef{pn@actwo:precision:B-sonnet:enumeration}{1.00}
+\@namedef{pn@actwo:precision:B-sonnet:enumeration:ci}{[1.00, 1.00]}
+\@namedef{pn@actwo:precision:B-sonnet:multi}{0.89}
+\@namedef{pn@actwo:precision:B-sonnet:multi:ci}{[0.81, 0.94]}
+\@namedef{pn@actwo:precision:B-sonnet:noscaffold}{0.89}
+\@namedef{pn@actwo:precision:B-sonnet:noscaffold:ci}{[0.76, 0.97]}
+\@namedef{pn@actwo:precision:B-sonnet:operation}{0.89}
+\@namedef{pn@actwo:precision:B-sonnet:operation:ci}{[0.76, 0.97]}
+\@namedef{pn@actwo:precision:B-sonnet:relationship}{0.80}
+\@namedef{pn@actwo:precision:B-sonnet:relationship:ci}{[0.66, 0.91]}
+\@namedef{pn@actwo:precision:B-sonnet:single}{0.89}
+\@namedef{pn@actwo:precision:B-sonnet:single:ci}{[0.78, 0.96]}
+\@namedef{pn@actwo:precision:B-sonnet:singlehigh}{0.82}
+\@namedef{pn@actwo:precision:B-sonnet:singlehigh:ci}{[0.70, 0.91]}
+\@namedef{pn@actwo:precision:opus-sonnet}{0.97}
+\@namedef{pn@actwo:precision:opus-sonnet:attribute}{0.97}
+\@namedef{pn@actwo:precision:opus-sonnet:attribute:ci}{[0.93, 0.99]}
+\@namedef{pn@actwo:precision:opus-sonnet:ci}{[0.95, 0.99]}
+\@namedef{pn@actwo:precision:opus-sonnet:class}{0.99}
+\@namedef{pn@actwo:precision:opus-sonnet:class:ci}{[0.95, 1.00]}
+\@namedef{pn@actwo:precision:opus-sonnet:enumeration}{1.00}
+\@namedef{pn@actwo:precision:opus-sonnet:enumeration:ci}{[1.00, 1.00]}
+\@namedef{pn@actwo:precision:opus-sonnet:multi}{0.95}
+\@namedef{pn@actwo:precision:opus-sonnet:multi:ci}{[0.90, 0.99]}
+\@namedef{pn@actwo:precision:opus-sonnet:noscaffold}{0.98}
+\@namedef{pn@actwo:precision:opus-sonnet:noscaffold:ci}{[0.95, 1.00]}
+\@namedef{pn@actwo:precision:opus-sonnet:operation}{1.00}
+\@namedef{pn@actwo:precision:opus-sonnet:operation:ci}{[1.00, 1.00]}
+\@namedef{pn@actwo:precision:opus-sonnet:relationship}{0.94}
+\@namedef{pn@actwo:precision:opus-sonnet:relationship:ci}{[0.88, 0.99]}
+\@namedef{pn@actwo:precision:opus-sonnet:single}{0.97}
+\@namedef{pn@actwo:precision:opus-sonnet:single:ci}{[0.92, 1.00]}
+\@namedef{pn@actwo:precision:opus-sonnet:singlehigh}{0.99}
+\@namedef{pn@actwo:precision:opus-sonnet:singlehigh:ci}{[0.97, 1.00]}
+\@namedef{pn@actwo:recall:A-B}{0.92}
+\@namedef{pn@actwo:recall:A-B:attribute}{0.88}
+\@namedef{pn@actwo:recall:A-B:attribute:ci}{[0.75, 0.97]}
+\@namedef{pn@actwo:recall:A-B:ci}{[0.87, 0.95]}
+\@namedef{pn@actwo:recall:A-B:class}{0.96}
+\@namedef{pn@actwo:recall:A-B:class:ci}{[0.89, 1.00]}
+\@namedef{pn@actwo:recall:A-B:enumeration}{1.00}
+\@namedef{pn@actwo:recall:A-B:enumeration:ci}{[1.00, 1.00]}
+\@namedef{pn@actwo:recall:A-B:multi}{0.92}
+\@namedef{pn@actwo:recall:A-B:multi:ci}{[0.86, 0.97]}
+\@namedef{pn@actwo:recall:A-B:noscaffold}{0.70}
+\@namedef{pn@actwo:recall:A-B:noscaffold:ci}{[0.50, 0.88]}
+\@namedef{pn@actwo:recall:A-B:operation}{0.91}
+\@namedef{pn@actwo:recall:A-B:operation:ci}{[0.85, 0.96]}
+\@namedef{pn@actwo:recall:A-B:relationship}{0.91}
+\@namedef{pn@actwo:recall:A-B:relationship:ci}{[0.78, 1.00]}
+\@namedef{pn@actwo:recall:A-B:single}{0.95}
+\@namedef{pn@actwo:recall:A-B:single:ci}{[0.89, 0.99]}
+\@namedef{pn@actwo:recall:A-B:singlehigh}{0.97}
+\@namedef{pn@actwo:recall:A-B:singlehigh:ci}{[0.91, 1.00]}
+\@namedef{pn@actwo:recall:A-opus}{0.85}
+\@namedef{pn@actwo:recall:A-opus:attribute}{0.88}
+\@namedef{pn@actwo:recall:A-opus:attribute:ci}{[0.77, 0.96]}
+\@namedef{pn@actwo:recall:A-opus:ci}{[0.79, 0.90]}
+\@namedef{pn@actwo:recall:A-opus:class}{0.94}
+\@namedef{pn@actwo:recall:A-opus:class:ci}{[0.85, 1.00]}
+\@namedef{pn@actwo:recall:A-opus:enumeration}{1.00}
+\@namedef{pn@actwo:recall:A-opus:enumeration:ci}{[1.00, 1.00]}
+\@namedef{pn@actwo:recall:A-opus:multi}{0.88}
+\@namedef{pn@actwo:recall:A-opus:multi:ci}{[0.80, 0.94]}
+\@namedef{pn@actwo:recall:A-opus:noscaffold}{0.63}
+\@namedef{pn@actwo:recall:A-opus:noscaffold:ci}{[0.42, 0.80]}
+\@namedef{pn@actwo:recall:A-opus:operation}{0.82}
+\@namedef{pn@actwo:recall:A-opus:operation:ci}{[0.74, 0.89]}
+\@namedef{pn@actwo:recall:A-opus:relationship}{0.76}
+\@namedef{pn@actwo:recall:A-opus:relationship:ci}{[0.58, 0.90]}
+\@namedef{pn@actwo:recall:A-opus:single}{0.88}
+\@namedef{pn@actwo:recall:A-opus:single:ci}{[0.77, 0.96]}
+\@namedef{pn@actwo:recall:A-opus:singlehigh}{0.90}
+\@namedef{pn@actwo:recall:A-opus:singlehigh:ci}{[0.82, 0.96]}
+\@namedef{pn@actwo:recall:A-sonnet}{0.85}
+\@namedef{pn@actwo:recall:A-sonnet:attribute}{0.82}
+\@namedef{pn@actwo:recall:A-sonnet:attribute:ci}{[0.67, 0.93]}
+\@namedef{pn@actwo:recall:A-sonnet:ci}{[0.80, 0.90]}
+\@namedef{pn@actwo:recall:A-sonnet:class}{0.94}
+\@namedef{pn@actwo:recall:A-sonnet:class:ci}{[0.88, 1.00]}
+\@namedef{pn@actwo:recall:A-sonnet:enumeration}{1.00}
+\@namedef{pn@actwo:recall:A-sonnet:enumeration:ci}{[1.00, 1.00]}
+\@namedef{pn@actwo:recall:A-sonnet:multi}{0.90}
+\@namedef{pn@actwo:recall:A-sonnet:multi:ci}{[0.82, 0.96]}
+\@namedef{pn@actwo:recall:A-sonnet:noscaffold}{0.62}
+\@namedef{pn@actwo:recall:A-sonnet:noscaffold:ci}{[0.40, 0.81]}
+\@namedef{pn@actwo:recall:A-sonnet:operation}{0.84}
+\@namedef{pn@actwo:recall:A-sonnet:operation:ci}{[0.76, 0.91]}
+\@namedef{pn@actwo:recall:A-sonnet:relationship}{0.79}
+\@namedef{pn@actwo:recall:A-sonnet:relationship:ci}{[0.60, 0.92]}
+\@namedef{pn@actwo:recall:A-sonnet:single}{0.88}
+\@namedef{pn@actwo:recall:A-sonnet:single:ci}{[0.78, 0.96]}
+\@namedef{pn@actwo:recall:A-sonnet:singlehigh}{0.90}
+\@namedef{pn@actwo:recall:A-sonnet:singlehigh:ci}{[0.82, 0.96]}
+\@namedef{pn@actwo:recall:B-opus}{0.84}
+\@namedef{pn@actwo:recall:B-opus:attribute}{0.80}
+\@namedef{pn@actwo:recall:B-opus:attribute:ci}{[0.65, 0.91]}
+\@namedef{pn@actwo:recall:B-opus:ci}{[0.78, 0.89]}
+\@namedef{pn@actwo:recall:B-opus:class}{0.90}
+\@namedef{pn@actwo:recall:B-opus:class:ci}{[0.77, 0.98]}
+\@namedef{pn@actwo:recall:B-opus:enumeration}{1.00}
+\@namedef{pn@actwo:recall:B-opus:enumeration:ci}{[1.00, 1.00]}
+\@namedef{pn@actwo:recall:B-opus:multi}{0.87}
+\@namedef{pn@actwo:recall:B-opus:multi:ci}{[0.78, 0.94]}
+\@namedef{pn@actwo:recall:B-opus:noscaffold}{0.58}
+\@namedef{pn@actwo:recall:B-opus:noscaffold:ci}{[0.32, 0.80]}
+\@namedef{pn@actwo:recall:B-opus:operation}{0.84}
+\@namedef{pn@actwo:recall:B-opus:operation:ci}{[0.76, 0.91]}
+\@namedef{pn@actwo:recall:B-opus:relationship}{0.75}
+\@namedef{pn@actwo:recall:B-opus:relationship:ci}{[0.50, 0.90]}
+\@namedef{pn@actwo:recall:B-opus:single}{0.88}
+\@namedef{pn@actwo:recall:B-opus:single:ci}{[0.77, 0.96]}
+\@namedef{pn@actwo:recall:B-opus:singlehigh}{0.89}
+\@namedef{pn@actwo:recall:B-opus:singlehigh:ci}{[0.80, 0.95]}
+\@namedef{pn@actwo:recall:B-sonnet}{0.83}
+\@namedef{pn@actwo:recall:B-sonnet:attribute}{0.77}
+\@namedef{pn@actwo:recall:B-sonnet:attribute:ci}{[0.61, 0.89]}
+\@namedef{pn@actwo:recall:B-sonnet:ci}{[0.77, 0.88]}
+\@namedef{pn@actwo:recall:B-sonnet:class}{0.90}
+\@namedef{pn@actwo:recall:B-sonnet:class:ci}{[0.78, 0.98]}
+\@namedef{pn@actwo:recall:B-sonnet:enumeration}{1.00}
+\@namedef{pn@actwo:recall:B-sonnet:enumeration:ci}{[1.00, 1.00]}
+\@namedef{pn@actwo:recall:B-sonnet:multi}{0.89}
+\@namedef{pn@actwo:recall:B-sonnet:multi:ci}{[0.80, 0.95]}
+\@namedef{pn@actwo:recall:B-sonnet:noscaffold}{0.62}
+\@namedef{pn@actwo:recall:B-sonnet:noscaffold:ci}{[0.36, 0.82]}
+\@namedef{pn@actwo:recall:B-sonnet:operation}{0.85}
+\@namedef{pn@actwo:recall:B-sonnet:operation:ci}{[0.76, 0.92]}
+\@namedef{pn@actwo:recall:B-sonnet:relationship}{0.71}
+\@namedef{pn@actwo:recall:B-sonnet:relationship:ci}{[0.47, 0.88]}
+\@namedef{pn@actwo:recall:B-sonnet:single}{0.86}
+\@namedef{pn@actwo:recall:B-sonnet:single:ci}{[0.74, 0.94]}
+\@namedef{pn@actwo:recall:B-sonnet:singlehigh}{0.86}
+\@namedef{pn@actwo:recall:B-sonnet:singlehigh:ci}{[0.77, 0.94]}
+\@namedef{pn@actwo:recall:opus-sonnet}{0.92}
+\@namedef{pn@actwo:recall:opus-sonnet:attribute}{0.84}
+\@namedef{pn@actwo:recall:opus-sonnet:attribute:ci}{[0.68, 0.95]}
+\@namedef{pn@actwo:recall:opus-sonnet:ci}{[0.88, 0.95]}
+\@namedef{pn@actwo:recall:opus-sonnet:class}{1.00}
+\@namedef{pn@actwo:recall:opus-sonnet:class:ci}{[1.00, 1.00]}
+\@namedef{pn@actwo:recall:opus-sonnet:enumeration}{1.00}
+\@namedef{pn@actwo:recall:opus-sonnet:enumeration:ci}{[1.00, 1.00]}
+\@namedef{pn@actwo:recall:opus-sonnet:multi}{0.93}
+\@namedef{pn@actwo:recall:opus-sonnet:multi:ci}{[0.86, 0.99]}
+\@namedef{pn@actwo:recall:opus-sonnet:noscaffold}{0.82}
+\@namedef{pn@actwo:recall:opus-sonnet:noscaffold:ci}{[0.64, 0.94]}
+\@namedef{pn@actwo:recall:opus-sonnet:operation}{0.90}
+\@namedef{pn@actwo:recall:opus-sonnet:operation:ci}{[0.83, 0.95]}
+\@namedef{pn@actwo:recall:opus-sonnet:relationship}{0.97}
+\@namedef{pn@actwo:recall:opus-sonnet:relationship:ci}{[0.90, 1.00]}
+\@namedef{pn@actwo:recall:opus-sonnet:single}{0.90}
+\@namedef{pn@actwo:recall:opus-sonnet:single:ci}{[0.81, 0.97]}
+\@namedef{pn@actwo:recall:opus-sonnet:singlehigh}{0.98}
+\@namedef{pn@actwo:recall:opus-sonnet:singlehigh:ci}{[0.94, 1.00]}
+\@namedef{pn@agree:precision:A-B}{0.80}
+\@namedef{pn@agree:precision:A-B:attribute}{0.76}
+\@namedef{pn@agree:precision:A-B:class}{0.86}
+\@namedef{pn@agree:precision:A-B:enumeration}{0.80}
+\@namedef{pn@agree:precision:A-B:multi}{0.78}
+\@namedef{pn@agree:precision:A-B:noscaffold}{0.88}
+\@namedef{pn@agree:precision:A-B:operation}{0.89}
+\@namedef{pn@agree:precision:A-B:relationship}{0.73}
+\@namedef{pn@agree:precision:A-B:single}{0.84}
+\@namedef{pn@agree:precision:A-B:singlehigh}{0.72}
+\@namedef{pn@agree:precision:A-opus}{0.87}
+\@namedef{pn@agree:precision:A-opus:attribute}{0.80}
+\@namedef{pn@agree:precision:A-opus:class}{0.97}
+\@namedef{pn@agree:precision:A-opus:enumeration}{0.80}
+\@namedef{pn@agree:precision:A-opus:multi}{0.85}
+\@namedef{pn@agree:precision:A-opus:noscaffold}{0.88}
+\@namedef{pn@agree:precision:A-opus:operation}{0.97}
+\@namedef{pn@agree:precision:A-opus:relationship}{0.84}
+\@namedef{pn@agree:precision:A-opus:single}{0.90}
+\@namedef{pn@agree:precision:A-opus:singlehigh}{0.86}
+\@namedef{pn@agree:precision:A-sonnet}{0.87}
+\@namedef{pn@agree:precision:A-sonnet:attribute}{0.82}
+\@namedef{pn@agree:precision:A-sonnet:class}{0.95}
+\@namedef{pn@agree:precision:A-sonnet:enumeration}{0.80}
+\@namedef{pn@agree:precision:A-sonnet:multi}{0.83}
+\@namedef{pn@agree:precision:A-sonnet:noscaffold}{0.84}
+\@namedef{pn@agree:precision:A-sonnet:operation}{0.97}
+\@namedef{pn@agree:precision:A-sonnet:relationship}{0.82}
+\@namedef{pn@agree:precision:A-sonnet:single}{0.92}
+\@namedef{pn@agree:precision:A-sonnet:singlehigh}{0.88}
+\@namedef{pn@agree:precision:B-opus}{0.83}
+\@namedef{pn@agree:precision:B-opus:attribute}{0.81}
+\@namedef{pn@agree:precision:B-opus:class}{0.84}
+\@namedef{pn@agree:precision:B-opus:enumeration}{1.00}
+\@namedef{pn@agree:precision:B-opus:multi}{0.83}
+\@namedef{pn@agree:precision:B-opus:noscaffold}{0.88}
+\@namedef{pn@agree:precision:B-opus:operation}{0.86}
+\@namedef{pn@agree:precision:B-opus:relationship}{0.84}
+\@namedef{pn@agree:precision:B-opus:single}{0.90}
+\@namedef{pn@agree:precision:B-opus:singlehigh}{0.75}
+\@namedef{pn@agree:precision:B-sonnet}{0.81}
+\@namedef{pn@agree:precision:B-sonnet:attribute}{0.78}
+\@namedef{pn@agree:precision:B-sonnet:class}{0.86}
+\@namedef{pn@agree:precision:B-sonnet:enumeration}{1.00}
+\@namedef{pn@agree:precision:B-sonnet:multi}{0.82}
+\@namedef{pn@agree:precision:B-sonnet:noscaffold}{0.84}
+\@namedef{pn@agree:precision:B-sonnet:operation}{0.86}
+\@namedef{pn@agree:precision:B-sonnet:relationship}{0.73}
+\@namedef{pn@agree:precision:B-sonnet:single}{0.84}
+\@namedef{pn@agree:precision:B-sonnet:singlehigh}{0.74}
+\@namedef{pn@agree:precision:max}{0.95}
+\@namedef{pn@agree:precision:min}{0.80}
+\@namedef{pn@agree:precision:opus-sonnet}{0.95}
+\@namedef{pn@agree:precision:opus-sonnet:attribute}{0.95}
+\@namedef{pn@agree:precision:opus-sonnet:class}{0.97}
+\@namedef{pn@agree:precision:opus-sonnet:enumeration}{1.00}
+\@namedef{pn@agree:precision:opus-sonnet:multi}{0.92}
+\@namedef{pn@agree:precision:opus-sonnet:noscaffold}{0.97}
+\@namedef{pn@agree:precision:opus-sonnet:operation}{1.00}
+\@namedef{pn@agree:precision:opus-sonnet:relationship}{0.89}
+\@namedef{pn@agree:precision:opus-sonnet:single}{0.94}
+\@namedef{pn@agree:precision:opus-sonnet:singlehigh}{0.98}
+\@namedef{pn@agree:recall:A-B}{0.89}
+\@namedef{pn@agree:recall:A-B:attribute}{0.85}
+\@namedef{pn@agree:recall:A-B:class}{0.93}
+\@namedef{pn@agree:recall:A-B:enumeration}{1.00}
+\@namedef{pn@agree:recall:A-B:multi}{0.88}
+\@namedef{pn@agree:recall:A-B:noscaffold}{0.71}
+\@namedef{pn@agree:recall:A-B:operation}{0.88}
+\@namedef{pn@agree:recall:A-B:relationship}{0.88}
+\@namedef{pn@agree:recall:A-B:single}{0.92}
+\@namedef{pn@agree:recall:A-B:singlehigh}{0.96}
+\@namedef{pn@agree:recall:A-opus}{0.79}
+\@namedef{pn@agree:recall:A-opus:attribute}{0.83}
+\@namedef{pn@agree:recall:A-opus:class}{0.90}
+\@namedef{pn@agree:recall:A-opus:enumeration}{1.00}
+\@namedef{pn@agree:recall:A-opus:multi}{0.81}
+\@namedef{pn@agree:recall:A-opus:noscaffold}{0.60}
+\@namedef{pn@agree:recall:A-opus:operation}{0.76}
+\@namedef{pn@agree:recall:A-opus:relationship}{0.67}
+\@namedef{pn@agree:recall:A-opus:single}{0.85}
+\@namedef{pn@agree:recall:A-opus:singlehigh}{0.83}
+\@namedef{pn@agree:recall:A-sonnet}{0.81}
+\@namedef{pn@agree:recall:A-sonnet:attribute}{0.78}
+\@namedef{pn@agree:recall:A-sonnet:class}{0.90}
+\@namedef{pn@agree:recall:A-sonnet:enumeration}{1.00}
+\@namedef{pn@agree:recall:A-sonnet:multi}{0.85}
+\@namedef{pn@agree:recall:A-sonnet:noscaffold}{0.63}
+\@namedef{pn@agree:recall:A-sonnet:operation}{0.80}
+\@namedef{pn@agree:recall:A-sonnet:relationship}{0.71}
+\@namedef{pn@agree:recall:A-sonnet:single}{0.85}
+\@namedef{pn@agree:recall:A-sonnet:singlehigh}{0.83}
+\@namedef{pn@agree:recall:B-opus}{0.79}
+\@namedef{pn@agree:recall:B-opus:attribute}{0.73}
+\@namedef{pn@agree:recall:B-opus:class}{0.86}
+\@namedef{pn@agree:recall:B-opus:enumeration}{1.00}
+\@namedef{pn@agree:recall:B-opus:multi}{0.81}
+\@namedef{pn@agree:recall:B-opus:noscaffold}{0.60}
+\@namedef{pn@agree:recall:B-opus:operation}{0.80}
+\@namedef{pn@agree:recall:B-opus:relationship}{0.67}
+\@namedef{pn@agree:recall:B-opus:single}{0.85}
+\@namedef{pn@agree:recall:B-opus:singlehigh}{0.81}
+\@namedef{pn@agree:recall:B-sonnet}{0.78}
+\@namedef{pn@agree:recall:B-sonnet:attribute}{0.68}
+\@namedef{pn@agree:recall:B-sonnet:class}{0.86}
+\@namedef{pn@agree:recall:B-sonnet:enumeration}{1.00}
+\@namedef{pn@agree:recall:B-sonnet:multi}{0.83}
+\@namedef{pn@agree:recall:B-sonnet:noscaffold}{0.63}
+\@namedef{pn@agree:recall:B-sonnet:operation}{0.82}
+\@namedef{pn@agree:recall:B-sonnet:relationship}{0.62}
+\@namedef{pn@agree:recall:B-sonnet:single}{0.81}
+\@namedef{pn@agree:recall:B-sonnet:singlehigh}{0.79}
+\@namedef{pn@agree:recall:max}{0.90}
+\@namedef{pn@agree:recall:min}{0.78}
+\@namedef{pn@agree:recall:opus-sonnet}{0.90}
+\@namedef{pn@agree:recall:opus-sonnet:attribute}{0.83}
+\@namedef{pn@agree:recall:opus-sonnet:class}{1.00}
+\@namedef{pn@agree:recall:opus-sonnet:enumeration}{1.00}
+\@namedef{pn@agree:recall:opus-sonnet:multi}{0.92}
+\@namedef{pn@agree:recall:opus-sonnet:noscaffold}{0.80}
+\@namedef{pn@agree:recall:opus-sonnet:operation}{0.87}
+\@namedef{pn@agree:recall:opus-sonnet:relationship}{0.96}
+\@namedef{pn@agree:recall:opus-sonnet:single}{0.87}
+\@namedef{pn@agree:recall:opus-sonnet:singlehigh}{0.96}
+\@namedef{pn@agreediff:precision:max}{-0.03}
+\@namedef{pn@agreediff:precision:min}{-0.08}
+\@namedef{pn@agreediff:recall:max}{0.08}
+\@namedef{pn@agreediff:recall:min}{0.06}
+\@namedef{pn@attrs:multi}{54 [33, 63]}
+\@namedef{pn@attrs:multi:max}{63}
+\@namedef{pn@attrs:multi:median}{54}
+\@namedef{pn@attrs:multi:min}{33}
+\@namedef{pn@attrs:noscaffold}{55 [45, 57]}
+\@namedef{pn@attrs:noscaffold:max}{57}
+\@namedef{pn@attrs:noscaffold:median}{55}
+\@namedef{pn@attrs:noscaffold:min}{45}
+\@namedef{pn@attrs:single}{37 [23, 49]}
+\@namedef{pn@attrs:single:max}{49}
+\@namedef{pn@attrs:single:median}{37}
+\@namedef{pn@attrs:single:min}{23}
+\@namedef{pn@attrs:singlehigh}{42 [33, 58]}
+\@namedef{pn@attrs:singlehigh:max}{58}
+\@namedef{pn@attrs:singlehigh:median}{42}
+\@namedef{pn@attrs:singlehigh:min}{33}
+\@namedef{pn@bound:scaffoldonly:held}{76}
+\@namedef{pn@bound:scaffoldonly:recall}{0.23}
+\@namedef{pn@classes:multi}{54 [41, 69]}
+\@namedef{pn@classes:multi:max}{69}
+\@namedef{pn@classes:multi:median}{54}
+\@namedef{pn@classes:multi:min}{41}
+\@namedef{pn@classes:noscaffold}{13 [13, 17]}
+\@namedef{pn@classes:noscaffold:max}{17}
+\@namedef{pn@classes:noscaffold:median}{13}
+\@namedef{pn@classes:noscaffold:min}{13}
+\@namedef{pn@classes:single}{49 [38, 65]}
+\@namedef{pn@classes:single:max}{65}
+\@namedef{pn@classes:single:median}{49}
+\@namedef{pn@classes:single:min}{38}
+\@namedef{pn@classes:singlehigh}{54 [51, 57]}
+\@namedef{pn@classes:singlehigh:max}{57}
+\@namedef{pn@classes:singlehigh:median}{54}
+\@namedef{pn@classes:singlehigh:min}{51}
+\@namedef{pn@cost:multi}{1.76 [1.59, 2.25]}
+\@namedef{pn@cost:multi:max}{2.25}
+\@namedef{pn@cost:multi:median}{1.76}
+\@namedef{pn@cost:multi:min}{1.59}
+\@namedef{pn@cost:noscaffold}{0.26 [0.18, 0.27]}
+\@namedef{pn@cost:noscaffold:max}{0.27}
+\@namedef{pn@cost:noscaffold:median}{0.26}
+\@namedef{pn@cost:noscaffold:min}{0.18}
+\@namedef{pn@cost:scaffolded:max}{2.25}
+\@namedef{pn@cost:single}{0.55 [0.34, 0.64]}
+\@namedef{pn@cost:single:max}{0.64}
+\@namedef{pn@cost:single:median}{0.55}
+\@namedef{pn@cost:single:min}{0.34}
+\@namedef{pn@cost:singlehigh}{1.17 [0.60, 1.33]}
+\@namedef{pn@cost:singlehigh:max}{1.33}
+\@namedef{pn@cost:singlehigh:median}{1.17}
+\@namedef{pn@cost:singlehigh:min}{0.60}
+\@namedef{pn@costratio:multi:single}{3.2}
+\@namedef{pn@diff:precision:multi-single:A}{-0.06}
+\@namedef{pn@diff:precision:multi-single:A:ci}{[-0.15, 0.02]}
+\@namedef{pn@diff:precision:multi-single:B}{0.01}
+\@namedef{pn@diff:precision:multi-single:B:ci}{[-0.07, 0.10]}
+\@namedef{pn@diff:precision:multi-single:opus}{-0.02}
+\@namedef{pn@diff:precision:multi-single:opus:ci}{[-0.06, 0.01]}
+\@namedef{pn@diff:precision:multi-single:sonnet}{-0.02}
+\@namedef{pn@diff:precision:multi-single:sonnet:ci}{[-0.07, 0.04]}
+\@namedef{pn@diff:precision:multi-singlehigh:A}{-0.01}
+\@namedef{pn@diff:precision:multi-singlehigh:A:ci}{[-0.11, 0.08]}
+\@namedef{pn@diff:precision:multi-singlehigh:B}{0.04}
+\@namedef{pn@diff:precision:multi-singlehigh:B:ci}{[-0.04, 0.12]}
+\@namedef{pn@diff:precision:multi-singlehigh:opus}{0.00}
+\@namedef{pn@diff:precision:multi-singlehigh:opus:ci}{[-0.05, 0.05]}
+\@namedef{pn@diff:precision:multi-singlehigh:sonnet}{-0.01}
+\@namedef{pn@diff:precision:multi-singlehigh:sonnet:ci}{[-0.07, 0.04]}
+\@namedef{pn@diff:precision:scaffolded-noscaffold:A}{0.01}
+\@namedef{pn@diff:precision:scaffolded-noscaffold:A:ci}{[-0.09, 0.13]}
+\@namedef{pn@diff:precision:scaffolded-noscaffold:B}{-0.01}
+\@namedef{pn@diff:precision:scaffolded-noscaffold:B:ci}{[-0.08, 0.08]}
+\@namedef{pn@diff:precision:scaffolded-noscaffold:opus}{-0.03}
+\@namedef{pn@diff:precision:scaffolded-noscaffold:opus:ci}{[-0.04, -0.01]}
+\@namedef{pn@diff:precision:scaffolded-noscaffold:sonnet}{-0.03}
+\@namedef{pn@diff:precision:scaffolded-noscaffold:sonnet:ci}{[-0.07, 0.01]}
+\@namedef{pn@diff:precision:singlehigh-single:A}{-0.05}
+\@namedef{pn@diff:precision:singlehigh-single:A:ci}{[-0.13, 0.03]}
+\@namedef{pn@diff:precision:singlehigh-single:B}{-0.03}
+\@namedef{pn@diff:precision:singlehigh-single:B:ci}{[-0.12, 0.07]}
+\@namedef{pn@diff:precision:singlehigh-single:opus}{-0.03}
+\@namedef{pn@diff:precision:singlehigh-single:opus:ci}{[-0.06, 0.01]}
+\@namedef{pn@diff:precision:singlehigh-single:sonnet}{-0.00}
+\@namedef{pn@diff:precision:singlehigh-single:sonnet:ci}{[-0.06, 0.05]}
+\@namedef{pn@diff:recall:multi-single:A}{0.02}
+\@namedef{pn@diff:recall:multi-single:A:ci}{[-0.07, 0.11]}
+\@namedef{pn@diff:recall:multi-single:B}{0.03}
+\@namedef{pn@diff:recall:multi-single:B:ci}{[-0.06, 0.12]}
+\@namedef{pn@diff:recall:multi-single:opus}{-0.06}
+\@namedef{pn@diff:recall:multi-single:opus:ci}{[-0.13, 0.00]}
+\@namedef{pn@diff:recall:multi-single:sonnet}{-0.04}
+\@namedef{pn@diff:recall:multi-single:sonnet:ci}{[-0.14, 0.05]}
+\@namedef{pn@diff:recall:multi-singlehigh:A}{-0.02}
+\@namedef{pn@diff:recall:multi-singlehigh:A:ci}{[-0.10, 0.06]}
+\@namedef{pn@diff:recall:multi-singlehigh:B}{-0.02}
+\@namedef{pn@diff:recall:multi-singlehigh:B:ci}{[-0.09, 0.05]}
+\@namedef{pn@diff:recall:multi-singlehigh:opus}{-0.02}
+\@namedef{pn@diff:recall:multi-singlehigh:opus:ci}{[-0.09, 0.05]}
+\@namedef{pn@diff:recall:multi-singlehigh:sonnet}{-0.05}
+\@namedef{pn@diff:recall:multi-singlehigh:sonnet:ci}{[-0.14, 0.04]}
+\@namedef{pn@diff:recall:scaffolded-noscaffold:A}{0.23}
+\@namedef{pn@diff:recall:scaffolded-noscaffold:A:ci}{[0.09, 0.37]}
+\@namedef{pn@diff:recall:scaffolded-noscaffold:B}{0.16}
+\@namedef{pn@diff:recall:scaffolded-noscaffold:B:ci}{[0.05, 0.29]}
+\@namedef{pn@diff:recall:scaffolded-noscaffold:opus}{0.11}
+\@namedef{pn@diff:recall:scaffolded-noscaffold:opus:ci}{[0.01, 0.21]}
+\@namedef{pn@diff:recall:scaffolded-noscaffold:sonnet}{0.05}
+\@namedef{pn@diff:recall:scaffolded-noscaffold:sonnet:ci}{[-0.06, 0.17]}
+\@namedef{pn@diff:recall:singlehigh-single:A}{0.04}
+\@namedef{pn@diff:recall:singlehigh-single:A:ci}{[-0.06, 0.13]}
+\@namedef{pn@diff:recall:singlehigh-single:B}{0.05}
+\@namedef{pn@diff:recall:singlehigh-single:B:ci}{[-0.04, 0.14]}
+\@namedef{pn@diff:recall:singlehigh-single:opus}{-0.04}
+\@namedef{pn@diff:recall:singlehigh-single:opus:ci}{[-0.08, 0.01]}
+\@namedef{pn@diff:recall:singlehigh-single:sonnet}{0.01}
+\@namedef{pn@diff:recall:singlehigh-single:sonnet:ci}{[-0.08, 0.09]}
+\@namedef{pn@down:precision:A}{30}
+\@namedef{pn@down:precision:B}{27}
+\@namedef{pn@down:recall:A}{38}
+\@namedef{pn@down:recall:B}{34}
+\@namedef{pn@gainbound:multi}{0.12}
+\@namedef{pn@gap:scaffolded:max}{0.06}
+\@namedef{pn@gen:precision:noscaffold:max}{$+0.11$}
+\@namedef{pn@gen:precision:noscaffold:min}{$+0.06$}
+\@namedef{pn@gen:precision:scaffolded:max}{$+0.07$}
+\@namedef{pn@gen:precision:scaffolded:min}{$+0.04$}
+\@namedef{pn@gen:recall:noscaffold:max}{$+0.17$}
+\@namedef{pn@gen:recall:noscaffold:min}{$+0.09$}
+\@namedef{pn@gen:recall:scaffolded:max}{$+0.03$}
+\@namedef{pn@gen:recall:scaffolded:min}{$-0.02$}
+\@namedef{pn@hours:max}{6}
+\@namedef{pn@hours:min}{2}
+\@namedef{pn@inv:active}{326}
+\@namedef{pn@inv:attribute}{70}
+\@namedef{pn@inv:class}{60}
+\@namedef{pn@inv:enumeration}{16}
+\@namedef{pn@inv:members}{250}
+\@namedef{pn@inv:operation}{141}
+\@namedef{pn@inv:relationship}{39}
+\@namedef{pn@jointdown:precision:n}{9}
+\@namedef{pn@jointdown:precision:opusfull}{7}
+\@namedef{pn@jointdown:precision:sonnetfull}{6}
+\@namedef{pn@jointdown:recall:n}{28}
+\@namedef{pn@jointdown:recall:noscaffold}{12}
+\@namedef{pn@jointdown:recall:opusfull}{19}
+\@namedef{pn@jointdown:recall:sonnetfull}{14}
+\@namedef{pn@judgecost:total}{12}
+\@namedef{pn@judgeminutes:total}{23}
+\@namedef{pn@kappa:precision:A-B}{0.18}
+\@namedef{pn@kappa:precision:A-B:attribute}{0.25}
+\@namedef{pn@kappa:precision:A-B:class}{0.21}
+\@namedef{pn@kappa:precision:A-B:enumeration}{0.00}
+\@namedef{pn@kappa:precision:A-B:multi}{0.17}
+\@namedef{pn@kappa:precision:A-B:noscaffold}{0.45}
+\@namedef{pn@kappa:precision:A-B:operation}{0.22}
+\@namedef{pn@kappa:precision:A-B:relationship}{-0.02}
+\@namedef{pn@kappa:precision:A-B:single}{0.22}
+\@namedef{pn@kappa:precision:A-B:singlehigh}{0.02}
+\@namedef{pn@kappa:precision:A-opus}{0.34}
+\@namedef{pn@kappa:precision:A-opus:attribute}{0.35}
+\@namedef{pn@kappa:precision:A-opus:class}{0.79}
+\@namedef{pn@kappa:precision:A-opus:enumeration}{0.00}
+\@namedef{pn@kappa:precision:A-opus:multi}{0.40}
+\@namedef{pn@kappa:precision:A-opus:noscaffold}{0.00}
+\@namedef{pn@kappa:precision:A-opus:operation}{0.00}
+\@namedef{pn@kappa:precision:A-opus:relationship}{0.00}
+\@namedef{pn@kappa:precision:A-opus:single}{0.26}
+\@namedef{pn@kappa:precision:A-opus:singlehigh}{0.45}
+\@namedef{pn@kappa:precision:A-sonnet}{0.41}
+\@namedef{pn@kappa:precision:A-sonnet:attribute}{0.45}
+\@namedef{pn@kappa:precision:A-sonnet:class}{0.48}
+\@namedef{pn@kappa:precision:A-sonnet:enumeration}{0.00}
+\@namedef{pn@kappa:precision:A-sonnet:multi}{0.41}
+\@namedef{pn@kappa:precision:A-sonnet:noscaffold}{-0.03}
+\@namedef{pn@kappa:precision:A-sonnet:operation}{0.00}
+\@namedef{pn@kappa:precision:A-sonnet:relationship}{0.23}
+\@namedef{pn@kappa:precision:A-sonnet:single}{0.56}
+\@namedef{pn@kappa:precision:A-sonnet:singlehigh}{0.54}
+\@namedef{pn@kappa:precision:B-opus}{0.04}
+\@namedef{pn@kappa:precision:B-opus:attribute}{0.11}
+\@namedef{pn@kappa:precision:B-opus:class}{-0.08}
+\@namedef{pn@kappa:precision:B-opus:enumeration}{1.00}
+\@namedef{pn@kappa:precision:B-opus:multi}{0.09}
+\@namedef{pn@kappa:precision:B-opus:noscaffold}{0.00}
+\@namedef{pn@kappa:precision:B-opus:operation}{0.00}
+\@namedef{pn@kappa:precision:B-opus:relationship}{0.00}
+\@namedef{pn@kappa:precision:B-opus:single}{0.20}
+\@namedef{pn@kappa:precision:B-opus:singlehigh}{-0.10}
+\@namedef{pn@kappa:precision:B-sonnet}{0.03}
+\@namedef{pn@kappa:precision:B-sonnet:attribute}{0.14}
+\@namedef{pn@kappa:precision:B-sonnet:class}{-0.05}
+\@namedef{pn@kappa:precision:B-sonnet:enumeration}{1.00}
+\@namedef{pn@kappa:precision:B-sonnet:multi}{0.16}
+\@namedef{pn@kappa:precision:B-sonnet:noscaffold}{-0.04}
+\@namedef{pn@kappa:precision:B-sonnet:operation}{0.00}
+\@namedef{pn@kappa:precision:B-sonnet:relationship}{-0.13}
+\@namedef{pn@kappa:precision:B-sonnet:single}{0.11}
+\@namedef{pn@kappa:precision:B-sonnet:singlehigh}{-0.12}
+\@namedef{pn@kappa:precision:opus-sonnet}{0.59}
+\@namedef{pn@kappa:precision:opus-sonnet:attribute}{0.75}
+\@namedef{pn@kappa:precision:opus-sonnet:class}{0.65}
+\@namedef{pn@kappa:precision:opus-sonnet:enumeration}{1.00}
+\@namedef{pn@kappa:precision:opus-sonnet:multi}{0.50}
+\@namedef{pn@kappa:precision:opus-sonnet:noscaffold}{0.00}
+\@namedef{pn@kappa:precision:opus-sonnet:operation}{1.00}
+\@namedef{pn@kappa:precision:opus-sonnet:relationship}{0.00}
+\@namedef{pn@kappa:precision:opus-sonnet:single}{0.38}
+\@namedef{pn@kappa:precision:opus-sonnet:singlehigh}{0.88}
+\@namedef{pn@kappa:recall:A-B}{0.68}
+\@namedef{pn@kappa:recall:A-B:attribute}{0.60}
+\@namedef{pn@kappa:recall:A-B:class}{0.64}
+\@namedef{pn@kappa:recall:A-B:enumeration}{1.00}
+\@namedef{pn@kappa:recall:A-B:multi}{0.58}
+\@namedef{pn@kappa:recall:A-B:noscaffold}{0.57}
+\@namedef{pn@kappa:recall:A-B:operation}{0.70}
+\@namedef{pn@kappa:recall:A-B:relationship}{0.75}
+\@namedef{pn@kappa:recall:A-B:single}{0.79}
+\@namedef{pn@kappa:recall:A-B:singlehigh}{0.75}
+\@namedef{pn@kappa:recall:A-opus}{0.33}
+\@namedef{pn@kappa:recall:A-opus:attribute}{0.66}
+\@namedef{pn@kappa:recall:A-opus:class}{-0.05}
+\@namedef{pn@kappa:recall:A-opus:enumeration}{1.00}
+\@namedef{pn@kappa:recall:A-opus:multi}{0.35}
+\@namedef{pn@kappa:recall:A-opus:noscaffold}{0.39}
+\@namedef{pn@kappa:recall:A-opus:operation}{0.17}
+\@namedef{pn@kappa:recall:A-opus:relationship}{0.17}
+\@namedef{pn@kappa:recall:A-opus:single}{0.11}
+\@namedef{pn@kappa:recall:A-opus:singlehigh}{0.24}
+\@namedef{pn@kappa:recall:A-sonnet}{0.44}
+\@namedef{pn@kappa:recall:A-sonnet:attribute}{0.55}
+\@namedef{pn@kappa:recall:A-sonnet:class}{-0.05}
+\@namedef{pn@kappa:recall:A-sonnet:enumeration}{1.00}
+\@namedef{pn@kappa:recall:A-sonnet:multi}{0.58}
+\@namedef{pn@kappa:recall:A-sonnet:noscaffold}{0.36}
+\@namedef{pn@kappa:recall:A-sonnet:operation}{0.42}
+\@namedef{pn@kappa:recall:A-sonnet:relationship}{0.31}
+\@namedef{pn@kappa:recall:A-sonnet:single}{0.43}
+\@namedef{pn@kappa:recall:A-sonnet:singlehigh}{0.34}
+\@namedef{pn@kappa:recall:B-opus}{0.19}
+\@namedef{pn@kappa:recall:B-opus:attribute}{0.29}
+\@namedef{pn@kappa:recall:B-opus:class}{-0.04}
+\@namedef{pn@kappa:recall:B-opus:enumeration}{1.00}
+\@namedef{pn@kappa:recall:B-opus:multi}{0.25}
+\@namedef{pn@kappa:recall:B-opus:noscaffold}{0.16}
+\@namedef{pn@kappa:recall:B-opus:operation}{0.20}
+\@namedef{pn@kappa:recall:B-opus:relationship}{0.04}
+\@namedef{pn@kappa:recall:B-opus:single}{0.11}
+\@namedef{pn@kappa:recall:B-opus:singlehigh}{0.08}
+\@namedef{pn@kappa:recall:B-sonnet}{0.30}
+\@namedef{pn@kappa:recall:B-sonnet:attribute}{0.31}
+\@namedef{pn@kappa:recall:B-sonnet:class}{-0.04}
+\@namedef{pn@kappa:recall:B-sonnet:enumeration}{1.00}
+\@namedef{pn@kappa:recall:B-sonnet:multi}{0.52}
+\@namedef{pn@kappa:recall:B-sonnet:noscaffold}{0.21}
+\@namedef{pn@kappa:recall:B-sonnet:operation}{0.41}
+\@namedef{pn@kappa:recall:B-sonnet:relationship}{-0.01}
+\@namedef{pn@kappa:recall:B-sonnet:single}{0.32}
+\@namedef{pn@kappa:recall:B-sonnet:singlehigh}{0.05}
+\@namedef{pn@kappa:recall:opus-sonnet}{0.58}
+\@namedef{pn@kappa:recall:opus-sonnet:attribute}{0.59}
+\@namedef{pn@kappa:recall:opus-sonnet:class}{1.00}
+\@namedef{pn@kappa:recall:opus-sonnet:enumeration}{1.00}
+\@namedef{pn@kappa:recall:opus-sonnet:multi}{0.71}
+\@namedef{pn@kappa:recall:opus-sonnet:noscaffold}{0.49}
+\@namedef{pn@kappa:recall:opus-sonnet:operation}{0.45}
+\@namedef{pn@kappa:recall:opus-sonnet:relationship}{0.86}
+\@namedef{pn@kappa:recall:opus-sonnet:single}{0.14}
+\@namedef{pn@kappa:recall:opus-sonnet:singlehigh}{0.84}
+\@namedef{pn@minutes:multi}{13 [12, 16]}
+\@namedef{pn@minutes:multi:max}{16}
+\@namedef{pn@minutes:multi:median}{13}
+\@namedef{pn@minutes:multi:min}{12}
+\@namedef{pn@minutes:noscaffold}{2 [2, 2]}
+\@namedef{pn@minutes:noscaffold:max}{2}
+\@namedef{pn@minutes:noscaffold:median}{2}
+\@namedef{pn@minutes:noscaffold:min}{2}
+\@namedef{pn@minutes:single}{5 [3, 6]}
+\@namedef{pn@minutes:single:max}{6}
+\@namedef{pn@minutes:single:median}{5}
+\@namedef{pn@minutes:single:min}{3}
+\@namedef{pn@minutes:singlehigh}{14 [7, 17]}
+\@namedef{pn@minutes:singlehigh:max}{17}
+\@namedef{pn@minutes:singlehigh:median}{14}
+\@namedef{pn@minutes:singlehigh:min}{7}
+\@namedef{pn@n:precision:A-B}{200}
+\@namedef{pn@n:precision:A-B:attribute}{79}
+\@namedef{pn@n:precision:A-B:class}{37}
+\@namedef{pn@n:precision:A-B:enumeration}{5}
+\@namedef{pn@n:precision:A-B:multi}{60}
+\@namedef{pn@n:precision:A-B:noscaffold}{32}
+\@namedef{pn@n:precision:A-B:operation}{35}
+\@namedef{pn@n:precision:A-B:relationship}{44}
+\@namedef{pn@n:precision:A-B:single}{51}
+\@namedef{pn@n:precision:A-B:singlehigh}{57}
+\@namedef{pn@n:precision:A-opus}{200}
+\@namedef{pn@n:precision:A-opus:attribute}{79}
+\@namedef{pn@n:precision:A-opus:class}{37}
+\@namedef{pn@n:precision:A-opus:enumeration}{5}
+\@namedef{pn@n:precision:A-opus:multi}{60}
+\@namedef{pn@n:precision:A-opus:noscaffold}{32}
+\@namedef{pn@n:precision:A-opus:operation}{35}
+\@namedef{pn@n:precision:A-opus:relationship}{44}
+\@namedef{pn@n:precision:A-opus:single}{51}
+\@namedef{pn@n:precision:A-opus:singlehigh}{57}
+\@namedef{pn@n:precision:A-sonnet}{200}
+\@namedef{pn@n:precision:A-sonnet:attribute}{79}
+\@namedef{pn@n:precision:A-sonnet:class}{37}
+\@namedef{pn@n:precision:A-sonnet:enumeration}{5}
+\@namedef{pn@n:precision:A-sonnet:multi}{60}
+\@namedef{pn@n:precision:A-sonnet:noscaffold}{32}
+\@namedef{pn@n:precision:A-sonnet:operation}{35}
+\@namedef{pn@n:precision:A-sonnet:relationship}{44}
+\@namedef{pn@n:precision:A-sonnet:single}{51}
+\@namedef{pn@n:precision:A-sonnet:singlehigh}{57}
+\@namedef{pn@n:precision:B-opus}{200}
+\@namedef{pn@n:precision:B-opus:attribute}{79}
+\@namedef{pn@n:precision:B-opus:class}{37}
+\@namedef{pn@n:precision:B-opus:enumeration}{5}
+\@namedef{pn@n:precision:B-opus:multi}{60}
+\@namedef{pn@n:precision:B-opus:noscaffold}{32}
+\@namedef{pn@n:precision:B-opus:operation}{35}
+\@namedef{pn@n:precision:B-opus:relationship}{44}
+\@namedef{pn@n:precision:B-opus:single}{51}
+\@namedef{pn@n:precision:B-opus:singlehigh}{57}
+\@namedef{pn@n:precision:B-sonnet}{200}
+\@namedef{pn@n:precision:B-sonnet:attribute}{79}
+\@namedef{pn@n:precision:B-sonnet:class}{37}
+\@namedef{pn@n:precision:B-sonnet:enumeration}{5}
+\@namedef{pn@n:precision:B-sonnet:multi}{60}
+\@namedef{pn@n:precision:B-sonnet:noscaffold}{32}
+\@namedef{pn@n:precision:B-sonnet:operation}{35}
+\@namedef{pn@n:precision:B-sonnet:relationship}{44}
+\@namedef{pn@n:precision:B-sonnet:single}{51}
+\@namedef{pn@n:precision:B-sonnet:singlehigh}{57}
+\@namedef{pn@n:precision:opus-sonnet}{200}
+\@namedef{pn@n:precision:opus-sonnet:attribute}{79}
+\@namedef{pn@n:precision:opus-sonnet:class}{37}
+\@namedef{pn@n:precision:opus-sonnet:enumeration}{5}
+\@namedef{pn@n:precision:opus-sonnet:multi}{60}
+\@namedef{pn@n:precision:opus-sonnet:noscaffold}{32}
+\@namedef{pn@n:precision:opus-sonnet:operation}{35}
+\@namedef{pn@n:precision:opus-sonnet:relationship}{44}
+\@namedef{pn@n:precision:opus-sonnet:single}{51}
+\@namedef{pn@n:precision:opus-sonnet:singlehigh}{57}
+\@namedef{pn@n:recall:A-B}{200}
+\@namedef{pn@n:recall:A-B:attribute}{41}
+\@namedef{pn@n:recall:A-B:class}{29}
+\@namedef{pn@n:recall:A-B:enumeration}{6}
+\@namedef{pn@n:recall:A-B:multi}{59}
+\@namedef{pn@n:recall:A-B:noscaffold}{35}
+\@namedef{pn@n:recall:A-B:operation}{100}
+\@namedef{pn@n:recall:A-B:relationship}{24}
+\@namedef{pn@n:recall:A-B:single}{53}
+\@namedef{pn@n:recall:A-B:singlehigh}{53}
+\@namedef{pn@n:recall:A-opus}{200}
+\@namedef{pn@n:recall:A-opus:attribute}{41}
+\@namedef{pn@n:recall:A-opus:class}{29}
+\@namedef{pn@n:recall:A-opus:enumeration}{6}
+\@namedef{pn@n:recall:A-opus:multi}{59}
+\@namedef{pn@n:recall:A-opus:noscaffold}{35}
+\@namedef{pn@n:recall:A-opus:operation}{100}
+\@namedef{pn@n:recall:A-opus:relationship}{24}
+\@namedef{pn@n:recall:A-opus:single}{53}
+\@namedef{pn@n:recall:A-opus:singlehigh}{53}
+\@namedef{pn@n:recall:A-sonnet}{200}
+\@namedef{pn@n:recall:A-sonnet:attribute}{41}
+\@namedef{pn@n:recall:A-sonnet:class}{29}
+\@namedef{pn@n:recall:A-sonnet:enumeration}{6}
+\@namedef{pn@n:recall:A-sonnet:multi}{59}
+\@namedef{pn@n:recall:A-sonnet:noscaffold}{35}
+\@namedef{pn@n:recall:A-sonnet:operation}{100}
+\@namedef{pn@n:recall:A-sonnet:relationship}{24}
+\@namedef{pn@n:recall:A-sonnet:single}{53}
+\@namedef{pn@n:recall:A-sonnet:singlehigh}{53}
+\@namedef{pn@n:recall:B-opus}{200}
+\@namedef{pn@n:recall:B-opus:attribute}{41}
+\@namedef{pn@n:recall:B-opus:class}{29}
+\@namedef{pn@n:recall:B-opus:enumeration}{6}
+\@namedef{pn@n:recall:B-opus:multi}{59}
+\@namedef{pn@n:recall:B-opus:noscaffold}{35}
+\@namedef{pn@n:recall:B-opus:operation}{100}
+\@namedef{pn@n:recall:B-opus:relationship}{24}
+\@namedef{pn@n:recall:B-opus:single}{53}
+\@namedef{pn@n:recall:B-opus:singlehigh}{53}
+\@namedef{pn@n:recall:B-sonnet}{200}
+\@namedef{pn@n:recall:B-sonnet:attribute}{41}
+\@namedef{pn@n:recall:B-sonnet:class}{29}
+\@namedef{pn@n:recall:B-sonnet:enumeration}{6}
+\@namedef{pn@n:recall:B-sonnet:multi}{59}
+\@namedef{pn@n:recall:B-sonnet:noscaffold}{35}
+\@namedef{pn@n:recall:B-sonnet:operation}{100}
+\@namedef{pn@n:recall:B-sonnet:relationship}{24}
+\@namedef{pn@n:recall:B-sonnet:single}{53}
+\@namedef{pn@n:recall:B-sonnet:singlehigh}{53}
+\@namedef{pn@n:recall:opus-sonnet}{200}
+\@namedef{pn@n:recall:opus-sonnet:attribute}{41}
+\@namedef{pn@n:recall:opus-sonnet:class}{29}
+\@namedef{pn@n:recall:opus-sonnet:enumeration}{6}
+\@namedef{pn@n:recall:opus-sonnet:multi}{59}
+\@namedef{pn@n:recall:opus-sonnet:noscaffold}{35}
+\@namedef{pn@n:recall:opus-sonnet:operation}{100}
+\@namedef{pn@n:recall:opus-sonnet:relationship}{24}
+\@namedef{pn@n:recall:opus-sonnet:single}{53}
+\@namedef{pn@n:recall:opus-sonnet:singlehigh}{53}
+\@namedef{pn@ops:multi}{60 [49, 67]}
+\@namedef{pn@ops:multi:max}{67}
+\@namedef{pn@ops:multi:median}{60}
+\@namedef{pn@ops:multi:min}{49}
+\@namedef{pn@ops:noscaffold}{18 [7, 21]}
+\@namedef{pn@ops:noscaffold:max}{21}
+\@namedef{pn@ops:noscaffold:median}{18}
+\@namedef{pn@ops:noscaffold:min}{7}
+\@namedef{pn@ops:single}{54 [49, 58]}
+\@namedef{pn@ops:single:max}{58}
+\@namedef{pn@ops:single:median}{54}
+\@namedef{pn@ops:single:min}{49}
+\@namedef{pn@ops:singlehigh}{74 [57, 90]}
+\@namedef{pn@ops:singlehigh:max}{90}
+\@namedef{pn@ops:singlehigh:median}{74}
+\@namedef{pn@ops:singlehigh:min}{57}
+\@namedef{pn@outtok:multi}{108 [95, 139]}
+\@namedef{pn@outtok:multi:max}{139}
+\@namedef{pn@outtok:multi:median}{108}
+\@namedef{pn@outtok:multi:min}{95}
+\@namedef{pn@outtok:noscaffold}{18 [14, 18]}
+\@namedef{pn@outtok:noscaffold:max}{18}
+\@namedef{pn@outtok:noscaffold:median}{18}
+\@namedef{pn@outtok:noscaffold:min}{14}
+\@namedef{pn@outtok:single}{40 [25, 48]}
+\@namedef{pn@outtok:single:max}{48}
+\@namedef{pn@outtok:single:median}{40}
+\@namedef{pn@outtok:single:min}{25}
+\@namedef{pn@outtok:singlehigh}{108 [54, 124]}
+\@namedef{pn@outtok:singlehigh:max}{124}
+\@namedef{pn@outtok:singlehigh:median}{108}
+\@namedef{pn@outtok:singlehigh:min}{54}
+\@namedef{pn@precision:A:all}{0.90}
+\@namedef{pn@precision:A:all:ci}{[0.86, 0.94]}
+\@namedef{pn@precision:A:all:n}{200}
+\@namedef{pn@precision:A:attribute}{0.83}
+\@namedef{pn@precision:A:attribute:ci}{[0.75, 0.90]}
+\@namedef{pn@precision:A:attribute:n}{79}
+\@namedef{pn@precision:A:class}{0.96}
+\@namedef{pn@precision:A:class:ci}{[0.91, 1.00]}
+\@namedef{pn@precision:A:class:n}{37}
+\@namedef{pn@precision:A:enumeration}{0.90}
+\@namedef{pn@precision:A:enumeration:ci}{[0.70, 1.00]}
+\@namedef{pn@precision:A:enumeration:n}{5}
+\@namedef{pn@precision:A:multi}{0.88}
+\@namedef{pn@precision:A:multi:ci}{[0.81, 0.95]}
+\@namedef{pn@precision:A:multi:n}{60}
+\@namedef{pn@precision:A:noscaffold}{0.89}
+\@namedef{pn@precision:A:noscaffold:ci}{[0.78, 0.98]}
+\@namedef{pn@precision:A:noscaffold:n}{32}
+\@namedef{pn@precision:A:operation}{0.99}
+\@namedef{pn@precision:A:operation:ci}{[0.96, 1.00]}
+\@namedef{pn@precision:A:operation:n}{35}
+\@namedef{pn@precision:A:relationship}{0.92}
+\@namedef{pn@precision:A:relationship:ci}{[0.86, 0.97]}
+\@namedef{pn@precision:A:relationship:n}{44}
+\@namedef{pn@precision:A:single}{0.94}
+\@namedef{pn@precision:A:single:ci}{[0.89, 0.98]}
+\@namedef{pn@precision:A:single:n}{51}
+\@namedef{pn@precision:A:singlehigh}{0.89}
+\@namedef{pn@precision:A:singlehigh:ci}{[0.83, 0.95]}
+\@namedef{pn@precision:A:singlehigh:n}{57}
+\@namedef{pn@precision:B:all}{0.92}
+\@namedef{pn@precision:B:all:ci}{[0.88, 0.94]}
+\@namedef{pn@precision:B:all:n}{200}
+\@namedef{pn@precision:B:attribute}{0.92}
+\@namedef{pn@precision:B:attribute:ci}{[0.87, 0.96]}
+\@namedef{pn@precision:B:attribute:n}{79}
+\@namedef{pn@precision:B:class}{0.95}
+\@namedef{pn@precision:B:class:ci}{[0.89, 0.99]}
+\@namedef{pn@precision:B:class:n}{37}
+\@namedef{pn@precision:B:enumeration}{1.00}
+\@namedef{pn@precision:B:enumeration:ci}{[1.00, 1.00]}
+\@namedef{pn@precision:B:enumeration:n}{5}
+\@namedef{pn@precision:B:multi}{0.93}
+\@namedef{pn@precision:B:multi:ci}{[0.88, 0.97]}
+\@namedef{pn@precision:B:multi:n}{60}
+\@namedef{pn@precision:B:noscaffold}{0.92}
+\@namedef{pn@precision:B:noscaffold:ci}{[0.83, 0.98]}
+\@namedef{pn@precision:B:noscaffold:n}{32}
+\@namedef{pn@precision:B:operation}{0.90}
+\@namedef{pn@precision:B:operation:ci}{[0.80, 0.97]}
+\@namedef{pn@precision:B:operation:n}{35}
+\@namedef{pn@precision:B:relationship}{0.90}
+\@namedef{pn@precision:B:relationship:ci}{[0.82, 0.97]}
+\@namedef{pn@precision:B:relationship:n}{44}
+\@namedef{pn@precision:B:single}{0.92}
+\@namedef{pn@precision:B:single:ci}{[0.85, 0.98]}
+\@namedef{pn@precision:B:single:n}{51}
+\@namedef{pn@precision:B:singlehigh}{0.89}
+\@namedef{pn@precision:B:singlehigh:ci}{[0.82, 0.96]}
+\@namedef{pn@precision:B:singlehigh:n}{57}
+\@namedef{pn@precision:opus:all}{0.98}
+\@namedef{pn@precision:opus:all:ci}{[0.96, 0.99]}
+\@namedef{pn@precision:opus:all:n}{200}
+\@namedef{pn@precision:opus:attribute}{0.96}
+\@namedef{pn@precision:opus:attribute:ci}{[0.92, 0.99]}
+\@namedef{pn@precision:opus:attribute:n}{79}
+\@namedef{pn@precision:opus:class}{0.97}
+\@namedef{pn@precision:opus:class:ci}{[0.93, 1.00]}
+\@namedef{pn@precision:opus:class:n}{37}
+\@namedef{pn@precision:opus:enumeration}{1.00}
+\@namedef{pn@precision:opus:enumeration:ci}{[1.00, 1.00]}
+\@namedef{pn@precision:opus:enumeration:n}{5}
+\@namedef{pn@precision:opus:multi}{0.97}
+\@namedef{pn@precision:opus:multi:ci}{[0.93, 0.99]}
+\@namedef{pn@precision:opus:multi:n}{60}
+\@namedef{pn@precision:opus:noscaffold}{1.00}
+\@namedef{pn@precision:opus:noscaffold:ci}{[1.00, 1.00]}
+\@namedef{pn@precision:opus:noscaffold:n}{32}
+\@namedef{pn@precision:opus:operation}{1.00}
+\@namedef{pn@precision:opus:operation:ci}{[1.00, 1.00]}
+\@namedef{pn@precision:opus:operation:n}{35}
+\@namedef{pn@precision:opus:relationship}{1.00}
+\@namedef{pn@precision:opus:relationship:ci}{[1.00, 1.00]}
+\@namedef{pn@precision:opus:relationship:n}{44}
+\@namedef{pn@precision:opus:single}{0.99}
+\@namedef{pn@precision:opus:single:ci}{[0.97, 1.00]}
+\@namedef{pn@precision:opus:single:n}{51}
+\@namedef{pn@precision:opus:singlehigh}{0.96}
+\@namedef{pn@precision:opus:singlehigh:ci}{[0.93, 0.99]}
+\@namedef{pn@precision:opus:singlehigh:n}{57}
+\@namedef{pn@precision:researchers:scaffolded:max}{0.94}
+\@namedef{pn@precision:researchers:scaffolded:min}{0.88}
+\@namedef{pn@precision:sonnet:all}{0.96}
+\@namedef{pn@precision:sonnet:all:ci}{[0.94, 0.97]}
+\@namedef{pn@precision:sonnet:all:n}{200}
+\@namedef{pn@precision:sonnet:attribute}{0.93}
+\@namedef{pn@precision:sonnet:attribute:ci}{[0.89, 0.97]}
+\@namedef{pn@precision:sonnet:attribute:n}{79}
+\@namedef{pn@precision:sonnet:class}{0.99}
+\@namedef{pn@precision:sonnet:class:ci}{[0.96, 1.00]}
+\@namedef{pn@precision:sonnet:class:n}{37}
+\@namedef{pn@precision:sonnet:enumeration}{1.00}
+\@namedef{pn@precision:sonnet:enumeration:ci}{[1.00, 1.00]}
+\@namedef{pn@precision:sonnet:enumeration:n}{5}
+\@namedef{pn@precision:sonnet:multi}{0.94}
+\@namedef{pn@precision:sonnet:multi:ci}{[0.90, 0.98]}
+\@namedef{pn@precision:sonnet:multi:n}{60}
+\@namedef{pn@precision:sonnet:noscaffold}{0.98}
+\@namedef{pn@precision:sonnet:noscaffold:ci}{[0.95, 1.00]}
+\@namedef{pn@precision:sonnet:noscaffold:n}{32}
+\@namedef{pn@precision:sonnet:operation}{1.00}
+\@namedef{pn@precision:sonnet:operation:ci}{[1.00, 1.00]}
+\@namedef{pn@precision:sonnet:operation:n}{35}
+\@namedef{pn@precision:sonnet:relationship}{0.94}
+\@namedef{pn@precision:sonnet:relationship:ci}{[0.89, 0.99]}
+\@namedef{pn@precision:sonnet:relationship:n}{44}
+\@namedef{pn@precision:sonnet:single}{0.96}
+\@namedef{pn@precision:sonnet:single:ci}{[0.92, 0.99]}
+\@namedef{pn@precision:sonnet:single:n}{51}
+\@namedef{pn@precision:sonnet:singlehigh}{0.96}
+\@namedef{pn@precision:sonnet:singlehigh:ci}{[0.91, 0.99]}
+\@namedef{pn@precision:sonnet:singlehigh:n}{57}
+\@namedef{pn@precisionw:A:scaffolded}{0.93}
+\@namedef{pn@precisionw:B:scaffolded}{0.95}
+\@namedef{pn@recall:A:all}{0.88}
+\@namedef{pn@recall:A:all:ci}{[0.83, 0.91]}
+\@namedef{pn@recall:A:all:n}{200}
+\@namedef{pn@recall:A:attribute}{0.84}
+\@namedef{pn@recall:A:attribute:ci}{[0.74, 0.93]}
+\@namedef{pn@recall:A:attribute:n}{41}
+\@namedef{pn@recall:A:class}{0.97}
+\@namedef{pn@recall:A:class:ci}{[0.91, 1.00]}
+\@namedef{pn@recall:A:class:n}{29}
+\@namedef{pn@recall:A:enumeration}{1.00}
+\@namedef{pn@recall:A:enumeration:ci}{[1.00, 1.00]}
+\@namedef{pn@recall:A:enumeration:n}{6}
+\@namedef{pn@recall:A:multi}{0.92}
+\@namedef{pn@recall:A:multi:ci}{[0.86, 0.97]}
+\@namedef{pn@recall:A:multi:n}{59}
+\@namedef{pn@recall:A:noscaffold}{0.69}
+\@namedef{pn@recall:A:noscaffold:ci}{[0.56, 0.80]}
+\@namedef{pn@recall:A:noscaffold:n}{35}
+\@namedef{pn@recall:A:operation}{0.86}
+\@namedef{pn@recall:A:operation:ci}{[0.81, 0.92]}
+\@namedef{pn@recall:A:operation:n}{100}
+\@namedef{pn@recall:A:relationship}{0.83}
+\@namedef{pn@recall:A:relationship:ci}{[0.71, 0.94]}
+\@namedef{pn@recall:A:relationship:n}{24}
+\@namedef{pn@recall:A:single}{0.90}
+\@namedef{pn@recall:A:single:ci}{[0.82, 0.96]}
+\@namedef{pn@recall:A:single:n}{53}
+\@namedef{pn@recall:A:singlehigh}{0.93}
+\@namedef{pn@recall:A:singlehigh:ci}{[0.87, 0.98]}
+\@namedef{pn@recall:A:singlehigh:n}{53}
+\@namedef{pn@recall:B:all}{0.89}
+\@namedef{pn@recall:B:all:ci}{[0.85, 0.93]}
+\@namedef{pn@recall:B:all:n}{200}
+\@namedef{pn@recall:B:attribute}{0.90}
+\@namedef{pn@recall:B:attribute:ci}{[0.84, 0.96]}
+\@namedef{pn@recall:B:attribute:n}{41}
+\@namedef{pn@recall:B:class}{0.93}
+\@namedef{pn@recall:B:class:ci}{[0.84, 1.00]}
+\@namedef{pn@recall:B:class:n}{29}
+\@namedef{pn@recall:B:enumeration}{1.00}
+\@namedef{pn@recall:B:enumeration:ci}{[1.00, 1.00]}
+\@namedef{pn@recall:B:enumeration:n}{6}
+\@namedef{pn@recall:B:multi}{0.92}
+\@namedef{pn@recall:B:multi:ci}{[0.86, 0.97]}
+\@namedef{pn@recall:B:multi:n}{59}
+\@namedef{pn@recall:B:noscaffold}{0.76}
+\@namedef{pn@recall:B:noscaffold:ci}{[0.64, 0.87]}
+\@namedef{pn@recall:B:noscaffold:n}{35}
+\@namedef{pn@recall:B:operation}{0.88}
+\@namedef{pn@recall:B:operation:ci}{[0.82, 0.93]}
+\@namedef{pn@recall:B:operation:n}{100}
+\@namedef{pn@recall:B:relationship}{0.85}
+\@namedef{pn@recall:B:relationship:ci}{[0.73, 0.96]}
+\@namedef{pn@recall:B:relationship:n}{24}
+\@namedef{pn@recall:B:single}{0.90}
+\@namedef{pn@recall:B:single:ci}{[0.82, 0.96]}
+\@namedef{pn@recall:B:single:n}{53}
+\@namedef{pn@recall:B:singlehigh}{0.94}
+\@namedef{pn@recall:B:singlehigh:ci}{[0.89, 0.99]}
+\@namedef{pn@recall:B:singlehigh:n}{53}
+\@namedef{pn@recall:opus:all}{0.93}
+\@namedef{pn@recall:opus:all:ci}{[0.90, 0.95]}
+\@namedef{pn@recall:opus:all:n}{200}
+\@namedef{pn@recall:opus:attribute}{0.85}
+\@namedef{pn@recall:opus:attribute:ci}{[0.76, 0.94]}
+\@namedef{pn@recall:opus:attribute:n}{41}
+\@namedef{pn@recall:opus:class}{0.98}
+\@namedef{pn@recall:opus:class:ci}{[0.95, 1.00]}
+\@namedef{pn@recall:opus:class:n}{29}
+\@namedef{pn@recall:opus:enumeration}{1.00}
+\@namedef{pn@recall:opus:enumeration:ci}{[1.00, 1.00]}
+\@namedef{pn@recall:opus:enumeration:n}{6}
+\@namedef{pn@recall:opus:multi}{0.92}
+\@namedef{pn@recall:opus:multi:ci}{[0.86, 0.97]}
+\@namedef{pn@recall:opus:multi:n}{59}
+\@namedef{pn@recall:opus:noscaffold}{0.84}
+\@namedef{pn@recall:opus:noscaffold:ci}{[0.73, 0.93]}
+\@namedef{pn@recall:opus:noscaffold:n}{35}
+\@namedef{pn@recall:opus:operation}{0.94}
+\@namedef{pn@recall:opus:operation:ci}{[0.91, 0.97]}
+\@namedef{pn@recall:opus:operation:n}{100}
+\@namedef{pn@recall:opus:relationship}{0.92}
+\@namedef{pn@recall:opus:relationship:ci}{[0.83, 0.98]}
+\@namedef{pn@recall:opus:relationship:n}{24}
+\@namedef{pn@recall:opus:single}{0.98}
+\@namedef{pn@recall:opus:single:ci}{[0.95, 1.00]}
+\@namedef{pn@recall:opus:single:n}{53}
+\@namedef{pn@recall:opus:singlehigh}{0.94}
+\@namedef{pn@recall:opus:singlehigh:ci}{[0.90, 0.98]}
+\@namedef{pn@recall:opus:singlehigh:n}{53}
+\@namedef{pn@recall:researchers:scaffolded:max}{0.94}
+\@namedef{pn@recall:researchers:scaffolded:min}{0.90}
+\@namedef{pn@recall:sonnet:all}{0.90}
+\@namedef{pn@recall:sonnet:all:ci}{[0.86, 0.93]}
+\@namedef{pn@recall:sonnet:all:n}{200}
+\@namedef{pn@recall:sonnet:attribute}{0.82}
+\@namedef{pn@recall:sonnet:attribute:ci}{[0.71, 0.91]}
+\@namedef{pn@recall:sonnet:attribute:n}{41}
+\@namedef{pn@recall:sonnet:class}{0.98}
+\@namedef{pn@recall:sonnet:class:ci}{[0.95, 1.00]}
+\@namedef{pn@recall:sonnet:class:n}{29}
+\@namedef{pn@recall:sonnet:enumeration}{1.00}
+\@namedef{pn@recall:sonnet:enumeration:ci}{[1.00, 1.00]}
+\@namedef{pn@recall:sonnet:enumeration:n}{6}
+\@namedef{pn@recall:sonnet:multi}{0.87}
+\@namedef{pn@recall:sonnet:multi:ci}{[0.80, 0.93]}
+\@namedef{pn@recall:sonnet:multi:n}{59}
+\@namedef{pn@recall:sonnet:noscaffold}{0.86}
+\@namedef{pn@recall:sonnet:noscaffold:ci}{[0.74, 0.96]}
+\@namedef{pn@recall:sonnet:noscaffold:n}{35}
+\@namedef{pn@recall:sonnet:operation}{0.90}
+\@namedef{pn@recall:sonnet:operation:ci}{[0.84, 0.94]}
+\@namedef{pn@recall:sonnet:operation:n}{100}
+\@namedef{pn@recall:sonnet:relationship}{0.90}
+\@namedef{pn@recall:sonnet:relationship:ci}{[0.81, 0.96]}
+\@namedef{pn@recall:sonnet:relationship:n}{24}
+\@namedef{pn@recall:sonnet:single}{0.92}
+\@namedef{pn@recall:sonnet:single:ci}{[0.85, 0.97]}
+\@namedef{pn@recall:sonnet:single:n}{53}
+\@namedef{pn@recall:sonnet:singlehigh}{0.92}
+\@namedef{pn@recall:sonnet:singlehigh:ci}{[0.87, 0.97]}
+\@namedef{pn@recall:sonnet:singlehigh:n}{53}
+\@namedef{pn@runs:multi}{5}
+\@namedef{pn@runs:noscaffold}{3}
+\@namedef{pn@runs:single}{5}
+\@namedef{pn@runs:singlehigh}{5}
+\makeatother

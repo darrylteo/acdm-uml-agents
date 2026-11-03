@@ -1,0 +1,35 @@
+{
+  "condition": "single",
+  "steps": [
+    {
+      "ok": true,
+      "output": null,
+      "error": null,
+      "model": "claude-sonnet-5",
+      "input_tokens": 13511,
+      "output_tokens": 63244,
+      "thinking_tokens": 38767,
+      "cache_creation_tokens": 10530,
+      "cache_read_tokens": 2979,
+      "cost_usd": 0.6751598,
+      "duration_ms": 498879,
+      "attempts": 1,
+      "num_turns": 2
+    }
+  ],
+  "ok": true,
+  "model_alias": "claude-sonnet-5",
+  "effort": "high",
+  "validation_errors": [],
+  "structural_problems": [],
+  "unmodelled": [
+    "Milestone 1 references 'attachment 2' and section 3.7.3 for DPI process implementation details that are not given in the document text.",
+    "Milestone 9 states the TOBT confirmation process is 'actually constantly applicable in the CDM Platform, as soon as a TOBT is available,' a continuous-process characterisation that does not map to a discrete operation.",
+    "Milestone 2 states 'CTOT flights usually have a priority over unregulated flights,' a prioritisation rule for which the document names no class or procedure to enact it.",
+    "Milestone 12 mentions Dispatcher / Supervisor / Redcap as ground-handling roles in a parenthetical note without describing them further, so no distinct class is modelled for them."
+  ],
+  "total_input_tokens": 13511,
+  "total_output_tokens": 63244,
+  "total_cost_usd": 0.6751598,
+  "total_duration_ms": 498879
+}

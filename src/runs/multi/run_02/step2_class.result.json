@@ -1,0 +1,908 @@
+{
+  "meta": {
+    "ok": true,
+    "output": null,
+    "error": null,
+    "model": "claude-sonnet-5",
+    "input_tokens": 49284,
+    "output_tokens": 16080,
+    "thinking_tokens": 9071,
+    "cache_creation_tokens": 27085,
+    "cache_read_tokens": 22195,
+    "cost_usd": 0.273587,
+    "duration_ms": 135766,
+    "attempts": 1
+  },
+  "output": {
+    "packages": [
+      {
+        "name": "Stakeholders",
+        "description": "The parties that take part in the process and originate or receive its information."
+      },
+      {
+        "name": "Flights",
+        "description": "The flight, turn-round, aircraft, and the flight plan and slot that describe them, including the flight's operational status."
+      },
+      {
+        "name": "Timings",
+        "description": "The time quantities that describe a flight's progress, each with its origin, accuracy, and tolerance."
+      },
+      {
+        "name": "Milestones",
+        "description": "The sixteen events, each with its trigger, timing rule, effect, and procedure."
+      },
+      {
+        "name": "Systems",
+        "description": "The technical systems that hold, compute, and display the process information, including the CDM platform and its actions."
+      },
+      {
+        "name": "Messages",
+        "description": "The messages exchanged between stakeholders and systems."
+      }
+    ],
+    "classes": [
+      {
+        "name": "AirportCdmPartner",
+        "package": "Stakeholders",
+        "stereotype": "entity",
+        "definition": "A generic party in the Airport CDM process that originates or receives flight information and notifications.",
+        "source_milestones": [
+          1,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "AircraftOperator",
+        "package": "Stakeholders",
+        "stereotype": "entity",
+        "definition": "The airline or its representative that submits the ATC Flight Plan and provides TOBT and other flight estimates.",
+        "source_milestones": [
+          1,
+          2,
+          3,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "GroundHandler",
+        "package": "Stakeholders",
+        "stereotype": "entity",
+        "definition": "The party that performs and reports ground handling operations and turn-round estimates on behalf of the aircraft operator.",
+        "source_milestones": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "AirTrafficControlUnit",
+        "package": "Stakeholders",
+        "stereotype": "entity",
+        "definition": "An air traffic control body, including the tower, Area Control Centre, and Approach Control Unit, that manages the flight's sequencing and clearances.",
+        "source_milestones": [
+          1,
+          2,
+          4,
+          5,
+          9,
+          10,
+          12,
+          13,
+          14,
+          16
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "NetworkOperations",
+        "package": "Stakeholders",
+        "stereotype": "entity",
+        "definition": "The network management party that issues CTOT, monitors flight progress via ETFMS/FUM, and receives DPI messages.",
+        "source_milestones": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          15
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "Ifps",
+        "package": "Stakeholders",
+        "stereotype": "entity",
+        "definition": "The Integrated Initial Flight Plan Processing System party that distributes the submitted ATC Flight Plan to involved ATC units.",
+        "source_milestones": [
+          1
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "FlightCrew",
+        "package": "Stakeholders",
+        "stereotype": "entity",
+        "definition": "The pilot and crew who request start-up approval and coordinate the turn-round with the ground handler.",
+        "source_milestones": [
+          12,
+          13,
+          14
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "StandGateManagement",
+        "package": "Stakeholders",
+        "stereotype": "entity",
+        "definition": "The party responsible for stand and gate allocation that shares EOBT information and is affected by stand/gate change decisions.",
+        "source_milestones": [
+          4,
+          9
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "Flight",
+        "package": "Flights",
+        "stereotype": "entity",
+        "definition": "A single scheduled arrival or departure operation of an aircraft, tracked through the sixteen milestones with its operational status and time quantities.",
+        "source_milestones": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "TurnRound",
+        "package": "Flights",
+        "stereotype": "entity",
+        "definition": "The aircraft turn-round linking an arriving flight and its related departing flight so that ground handling and estimates can be analysed together.",
+        "source_milestones": [
+          1,
+          4,
+          6,
+          7,
+          8,
+          9
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "Aircraft",
+        "package": "Flights",
+        "stereotype": "entity",
+        "definition": "The physical aircraft operating a flight, identified by type and registration, which may be updated from the flight plan.",
+        "source_milestones": [
+          1
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "FlightPlan",
+        "package": "Flights",
+        "stereotype": "entity",
+        "definition": "The ICAO/ATC Flight Plan submitted by the Aircraft Operator, possibly a repetitive flight plan, describing departure and destination aerodromes and other flight data.",
+        "source_milestones": [
+          1,
+          2,
+          3,
+          4,
+          6,
+          7,
+          8,
+          9
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "AirportSlot",
+        "package": "Flights",
+        "stereotype": "entity",
+        "definition": "The airport slot programme entry against which the ATC Flight Plan's consistency is checked.",
+        "source_milestones": [
+          1
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "TimeQuantity",
+        "package": "Timings",
+        "stereotype": "entity",
+        "definition": "A general time value describing a flight's progress toward or through a milestone event, carrying its prefix, origin, accuracy, and successive updates.",
+        "source_milestones": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "OffBlockTime",
+        "package": "Timings",
+        "stereotype": "entity",
+        "definition": "The scheduled, estimated, target, or actual time an aircraft leaves its parking position (SOBT, EOBT, TOBT, AOBT).",
+        "source_milestones": [
+          1,
+          2,
+          3,
+          4,
+          6,
+          7,
+          8,
+          9,
+          10,
+          15
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "LandingTime",
+        "package": "Timings",
+        "stereotype": "entity",
+        "definition": "The estimated or actual time an aircraft touches down (ELDT, ALDT).",
+        "source_milestones": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "InBlockTime",
+        "package": "Timings",
+        "stereotype": "entity",
+        "definition": "The estimated or actual time an aircraft arrives in-blocks (EIBT, AIBT).",
+        "source_milestones": [
+          1,
+          2,
+          3,
+          4,
+          6,
+          7
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "TakeOffTime",
+        "package": "Timings",
+        "stereotype": "entity",
+        "definition": "The estimated, target, calculated, or actual time an aircraft takes off (ETOT, TTOT, CTOT, ATOT).",
+        "source_milestones": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          15,
+          16
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "StartUpApprovalTime",
+        "package": "Timings",
+        "stereotype": "entity",
+        "definition": "The target or actual time an aircraft receives start-up approval (TSAT, ASAT).",
+        "source_milestones": [
+          10,
+          13,
+          14
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "StartUpRequestTime",
+        "package": "Timings",
+        "stereotype": "entity",
+        "definition": "The actual time start-up is requested by the flight crew (ASRT).",
+        "source_milestones": [
+          13
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "ReadyTime",
+        "package": "Timings",
+        "stereotype": "entity",
+        "definition": "The actual time an aircraft is ready for start-up and push-back, with all doors closed and equipment removed (ARDT).",
+        "source_milestones": [
+          12
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "BoardingTime",
+        "package": "Timings",
+        "stereotype": "entity",
+        "definition": "The actual time passengers start boarding the aircraft (ASBT).",
+        "source_milestones": [
+          11
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "GroundHandlingTime",
+        "package": "Timings",
+        "stereotype": "entity",
+        "definition": "The actual time ground handling operations commence for a flight (ACGT).",
+        "source_milestones": [
+          8
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "TaxiOutTime",
+        "package": "Timings",
+        "stereotype": "entity",
+        "definition": "The estimated taxi-out time between off-block and take-off, calculated by ATC based on traffic load, stand location, and runway in use (EXOT).",
+        "source_milestones": [
+          2,
+          3,
+          4,
+          9,
+          15
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "TaxiInTime",
+        "package": "Timings",
+        "stereotype": "entity",
+        "definition": "The estimated taxi-in time between landing and in-block used to compute EIBT (EXIT).",
+        "source_milestones": [
+          4,
+          6
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "TurnRoundTime",
+        "package": "Timings",
+        "stereotype": "entity",
+        "definition": "The minimum or estimated turn-round period used to calculate the departing flight's TOBT (MTTT, ETTT).",
+        "source_milestones": [
+          2,
+          3,
+          6,
+          7,
+          8
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "FlightPlanActivation",
+        "package": "Milestones",
+        "stereotype": "control",
+        "definition": "Milestone 1: processes the activated ATC Flight Plan, checks its consistency with the Airport Slot and airport flight data, and confirms the flight for further processing.",
+        "source_milestones": [
+          1
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "EobtMinus2Hours",
+        "package": "Milestones",
+        "stereotype": "control",
+        "definition": "Milestone 2: checks flight estimates against the ATC Flight Plan at EOBT-2 hours, issues CTOT for regulated flights, and informs Network Operations via the first T-DPI message.",
+        "source_milestones": [
+          2
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "TakeOffFromOutstation",
+        "package": "Milestones",
+        "stereotype": "control",
+        "definition": "Milestone 3: on take off from the outstation, checks AO/GH landing estimates against the outbound flight plan and informs Network Operations of updated take-off time estimates via a T-DPI-t message.",
+        "source_milestones": [
+          3
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "LocalRadarUpdate",
+        "package": "Milestones",
+        "stereotype": "control",
+        "definition": "Milestone 4: on radar detection at the FIR boundary, commences the TOBT process, updates ELDT/EIBT/TOBT/TTOT, and checks feasibility against the ATC Flight Plan.",
+        "source_milestones": [
+          4
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "FinalApproach",
+        "package": "Milestones",
+        "stereotype": "control",
+        "definition": "Milestone 5: on entering final approach, commences the TOBT process, updates ELDT-based estimates, and checks feasibility against the ATC Flight Plan.",
+        "source_milestones": [
+          5
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "Landed",
+        "package": "Milestones",
+        "stereotype": "control",
+        "definition": "Milestone 6: on actual landing (ALDT), updates TOBT, TTOT and EIBT and checks TOBT feasibility against the ATC Flight Plan.",
+        "source_milestones": [
+          6
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "InBlock",
+        "package": "Milestones",
+        "stereotype": "control",
+        "definition": "Milestone 7: on actual in-block (AIBT), updates TOBT and TTOT based on the estimated turn-round period and checks feasibility against the ATC Flight Plan.",
+        "source_milestones": [
+          7
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "GroundHandlingStarted",
+        "package": "Milestones",
+        "stereotype": "control",
+        "definition": "Milestone 8: on commencement of ground handling (ACGT), updates TOBT/TTOT based on the estimated turn-round period and checks feasibility against the ATC Flight Plan.",
+        "source_milestones": [
+          8
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "FinalConfirmationOfTobt",
+        "package": "Milestones",
+        "stereotype": "control",
+        "definition": "Milestone 9: at a locally agreed time before EOBT, confirms the AO/GH's most accurate TOBT, triggers ATC calculation of EXOT, and checks feasibility before TSAT issue.",
+        "source_milestones": [
+          9
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "TsatIssued",
+        "package": "Milestones",
+        "stereotype": "control",
+        "definition": "Milestone 10: informs partners of the allocated TSAT via T-DPI-s and checks whether the number of TOBT updates after TSAT exceeds a locally defined tolerance.",
+        "source_milestones": [
+          10
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "BoardingStarts",
+        "package": "Milestones",
+        "stereotype": "control",
+        "definition": "Milestone 11: informs partners of Actual Start Boarding Time and checks whether boarding starts in time to respect TOBT.",
+        "source_milestones": [
+          11
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "AircraftReady",
+        "package": "Milestones",
+        "stereotype": "control",
+        "definition": "Milestone 12: informs partners of Actual Ready Time and alerts the AO/GH if TOBT has passed without a ready status being received.",
+        "source_milestones": [
+          12
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "StartUpRequested",
+        "package": "Milestones",
+        "stereotype": "control",
+        "definition": "Milestone 13: informs partners of Actual Start-up Request Time and alerts partners if no start-up request is made within the TSAT tolerance window.",
+        "source_milestones": [
+          13
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "StartUpApproved",
+        "package": "Milestones",
+        "stereotype": "control",
+        "definition": "Milestone 14: informs partners of Actual Start-up Approval Time and checks that it accords with TSAT, alerting partners and re-sequencing the flight if not granted in time.",
+        "source_milestones": [
+          14
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "OffBlock",
+        "package": "Milestones",
+        "stereotype": "control",
+        "definition": "Milestone 15: informs partners of Actual Off-Block Time, triggers an A-DPI message, and checks TTOT changes against tolerance before informing Network Operations.",
+        "source_milestones": [
+          15
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "TakeOff",
+        "package": "Milestones",
+        "stereotype": "control",
+        "definition": "Milestone 16: informs partners of the actual take-off, sends FSA and MVT messages, and removes the flight from the departure sequence.",
+        "source_milestones": [
+          16
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "AirportCdmPlatform",
+        "package": "Systems",
+        "stereotype": "control",
+        "definition": "The central Airport CDM system that holds flight information, performs consistency checks, computes and updates time estimates, and triggers notifications throughout the process.",
+        "source_milestones": [
+          1,
+          2,
+          4,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "DpiProcess",
+        "package": "Systems",
+        "stereotype": "control",
+        "definition": "The process that commences correct DPI messaging with Network Operations when implemented.",
+        "source_milestones": [
+          1
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "EtfmsSystem",
+        "package": "Systems",
+        "stereotype": "boundary",
+        "definition": "The Enhanced Tactical Flow Management System used by Network Operations to monitor flight progress and generate Flight Update Messages.",
+        "source_milestones": [
+          3
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "AtcSystem",
+        "package": "Systems",
+        "stereotype": "boundary",
+        "definition": "The ATC ground system that calculates the Estimated Taxi-Out Time based on traffic load, stand/gate location, runway in use, and holding position wait.",
+        "source_milestones": [
+          9
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "SurveillanceSystem",
+        "package": "Systems",
+        "stereotype": "boundary",
+        "definition": "A radar, A-SMGCS, or Tower FDPS detection system that identifies a flight's position by SSR code to trigger milestone events.",
+        "source_milestones": [
+          4,
+          5,
+          6,
+          7,
+          15,
+          16
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "AcarsSystem",
+        "package": "Systems",
+        "stereotype": "boundary",
+        "definition": "The aircraft's ACARS reporting system that provides landing, in-block, off-block, and take-off events directly from the aircraft.",
+        "source_milestones": [
+          6,
+          7,
+          15,
+          16
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "FidsSystem",
+        "package": "Systems",
+        "stereotype": "boundary",
+        "definition": "The flight information display and public address system used to pre-call passengers, distinct from the physical start of boarding.",
+        "source_milestones": [
+          11
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "DpiMessage",
+        "package": "Messages",
+        "stereotype": "boundary",
+        "definition": "A Departure Planning Information message (E-DPI, T-DPI, T-DPI-t, T-DPI-s, or A-DPI) sent to Network Operations to convey flight time estimates.",
+        "source_milestones": [
+          1,
+          2,
+          3,
+          10,
+          15
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "FlightUpdateMessage",
+        "package": "Messages",
+        "stereotype": "boundary",
+        "definition": "The FUM sent by Network Operations providing updates of an inbound flight's progress toward the destination.",
+        "source_milestones": [
+          2,
+          3
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "ReadyStatusMessage",
+        "package": "Messages",
+        "stereotype": "boundary",
+        "definition": "The RDY message confirming that an aircraft is ready for start-up and push-back.",
+        "source_milestones": [
+          12
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "DepartureClearanceMessage",
+        "package": "Messages",
+        "stereotype": "boundary",
+        "definition": "The voice or DCL message by which flight crew request start-up approval.",
+        "source_milestones": [
+          14
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "FlightStatusMessage",
+        "package": "Messages",
+        "stereotype": "boundary",
+        "definition": "The FSA message sent on actual take-off to inform relevant systems of the flight's status.",
+        "source_milestones": [
+          16
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "MovementMessage",
+        "package": "Messages",
+        "stereotype": "boundary",
+        "definition": "The MVT message sent on actual take-off reporting the aircraft's movement.",
+        "source_milestones": [
+          16
+        ],
+        "attributes": [],
+        "operations": []
+      },
+      {
+        "name": "AirborneMessage",
+        "package": "Messages",
+        "stereotype": "boundary",
+        "definition": "The message generated on take-off confirming the flight is airborne and removing it from the departure sequence.",
+        "source_milestones": [
+          1,
+          16
+        ],
+        "attributes": [],
+        "operations": []
+      }
+    ],
+    "enumerations": [
+      {
+        "name": "FlightOperationalStatus",
+        "package": "Flights",
+        "literals": [
+          "INITIATED",
+          "REGULATED",
+          "AIRBORNE",
+          "FIR",
+          "FINAL",
+          "LANDED",
+          "IN-BLOCK",
+          "SEQUENCED",
+          "BOARDING",
+          "READY",
+          "OFF-BLOCK",
+          "DEPARTED/TAKE OFF"
+        ],
+        "source_milestones": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ]
+      },
+      {
+        "name": "TimeQuantityPrefix",
+        "package": "Timings",
+        "literals": [
+          "Scheduled",
+          "Estimated",
+          "Target",
+          "Actual",
+          "Calculated"
+        ],
+        "source_milestones": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ]
+      },
+      {
+        "name": "DpiMessageType",
+        "package": "Messages",
+        "literals": [
+          "E-DPI",
+          "T-DPI",
+          "T-DPI-t",
+          "T-DPI-s",
+          "A-DPI"
+        ],
+        "source_milestones": [
+          1,
+          2,
+          3,
+          10,
+          15
+        ]
+      }
+    ],
+    "relationships": [],
+    "unmodelled": [
+      "The document distinguishes coordinated and non-coordinated airports, which determines whether the outbound flight is already known or must be initiated from the flight plan, but no Airport class holds this distinction (milestone 1).",
+      "CTOT flights usually have priority over unregulated flights, a scheduling priority rule with no owning class stated (milestone 2).",
+      "The objective to decrease the number of stand and gate changes in the last 30 minutes before ELDT is a stated operational goal with no class to own it (milestone 4).",
+      "The role of Dispatcher/Supervisor/Redcap coordinating with the pilot before start-up request is mentioned without enough detail to model as a distinct class (milestone 12)."
+    ]
+  }
+}

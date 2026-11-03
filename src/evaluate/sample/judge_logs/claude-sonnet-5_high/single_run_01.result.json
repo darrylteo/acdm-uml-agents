@@ -1,0 +1,81 @@
+{
+  "meta": {
+    "ok": true,
+    "output": null,
+    "error": null,
+    "model": "claude-sonnet-5",
+    "input_tokens": 14995,
+    "output_tokens": 3305,
+    "thinking_tokens": 2872,
+    "cache_creation_tokens": 13493,
+    "cache_read_tokens": 1500,
+    "cost_usd": 0.087326,
+    "duration_ms": 27476,
+    "attempts": 1,
+    "num_turns": 2
+  },
+  "output": {
+    "items": [
+      {
+        "id": "g032",
+        "grade": 1,
+        "sentence": "M16.action_on_cdm.1",
+        "note": ""
+      },
+      {
+        "id": "g033",
+        "grade": 1,
+        "sentence": "M1.procedures.4",
+        "note": "scaffold: messages specialise base class"
+      },
+      {
+        "id": "g044",
+        "grade": 1,
+        "sentence": "M1.definition.2",
+        "note": ""
+      },
+      {
+        "id": "g053",
+        "grade": 1,
+        "sentence": "M1.effect.1",
+        "note": "scaffold: named thing carries identifier"
+      },
+      {
+        "id": "g079",
+        "grade": 1,
+        "sentence": "M9.effect.6",
+        "note": ""
+      },
+      {
+        "id": "g097",
+        "grade": 0.5,
+        "sentence": "M12.effect.2",
+        "note": "aircrew coordinates but not stated as CDM partner"
+      },
+      {
+        "id": "g109",
+        "grade": 1,
+        "sentence": "M14.definition.1",
+        "note": ""
+      },
+      {
+        "id": "g143",
+        "grade": 1,
+        "sentence": "M1.definition.2",
+        "note": ""
+      },
+      {
+        "id": "g154",
+        "grade": 1,
+        "sentence": "M1.action_on_cdm.1",
+        "note": ""
+      },
+      {
+        "id": "g192",
+        "grade": 1,
+        "sentence": "M7.definition.1",
+        "note": ""
+      }
+    ]
+  }
+}

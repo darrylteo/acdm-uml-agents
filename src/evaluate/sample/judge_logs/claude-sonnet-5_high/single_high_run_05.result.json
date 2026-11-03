@@ -1,0 +1,93 @@
+{
+  "meta": {
+    "ok": true,
+    "output": null,
+    "error": null,
+    "model": "claude-sonnet-5",
+    "input_tokens": 15469,
+    "output_tokens": 2124,
+    "thinking_tokens": 1602,
+    "cache_creation_tokens": 13967,
+    "cache_read_tokens": 1500,
+    "cost_usd": 0.07741200000000001,
+    "duration_ms": 20090,
+    "attempts": 1,
+    "num_turns": 2
+  },
+  "output": {
+    "items": [
+      {
+        "id": "g006",
+        "grade": 1,
+        "sentence": "M3.effect.3",
+        "note": ""
+      },
+      {
+        "id": "g046",
+        "grade": 1,
+        "sentence": "M4.effect.8",
+        "note": "scaffold: EIBT/AIBT named as time quantities"
+      },
+      {
+        "id": "g052",
+        "grade": 1,
+        "sentence": "M9.definition.1",
+        "note": ""
+      },
+      {
+        "id": "g086",
+        "grade": 1,
+        "sentence": "M9.origin_and_priority.1",
+        "note": ""
+      },
+      {
+        "id": "g117",
+        "grade": 1,
+        "sentence": "M9.action_on_cdm.1",
+        "note": ""
+      },
+      {
+        "id": "g153",
+        "grade": 1,
+        "sentence": "M12.definition.1",
+        "note": "scaffold: milestone specialization"
+      },
+      {
+        "id": "g155",
+        "grade": 0.5,
+        "sentence": "M9.effect.1",
+        "note": "append-not-overwrite rule not stated by document"
+      },
+      {
+        "id": "g172",
+        "grade": 1,
+        "sentence": "M1.action_on_cdm.1",
+        "note": ""
+      },
+      {
+        "id": "g185",
+        "grade": 1,
+        "sentence": "M15.definition.1",
+        "note": "scaffold: milestone specialization"
+      },
+      {
+        "id": "g188",
+        "grade": 1,
+        "sentence": "M4.procedures.6",
+        "note": ""
+      },
+      {
+        "id": "g190",
+        "grade": 1,
+        "sentence": "M13.effect.1",
+        "note": ""
+      },
+      {
+        "id": "g199",
+        "grade": 1,
+        "sentence": "M1.action_on_cdm.1",
+        "note": ""
+      }
+    ]
+  }
+}

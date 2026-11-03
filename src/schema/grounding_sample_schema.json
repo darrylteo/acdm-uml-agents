@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Grounding grades for sampled elements against the whole document",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["items"],
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "grade", "sentence", "note"],
+        "properties": {
+          "id": {"type": "string", "description": "The item id as given, e.g. g001."},
+          "grade": {"type": "number", "enum": [1, 0.5, 0]},
+          "sentence": {"type": "string", "description": "The id of the sentence that best supports the grade, e.g. M9.effect.6; empty when nothing in the document does."},
+          "note": {"type": "string", "description": "At most one short line; empty for a plain 1."}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+# Milestone 5: Final Approach
+
+The section, split into sentences. The field name precedes each field; the id precedes each sentence.
+
+
+## Definition
+
+[M5.definition.1] The flight enters the Final Approach phase at the destination airport.
+
+## Origin and priority
+
+[M5.origin_and_priority.1] This information is normally available from ATC.
+[M5.origin_and_priority.2] The radar system detects a flight based upon the assigned SSR code and identifies when the flight crosses either a defined range / position or passes/leaves a predetermined level.
+
+## Timing
+
+[M5.timing.1] Dependent upon local parameters that are defined by ATC.
+
+## Data Quality
+
+[M5.data_quality.1] Must be equal to the accuracy of the ATC system.
+
+## Effect
+
+[M5.effect.1] Update of the ELDT to determine a new TOBT.
+[M5.effect.2] When a flight reaches this stage it is usually between 2 and 5 minutes from landing (depending on the parameter set by ATC).
+[M5.effect.3] This is often the prompt for many partners to start moving resources connected with the flight, such as positioning a parking marshal and ground handling services.
+
+## Procedures
+
+[M5.procedures.1] To commence the TOBT process and check whether the AO/GH TOBT is consistent with the ATC Flight Plan.
+[M5.procedures.2] Network Operations is informed when the TTOT changes by more than the agreed TTOT tolerance.
+[M5.procedures.3] This check shall be performed to verify feasibility of the ATC Flight Plan given the up-dated TOBT.
+[M5.procedures.4] The TTOT tolerance is respected before Network Operations is informed of updated TTOT.
+[M5.procedures.5] This process is triggered by
+[M5.procedures.6] - the detection of the flight by radar in either FIR, TMA, or on Final Approach.
+
+## Operational Status
+
+[M5.operational_status.1] FINAL
+
+## Action on CDM Operation
+
+[M5.action_on_cdm.1] ELDT, EIBT, TOBT and TTOT updated
+
+# Task
+
+Return every sentence with keep or drop, a reason, and the claims of each kept sentence, as JSON conforming to the schema.

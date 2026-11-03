@@ -1,0 +1,123 @@
+{
+  "meta": {
+    "ok": true,
+    "output": null,
+    "error": null,
+    "model": "claude-sonnet-5",
+    "input_tokens": 29666,
+    "output_tokens": 3364,
+    "thinking_tokens": 2631,
+    "cache_creation_tokens": 27341,
+    "cache_read_tokens": 2323,
+    "cost_usd": 0.1434726,
+    "duration_ms": 26819,
+    "attempts": 1,
+    "num_turns": 2
+  },
+  "output": {
+    "items": [
+      {
+        "id": "c048",
+        "grade": 1,
+        "elements": [
+          "Aircraft.type",
+          "Flight.aircraftType"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c061",
+        "grade": 0.5,
+        "elements": [
+          "Pilot.requestStartUp()"
+        ],
+        "note": "coordination with GroundHandler only in operation description, no Pilot-GroundHandler relationship"
+      },
+      {
+        "id": "c069",
+        "grade": 1,
+        "elements": [
+          "MinimumTurnRoundTime",
+          "Flight->MinimumTurnRoundTime",
+          "TurnRound->MinimumTurnRoundTime"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c105",
+        "grade": 0.5,
+        "elements": [
+          "TakeOffMilestone.generateAirborneMessage()"
+        ],
+        "note": "Tower FDPS named only in operation description, no dedicated element"
+      },
+      {
+        "id": "c108",
+        "grade": 1,
+        "elements": [
+          "TurnRoundOperator.recordAircraftReady()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c111",
+        "grade": 1,
+        "elements": [
+          "TSATIssuedMilestone.issueOffsetMinutes",
+          "AirTrafficControl.issueTSAT()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c116",
+        "grade": 1,
+        "elements": [
+          "StartUpRequestedMilestone.alertIfNoStartUpRequested()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c121",
+        "grade": 1,
+        "elements": [
+          "TakeOffFromOutstationMilestone.calculateELDT()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c136",
+        "grade": 1,
+        "elements": [
+          "LandedMilestone.checkTOBTConsistency()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c152",
+        "grade": 1,
+        "elements": [
+          "ATCSystem.detectFlight()",
+          "ATCSystem->Flight"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c154",
+        "grade": 1,
+        "elements": [
+          "FinalApproachMilestone.checkTOBTConsistency()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c199",
+        "grade": 1,
+        "elements": [
+          "TurnRoundOperator.updateTOBT()",
+          "GroundHandlingStartedMilestone.updateTOBT()"
+        ],
+        "note": ""
+      }
+    ]
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "meta": {
+    "ok": true,
+    "output": null,
+    "error": null,
+    "model": "claude-sonnet-5",
+    "input_tokens": 30227,
+    "output_tokens": 1953,
+    "thinking_tokens": 1318,
+    "cache_creation_tokens": 27902,
+    "cache_read_tokens": 2323,
+    "cost_usd": 0.1316066,
+    "duration_ms": 14869,
+    "attempts": 1,
+    "num_turns": 2
+  },
+  "output": {
+    "items": [
+      {
+        "id": "c020",
+        "grade": 1,
+        "elements": [
+          "TobtCheckMilestone.informNetworkOperationsOfTtotChange()",
+          "GroundHandlingStartedMilestone->NetworkOperations"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c031",
+        "grade": 1,
+        "elements": [
+          "TsatIssuedMilestone.checkTobtUpdateCountAfterTsat(threshold)"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c042",
+        "grade": 0.5,
+        "elements": [
+          "InBlockTime"
+        ],
+        "note": "ATA equivalence only implicit in AIBT prefix, not named as attribute"
+      },
+      {
+        "id": "c071",
+        "grade": 1,
+        "elements": [
+          "FlightPlanActivationMilestone.updateArrivalOrDepartureTimings()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c091",
+        "grade": 1,
+        "elements": [
+          "AutomatedDockingSystem"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c119",
+        "grade": 1,
+        "elements": [
+          "EtfmsSystem"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c128",
+        "grade": 1,
+        "elements": [
+          "DpiMessageType.T_DPI_S"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c144",
+        "grade": 1,
+        "elements": [
+          "FlightOperationalStatus.INITIATED"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c146",
+        "grade": 1,
+        "elements": [
+          "AirTrafficControlUnit"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c178",
+        "grade": 0,
+        "elements": [],
+        "note": "no operation for ATC refining pre-departure sequence at milestone 12"
+      },
+      {
+        "id": "c192",
+        "grade": 1,
+        "elements": [
+          "Aircraft.registration"
+        ],
+        "note": ""
+      }
+    ]
+  }
+}

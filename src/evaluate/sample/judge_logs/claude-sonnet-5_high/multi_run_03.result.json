@@ -1,0 +1,87 @@
+{
+  "meta": {
+    "ok": true,
+    "output": null,
+    "error": null,
+    "model": "claude-sonnet-5",
+    "input_tokens": 14803,
+    "output_tokens": 3604,
+    "thinking_tokens": 2945,
+    "cache_creation_tokens": 13301,
+    "cache_read_tokens": 1500,
+    "cost_usd": 0.089548,
+    "duration_ms": 36211,
+    "attempts": 1,
+    "num_turns": 2
+  },
+  "output": {
+    "items": [
+      {
+        "id": "g016",
+        "grade": 1,
+        "sentence": "M1.operational_status.1",
+        "note": ""
+      },
+      {
+        "id": "g019",
+        "grade": 0.5,
+        "sentence": "M10.procedures.1",
+        "note": "ATC is one of several actors informed/informing 'Airport CDM Partners' but document never states ATC is a kind of CDM Partner"
+      },
+      {
+        "id": "g029",
+        "grade": 1,
+        "sentence": "M1.origin_and_priority.1",
+        "note": ""
+      },
+      {
+        "id": "g068",
+        "grade": 0.5,
+        "sentence": "M6.effect.1",
+        "note": "document ties duration (turn-round period) to TOBT/TTOT calc, not an explicit TurnRound-DurationEstimate aggregation"
+      },
+      {
+        "id": "g104",
+        "grade": 0.5,
+        "sentence": "M6.effect.1",
+        "note": "time-of-update is a scaffold attribute; the append-not-overwrite/turn-round-analysis rule is not stated by the document"
+      },
+      {
+        "id": "g139",
+        "grade": 1,
+        "sentence": "M1.definition.1",
+        "note": ""
+      },
+      {
+        "id": "g151",
+        "grade": 0.5,
+        "sentence": "M10.procedures.2",
+        "note": "Network Operations is repeatedly distinguished from 'Airport CDM Partners' as a separate recipient, not stated as a kind of it"
+      },
+      {
+        "id": "g158",
+        "grade": 1,
+        "sentence": "M6.operational_status.1",
+        "note": ""
+      },
+      {
+        "id": "g168",
+        "grade": 1,
+        "sentence": "M3.definition.1",
+        "note": ""
+      },
+      {
+        "id": "g170",
+        "grade": 1,
+        "sentence": "M4.effect.8",
+        "note": ""
+      },
+      {
+        "id": "g187",
+        "grade": 1,
+        "sentence": "M2.procedures.4",
+        "note": ""
+      }
+    ]
+  }
+}

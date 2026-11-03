@@ -1,0 +1,47 @@
+# Milestone 12: Aircraft Ready
+
+The section, split into sentences. The field name precedes each field; the id precedes each sentence.
+
+
+## Definition
+
+[M12.definition.1] The time when all doors are closed, boarding bridge removed, push back vehicle connected, ready to taxi immediately upon reception of TWR instructions (ARDT).
+
+## Origin and priority
+
+[M12.origin_and_priority.1] Provided by the Aircraft Operator/ Ground Handler.
+
+## Timing
+
+[M12.timing.1] The information is directly available after occurrence of the milestone.
+
+## Data Quality
+
+[M12.data_quality.1] Data is directly available with an accuracy of +/- 1 minute.
+
+## Effect
+
+[M12.effect.1] ATC refines the pre-departure sequence.
+[M12.effect.2] The pilot requests start up just before TSAT, following coordination with the Ground Handler.
+[M12.effect.3] (Dispatcher / Supervisor / Redcap).
+
+## Procedures
+
+[M12.procedures.1] First step: To inform all relevant Airport CDM Partners of Actual Ready Time (ARDT) in the Airport CDM Platform and that the aircraft is ready for start up / push-back.
+[M12.procedures.2] Second step: To inform the AO/GH that TOBT has passed and the Airport CDM Platform has not yet received ARDT or Ready Status (RDY).
+[M12.procedures.3] Inform of ARDT or RDY confirming that the flight follows the indicated TOBT.
+[M12.procedures.4] At TOBT + tolerance the AO/GH are informed that TOBT has passed and there has not been a ready status message yet.
+[M12.procedures.5] This procedure is triggered by
+[M12.procedures.6] - an input to the Airport CDM Platform.
+
+## Operational Status
+
+[M12.operational_status.1] READY
+
+## Action on CDM Operation
+
+[M12.action_on_cdm.1] N.A
+
+# Task
+
+Return every sentence with keep or drop, a reason, and the claims of each kept sentence, as JSON conforming to the schema.

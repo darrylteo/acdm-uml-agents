@@ -1,0 +1,102 @@
+{
+  "meta": {
+    "ok": true,
+    "output": null,
+    "error": null,
+    "model": "claude-sonnet-5",
+    "input_tokens": 27667,
+    "output_tokens": 1730,
+    "thinking_tokens": 1121,
+    "cache_creation_tokens": 25342,
+    "cache_read_tokens": 2323,
+    "cost_usd": 0.1191366,
+    "duration_ms": 16428,
+    "attempts": 1,
+    "num_turns": 2
+  },
+  "output": {
+    "items": [
+      {
+        "id": "c027",
+        "grade": 1,
+        "elements": [
+          "TakeOffFromOutstation.calculateTtot()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c063",
+        "grade": 0.5,
+        "elements": [
+          "FlightCrew.requestStartUp()"
+        ],
+        "note": "coordination with Ground Handler only in description, no FlightCrew-GroundHandler relationship"
+      },
+      {
+        "id": "c067",
+        "grade": 1,
+        "elements": [
+          "TurnroundTime.minimumTurnRoundTime"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c073",
+        "grade": 1,
+        "elements": [
+          "AirportCDMPlatform.updateEtotTtotCtot()",
+          "AirportCDMPlatform.markRegulated()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c076",
+        "grade": 1,
+        "elements": [
+          "AirportCDMPlatform.evaluateTobtConfirmationNeeded()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c093",
+        "grade": 1,
+        "elements": [
+          "TsatIssued.informPartnersOfTsat()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c126",
+        "grade": 1,
+        "elements": [
+          "StartUpApproved.checkAsatAgainstTsat()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c158",
+        "grade": 1,
+        "elements": [
+          "AirportCDMPlatform.updateEldtEibtTobtTtot()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c179",
+        "grade": 1,
+        "elements": [
+          "AtcFlightPlan.isRepetitive"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c194",
+        "grade": 1,
+        "elements": [
+          "Milestone.timingRule"
+        ],
+        "note": ""
+      }
+    ]
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "meta": {
+    "ok": true,
+    "output": null,
+    "error": null,
+    "model": "claude-sonnet-5",
+    "input_tokens": 28439,
+    "output_tokens": 3234,
+    "thinking_tokens": 2338,
+    "cache_creation_tokens": 26114,
+    "cache_read_tokens": 2323,
+    "cost_usd": 0.1372646,
+    "duration_ms": 24989,
+    "attempts": 1,
+    "num_turns": 2
+  },
+  "output": {
+    "items": [
+      {
+        "id": "c006",
+        "grade": 1,
+        "elements": [
+          "InBlock.checkFeasibility()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c013",
+        "grade": 1,
+        "elements": [
+          "OffBlock.sendADpi()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c023",
+        "grade": 1,
+        "elements": [
+          "TakeOffTime.tolerance"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c033",
+        "grade": 1,
+        "elements": [
+          "LandingTime"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c049",
+        "grade": 1,
+        "elements": [
+          "TakeOffFromOutstation.calculateTtot()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c050",
+        "grade": 1,
+        "elements": [
+          "AircraftOperator.provideFinalTobt()",
+          "GroundHandler.provideFinalTobt()",
+          "LocalRadarUpdate.triggerTobtUpdate()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c097",
+        "grade": 0.5,
+        "elements": [
+          "NetworkOperations->FlightUpdateMessage",
+          "TakeOffFromOutstation.calculateEldtFromAtot()"
+        ],
+        "note": "ATOT is present as a parameter but not linked to FUM specifically"
+      },
+      {
+        "id": "c113",
+        "grade": 1,
+        "elements": [
+          "FlightOperationalStatus.BOARDING"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c114",
+        "grade": 1,
+        "elements": [
+          "Landed.notifyNetworkOperationsIfToleranceExceeded()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c123",
+        "grade": 0.5,
+        "elements": [
+          "GroundHandlingStarted"
+        ],
+        "note": "only in class definition prose, no dedicated structural element"
+      },
+      {
+        "id": "c132",
+        "grade": 1,
+        "elements": [
+          "AircraftOperator->AtcFlightPlan"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c133",
+        "grade": 1,
+        "elements": [
+          "FinalApproach",
+          "FlightOperationalStatus.FINAL",
+          "Milestone->Flight"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c150",
+        "grade": 0.5,
+        "elements": [
+          "AirportCdmPlatform"
+        ],
+        "note": "only in class definition prose"
+      },
+      {
+        "id": "c162",
+        "grade": 0,
+        "elements": [],
+        "note": "searched Acars/TakeOffTime for ACARS status codes/attributes, none present"
+      },
+      {
+        "id": "c164",
+        "grade": 1,
+        "elements": [
+          "TakeOffFromOutstation.calculateTtot()"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c176",
+        "grade": 1,
+        "elements": [
+          "OffBlockTime.accuracy"
+        ],
+        "note": ""
+      },
+      {
+        "id": "c186",
+        "grade": 1,
+        "elements": [
+          "InBlock.updateTobtAndTtot()"
+        ],
+        "note": ""
+      }
+    ]
+  }
+}

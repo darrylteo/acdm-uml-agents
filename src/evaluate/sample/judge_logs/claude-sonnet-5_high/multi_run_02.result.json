@@ -1,0 +1,81 @@
+{
+  "meta": {
+    "ok": true,
+    "output": null,
+    "error": null,
+    "model": "claude-sonnet-5",
+    "input_tokens": 14757,
+    "output_tokens": 1550,
+    "thinking_tokens": 1128,
+    "cache_creation_tokens": 13255,
+    "cache_read_tokens": 1500,
+    "cost_usd": 0.068824,
+    "duration_ms": 12897,
+    "attempts": 1,
+    "num_turns": 2
+  },
+  "output": {
+    "items": [
+      {
+        "id": "g031",
+        "grade": 1,
+        "sentence": "M15.action_on_cdm.1",
+        "note": ""
+      },
+      {
+        "id": "g049",
+        "grade": 1,
+        "sentence": "M15.procedures.4",
+        "note": ""
+      },
+      {
+        "id": "g054",
+        "grade": 0.5,
+        "sentence": "M6.effect.1",
+        "note": "append-not-overwrite history not stated by document"
+      },
+      {
+        "id": "g083",
+        "grade": 1,
+        "sentence": "M2.origin_and_priority.1",
+        "note": ""
+      },
+      {
+        "id": "g089",
+        "grade": 1,
+        "sentence": "M15.procedures.4",
+        "note": ""
+      },
+      {
+        "id": "g125",
+        "grade": 1,
+        "sentence": "M9.effect.3",
+        "note": ""
+      },
+      {
+        "id": "g127",
+        "grade": 1,
+        "sentence": "M6.effect.1",
+        "note": ""
+      },
+      {
+        "id": "g182",
+        "grade": 0.5,
+        "sentence": "M6.effect.1",
+        "note": "append-not-overwrite history not stated by document"
+      },
+      {
+        "id": "g191",
+        "grade": 1,
+        "sentence": "M16.procedures.3",
+        "note": ""
+      },
+      {
+        "id": "g196",
+        "grade": 1,
+        "sentence": "M1.procedures.3",
+        "note": ""
+      }
+    ]
+  }
+}

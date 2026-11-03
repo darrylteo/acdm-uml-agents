@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Relationship delta",
+  "description": "Only the relationships to add.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "relationships"
+  ],
+  "properties": {
+    "relationships": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "type",
+          "source",
+          "target",
+          "label",
+          "source_multiplicity",
+          "target_multiplicity",
+          "source_milestones"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "generalization",
+              "association",
+              "aggregation",
+              "composition",
+              "dependency"
+            ]
+          },
+          "source": {
+            "type": "string",
+            "description": "Class name. For generalization, the subclass."
+          },
+          "target": {
+            "type": "string",
+            "description": "Class name. For generalization, the superclass."
+          },
+          "label": {
+            "type": "string",
+            "description": "Role or verb phrase; empty string for generalization."
+          },
+          "source_multiplicity": {
+            "type": "string",
+            "description": "e.g. '1', '0..1', '*', '1..*'; empty string if not stated."
+          },
+          "target_multiplicity": {
+            "type": "string"
+          },
+          "source_milestones": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 16
+            }
+          }
+        }
+      }
+    }
+  }
+}

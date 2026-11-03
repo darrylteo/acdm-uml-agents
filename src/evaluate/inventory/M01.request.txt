@@ -1,0 +1,55 @@
+# Milestone 1: ATC Flight Plan Activated
+
+The section, split into sentences. The field name precedes each field; the id precedes each sentence.
+
+
+## Definition
+
+[M1.definition.1] The ICAO flight plan is submitted to ATC.
+[M1.definition.2] The Airport CDM Platform is initiated for this flight, and all available information is processed.
+
+## Origin and priority
+
+[M1.origin_and_priority.1] The ATC Flight Plan is submitted by the Aircraft Operator and distributed by the IFPS.
+[M1.origin_and_priority.2] All involved ATC units receive the flight plan, including departure and destination aerodromes.
+
+## Timing
+
+[M1.timing.1] Normally this takes place 3 hours before EOBT, however it may be later.
+[M1.timing.2] In some cases a repetitive flight plan (RFPL) has been submitted, covering daily or weekly flights.
+
+## Data Quality
+
+[M1.data_quality.1] The ATC Flight Plan corresponds to the airport slot programme.
+
+## Effect
+
+[M1.effect.1] One aircraft turn-round normally includes an arriving and a departing flight, meaning that it will have two related flight plans.
+[M1.effect.2] For coordinated airports, the outbound flight is already known.
+[M1.effect.3] The flight plan may be used to update certain information such as type of aircraft.
+[M1.effect.4] For long distance flights, the ELDT may differ from the airport slot.
+[M1.effect.5] For non coordinated airports, the flight plan is used to initiate the outbound flight.
+[M1.effect.6] The flight is ready not later than 15 minutes after the planned EOBT.
+[M1.effect.7] The DPI process commences the correct messaging with Network Operations (if implemented - see attachment 2 for details).
+
+## Procedures
+
+[M1.procedures.1] To check consistency between ATC Flight Plan, Airport Slot and Airport flight data and then confirm the flight to the Network Operations and allow further local processing of the flight.
+[M1.procedures.2] This check shall be performed to verify the consistency between the ATC Flight Plan, Airport Slot and Airport flight data before the first E-DPI is sent.
+[M1.procedures.3] The AO must provide correct information before this first E-DPI message, in order to feed Network Operations with consistent SOBT, aircraft registration, and first destination data, as early in time as possible.
+[M1.procedures.4] The E-DPI message should not be sent if no or inconsistent information is provided.
+[M1.procedures.5] This process is triggered by:
+[M1.procedures.6] - The first activation of the ATC Flight Plan (earliest EOBT-3 hr), or
+[M1.procedures.7] - New or late submissions of the ATC Flight Plan, after cancellation or revised EOBT
+
+## Operational Status
+
+[M1.operational_status.1] INITIATED
+
+## Action on CDM Operation
+
+[M1.action_on_cdm.1] ELDT and EIBT updated for an arrival EOBT and ETOT updated for a departure The DPI process commences (if implemented - see section 3.7.3 for details).
+
+# Task
+
+Return every sentence with keep or drop, a reason, and the claims of each kept sentence, as JSON conforming to the schema.

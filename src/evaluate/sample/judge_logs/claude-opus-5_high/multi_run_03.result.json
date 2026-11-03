@@ -1,0 +1,87 @@
+{
+  "meta": {
+    "ok": true,
+    "output": null,
+    "error": null,
+    "model": "claude-opus-5",
+    "input_tokens": 14757,
+    "output_tokens": 1716,
+    "thinking_tokens": 1193,
+    "cache_creation_tokens": 13230,
+    "cache_read_tokens": 1525,
+    "cost_usd": 0.1759725,
+    "duration_ms": 18954,
+    "attempts": 1,
+    "num_turns": 2
+  },
+  "output": {
+    "items": [
+      {
+        "id": "g016",
+        "grade": 1,
+        "sentence": "M1.operational_status.1",
+        "note": ""
+      },
+      {
+        "id": "g019",
+        "grade": 1,
+        "sentence": "M10.origin_and_priority.1",
+        "note": "ATC named as stakeholder; base class prescribed by scaffold"
+      },
+      {
+        "id": "g029",
+        "grade": 1,
+        "sentence": "M1.origin_and_priority.1",
+        "note": ""
+      },
+      {
+        "id": "g068",
+        "grade": 1,
+        "sentence": "M7.effect.1",
+        "note": "estimated turn-round period is the basis for TOBT/TTOT"
+      },
+      {
+        "id": "g104",
+        "grade": 0.5,
+        "sentence": "M15.action_on_cdm.1",
+        "note": "append-rather-than-overwrite history rule not stated; document says ELDT changes to ALDT"
+      },
+      {
+        "id": "g139",
+        "grade": 1,
+        "sentence": "M1.definition.2",
+        "note": ""
+      },
+      {
+        "id": "g151",
+        "grade": 1,
+        "sentence": "M2.origin_and_priority.1",
+        "note": "Network Operations named as stakeholder; base class prescribed by scaffold"
+      },
+      {
+        "id": "g158",
+        "grade": 1,
+        "sentence": "M3.operational_status.1",
+        "note": ""
+      },
+      {
+        "id": "g168",
+        "grade": 1,
+        "sentence": "M3.definition.1",
+        "note": ""
+      },
+      {
+        "id": "g170",
+        "grade": 1,
+        "sentence": "M7.definition.1",
+        "note": ""
+      },
+      {
+        "id": "g187",
+        "grade": 1,
+        "sentence": "M9.effect.6",
+        "note": ""
+      }
+    ]
+  }
+}

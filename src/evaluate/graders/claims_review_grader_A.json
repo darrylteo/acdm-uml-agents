@@ -1,0 +1,793 @@
+{
+ "reviewer": "grader_A",
+ "exported": "2026-09-21T16:19:20.498Z",
+ "draft_generated": "2026-09-18T14:15:01",
+ "assigned": [
+  1,
+  3,
+  8,
+  9,
+  10,
+  12,
+  13,
+  15,
+  16
+ ],
+ "claims": {
+  "M1.data_quality.1.c2": {
+   "decision": "edit",
+   "kind": "attribute",
+   "owner": "Airport"
+  },
+  "M1.procedures.1.c3": {
+   "decision": "edit",
+   "kind": "attribute",
+   "owner": "Airport"
+  },
+  "M1.definition.1.c1": {
+   "decision": "accept"
+  },
+  "M1.definition.1.c2": {
+   "decision": "accept"
+  },
+  "M1.definition.2.c2": {
+   "decision": "accept"
+  },
+  "M1.definition.2.c1": {
+   "decision": "accept"
+  },
+  "M1.definition.2.c3": {
+   "note": "all available information \"for this flight\" is processed",
+   "decision": "edit",
+   "text": "all available information for this flight is processed"
+  },
+  "M3.definition.1.c1": {
+   "decision": "accept"
+  },
+  "M3.definition.1.c2": {
+   "decision": "accept"
+  },
+  "M8.definition.1.c1": {
+   "decision": "accept"
+  },
+  "M8.definition.2.c1": {
+   "decision": "accept"
+  },
+  "M8.definition.3.c1": {
+   "decision": "accept"
+  },
+  "M9.definition.1.c4": {
+   "decision": "accept"
+  },
+  "M9.definition.1.c1": {
+   "decision": "edit",
+   "text": "TOBT"
+  },
+  "M10.definition.1.c2": {
+   "decision": "accept"
+  },
+  "M10.definition.1.c3": {
+   "decision": "reject",
+   "note": "equivalent as c2"
+  },
+  "M12.definition.1.c2": {
+   "decision": "accept"
+  },
+  "M12.definition.1.c1": {
+   "decision": "accept"
+  },
+  "M12.definition.1.c3": {
+   "decision": "accept"
+  },
+  "M12.definition.1.c4": {
+   "decision": "reject"
+  },
+  "M13.definition.1.c1": {
+   "decision": "accept"
+  },
+  "M13.definition.1.c2": {
+   "decision": "reject"
+  },
+  "M15.definition.2.c1": {
+   "decision": "accept"
+  },
+  "M15.definition.1.c1": {
+   "decision": "accept"
+  },
+  "M15.definition.1.c2": {
+   "decision": "reject"
+  },
+  "M15.definition.2.c3": {
+   "decision": "accept"
+  },
+  "M15.definition.2.c2": {
+   "decision": "reject"
+  },
+  "M16.definition.1.c1": {
+   "decision": "accept"
+  },
+  "M16.definition.1.c2": {
+   "decision": "reject"
+  },
+  "M16.definition.3.c3": {
+   "decision": "edit",
+   "kind": "attribute",
+   "owner": "Aircraft"
+  },
+  "M16.definition.3.c1": {
+   "decision": "accept"
+  },
+  "M16.definition.3.c2": {
+   "decision": "reject"
+  },
+  "M1.origin_and_priority.1.c2": {
+   "decision": "accept"
+  },
+  "M1.origin_and_priority.1.c3": {
+   "decision": "accept"
+  },
+  "M1.origin_and_priority.1.c1": {
+   "decision": "accept"
+  },
+  "M1.origin_and_priority.2.c1": {
+   "decision": "accept"
+  },
+  "M1.origin_and_priority.2.c2": {
+   "decision": "reject"
+  },
+  "M3.origin_and_priority.1.c1": {
+   "decision": "reject"
+  },
+  "M3.origin_and_priority.1.c2": {
+   "decision": "reject"
+  },
+  "M3.origin_and_priority.1.c3": {
+   "decision": "accept"
+  },
+  "M3.origin_and_priority.1.c6": {
+   "decision": "accept"
+  },
+  "M3.origin_and_priority.1.c4": {
+   "decision": "accept"
+  },
+  "M8.origin_and_priority.1.c1": {
+   "decision": "accept"
+  },
+  "M8.origin_and_priority.1.c2": {
+   "decision": "reject"
+  },
+  "M9.origin_and_priority.1.c1": {
+   "decision": "reject"
+  },
+  "M10.origin_and_priority.1.c1": {
+   "decision": "reject"
+  },
+  "M12.origin_and_priority.1.c3": {
+   "decision": "reject"
+  },
+  "M12.origin_and_priority.1.c4": {
+   "decision": "accept"
+  },
+  "M15.origin_and_priority.1.c2": {
+   "decision": "edit",
+   "kind": "attribute",
+   "rel_type": "generalization",
+   "owner": "Aircraft"
+  },
+  "M15.origin_and_priority.1.c1": {
+   "decision": "reject"
+  },
+  "M13.origin_and_priority.1.c2": {
+   "decision": "reject"
+  },
+  "M13.origin_and_priority.1.c1": {
+   "decision": "reject"
+  },
+  "M16.origin_and_priority.1.c4": {
+   "decision": "accept"
+  },
+  "M16.origin_and_priority.1.c5": {
+   "decision": "accept"
+  },
+  "M16.origin_and_priority.1.c1": {
+   "decision": "reject"
+  },
+  "M15.origin_and_priority.1.c5": {
+   "decision": "accept"
+  },
+  "M1.timing.1.c1": {
+   "decision": "accept"
+  },
+  "M1.timing.1.c2": {
+   "decision": "accept"
+  },
+  "M1.timing.2.c1": {
+   "decision": "accept"
+  },
+  "M1.timing.2.c2": {
+   "decision": "reject"
+  },
+  "M3.timing.1.c1": {
+   "decision": "accept"
+  },
+  "M8.timing.1.c1": {
+   "decision": "reject"
+  },
+  "M9.timing.1.c1": {
+   "decision": "accept"
+  },
+  "M9.timing.1.c2": {
+   "decision": "accept"
+  },
+  "M10.timing.1.c1": {
+   "decision": "accept"
+  },
+  "M10.timing.1.c2": {
+   "decision": "reject"
+  },
+  "M12.timing.1.c1": {
+   "decision": "reject"
+  },
+  "M13.timing.1.c1": {
+   "decision": "accept"
+  },
+  "M15.timing.1.c1": {
+   "decision": "accept"
+  },
+  "M16.timing.1.c1": {
+   "decision": "accept"
+  },
+  "M1.data_quality.1.c1": {
+   "decision": "accept"
+  },
+  "M3.data_quality.1.c1": {
+   "decision": "accept"
+  },
+  "M8.data_quality.1.c1": {
+   "decision": "accept"
+  },
+  "M12.data_quality.1.c1": {
+   "decision": "accept"
+  },
+  "M13.data_quality.1.c1": {
+   "decision": "accept"
+  },
+  "M9.data_quality.1.c1": {
+   "decision": "accept"
+  },
+  "M10.data_quality.1.c1": {
+   "decision": "accept"
+  },
+  "M16.data_quality.1.c1": {
+   "decision": "accept"
+  },
+  "M15.data_quality.1.c1": {
+   "decision": "accept"
+  },
+  "M1.effect.1.c2": {
+   "decision": "reject"
+  },
+  "M1.effect.1.c1": {
+   "decision": "accept"
+  },
+  "M1.effect.3.c1": {
+   "decision": "accept"
+  },
+  "M1.effect.3.c2": {
+   "decision": "accept"
+  },
+  "M1.effect.4.c1": {
+   "decision": "accept"
+  },
+  "M1.effect.2.c1": {
+   "decision": "accept"
+  },
+  "M1.effect.4.c2": {
+   "decision": "accept"
+  },
+  "M1.effect.5.c1": {
+   "decision": "accept"
+  },
+  "M1.effect.6.c1": {
+   "decision": "accept"
+  },
+  "M1.effect.7.c2": {
+   "decision": "accept"
+  },
+  "M1.effect.7.c1": {
+   "decision": "accept"
+  },
+  "M3.effect.1.c1": {
+   "decision": "accept"
+  },
+  "M3.effect.1.c2": {
+   "decision": "accept"
+  },
+  "M3.effect.1.c3": {
+   "decision": "accept"
+  },
+  "M3.effect.1.c4": {
+   "decision": "accept"
+  },
+  "M3.effect.1.c5": {
+   "decision": "accept"
+  },
+  "M3.effect.2.c1": {
+   "decision": "accept"
+  },
+  "M3.effect.2.c3": {
+   "decision": "accept"
+  },
+  "M3.effect.2.c4": {
+   "decision": "accept"
+  },
+  "M3.effect.3.c1": {
+   "decision": "accept"
+  },
+  "M8.effect.1.c1": {
+   "decision": "accept"
+  },
+  "M8.effect.1.c2": {
+   "decision": "accept"
+  },
+  "M3.effect.3.c4": {
+   "decision": "accept"
+  },
+  "M3.effect.3.c2": {
+   "decision": "accept"
+  },
+  "M9.effect.3.c4": {
+   "decision": "accept"
+  },
+  "M8.effect.1.c5": {
+   "decision": "accept"
+  },
+  "M8.effect.1.c4": {
+   "decision": "reject"
+  },
+  "M9.effect.4.c1": {
+   "decision": "reject"
+  },
+  "M9.effect.3.c1": {
+   "decision": "accept"
+  },
+  "M9.effect.4.c2": {
+   "decision": "edit",
+   "kind": "operation"
+  },
+  "M9.effect.6.c3": {
+   "decision": "accept"
+  },
+  "M9.effect.6.c5": {
+   "decision": "accept"
+  },
+  "M10.effect.1.c1": {
+   "decision": "accept"
+  },
+  "M9.effect.6.c4": {
+   "decision": "reject"
+  },
+  "M10.effect.1.c2": {
+   "decision": "reject"
+  },
+  "M12.effect.1.c2": {
+   "decision": "accept"
+  },
+  "M12.effect.2.c2": {
+   "decision": "accept"
+  },
+  "M13.effect.1.c1": {
+   "decision": "accept"
+  },
+  "M15.effect.1.c1": {
+   "decision": "accept"
+  },
+  "M13.effect.1.c3": {
+   "decision": "accept"
+  },
+  "M13.effect.2.c1": {
+   "decision": "accept"
+  },
+  "M12.effect.2.c3": {
+   "decision": "accept"
+  },
+  "M16.effect.1.c4": {
+   "decision": "reject"
+  },
+  "M16.effect.1.c2": {
+   "decision": "edit",
+   "text": "MVT .. messages",
+   "kind": "class"
+  },
+  "M16.effect.1.c1": {
+   "decision": "edit",
+   "text": "FSA .. messages"
+  },
+  "M16.effect.1.c3": {
+   "decision": "accept"
+  },
+  "M1.procedures.1.c2": {
+   "decision": "accept"
+  },
+  "M1.procedures.1.c1": {
+   "decision": "accept"
+  },
+  "M1.procedures.2.c2": {
+   "decision": "accept"
+  },
+  "M1.procedures.3.c4": {
+   "decision": "accept"
+  },
+  "M1.procedures.3.c3": {
+   "decision": "accept"
+  },
+  "M1.procedures.3.c2": {
+   "decision": "accept"
+  },
+  "M1.procedures.3.c1": {
+   "decision": "accept"
+  },
+  "M1.procedures.4.c1": {
+   "decision": "accept"
+  },
+  "M1.procedures.7.c1": {
+   "decision": "accept"
+  },
+  "M1.procedures.6.c1": {
+   "decision": "accept"
+  },
+  "M3.procedures.3.c1": {
+   "decision": "accept"
+  },
+  "M3.procedures.4.c1": {
+   "decision": "accept"
+  },
+  "M3.procedures.5.c1": {
+   "decision": "accept"
+  },
+  "M3.procedures.6.c1": {
+   "decision": "accept"
+  },
+  "M3.procedures.1.c4": {
+   "decision": "accept"
+  },
+  "M3.procedures.1.c3": {
+   "decision": "accept"
+  },
+  "M3.procedures.1.c2": {
+   "decision": "accept"
+  },
+  "M3.procedures.1.c1": {
+   "decision": "accept"
+  },
+  "M3.procedures.1.c5": {
+   "decision": "accept"
+  },
+  "M3.procedures.3.c2": {
+   "decision": "accept"
+  },
+  "M8.procedures.2.c1": {
+   "decision": "accept"
+  },
+  "M3.procedures.8.c1": {
+   "decision": "reject"
+  },
+  "M8.procedures.1.c1": {
+   "decision": "accept"
+  },
+  "M8.procedures.2.c2": {
+   "decision": "accept"
+  },
+  "M8.procedures.2.c5": {
+   "decision": "accept",
+   "kind": "operation"
+  },
+  "M8.procedures.6.c1": {
+   "decision": "reject"
+  },
+  "M9.procedures.1.c1": {
+   "decision": "accept"
+  },
+  "M9.procedures.2.c1": {
+   "decision": "accept"
+  },
+  "M9.procedures.2.c4": {
+   "decision": "reject"
+  },
+  "M9.procedures.2.c3": {
+   "decision": "accept"
+  },
+  "M9.procedures.3.c1": {
+   "decision": "reject"
+  },
+  "M9.procedures.3.c2": {
+   "decision": "accept"
+  },
+  "M9.procedures.3.c4": {
+   "decision": "accept"
+  },
+  "M9.procedures.5.c1": {
+   "decision": "accept"
+  },
+  "M9.procedures.5.c2": {
+   "decision": "accept"
+  },
+  "M9.procedures.6.c1": {
+   "decision": "accept"
+  },
+  "M9.procedures.6.c2": {
+   "decision": "accept"
+  },
+  "M10.procedures.1.c1": {
+   "decision": "accept"
+  },
+  "M10.procedures.1.c2": {
+   "decision": "accept"
+  },
+  "M10.procedures.2.c1": {
+   "decision": "accept"
+  },
+  "M10.procedures.2.c3": {
+   "decision": "accept"
+  },
+  "M10.procedures.2.c4": {
+   "decision": "accept"
+  },
+  "M10.procedures.3.c2": {
+   "decision": "accept"
+  },
+  "M10.procedures.3.c3": {
+   "decision": "accept"
+  },
+  "M10.procedures.3.c1": {
+   "decision": "accept"
+  },
+  "M10.procedures.8.c1": {
+   "decision": "accept"
+  },
+  "M10.procedures.10.c1": {
+   "decision": "accept"
+  },
+  "M10.procedures.10.c2": {
+   "decision": "reject"
+  },
+  "M10.procedures.11.c1": {
+   "decision": "accept"
+  },
+  "M12.procedures.1.c1": {
+   "decision": "accept"
+  },
+  "M12.procedures.1.c3": {
+   "decision": "accept"
+  },
+  "M12.procedures.1.c4": {
+   "decision": "reject"
+  },
+  "M12.procedures.2.c3": {
+   "decision": "accept"
+  },
+  "M12.procedures.2.c1": {
+   "decision": "accept"
+  },
+  "M12.procedures.4.c2": {
+   "decision": "accept"
+  },
+  "M12.procedures.6.c1": {
+   "decision": "accept"
+  },
+  "M12.procedures.6.c2": {
+   "decision": "reject"
+  },
+  "M13.procedures.1.c1": {
+   "decision": "accept"
+  },
+  "M13.procedures.1.c4": {
+   "decision": "reject"
+  },
+  "M13.procedures.2.c1": {
+   "decision": "accept"
+  },
+  "M13.procedures.2.c2": {
+   "decision": "accept"
+  },
+  "M13.procedures.4.c3": {
+   "decision": "accept"
+  },
+  "M13.procedures.5.c1": {
+   "decision": "accept"
+  },
+  "M13.procedures.4.c2": {
+   "decision": "edit",
+   "kind": "operation",
+   "owner": "Aircraft Operator / Ground Handler"
+  },
+  "M15.procedures.1.c1": {
+   "decision": "accept"
+  },
+  "M15.procedures.1.c4": {
+   "decision": "edit",
+   "kind": "attribute",
+   "owner": "Airport CDM Platform"
+  },
+  "M15.procedures.2.c1": {
+   "decision": "accept"
+  },
+  "M15.procedures.2.c2": {
+   "decision": "accept"
+  },
+  "M15.procedures.4.c2": {
+   "decision": "accept"
+  },
+  "M15.procedures.4.c5": {
+   "decision": "accept"
+  },
+  "M15.procedures.4.c3": {
+   "decision": "edit",
+   "text": "AOBT always triggers an A-DPI message to Network Operations"
+  },
+  "M15.procedures.4.c4": {
+   "decision": "reject",
+   "text": "AOBT always triggers an A-DPI message to Network Operations"
+  },
+  "M15.procedures.6.c1": {
+   "decision": "accept"
+  },
+  "M15.procedures.6.c2": {
+   "decision": "reject"
+  },
+  "M16.procedures.1.c1": {
+   "decision": "accept"
+  },
+  "M16.procedures.2.c1": {
+   "decision": "accept"
+  },
+  "M16.procedures.2.c2": {
+   "decision": "accept"
+  },
+  "M16.procedures.2.c3": {
+   "decision": "accept"
+  },
+  "M16.procedures.2.c4": {
+   "decision": "accept"
+  },
+  "M16.procedures.3.c2": {
+   "decision": "accept"
+  },
+  "M16.procedures.3.c3": {
+   "decision": "accept"
+  },
+  "M1.operational_status.1.c1": {
+   "decision": "accept"
+  },
+  "M3.operational_status.1.c1": {
+   "decision": "accept"
+  },
+  "M15.operational_status.1.c1": {
+   "decision": "accept"
+  },
+  "M12.operational_status.1.c1": {
+   "decision": "accept"
+  },
+  "M10.operational_status.1.c1": {
+   "decision": "accept"
+  },
+  "M16.operational_status.1.c1": {
+   "decision": "accept"
+  },
+  "M1.action_on_cdm.1.c1": {
+   "decision": "accept"
+  },
+  "M1.action_on_cdm.1.c3": {
+   "decision": "accept"
+  },
+  "M1.action_on_cdm.1.c2": {
+   "decision": "accept"
+  },
+  "M1.action_on_cdm.1.c4": {
+   "decision": "accept"
+  },
+  "M3.action_on_cdm.1.c1": {
+   "decision": "accept"
+  },
+  "M8.action_on_cdm.1.c2": {
+   "decision": "accept"
+  },
+  "M8.action_on_cdm.1.c1": {
+   "decision": "accept"
+  },
+  "M9.action_on_cdm.2.c1": {
+   "decision": "accept"
+  },
+  "M10.action_on_cdm.1.c1": {
+   "decision": "accept"
+  },
+  "M9.action_on_cdm.1.c1": {
+   "decision": "accept"
+  },
+  "M16.action_on_cdm.1.c1": {
+   "decision": "accept"
+  },
+  "M15.action_on_cdm.1.c1": {
+   "decision": "accept"
+  },
+  "M15.procedures.4.c1": {
+   "decision": "accept"
+  },
+  "M16.procedures.3.c7": {
+   "decision": "accept"
+  },
+  "M16.procedures.3.c6": {
+   "decision": "accept"
+  },
+  "M16.procedures.3.c5": {
+   "decision": "accept"
+  },
+  "M16.procedures.3.c1": {
+   "decision": "accept"
+  }
+ },
+ "added": {
+  "M1.origin_and_priority.2": [
+   {
+    "text": "Airport",
+    "kind": "class",
+    "owner": "",
+    "rel_type": "",
+    "note": ""
+   }
+  ],
+  "M1.procedures.1": [
+   {
+    "text": "Airport flight data",
+    "kind": "attribute",
+    "owner": "Airport",
+    "rel_type": "",
+    "note": ""
+   }
+  ],
+  "M1.effect.2": [
+   {
+    "text": "coordinated",
+    "kind": "enumeration",
+    "owner": "Airport",
+    "rel_type": "",
+    "note": ""
+   }
+  ],
+  "M1.effect.5": [
+   {
+    "text": "non-coordinated",
+    "kind": "enumeration",
+    "owner": "Airport",
+    "rel_type": "",
+    "note": ""
+   }
+  ],
+  "M9.procedures.1": [
+   {
+    "text": "AO/GH TOBT",
+    "kind": "relationship",
+    "owner": "",
+    "rel_type": "generalization",
+    "note": ""
+   }
+  ],
+  "M12.procedures.1": [
+   {
+    "text": "Airport CDM Platform",
+    "kind": "class",
+    "owner": "",
+    "rel_type": "",
+    "note": ""
+   },
+   {
+    "text": "aircraft is ready for start up / push-back.",
+    "kind": "operation",
+    "owner": "Aircraft",
+    "rel_type": "",
+    "note": ""
+   }
+  ]
+ },
+ "sentences": {}
+}
